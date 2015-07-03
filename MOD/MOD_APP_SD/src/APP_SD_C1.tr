@@ -1,0 +1,775 @@
+#TRACE_ID '0x26059F 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"DiagLangChanged: SetEEpromSavedLang failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1439 
+#TRACE_ID '0x2605A5 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"APP_SD_sfInitApp: EEProm(LAST_MODE): failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1445 
+#TRACE_ID '0x2605A9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"APP_SD_sfInitApp: ASG is visible" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1449 
+#TRACE_ID '0x2605AF 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"APP_SD_sfInitApp: ASG is NOT visible" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1455 
+#TRACE_ID '0x2605CB 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"DiagLangChanged: SetEEpromSavedLang failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1483 
+#TRACE_ID '0x2605E5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"SetEEpromSLang: ChangeLang (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1509 
+#TRACE_ID '0x2605EF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"SetEEpromSLang: sfChangeLanguage failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1519 
+#TRACE_ID '0x2605F6 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"SetEEpromSavedLanguage: E2P Read failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1526 
+#TRACE_ID '0x2606C5 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"ChangeLang: unsupp. CAN lang. %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1733 
+#TRACE_ID '0x2606D6 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"ChangeLang: GetFb succ. %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1750 
+#TRACE_ID '0x2606E9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"ChangeLang: set sdLang %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1769 
+#TRACE_ID '0x2606FD 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"ChangeLang: inv.CANLang %d + inv.fb %d,set. eng avoid crash" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1789 
+#TRACE_ID '0x260702 'DEBUG_VALUE4 'DBG_LEV_ERR 'MOD_APP_SD '"ChangeLang: inv.CANLang %d + inv.fb %d, keep lang %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1794 
+#TRACE_ID '0x260708 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_APP_SD '"SYS_PERF: SD Startup Event: %d ms (SD is ready)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1800 
+#TRACE_ID '0x26076E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"IsCanLangAvail: LangMask: 0x%X" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '1902 
+#TRACE_ID '0x2607D3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ChangeLang: unsup lang (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2003 
+#TRACE_ID '0x2607DB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ChangeLang: GetMaskLang failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2011 
+#TRACE_ID '0x2607DE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"bIsCANLangAvail check for %d: supp: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2014 
+#TRACE_ID '0x2607F1 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_APP_SD '"CtxStates %d %d %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2033 
+#TRACE_ID '0x260810 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"vEM: no SD-ASG avail, ignoring event [%d]" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2064 
+#TRACE_ID '0x260816 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vEM: new event $APP_SD_enEventId$ = [%d]" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2070 
+#TRACE_ID '0x26081F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"vEM: btn event pend" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2079 
+#TRACE_ID '0x26082E 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_APP_SD '"vEM: callStateChanged event pend" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2094 
+#TRACE_ID '0x26083B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vEM: queued event [%d]" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2107 
+#TRACE_ID '0x260853 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vEM: unsupported event %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2131 
+#TRACE_ID '0x26086D 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_APP_SD '"vEM: new event [%d] ignored, prio lower oldest queued [%d]" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2157 
+#TRACE_ID '0x260875 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_APP_SD '"vEM: new event [%d] overwrites oldest queued [%d]" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2165 
+#TRACE_ID '0x260881 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vEM: critical error (Line: %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2177 
+#TRACE_ID '0x2608F5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_vReleasePendingContext: called from line %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2293 
+#TRACE_ID '0x2608F6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_vReleasePendingContext: current ctxId: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2294 
+#TRACE_ID '0x26091A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"vEventManager: no SD-ASG avail, ign. evAppTaskSdFctPending" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2330 
+#TRACE_ID '0x260977 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPendFunc: unknown event type: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2423 
+#TRACE_ID '0x260991 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"13591: After visibility is off: Retry to send the data." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2449 
+#TRACE_ID '0x260A29 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"HandlePendingFunction: unsup ctxId %d pendType %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2601 
+#TRACE_ID '0x260A37 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HandlePendingFunction: invalid pendType: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2615 
+#TRACE_ID '0x260A51 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleCanLangEvent: newLang %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2641 
+#TRACE_ID '0x260A6C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HdlCanSpeedEvent: speed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2668 
+#TRACE_ID '0x260A81 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Ign. overspeed not. ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2689 
+#TRACE_ID '0x260A8E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Ign. underspeed not. ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2702 
+#TRACE_ID '0x260A95 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"Ign. speed not." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2709 
+#TRACE_ID '0x260AAE 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaKpbEvent: $KPB_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2734 
+#TRACE_ID '0x260AD6 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaKpbEvent: GetCRS -> OFF" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2774 
+#TRACE_ID '0x260ADB 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaKpbEvent: GetCRS -> ON" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2779 
+#TRACE_ID '0x260AE0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaKpbEvent: CRS unknown -> LM %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2784 
+#TRACE_ID '0x260AE5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaKpbEvent: inv CRS %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2789 
+#TRACE_ID '0x260B2E 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleCshdlEvent: $APP_CSHDL_NotificationType$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2862 
+#TRACE_ID '0x260B73 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleDeviceEvent: event $APP_DEVICE_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2931 
+#TRACE_ID '0x260B86 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vHandleDeviceEvent: ignore notification in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2950 
+#TRACE_ID '0x260B8D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vHandleDeviceEvent: unsup dev not: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2957 
+#TRACE_ID '0x260BAC 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaErmStEv: $ERMStateType$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '2988 
+#TRACE_ID '0x260BB8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaErmStEv: unsup erm state: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3000 
+#TRACE_ID '0x260BD2 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleErmEvent: event $ERMNotificationIdType$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3026 
+#TRACE_ID '0x260BFE 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaErmEvent: reinit ctxId %d after ERM Startup" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3070 
+#TRACE_ID '0x260C34 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_DELETED_DEVICE: deleteActionPressedinScreen: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3124 
+#TRACE_ID '0x260C3B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_DELETED_DEVICE: event but screen already switched back:" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3131 
+#TRACE_ID '0x260C43 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PSBD: psbd.status: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3139 
+#TRACE_ID '0x260C4D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Conn. failed. Trig. S001 att. %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3149 
+#TRACE_ID '0x260C7E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaErmEvent: psbd Status ignored" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3198 
+#TRACE_ID '0x260C9F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PBSN_PHONE: call PhoneStateChanged" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3231 
+#TRACE_ID '0x260CAE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"AT_SERVRES_START_SUCCEED" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3246 
+#TRACE_ID '0x260CAF 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"and Set gAppSdContext.disconnectRequestedByUser to 0" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3247 
+#TRACE_ID '0x260CB3 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"Acitve Phone devId:%d,  Active Player devId:%d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3251 
+#TRACE_ID '0x260CBB 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PBSN_AVRCP: deactivate player busy  --->queue event in Appdevice" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3259 
+#TRACE_ID '0x260CCC 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PBSN_A2DP: connected playerId %d != expected playerID %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3276 
+#TRACE_ID '0x260CE3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"AT_SERVRES_START_SUCCEED" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3299 
+#TRACE_ID '0x260CE4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"and Set gAppSdContext.disconnectRequestedByUser to 0" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3300 
+#TRACE_ID '0x260CE8 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"Acitve Phone devId:%d,  Active Player devId:%d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3304 
+#TRACE_ID '0x260CF0 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PBSN_A2DP: deactivate player busy  --->queue event in Appdevice" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3312 
+#TRACE_ID '0x260D01 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PBSN_A2DP: connected playerId %d != expected playerID %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3329 
+#TRACE_ID '0x260D79 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PBSF: received notification with result = %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3449 
+#TRACE_ID '0x260D7F 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PBSF: received notification with unknown frame $APP_SD_enContextId$ = %d active" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3455 
+#TRACE_ID '0x260D88 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vHandleErmEvent: unsup erm not: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3464 
+#TRACE_ID '0x260DA8 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"NotifServSuppChngd S408,devId:%d,type:%d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3496 
+#TRACE_ID '0x260DDC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"NotifServSuppChngd devId out of range (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3548 
+#TRACE_ID '0x260DE7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"NotifServSuppChngd: ign. in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3559 
+#TRACE_ID '0x260DF2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"NotifServSuppChngd: paired device: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3570 
+#TRACE_ID '0x260DF5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"NotifServSuppChngd: new phone device -> create profile (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3573 
+#TRACE_ID '0x260DFB 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"NotifServSuppChngd: max user profiles reached" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3579 
+#TRACE_ID '0x260E10 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"NotifServSuppChngd: standalone player -> create profile (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3600 
+#TRACE_ID '0x260E27 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"NotifServSuppChngd: hist ctx %d -> marker" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3623 
+#TRACE_ID '0x260E5B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"ErmNotPairFail in ctx = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3675 
+#TRACE_ID '0x260E61 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"S52C: Erm PPRS Failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3681 
+#TRACE_ID '0x260EA4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaPairFail: hist ctx %d -> marker" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3748 
+#TRACE_ID '0x260EAB 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaPairFail: hist ctx %d -> marker" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3755 
+#TRACE_ID '0x260EB3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaPairFail: ign in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3763 
+#TRACE_ID '0x260EC8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"Erm Pairing Success" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3784 
+#TRACE_ID '0x260ECF 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"S52C:Erm PPRS Success" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3791 
+#TRACE_ID '0x260ED9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"S52D:Erm Timeout" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3801 
+#TRACE_ID '0x260EE4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Connecting device ID %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3812 
+#TRACE_ID '0x260EEF 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"S52D:Erm PPRS Success" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3823 
+#TRACE_ID '0x260EF7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaPairSucces: ign in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3831 
+#TRACE_ID '0x260F57 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHaErmNotInqEnd: hist ctx %d -> marker" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3927 
+#TRACE_ID '0x260F5E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHaErmNotInqEnd: ctx %d, end call -> start inquiry phone search" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3934 
+#TRACE_ID '0x260F6D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHaErmNotInqEnd: hist ctx %d -> marker" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3949 
+#TRACE_ID '0x260F75 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHaErmNotInqEnd: ctx %d, end call -> start inquiry headset search" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3957 
+#TRACE_ID '0x260F84 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHaErmNotInqEnd: hist ctx %d -> marker" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3972 
+#TRACE_ID '0x260F8C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHaErmNotInqEnd: ctx %d, end call -> start inquiry player search" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3980 
+#TRACE_ID '0x260F9B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHaErmNotInqEnd: no inq ctx act/hist" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '3995 
+#TRACE_ID '0x260FB4 'DEBUG_STATE2 'DBG_LEV_TRC 'MOD_APP_SD '"HandleVcrEvent: event $VCRNotificationIdEnum$ = %d ctxId $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4020 
+#TRACE_ID '0x26106C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleVcrEvent: ctx step back twice - manual pb update run and VCR started" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4204 
+#TRACE_ID '0x261073 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleVcrEvent: VCR ended and SC12 before but MP arlready connected" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4211 
+#TRACE_ID '0x26107B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleVcrEvent: VCR ended and SC12 before but MP arlready connected" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4219 
+#TRACE_ID '0x261090 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"vHandleVcrEvent: no pb index avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4240 
+#TRACE_ID '0x2610A6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vHandleVcrEvent: Error reading number from VCR, notif: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4262 
+#TRACE_ID '0x2610C6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vHandleVcrEvent: unsup vcr not: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4294 
+#TRACE_ID '0x2610DE 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleSmsEvent: event $APP_SMS_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4318 
+#TRACE_ID '0x261130 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleSmsEvent: Delete SMS refresh Frame S404" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4400 
+#TRACE_ID '0x261140 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleSmsEvent: Delete SMS init Frame S404 %d > 0" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4416 
+#TRACE_ID '0x261147 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleSmsEvent: Delete SMS init Frame S402 (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4423 
+#TRACE_ID '0x261153 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleSmsEvent: unsup sms event: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4435 
+#TRACE_ID '0x26116B 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaPhEvent: $APP_PHONE_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4459 
+#TRACE_ID '0x2611BF 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HaPhEvent: implicitly create prof ctx %d (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4543 
+#TRACE_ID '0x2611DC 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HaPhEvent: Ign. notId %d for ctx: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4572 
+#TRACE_ID '0x2611F5 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HaPhEvent: unhandled event: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4597 
+#TRACE_ID '0x26120C 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaPbEvent: $APP_PHONE_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4620 
+#TRACE_ID '0x261212 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"13591: Visibility on off = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4626 
+#TRACE_ID '0x261236 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_APP_SD '"HaPbEvent: ignored event: %d ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4662 
+#TRACE_ID '0x261257 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HaPbEvent: ign. %d, profile NULL" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4695 
+#TRACE_ID '0x26127E 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HdlPbEv: inv. UsersPb Not." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4734 
+#TRACE_ID '0x26129B 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HaPbEvent: unhandled event: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4763 
+#TRACE_ID '0x2612BE 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HaPbEvent: unhandled event: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4798 
+#TRACE_ID '0x2612DD 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleTimeoutEvent: ctx $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4829 
+#TRACE_ID '0x26137A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handletimeoutevent: deleteActionPressedinScreen: %d not expected here show idlescreen" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '4986 
+#TRACE_ID '0x261423 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleTimeoutEvent: no following jump defined in Timeout ctxId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5155 
+#TRACE_ID '0x261470 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleTimeoutEvent: no following jump defined in Timeout ctxId %d and deviceType %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5232 
+#TRACE_ID '0x2614C0 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"Handletimeout S517: release context in APP_DEVICE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5312 
+#TRACE_ID '0x2614C8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"Handletimeout S517_PASSIVE: timeout" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5320 
+#TRACE_ID '0x2614DF 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"Handletimeout APP_SD_CONTEXT_S534: stucked with creating profile ... " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5343 
+#TRACE_ID '0x2614F2 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"S52C: In Timeout, PPRS Success" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5362 
+#TRACE_ID '0x2614F7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"Connecting device ID %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5367 
+#TRACE_ID '0x261509 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"S52C: In Timeout PPRS, Failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5385 
+#TRACE_ID '0x26150F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"S52C: In Timeout, Gone" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5391 
+#TRACE_ID '0x261525 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Connecting device ID %d within context of S408" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5413 
+#TRACE_ID '0x26152B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Connecting device ID %d within context of S517" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5419 
+#TRACE_ID '0x261544 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_APP_SD '"HandleTimeoutEvent: : ctxId %d not handled" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5444 
+#TRACE_ID '0x26154D 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"HandleTimeoutEvent: timeout ctxId %d != current ctxId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5453 
+#TRACE_ID '0x26156E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HaBtnEv: key %d (%d), special handling" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5486 
+#TRACE_ID '0x261599 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaBtnEv: key %d not assigned" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5529 
+#TRACE_ID '0x2615A1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaBtnEv: key %d not assigned (2)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5537 
+#TRACE_ID '0x2615E8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaBtnEv: Back in screen S904 reset new missed call" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5608 
+#TRACE_ID '0x261624 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HaBtnEv: back key disabled (ctx %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5668 
+#TRACE_ID '0x261698 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaBtnEv: ignored btn %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5784 
+#TRACE_ID '0x2616A0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaBtnEv: long pressed %d, release mute and stop play ringtone" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5792 
+#TRACE_ID '0x2616D7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaBtnEv: long pressed Lss OK: Frame Id %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5847 
+#TRACE_ID '0x2616E1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaBtnEv: ignored btn %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5857 
+#TRACE_ID '0x2616EA 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleButtonEvent: ctx %d ignored key %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5866 
+#TRACE_ID '0x2616F1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleButtonEvent: no Handler for ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5873 
+#TRACE_ID '0x261769 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"Dont change the history state, special handling for queued-up while wait back for asg menu" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '5993 
+#TRACE_ID '0x26180F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton002: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6159 
+#TRACE_ID '0x261835 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton002: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6197 
+#TRACE_ID '0x261920 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton101: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6432 
+#TRACE_ID '0x2619DE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS104: Hook ignored, %d > %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6622 
+#TRACE_ID '0x261A69 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHaBtnS115: del pressed, key ignored %x" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6761 
+#TRACE_ID '0x261A93 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton115: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6803 
+#TRACE_ID '0x261AD3 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_APP_SD '"HandleButtonS117 ignored play OK button, VCR state %d, Haptic trigger state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6867 
+#TRACE_ID '0x261B03 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton117: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6915 
+#TRACE_ID '0x261B14 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_APP_SD '"HandleButtonS117 ignored play OK button, VCR state %d, Haptic trigger state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6932 
+#TRACE_ID '0x261B1B 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HandleButtonS117 Haptic trigger failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6939 
+#TRACE_ID '0x261B41 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton117: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '6977 
+#TRACE_ID '0x261BD6 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton211: ignoring Hook for back entry" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '7126 
+#TRACE_ID '0x261D3D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS406: release phone context" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '7485 
+#TRACE_ID '0x261D42 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS406: historyStepBack" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '7490 
+#TRACE_ID '0x261DAD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton413: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '7597 
+#TRACE_ID '0x261E6B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton502: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '7787 
+#TRACE_ID '0x261EC6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"bHandleButton512: selIdx %d is not a phoneDev" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '7878 
+#TRACE_ID '0x261EE3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton513: del pressed, key ignored %x" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '7907 
+#TRACE_ID '0x262050 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton51D: ignore OK press, len %x" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8272 
+#TRACE_ID '0x262090 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton51D_ACCEPT: ignore OK press, len %x" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8336 
+#TRACE_ID '0x2620F8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButtonS52C: enLogiButManMflOk %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8440 
+#TRACE_ID '0x26210A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_bHandleButtonS52C: Reject pairing." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8458 
+#TRACE_ID '0x262115 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton933: OK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8469 
+#TRACE_ID '0x262121 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_bHandleButtonS52C: Reject pairing." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8481 
+#TRACE_ID '0x262169 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS535: OK ignored with len %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8553 
+#TRACE_ID '0x2621D7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"13152: Before OK splledText length = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8663 
+#TRACE_ID '0x2621DB 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"13152: NULL String is not a valid name" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8667 
+#TRACE_ID '0x26222C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton541: selIdx %d is not a phoneDev" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8748 
+#TRACE_ID '0x262311 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton553: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '8977 
+#TRACE_ID '0x26232F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton555: del pres, key ignored %x" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9007 
+#TRACE_ID '0x26237D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"15575: Before OK splledText length = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9085 
+#TRACE_ID '0x26238C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"15575: NullString is Not valid splledText length = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9100 
+#TRACE_ID '0x2623E6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton562: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9190 
+#TRACE_ID '0x2624D1 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaButtonS571: just show and wait for ERM startUp" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9425 
+#TRACE_ID '0x26258A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS575: OK ignored, wait for ERM_bIsStartupDone" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9610 
+#TRACE_ID '0x2625A4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton576: del pressed, key ignored %x" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9636 
+#TRACE_ID '0x26260E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton579: del pressed, key ignored %x" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9742 
+#TRACE_ID '0x262656 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButtonS580: push control ok" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9814 
+#TRACE_ID '0x262659 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButtonS580: push control ok" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9817 
+#TRACE_ID '0x2626B0 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButtonS580: push control abort" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '9904 
+#TRACE_ID '0x262747 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton601: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10055 
+#TRACE_ID '0x26277B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton602: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10107 
+#TRACE_ID '0x2627B1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton641: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10161 
+#TRACE_ID '0x2627C5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton641: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10181 
+#TRACE_ID '0x2627EE 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"Ring tone play from SD" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10222 
+#TRACE_ID '0x26283D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton661: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10301 
+#TRACE_ID '0x2628A3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton669: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10403 
+#TRACE_ID '0x2628F2 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"HdlBtnS801: Ign. PrivMode Req. No outg. call" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10482 
+#TRACE_ID '0x2628F8 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"HdlBtnS801: Ign. PrivMode Req. Hfp Mode curr. off" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10488 
+#TRACE_ID '0x26292B 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"HdlBtnS801: Ign. PrivMode Req. No outg. call" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10539 
+#TRACE_ID '0x262931 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"HdlBtnS801: Ign. PrivMode Req. Hfp Mode curr. off " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10545 
+#TRACE_ID '0x2629C3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton803: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10691 
+#TRACE_ID '0x2629F6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton803: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10742 
+#TRACE_ID '0x262A2C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton803: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10796 
+#TRACE_ID '0x262A56 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton803: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10838 
+#TRACE_ID '0x262AEE 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton811: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '10990 
+#TRACE_ID '0x262B22 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton811: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11042 
+#TRACE_ID '0x262B7F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton812: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11135 
+#TRACE_ID '0x262BA8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton812: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11176 
+#TRACE_ID '0x262BF0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton812: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11248 
+#TRACE_ID '0x262C2C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton812: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11308 
+#TRACE_ID '0x262C81 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton815: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11393 
+#TRACE_ID '0x262C9F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton815: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11423 
+#TRACE_ID '0x262CD2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton815: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11474 
+#TRACE_ID '0x262CF9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton815: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11513 
+#TRACE_ID '0x262E4E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS903: release phone context" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11854 
+#TRACE_ID '0x262E53 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS903: historyStepBack" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11859 
+#TRACE_ID '0x262E69 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS903: release phone context" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11881 
+#TRACE_ID '0x262E6E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonS903: historyStepBack" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11886 
+#TRACE_ID '0x262EA5 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaBtnS904: reset new missed call" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '11941 
+#TRACE_ID '0x262F52 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButton933: OK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12114 
+#TRACE_ID '0x262FF0 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HandleButtonSC01: Hook ignored, %d => %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12272 
+#TRACE_ID '0x263055 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButtonC03: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12373 
+#TRACE_ID '0x2630F7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButtonC16: enOK not handled for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12535 
+#TRACE_ID '0x263171 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"bHandleButtonC24: enLogiButManMflOk ignored for pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12657 
+#TRACE_ID '0x2631A6 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vInitFr: $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12710 
+#TRACE_ID '0x2631B0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vInitFr: S010 act, dropped ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12720 
+#TRACE_ID '0x2631CC 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_APP_SD '"vInitFr: loop ctx %d pos %d action %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12748 
+#TRACE_ID '0x2631D6 'DEBUG_STATE1 'DBG_LEV_ERR 'MOD_APP_SD '"!!!!!!!! vInitFrame: unable to add ctx $APP_SD_enContextId$ = %d -> reset history !!!!!!!!" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12758 
+#TRACE_ID '0x2631E4 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_APP_SD '"vInitFrame: loop ctx %d pos %d action %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12772 
+#TRACE_ID '0x2631F3 'DEBUG_STATE2 'DBG_LEV_ERR 'MOD_APP_SD '"vInitFrame: ctx $APP_SD_enContextId$ = %d invalid action $APP_SD_enHistoryAction$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12787 
+#TRACE_ID '0x2631FA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"******** SD History Slots: ********: used: %d, max: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12794 
+#TRACE_ID '0x263203 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vInitFrame: act ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12803 
+#TRACE_ID '0x263246 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"InitFrS001: ERM Starup done" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12870 
+#TRACE_ID '0x26324B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"InitFrS001: ERM not up, state: SHOW_ONLY" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12875 
+#TRACE_ID '0x263255 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"InitFrS001: S001 timeout started" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12885 
+#TRACE_ID '0x263260 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"InitS001 %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12896 
+#TRACE_ID '0x26326D 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"InitFrS002: DIAG_GetPlayEnab failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12909 
+#TRACE_ID '0x263273 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"InitFrS002: playerEnabled: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '12915 
+#TRACE_ID '0x263570 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitFrameS406: invalid smsIndex (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '13680 
+#TRACE_ID '0x2636CD 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"InitFrS502: DIAG_GetPlayEnab failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '14029 
+#TRACE_ID '0x2636D3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"InitFrS502: playerEnabled: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '14035 
+#TRACE_ID '0x2637BF 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_APP_SD '"InitS517: devId: %d, devType: %d, bConn: %d, state: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '14271 
+#TRACE_ID '0x263B11 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"InitS574: devId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '15121 
+#TRACE_ID '0x264143 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"InitFrSC12: no valid player profile for index %d, init failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '16707 
+#TRACE_ID '0x26415E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"InitFrSC12: ERM_u8GetActivePlayer(): %d, associated Player: %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '16734 
+#TRACE_ID '0x26422A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"12983: CtxStepBack: Screen S663_PB is present in the context history" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '16938 
+#TRACE_ID '0x264303 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS104: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17155 
+#TRACE_ID '0x264312 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaPenBtnS104: entries not send" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17170 
+#TRACE_ID '0x26431B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaPenBtnS104: response ok wait for callback" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17179 
+#TRACE_ID '0x264321 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlPendButtonS104 err %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17185 
+#TRACE_ID '0x264328 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS104: wait for cb" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17192 
+#TRACE_ID '0x26432C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS104: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17196 
+#TRACE_ID '0x264361 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS306: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17249 
+#TRACE_ID '0x26437A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS306: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17274 
+#TRACE_ID '0x26439D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS413: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17309 
+#TRACE_ID '0x2643A7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS413: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17319 
+#TRACE_ID '0x2643BC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS512: start state APP_SD_S512_DELETE_NOT_SENT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17340 
+#TRACE_ID '0x2643D1 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HaPenBtnS512: Request busy (%d). EmergencyRelease for APP_DEVICE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17361 
+#TRACE_ID '0x2643DB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS512: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17371 
+#TRACE_ID '0x2643E5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS512: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17381 
+#TRACE_ID '0x264417 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS513: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17431 
+#TRACE_ID '0x26442C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS513: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17452 
+#TRACE_ID '0x264458 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS51D: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17496 
+#TRACE_ID '0x264463 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS51D: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17507 
+#TRACE_ID '0x264490 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS51D_ACCEPT: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17552 
+#TRACE_ID '0x2644A9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandlePendingButtonS51D_ACCEPT: RejectPairing busy" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17577 
+#TRACE_ID '0x2644AE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandlePendingButtonS51D_ACCEPT: Reject Pairing sent" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17582 
+#TRACE_ID '0x2644B9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"_APP_SD_sfHandlePendingButtonS51D_ACCEPT: RejectPairing failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17593 
+#TRACE_ID '0x2644C5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS51D_ACCEPT: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17605 
+#TRACE_ID '0x2644E3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS520: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17635 
+#TRACE_ID '0x2644EE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS520: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17646 
+#TRACE_ID '0x264501 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandlePendingButtonS52C accept for id = %d, device = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17665 
+#TRACE_ID '0x264512 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"S52C:Time out Set in APP_COMMON_RSP_OK" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17682 
+#TRACE_ID '0x26451C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS52C: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17692 
+#TRACE_ID '0x264536 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaPenBtnS52C: Reject Pairing succeded (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17718 
+#TRACE_ID '0x264544 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS52C: Reject Pairing failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17732 
+#TRACE_ID '0x264582 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS556: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17794 
+#TRACE_ID '0x26458E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS556: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17806 
+#TRACE_ID '0x2645A6 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HaPenBtnS542: Request busy (%d). EmergencyRelease for APP_DEVICE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17830 
+#TRACE_ID '0x2645BF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS542: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17855 
+#TRACE_ID '0x2645E5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS542: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17893 
+#TRACE_ID '0x2645F5 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS542: disconnect finished" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17909 
+#TRACE_ID '0x2645F9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS542: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17913 
+#TRACE_ID '0x26462E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS563: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17966 
+#TRACE_ID '0x264639 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS563: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '17977 
+#TRACE_ID '0x264665 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS572: response for deactivate mdi busy more than 10 times: emergency release context app_device;" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18021 
+#TRACE_ID '0x264678 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS572: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18040 
+#TRACE_ID '0x264688 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS572: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18056 
+#TRACE_ID '0x2646B1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS602: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18097 
+#TRACE_ID '0x2646BA 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS602: No active device" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18106 
+#TRACE_ID '0x2646C4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS602: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18116 
+#TRACE_ID '0x2646FA 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS555: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18170 
+#TRACE_ID '0x264705 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS555: profile ID = invalid" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18181 
+#TRACE_ID '0x264711 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS555: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18193 
+#TRACE_ID '0x264742 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS535: Request failed (%d), ADD_NEW_PROFILE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18242 
+#TRACE_ID '0x264750 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS535: start state APP_SD_S535_DELETE_NOT_SENT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18256 
+#TRACE_ID '0x264760 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS535: Request failed (%d), DELETE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18272 
+#TRACE_ID '0x264777 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPendingBtnS535: ERM_rcDeleteDevice error %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18295 
+#TRACE_ID '0x264781 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPendingBtnS535: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18305 
+#TRACE_ID '0x26479B 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"HaPendBtnS536: inv. profIdx. %d for devId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18331 
+#TRACE_ID '0x2647B8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS536: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18360 
+#TRACE_ID '0x2647C1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPendingBtnS536: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18369 
+#TRACE_ID '0x2647D9 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"HaPendBtnS575: inv. profIdx. %d for devId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18393 
+#TRACE_ID '0x2647F9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS575: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18425 
+#TRACE_ID '0x264802 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPendingBtnS575: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18434 
+#TRACE_ID '0x264840 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS576: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18496 
+#TRACE_ID '0x26484B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS576: invalid profileId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18507 
+#TRACE_ID '0x264857 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS576: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18519 
+#TRACE_ID '0x264892 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS579: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18578 
+#TRACE_ID '0x26489D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS579: invalid profileId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18589 
+#TRACE_ID '0x2648AA 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS579: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18602 
+#TRACE_ID '0x2648BE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS580: start state APP_SD_S580_DELETE_CURRENT_PROFILE_NOT_SENT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18622 
+#TRACE_ID '0x2648CD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS580: Request failed (%d), APP_SD_S580_DELETE_CURRENT_PROFILE_NOT_SENT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18637 
+#TRACE_ID '0x2648DB 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS580: start state APP_SD_S580_DELETE_OLDEST_PLAYER_PROFILE_NOT_SENT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18651 
+#TRACE_ID '0x2648FE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS580: don't know which profile to be deleted %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18686 
+#TRACE_ID '0x264923 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS580: Request failed (%d), DELETE_OLDEST_PROFILE_2" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18723 
+#TRACE_ID '0x264933 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS580: start state APP_SD_S580_DELETE_OLDEST_USER_PROFILE_NOT_SENT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18739 
+#TRACE_ID '0x264956 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS580: don't know which profile to be deleted %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18774 
+#TRACE_ID '0x26497B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS580: Request failed (%d), APP_SD_S580_DELETE_OLDEST_USER_PROFILE_NOT_SENT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18811 
+#TRACE_ID '0x264987 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS580: start state APP_SD_S580_ADD_NEW_PLAYER_PROFILE_NOT_SEND" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18823 
+#TRACE_ID '0x2649AF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS580: Request failed (%d), APP_SD_S580_ADD_NEW_PLAYER_PROFILE_NOT_SEND" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18863 
+#TRACE_ID '0x2649BB 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS580: start state APP_SD_S580_ADD_NEW_USER_PROFILE_NOT_SEND" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18875 
+#TRACE_ID '0x2649D7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS580: Request failed (%d), APP_SD_S580_ADD_NEW_USER_PROFILE_NOT_SEND" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18903 
+#TRACE_ID '0x2649DF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS580: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18911 
+#TRACE_ID '0x2649FC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS581: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18940 
+#TRACE_ID '0x264A06 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS581: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18950 
+#TRACE_ID '0x264A2F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS642: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18991 
+#TRACE_ID '0x264A37 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS642: no active user profile" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '18999 
+#TRACE_ID '0x264A54 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS661: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19028 
+#TRACE_ID '0x264A5E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS661: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19038 
+#TRACE_ID '0x264A7E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS669: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19070 
+#TRACE_ID '0x264A89 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS669: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19081 
+#TRACE_ID '0x264AA9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS408_PRECALL: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19113 
+#TRACE_ID '0x264AB5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"_APP_SD_sfHandlePendingButtonS408_PRECALL: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19125 
+#TRACE_ID '0x264AD4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS801: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19156 
+#TRACE_ID '0x264AF1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS801: Request failed (%d), HEADSET" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19185 
+#TRACE_ID '0x264B0B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS801: Request failed (%d), PRIVATE_MODE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19211 
+#TRACE_ID '0x264B18 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS801: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19224 
+#TRACE_ID '0x264B36 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS803: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19254 
+#TRACE_ID '0x264B50 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS803: Request failed (%d), HOLD" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19280 
+#TRACE_ID '0x264B6E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS803: Request failed (%d), HEADSET" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19310 
+#TRACE_ID '0x264B88 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS803: Request failed (%d), HANDSFREE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19336 
+#TRACE_ID '0x264BA2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS803: Request failed (%d), MICROMUTE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19362 
+#TRACE_ID '0x264BAF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS803: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19375 
+#TRACE_ID '0x264BD7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS804: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19415 
+#TRACE_ID '0x264BEB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS804: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19435 
+#TRACE_ID '0x264C0A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS811: Request failed (%d), RESUME" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19466 
+#TRACE_ID '0x264C25 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS811: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19493 
+#TRACE_ID '0x264C32 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS811: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19506 
+#TRACE_ID '0x264C51 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS812: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19537 
+#TRACE_ID '0x264C6D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS812: Request failed (%d), SWITCH" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19565 
+#TRACE_ID '0x264C87 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS812: Request failed (%d), CONFERENCE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19591 
+#TRACE_ID '0x264CA3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS812: Request failed (%d), MICROMUTE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19619 
+#TRACE_ID '0x264CBF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS812: Request failed (%d), HANGUP_BOTH" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19647 
+#TRACE_ID '0x264CDF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS812: Request failed (%d), HEADSET" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19679 
+#TRACE_ID '0x264CEC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS812: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19692 
+#TRACE_ID '0x264D0B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS815: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19723 
+#TRACE_ID '0x264D27 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS815: Request failed (%d), MICROMUTE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19751 
+#TRACE_ID '0x264D47 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS815: Request failed (%d), HEADSET" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19783 
+#TRACE_ID '0x264D63 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS815: Request failed (%d), HOLD" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19811 
+#TRACE_ID '0x264D70 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS815: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19824 
+#TRACE_ID '0x264D8F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS901: Request failed (%d), ACCEPT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19855 
+#TRACE_ID '0x264DAB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS901: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19883 
+#TRACE_ID '0x264DCA 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS901: Request failed (%d), MUTE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19914 
+#TRACE_ID '0x264DEC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS901: Request failed (%d), HEADSET" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19948 
+#TRACE_ID '0x264DF9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS901: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19961 
+#TRACE_ID '0x264E18 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS902: Request failed (%d), ACCEPT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '19992 
+#TRACE_ID '0x264E35 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS902: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20021 
+#TRACE_ID '0x264E55 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS902: Request failed (%d), RELEASE_ACCEPT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20053 
+#TRACE_ID '0x264E62 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS902: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20066 
+#TRACE_ID '0x264E7A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"RejectPairing Successfull send -> release pending conext" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20090 
+#TRACE_ID '0x264E84 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"RejectPairing busy -> stay in pending conext" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20100 
+#TRACE_ID '0x264E88 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS933: Reject Pairing Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20104 
+#TRACE_ID '0x264E94 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS933: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20116 
+#TRACE_ID '0x264EB3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS941: Request failed (%d), ACCEPT" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20147 
+#TRACE_ID '0x264EC1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS941: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20161 
+#TRACE_ID '0x264EE3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS942: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20195 
+#TRACE_ID '0x264EF0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS942: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20208 
+#TRACE_ID '0x264F11 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnS945: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20241 
+#TRACE_ID '0x264F1E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonS945: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20254 
+#TRACE_ID '0x264F3B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC13: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20283 
+#TRACE_ID '0x264F47 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonSC13: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20295 
+#TRACE_ID '0x264F76 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC16: Request failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20342 
+#TRACE_ID '0x264F7F 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC16: no active profile" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20351 
+#TRACE_ID '0x264F88 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonSC16: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20360 
+#TRACE_ID '0x264FA6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC20: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20390 
+#TRACE_ID '0x264FC1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC20: Request failed (%d), HANDSFREE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20417 
+#TRACE_ID '0x264FCE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonSC20: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20430 
+#TRACE_ID '0x264FED 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC24: Request failed (%d), HANGUP" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20461 
+#TRACE_ID '0x265008 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC24: Request failed (%d), SWITCH" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20488 
+#TRACE_ID '0x265020 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC24: Request failed (%d), CONFERENCE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20512 
+#TRACE_ID '0x26503B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaPenBtnSC24: Request failed (%d), MICROMUTE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20539 
+#TRACE_ID '0x265048 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePendingButtonSC24: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20552 
+#TRACE_ID '0x265079 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"sFHIF: invalid ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20601 
+#TRACE_ID '0x265082 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"sFHIF: error in state %d (ctx %d) " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20610 
+#TRACE_ID '0x2650C3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHIF: GetFrameData blocked (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20675 
+#TRACE_ID '0x2650DC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHIF: APP_SD_LC_vSendListFrame failed (ctx %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20700 
+#TRACE_ID '0x2650EE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHIF: SendAndActivateFrame failed (ctx %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20718 
+#TRACE_ID '0x2650FE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHIF: ASG dead, drop ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20734 
+#TRACE_ID '0x265108 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"sfHIF: invalid state %d (ctx %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20744 
+#TRACE_ID '0x26512C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"SYS_PERF: SD Presentation: %d ms" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20780 
+#TRACE_ID '0x26513C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"pUserProfile == NULL, try first PlayerProfile: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20796 
+#TRACE_ID '0x265141 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS001: no BT-DevT entry for Player, try Phy-DevT for idx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20801 
+#TRACE_ID '0x26514A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrS001: no dev for PlayerProfile %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20810 
+#TRACE_ID '0x265157 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS001: playerprofile->Id  %d is in telefonlist. value of counter is %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20823 
+#TRACE_ID '0x265163 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS001: playerprofile->Id %d is not in telefonlist. value of counter is %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20835 
+#TRACE_ID '0x265170 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS001: no further Playerprof avail %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20848 
+#TRACE_ID '0x26517A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS001: no further prof avail %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20858 
+#TRACE_ID '0x265186 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS001: no BT-DevT entry, try Phy-DevT for idx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20870 
+#TRACE_ID '0x26518F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrS001: no dev for UserProfile %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20879 
+#TRACE_ID '0x2651A6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHandleInitFrameS001: Act.PhPlDev %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20902 
+#TRACE_ID '0x2651BD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrameS001: unexpected error code %x" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20925 
+#TRACE_ID '0x2651F1 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleFrameS_18: ERM_u8GetActivePhone failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20977 
+#TRACE_ID '0x265204 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleFrameS_18: GetBTDevice failed (device %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '20996 
+#TRACE_ID '0x26522B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandleFrameS_18: Set Roaming information symbol for Network-Provider" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21035 
+#TRACE_ID '0x265231 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleFrameS_18: GetNetworkProvider failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21041 
+#TRACE_ID '0x26526E 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitSC20: no conference" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21102 
+#TRACE_ID '0x265278 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitSC20: conference" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21112 
+#TRACE_ID '0x26528A 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitSC20: no conference" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21130 
+#TRACE_ID '0x265294 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitSC20: conference" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21140 
+#TRACE_ID '0x2652FF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS105: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21247 
+#TRACE_ID '0x26531F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS111: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21279 
+#TRACE_ID '0x26532F 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitS115: voice tag deleted" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21295 
+#TRACE_ID '0x265343 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS117: subState %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21315 
+#TRACE_ID '0x265360 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitS117: err state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21344 
+#TRACE_ID '0x26537E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitS117: err state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21374 
+#TRACE_ID '0x265390 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HdlInitS117: unsup substate %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21392 
+#TRACE_ID '0x2653D6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS212: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21462 
+#TRACE_ID '0x2653F2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS213: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21490 
+#TRACE_ID '0x265416 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306: state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21526 
+#TRACE_ID '0x265429 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306: try search mbox" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21545 
+#TRACE_ID '0x265441 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306: search mbox sent ok (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21569 
+#TRACE_ID '0x26544B 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306: search mbox sent err %d (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21579 
+#TRACE_ID '0x265455 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306: no valid keyword" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21589 
+#TRACE_ID '0x265462 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306: req mbox number" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21602 
+#TRACE_ID '0x265477 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306: req pb idx ok (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21623 
+#TRACE_ID '0x265481 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306:req pb idx err %d (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21633 
+#TRACE_ID '0x265495 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS306: show Frame" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21653 
+#TRACE_ID '0x2654BE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS406: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21694 
+#TRACE_ID '0x2654DA 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS406: err %d, goto Idle(2)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21722 
+#TRACE_ID '0x2654F3 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HdlInitS406: reinit unavail for type %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21747 
+#TRACE_ID '0x265503 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HdlInitS406: unsup substate %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21763 
+#TRACE_ID '0x26551C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS407: stopped inq." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21788 
+#TRACE_ID '0x265528 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS407: skip stop inq." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21800 
+#TRACE_ID '0x265532 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HdlInitS407: unsup substate %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21810 
+#TRACE_ID '0x26553D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS407: resume player" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21821 
+#TRACE_ID '0x26555E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS405: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21854 
+#TRACE_ID '0x26556C 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandleInitFrameS408 called with $APP_SD_enSubStateS408$ = %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21868 
+#TRACE_ID '0x265571 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS408: show" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21873 
+#TRACE_ID '0x265578 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS408: recvd. serv. supp. changd." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21880 
+#TRACE_ID '0x26557D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HdlInitS408: recvd. pairing failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21885 
+#TRACE_ID '0x265583 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandleInitFrameS408: send request for SSP support." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21891 
+#TRACE_ID '0x265588 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandleInitFrameS408: SSP support sent -> next state wait for response." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21896 
+#TRACE_ID '0x26558E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandleInitFrameS408: retry send request for SSP support." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21902 
+#TRACE_ID '0x26559E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandleInitFrameS408: waiting for PBSF." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21918 
+#TRACE_ID '0x2655A1 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_sfHandleInitFrameS408: PBSF received." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21921 
+#TRACE_ID '0x2655D4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS513: dev %d deleted" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21972 
+#TRACE_ID '0x2655E1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrS513: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '21985 
+#TRACE_ID '0x265617 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleInitFrameS517: Substate $APP_SD_enSubStateS517$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22039 
+#TRACE_ID '0x265621 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"activatePhoneDevice S517" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22049 
+#TRACE_ID '0x26562F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HandleInitFrameS517: deviceType %d out of range" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22063 
+#TRACE_ID '0x26563B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandleInitFrameS517: APP_DEVICE_EmegencyRelease" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22075 
+#TRACE_ID '0x265652 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandleInitFrameS517: connectCounter2 >=10  counter stop." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22098 
+#TRACE_ID '0x26568A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS520: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22154 
+#TRACE_ID '0x265698 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrameS520: call sfHaErmNotInqEnd" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22168 
+#TRACE_ID '0x26569E 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrameS520: sfHaErmNotInqEnd failed!" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22174 
+#TRACE_ID '0x2656EF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HandleInitFrameS534: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22255 
+#TRACE_ID '0x26571F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"S534: Request failed (%d), ADD_NEW_PROFILE" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22303 
+#TRACE_ID '0x265747 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"S534: AddPly failed. res %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22343 
+#TRACE_ID '0x265759 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"S534: wait for add player callback" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22361 
+#TRACE_ID '0x26578D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HandleInitFrameS542: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22413 
+#TRACE_ID '0x2657A8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HandleInitFrameS543: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22440 
+#TRACE_ID '0x2657D8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS555: dev %d deleted" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22488 
+#TRACE_ID '0x2657E4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS555: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22500 
+#TRACE_ID '0x265820 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HandleInitFrameS563: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22560 
+#TRACE_ID '0x26585A 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HaInitFrameS571: no BTDevEntry %d, PhyDev fallback" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22618 
+#TRACE_ID '0x265868 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrameS571: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22632 
+#TRACE_ID '0x265898 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HandleInitFrameS574: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22680 
+#TRACE_ID '0x2658E5 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"HandleInitFrameS576: no BtDevEntry %d, PhyDevEntry fallback" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22757 
+#TRACE_ID '0x2658F7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS576: dev %d deleted" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22775 
+#TRACE_ID '0x265903 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrS576: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22787 
+#TRACE_ID '0x26593C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS579: dev %d deleted" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22844 
+#TRACE_ID '0x265948 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrS579: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22856 
+#TRACE_ID '0x2659A4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS581: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22948 
+#TRACE_ID '0x2659B2 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrameS581: call sfHaErmNotInqEnd" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22962 
+#TRACE_ID '0x2659B8 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrameS581: sfHaErmNotInqEnd failed!" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '22968 
+#TRACE_ID '0x2659DB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HandleInitFrameS597: dev %d not avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '23003 
+#TRACE_ID '0x2659F4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS601: bt vis -> version" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '23028 
+#TRACE_ID '0x265A01 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS601: bt vis -> version" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '23041 
+#TRACE_ID '0x265A7B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS669: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '23163 
+#TRACE_ID '0x265AA4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrS801: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '23204 
+#TRACE_ID '0x265B22 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrameS801: invalid subState %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '23330 
+#TRACE_ID '0x265E3E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrameS945: invalid subState %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24126 
+#TRACE_ID '0x265E55 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrameSC12: invalid player device %d (player profile %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24149 
+#TRACE_ID '0x265E5B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHandleInitFrameSC12: gAppSdContext.SubState %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24155 
+#TRACE_ID '0x265E6D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePendingButtonS572: response for deactivate mdi busy more than 10 times: emergency release context app_device;" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24173 
+#TRACE_ID '0x265E81 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrSC12: DeactMdiDev failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24193 
+#TRACE_ID '0x265E99 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrSC12: act failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24217 
+#TRACE_ID '0x265EBF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrameSC12_2: invalid player device %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24255 
+#TRACE_ID '0x265ED5 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandleInitframeSC12: response for deactivate mdi busy more than 10 times: emergency release context app_device;" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24277 
+#TRACE_ID '0x265EE9 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrSC12_2: DeactMdiDev failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24297 
+#TRACE_ID '0x265F09 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandleInitFrSC12_2: act failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24329 
+#TRACE_ID '0x265F47 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HdlInitFrSc13: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24391 
+#TRACE_ID '0x265F56 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrameSC13: call sfHaErmNotInqEnd" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24406 
+#TRACE_ID '0x265F5C 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrameSC13: sfHaErmNotInqEnd failed!" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24412 
+#TRACE_ID '0x265FA6 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrSB34: GetCKSW() failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24486 
+#TRACE_ID '0x265FB2 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrSB34: ERM_rcGetBtChipVersion() failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24498 
+#TRACE_ID '0x265FBB 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrSB34: GetBSVN() failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24507 
+#TRACE_ID '0x265FC9 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrSB34: GetE2LVN() failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24521 
+#TRACE_ID '0x265FDB 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"HaInitFrSB34: buffer to small, %d/%d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24539 
+#TRACE_ID '0x26601F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest: req number is 0 for ctxId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24607 
+#TRACE_ID '0x26602B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest: no handler for ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24619 
+#TRACE_ID '0x266044 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"SetStaticText: pData NULL" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '24644 
+#TRACE_ID '0x2661D1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ListDataReqS104: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '25041 
+#TRACE_ID '0x2661F0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ListDataReqS105: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '25072 
+#TRACE_ID '0x26631B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ListDataReqS211: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '25371 
+#TRACE_ID '0x266399 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ListDataReqS404: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '25497 
+#TRACE_ID '0x2665C0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ListDataReqS515: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '26048 
+#TRACE_ID '0x26661F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"pListEntry == NULL" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '26143 
+#TRACE_ID '0x266816 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_SD '"ListDataReq_S5B2: no BTDevEntry entry, PhyDevEntry fallback %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '26646 
+#TRACE_ID '0x266F63 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ListDataReqSc01: err %d, goto Idle" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '28515 
+#TRACE_ID '0x267097 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S104_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '28823 
+#TRACE_ID '0x26709F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S104_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '28831 
+#TRACE_ID '0x2670F6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vLDReq_S104_Cb: followBytes is 0 (0x%02x)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '28918 
+#TRACE_ID '0x2670FD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vLDReq_S104_Cb: invalid uft8 char (0x%02x)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '28925 
+#TRACE_ID '0x267124 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S105_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '28964 
+#TRACE_ID '0x26712D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S105_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '28973 
+#TRACE_ID '0x26713A 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S105_Cb: pEntry is NULL" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '28986 
+#TRACE_ID '0x2671D3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S211_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29139 
+#TRACE_ID '0x2671DB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S211_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29147 
+#TRACE_ID '0x267264 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S404_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29284 
+#TRACE_ID '0x26726C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S404_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29292 
+#TRACE_ID '0x2672CA 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S515_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29386 
+#TRACE_ID '0x2672D2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S515_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29394 
+#TRACE_ID '0x267330 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_SC01_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29488 
+#TRACE_ID '0x267338 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_SC01_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29496 
+#TRACE_ID '0x26738E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS105_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29582 
+#TRACE_ID '0x267396 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS105_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29590 
+#TRACE_ID '0x2673C3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS111_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29635 
+#TRACE_ID '0x2673CB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS111_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29643 
+#TRACE_ID '0x2673F4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS117_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29684 
+#TRACE_ID '0x2673FC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendS117_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29692 
+#TRACE_ID '0x267415 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendS117_Cb: ass. 0 tags" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29717 
+#TRACE_ID '0x26744C 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendS117_Cb: Invalid state" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29772 
+#TRACE_ID '0x26745B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS212_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29787 
+#TRACE_ID '0x267463 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendS212_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29795 
+#TRACE_ID '0x267498 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS213_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29848 
+#TRACE_ID '0x2674A0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS213_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29856 
+#TRACE_ID '0x2674D7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS405_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29911 
+#TRACE_ID '0x2674DF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS405_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29919 
+#TRACE_ID '0x26750C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS306_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29964 
+#TRACE_ID '0x267527 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"S306_Cb: search res %d/%d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '29991 
+#TRACE_ID '0x267536 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"S306_Cb: no search res %d/%d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30006 
+#TRACE_ID '0x267551 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"S306_Cb: Invalid state" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30033 
+#TRACE_ID '0x26755A 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"S306_Cb: Invalid state" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30042 
+#TRACE_ID '0x267563 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"S306_Cb: show frame" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30051 
+#TRACE_ID '0x267574 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS406_Msg_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30068 
+#TRACE_ID '0x2675A6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS406_MarkAsRead_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30118 
+#TRACE_ID '0x2675AE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"S406_MarkAsRead_Cb: failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30126 
+#TRACE_ID '0x2675C0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS407_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30144 
+#TRACE_ID '0x2675C8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vListDataRequest_S104_Cb: cancel inq. failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30152 
+#TRACE_ID '0x2675D5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS517_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30165 
+#TRACE_ID '0x2675DD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS517_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30173 
+#TRACE_ID '0x2675EE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS520_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30190 
+#TRACE_ID '0x2675F6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS520_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30198 
+#TRACE_ID '0x26760E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS581_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30222 
+#TRACE_ID '0x267616 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS581_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30230 
+#TRACE_ID '0x26764D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS669_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30285 
+#TRACE_ID '0x267655 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS669_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30293 
+#TRACE_ID '0x267670 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS801_ReqNumber_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30320 
+#TRACE_ID '0x267678 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS801_ReqNumber_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30328 
+#TRACE_ID '0x2676B1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS801_Dial_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30385 
+#TRACE_ID '0x2676B9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS801_ReqNumber_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30393 
+#TRACE_ID '0x2676DC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS945_Dial_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30428 
+#TRACE_ID '0x2676E4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS945_ReqNumber_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30436 
+#TRACE_ID '0x2676F8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"vInitPendingSC12_Cb: connect media player now" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30456 
+#TRACE_ID '0x26770D 'DEBUG_STATE2 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingSC12_Cb: context $APP_SD_enContextId$ = %d, response $APP_COMMON_enResponseCode$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30477 
+#TRACE_ID '0x267712 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingS517_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30482 
+#TRACE_ID '0x26771C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingSC12_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30492 
+#TRACE_ID '0x267723 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendSC12_Cb: failed - res %d, subState %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30499 
+#TRACE_ID '0x26772E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"vInitPendSC12_Cb: getlastactiveprofile: %d. value of counter: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30510 
+#TRACE_ID '0x267733 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"vInitPendingSC12_Cb: No further Playerprofile available stop" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30515 
+#TRACE_ID '0x267737 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"vInitPendingSC12_Cb: TRY TO CONNECT NEXT STANDALONE MP if neccessary" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30519 
+#TRACE_ID '0x26773D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vInitPendingSC12_Cb: playerprofile->Id  %d is in telefonlist" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30525 
+#TRACE_ID '0x267749 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vInitPendingSC12_Cb: playerprofile->Id %d is not in telefonlist" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30537 
+#TRACE_ID '0x267755 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HaInitFrS001: no further Playerprof avail" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30549 
+#TRACE_ID '0x26778C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingSC13_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30604 
+#TRACE_ID '0x267794 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vInitPendingSC13_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30612 
+#TRACE_ID '0x2677AD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS104_Cb: called with reslut %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30637 
+#TRACE_ID '0x2677B3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS104_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30643 
+#TRACE_ID '0x2677C3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ButtonPendingS104_Cb: invalid state %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30659 
+#TRACE_ID '0x2677CC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ButtonPendingS104_Cb: GetPbSearchResult failed" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30668 
+#TRACE_ID '0x2677D5 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"ButtonPendingS104_Cb: idx invalid (%d %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30677 
+#TRACE_ID '0x2677DC 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"ButtonPendingS104_Cb: SelEl=%d, index= %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30684 
+#TRACE_ID '0x2677E7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"ButtonPendingS104_Cb: operation not allowed, scroll up" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30695 
+#TRACE_ID '0x2677ED 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb up: maxElements %d idx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30701 
+#TRACE_ID '0x2677F0 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb up: selectedElem %d scrollNumber %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30704 
+#TRACE_ID '0x2677F9 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb: rollover" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30713 
+#TRACE_ID '0x267800 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb: TOP of list" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30720 
+#TRACE_ID '0x26780B 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb down: maxElements %d idx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30731 
+#TRACE_ID '0x26780E 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb down: selectedElem %d scrollNumber %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30734 
+#TRACE_ID '0x267817 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb: ENDE of list" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30743 
+#TRACE_ID '0x267820 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb: rollover" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30752 
+#TRACE_ID '0x26782F 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb up: maxElements %d idx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30767 
+#TRACE_ID '0x267832 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb up: selectedElem %d scrollNumber %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30770 
+#TRACE_ID '0x26783B 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb: TOP of list" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30779 
+#TRACE_ID '0x267843 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"ButtonPendingS104_Cb: operation not allowed, scroll down" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30787 
+#TRACE_ID '0x267848 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb down: maxElements %d idx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30792 
+#TRACE_ID '0x26784B 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb down: selectedElem %d scrollNumber %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30795 
+#TRACE_ID '0x267854 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb: ENDE of list" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30804 
+#TRACE_ID '0x26785F 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_APP_SD '"S104_Cb: rollover" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30815 
+#TRACE_ID '0x267868 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ButtonPendingS104_Cb: inv search direc (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30824 
+#TRACE_ID '0x267873 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ButtonPendingS104_Cb: PB search failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30835 
+#TRACE_ID '0x267880 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"buttonpendings104_2 callback called" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30848 
+#TRACE_ID '0x267885 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS104_Cb2: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30853 
+#TRACE_ID '0x26789C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS306_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30876 
+#TRACE_ID '0x2678CF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ButtonPendingS306_Cb: saving mailbox number failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30927 
+#TRACE_ID '0x2678DE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS413_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30942 
+#TRACE_ID '0x2678F2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS642_Cb: failed - result %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30962 
+#TRACE_ID '0x267903 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS512_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30979 
+#TRACE_ID '0x26790E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS512_Cb: failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '30990 
+#TRACE_ID '0x26791B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS515_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31003 
+#TRACE_ID '0x267927 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS515_Cb: failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31015 
+#TRACE_ID '0x267935 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS51D_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31029 
+#TRACE_ID '0x26793D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS51D_Cb: Pairing not possible, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31037 
+#TRACE_ID '0x267952 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS520_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31058 
+#TRACE_ID '0x26795F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS520_Cb: Cancel inquiry failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31071 
+#TRACE_ID '0x267970 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS522_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31088 
+#TRACE_ID '0x26797B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS522_Cb: failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31099 
+#TRACE_ID '0x26798A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS52C_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31114 
+#TRACE_ID '0x267996 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS52C_Cb: Pairing not possible, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31126 
+#TRACE_ID '0x2679AB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS933_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31147 
+#TRACE_ID '0x2679B5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS933_Cb: Reject Pairing not possible, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31157 
+#TRACE_ID '0x2679C7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS556_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31175 
+#TRACE_ID '0x2679D3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS556_Cb: unhandled error %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31187 
+#TRACE_ID '0x2679E0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS563_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31200 
+#TRACE_ID '0x2679EC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS563_Cb: unhandled error %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31212 
+#TRACE_ID '0x2679F9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS572_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31225 
+#TRACE_ID '0x267A1E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS572_Cb: unhandled error %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31262 
+#TRACE_ID '0x267A2B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS535_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31275 
+#TRACE_ID '0x267A38 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS535_Cb: failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31288 
+#TRACE_ID '0x267A45 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS536_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31301 
+#TRACE_ID '0x267A52 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS536_Cb: failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31314 
+#TRACE_ID '0x267A60 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS575_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31328 
+#TRACE_ID '0x267A6D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS575_Cb: failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31341 
+#TRACE_ID '0x267A7B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS580_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31355 
+#TRACE_ID '0x267A86 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vButtonPendingS580_Cb: state %d correct done" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31366 
+#TRACE_ID '0x267A8C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vButtonPendingS580_Cb: activate state %d max. player profiles reached" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31372 
+#TRACE_ID '0x267A92 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vButtonPendingS580_Cb: activate state %d player profile free" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31378 
+#TRACE_ID '0x267A9C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vButtonPendingS580_Cb: state %d correct done" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31388 
+#TRACE_ID '0x267AA5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vButtonPendingS580_Cb: state %d correct done" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31397 
+#TRACE_ID '0x267AAE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"vButtonPendingS580_Cb: state APP_SD_S580_DELETE_CURRENT_PROFILE_NOT_SENT correct done" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31406 
+#TRACE_ID '0x267AB9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS580_Cb: failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31417 
+#TRACE_ID '0x267AC7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS581_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31431 
+#TRACE_ID '0x267AD4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS581_Cb: Cancel inquiry failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31444 
+#TRACE_ID '0x267AE3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS661_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31459 
+#TRACE_ID '0x267B08 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS669_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31496 
+#TRACE_ID '0x267B0F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ButtonPendingS669_Cb: change pb sort res %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31503 
+#TRACE_ID '0x267B26 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingS812_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31526 
+#TRACE_ID '0x267B3B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"vButtonPendingS812_Cb: Both calls hangup" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31547 
+#TRACE_ID '0x267B48 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingSC13_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31560 
+#TRACE_ID '0x267B55 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vButtonPendingSC13_Cb: Cancel inquiry failed %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31573 
+#TRACE_ID '0x267B62 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ButtonPendingSC24_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31586 
+#TRACE_ID '0x267B7B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"ButtonPendingSC24_Cb: context sentinel strikes, cur %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31611 
+#TRACE_ID '0x267B84 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"_APP_SD_vHandleInitS408_Cb: failed to send PBSF!!!" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31620 
+#TRACE_ID '0x267B88 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"_APP_SD_vHandleInitS408_Cb: failed to initiate pairing!!!" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31624 
+#TRACE_ID '0x267B8C 'DEBUG_STATE1 'DBG_LEV_ERR 'MOD_APP_SD '"_APP_SD_vHandleInitS408_Cb: error in weird substate $APP_SD_enSubStateS408$ = %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31628 
+#TRACE_ID '0x267B95 'DEBUG_STATE1 'DBG_LEV_ERR 'MOD_APP_SD '"_APP_SD_vHandleInitS408_Cb: okay in substate $APP_SD_enSubStateS408$ = %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31637 
+#TRACE_ID '0x267BA0 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"CtxHistReset: ctxId $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31648 
+#TRACE_ID '0x267BAF 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"CtxHistReset: ctxId now $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31663 
+#TRACE_ID '0x267BB9 'DEBUG_STATE1 'DBG_LEV_ERR 'MOD_APP_SD '"AppendCtxHist: out of ctxCtrl, new ctxId $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31673 
+#TRACE_ID '0x267BD2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"AppendCtxHist: save timeout %d, ctxId %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31698 
+#TRACE_ID '0x267BE0 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"AppendCtxHist: ctx $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31712 
+#TRACE_ID '0x267BE3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"AppendCtxHist: at pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31715 
+#TRACE_ID '0x267BEF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HistReplCur: new ctxId invalid (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31727 
+#TRACE_ID '0x267BF5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HistReplIdx: repl. pos %d ... " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31733 
+#TRACE_ID '0x267BF7 'DEBUG_STATE2 'DBG_LEV_TRC 'MOD_APP_SD '"HistReplIdx: repl. ... with ctxId $APP_SD_enContextId$ = %d, new ctxId $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31735 
+#TRACE_ID '0x267C0A 'DEBUG_STATE1 'DBG_LEV_ERR 'MOD_APP_SD '"HistReplIdx: new ctxId invalid $APP_SD_enContextId$ =(%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31754 
+#TRACE_ID '0x267C12 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"HistReplIdx: new pos invalid (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31762 
+#TRACE_ID '0x267C19 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HistReplIdx: repl. pos %d ... " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31769 
+#TRACE_ID '0x267C1B 'DEBUG_STATE2 'DBG_LEV_TRC 'MOD_APP_SD '"HistReplIdx: repl. ... with ctxId $APP_SD_enContextId$ = %d, new ctxId $APP_SD_enContextId$ =%d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31771 
+#TRACE_ID '0x267C32 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"CtxStepBack: ctx $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31794 
+#TRACE_ID '0x267C35 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"CtxStepBack: at pos %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31797 
+#TRACE_ID '0x267C50 'DEBUG_STATE2 'DBG_LEV_TRC 'MOD_APP_SD '"CtxStepBack: ctx $APP_SD_enContextId$ = %d to $APP_SD_enContextId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31824 
+#TRACE_ID '0x267C57 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"CtxStepBack: invalid -> def screen" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31831 
+#TRACE_ID '0x267C60 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_APP_SD '"CtxStepBack: S002 but user active" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31840 
+#TRACE_ID '0x267C76 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"CtxStepBack: call state update (ctx %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31862 
+#TRACE_ID '0x267CE9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"12983: CtxStepBack: Screen S663_PB: PPBC:0 is already received" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31977 
+#TRACE_ID '0x267CF1 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"12983: CtxStepBack: Screen S663_PB: PPBC:0 is not yet received" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31985 
+#TRACE_ID '0x267CFD 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"CtxStepBack: empty -> def screen" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '31997 
+#TRACE_ID '0x267D5D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"vFrameDataTransfered: error (Cur ctxId: %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32093 
+#TRACE_ID '0x267D8F 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnAPHNot: $APP_PHONE_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32143 
+#TRACE_ID '0x267DA5 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"vOnAPHNot: ignored %d in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32165 
+#TRACE_ID '0x267DBA 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnAPHNot: ignored %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32186 
+#TRACE_ID '0x267DD4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"AppCshdlNot: rcvd noti %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32212 
+#TRACE_ID '0x267DEA 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnACSHDLNot: ignor %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32234 
+#TRACE_ID '0x267DFE 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnAppPhoneBookNotif: rcvd notification $APP_PB_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32254 
+#TRACE_ID '0x267E12 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnAppPhoneBookNotif: ign notification $APP_PB_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32274 
+#TRACE_ID '0x267E2E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnAPBNot: ignor %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32302 
+#TRACE_ID '0x267E42 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnAppSmsNotif: rcvd notification $APP_SMS_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32322 
+#TRACE_ID '0x267E49 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"OnSmsNot: Ign. Ev. due Sms not supp." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32329 
+#TRACE_ID '0x267E60 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnASmsNot: ignored %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32352 
+#TRACE_ID '0x267E8F 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnErmNotif: rcvd notification $ERMNotificationType$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32399 
+#TRACE_ID '0x267EC0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnErmNot: ignored %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32448 
+#TRACE_ID '0x267ED6 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnVcrNotif: rcvd notification $VCRNotificationIdEnum$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32470 
+#TRACE_ID '0x267EFF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnVcrNot: ignored %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32511 
+#TRACE_ID '0x267F17 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnAppDeviceNotif: rcvd notification $APP_DEVICE_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32535 
+#TRACE_ID '0x267F2E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnADevNot: ignored %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32558 
+#TRACE_ID '0x267F42 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnKpbNotif: rcvd notification $KPB_enNotificationId$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32578 
+#TRACE_ID '0x267F45 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnKPBNot: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32581 
+#TRACE_ID '0x267F6B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnKPBNot: ignored %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32619 
+#TRACE_ID '0x267F86 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_APP_SD ' '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32646 
+#TRACE_ID '0x267F98 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnMflBtn: $LOGI_BUT_MAN_ENUM_BUTTON_NAMES$ = %d, special handling" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32664 
+#TRACE_ID '0x267FA5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnMflBtn: key %d not assigned" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32677 
+#TRACE_ID '0x267FC0 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnMflBtn: keyEvent $LOGI_BUT_MAN_ENUM_BUTTON_NAMES$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32704 
+#TRACE_ID '0x267FD4 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnMflBtn: keyEvent $LOGI_BUT_MAN_ENUM_BUTTON_NAMES$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32724 
+#TRACE_ID '0x267FDA 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnMflBtn: ButManMflOk pressType $LOGI_BUT_MAN_ENUM_PRESSTYPE$ = %d ignored" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32730 
+#TRACE_ID '0x267FE1 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_SD '"vOnMflBtn: unsup keyEvent $LOGI_BUT_MAN_ENUM_BUTTON_NAMES$ = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32737 
+#TRACE_ID '0x26801E 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"AddUserProfile_Cb: CTX error (%d, %d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32798 
+#TRACE_ID '0x268032 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"AddUserProf_Cb error %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32818 
+#TRACE_ID '0x26803F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"AddHeadsetProf_Cb error %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32831 
+#TRACE_ID '0x268052 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_HandlePendingButtonS542_Cb disconnect player with ID: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32850 
+#TRACE_ID '0x26805E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"_APP_SD_HandlePendingButtonS542_bB %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32862 
+#TRACE_ID '0x268074 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"AddPlayerProf_cb: CTX_534 not found" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32884 
+#TRACE_ID '0x268083 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"AddPlayerProf_cb: Add Plyer ok" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32899 
+#TRACE_ID '0x26808A 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"AddPlayerProf_cb: Add Plyer fail." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32906 
+#TRACE_ID '0x268097 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"AddPlayerProf_Cb error %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '32919 
+#TRACE_ID '0x268141 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_vHandleHandsFreeModeChanged private mode now screen not considered: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33089 
+#TRACE_ID '0x26818E 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_SD '"HdlHfpModeChang: plcc NULL" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33166 
+#TRACE_ID '0x2681AE 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_vHandleHandsFreeModeChanged plcc->state not considered: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33198 
+#TRACE_ID '0x2681B4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_vHandleHandsFreeModeChanged handsfree mode now: screen not considered: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33204 
+#TRACE_ID '0x2681EC 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePhoneEvent: PLCC1!=NULL && PLCC2!=NULL  plcc1 state:%d, plcc2 state:%d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33260 
+#TRACE_ID '0x268215 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePhoneEvent: heldPLCC!=NULL  plcc state %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33301 
+#TRACE_ID '0x268255 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePhoneEvent: only PLCC1!=0  plcc1 state %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33365 
+#TRACE_ID '0x26825A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePhoneEvent: only PLCC2!=0  plcc2 state %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33370 
+#TRACE_ID '0x268260 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePhoneEvent: PLCC1!=NULL || PLCC2!=NULL  plcc state %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33376 
+#TRACE_ID '0x2682B2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHandleCallstateChanged: Name available: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33458 
+#TRACE_ID '0x2682C7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandleCallstateCahnged: refresh frame" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33479 
+#TRACE_ID '0x2682DE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"sfHandlePhoneEvent: plcc state %d ignored" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33502 
+#TRACE_ID '0x2682E6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePhoneEvent: no PLCC available ctx %d " '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33510 
+#TRACE_ID '0x268335 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"sfHandlePhoneEvent: call ended and SC12 before but MP arlready connected" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33589 
+#TRACE_ID '0x268358 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vActFrame: activate state: ... line: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33624 
+#TRACE_ID '0x26836F 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"CtxHistoryCall: context state: %d -> %d ..." '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33647 
+#TRACE_ID '0x268372 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"CtxHistoryCall: ... line: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33650 
+#TRACE_ID '0x2684B0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePhoneStateChanged: playerProfile: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33968 
+#TRACE_ID '0x2684B1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePhoneStateChanged: activePlayerDevice: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33969 
+#TRACE_ID '0x2684B2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePhoneStateChanged: pAssociatedPlayerProfile->deviceIndex: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33970 
+#TRACE_ID '0x2684B3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePhoneStateChanged: playerAvail: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33971 
+#TRACE_ID '0x2684BE 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePhoneStateChanged: associatedPlayerDeviceId: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33982 
+#TRACE_ID '0x2684C3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandlePhoneStateChanged: no associated Playerprofile" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33987 
+#TRACE_ID '0x2684CC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandlePhoneStateChanged: ign conn ev in S924" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33996 
+#TRACE_ID '0x2684CF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandlePhoneStateChanged: Active phone in ctx %d + showSc12" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '33999 
+#TRACE_ID '0x2684D6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandlePhoneStateChanged: Active phone in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34006 
+#TRACE_ID '0x2684E9 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HandlePhoneStateChanged: Active phone %d disconnected while profile adding, disconnect player too activePlayerID: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34025 
+#TRACE_ID '0x2684EC 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"HandlePhoneStateChanged: Active phone %d disconnected while profile adding, stop AVRCP service too DevID: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34028 
+#TRACE_ID '0x2684F5 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"ERM_NOTIFY_PBSN_A2DP: deactivate player busy  --->queue event in Appdevice" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34037 
+#TRACE_ID '0x268517 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandlePhoneStateChanged: ignore disc event in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34071 
+#TRACE_ID '0x26854A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePlayerStateChanged: paired device: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34122 
+#TRACE_ID '0x26854D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePlayerStateChanged: new phone device -> create profile (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34125 
+#TRACE_ID '0x268553 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"handlePlayerStateChanged: max user profiles reached" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34131 
+#TRACE_ID '0x268566 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePlayerStateChanged: standalone player -> create profile (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34150 
+#TRACE_ID '0x268571 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandlePlayerStateChanged: wait for callback SC12 ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34161 
+#TRACE_ID '0x268577 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandlePlayerStateChanged: Player already connected %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34167 
+#TRACE_ID '0x268583 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePlayerStateChanged: create profile for player with ID: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34179 
+#TRACE_ID '0x268586 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePlayerStateChanged(2): create profile non-blocking: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34182 
+#TRACE_ID '0x268599 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"handlePlayerStateChanged(3): create profile non-blocking: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34201 
+#TRACE_ID '0x2685B5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HaPlayerStateChanged: ignore event in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34229 
+#TRACE_ID '0x2685D0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"GetActivePlayer: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34256 
+#TRACE_ID '0x2685D7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandlePlayerConnected: create profile non-blocking: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34263 
+#TRACE_ID '0x2685F7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"HandlePlayerSiconnected: disconnect initiated by user" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34295 
+#TRACE_ID '0x268635 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"HandleHeadsetStateChanged: ignore event in ctx %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34357 
+#TRACE_ID '0x26864D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Player Visibility is set to: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34381 
+#TRACE_ID '0x268652 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"Player Visibility is set to False by diagnostic" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34386 
+#TRACE_ID '0x268673 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"Player control available: %d, AVRCP is started: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34419 
+#TRACE_ID '0x268698 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_SD '"Player control available: %d, AVRCP is started: %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34456 
+#TRACE_ID '0x26871C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"_APP_SD_bSSPInitiatePairingAfterInquiry call with deviceId = %d" '\MOD\MOD_APP_SD\src 'APP_SD_C1.c '34588 

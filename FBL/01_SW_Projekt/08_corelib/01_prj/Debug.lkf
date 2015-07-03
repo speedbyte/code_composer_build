@@ -1,0 +1,10 @@
+-rv
+"r:\08_corelib\05_out\CORELIB_cc_tms470_VW_UDS.lib"
+"r:\08_corelib\03_obj\ADLATUS_ConfigAdlatus.obj"
+"r:\08_corelib\03_obj\ADLATUS_ConfigSystem.obj"
+"r:\08_corelib\03_obj\ADLATUS_FUN_Global_AMemCopy.obj"
+"r:\08_corelib\03_obj\ADLATUS_FUN_Global_CollectData.obj"
+"r:\08_corelib\03_obj\ADLATUS_FUN_Global_PMemCopy.obj"
+"r:\08_corelib\03_obj\ADLATUS_FUN_Global_Random.obj"
+"r:\08_corelib\03_obj\ADLATUS_ServiceHandler.obj"
+"r:\08_corelib\03_obj\ADLATUS_System.obj"

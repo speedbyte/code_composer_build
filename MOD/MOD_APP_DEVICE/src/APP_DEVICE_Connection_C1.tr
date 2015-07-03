@@ -1,0 +1,93 @@
+#TRACE_ID '0xC00A9 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"sfActivatePhoneDevice: Activation pending for devId %d , requested id %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '169 
+#TRACE_ID '0xC00AC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"sfActivatePhoneDevice: Activation pending for same device, return OK" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '172 
+#TRACE_ID '0xC00B1 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"sfActivatePhoneDevice: Activation pending for other device, return ERROR" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '177 
+#TRACE_ID '0xC00BC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"sfActivatePhoneDevice: Nothing pending, start deviceId %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '188 
+#TRACE_ID '0xC0117 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"StopRingtoneNonBlock called" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '279 
+#TRACE_ID '0xC0134 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"DisconnectDevice called" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '308 
+#TRACE_ID '0xC0149 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"StartRingtoneNonBlock: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '329 
+#TRACE_ID '0xC0152 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"StartRingtoneNonBlock called" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '338 
+#TRACE_ID '0xC0179 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"ActMdiDev: inval devId %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '377 
+#TRACE_ID '0xC0182 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"ActMdiDev: application busy, fct in pending %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '386 
+#TRACE_ID '0xC01AF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"RT14519: first DeactMdiDev: no a2dp source act (%d), search for avrcp" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '431 
+#TRACE_ID '0xC01B4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"DeactMdiDev: no a2dp source act (%d), search for avrcp" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '436 
+#TRACE_ID '0xC01BA 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"DeactMdiDev: only avrcp started for devID (%d)" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '442 
+#TRACE_ID '0xC01C4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"DeactMdiDev: no dev act (%d)" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '452 
+#TRACE_ID '0xC01D3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"RT:14519 outside-DeactMdiDev: dev act (%d)" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '467 
+#TRACE_ID '0xC01D7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"RT:14519-DeactMdiDev: dev act (%d)" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '471 
+#TRACE_ID '0xC0224 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_PB '"DisconnectDeviceReq: unsup state %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '548 
+#TRACE_ID '0xC0292 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"_APP_DEVICE_GetMuteRingtone_Cb: invalid fctType %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '658 
+#TRACE_ID '0xC02B5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"StopBeforePlayRingtone rsp ERROR retries %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '693 
+#TRACE_ID '0xC02BF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"_APP_DEVICE_StopBeforePlayRingtone_Cb: invalid fctType %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '703 
+#TRACE_ID '0xC02DB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"PlayRingtone_Cb rsp ERROR retries %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '731 
+#TRACE_ID '0xC0300 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"StopRingtone_Cb rsp ERROR retries %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '768 
+#TRACE_ID '0xC032F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_vDeactivateMdiFromAvrcpStarted_Cb: activate mdidevice now" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '815 
+#TRACE_ID '0xC0336 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_vDeactivateMdiFromAvrcpStarted_Cb: busy for activate mdi queue event" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '822 
+#TRACE_ID '0xC033B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_vDeactivateMdiFromAvrcpStarted_Cb error rsp: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '827 
+#TRACE_ID '0xC0350 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneActivate: starting dev: %d, state 0x%02x" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '848 
+#TRACE_ID '0xC0361 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneActivate: steps still allowed: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '865 
+#TRACE_ID '0xC0366 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneActivate: too many retries state 0x%02x" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '870 
+#TRACE_ID '0xC0373 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneActivate: phoneDev: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '883 
+#TRACE_ID '0xC037A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneActivate: disconnect phoneDev: %d first" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '890 
+#TRACE_ID '0xC0390 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneActivate: disconnect MPDev: %d, new phone device not connected" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '912 
+#TRACE_ID '0xC039A 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_DEVICE '"sfHandlePendingActivate: wait for start result and release uart." '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '922 
+#TRACE_ID '0xC039F 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_DEVICE '"sfHandlePendingActivate: this should never occur." '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '927 
+#TRACE_ID '0xC03CA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdDeactivate: device stopped: %d, steps still allowed: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '970 
+#TRACE_ID '0xC03D0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdDeactivate: too many retries, state 0x%02x" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '976 
+#TRACE_ID '0xC03DD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"SendPendMdDeactivate: no dev %d avail" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '989 
+#TRACE_ID '0xC03E9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdDeactivate: disconnect MP dev:%d(equal to phone dev)" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1001 
+#TRACE_ID '0xC03F9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdDeactivate: disconnect MP dev:%d(equal to phone dev)" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1017 
+#TRACE_ID '0xC0409 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdDeactivate: disconnect MP dev:%d(equal to phone dev)" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1033 
+#TRACE_ID '0xC0416 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdDeactivate:deactivate A2DP %d avail, requested device %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1046 
+#TRACE_ID '0xC0421 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdDeactivate:deactivate AVRCP %d avail, requested device %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1057 
+#TRACE_ID '0xC042D 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_DEVICE '"SendPendMdDeactivate: waiting for service to be started, this should never occure" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1069 
+#TRACE_ID '0xC0454 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: activate dev: %d, steps still allowed: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1108 
+#TRACE_ID '0xC0458 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: too many retries state 0x%02x" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1112 
+#TRACE_ID '0xC046C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: disconnect MP dev:%d, new dev is :%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1132 
+#TRACE_ID '0xC0480 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: stop A2DP of dev:%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1152 
+#TRACE_ID '0xC048D 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: wanted A2DP dev:%d connected as dev: &d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1165 
+#TRACE_ID '0xC0494 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: stop AVRCP of dev:%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1172 
+#TRACE_ID '0xC04A2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: wanted AVRCP dev:%d connected as dev: &d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1186 
+#TRACE_ID '0xC04AB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"SendPendMdActivate: no dev %d avail" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1195 
+#TRACE_ID '0xC04BD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: start avrcp of dev:%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1213 
+#TRACE_ID '0xC04CC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: start a2dp of dev:%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1228 
+#TRACE_ID '0xC04D6 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendMdActivate: waiting for service to be started" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1238 
+#TRACE_ID '0xC04F1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneDeactivate: phoneDev: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1265 
+#TRACE_ID '0xC04F5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneDeactivate: disconnect dev: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1269 
+#TRACE_ID '0xC04F9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendPendPhoneDeactivate: cannot stop phone service of device %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1273 
+#TRACE_ID '0xC05E2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"bMdActivateFinished: a2dpDev: %d / avrcpDev: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1506 
+#TRACE_ID '0xC05E3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"bMdActivateFinished: devID: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1507 
+#TRACE_ID '0xC05EC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"bMdActivateFinished: final state reached" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1516 
+#TRACE_ID '0xC0631 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePhoneStarted: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1585 
+#TRACE_ID '0xC064B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePhoneStarted: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1611 
+#TRACE_ID '0xC065F 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePhoneStopped: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1631 
+#TRACE_ID '0xC0670 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePhoneStopped: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1648 
+#TRACE_ID '0xC0684 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePhoneStartFailed: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1668 
+#TRACE_ID '0xC0692 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePhoneStartFailed: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1682 
+#TRACE_ID '0xC06A6 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePhoneStopFailed: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1702 
+#TRACE_ID '0xC06B2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePhoneStopFailed: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1714 
+#TRACE_ID '0xC06C6 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStarted: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1734 
+#TRACE_ID '0xC06E1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStarted: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1761 
+#TRACE_ID '0xC06F5 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStopped: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1781 
+#TRACE_ID '0xC0706 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStopped: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1798 
+#TRACE_ID '0xC071A 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStartFailed: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1818 
+#TRACE_ID '0xC0727 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStartFailed: devId_pbsn: %d, devId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1831 
+#TRACE_ID '0xC072D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStartFailed: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1837 
+#TRACE_ID '0xC0741 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStopFailed: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1857 
+#TRACE_ID '0xC0752 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStopFailed: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1874 
+#TRACE_ID '0xC0766 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpStarted: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1894 
+#TRACE_ID '0xC0787 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpStarted: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1927 
+#TRACE_ID '0xC079B 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpStopped: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1947 
+#TRACE_ID '0xC07AC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpStopped: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1964 
+#TRACE_ID '0xC07C0 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpStartFailed: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1984 
+#TRACE_ID '0xC07CD 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleA2dpStartFailed: devId_pbsn: %d, devId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '1997 
+#TRACE_ID '0xC07D3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpStartFailed: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2003 
+#TRACE_ID '0xC07E7 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpStopFailed: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2023 
+#TRACE_ID '0xC07F8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpStopFailed: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2040 
+#TRACE_ID '0xC080C 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandlePairingFailed: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2060 
+#TRACE_ID '0xC0821 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleAvrcpPairingFailed: no valid function type fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2081 
+#TRACE_ID '0xC0836 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleConnectFailed: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2102 
+#TRACE_ID '0xC0866 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleConnectFailed: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2150 
+#TRACE_ID '0xC0879 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleConnected: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2169 
+#TRACE_ID '0xC0890 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleConnected: no valid functiontype fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2192 
+#TRACE_ID '0xC08A1 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleDisconnected: devId: %d, fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2209 
+#TRACE_ID '0xC08D3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"vHandleDisconnect: no valid function type fctId: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Connection_C1.c '2259 

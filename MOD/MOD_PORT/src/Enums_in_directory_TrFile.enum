@@ -1,0 +1,5 @@
+#ENUM  'PORTQUAL                                            'PortFunctional                                                                           '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'PORTQUAL                                            'PortIoIn                                                                                 '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'PORTQUAL                                            'PortIoOut                                                                                '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'PORTQUAL                                            'PortIoOutHigh                                                                            '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'PORTQUAL                                            'PortIoOutLow                                                                             '4                            'ABCD   'ABCD.c  '123   

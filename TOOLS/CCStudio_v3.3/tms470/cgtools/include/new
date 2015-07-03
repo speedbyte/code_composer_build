@@ -1,0 +1,50 @@
+/*****************************************************************************/
+/* new   v4.1.4                                                              */
+/* Copyright (c) 1996-2006 Texas Instruments Incorporated                    */
+/*****************************************************************************/
+
+#ifndef _NEW
+#define _NEW
+
+#ifdef __EXCEPTIONS
+#define THROW(throw_spec) throw(throw_spec)
+#define THROW_NOTHING() throw()
+#else /* !EXCEPTION_HANDLING */
+#define THROW(throw_spec) /* Nothing. */
+#define THROW_NOTHING() /* Nothing. */
+#endif /* __EXCEPTIONS */
+
+#include <cstdlib>      // for size_t
+#include <exception>    // for exception
+
+namespace std
+{
+   class bad_alloc {};
+   struct nothrow_t {};
+   extern const nothrow_t nothrow;
+   typedef void (*new_handler)();
+   new_handler set_new_handler(new_handler new_p) THROW_NOTHING();
+}	
+
+void *operator new(std::size_t size)  THROW(std::bad_alloc);
+void *operator new(std::size_t size, const std::nothrow_t&)  THROW_NOTHING();
+void  operator delete(void *ptr)  THROW_NOTHING();
+void  operator delete(void *ptr, const std::nothrow_t&) THROW_NOTHING();
+void *operator new[](std::size_t size)  THROW(std::bad_alloc);
+void *operator new[](std::size_t size, const std::nothrow_t& nt_arg) THROW_NOTHING();
+void  operator delete[](void *ptr) THROW_NOTHING();
+void  operator delete[](void *ptr, const std::nothrow_t& nt_arg) THROW_NOTHING();
+void *operator new  (std::size_t, void *ptr) THROW_NOTHING();
+void *operator new[](std::size_t, void *ptr)  THROW_NOTHING();
+void  operator delete  (void *ptr, void*)  THROW_NOTHING();
+void  operator delete[](void *ptr, void*)  THROW_NOTHING();
+
+#ifdef __embedded_cplusplus
+//----------------------------------------------------------------------------
+// We cannot expect the embedded C++ user to use std namespace. So we include
+// the using directive when compiled under embedded C++.
+//----------------------------------------------------------------------------
+using namespace std;
+#endif /* __embedded_cplusplus */
+
+#endif

@@ -1,0 +1,11 @@
+#TRACE_ID '0x5B008A 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_ERM '"ERM: Uart rel %d" '\MOD\MOD_ERM\src 'ERM_Utils.c '138 
+#TRACE_ID '0x5B0094 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM: Uart no owner %d" '\MOD\MOD_ERM\src 'ERM_Utils.c '148 
+#TRACE_ID '0x5B009A 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM: Uart inco owner %d= req %d" '\MOD\MOD_ERM\src 'ERM_Utils.c '154 
+#TRACE_ID '0x5B00C3 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_ERM '"ERM: Uart alloc: %d" '\MOD\MOD_ERM\src 'ERM_Utils.c '195 
+#TRACE_ID '0x5B00CC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM: Uart req: %d" '\MOD\MOD_ERM\src 'ERM_Utils.c '204 
+#TRACE_ID '0x5B00CD 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM: Uart ............ blocked: %d (%d)" '\MOD\MOD_ERM\src 'ERM_Utils.c '205 
+#TRACE_ID '0x5B00D6 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM: Uart req: %d, blocked %d" '\MOD\MOD_ERM\src 'ERM_Utils.c '214 
+#TRACE_ID '0x5B00D7 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM: Uart .................... (%d %d)" '\MOD\MOD_ERM\src 'ERM_Utils.c '215 
+#TRACE_ID '0x5B00E3 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM: Uart req: %d, failed: %d" '\MOD\MOD_ERM\src 'ERM_Utils.c '227 
+#TRACE_ID '0x5B00FB 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_ERM '"Start uartSup %d ( %d sec )" '\MOD\MOD_ERM\src 'ERM_Utils.c '251 
+#TRACE_ID '0x5B010F 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_ERM '"Stop uartSup %d ( %d sec )" '\MOD\MOD_ERM\src 'ERM_Utils.c '271 

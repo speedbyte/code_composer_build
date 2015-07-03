@@ -1,0 +1,1455 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="Memory-Dump.xsl" ?>
+<!DOCTYPE MEMORY_DUMP_REPORT SYSTEM "Memory-Dump.dtd">
+<MEMORY_DUMP_REPORT>
+  <MD_HEADER/>
+  <MD_RUN_LISTING>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00344B68 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 12 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 696 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 728 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00344E20 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 433 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 409 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00344EA8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 438 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 485 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00344F30 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00344FB0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 31 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00343020 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00345480 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 33 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00345750 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00345A10 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00345CD8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00345F98 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 27 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00346268 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00346528 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 27 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 003467F0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00346AB0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00346D78 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00347038 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 30 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00347308 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 003475C8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00347890 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00347B50 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00347E18 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 003480D8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 003483A0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 433 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 409 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00348668 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 438 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 485 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00348930 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00348BF0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00348EB8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00349178 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 30 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00349448 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00349708 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 37 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 003499E0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00349CA0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 27 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00349F68 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034A228 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 38 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034A500 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034A7C0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 27 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034AA88 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034AD48 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 27 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034B010 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034B2D0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 27 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034B598 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034B858 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 26 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034BB20 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034BDE0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 34 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034C0B0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034C370 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034C638 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034C8F8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 23 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034CBC0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034CE80 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 22 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034D148 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034D408 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 22 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034D6D0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034D990 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 29 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034DC60 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 433 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 409 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034DF28 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 31 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 438 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 485 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034E1F8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034E4B8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 41 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034E790 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 433 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 409 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034EA58 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 438 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 485 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034ED20 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034EFE0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 18 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034F2A0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034F560 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 18 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034F820 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034FAE0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 18 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034FDA0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034FE20 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 27 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034FEA8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034FF28 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 24 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0034FFB0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00440BE8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00440EB0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00441170 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 24 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00441438 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 433 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 409 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00441700 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 29 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 438 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 485 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004419D0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00441C90 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 36 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00441F60 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00442220 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 38 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004424F8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004427B8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 38 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00442A90 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00442D50 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 45 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00443030 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004432F0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 44 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004435C8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00443888 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 45 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00443B68 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00443E28 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 45 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00444108 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004443C8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 46 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004446A8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 20 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 550 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 481 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00444968 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 43 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 555 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testdb.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 586 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00444CD0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00444F98 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004452A8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00445570 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00445838 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00445B40 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 60 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00445E28 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004460F0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004463F8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004466C0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00446988 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00446C90 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 60 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00446F78 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00447240 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00447548 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00447810 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00447AD8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00447DE0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 60 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004480C8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00448390 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00448698 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00448960 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00448C28 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00448F30 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 60 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00449218 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004494E0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 004497E8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00449AB0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 00449D78 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0044A080 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 60 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0044A368 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0044A630 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0044A938 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 25 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0044AC00 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 28 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 600 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 713 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0044AEC8 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 92 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 609 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 709 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+    <MD_RUN_RECORD>
+      <MD_POINTER> 0044B1D0 </MD_POINTER>
+      <MD_EVENT_COUNT> 1 </MD_EVENT_COUNT>
+      <MD_EVENT_RECORD>
+        <MD_SIZE> 60 </MD_SIZE>
+        <MD_ALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_ALLOC_FILE>
+        <MD_ALLOC_LINE> 618 </MD_ALLOC_LINE>
+        <MD_DEALLOC_FILE> c:\projekte\uhv\sw-versionen\trunk\tests\cunit\sources\framework\testrun.c </MD_DEALLOC_FILE>
+        <MD_DEALLOC_LINE> 705 </MD_DEALLOC_LINE>
+      </MD_EVENT_RECORD>
+    </MD_RUN_RECORD>
+  </MD_RUN_LISTING>
+  <MD_SUMMARY>
+    <MD_SUMMARY_VALID_RECORDS> 131 </MD_SUMMARY_VALID_RECORDS>
+    <MD_SUMMARY_INVALID_RECORDS> 0 </MD_SUMMARY_INVALID_RECORDS>
+    <MD_SUMMARY_TOTAL_RECORDS> 131 </MD_SUMMARY_TOTAL_RECORDS>
+  </MD_SUMMARY>
+  <MD_FOOTER> Memory Trace for CUnit Run at Mon Sep 07 18:09:05 2009
+ </MD_FOOTER></MEMORY_DUMP_REPORT>

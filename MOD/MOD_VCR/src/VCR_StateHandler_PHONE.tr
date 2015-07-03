@@ -1,0 +1,28 @@
+#TRACE_ID '0x9800D2 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"VCR name data n=%d c=%d n_cat=%d loc_avail=%d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '210 
+#TRACE_ID '0x9800D8 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR name data location_id=%d IC=%d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '216 
+#TRACE_ID '0x9801F0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"Bugfix 4940 VCR callname %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '496 
+#TRACE_ID '0x98020B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"VCR callname %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '523 
+#TRACE_ID '0x980408 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"unhandled PTT is handled now" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1032 
+#TRACE_ID '0x98040C 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"unhandled PTT could not handled" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1036 
+#TRACE_ID '0x980414 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"unhandled HOOK is handled now" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1044 
+#TRACE_ID '0x980418 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"unhandled HOOK could not handled" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1048 
+#TRACE_ID '0x98046D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Ingore PTT at End of List of ambiguous Names" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1133 
+#TRACE_ID '0x98048B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"handle PTT later" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1163 
+#TRACE_ID '0x980496 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Ingore HOOK at End of List" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1174 
+#TRACE_ID '0x9804B4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"handle HOOK later" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1204 
+#TRACE_ID '0x980655 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"VCR res number_len %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1621 
+#TRACE_ID '0x9806AF 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index0_3:   %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1711 
+#TRACE_ID '0x9806B3 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index4_7:   %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1715 
+#TRACE_ID '0x9806B7 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index8_11:  %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1719 
+#TRACE_ID '0x9806BB 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index12_15: %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1723 
+#TRACE_ID '0x9806BF 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index16_19: %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1727 
+#TRACE_ID '0x9806C3 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index20_23: %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1731 
+#TRACE_ID '0x9806C7 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index24_27: %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1735 
+#TRACE_ID '0x9806CB 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index28_31: %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1739 
+#TRACE_ID '0x9807B6 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Init DBlock_Array again" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1974 
+#TRACE_ID '0x9807C0 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"DIALNUM_D_BLOCK number_len=%d result_len=%d -> Init again" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '1984 
+#TRACE_ID '0x980823 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"NUMCORRECT_D_BLOCK number_len=%d result_len=%d new_number_len=%d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '2083 
+#TRACE_ID '0x980832 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index is INC to %d  SumLenth  %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '2098 
+#TRACE_ID '0x980859 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"DBlock_Index is %d SumLenth  %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '2137 
+#TRACE_ID '0x980925 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"unhandled PTT is handled now" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '2341 
+#TRACE_ID '0x9809B4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Selection is already done - ignore PTT" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONE.c '2484 

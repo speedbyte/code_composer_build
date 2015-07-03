@@ -1,0 +1,68 @@
+# $Id$
+
+#
+#  Options
+
+COPTIONS=	-d"TEST1"  -d osdSuppressDefVectWarning\
+            -u"TEST"   -d"SYSTEM_TARGET_PRINT"\
+            -d PROCESSOR_TMS470R1SF55BA\
+            -d SDSEXT_SERVICE86_ALLOWED\
+            -d SDSEXT_SERVICE23_ALLOWED\
+            -d SDSEXT_SERVICE3D_ALLOWED\
+            -d SUPPORT_BT_UPDATE\
+            -d ENABLE_ERM_JINGLE\
+            -d ERM_USE_SIGNED_BT_UPDATE\
+            -d ERM_FULL_DEVICE_TABLE\
+            -d UHV_ACTIVATE_FEATURE_BAP_MDI\
+            -d CRADLE_RESTRICTION_ACTIVE\
+            -d USE_DEBUGGING_WITH_TRACE_ID\
+            -d USE_AUTOMATIC_LEVEL_CONTROL_IN_RX\
+            -d UHV_ACTIVATE_FEATURE_VCR_SOP3_PROMPTS\
+            -d APP_MDI_BAP_TIME_POSITION_SUPPORTED
+
+# –d"SYSTEM_HOST_PRINT"
+
+#####################################################
+# define part for options which was shifted to later
+
+# SMS support activated or deactivated
+# -d UHV_ACTIVATE_FEATURE_SMS\                                          --> entfällt
+# seperate cancelling from a conference call activated or deactivated
+# -d UHV_ACTIVATE_FEATURE_CCSPLIT\                                      --> entfällt
+# audio mode activated or deactivated
+# -d UHV_ACTIVATE_FEATURE_SET_AUDIO_MODE\                               --> entfällt
+# alternating ringtone activated or deactivated
+# -d UHV_ACTIVATE_FEATURE_PLAY_CALLER_NAME\                             --> entfällt
+# headset support activated or deactivated
+# -d UHV_ACTIVATE_FEATURE_HEADSET\                                      --> entfällt
+# BAP functionality for Media Player enabled or disabled
+# -d UHV_ACTIVATE_FEATURE_BAP_MDI\                                      --> SOP2
+# Complete user handling
+# -d UHV_ACTIVATE_COMPLETE_USER_HANDLING\                               --> SOP2
+# Signed Bluetooth Update enabled or disabled
+# -d ERM_USE_SIGNED_BT_UPDATE\                                          --> SOP1
+# LED support activated or deactivated
+# -d UHV_ACTIVATE_FEATURE_LED                                           --> entfällt
+# CRADLE RESTRICTION
+#-d CRADLE_RESTRICTION_ACTIVE                                           --> POLO/SOP2
+# Debug Trace is using ID
+#-d USE_DEBUGGING_WITH_TRACE_ID\                                        --> SOP2
+# Audioparameter: Automated Level Control in Rx
+#-d USE_AUTOMATIC_LEVEL_CONTROL_IN_RX                                   --> SOP2
+# Controller TMS470
+#-d PROCESSOR_TMS470R1VF45AA\                                           --> SOP1
+# Controller TMS470
+#-d PROCESSOR_TMS470R1VF55BA\                                           --> SOP2
+# Controller TMS470
+#-d PROCESSOR_TMS470R1SF55BA\                                           --> SOP2_RUNNING_CHANGE
+# support random and repeat in MDI
+# -d APP_MDI_BAP_RANDOM_REPEAT_SUPPORTED                                --> entfällt für SOP2
+# support time stamps in MDI
+# -d APP_MDI_BAP_TIME_POSITION_SUPPORTED                                --> entfällt für SOP2
+# show up to 30 devices after a search
+# -d UHV_SHOW_UP_TO30_DEVICES\                                          --> SOP 3 only for development 
+# UHV starts without Can communication 
+# -d UHV_BLUETOOTH_NO_CAN\                                              --> UHV on work without Can communication
+# VCR SOP3 Activate
+# -d UHV_ACTIVATE_FEATURE_VCR_SOP3_PROMPTS\                             --> SOP3
+#####################################################

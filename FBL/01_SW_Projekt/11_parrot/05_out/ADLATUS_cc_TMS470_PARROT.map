@@ -1,0 +1,318 @@
+******************************************************************************
+             TMS470 COFF Linker PC Version 2.71                
+******************************************************************************
+>> Linked Thu Jul 15 08:00:08 2010
+
+OUTPUT FILE NAME:   <../05_out/ADLATUS_cc_TMS470_PARROT.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000000
+
+
+MEMORY CONFIGURATION
+
+                  name            origin    length      used    attr    fill
+         ----------------------  --------  ---------  --------  ----  --------
+         VECTORS                 00000000   00000024  00000000  R IX
+         ADLATUS                 00000030   00003fc0  00000159  R IX
+         PROTECTION              00003ff0   00000010  00000010  R     ffffffff
+         ROMCONST                00004000   00000100  00000014  R IX
+         ROMEXEC                 00004100   00001c00  00000640  R IX
+         RAMDATA1                00400004   000000a0  00000030  RWIX
+         RAMDATA2                004000a4   00000e5c  00000000  RWIX
+         HISDATA                 00400f10   00000040  00000038  RW  
+         HISCONST                00401000   00000100  00000014  RW  
+         HISTEXT                 00401100   00000a00  00000640  RWIX
+         USTACK                  00402200   00000200  00000000  RW  
+         SYSSTA                  00402400   00000400  00000000  RW  
+         HET0PROG                00800000   00000800  00000000  RW  
+         FMC1                    ffe88000   00000014  00000000  RW  
+         FMC2                    ffe89c00   00000010  00000000  RW  
+         FMC3                    ffe8a814   00000004  00000000  RW  
+         FMC4                    ffe8bc00   00000010  00000000  RW  
+         SPI2                    fff7d400   00000400  00000000  RW  
+         CAN_MBOX                fff7dc00   00000100  00000000  RW  
+         SCC                     fff7e000   00000400  00000000  RW  
+         GIO0                    fff7ec00   00000400  00000000  RW  
+         ADC0                    fff7f000   00000400  00000000  RW  
+         SCI1                    fff7f400   00000100  00000000  RW  
+         SCI2                    fff7f500   00000100  00000000  RW  
+         SPI1                    fff7f800   00000400  00000000  RW  
+         HET0CTRL                fff7fc00   00000400  00000000  RW  
+         MMC                     fffffd00   00000040  00000000  RW  
+         DEC                     fffffe00   000000f0  00000000  RW  
+         CMRTI                   ffffff00   00000020  00000000  RW  
+         CIM                     ffffff20   00000014  00000000  RW  
+         SYS                     ffffffd0   00000030  00000000  RW  
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.FMC1      0    ffe88000    00000000     UNINITIALIZED
+
+.SPI2      0    fff7d400    00000000     UNINITIALIZED
+
+.CAN_MB    0    fff7dc00    00000000     UNINITIALIZED
+
+.SCC       0    fff7e000    00000000     UNINITIALIZED
+
+.GIO0      0    fff7ec00    00000000     UNINITIALIZED
+
+.ADC0      0    fff7f000    00000000     UNINITIALIZED
+
+.SCI1      0    fff7f400    00000000     UNINITIALIZED
+
+.SCI2      0    fff7f500    00000000     UNINITIALIZED
+
+.SPI1      0    fff7f800    00000000     UNINITIALIZED
+
+.HET0      0    fff7fc00    00000000     UNINITIALIZED
+
+.MMC       0    fffffd00    00000000     UNINITIALIZED
+
+.DEC       0    fffffe00    00000000     UNINITIALIZED
+
+.CMRTI     0    ffffff00    00000000     UNINITIALIZED
+
+.CIM       0    ffffff20    00000000     UNINITIALIZED
+
+.SYS       0    ffffffd0    00000000     UNINITIALIZED
+
+.data_set 
+*          0    00000030    00000000     UNINITIALIZED
+
+.cinit     0    00000030    00000000     UNINITIALIZED
+
+.const     0    00000030    0000000d     
+                  00000030    0000000d     ADLATUS_DummyMain.obj (.const)
+
+.text      0    00000040    0000014c     
+                  00000040    000000e0     u_div32.obj (.text)
+                  00000120    00000054     ADLATUS_DummyMain.obj (.text)
+                  00000174    00000018     ADLATUS_DummyMain.obj (.text:v$0)
+
+$fill000   0    00003ff0    00000010     
+                  00003ff0    00000010     --HOLE-- [fill = ffffffff]
+
+.hisconst 
+*          0    00004000    00000014     RUN ADDR = 00401000
+                  00004000    00000014     FlashLib_TMS470_PARROT.obj (.const)
+
+.histext   0    00004100    00000640     RUN ADDR = 00401100
+                  00004100    000003d0     FlashLib_TMS470_PARROT.obj (.text)
+                  000044d0    00000124     ADLATUS_SciHandler.obj (.text)
+                  000045f4    00000138     ADLATUS_ParrotHal.obj (.text)
+                  0000472c    00000014     icall16.obj (.text)
+
+.data      0    00400004    00000000     UNINITIALIZED
+
+.RAMSTART 
+*          0    00400004    00000000     UNINITIALIZED
+
+.bss       0    00400004    00000030     UNINITIALIZED
+                  00400004    00000030     ADLATUS_DummyMain.obj (.bss)
+
+.sysmem    0    004000a4    00000000     UNINITIALIZED
+
+.hisdata   0    00400f10    00000038     UNINITIALIZED
+                  00400f10    0000001c     FlashLib_TMS470_PARROT.obj (.bss)
+                  00400f2c    00000014     ADLATUS_ParrotHal.obj (.bss)
+                  00400f40    00000008     ADLATUS_SciHandler.obj (.bss)
+
+.ustack    0    00402200    00000000     UNINITIALIZED
+
+.stack     0    00402400    00000000     UNINITIALIZED
+
+.HET0PROG 
+*          0    00800000    00000000     UNINITIALIZED
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00401620   $FUN_PARhal_GetHWTimerValue_UW
+0040164a   $FUN_PARhal_GetPerfCntTicks_UL
+00401640   $FUN_PARhal_GetPerformanceCounter_UL
+004015f4   $FUN_PARhal_InitHardwareTimer_V
+0040162e   $FUN_PARhal_StoreHwTimerValue_V
+004016c6   $FUN_PARhal_TimeoutOccured_B
+004016b4   $FUN_PARhal_TimeoutStart_V
+00401652   $FUN_PARhal_WaitTime_V
+0040151c   $FUN_PARsci_CtrlSerialInterface_V
+0040153a   $FUN_PARsci_GetSendState_B
+004014e0   $FUN_PARsci_InitInternal_V
+004014d0   $FUN_PARsci_Init_V
+0040155c   $FUN_PARsci_ReceiveByte_UB
+00401544   $FUN_PARsci_SendByte_UB
+00401598   $FUN_PARsci_SetSerialBaudrate_V
+00401574   $FUN_PARsci_SetSerialMode_V
+00401464   $Feed_Watchdog_V
+004012c4   $PARROT_Deinit
+004012d8   $PARROT_Erase
+00401100   $PARROT_Init
+004012de   $PARROT_Write
+00000120   $main
+00400004   .bss
+00400004   .data
+00000040   .text
+0040172c   IND$CALL
+00000040   U$DIV
+00000040   U$MOD
+00000044   U_DIV
+00000044   U_MOD
+00400004   _FlashParam
+00401000   _HisHeader
+004025e8   _StackABORT_
+00402510   _StackFIQ_
+004025e0   _StackIRQ_
+00402600   _StackSUPER_
+004025f0   _StackUND_
+00402500   _StackUSER_
+ffffffff   ___binit__
+00400004   ___bss__
+ffffffff   ___c_args__
+ffffffff   ___cinit__
+00400004   ___data__
+00400004   ___edata__
+00400034   ___end__
+0000018c   ___etext__
+ffffffff   ___pinit__
+00000040   ___text__
+00000034   _c_CCconprj_CanClockFrequency_UL
+00000030   _c_CCconprj_ClockFrequency_UL
+0000003c   _c_CCconprj_DisableReset_UB
+00000038   _c_CCconprj_TimerFrequency_UL
+00400f10   _c_CCconsys_SciInterface_ST
+UNDEFED _c_int00
+fff7f000   _e_ADC0_ST
+fff7dc00   _e_CAN_MB
+ffe88000   _e_FLASHCTL0_ST
+fff7ec00   _e_GIO_ST
+fff7fc00   _e_HET0_ST
+00800000   _e_HETPROGRAM0_UN
+ffffff20   _e_SARCIM_ST
+fffffe00   _e_SARDEC_ST
+fffffd00   _e_SARMMC_ST
+ffffff00   _e_SARRTI_ST
+ffffffd0   _e_SARSYS_ST
+fff7e000   _e_SCC_ST
+fff7f400   _e_SCI1_ST
+fff7f500   _e_SCI2_ST
+fff7f800   _e_SPI1_ST
+fff7d400   _e_SPI2_ST
+00400f18   _fp
+00402300   _g_BBSuperStack_UL
+00000174   _main
+00400004   _r_F_RAMSTART
+00400f20   _t_BootloadersCrc_UW
+00400f40   _t_CCsci_SciCtrl_ST
+00400f2c   _t_PARhal_HalCtrl_ST
+00400f28   _t_ParrotActLength_UL
+00400f1e   _t_ParrotBlockSize_UW
+00400f24   _t_ParrotLength_UL
+00400f1d   _t_rxbuffer_UB
+00400f1c   _t_txbuffer_UB
+ffffffff   binit
+ffffffff   cinit
+00400004   edata
+00400034   end
+0000018c   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000030   _c_CCconprj_ClockFrequency_UL
+00000034   _c_CCconprj_CanClockFrequency_UL
+00000038   _c_CCconprj_TimerFrequency_UL
+0000003c   _c_CCconprj_DisableReset_UB
+00000040   .text
+00000040   ___text__
+00000040   U$MOD
+00000040   U$DIV
+00000044   U_MOD
+00000044   U_DIV
+00000120   $main
+00000174   _main
+0000018c   ___etext__
+0000018c   etext
+00400004   .data
+00400004   .bss
+00400004   ___edata__
+00400004   _r_F_RAMSTART
+00400004   edata
+00400004   _FlashParam
+00400004   ___bss__
+00400004   ___data__
+00400034   end
+00400034   ___end__
+00400f10   _c_CCconsys_SciInterface_ST
+00400f18   _fp
+00400f1c   _t_txbuffer_UB
+00400f1d   _t_rxbuffer_UB
+00400f1e   _t_ParrotBlockSize_UW
+00400f20   _t_BootloadersCrc_UW
+00400f24   _t_ParrotLength_UL
+00400f28   _t_ParrotActLength_UL
+00400f2c   _t_PARhal_HalCtrl_ST
+00400f40   _t_CCsci_SciCtrl_ST
+00401000   _HisHeader
+00401100   $PARROT_Init
+004012c4   $PARROT_Deinit
+004012d8   $PARROT_Erase
+004012de   $PARROT_Write
+00401464   $Feed_Watchdog_V
+004014d0   $FUN_PARsci_Init_V
+004014e0   $FUN_PARsci_InitInternal_V
+0040151c   $FUN_PARsci_CtrlSerialInterface_V
+0040153a   $FUN_PARsci_GetSendState_B
+00401544   $FUN_PARsci_SendByte_UB
+0040155c   $FUN_PARsci_ReceiveByte_UB
+00401574   $FUN_PARsci_SetSerialMode_V
+00401598   $FUN_PARsci_SetSerialBaudrate_V
+004015f4   $FUN_PARhal_InitHardwareTimer_V
+00401620   $FUN_PARhal_GetHWTimerValue_UW
+0040162e   $FUN_PARhal_StoreHwTimerValue_V
+00401640   $FUN_PARhal_GetPerformanceCounter_UL
+0040164a   $FUN_PARhal_GetPerfCntTicks_UL
+00401652   $FUN_PARhal_WaitTime_V
+004016b4   $FUN_PARhal_TimeoutStart_V
+004016c6   $FUN_PARhal_TimeoutOccured_B
+0040172c   IND$CALL
+00402300   _g_BBSuperStack_UL
+00402500   _StackUSER_
+00402510   _StackFIQ_
+004025e0   _StackIRQ_
+004025e8   _StackABORT_
+004025f0   _StackUND_
+00402600   _StackSUPER_
+00800000   _e_HETPROGRAM0_UN
+ffe88000   _e_FLASHCTL0_ST
+fff7d400   _e_SPI2_ST
+fff7dc00   _e_CAN_MB
+fff7e000   _e_SCC_ST
+fff7ec00   _e_GIO_ST
+fff7f000   _e_ADC0_ST
+fff7f400   _e_SCI1_ST
+fff7f500   _e_SCI2_ST
+fff7f800   _e_SPI1_ST
+fff7fc00   _e_HET0_ST
+fffffd00   _e_SARMMC_ST
+fffffe00   _e_SARDEC_ST
+ffffff00   _e_SARRTI_ST
+ffffff20   _e_SARCIM_ST
+ffffffd0   _e_SARSYS_ST
+ffffffff   ___c_args__
+ffffffff   ___cinit__
+ffffffff   pinit
+ffffffff   ___binit__
+ffffffff   ___pinit__
+UNDEFED _c_int00
+ffffffff   cinit
+ffffffff   binit
+
+[88 symbols]

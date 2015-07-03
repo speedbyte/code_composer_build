@@ -1,0 +1,5 @@
+Translating ..\05_out\ADLATUS_cc_TMS470_HIS.out to Intel format...
+   "..\05_out\ADLATUS_cc_TMS470_HIS.out"   ==> .text
+   "..\05_out\ADLATUS_cc_TMS470_HIS.out"   ==> $fill000
+   "..\05_out\ADLATUS_cc_TMS470_HIS.out"   ==> .hisconst
+   "..\05_out\ADLATUS_cc_TMS470_HIS.out"   ==> .histext

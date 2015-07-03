@@ -1,0 +1,1178 @@
+TMS470 C/C++ CODE GENERATION TOOLS
+
+Release 4.1.4 April 2006
+
+
+
+
+
+================================================================================
+
+Linker-generated Copy Tables
+
+================================================================================
+
+The linker now supports extensions to the linker command file (LCF) syntax that
+
+will:
+
+
+
+  - make it easier for you to copy objects from load-space to run-space
+
+    at boot-time,
+
+
+
+  - make it easier for you to manage memory overlays at run-time, and
+
+
+
+  - allow you to split GROUPs and output sections that have separate
+
+    load and run addresses.
+
+
+
+Contents
+
+
+
+1. Previous Approaches to Copy Tables
+
+	1.1 A Current Boot-Loaded Application Development Process
+
+	1.2 An Alternative Approach
+
+	1.3 An Overlay Management Example
+
+2. Generating Copy Tables Automatically with the Linker
+
+	2.1 table() Operator
+
+	2.2 Boot-Time Copy Tables
+
+	2.3 Applying a table() Operator to Multiple Object Components and 
+
+	    Applying Multiple table() Operators to a Single Object Component
+
+	2.4 Copy Table Contents
+
+	2.5 General Purpose Copy Routine
+
+3. Linker Generated Copy Table Sections and Symbols
+
+4. Splitting Object Components and Overlay Management
+
+
+
+--------------------------------------------------------------------------------
+
+1. Previous Approaches to Copy Tables
+
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+
+1.1 A Current Boot-Loaded Application Development Process
+
+--------------------------------------------------------------------------------
+
+
+
+In some embedded applications, there is a need to copy or download code and/or
+
+data from one location to another at boot-time before the application actually
+
+begins its main execution thread.  For example, an application may have its code
+
+and/or data in FLASH memory and need to copy it into on-chip memory before the
+
+application begins execution.
+
+
+
+One way to develop an application like this is to create a copy table in
+
+assembly code which contains:
+
+
+
+  - the load location (load page id and address),
+
+  - the run location (run page id and address), and
+
+  - the size 
+
+  
+
+of each block of code or data that needs to be moved from FLASH into on-chip
+
+memory at boot-time.
+
+
+
+A process for developing such an application might look like this:
+
+
+
+  1) Build the application to produce a .map file which contains
+
+     the load and run addresses of each section that has a separate
+
+     load and run placement.
+
+
+
+  2) Edit the copy table (used by the boot loader) to correct the load
+
+     and run addresses as well as the sizess of each block of code or
+
+     data that needs to be moved at boot-time.
+
+
+
+  3) Build the application again, incorporating the updated copy table.
+
+
+
+  4) Run the application.
+
+
+
+This process puts a heavy burden on the application developer to maintain the
+
+copy table (by hand, no less).  Each time a piece of code or data is added or
+
+removed from the application, the process must be repeated in order to keep the
+
+contents of the copy table up to date.
+
+
+
+--------------------------------------------------------------------------------
+
+1.2 An Alternative Approach
+
+--------------------------------------------------------------------------------
+
+
+
+A developer can avoid some of this maintenance burden by using the LOAD_START(),
+
+RUN_START(), and SIZE() operators that are already part of the LCF syntax
+
+supported by the linker.  For example, instead of having to build the
+
+application to generate a .map file, the linker command file can be annotated:
+
+
+
+  SECTIONS
+
+  {
+
+     .flashcode: { app_tasks.obj(.text) } 
+
+         load = FLASH, run = PMEM, 
+
+	 LOAD_START(_flash_code_ld_start),
+
+	 RUN_START(_flash_code_rn_start),
+
+	 SIZE(_flash_code_size)
+
+
+
+     ...
+
+  }
+
+
+
+The LOAD_START(), RUN_START(), and SIZE() operators will instruct the linker to
+
+create three symbols:
+
+
+
+  _flash_code_ld_start	--> load address of .flashcode section
+
+  _flash_code_rn_start	--> run address of .flashcode section
+
+  _flash_code_size	--> size of .flashcode section
+
+
+
+These symbols can then be referenced from the copy table.  The actual data in
+
+the copy table will then be updated automatically each time the application is
+
+linked.  This approach removes step 1 of the original process.
+
+
+
+While maintenance of the copy table is markedly reduced, the developer must
+
+still carry the burden of keeping the copy table contents in synch with the
+
+symbols that are defined in the linker command file.  Ideally, we'd like to have
+
+the linker generate the boot copy table automatically.  This would avoid having
+
+to build the application twice *and* free the developer from having to
+
+explicitly manage the contents of the boot copy table.
+
+
+
+--------------------------------------------------------------------------------
+
+1.3 An Overlay Management Example
+
+--------------------------------------------------------------------------------
+
+
+
+Consider an application which contains a memory overlay that must be managed at
+
+run-time.  The memory overlay is defined using a UNION in the linker command
+
+file as follows:
+
+
+
+  SECTIONS
+
+  {
+
+     ...
+
+
+
+     UNION
+
+     {
+
+        GROUP
+
+	{
+
+	   .task1: { task1.obj(.text) }
+
+	   .task2: { task2.obj(.text) }
+
+
+
+	} load = ROM, LOAD_START(_task12_load_start), SIZE(_task12_size)
+
+
+
+	GROUP
+
+	{
+
+	   .task3: { task3.obj(.text) }
+
+	   .task4: { task4.obj(.text) }
+
+
+
+	} load = ROM, LOAD_START(_task34_load_start), SIZE(_task_34_size)
+
+
+
+     } run = RAM, RUN_START(_task_run_start)
+
+
+
+     ...
+
+  }
+
+
+
+The application must manage the contents of the memory overlay at run-time.
+
+That is, whenever any services from .task1 or .task2 are needed, the application
+
+must first ensure that .task1 and .task2 are resident in the memory overlay.
+
+Similarly for .task3 and .task4.
+
+
+
+To effect a copy of .task1 and .task2 from ROM to RAM at run-time, the
+
+application must first gain access to the load address of the tasks
+
+(_task12_load_start), the run address (_task_run_start), and the size
+
+(_task12_size).  Then this information is used to perform the actual code copy.
+
+
+
+--------------------------------------------------------------------------------
+
+2. Generating Copy Tables Automatically with the Linker
+
+--------------------------------------------------------------------------------
+
+
+
+The linker now supports extensions to the LCF syntax to:
+
+  
+
+  - provide the ability to identify any object components that may need
+
+    to be copied from load-space to run-space at some point during the
+
+    run of an application,
+
+
+
+  - instruct the linker to automatically generate a copy table that
+
+    contains (at least) the load page id, run page id, load address, 
+
+    run address, and size of the component that needs to be copied, and
+
+
+
+  - instruct the linker to generate a user-specified symbol that
+
+    provides the address of a linker generated copy table.
+
+    
+
+For example, the above overlay management example can now be written as follows:
+
+  
+
+  SECTIONS
+
+  {
+
+     ...
+
+
+
+     UNION
+
+     {
+
+        GROUP
+
+	{
+
+	   .task1: { task1.obj(.text) }
+
+	   .task2: { task2.obj(.text) }
+
+
+
+	} load = ROM, table(_task12_copy_table)
+
+
+
+	GROUP
+
+	{
+
+	   .task3: { task3.obj(.text) }
+
+	   .task4: { task4.obj(.text) }
+
+
+
+	} load = ROM, table(_task34_copy_table)
+
+     
+
+     } run = RAM
+
+
+
+     ...
+
+  }
+
+  
+
+Using the above SECTIONS directive in the linker command file, the linker will
+
+generate two copy tables, _task12_copy_table and _task34_copy_table.  Each copy
+
+table provides the load page id, run page id, load address, run address, and
+
+size of the GROUP that it is associated with.  This information is accessible
+
+from application source code using the linker generated symbols,
+
+_task12_copy_table and _task34_copy_table, which provide the addresses of the
+
+two copy tables, respectively.
+
+
+
+Using this method, the developer does not have to worry about creation or
+
+maintenance of a copy table.  The developer can reference the address of any
+
+copy table generated by the linker in C/C++ or assembly source code, passing
+
+that value to a general purpose copy routine which will prcess the copy table
+
+and effect the actual copy.
+
+
+
+--------------------------------------------------------------------------------
+
+2.1 table() Operator
+
+--------------------------------------------------------------------------------
+
+
+
+The mechanism that instructs the linker to produce a copy table is the table()
+
+operator.  A table() operator can be applied to an output section, a GROUP, or a
+
+UNION member.  The copy table generated for a particular table() specification
+
+can be accessed via a user-specified symbol that is provided as an argument to
+
+the table() operator.  The linker will create a symbol with this name and assign
+
+the address of the copy table as the value of the symbol.  The copy table can
+
+then be accessed from the application using the linker generated symbol.
+
+  
+
+Each table() specification applied to members of a given UNION must contain a
+
+unique name.  If a table() oeprator is applied to a GROUP, then none of that
+
+GROUP's members may be marked with a table() specification.  The linker will
+
+detect violations of these rules and report them as warnings, ignoring each
+
+offending use of the table() specification (the linker will not generate a copy
+
+table for erroneous table() operator specifications).
+
+
+
+--------------------------------------------------------------------------------
+
+2.2 Boot-Time Copy Tables
+
+--------------------------------------------------------------------------------
+
+
+
+The linker supports a special copy table name, BINIT (or binit), that can be
+
+used to create a boot-time copy table.  For example, the linker command file for
+
+the boot-loaded application described earlier ...
+
+
+
+  SECTIONS
+
+  {
+
+     .flashcode: { app_tasks.obj(.text) } 
+
+         load = FLASH, run = PMEM, 
+
+	 LOAD_START(_flash_code_ld_start),
+
+	 RUN_START(_flash_code_rn_start),
+
+	 SIZE(_flash_code_size)
+
+
+
+     ...
+
+  }
+
+
+
+can be re-written as follows:
+
+
+
+  SECTIONS
+
+  {
+
+     .flashcode: { app_tasks.obj(.text) } 
+
+         load = FLASH, run = PMEM, 
+
+	 table(BINIT)
+
+     ...
+
+  }
+
+
+
+The linker will create a copy table that can be accessed via a special
+
+linker-generated symbol, ___binit__, which contains the list of all object
+
+components that need to be copied from their load location to their run location
+
+at boot-time.  If a linker command file does not contain any uses of
+
+table(BINIT), then the ___binit__ symbol will be given a value of -1 to indicate
+
+that a boot-time copy table does not exist for a particular application.
+
+
+
+The table(BINIT) specification can be applied to an output section, GROUP, or
+
+UNION member.  If used in the context of a UNION, only one member of the UNION
+
+can be designated with table(BINIT).  If applied to a GROUP, then none of that
+
+GROUP's members may be marked with table(BINIT).  The linker will detect
+
+violations of these rules and report them as warnings, ignoring each offending
+
+use of the table(BINIT) specification.
+
+
+
+--------------------------------------------------------------------------------
+
+2.3 Applying a table() Operator to Multiple Object Components and Applying 
+
+    Multiple table() Operators to a Single Object Component
+
+--------------------------------------------------------------------------------
+
+
+
+If you have several pieces of code that need to be managed together, then you
+
+can apply the same table() operator to several different object components.  In
+
+fact, if you want to manage a particular object component in multiple ways, you
+
+can apply more than one table() operator to it.  Consider the following linker
+
+command file excerpt:
+
+
+
+  SECTIONS
+
+  {
+
+     UNION
+
+     {
+
+        .first: { a1.obj(.text), b1.obj(.text), c1.obj(.text) }
+
+	       load = EMEM, run = PMEM, table(BINIT), table(_first_ctbl)
+
+
+
+        .second: { a2.obj(.text), b2.obj(.text) }
+
+	       load = EMEM, run = PMEM, table(_second_ctbl)
+
+     }
+
+
+
+     .extra: load = EMEM, run = PMEM, table(BINIT)
+
+
+
+     ...
+
+  }
+
+
+
+In this example, the output sections .first and .extra will get copied from
+
+external memory (EMEM) into program memory (PMEM) at boot-time while processing
+
+the BINIT copy table.  After the application has started executing its main
+
+thread, it can then manage the contents of the overlay using the two overlay
+
+copy tables, _first_ctbl and _second_ctbl.
+
+
+
+--------------------------------------------------------------------------------
+
+2.4 Copy Table Contents
+
+--------------------------------------------------------------------------------
+
+
+
+In order to use a copy table that is generated by the linker, you must be aware
+
+of the contents of the copy table.  This information is included in a new RTS
+
+header file, cpy_tbl.h, which contains a C source representation of the copy
+
+table data structure that is automatically generated by the linker.
+
+
+
+This is a listing of the TMS470 version of cpy_tbl.h:
+
+
+
+
+
+/*****************************************************************************/
+
+/* cpy_tbl.h  v4.1.2                                                         */
+
+/* Copyright (c) 2005 Texas Instruments Incorporated                         */
+
+/*                                                                           */
+
+/* Specification of copy table data structures which can be automatically    */
+
+/* generated by the linker (using the table() operator in the LCF).          */
+
+/*                                                                           */
+
+/*****************************************************************************/
+
+
+
+/*****************************************************************************/
+
+/* Copy Record Data Structure                                                */
+
+/*****************************************************************************/
+
+typedef struct copy_record
+
+{
+
+   unsigned int load_addr;
+
+   unsigned int run_addr;
+
+   unsigned int size;
+
+} COPY_RECORD;
+
+
+
+/*****************************************************************************/
+
+/* Copy Table Data Structure                                                 */
+
+/*****************************************************************************/
+
+typedef struct copy_table
+
+{
+
+   unsigned short rec_size;
+
+   unsigned short num_recs;
+
+   COPY_RECORD    recs[1];
+
+} COPY_TABLE;
+
+
+
+/*****************************************************************************/
+
+/* Prototype for general purpose copy routine.                               */
+
+/*****************************************************************************/
+
+extern void copy_in(COPY_TABLE *tp);
+
+
+
+
+
+For each object component that is marked for a copy, the linker will create a
+
+COPY_RECORD object for it.  Each COPY_RECORD contains at least the following
+
+information:
+
+
+
+  - component's load page id
+
+  - component's run page id
+
+  - component's load address
+
+  - component's run address
+
+  - component's size
+
+
+
+The load page id and the load address are combined in the 'load_loc' field of
+
+the COPY_RECORD.  Likewise, the run page id and the run address are combined in
+
+the 'run_loc' field of the COPY_RECORD.  In both cases, the page id is encoded
+
+in the most significant 8 bits of the 'load_loc' and 'run_loc' fields.  The
+
+actual load/run address is encoded in the least significant 3 bytes of the
+
+'load_loc' and 'run_loc' fields.  A page id of 0 indicates that the address
+
+represented refers to a location in normal TMS470 memory.  A non-zero page id
+
+indicates that the address represented refers to a location in I/O memory.
+
+
+
+The linker collects all COPY_RECORDs that are associated with the same copy
+
+table into a COPY_TABLE object.  The COPY_TABLE object will contain the size of
+
+a given COPY_RECORD, the number of COPY_RECORDs in the table, and the array of
+
+COPY_RECORDs in the table.  For example, in the BINIT example above, the .first
+
+and .extra output sections will each have their own COPY_RECORD entries in the
+
+BINIT copy table.  The BINIT copy table will then look something like this:
+
+  
+
+  COPY_TABLE __binit__ = { 12, 2,
+
+                           { <load page id and address of .first>,
+
+                             <run page id and address of .first>,
+
+			     <size of .first> },
+
+                           { <load page id and address of .extra>,
+
+                             <run page id and address of .extra>,
+
+			     <size of .extra> } };
+
+
+
+--------------------------------------------------------------------------------
+
+2.5 General Purpose Copy Routine
+
+--------------------------------------------------------------------------------
+
+
+
+The cpy_tbl.h file listed above also contains a prototype for a general purpose
+
+copy routine, copy_in(), which is now provided as part of the runtime support
+
+library.  copy_in() takes a single argument, the address of a linker generated
+
+copy table.  The routine will then process the copy table data object and
+
+perform the copy of each object component specified in the copy table.
+
+  
+
+The copy_in() function definition is provided in a new RTS source file
+
+called cpy_tbl.c.  Here is a listing of the file:
+
+  
+
+
+
+/*****************************************************************************/
+
+/* cpy_tbl.c  v4.1.2                                                         */
+
+/* Copyright (c) 2005 Texas Instruments Incorporated                         */
+
+/*                                                                           */
+
+/* General purpose copy routine.  Given the address of a linker-generated    */
+
+/* COPY_TABLE data structure, effect the copy of all object components       */
+
+/* that are designated for copy via the corresponding LCF table() operator.  */
+
+/*                                                                           */
+
+/*****************************************************************************/
+
+#include <cpy_tbl.h>
+
+#include <string.h>
+
+
+
+/*****************************************************************************/
+
+/* COPY_IN()                                                                 */
+
+/*****************************************************************************/
+
+void copy_in(COPY_TABLE *tp)
+
+{
+
+   unsigned short i;
+
+
+
+   for (i = 0; i < tp->num_recs; i++)
+
+   {
+
+      COPY_RECORD crp = tp->recs[i];
+
+      unsigned char *ld_addr = (unsigned char *)crp.load_addr;
+
+      unsigned char *rn_addr = (unsigned char *)crp.run_addr;
+
+      memcpy(rn_addr, ld_addr, crp.size);
+
+   } 
+
+}
+
+
+
+  
+
+--------------------------------------------------------------------------------
+
+3. Linker Generated Copy Table Sections and Symbols
+
+--------------------------------------------------------------------------------
+
+
+
+The linker will create and allocate a separate input section for each copy table
+
+that it generates.  Each copy table symbol will be defined with the address
+
+value of the input section that contains the corresponding copy table.
+
+
+
+Each overlay copy table input section will get a unique linker generated name.
+
+For example, table(_first_ctbl) would place the copy table for the .first
+
+section into an input section called ".ovly:_first_ctbl".  The linker will
+
+create a single input section, .binit, to contain the entire boot-time copy
+
+table.
+
+  
+
+You can control the placement of the linker generated copy table sections using
+
+the input section names in the linker command file.  For example, in this linker
+
+command file ...
+
+  
+
+  SECTIONS
+
+  {
+
+     UNION
+
+     {
+
+        .first: { a1.obj(.text), b1.obj(.text), c1.obj(.text) }
+
+	       load = EMEM, run = PMEM, table(BINIT), table(_first_ctbl)
+
+
+
+        .second: { a2.obj(.text), b2.obj(.text) }
+
+	       load = EMEM, run = PMEM, table(_second_ctbl)
+
+     }
+
+
+
+     .extra: load = EMEM, run = PMEM, table(BINIT)
+
+
+
+     ...
+
+
+
+     .ovly: { } > BMEM
+
+     .binit: { } > BMEM
+
+  }
+
+  
+
+the boot-time copy table will get generated into a .binit input section, which
+
+is then collected into the .binit output section, which is then mapped to an
+
+address in the BMEM memory area.  The _first_ctbl will be generated into the
+
+.ovly:_first_ctbl input section and the _second_ctbl will be generated into the
+
+.ovly:_second_ctbl input section.  Since the base names of both of these input
+
+sections match the name of the .ovly output section, both of them will get
+
+collected into the .ovly output section, which is then mapped to an address in
+
+the BMEM memory area.
+
+
+
+If no explicit placement instructions are provided for the linker generated copy
+
+table sections, they will be allocated according to the linker's default
+
+placement algorithm.
+
+
+
+The linker does not allow other types of input sections to be combined with a
+
+copy table input section in the same output section.  The linker will also not
+
+allow a copy table section that was created from a partial link session to be
+
+used as input to a succeeding link session.
+
+ 
+
+--------------------------------------------------------------------------------
+
+4. Splitting Object Components and Overlay Management
+
+--------------------------------------------------------------------------------
+
+
+
+In previous versions of the linker, splitting of sections that have separate
+
+load and run placement instructions was not permitted.  The reason for this
+
+restriction was because there was no effective mechanism for the developer to
+
+gain access to the load location or run location of each one of the pieces of
+
+the split object component.  Therefore, there was no effective way to write a
+
+copy routine that could move the split section from its load location to its run
+
+location.
+
+
+
+However, the linker does have access to both the load location and run location
+
+of every piece of a split object component.  Using the table() operator, you can
+
+tell the linker to generate this information into a copy table.  Each piece of
+
+the split object component will get its own COPY_RECORD entry in the copy table
+
+object.
+
+
+
+For example, consider an application which has 7 tasks.  Task 1 through 3 are
+
+overlaid with tasks 4 through 7 (using a UNION directive).  The load placement
+
+of all of the tasks is split among 4 different memory areas (LMEM1, LMEM2,
+
+LMEM3, and LMEM4).  The overlay is defined as part of memory area PMEM.  Each
+
+set of tasks must be moved into the overlay at run-time before any services from
+
+the set are used.
+
+  
+
+You can now use table() operators in combination with splitting operators, '>>',
+
+to create copy tables that have all the information needed to move either group
+
+of tasks into the memory overlay:
+
+  
+
+  SECTIONS
+
+  {
+
+     UNION
+
+     {
+
+	.task1to3: { *(.task1), *(.task2), *(.task3) } 
+
+		load >> LMEM1 | LMEM2 | LMEM4, table(_task13_ctbl)
+
+
+
+	GROUP
+
+	{
+
+	   .task4: { *(.task4) }
+
+	   .task5: { *(.task5) }
+
+	   .task6: { *(.task6) }
+
+	   .task7: { *(.task7) }
+
+
+
+	} load >> LMEM1 | LMEM3 | LMEM4, table(_task47_ctbl)
+
+
+
+     } run = PMEM
+
+
+
+     ...
+
+
+
+     .ovly:	> LMEM4
+
+
+
+  }
+
+
+
+You then might write the driver for such an application as follows:
+
+
+
+  #include <cpy_tbl.h>
+
+
+
+  extern COPY_TABLE task13_ctbl;
+
+  extern COPY_TABLE task47_ctbl;
+
+
+
+  extern void task1(void);
+
+  ...
+
+  extern void task7(void);
+
+
+
+  main()
+
+  {
+
+     ...
+
+     copy_in(&task13_ctbl);
+
+     task1();
+
+     task2();
+
+     task3();
+
+     ...
+
+
+
+     copy_in(&task47_ctbl);
+
+     task4();
+
+     task5();
+
+     task6();
+
+     task7();
+
+     ...
+
+  }
+
+  
+
+The contents of the .task1to3 will be split in its load space and contiguous in
+
+its run space.  The copy table, _task13_ctbl, that is generated by the linker
+
+will contain a separate COPY_RECORD for each piece of the split section,
+
+.task1to3.  When the address of _task13_ctbl is passed to copy_in(), each piece
+
+of .task1to3 is then copied from its load location into the run location.
+
+
+
+The contents of the GROUP containing tasks 4 through 7 are also split in its
+
+load space.  The linker performs the GROUP split by applying the split operator
+
+to each member of the GROUP in order.  The copy table for the GROUP will then
+
+contain a COPY_RECORD entry for every piece of every member of the GROUP.  These
+
+pieces will all be copied into the memory overlay when the _task47_ctbl is
+
+processed by copy_in().
+
+
+
+The split operator can now be applied to an output section, GROUP, or the load
+
+placement of a UNION or UNION member.  The linker will not permit a split
+
+operator to be applied to the run placement of a UNION or the run placement of a
+
+UNION member.  The linker will detect such violations, emit a warning, and
+
+ignore the offending split operator usage.
+

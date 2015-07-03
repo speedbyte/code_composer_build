@@ -1,0 +1,32 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="R:\06_hallib\01_prj\"
+ProjectType=Library
+CPUFamily=TMS470R1X
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\f35a_api\u_div16.obj"
+Source="..\02_src\ADLATUS_CanHandler.c"
+Source="..\02_src\ADLATUS_CanHandlerRAM.c"
+Source="..\02_src\ADLATUS_FUN_CChal_HISCheck.c"
+Source="..\02_src\ADLATUS_Hal.c"
+Source="..\02_src\ADLATUS_HalRAM.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o"r:\06_hallib\05_out\HALLIB_cc_tms470_VW_UDS.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\Release\HALLIB_cc_tms470_VW_UDS.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-g -k -q -ss -pr -al -os -o2 -fr"r:\06_hallib\03_obj" -fs"r:\06_hallib\04_lst" -ft"r:\06_hallib\04_lst" -fb"r:\06_hallib\04_lst" -i"r:\05_header\int" -i"r:\05_header\ext" -d"_DEBUG" -mf -mt
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr"R:\06_hallib\01_prj\Release"
+

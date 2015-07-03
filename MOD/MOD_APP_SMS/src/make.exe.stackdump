@@ -1,0 +1,7 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=00000000
+eax=00000000 ebx=00000006 ecx=61084710 edx=00000002 esi=6108D15C edi=6108D164
+ebp=0242EFC4 esp=0242F488 program=f:\MyDocuments\workspace\eclipse\UHV_SOP2_DEV\TOOLS\cygwin\bin\make.exe
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+End of stack trace

@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--**********************************************************************-->
+<!--                                                                      -->
+<!--Name:     Node_UHVhigh_NAR                                            -->
+<!--                                                                      -->
+<!--Author:   Matthias Wenzel                                             -->
+<!--Date:     2008-01-30                                                  -->
+<!--Version:  1.0.0                                                       -->
+<!--Changes:  2008-01-30, 1.00, MW, neu erstellt                          -->
+<!--                                                                      -->
+<!--**********************************************************************-->
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="BAPgen.xsd" Version="BAP1.4" SGType="LargeFSG" TaskTimeMs="10" CANIncludeFile="UHV_NAR.h" RxRingBufferSize="8">
+  <!--CAN-Rx-Handles-->
+  <CanRxMessage id="CanRxBAP_ASG_07" number="1"/>
+  <CanRxMessage id="CanRxBAP_ASG_03" number="1" />
+  <CanRxMessage id="CanRxBAP_ASG_06" number="1" />
+  <!--CAN-Tx-Handles-->
+  <CanTxMessage id="CanTxBAP_MDI_02" number="1" inhibitTime="5" />
+  <CanTxMessage id="CanTxBAP_Telefon_04" number="1" inhibitTime="2"/>
+  <CanTxMessage id="CanTxBAP_Telefon_01" number="1" inhibitTime="3" />
+  <CanTxMessage id="CanTxBAP_Telefon_02" number="1" inhibitTime="3" />
+  <CanTxMessage id="CanTxBAP_Telefon_03" number="1" inhibitTime="2" />
+  <!--Error values-->
+  <ApplicationError value="0x00" name="reserved" />
+  <ApplicationError value="0x00" name="no_error" />
+  <ApplicationError value="0x80" name="AppErr_Unknown" />
+  <ApplicationError value="0x81" name="AppErr_NotSuccessful" />
+  <ApplicationError value="0x82" name="AppErr_OutOfMemory" />
+  <ApplicationError value="0x83" name="AppErr_DataInvalid" />
+  <ApplicationError value="0x88" name="AppErr_NoUserActive" />
+  <ApplicationError value="0x89" name="AppErr_NoNetwork" />
+  <ApplicationError value="0x8A" name="AppErr_NotSupportedByNetwork" />
+  <ApplicationError value="0x8B" name="AppErr_NotRegistered_EmergencyCallOnly" />
+  <ApplicationError value="0x8E" name="AppErr_NoCodeRequired" />
+  <ApplicationError value="0x8F" name="AppErr_NoRedialnumber" />
+  <ApplicationError value="0x90" name="AppErr_ActiveCallPresent_Dialing" />
+  <ApplicationError value="0x91" name="AppErr_HeldCallPresent" />
+  <ApplicationError value="0x93" name="AppErr_NoCall" />
+  <ApplicationError value="0x94" name="AppErr_NoCallRelatedToCallID" />
+  <ApplicationError value="0x95" name="AppErr_NoActiveCall" />
+  <ApplicationError value="0x96" name="AppErr_NoCallOnHold" />
+  <ApplicationError value="0x97" name="AppErr_NoIncoming_WaitingCall" />
+  <ApplicationError value="0x9A" name="AppErr_NoConference" />
+  <ApplicationError value="0x9B" name="AppErr_NoMemberOfConference" />
+  <ApplicationError value="0x9C" name="AppErr_MaximumNumberForMembersOfConferenceReached" />
+  <ApplicationError value="0x9D" name="AppErr_FunctionNotSupportedForConferenceCalls" />
+  <ApplicationError value="0x9E" name="AppErr_PhonebookDownloadInProgress" />
+  <ApplicationError value="0xA0" name="AppErr_NotSupportedByMobilePhone_HFP" />
+  <ApplicationError value="0xA1" name="AppErr_NoHeadsetConnected" />
+  <ApplicationError value="0xA2" name="AppErr_NoPairedHeadset" />
+  <!--LSG: Telephone - -->
+  <!--generated from ..\fc\BAP-FC_TEL_P30DF30_v1.07.xml-->
+  <FLsg id="40" name="Telephone">
+    <LsgConfig heartbeatTime="10" useVarDLC="true">
+      <BapConfig PVMajor="3" PVMinor="0" SGClass="40" SGSub="0" DFMajor="3" DFMinor="0" />
+      <FunctionListItem fctId="2" />
+      <FunctionListItem fctId="3" />
+      <FunctionListItem fctId="4" />
+      <FunctionListItem fctId="14" />
+      <FunctionListItem fctId="15" />
+      <FunctionListItem fctId="16" />
+      <FunctionListItem fctId="17" />
+      <FunctionListItem fctId="18" />
+      <FunctionListItem fctId="19" />
+      <FunctionListItem fctId="20" />
+<!--      <FunctionListItem fctId="21" /> -->
+      <FunctionListItem fctId="22" />
+      <FunctionListItem fctId="23" />
+<!--      <FunctionListItem fctId="24" /> -->
+      <FunctionListItem fctId="25" />
+      <FunctionListItem fctId="26" />
+      <FunctionListItem fctId="27" />
+      <FunctionListItem fctId="28" />
+      <FunctionListItem fctId="29" />
+      <FunctionListItem fctId="30" />
+      <FunctionListItem fctId="31" />
+      <FunctionListItem fctId="32" />
+      <FunctionListItem fctId="33" />
+      <FunctionListItem fctId="34" />
+      <FunctionListItem fctId="36" />
+      <FunctionListItem fctId="38" />
+      <FunctionListItem fctId="39" />
+      <FunctionListItem fctId="40" />
+      <FunctionListItem fctId="43" />
+<!--      <FunctionListItem fctId="44" /> -->
+<!--      <FunctionListItem fctId="45" /> -->
+      <FunctionListItem fctId="48" />
+      <!--FCT: Telephone/GetAll-->
+      <Fct id="1" name="GetAll">
+        <Cache>
+          <RX dataType="void" opCode="GetAll">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="byteSequence" length="222" opCode="Error-StatusAll">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Cache>
+      </Fct>
+      <!--FCT: Telephone/BAP-Config-->
+      <Fct id="2" name="BAP_Config">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="fixedByteSequence" length="6" opCode="Error-Reset-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/FunctionList-->
+      <Fct id="3" name="FunctionList">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="byteSequence" length="8" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/HeartBeat-->
+      <Fct id="4" name="HeartBeat">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/FSG-Setup-->
+      <Fct id="14" name="FSG_Setup">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="fixedByteSequence" length="4" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/FSG-OperationState-->
+      <Fct id="15" name="FSG_OperationState">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/MobileServiceSupport-->
+      <Fct id="16" name="MobileServiceSupport">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="byteSequence" length="8" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/UserList-->
+      <Fct id="17" name="UserList">
+        <Array>
+          <RX dataType="byteSequence" length="5" opCode="Get">
+            <CanSegInterface canMessage="CanRxBAP_ASG_03" interTelegramTime="30" />
+          </RX>
+          <TX dataType="byteSequence" length="525" opCode="Changed-Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Array>
+      </Fct>
+      <!--FCT: Telephone/ActiveUser-->
+      <Fct id="18" name="ActiveUser">
+        <!--Property heartbeatOn="false"-->
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="byteSequence" length="130" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/RegisterState-->
+      <Fct id="19" name="RegisterState">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/LockState-->
+      <Fct id="20" name="LockState">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/NetworkProvider-->
+      <Fct id="22" name="NetworkProvider">
+        <Property heartbeatOn="false">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="byteSequence" length="40" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/SignalQuality-->
+      <Fct id="23" name="SignalQuality">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/LineState-->
+      <Fct id="25" name="LineState">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/CallState-->
+      <Fct id="26" name="CallState">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="byteSequence" length="8" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/CallInfo-->
+      <Fct id="27" name="CallInfo">
+        <Array>
+          <RX dataType="byteSequence" length="5" opCode="Get">
+            <CanSegInterface canMessage="CanRxBAP_ASG_03" interTelegramTime="30" />
+          </RX>
+          <TX dataType="byteSequence" length="985" opCode="Changed-Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Array>
+      </Fct>
+      <!--FCT: Telephone/DialNumber-->
+      <Fct id="28" name="DialNumber">
+        <Method processingTimer="30">
+          <RX dataType="byteSequence" length="190" opCode="AbortResult-StartResult">
+            <CanSegInterface canMessage="CanRxBAP_ASG_03" interTelegramTime="30" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/HangupCall-->
+      <Fct id="29" name="HangupCall">
+        <Method processingTimer="30">
+          <RX dataType="uint8" opCode="StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/AcceptCall-->
+      <Fct id="30" name="AcceptCall">
+        <Method processingTimer="30">
+          <RX dataType="void" opCode="StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/CallHold-->
+      <Fct id="31" name="CallHold">
+        <Method processingTimer="30">
+          <RX dataType="void" opCode="StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/ResumeCall-->
+      <Fct id="32" name="ResumeCall">
+        <Method processingTimer="30">
+          <RX dataType="void" opCode="StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/HandsFreeOnOff-->
+      <Fct id="33" name="HandsFreeOnOff">
+        <Property heartbeatOn="true">
+          <RX dataType="uint8" opCode="Get-SetGet">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/MicroMuteOnOff-->
+      <Fct id="34" name="MicroMuteOnOff">
+        <Property heartbeatOn="true">
+          <RX dataType="uint8" opCode="Get-SetGet">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Telephone/SendDTMF-->
+      <Fct id="36" name="SendDTMF">
+        <Method processingTimer="30">
+          <RX dataType="byteSequence" length="40" opCode="Start">
+            <CanSegInterface canMessage="CanRxBAP_ASG_03" interTelegramTime="30" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/MPReleaseActiveCallAcceptWaitingCall-->
+      <Fct id="38" name="MPReleaseActiveCallAcceptWaitingCall">
+        <Method processingTimer="30">
+          <RX dataType="void" opCode="StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/MPSwap-->
+      <Fct id="39" name="MPSwap">
+        <Method processingTimer="30">
+          <RX dataType="void" opCode="StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/MPCallHoldAcceptWaitingCall-->
+      <Fct id="40" name="MPCallHoldAcceptWaitingCall">
+        <Method processingTimer="30">
+          <RX dataType="void" opCode="StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: Telephone/CCJoin-->
+      <Fct id="43" name="CCJoin">
+        <Method processingTimer="30">
+          <RX dataType="void" opCode="StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_03" />
+          </RX>
+          <TX dataType="void" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_01" />
+          </TX>
+        </Method>
+      </Fct>
+	  <!--FCT: Telephone/RestoreFactorySettings-->
+	  <Fct id="48" name="RestoreFactorySettings">
+	  	<Method processingTimer="30">
+	  		<RX dataType="uint8" opCode="StartResult">
+	  			<CanNoneSegInterface canMessage="CanRxBAP_ASG_03"/>
+	  		</RX>
+	  		<TX dataType="void" opCode="Error-Processing-Result">
+	  			<CanNoneSegInterface canMessage="CanTxBAP_Telefon_01"/>
+	  		</TX>
+	  	</Method>
+	  </Fct>
+    </LsgConfig>
+  </FLsg>
+  <!--LSG: Phonebook - -->
+  <!--generated from ..\fc\BAP-FC_PB_P30DF30_v1.07.xml-->
+  <FLsg id="41" name="Phonebook">
+    <LsgConfig heartbeatTime="10" useVarDLC="true">
+      <BapConfig PVMajor="3" PVMinor="0" SGClass="41" SGSub="0" DFMajor="3" DFMinor="0" />
+      <FunctionListItem fctId="2" />
+      <FunctionListItem fctId="3" />
+      <FunctionListItem fctId="4" />
+      <FunctionListItem fctId="14" />
+      <FunctionListItem fctId="15" />
+      <FunctionListItem fctId="16" />
+      <FunctionListItem fctId="17" />
+      <FunctionListItem fctId="18" />
+      <FunctionListItem fctId="19" />
+      <FunctionListItem fctId="20" />
+      <!--FunctionListItem fctId="21" /-->
+      <FunctionListItem fctId="22" />
+      <FunctionListItem fctId="23" />
+      <FunctionListItem fctId="24" />
+      <FunctionListItem fctId="25" /> 
+      <FunctionListItem fctId="26" />
+	  <FunctionListItem fctId="27"/>
+      <!--FunctionListItem fctId="28"/-->
+	  <FunctionListItem fctId="29"/>
+      <!--FunctionListItem fctId="30"/-->
+      <FunctionListItem fctId="32"/>
+      <!--FunctionListItem fctId="33"/-->
+      <!--FunctionListItem fctId="34"/-->
+      <!--FCT: Phonebook/GetAll-->
+      <Fct id="1" name="GetAll">
+        <Cache>
+          <RX dataType="void" opCode="GetAll">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="byteSequence" length="80" opCode="Error-StatusAll">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Cache>
+      </Fct>
+      <!--FCT: Phonebook/BAP-Config-->
+      <Fct id="2" name="BAP_Config">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="fixedByteSequence" length="6" opCode="Error-Reset-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Phonebook/FunctionList-->
+      <Fct id="3" name="FunctionList">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="fixedByteSequence" length="8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Phonebook/HeartBeat-->
+      <Fct id="4" name="HeartBeat">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Phonebook/FSG-Setup-->
+      <Fct id="14" name="FSG_Setup">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Phonebook/FSG-OperationState-->
+      <Fct id="15" name="FSG_OperationState">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Phonebook/MobileServiceSupport-->
+      <Fct id="16" name="MobileServiceSupport">
+        <Property heartbeatOn="false">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="byteSequence" length="8" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Phonebook/MissedCallIndication-->
+      <Fct id="17" name="MissedCallIndication">
+        <Property heartbeatOn="true">
+          <RX dataType="fixedByteSequence" length="4" opCode="Get-SetGet">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="fixedByteSequence" length="4" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Phonebook/MissedCalls-->
+      <Fct id="18" name="MissedCalls">
+        <Array>
+          <RX dataType="byteSequence" length="5" opCode="Get-SetGet">
+            <CanSegInterface canMessage="CanRxBAP_ASG_06" interTelegramTime="30" />
+          </RX>
+          <TX dataType="byteSequence" length="738" opCode="Changed-Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Array>
+      </Fct>
+      <!--FCT: Phonebook/ReceivedCalls-->
+      <Fct id="19" name="ReceivedCalls">
+        <Array>
+          <RX dataType="byteSequence" length="5" opCode="Get-SetGet">
+            <CanSegInterface canMessage="CanRxBAP_ASG_06" interTelegramTime="30" />
+          </RX>
+          <TX dataType="byteSequence" length="738" opCode="Changed-Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Array>
+      </Fct>
+      <!--FCT: Phonebook/DialedNumbers-->
+      <Fct id="20" name="DialedNumbers">
+        <Array>
+          <RX dataType="byteSequence" length="5" opCode="Get-SetGet">
+            <CanSegInterface canMessage="CanRxBAP_ASG_06" interTelegramTime="30" />
+          </RX>
+          <TX dataType="byteSequence" length="738" opCode="Changed-Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Array>
+      </Fct>
+      <!--FCT: Phonebook/PbState-->
+      <Fct id="22" name="PbState">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="fixedByteSequence" length="3" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_Telefon_03" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: Phonebook/Phonebook-->
+      <Fct id="23" name="Phonebook">
+        <Array>
+          <RX dataType="byteSequence" length="5" opCode="Get">
+            <CanSegInterface canMessage="CanRxBAP_ASG_06" interTelegramTime="30" />
+          </RX>
+          <TX dataType="byteSequence" length="1545" opCode="Changed-Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_Telefon_02" />
+          </TX>
+        </Array>
+      </Fct>
+	  <!--FCT: Phonebook/PbSpeller-->
+	  <Fct id="24" name="PbSpeller">
+	  	<Method processingTimer="30">
+	  		<RX dataType="byteSequence" length="51" opCode="StartResult">
+	  			<CanSegInterface canMessage="CanRxBAP_ASG_06" interTelegramTime="30"/>
+	  		</RX>
+	  		<TX dataType="fixedByteSequence" length="4" opCode="Error-Processing-Result">
+	  			<CanNoneSegInterface canMessage="CanTxBAP_Telefon_03"/>
+	  		</TX>
+	  	</Method>
+	  </Fct>
+	  <!--FCT: Phonebook/VoiceMailboxNumber-->
+	  <Fct id="25" name="VoiceMailboxNumber">
+	  	<Property heartbeatOn="true">
+	  		<RX dataType="byteSequence" length="40" opCode="Get-SetGet">
+	  			<CanSegInterface canMessage="CanRxBAP_ASG_06" interTelegramTime="30"/>
+	  		</RX>
+	  		<TX dataType="byteSequence" length="40" opCode="Error-Status">
+	  			<CanSegInterface canMessage="CanTxBAP_Telefon_03"/>
+	  		</TX>
+	  	</Property>
+	  </Fct>
+	  <!--FCT: Phonebook/PbStartDownload-->
+	  <Fct id="26" name="PbStartDownload">
+	  	<Method processingTimer="30">
+	  		<RX dataType="void" opCode="AbortResult-StartResult">
+	  			<CanNoneSegInterface canMessage="CanRxBAP_ASG_06"/>
+	  		</RX>
+	  		<TX dataType="void" opCode="Error-Processing-Result">
+	  			<CanNoneSegInterface canMessage="CanTxBAP_Telefon_03"/>
+	  		</TX>
+	  	</Method>
+	  </Fct>
+	  <!--FCT: Phonebook/SMSState-->
+	  <Fct id="27" name="SMSState">
+	  	<Property heartbeatOn="true">
+	  		<RX dataType="fixedByteSequence" length="4" opCode="Get-SetGet">
+	  			<CanNoneSegInterface canMessage="CanRxBAP_ASG_06"/>
+	  		</RX>
+	  		<TX dataType="fixedByteSequence" length="4" opCode="Error-Status">
+	  			<CanNoneSegInterface canMessage="CanTxBAP_Telefon_03"/>
+	  		</TX>
+	  	</Property>
+	  </Fct>
+	  <!--FCT: Phonebook/SMSReceived-->
+	  <Fct id="29" name="SMSReceived">
+	  	<Array>
+	  		<RX dataType="byteSequence" length="8" opCode="Get-SetGet">
+	  			<CanSegInterface canMessage="CanRxBAP_ASG_06" interTelegramTime="30"/>
+	  		</RX>
+	  		<TX dataType="byteSequence" length="947" opCode="Changed-Error-Status">
+	  			<CanSegInterface canMessage="CanTxBAP_Telefon_03"/>
+	  		</TX>
+	  	</Array>
+	  </Fct>
+	  <!--FCT: Phonebook/SMSSend-->
+	  <Fct id="32" name="SMSSend">
+		<Method processingTimer="30">
+			<RX dataType="byteSequence" length="841" opCode="StartResult">
+				<CanSegInterface canMessage="CanRxBAP_ASG_06" interTelegramTime="30"/>
+			</RX>
+			<TX dataType="void" opCode="Error-Processing-Result">
+				<CanNoneSegInterface canMessage="CanTxBAP_Telefon_03"/>
+			</TX>
+		</Method>
+	  </Fct>
+    </LsgConfig>
+  </FLsg>
+	<!--LSG: UHV Secondary Display - -->
+	<!--generated from ..\fc\BAP-FC_UHV_SD_P30DF30_V1.10.xml-->
+	<FLsg id="43" name="SD">
+		<LsgConfig heartbeatTime="10" useVarDLC="true">
+			<BapConfig PVMajor="3" PVMinor="0" SGClass="43" SGSub="0" DFMajor="3" DFMinor="1"/>
+			<FunctionListItem fctId="2"/>
+			<FunctionListItem fctId="3"/>
+			<FunctionListItem fctId="4"/>
+			<FunctionListItem fctId="15"/>
+			<FunctionListItem fctId="16"/>
+			<FunctionListItem fctId="17"/>
+			<FunctionListItem fctId="18"/>
+			<FunctionListItem fctId="19"/>
+			<FunctionListItem fctId="20"/>
+			<FunctionListItem fctId="21"/>
+			<FunctionListItem fctId="22"/>
+			<FunctionListItem fctId="23"/>
+			<!--FCT: UHV Secondary Display/GetAll-->
+			<Fct id="1" name="GetAll">
+				<Cache>
+					<RX dataType="void" opCode="GetAll">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="byteSequence" length="44" opCode="Error-StatusAll">
+						<CanSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Cache>
+			</Fct>
+			<!--FCT: UHV Secondary Display/BAP-Config-->
+			<Fct id="2" name="BAP_Config">
+				<Property heartbeatOn="true">
+					<RX dataType="void" opCode="Get">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="fixedByteSequence" length="6" opCode="Error-Reset-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/FunctionList-->
+			<Fct id="3" name="FunctionList">
+				<Property heartbeatOn="true">
+					<RX dataType="void" opCode="Get">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="byteSequence" length="8" opCode="Error-Status">
+						<CanSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/HeartBeat-->
+			<Fct id="4" name="HeartBeat">
+				<Property heartbeatOn="true">
+					<RX dataType="void" opCode="Get">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="uint8" opCode="Error-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/FSG-OperationState-->
+			<Fct id="15" name="FSG_OperationState">
+				<Property heartbeatOn="true">
+					<RX dataType="void" opCode="Get">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="uint8" opCode="Error-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/ASG_Capabilities-->
+			<Fct id="16" name="ASG_Capabilities">
+				<Property heartbeatOn="true">
+					<RX dataType="fixedByteSequence" length="2" opCode="Get-SetGet">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="fixedByteSequence" length="2" opCode="Error-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/ASG_Config-->
+			<Fct id="17" name="ASG_Config">
+				<Property heartbeatOn="true">
+					<RX dataType="fixedByteSequence" length="2" opCode="Get-SetGet">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="fixedByteSequence" length="2" opCode="Error-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/MFL_BlockDefinition-->
+			<Fct id="18" name="MFL_BlockDefinition">
+				<Property heartbeatOn="true">
+					<RX dataType="byteSequence" length="8" opCode="Get-SetGet">
+						<CanSegInterface canMessage="CanRxBAP_ASG_07" interTelegramTime="50"/>
+					</RX>
+					<TX dataType="byteSequence" length="8" opCode="Error-Status">
+						<CanSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/FrameStatus-->
+			<Fct id="19" name="FrameStatus">
+				<Property heartbeatOn="true">
+					<RX dataType="fixedByteSequence" length="6" opCode="Get-SetGet">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="fixedByteSequence" length="6" opCode="Error-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/FrameData-->
+			<Fct id="20" name="FrameData">
+				<Array>
+					<RX dataType="byteSequence" length="4" opCode="Get">
+						<CanSegInterface canMessage="CanRxBAP_ASG_07" interTelegramTime="50"/>
+					</RX>
+					<TX dataType="byteSequence" length="685" opCode="Error-Status">
+						<CanSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Array>
+			</Fct>
+			<!--FCT: UHV Secondary Display/FrameDataAck-->
+			<Fct id="21" name="FrameDataAck">
+				<Property heartbeatOn="true">
+					<RX dataType="uint8" opCode="Set">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="uint8" opCode="Error-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/ScrollBar-->
+			<Fct id="22" name="ScrollBar">
+				<Property heartbeatOn="true">
+					<RX dataType="void" opCode="Get">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="fixedByteSequence" length="4" opCode="Error-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+			<!--FCT: UHV Secondary Display/LsgStatus-->
+			<Fct id="23" name="LsgStatus">
+				<Property heartbeatOn="true">
+					<RX dataType="uint8" opCode="Set">
+						<CanNoneSegInterface canMessage="CanRxBAP_ASG_07"/>
+					</RX>
+					<TX dataType="uint8" opCode="Error-Status">
+						<CanNoneSegInterface canMessage="CanTxBAP_Telefon_04"/>
+					</TX>
+				</Property>
+			</Fct>
+		</LsgConfig>
+	</FLsg>
+  <!--LSG: MDI - -->
+  <!--generated from ..\fc\BAP-FC_MDI_P30DF40_v2.03.xml-->
+  <FLsg id="48" name="MDI">
+    <LsgConfig heartbeatTime="10" useVarDLC="true">
+      <BapConfig PVMajor="3" PVMinor="0" SGClass="47" SGSub="0" DFMajor="3" DFMinor="1" />
+      <!--BapConfig PVMajor="3" PVMinor="0" SGClass="47" SGSub="0" DFMajor="3" DFMinor="0" /-->
+      <FunctionListItem fctId="2" />
+      <FunctionListItem fctId="3" />
+      <FunctionListItem fctId="4" />
+      <FunctionListItem fctId="14" />
+      <FunctionListItem fctId="15" />
+      <FunctionListItem fctId="16" />
+      <FunctionListItem fctId="17" />
+      <!--FunctionListItem fctId="18" /-->
+      <!--FunctionListItem fctId="19" /-->
+      <FunctionListItem fctId="20" />
+      <!--FunctionListItem fctId="21" /-->  
+      <FunctionListItem fctId="22" />
+      <FunctionListItem fctId="23" />
+      <!--FunctionListItem fctId="24" /-->
+      <FunctionListItem fctId="25" />
+      <FunctionListItem fctId="26" />
+      <!--FunctionListItem fctId="27" /-->
+      <!--FunctionListItem fctId="28" /-->
+      <!--FunctionListItem fctId="29" /-->
+      <FunctionListItem fctId="30" />
+      <FunctionListItem fctId="31" />
+      <!--FunctionListItem fctId="33" /-->
+      <!--FunctionListItem fctId="34" /-->
+      <!--FunctionListItem fctId="35" /-->
+      <!--FunctionListItem fctId="37" /-->
+      <!--FunctionListItem fctId="38" /-->
+      <!--FunctionListItem fctId="39" /-->
+      <!--FCT: MDI/GetAll-->
+      <Fct id="1" name="GetAll">
+        <Cache>
+          <RX dataType="void" opCode="GetAll">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="byteSequence" length="499" opCode="Error-StatusAll">
+            <CanSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Cache>
+      </Fct>
+      <!--FCT: MDI/BAP-Config-->
+      <Fct id="2" name="BAP_Config">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="fixedByteSequence" length="6" opCode="Error-Reset-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: MDI/FunctionList-->
+      <Fct id="3" name="FunctionList">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="byteSequence" length="8" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: MDI/HeartBeat-->
+      <Fct id="4" name="HeartBeat">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: MDI/FSG-Setup-->
+      <Fct id="14" name="FSG_Setup">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: MDI/FSG-OperationState-->
+      <Fct id="15" name="FSG_OperationState">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: MDI/MDserviceSupport-->
+      <Fct id="16" name="MDserviceSupport">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="byteSequence" length="8" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: MDI/MDactive-->
+      <Fct id="17" name="MDactive">
+        <Property heartbeatOn="true">
+          <RX dataType="void" opCode="Get">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="byteSequence" length="32" opCode="Error-Status">
+            <CanSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Property>
+      </Fct>
+      <!--FCT: MDI/PlayStatus-->
+      <Fct id="20" name="PlayStatus">
+        <Property heartbeatOn="true">
+          <RX dataType="uint8" opCode="Get-SetGet">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Status">
+            <CanNoneSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Property>
+      </Fct>
+	  <!--FCT: MDI/MediaEvent-->
+	  <Fct id="22" name="MediaEvent">
+	  	<Property heartbeatOn="true">
+	  		<RX dataType="void" opCode="Get">
+	  			<CanNoneSegInterface canMessage="CanRxBAP_ASG_06"/>
+	  		</RX>
+	  		<TX dataType="uint8" opCode="Error-Status">
+	  			<CanNoneSegInterface canMessage="CanTxBAP_MDI_02"/>
+	  		</TX>
+	  	</Property>
+	  </Fct>
+	  <!--FCT: MDI/TimePosition-->
+	  <Fct id="23" name="TimePosition">
+	  	<Property heartbeatOn="true">
+	  		<RX dataType="fixedByteSequence" length="4" opCode="Get-SetGet">
+	  			<CanNoneSegInterface canMessage="CanRxBAP_ASG_06"/>
+	  		</RX>
+	  		<TX dataType="fixedByteSequence" length="4" opCode="Error-Status">
+	  			<CanNoneSegInterface canMessage="CanTxBAP_MDI_02"/>
+	  		</TX>
+	  	</Property>
+	  </Fct>
+      <!--FCT: MDI/SkipForward-->
+      <Fct id="25" name="SkipForward">
+        <Method processingTimer="30">
+          <RX dataType="fixedByteSequence" length="2" opCode="AbortResult-StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Method>
+      </Fct>
+      <!--FCT: MDI/SkipBackward-->
+      <Fct id="26" name="SkipBackward">
+        <Method processingTimer="30">
+          <RX dataType="fixedByteSequence" length="2" opCode="AbortResult-StartResult">
+            <CanNoneSegInterface canMessage="CanRxBAP_ASG_06" />
+          </RX>
+          <TX dataType="uint8" opCode="Error-Processing-Result">
+            <CanNoneSegInterface canMessage="CanTxBAP_MDI_02" />
+          </TX>
+        </Method>
+      </Fct>
+		<!--FCT: MDI/CurrentFileName-->
+		<Fct id="30" name="CurrentFileName">
+			<Property heartbeatOn="false">
+				<RX dataType="void" opCode="Get">
+					<CanNoneSegInterface canMessage="CanRxBAP_ASG_06"/>
+				</RX>
+				<TX dataType="byteSequence" length="151" opCode="Error-Status">
+					<CanSegInterface canMessage="CanTxBAP_MDI_02"/>
+				</TX>
+			</Property>
+		</Fct>
+		<!--FCT: MDI/CurrentFileInfo-->
+		<Fct id="31" name="CurrentFileInfo">
+			<Property heartbeatOn="false">
+				<RX dataType="void" opCode="Get">
+					<CanNoneSegInterface canMessage="CanRxBAP_ASG_06"/>
+				</RX>
+				<TX dataType="byteSequence" length="273" opCode="Error-Status">
+					<CanSegInterface canMessage="CanTxBAP_MDI_02"/>
+				</TX>
+			</Property>
+		</Fct>
+    </LsgConfig>
+  </FLsg>
+</Config>
+

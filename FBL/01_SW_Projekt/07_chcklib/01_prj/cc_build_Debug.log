@@ -1,0 +1,40 @@
+--------------------  CHKLIB_cc_tms470_VW_UDS.pjt - Debug  --------------------
+[ADLATUS_FUN_Val_Alternate2QuickCheck_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_Alternate2QuickCheck_UB.c"
+
+[ADLATUS_FUN_Val_AlternateQuickcheck_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_AlternateQuickcheck_UB.c"
+
+[ADLATUS_FUN_Val_CanMsgObjectTest_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_CanMsgObjectTest_UB.c"
+
+[ADLATUS_FUN_Val_CCITT_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_CCITT_UB.c"
+
+[ADLATUS_FUN_Val_CRC32.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_CRC32.c"
+
+[ADLATUS_FUN_Val_LinAdd16Acc16Bit_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_LinAdd16Acc16Bit_UB.c"
+
+[ADLATUS_FUN_Val_LinAdd8Acc16Bit_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_LinAdd8Acc16Bit_UB.c"
+
+[ADLATUS_FUN_Val_LinAdd8Acc8Bit_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_LinAdd8Acc8Bit_UB.c"
+
+[ADLATUS_FUN_Val_QuickCheck_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_QuickCheck_UB.c"
+
+[ADLATUS_FUN_Val_RamPatternTest_UB.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_FUN_Val_RamPatternTest_UB.c"
+
+[ADLATUS_ValHandler.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -q -ps -o2 -fr"r:/07_chcklib/03_obj/" -fs"r:/07_chcklib/04_lst" -ft"r:/07_chcklib/04_lst" -fb"r:/07_chcklib/04_lst" -ff"r:/07_chcklib/04_lst" -i"r:/05_header/int" -i"r:/05_header/ext" -d"_DEBUG" -mf -mt -@"../01_prj/Debug.lkf" "ADLATUS_ValHandler.c"
+
+[Archiving...] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\ar470" @"Debug.lkf"
+  ==>  new archive 'r:\07_chcklib\05_out\CHKLIB_cc_tms470_VW_UDS.lib'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_Alternate2QuickCheck_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_AlternateQuickcheck_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_CanMsgObjectTest_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_CCITT_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_CRC32.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_LinAdd16Acc16Bit_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_LinAdd8Acc16Bit_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_LinAdd8Acc8Bit_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_QuickCheck_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_FUN_Val_RamPatternTest_UB.obj'
+  ==>  add 'r:\07_chcklib\03_obj\ADLATUS_ValHandler.obj'
+  ==>  building archive 'r:\07_chcklib\05_out\CHKLIB_cc_tms470_VW_UDS.lib'
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

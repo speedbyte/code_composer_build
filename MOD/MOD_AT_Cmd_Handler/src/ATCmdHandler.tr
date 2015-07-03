@@ -1,0 +1,57 @@
+#TRACE_ID '0x3100BD 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ppau inco digit num %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '189 
+#TRACE_ID '0x3100F4 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ppau inco digit num %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '244 
+#TRACE_ID '0x310102 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"inco ppau mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '258 
+#TRACE_ID '0x31011F 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"inco plccex mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '287 
+#TRACE_ID '0x31014F 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"AT_Cmd_Handler_Tel inco dev id %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '335 
+#TRACE_ID '0x310157 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"AT_Cmd_Handler_Tel inco pair mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '343 
+#TRACE_ID '0x3101AC 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"inval len %d (%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '428 
+#TRACE_ID '0x3101C6 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"unsupported mode %d (%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '454 
+#TRACE_ID '0x3101FD 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"unsupported value %d %d (1)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '509 
+#TRACE_ID '0x310212 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"unsupported value %d %d (2)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '530 
+#TRACE_ID '0x31021C 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"unsupported param %d (%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '540 
+#TRACE_ID '0x310241 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"micid oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '577 
+#TRACE_ID '0x310258 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"micgain oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '600 
+#TRACE_ID '0x310281 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"NR InGain oor %d (AT_NR_INPUTGAIN_MIN-AT_NR_INPUTGAIN_MAX)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '641 
+#TRACE_ID '0x31028B 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"NR dir oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '651 
+#TRACE_ID '0x310295 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"NR att oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '661 
+#TRACE_ID '0x3102A5 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"TXEQ %d oor %d (AT_EQU_GAIN_MIN-AT_EQU_GAIN_MAX)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '677 
+#TRACE_ID '0x3102C2 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"RX algo oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '706 
+#TRACE_ID '0x3102D1 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"RXEQ %d oor %d (AT_EQU_GAIN_MIN-AT_EQU_GAIN_MAX)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '721 
+#TRACE_ID '0x3102FA 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"RX hpf oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '762 
+#TRACE_ID '0x310304 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"RX limlev oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '772 
+#TRACE_ID '0x310328 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"AEC swiTime oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '808 
+#TRACE_ID '0x310332 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"AEC att oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '818 
+#TRACE_ID '0x310355 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"VOL oor %d (%d-%d) type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '853 
+#TRACE_ID '0x310368 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"VOL oor %d (%d-%d) prompt" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '872 
+#TRACE_ID '0x31037B 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"VOL oor %d (%d-%d) stream" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '891 
+#TRACE_ID '0x310385 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"VOL type oor %d (%d-%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '901 
+#TRACE_ID '0x3103B7 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"AEC delay oor %d (%d %d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '951 
+#TRACE_ID '0x3103D6 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ALC target oor %d (%d %d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '982 
+#TRACE_ID '0x3103FA 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"SL RX limiter level out of range %d (%d %d), using default %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1018 
+#TRACE_ID '0x310404 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"SL RX limiter disabled with 0 value" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1028 
+#TRACE_ID '0x310420 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"SL TX limiter level out of range %d (%d %d), using default %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1056 
+#TRACE_ID '0x310464 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"PRST inval action %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1124 
+#TRACE_ID '0x310472 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"PRST inval mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1138 
+#TRACE_ID '0x3104AC 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"audioloop on inval mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1196 
+#TRACE_ID '0x3104C4 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"audioloop off inval mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1220 
+#TRACE_ID '0x3104FC 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"audioloop test inval mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1276 
+#TRACE_ID '0x31052F 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"pbfreq inval mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1327 
+#TRACE_ID '0x31057A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_AT_CMD_HANDLER '"TMS470 RESET the CK5050+ %d ms" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1402 
+#TRACE_ID '0x31060F 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"pgir idx inval %d %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1551 
+#TRACE_ID '0x31062D 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"pprq inco device type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1581 
+#TRACE_ID '0x310677 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"pprq inco digit num %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1655 
+#TRACE_ID '0x310680 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"pprq inco cmd %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1664 
+#TRACE_ID '0x31068A 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"pprq inco dev id %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1674 
+#TRACE_ID '0x31069B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_AT_CMD_HANDLER '"PSSP request send in AT_CMD_Handler " '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1691 
+#TRACE_ID '0x3106A4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_AT_CMD_HANDLER '"PSSP config send in AT_CMD_Handler " '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1700 
+#TRACE_ID '0x3106AA 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_AT_CMD_HANDLER '"PSSP config send in AT_CMD_Handler " '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1706 
+#TRACE_ID '0x3106F9 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"agsw %d invalid param : frequencyLeft = %d, frequencyRight = %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1785 
+#TRACE_ID '0x3106FD 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"agsw %d invalid param : outputLevelLeft = %d, outputLevelRight = %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1789 
+#TRACE_ID '0x310720 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"pprt: unsup act %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1824 
+#TRACE_ID '0x310741 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"pirt: unsup act %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1857 
+#TRACE_ID '0x310756 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"popm: unsup mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1878 
+#TRACE_ID '0x310769 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"pccd: unsup new state %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1897 
+#TRACE_ID '0x31078F 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"unsupported type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1935 
+#TRACE_ID '0x31079C 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"write err for msg %d len %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1948 
+#TRACE_ID '0x3107A3 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"build err for msg %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1955 
+#TRACE_ID '0x3107AA 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"res blocked" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler.c '1962 

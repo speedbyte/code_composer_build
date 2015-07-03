@@ -1,0 +1,4 @@
+#TRACE_ID '0x9300E1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_UDS '"EEprom Read Return Code %d" '\MOD\MOD_UDS\src 'uds_appl.c '225 
+#TRACE_ID '0x9300EE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_UDS '"EEprom Read Error" '\MOD\MOD_UDS\src 'uds_appl.c '238 
+#TRACE_ID '0x9300F3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_UDS '"Security Access needs" '\MOD\MOD_UDS\src 'uds_appl.c '243 
+#TRACE_ID '0x9300F9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_UDS '"Not defined. Give Diag. error back" '\MOD\MOD_UDS\src 'uds_appl.c '249 

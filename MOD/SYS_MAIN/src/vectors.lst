@@ -1,0 +1,40 @@
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:11:23 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+vectors.asm                                                          PAGE    1
+
+       1                    ;/****************************************************************************/
+       2                    ;/* boot_vectors.asm     TMS470 INTERRUPT VECTORS SETUP FILE                     */
+       3                    ;/****************************************************************************/
+       4                        
+       5 00000000                   .state32
+       6                        .global  _c_int00
+       7                        .global  _osUndefInstruction
+       8                        .global _osSWI
+       9                        .global _osPrefetchAbort
+      10                        .global _osDataAbort
+      11                        .global  _osIRQHandler
+      12                        .global  _osFIQ
+      13                        
+      14 00000000               .sect ".vectors"
+      15                            
+      16                    ;/****************************************************************************/
+      17                    ;/*                                                                          */
+      18                    ;/* Jumptable to the jumptable located in the FSW section                    */
+      19                    ;/*                                                                          */
+      20                    ;/****************************************************************************/
+      21                    
+      22 00000000 EAFFFFFE!         B _c_int00             ; RESET INTERRUPT
+      23 00000004 EAFFFFFD!         B _osUndefInstruction  ; UNDEFINED INSTRUCTION INTERRUPT
+      24 00000008 EAFFFFFC!         B _osSWI               ; SOFTWARE INTERRUPT
+      25 0000000c EAFFFFFB!         B _osPrefetchAbort         ; ABORT (PREFETCH) INTERRUPT
+      26 00000010 EAFFFFFA!         B _osDataAbort         ; ABORT (DATA) INTERRUPT
+      27 00000014 00000000          .word 0                ; RESERVED
+      28 00000018 EAFFFFF8!         B _osIRQHandler        ; IRQ INTERRUPT
+      29 0000001c EAFFFFF7!         B _osFIQ               ; FIQ INTERRUPT
+      30                    
+      31                    
+      32                        
+      33                            .end
+
+No Assembly Errors, No Assembly Warnings

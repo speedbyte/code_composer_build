@@ -1,0 +1,254 @@
+******************************************************************************
+             TMS470 COFF Linker PC Version 2.71                
+******************************************************************************
+>> Linked Thu Jul 15 08:00:16 2010
+
+OUTPUT FILE NAME:   <../05_out/ADLATUS_cc_TMS470_HIS.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000000
+
+
+MEMORY CONFIGURATION
+
+                  name            origin    length      used    attr    fill
+         ----------------------  --------  ---------  --------  ----  --------
+         VECTORS                 00000000   00000024  00000000  R IX
+         ADLATUS                 00000030   00001f00  0000006c  R IX
+         PROTECTION              00001ff0   00000010  00000010  R     ffffffff
+         ROMCONST                00002000   00000100  000000cc  R IX
+         ROMEXEC                 00002100   00000f00  000007a4  R IX
+         RAMDATA                 00400010   00000f00  00000030  RWIX
+         HISDATA                 00400f10   00000040  00000004  RW  
+         HISCONST                00401000   00000100  000000cc  RW  
+         HISTEXT                 00401100   00000a00  000007a4  RWIX
+         RAM_RES                 00401b00   00000050  00000000  RW  
+         USTACK                  00402200   00000200  00000000  RW  
+         SYSSTA                  00402400   00000400  00000000  RW  
+         HET0PROG                00800000   00000800  00000000  RW  
+         SPI2                    fff7d400   00000400  00000000  RW  
+         CAN_MBOX                fff7dc00   00000100  00000000  RW  
+         SCC                     fff7e000   00000400  00000000  RW  
+         GIO0                    fff7ec00   00000400  00000000  RW  
+         ADC0                    fff7f000   00000400  00000000  RW  
+         SPI1                    fff7f800   00000400  00000000  RW  
+         HET0CTRL                fff7fc00   00000400  00000000  RW  
+         MMC                     fffffd00   00000040  00000000  RW  
+         DEC                     fffffe00   000000f0  00000000  RW  
+         CMRTI                   ffffff00   00000020  00000000  RW  
+         CIM                     ffffff20   00000014  00000000  RW  
+         SYS                     ffffffd0   00000030  00000000  RW  
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.SPI2      0    fff7d400    00000000     UNINITIALIZED
+
+.CAN_MB    0    fff7dc00    00000000     UNINITIALIZED
+
+.SCC       0    fff7e000    00000000     UNINITIALIZED
+
+.GIO0      0    fff7ec00    00000000     UNINITIALIZED
+
+.ADC0      0    fff7f000    00000000     UNINITIALIZED
+
+.SPI1      0    fff7f800    00000000     UNINITIALIZED
+
+.HET0      0    fff7fc00    00000000     UNINITIALIZED
+
+.MMC       0    fffffd00    00000000     UNINITIALIZED
+
+.DEC       0    fffffe00    00000000     UNINITIALIZED
+
+.CMRTI     0    ffffff00    00000000     UNINITIALIZED
+
+.CIM       0    ffffff20    00000000     UNINITIALIZED
+
+.SYS       0    ffffffd0    00000000     UNINITIALIZED
+
+.text      0    00000030    0000006c     
+                  00000030    00000054     ADLATUS_DummyMain.obj (.text)
+                  00000084    00000018     ADLATUS_DummyMain.obj (.text:v$0)
+
+$fill000   0    00001ff0    00000010     
+                  00001ff0    00000010     --HOLE-- [fill = ffffffff]
+
+.hisconst 
+*          0    00002000    000000cc     RUN ADDR = 00401000
+                  00002000    0000009c     FlashLib_TMS470.obj (.const)
+                  0000209c    00000030     setup_fsm.obj (.const)
+
+.histext   0    00002100    000007a4     RUN ADDR = 00401100
+                  00002100    000002a4     FlashLib_TMS470.obj (.text)
+                  000023a4    0000000c     sector_select.obj (.text)
+                  000023b0    000002c4     setup_fsm.obj (.text)
+                  00002674    00000010     issue_cmnd.obj (.text)
+                  00002684    00000012     status.obj (.text)
+                  00002696    00000002     --HOLE-- [fill = 0]
+                  00002698    0000018c     prog_data.obj (.text)
+                  00002824    00000040     start_cmnd.obj (.text)
+                  00002864    0000002a     get_timing.obj (.text)
+                  0000288e    00000002     --HOLE-- [fill = 0]
+                  00002890    00000014     icall16.obj (.text)
+
+.data      0    00400010    00000000     UNINITIALIZED
+
+.sysmem    0    00400010    00000000     UNINITIALIZED
+
+.bss       0    00400010    00000030     UNINITIALIZED
+                  00400010    00000030     ADLATUS_DummyMain.obj (.bss)
+
+.hisdata   0    00400f10    00000004     UNINITIALIZED
+                  00400f10    00000004     FlashLib_TMS470.obj (.bss)
+
+.ustack    0    00402200    00000000     UNINITIALIZED
+
+.stack     0    00402400    00000000     UNINITIALIZED
+
+.HET0PROG 
+*          0    00800000    00000000     UNINITIALIZED
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00401344   $Feed_Watchdog_V
+00401126   $FlashDeinit
+0040113a   $FlashErase
+004011a2   $FlashEraseSector
+00401100   $FlashInit
+0040123e   $FlashWrite
+00401698   $Flash_Prog_Data_B
+004013a4   $Flash_Sector_Select_V
+00401824   $Flash_Start_Command_B
+00401684   $Flash_Status_U16
+004012e6   $GetEraseEndSector
+0040131e   $GetEraseStartSector
+00401864   $get_timing
+00401674   $issue_cmnd
+00000030   $main
+004013b0   $setup_state_machine
+00400010   .bss
+00400010   .data
+00000030   .text
+00401890   IND$CALL
+00401098   _C_FlashControl_ST
+00400010   _FlashParam
+00401000   _HisHeader
+004025e8   _StackABORT_
+00402510   _StackFIQ_
+004025e0   _StackIRQ_
+00402600   _StackSUPER_
+004025f0   _StackUND_
+00402500   _StackUSER_
+ffffffff   ___binit__
+00400010   ___bss__
+ffffffff   ___c_args__
+ffffffff   ___cinit__
+00400010   ___data__
+00400010   ___edata__
+00400040   ___end__
+0000009c   ___etext__
+ffffffff   ___pinit__
+00000030   ___text__
+00401014   _c_CCflash_SectorMap_AST
+UNDEFED _c_int00
+fff7f000   _e_ADC0_ST
+fff7dc00   _e_CAN_MB
+fff7ec00   _e_GIO_ST
+fff7fc00   _e_HET0_ST
+00800000   _e_HETPROGRAM0_UN
+ffffff20   _e_SARCIM_ST
+fffffe00   _e_SARDEC_ST
+fffffd00   _e_SARMMC_ST
+ffffff00   _e_SARRTI_ST
+ffffffd0   _e_SARSYS_ST
+fff7e000   _e_SCC_ST
+fff7f800   _e_SPI1_ST
+fff7d400   _e_SPI2_ST
+00000009   _fapiver
+00400f10   _fp
+0040109c   _fsm_defaults
+00402300   _g_BBSuperStack_UL
+00000084   _main
+ffffffff   binit
+ffffffff   cinit
+00400010   edata
+00400040   end
+0000009c   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000009   _fapiver
+00000030   $main
+00000030   .text
+00000030   ___text__
+00000084   _main
+0000009c   ___etext__
+0000009c   etext
+00400010   ___bss__
+00400010   _FlashParam
+00400010   .data
+00400010   .bss
+00400010   edata
+00400010   ___edata__
+00400010   ___data__
+00400040   ___end__
+00400040   end
+00400f10   _fp
+00401000   _HisHeader
+00401014   _c_CCflash_SectorMap_AST
+00401098   _C_FlashControl_ST
+0040109c   _fsm_defaults
+00401100   $FlashInit
+00401126   $FlashDeinit
+0040113a   $FlashErase
+004011a2   $FlashEraseSector
+0040123e   $FlashWrite
+004012e6   $GetEraseEndSector
+0040131e   $GetEraseStartSector
+00401344   $Feed_Watchdog_V
+004013a4   $Flash_Sector_Select_V
+004013b0   $setup_state_machine
+00401674   $issue_cmnd
+00401684   $Flash_Status_U16
+00401698   $Flash_Prog_Data_B
+00401824   $Flash_Start_Command_B
+00401864   $get_timing
+00401890   IND$CALL
+00402300   _g_BBSuperStack_UL
+00402500   _StackUSER_
+00402510   _StackFIQ_
+004025e0   _StackIRQ_
+004025e8   _StackABORT_
+004025f0   _StackUND_
+00402600   _StackSUPER_
+00800000   _e_HETPROGRAM0_UN
+fff7d400   _e_SPI2_ST
+fff7dc00   _e_CAN_MB
+fff7e000   _e_SCC_ST
+fff7ec00   _e_GIO_ST
+fff7f000   _e_ADC0_ST
+fff7f800   _e_SPI1_ST
+fff7fc00   _e_HET0_ST
+fffffd00   _e_SARMMC_ST
+fffffe00   _e_SARDEC_ST
+ffffff00   _e_SARRTI_ST
+ffffff20   _e_SARCIM_ST
+ffffffd0   _e_SARSYS_ST
+ffffffff   pinit
+ffffffff   cinit
+ffffffff   binit
+ffffffff   ___c_args__
+ffffffff   ___binit__
+ffffffff   ___cinit__
+UNDEFED _c_int00
+ffffffff   ___pinit__
+
+[65 symbols]

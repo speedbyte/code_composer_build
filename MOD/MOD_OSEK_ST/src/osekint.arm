@@ -1,0 +1,629 @@
+; Kernbauer Version: 1.14 Konfiguration: TMS470 Erzeugungsgangnummer: 372 
+
+;*****************************************************************************
+; Project Name: OSEK 2.2
+;    File Name: osekint.arm
+;
+;  Module version: $vv$=1.05
+;
+;  Description: Interrupt handling functions for OSEK ARM7 (GHS compiler version)
+;
+;-----------------------------------------------------------------------------
+;               C O P Y R I G H T
+;-----------------------------------------------------------------------------
+; Copyright (c) 2000 Vector Informatik GmbH               All rights reserved.
+;****************************************************************************/
+
+
+   .section ".oscode", "ax"
+
+; Vector release management 
+#include <vrm.h>
+; KB begin vrmReleaseNumber 
+/* Source release number */
+#define osdVrmMajRelNum 3
+#define osdVrmMinRelNum 10
+; KB end vrmReleaseNumber 
+#include <vrm.h>
+
+#define osdPreTCB  1        
+#define osdPostTCB 0 
+#define osdTcbDefinesOnly
+#include "tcb.h"
+
+
+  EXPORT osCheckInterruptsEnabled
+  EXPORT osCheckInterruptsDisabled
+
+#if (osdThumbMode == 1)
+  EXPORT osDisableGlobal
+  EXPORT osEnableGlobal
+  EXPORT osSaveDisableLevel
+  EXPORT osSaveDisableLevelNested
+  EXPORT osSaveDisableGlobal
+  EXPORT osRestoreEnableGlobal 
+  EXPORT osRestoreEnableLevelNested
+  EXPORT osRestoreEnableLevel
+  EXPORT osSaveDisableGlobalNested
+  EXPORT osRestoreEnableGlobalNested
+#endif
+
+#if (osdTasksInUserMode==1)
+  EXPORT osSWISaveDisableLevel
+  EXPORT osSWIDisableGlobal
+  EXPORT osSWIEnableGlobal
+  EXPORT osSWISaveDisableGlobal
+  EXPORT osSWIRestoreEnableGlobal
+  EXPORT osSWISaveDisableGlobalNested
+  EXPORT osSWIRestoreEnableGlobalNested
+  EXPORT osSWISaveDisableLevelNested
+  EXPORT osSWIRestoreEnableLevelNested
+  EXPORT osSWIRestoreEnableLevel
+  EXPORT osSWIEnterSysMode      
+  EXPORT osSWIEnterUserMode      
+#endif
+
+  EXPORT osDisableLevel           
+  EXPORT osEnableLevel           
+
+  IMPORT osSavedIntLevelNested
+  IMPORT osIntSaveDisableCounter
+  IMPORT osSavedIntLevel
+  IMPORT osSavedGlobalInt
+
+
+;-+--------------------------------------------------------------------------
+; osCheckInterruptsEnabled                                                               
+; Funktion: check if interrupts are enabled                                                       
+; Parameter:                                                                 
+; Returnvalue: 1: interrupts enabled    0: interrupts disabled                                                              
+;----------------------------------------------------------------------------
+osCheckInterruptsEnabled
+  mrs    a2, CPSR
+  tst    a2, #0x80     ; check IRQ flag
+  moveq  a1, #1
+  movne  a1, #0
+
+  ret
+.type  osCheckInterruptsEnabled,$function
+.size  osCheckInterruptsEnabled,.-osCheckInterruptsEnabled
+
+
+;-+--------------------------------------------------------------------------
+; osCheckInterruptsDisabled                                                               
+; Funktion: check if interrupts are disabled                                                       
+; Parameter:                                                                 
+; Returnvalue: 1: interrupts disabled    0: interrupts enabled                                                              
+;----------------------------------------------------------------------------
+osCheckInterruptsDisabled
+  mrs    a2, CPSR
+  tst    a2, #0x80     ; check IRQ flag
+  moveq  a1, #0
+  movne  a1, #1
+
+  ret
+.type  osCheckInterruptsDisabled,$function
+.size  osCheckInterruptsDisabled,.-osCheckInterruptsDisabled
+
+
+;-+--------------------------------------------------------------------------
+; osDisableLevel                                                               
+; Funktion: save level and disable up to system level, no nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+osDisableLevel           
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWIDisableLevel
+  swieq #0x80
+  beq osLblDL
+#endif
+  orr a1, a1, #0b10000000
+  msr CPSR_c, a1
+  nop
+osLblDL:
+  ret
+.type  osDisableLevel,$function
+.size  osDisableLevel,.-osDisableLevel
+
+
+#if (osdTasksInUserMode==1)
+osSWIDisableLevel           
+  mrs a1, SPSR
+  orr a1, a1, #0b10000000
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIDisableLevel,$function
+.size  osSWIDisableLevel,.-osSWIDisableLevel
+#endif
+
+
+;-+--------------------------------------------------------------------------
+; osEnableLevel                                                               
+; Funktion: Enable task level, no nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+osEnableLevel            ;  Enable task level, no nesting 
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWIEnableLevel
+  swieq #0x80
+  beq osLblEL
+#endif
+  bic a1, a1, #0b10000000
+  msr CPSR_c, a1
+  nop
+osLblEL:
+  ret
+.type  osEnableLevel,$function
+.size  osEnableLevel,.-osEnableLevel
+
+
+#if (osdTasksInUserMode==1)
+osSWIEnableLevel            ;  Enable task level, no nesting 
+  mrs a1, SPSR
+  bic a1, a1, #0b10000000
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIEnableLevel,$function
+.size  osSWIEnableLevel,.-osSWIEnableLevel
+#endif
+
+
+;-+--------------------------------------------------------------------------
+; osDisableGlobal                                                               
+; Funktion: disable all interrupts, no nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osDisableGlobal
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWIDisableGlobal
+  swieq #0x80
+  beq osLblDG
+#endif
+  orr a1, a1, #0b11000000     ; set IRQ and FIQ flag
+  msr CPSR_c, a1
+  nop
+osLblDG:
+  ret
+.type  osDisableGlobal,$function
+.size  osDisableGlobal,.-osDisableGlobal
+#endif
+  
+#if (osdTasksInUserMode==1)
+osSWIDisableGlobal
+  mrs a1, SPSR
+  orr a1, a1, #0b11000000     ; set IRQ and FIQ flag
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIDisableGlobal,$function
+.size  osSWIDisableGlobal,.-osSWIDisableGlobal
+#endif  
+
+
+;-+--------------------------------------------------------------------------
+; osEnableGlobal                                                               
+; Funktion: Enable all interrupts, no nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osEnableGlobal
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWIEnableGlobal
+  swieq #0x80
+  beq osLblEG
+#endif
+  bic a1, a1, #0b11000000     ; reset IRQ and FIQ flag
+  msr CPSR_c, a1
+osLblEG:
+  ret
+.type  osEnableGlobal,$function
+.size  osEnableGlobal,.-osEnableGlobal
+#endif
+
+#if (osdTasksInUserMode==1)
+osSWIEnableGlobal
+  mrs a1, SPSR
+  bic a1, a1, #0b11000000     ; reset IRQ and FIQ flag
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIEnableGlobal,$function
+.size  osSWIEnableGlobal,.-osSWIEnableGlobal
+#endif
+
+
+;-+--------------------------------------------------------------------------
+; osSaveDisableLevel                                                               
+; Funktion: save level and disable up to system level, no nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osSaveDisableLevel
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWISaveDisableLevel
+  swieq #0x80
+  beq osLblSDL
+#endif
+  ldr a2, =osSavedIntLevel
+  mov a3, a1
+  orr a3, a3, #0x80
+  msr CPSR_c, a3
+  strb a1, [a2]
+  nop
+osLblSDL:
+  ret
+.type  osSaveDisableLevel,$function
+.size  osSaveDisableLevel,.-osSaveDisableLevel
+#endif
+
+#if (osdTasksInUserMode==1)
+osSWISaveDisableLevel::
+  mrs a1, SPSR
+  ldr a2, =osSavedIntLevel
+  mov a3, a1
+  orr a3, a3, #0x80
+  msr SPSR_c, a3
+  strb a1, [a2]
+  movs   pc, lr
+.type  osSWISaveDisableLevel,$function
+.size  osSWISaveDisableLevel,.-osSWISaveDisableLevel
+#endif
+  
+
+;-+--------------------------------------------------------------------------
+; osSaveDisableGlobal                                                              
+; Funktion: save and disable all interrupts, no nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osSaveDisableGlobal  
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWISaveDisableGlobal
+  swieq #0x80
+  beq osLblSDG
+#endif
+  ldr a2, =osSavedGlobalInt
+  mov a3, a1
+  orr a3, a3, #0b11000000
+  msr CPSR_c, a3      ; set IRQ and FIQ flag
+  strb a1, [a2]       ; store old status of IRQ and FIQ
+  nop
+osLblSDG:
+  ret
+.type  osSaveDisableGlobal,$function
+.size  osSaveDisableGlobal,.-osSaveDisableGlobal
+#endif
+
+#if (osdTasksInUserMode==1)
+osSWISaveDisableGlobal  
+  mrs a1, SPSR
+  ldr a2, =osSavedGlobalInt
+  mov a3, a1
+  orr a3, a3, #0b11000000
+  msr SPSR_c, a3      ; set IRQ and FIQ flag
+  strb a1, [a2]       ; store old status of IRQ and FIQ
+  movs   pc, lr
+.type  osSWISaveDisableGlobal,$function
+.size  osSWISaveDisableGlobal,.-osSWISaveDisableGlobal
+#endif
+  
+
+;-+--------------------------------------------------------------------------
+; osRestoreEnableGlobal                                                              
+; Funktion: restore and enable all interrupts, no nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osRestoreEnableGlobal 
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWIRestoreEnableGlobal
+  swieq #0x80
+  beq osLblREG
+#endif
+  ldr a2, =osSavedGlobalInt 
+  ldrb a3, [a2]              
+  bic a1, a1, #0b11000000    ; restore status of IRQ and FIQ
+  bic a3, a3, #0b00111111
+  orr a1, a1, a3
+  msr CPSR_c, a1
+osLblREG:
+  ret
+.type  osRestoreEnableGlobal,$function
+.size  osRestoreEnableGlobal,.-osRestoreEnableGlobal
+#endif
+
+#if (osdTasksInUserMode==1)
+osSWIRestoreEnableGlobal 
+  mrs a1, SPSR
+  ldr a2, =osSavedGlobalInt 
+  ldrb a3, [a2]              
+  bic a1, a1, #0b11000000    ; restore status of IRQ and FIQ
+  bic a3, a3, #0b00111111
+  orr a1, a1, a3
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIRestoreEnableGlobal,$function
+.size  osSWIRestoreEnableGlobal,.-osSWIRestoreEnableGlobal
+#endif
+
+
+;-+--------------------------------------------------------------------------
+; osSaveDisableLevelNested                                                              
+; Funktion: save level and disable up to system level, with nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osSaveDisableLevelNested  
+  ldr a3, =osIntSaveDisableCounter  ; a3 = &osIntSaveDisableCounter
+  ldrb a2, [a3]                  ; a2 = osIntSaveDisableCounter
+  tst a2, a2
+  ; if osIntSaveDisableCounter == 0 save level
+  bne osLblSDLN
+
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWISaveDisableLevelNested
+  swieq #0x80
+  beq osLblSDLN
+#endif
+  mov a4, a1
+  orr a1, a1, #0x80
+  msr CPSR_c, a1  
+  ldr a1, =osSavedIntLevelNested
+  strb a4, [a1]         
+
+osLblSDLN:
+  ; increment osIntSaveDisableCounter
+  add a2,a2,#1
+  strb a2,[a3]
+  ret
+.type  osSaveDisableLevelNested,$function
+.size  osSaveDisableLevelNested,.-osSaveDisableLevelNested
+#endif
+
+#if (osdTasksInUserMode==1)
+osSWISaveDisableLevelNested  
+  mrs a1, SPSR
+  mov a4, a1
+  orr a1, a1, #0x80
+  msr SPSR_c, a1  
+  ldr a1, =osSavedIntLevelNested
+  strb a4, [a1]         
+  movs   pc, lr
+.type  osSWISaveDisableLevelNested,$function
+.size  osSWISaveDisableLevelNested,.-osSWISaveDisableLevelNested
+#endif
+
+
+;-+--------------------------------------------------------------------------
+; osRestoreEnableLevelNested                                                              
+; Funktion: restore level, with nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osRestoreEnableLevelNested        
+  ldr a3, =osIntSaveDisableCounter  ; a3 = &osIntSaveDisableCounter
+  ldrb a4, [a3]                  ; a4 = osIntSaveDisableCounter
+  subs a4,a4,#1                    ; decrement osIntSaveDisableCounter
+  strb a4, [a3]
+  bne osLblRELN
+
+  ; osIntSaveDisableCounter == 0 restore level0
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWIRestoreEnableLevelNested
+  swieq #0x80
+  beq osLblRELN
+#endif
+  ldr a2, =osSavedIntLevelNested 
+  ldrb a3, [a2]
+
+  bic a1, a1, #0b10000000
+  bic a3, a3, #0b01111111
+  orr a1, a1, a3
+  msr CPSR_c, a1
+
+osLblRELN:
+  ret
+.type  osRestoreEnableLevelNested,$function
+.size  osRestoreEnableLevelNested,.-osRestoreEnableLevelNested
+#endif
+
+#if (osdTasksInUserMode==1)
+osSWIRestoreEnableLevelNested        
+  mrs a1, SPSR
+  ldr a2, =osSavedIntLevelNested 
+  ldrb a3, [a2]
+
+  bic a1, a1, #0b10000000
+  bic a3, a3, #0b01111111
+  orr a1, a1, a3
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIRestoreEnableLevelNested,$function
+.size  osSWIRestoreEnableLevelNested,.-osSWIRestoreEnableLevelNested
+#endif
+
+
+;-+--------------------------------------------------------------------------
+; osSaveDisableGlobalNested                                                              
+; Funktion: save int flags and disable all interrupts, with nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osSaveDisableGlobalNested  
+  ldr a3, =osIntSaveDisableCounterGlobal  ; a3 = &osIntSaveDisableCounterGlobal
+  ldrb a2, [a3]                  ; a2 = osIntSaveDisableCounterGlobal
+  tst a2, a2
+  ; if osIntSaveDisableCounterGlobal == 0 save ints
+  bne osLblSDGN
+
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWISaveDisableGlobalNested
+  swieq #0x80
+  beq osLblSDGN
+#endif
+  mov a4, a1
+  orr a1, a1, #0xC0
+  msr CPSR_c, a1  
+  ldr a1, =osSavedIntGlobalNested
+  strb a4, [a1]         
+
+osLblSDGN:
+  ; increment osIntSaveDisableCounterGlobal
+  add a2,a2,#1
+  strb a2,[a3]
+  ret
+.type  osSaveDisableGlobalNested,$function
+.size  osSaveDisableGlobalNested,.-osSaveDisableGlobalNested
+#endif
+
+#if (osdTasksInUserMode==1)
+osSWISaveDisableGlobalNested  
+  mrs a1, SPSR
+  mov a4, a1
+  orr a1, a1, #0xC0
+  msr SPSR_c, a1  
+  ldr a1, =osSavedIntGlobalNested
+  strb a4, [a1]         
+  movs   pc, lr
+.type  osSWISaveDisableGlobalNested,$function
+.size  osSWISaveDisableGlobalNested,.-osSWISaveDisableGlobalNested
+#endif
+
+
+;-+--------------------------------------------------------------------------
+; osRestoreEnableGlobalNested                                                              
+; Funktion: restore interrupt flags, with nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osRestoreEnableGlobalNested        
+  ldr a3, =osIntSaveDisableCounterGlobal  ; a3 = &osIntSaveDisableCounterGlobal
+  ldrb a4, [a3]                     ; a4 = osIntSaveDisableCounterGlobal
+  subs a4,a4,#1                     ; decrement osIntSaveDisableCounterGlobal
+  strb a4, [a3]
+  bne osLblREGN
+
+  ; osIntSaveDisableCounterGlobal == 0 restore 
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWIRestoreEnableGlobalNested
+  swieq #0x80
+  beq osLblREGN
+#endif
+  ldr a2, =osSavedIntGlobalNested 
+  ldrb a3, [a2]
+
+  bic a1, a1, #0b11000000
+  bic a3, a3, #0b00111111
+  orr a1, a1, a3
+  msr CPSR_c, a1
+
+osLblREGN:
+  ret
+.type  osRestoreEnableGlobalNested,$function
+.size  osRestoreEnableGlobalNested,.-osRestoreEnableGlobalNested
+#endif
+
+#if (osdTasksInUserMode==1)
+osSWIRestoreEnableGlobalNested        
+  mrs a1, SPSR
+  ldr a2, =osSavedIntGlobalNested 
+  ldrb a3, [a2]
+
+  bic a1, a1, #0b11000000
+  bic a3, a3, #0b00111111
+  orr a1, a1, a3
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIRestoreEnableGlobalNested,$function
+.size  osSWIRestoreEnableGlobalNested,.-osSWIRestoreEnableGlobalNested
+#endif
+
+
+;-+--------------------------------------------------------------------------
+; osRestoreEnableLevel                                                              
+; Funktion: restore level, no nesting                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                             
+;----------------------------------------------------------------------------
+#if (osdThumbMode == 1) 
+osRestoreEnableLevel      
+  mrs a1, CPSR
+#if (osdTasksInUserMode==1)
+  tst a1,#0x0f
+  ldreq a4,=osSWIRestoreEnableLevel
+  swieq #0x80
+  beq osLblSDL
+#endif
+  ldr a2, =osSavedIntLevel 
+  ldrb a3, [a2]              
+  bic a1, a1, #0b10000000
+  bic a3, a3, #0b01111111
+  orr a1, a1, a3
+  msr CPSR_c, a1
+  ret
+.type  osRestoreEnableLevel,$function
+.size  osRestoreEnableLevel,.-osRestoreEnableLevel
+#endif
+
+osSWIRestoreEnableLevel      
+  mrs a1, SPSR
+  ldr a2, =osSavedIntLevel 
+  ldrb a3, [a2]              
+  bic a1, a1, #0b10000000
+  bic a3, a3, #0b01111111
+  orr a1, a1, a3
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIRestoreEnableLevel,$function
+.size  osSWIRestoreEnableLevel,.-osSWIRestoreEnableLevel
+
+
+osSWIEnterSysMode      
+  mrs a1, SPSR
+  orr a1, a1, #0b00001111
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIEnterSysMode,$function
+.size  osSWIEnterSysMode,.-osSWIEnterSysMode
+
+osSWIEnterUserMode      
+  mrs a1, SPSR
+  bic a1, a1, #0b00001111
+  msr SPSR_c, a1
+  movs   pc, lr
+.type  osSWIEnterUserMode,$function
+.size  osSWIEnterUserMode,.-osSWIEnterUserMode
+
+   END

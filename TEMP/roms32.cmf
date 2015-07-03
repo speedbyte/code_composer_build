@@ -1,0 +1,4 @@
+ROMS
+{
+   ROW1: origin=0x00000000 len=0xC0000   romwidth=32 fill=0xFFFFFFFF
+}

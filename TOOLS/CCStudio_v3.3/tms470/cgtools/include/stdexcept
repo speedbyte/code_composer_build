@@ -1,0 +1,43 @@
+/*****************************************************************************/
+/* stdexcept  v4.1.4                                                         */
+/* Copyright (c) 1996-2006 Texas Instruments Incorporated                    */
+/*****************************************************************************/
+
+#ifdef __EXCEPTIONS
+#ifndef _STDEXCEPT_STDH
+#define _STDEXCEPT_STDH
+
+/* This lets users disable the EDG supplied exception classes. */
+#ifndef __NO_EDG_EXCEPTION_CLASSES
+
+#ifdef __EDG_RUNTIME_USES_NAMESPACES
+namespace std {
+#endif /* ifdef __EDG_RUNTIME_USES_NAMESPACES */
+  class exception {
+  public:
+    exception() throw() {};
+    exception(const exception&) throw() {};
+    exception& operator=(const exception&) throw() { return *this; };
+    virtual ~exception() throw() {} ;
+    virtual const char* what() const throw() { return "";} ;
+  };
+#ifdef __EDG_RUNTIME_USES_NAMESPACES
+}  /* namespace std */
+
+#ifdef __EDG_IMPLICIT_USING_STD
+/* Implicitly include a using directive for the STD namespace when this
+   preprocessing flag is TRUE. */
+using namespace std;
+#endif /* ifdef __EDG_IMPLICIT_USING_STD */
+
+#endif /* ifdef __EDG_RUNTIME_USES_NAMESPACES */
+
+#endif /* ifndef __NO_EDG_EXCEPTION_CLASSES */
+
+#endif /* _STDEXCEPT_STDH */
+#else /* __EXCEPTIONS */
+#ifndef _STDEXCEPT
+#define _STDEXCEPT
+#endif
+#endif /* __EXCEPTIONS */
+

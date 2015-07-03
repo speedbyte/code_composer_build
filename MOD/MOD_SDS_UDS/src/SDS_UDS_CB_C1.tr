@@ -1,0 +1,4 @@
+#TRACE_ID '0x8000A8 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_SDS_UDS '"SDSext_ubZeroVehicleOrEngineSpeed: Service ID = %02X, retVal = %d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_CB_C1.c '168 
+#TRACE_ID '0x8000CE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_SDS_UDS '"SDSext_ubComCtrl: ControlType = %02X, CommNetworkType = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_CB_C1.c '206 
+#TRACE_ID '0x8000D7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Service $28: Enable Rx and Tx" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_CB_C1.c '215 
+#TRACE_ID '0x8000E6 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Service $28: Enable Rx and Disable Tx" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_CB_C1.c '230 

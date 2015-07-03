@@ -1,0 +1,3346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <COMPARAM-SPEC ID="ISO_15765_3_on_ISO_15765_2">
+  <SHORT-NAME>ISO_15765_3_on_ISO_15765_2</SHORT-NAME>
+  <LONG-NAME>ISO 15765-3 on ISO 15765-2</LONG-NAME>
+  <DESC>
+   <p>ISO UDS on CAN</p>
+  </DESC>
+  <ADMIN-DATA>
+   <LANGUAGE>deu</LANGUAGE>
+   <DOC-REVISIONS>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_VolksAG.TM_JensRathm"/>
+     <REVISION-LABEL>000.000.001</REVISION-LABEL>
+     <STATE>DRAFT</STATE>
+     <DATE>2007-06-27T11:26:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>keine Änderungen</CHANGE>
+       <REASON>erster Entwurf basierend auf DSA-Entwurf und ISO 22900-2 vom 08.03.2007</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>001001</REVISION-LABEL>
+     <STATE>DRAFT</STATE>
+     <DATE>2007-08-01T00:00:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>Attribute CPUSAGE entfernt</CHANGE>
+       <REASON>im Schema ODX 2.0.1 nicht definiert</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Präfix &quot;CP_&quot; an allen LONG-NAMES entfernt</CHANGE>
+       <REASON>nicht nötig</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Scopes an SHORT-NAMES (von DOPs) und IDs entfernt</CHANGE>
+       <REASON>Anpassung ASAM/ODX-Autorenrichtlinie</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>alle TIs entfernt</CHANGE>
+       <REASON>keine anzeigerelevanten Texte</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>UNIT-SPEC an ES_DataLibra angepasst</CHANGE>
+       <REASON>Anpassung an ASAMM/ODX-Autorenrichtlinie</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>FACTOR-SI-TO-UNIT an PHYSICAL-DIMENSIONS angepasst</CHANGE>
+       <REASON>Faktor zur Berechnung TO-UNIT, nicht FROM-UNIT</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DOPs vereinheitlicht und Namen angepasst</CHANGE>
+       <REASON>Anpassung an ASAMM/ODX-Autorenrichtlinie</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Texte für alle TEXTTABLES an ISO 22900-2 angepasst</CHANGE>
+       <REASON>Aktualisierung, Konformität zu ISO 22900-2</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Inhalte an ISO 22900-2 vom 12.07.2007 angepasst</CHANGE>
+       <REASON>Aktualisierung</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>COMPU-METHOD bei DOP_UINTDEC4Bytes07FF1F9TABINTPMicroSecon und DOP_UINTDEC4Bytes07FF1F9FFFFTABINTPMicroSecon durch TAB-INTP ausgetauscht</CHANGE>
+       <REASON>Funktion ist nicht invertierbar, da nur punktweise definiert.</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Namen der DOPs mit Einheiten angepasst</CHANGE>
+       <REASON>falsche Reihenfolge</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>falsche SHORT-NAMES angepasst</CHANGE>
+       <REASON>Autorenrichtlinie</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUES für CAN*Format angepasst auf 11-bit</CHANGE>
+       <REASON>Bug in ISO 22900-2 vom 12.07.2007 nach Formatänderung auf 4 Bit</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>&quot;VALID&quot;-SCALES an SCALE-CONSTRAINTS entfernt</CHANGE>
+       <REASON>redundant in ODX</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>001002</REVISION-LABEL>
+     <STATE>DRAFT</STATE>
+     <DATE>2007-09-17T00:00:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>XD_RoadVehicModulVehicCommuInterMVCIPart2DiagnProtoDataUnitAppliProgrInterDPDUAPI an neues Dokument angepasst (DATE)</CHANGE>
+       <REASON>aktualisierter DRAFT vom 12.08.2007</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PARAM-CLASS von CP_BlockSizeOverride auf &quot;COM&quot; geändert</CHANGE>
+       <REASON>Anpassung an DRAFT vom 12.08.2007</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>001003</REVISION-LABEL>
+     <STATE>DRAFT</STATE>
+     <DATE>2007-11-08T00:00:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>IDs aller COMPARAMs um COMPARAM-SUBSET aus ODX 2.1.x erweitert</CHANGE>
+       <REASON>Kompatibilität mit ODX 2.1.x</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Kommentare zwischen COMPARAMs eingefügt</CHANGE>
+       <REASON>Erkennbarkeit der COMPARAM-SUBSETs aus ODX 2.1.x</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>LONG-/SHORT-NAME und ID der CPS angepasst</CHANGE>
+       <REASON>Anpassung an ISO 22900-2</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>UPPER-LIMIT aus allen COMPU-SCALES in TEXTTABLE-DOPs entfernt</CHANGE>
+       <REASON>unnötig, da identisch</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>COMPARAMs mit FIELDs korrigiert</CHANGE>
+       <REASON>missverständliche Beispiele mit Längenangaben in ISO 22900-2</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>COMPARAMs und DOPs überarbeitet</CHANGE>
+       <REASON>Anpassung an CPS der COMPARAM-Group</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>001004</REVISION-LABEL>
+     <STATE>DRAFT</STATE>
+     <DATE>2007-11-13T00:00:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>DOP_UINTDEC4Bytes065534MicroSecon umbenannt in DOP_UINTDEC4Bytes065535MicroSecon und SCALE-CONSTR entfernt</CHANGE>
+       <REASON>ISO 22900-2 erlaubt gesamten Wertebereich</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>SCALE-CONSTR für 65535 aus DOP_UINTDEC4Bytes065535BlockSizeOverr entfernt</CHANGE>
+       <REASON>ISO 22900-2 erlaubt gesamten Wertebereich, [256;65534] ist in ISO 15765-2 nicht definiert</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DOP_UINTDEC4Bytes07FF1F9SCALELINEAMilliSecon entfernt</CHANGE>
+       <REASON>redundant zu DOP_UINTDEC4Bytes07FF1F9SCALELINEAMicroSecon</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>001005</REVISION-LABEL>
+     <STATE>RELEASE</STATE>
+     <DATE>2008-05-09T01:00:00+02:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>alle Vorkommen von DISPLAY-RADIX=&quot;DEC&quot; entfernt</CHANGE>
+       <REASON>redundant, der Wert entspricht dem Default in odx.xsd</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>001006</REVISION-LABEL>
+     <STATE>RELEASE</STATE>
+     <DATE>2008-08-27T01:00:00+02:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>PhysDim_SignaTransRate durch PhysDim_BitRate ersetzt und PHYSICAL-DIMENSION-REFs angepasst</CHANGE>
+       <REASON>Definition der Bitrate aus ISO/IEC 80000-13</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DISPLAY-NAME der Unit_BitPerSecon angepasst</CHANGE>
+       <REASON>Definition aus ISO/IEC 80000-13</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>001007</REVISION-LABEL>
+     <STATE>RELEASE</STATE>
+     <DATE>2008-09-19T01:00:00+02:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>XDOC in COMPANY-SPECIFIC-INFO angepasst an aktuelles Voting-Dokument</CHANGE>
+       <REASON>2008-18_Vote_on_ISO_FDIS_22900-2.pdf</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE für CP_RC21CompletionTimeout auf 1300000 korrigiert</CHANGE>
+       <REASON>2008-18_Vote_on_ISO_FDIS_22900-2.pdf</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>CPTYPE der folgenden COMPARAMs von STANDARD auf OPTIONAL geändert:
+- ISO_15765_3.CP_P2Min
+- ISO_15765_2.CP_Br
+- ISO_15765_2.CP_Cs</CHANGE>
+       <REASON>ISO/FDIS 22900-2:2008 vom 29.02.2008</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>ISO_11898_2_DWCAN.CP_TerminationType_Ecu entfernt</CHANGE>
+       <REASON>ISO/FDIS 22900-2:2008 vom 29.02.2008</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>folgende Elemente entfernt:
+- ISO_15765_3.CP_SessionTiming_Ecu
+- ISO_15765_3.CP_SessionTimingOverride
+- DOP_BYTEFIELD0To1530BytesENDOFPDU</CHANGE>
+       <REASON>Telco ComParam Subgroup ODX 2.0.1: Die beiden COMPLEX-COMPARAMs entfallen.</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DIMENSIONs sowie FACTOR-SI-TO-UNIT, OFFSET-SI-TO-UNIT und PHYSICAL-DIMENSION-REFs an allen UNITs entfernt</CHANGE>
+       <REASON>Telco ComParam Subgroup ODX 2.0.1</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Unit_BitPerSecon ersetzt durch Unit_Baud und UNIT-REFs angepasst</CHANGE>
+       <REASON>Telco ComParam Subgroup ODX 2.0.1</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DOP_UINTDEC4BytesBitPerSecon umbenannt in DOP_UINTDEC4BytesBaud und alle DOP-REFs angepasst</CHANGE>
+       <REASON>Telco ComParam Subgroup ODX 2.0.1</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>001008</REVISION-LABEL>
+     <STATE>RELEASE</STATE>
+     <DATE>2009-10-23T01:00:00+02:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>Präfix &quot;CPS_&quot; aus ID der COMPARAM-SPEC und dem Dateinamen entfernt</CHANGE>
+       <REASON>Harmonisierung ISO / Anpassung version42</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>LONG-NAME der COMPARAM-SPEC angepasst von &quot;ISO_15765_3_on_ISO_15765_2&quot; auf &quot;ISO 15765-3 on ISO 15765-2&quot;</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>LONG-NAMEs aller COMPARAMs und DOPs gleich dem SHORT-NAME gesetzt</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DESC der COMPARAM-SPEC angepasst</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>COMPANY-DATA für ASAM hinzugefügt und COMPANY-SPECIFIC-INFO an Compy_VolksAG entfernt</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Reihenfolge der Attribute CPTYPE und DISPLAY-LEVEL an allen COMPARAMs vertauscht</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DESCs an allen COMPARAMs, DOPs und UNITs überarbeitet bzw. teilweise entfernt</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>SHORT-NAMEs und IDs aller DOPs angepasst:
+- DOP_BYTEFIELD0To12BytesENDOFPDU -&gt; IDENTICAL_BYTEFIELD_0_12_END_OF_PDU
+- DOP_TEXTTABLECanReqForma -&gt; TEXTTABLE_UINT6_CanReqFormat
+- DOP_TEXTTABLECanRespUSDTForma -&gt; TEXTTABLE_UINT4_4_15_CanRespUSDTFormat
+- DOP_TEXTTABLECanRespUUDTForma -&gt; TEXTTABLE_UINT4_0_10_CanRespUUDTFormat
+- DOP_TEXTTABLEComPrimiQueueHandlOnError -&gt; TEXTTABLE_UINT1_SuspendQueueOnError
+- DOP_TEXTTABLEEnablStatu -&gt; TEXTTABLE_UINT1_Disabled_Enabled
+- DOP_TEXTTABLENumbeOfSamplPerBit -&gt; TEXTTABLE_UINT1_SamplesPerBit
+- DOP_TEXTTABLEOffOn -&gt; TEXTTABLE_UINT1_Off_On
+- DOP_TEXTTABLERC21Handl -&gt; TEXTTABLE_UINT2_0_2_RC21Handling
+- DOP_TEXTTABLERC23Handl -&gt; TEXTTABLE_UINT2_0_2_RC23Handling
+- DOP_TEXTTABLERC78Handl -&gt; TEXTTABLE_UINT2_0_2_RC78Handling
+- DOP_TEXTTABLERCByteOffse -&gt; TEXTTABLE_UINT32_1_4294967295_RCByteOffset
+- DOP_TEXTTABLERemotFrameTrans -&gt; TEXTTABLE_UINT1_SendRemoteFrame
+- DOP_TEXTTABLERequeAddreMode -&gt; TEXTTABLE_UINT2_1_2_RequestAddrMode
+- DOP_TEXTTABLESinglWireCANMessaType -&gt; TEXTTABLE_UINT1_SwCan_HighVoltage
+- DOP_TEXTTABLESpeedChangResisContr -&gt; TEXTTABLE_UINT8_ChangeSpeedResCtrl
+- DOP_TEXTTABLETermiType -&gt; TEXTTABLE_UINT3_0_4_TerminationType
+- DOP_TEXTTABLETermiTypeECU -&gt; TEXTTABLE_UINT3_0_6_TerminationType_Ecu
+- DOP_TEXTTABLETestePreseAddreMode -&gt; TEXTTABLE_UINT1_TesterPresentAddrMode
+- DOP_TEXTTABLETestePreseRespoHandl -&gt; TEXTTABLE_UINT1_TesterPresentReqRsp
+- DOP_TEXTTABLETestePreseSendType -&gt; TEXTTABLE_UINT1_TesterPresentSendType
+- DOP_UINTDEC4Bytes0100000000MicroSecon -&gt; IDENTICAL_UINT27_0_100000000_MicroSecond
+- DOP_UINTDEC4Bytes0100PerCent -&gt; IDENTICAL_UINT7_0_100_PerCent
+- DOP_UINTDEC4Bytes01027 -&gt; IDENTICAL_UINT11_0_1027
+- DOP_UINTDEC4Bytes0125000000MicroSecon -&gt; IDENTICAL_UINT27_0_125000000_MicroSecond
+- DOP_UINTDEC4Bytes0127500 -&gt; IDENTICAL_UINT17_0_127500
+- DOP_UINTDEC4Bytes015 -&gt; IDENTICAL_UINT4_HEX
+- DOP_UINTDEC4Bytes020000000MicroSecon -&gt; IDENTICAL_UINT25_0_20000000_MicroSecond
+- DOP_UINTDEC4Bytes0250000MicroSecon -&gt; IDENTICAL_UINT18_0_250000_MicroSecond
+- DOP_UINTDEC4Bytes0255 -&gt; IDENTICAL_UINT8
+- DOP_UINTDEC4Bytes030000000MicroSecon -&gt; IDENTICAL_UINT25_0_30000000_MicroSecond
+- DOP_UINTDEC4Bytes0655350000MicroSecon -&gt; IDENTICAL_UINT30_0_655350000_MicroSecond
+- DOP_UINTDEC4Bytes065535BlockSizeOverr -&gt; IDENTICAL_UINT16_BlockSizeOverride
+- DOP_UINTDEC4Bytes065535MicroSecon -&gt; IDENTICAL_UINT32_MicroSecond_StMinOverride
+- DOP_UINTDEC4Bytes07FF1F9SCALELINEAMicroSecon -&gt; SCALE_LINEAR_UINT8_INT32_MicroSecond_StMin
+- DOP_UINTDEC4Bytes08 -&gt; IDENTICAL_UINT4_0_8
+- DOP_UINTDEC4BytesBaud -&gt; IDENTICAL_UINT32_Baud
+- DOP_UINTDEC4BytesMicroSecon -&gt; IDENTICAL_UINT32_MicroSecond
+- DOP_UINTHEX4Bytes01FFFF -&gt; IDENTICAL_UINT29_HEX
+- DOP_UINTHEX4Bytes01FFFFFFFFF -&gt; IDENTICAL_UINT32_HEX_CanRespId
+- DOP_UINTHEX4Bytes0FF -&gt; IDENTICAL_UINT8_HEX</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>SHORT-NAMEs und IDs aller UNITs angepasst:
+- Unit_Baud -&gt; Baud
+- Unit_MicroSecon -&gt; MicroSecond
+- Unit_PerCent -&gt; PerCent</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>folgende Elemente entfernt:
+- CP_CanBaudrateRecord
+- DOP_BYTEFIELD0To48BytesENDOFPDU
+- Unit_MilliSecon</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>CP_TerminationType_Ecu hinzugefügt</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_P2Max angepasst von 100000 auf 150000</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_P2Star angepasst von 6000000 auf 5050000</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_P3Func angepasst von 50000 auf 150000</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_P3Phys angepasst von 50000 auf 150000</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_RC21Handling angepasst von &quot;Disabled&quot; auf &quot;Continue unlimited&quot;</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_RC21RequestTime angepasst von 10000 auf 200000</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_RC23RequestTime angepasst von 0 auf 200000</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_TesterPresentAddrMode angepasst von &quot;Physical&quot; auf &quot;Functional&quot;</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_TesterPresentHandling angepasst von &quot;Disabled&quot; auf &quot;Enabled&quot;</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_TesterPresentTime angepasst von 3000000 auf 2000000</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DATA-OBJECT-PROP-REF an CP_P2Star_Ecu angepasst von IDENTICAL_UINT27_0_100000000_MicroSecond auf IDENTICAL_UINT30_0_655350000_MicroSecond</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DATA-OBJECT-PROP-REF an CP_RC21CompletionTimeout angepasst von IDENTICAL_UINT27_0_100000000_MicroSecond auf IDENTICAL_UINT32_MicroSecond</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DATA-OBJECT-PROP-REF an CP_CanFillerByte angepasst von IDENTICAL_UINT8 auf IDENTICAL_UINT8_HEX</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>SCALE-CONSTRS an IDENTICAL_UINT16_BlockSizeOverride entfernt</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>redundanten INTERNAL-CONSTR an folgenden DOPs entfernt:
+- IDENTICAL_UINT32_Baud
+- IDENTICAL_UINT32_HEX_CanRespId
+- IDENTICAL_UINT32_MicroSecond</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DISPLAY-RADIX=&quot;HEX&quot; an IDENTICAL_UINT4_HEX ergänzt</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Anzahl COMPU-SCALEs in SCALE_LINEAR_UINT8_INT32_MicroSecond_StMin durch vereinfachte gleichwertige Abbildung von 11 auf 3 reduziert</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-TYPE/BASE-DATA-TYPE von SCALE_LINEAR_UINT8_INT32_MicroSecond_StMin angepasst von A_UINT32 auf A_INT32</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>INTERNAL-CONSTR bzw. SCALE-CONSTRS an folgenden DOPs vereinfacht:
+- TEXTTABLE_UINT4_0_10_CanRespUUDTFormat
+- TEXTTABLE_UINT4_4_15_CanRespUSDTFormat</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>folgende COMPU-SCALEs in TEXTTABLE_UINT6_CanReqFormat hinzugefügt:
+- 0x20 normal unsegmented 11-bit transmit with padding disabled
+- 0x22 normal unsegmented 29-bit transmit with padding disabled
+- 0x24 normal segmented 11-bit transmit w/o FC and padding disabled
+- 0x25 normal segmented 11-bit transmit with FC and padding disabled
+- 0x26 normal segmented 29-bit transmit w/o FC and padding disabled
+- 0x27 normal segmented 29-bit transmit with FC and padding disabled
+- 0x28 extended unsegmented 11-bit transmit with padding disabled
+- 0x2A extended unsegmented 29-bit transmit with padding disabled
+- 0x2C extended segmented 11-bit transmit w/o FC and padding disabled
+- 0x2D extended segmented 11-bit transmit with FC and padding disabled
+- 0x2E extended segmented 29-bit transmit w/o FC and padding disabled
+- 0x2F extended segmented 29-bit transmit with FC and padding disabled
+- 0x30 normal unsegmented 11-bit transmit with padding enabled
+- 0x32 normal unsegmented 29-bit transmit with padding enabled
+- 0x34 normal segmented 11-bit transmit w/o FC and padding enabled
+- 0x35 normal segmented 11-bit transmit with FC and padding enabled
+- 0x36 normal segmented 29-bit transmit w/o FC and padding enabled
+- 0x37 normal segmented 29-bit transmit with FC and padding enabled
+- 0x38 extended unsegmented 11-bit transmit with padding enabled
+- 0x3A extended unsegmented 29-bit transmit with padding enabled
+- 0x3C extended segmented 11-bit transmit w/o FC and padding enabled
+- 0x3D extended segmented 11-bit transmit with FC and padding enabled
+- 0x3E extended segmented 29-bit transmit w/o FC and padding enabled
+- 0x3F extended segmented 29-bit transmit with FC and padding enabled</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>SHORT-LABELs an den COMPU-SCALEs von TEXTTABLE_UINT6_CanReqFormat von 1 auf 2 Nibbles erweitert</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>INTERNAL-CONSTR/UPPER-LIMIT und SCALE-CONSTRS an TEXTTABLE_UINT6_CanReqFormat angepasst</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+    <DOC-REVISION>
+     <TEAM-MEMBER-REF ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+     <REVISION-LABEL>002008</REVISION-LABEL>
+     <STATE>RELEASE</STATE>
+     <DATE>2009-10-23T02:00:00+02:00</DATE>
+     <TOOL>XMLSPY</TOOL>
+     <MODIFICATIONS>
+      <MODIFICATION>
+       <CHANGE>PHYSICAL-DEFAULT-VALUE von CP_StMinOverride angepasst von 65535 auf 4294967295</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>DESC an IDENTICAL_UINT32_MicroSecond_StMinOverride angepasst</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>LOWER-/UPPER-LIMIT am INTERNAL-CONSTR von IDENTICAL_UINT32_MicroSecond_StMinOverride entfernt und durch angepassten SCALE-CONSTR ersetzt</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+      <MODIFICATION>
+       <CHANGE>Wert von StMinOverride angepasst in den DESCs von
+- CP_Cs
+- CP_Cs_Ecu</CHANGE>
+       <REASON>Harmonisierung ISO</REASON>
+      </MODIFICATION>
+     </MODIFICATIONS>
+    </DOC-REVISION>
+   </DOC-REVISIONS>
+  </ADMIN-DATA>
+  <COMPANY-DATAS>
+   <COMPANY-DATA ID="ISO_15765_3_on_ISO_15765_2.ASAM">
+    <SHORT-NAME>ASAM</SHORT-NAME>
+    <LONG-NAME>Association for Stadardization of Automation and Measuring Systems (ASAM) e. V.</LONG-NAME>
+    <TEAM-MEMBERS>
+     <TEAM-MEMBER ID="ISO_15765_3_on_ISO_15765_2.ASAM.Joint_COMPARAM_Group">
+      <SHORT-NAME>Joint_COMPARAM_Group</SHORT-NAME>
+      <LONG-NAME>Joint COMPARAM-Group</LONG-NAME>
+      <ADDRESS>Arnikastrasse 2</ADDRESS>
+      <ZIP>85635</ZIP>
+      <CITY>Hoehenkirchen</CITY>
+      <PHONE>+49 8102 895317</PHONE>
+      <FAX>+49 8102 895310</FAX>
+      <EMAIL>info@asam.net</EMAIL>
+     </TEAM-MEMBER>
+    </TEAM-MEMBERS>
+    <COMPANY-SPECIFIC-INFO>
+     <RELATED-DOCS>
+      <RELATED-DOC>
+       <XDOC>
+        <SHORT-NAME>ASAM_MCD_2D</SHORT-NAME>
+        <LONG-NAME>ASAM MCD-2D</LONG-NAME>
+        <NUMBER>2.0.1</NUMBER>
+        <STATE>Release</STATE>
+        <DATE>2005-03-31T00:00:00</DATE>
+        <PUBLISHER>ASAM</PUBLISHER>
+       </XDOC>
+      </RELATED-DOC>
+      <RELATED-DOC>
+       <XDOC>
+        <SHORT-NAME>ISO_22900_2</SHORT-NAME>
+        <LONG-NAME>ISO 22900-2</LONG-NAME>
+        <NUMBER>2.2.0</NUMBER>
+        <STATE>Release</STATE>
+        <DATE>2009-01-27T00:00:00</DATE>
+        <PUBLISHER>ISO</PUBLISHER>
+       </XDOC>
+      </RELATED-DOC>
+     </RELATED-DOCS>
+    </COMPANY-SPECIFIC-INFO>
+   </COMPANY-DATA>
+   <COMPANY-DATA ID="Compy_ElektAutomGmbH">
+    <SHORT-NAME>Compy_ElektAutomGmbH</SHORT-NAME>
+    <LONG-NAME>Elektrobit Automotive GmbH</LONG-NAME>
+    <TEAM-MEMBERS>
+     <TEAM-MEMBER ID="Compy_ElektAutomGmbH.TM_WolfgRethe">
+      <SHORT-NAME>TM_WolfgRethe</SHORT-NAME>
+      <LONG-NAME>Wolfgang Rether</LONG-NAME>
+      <ROLES>
+       <ROLE>contact person consultant</ROLE>
+      </ROLES>
+     </TEAM-MEMBER>
+    </TEAM-MEMBERS>
+   </COMPANY-DATA>
+   <COMPANY-DATA ID="Compy_VolksAG">
+    <SHORT-NAME>Compy_VolksAG</SHORT-NAME>
+    <LONG-NAME>Volkswagen AG</LONG-NAME>
+    <TEAM-MEMBERS>
+     <TEAM-MEMBER ID="Compy_VolksAG.TM_JensRathm">
+      <SHORT-NAME>TM_JensRathm</SHORT-NAME>
+      <LONG-NAME>Jens Rathmann</LONG-NAME>
+      <ROLES>
+       <ROLE>contact person OEM</ROLE>
+      </ROLES>
+      <DEPARTMENT>VST/3-1</DEPARTMENT>
+     </TEAM-MEMBER>
+    </TEAM-MEMBERS>
+   </COMPANY-DATA>
+  </COMPANY-DATAS>
+  <COMPARAMS>
+   <!--COMPARAM-SUBSET ID="ISO_15765_3" CATEGORY="APP"-->
+   <COMPARAM ID="ISO_15765_3.CP_CanTransmissionTime" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_CanTransmissionTime</SHORT-NAME>
+    <LONG-NAME>CP_CanTransmissionTime</LONG-NAME>
+    <DESC>
+     <p>If the timeout values are used which have been received by the ECU via session control response (0x50), the Can transmission time has to be added to the timeout values.</p>
+     <p>P2 = received P2 + CanTransmissionTime (contains delay for both transmission directions)</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>100000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_ChangeSpeedCtrl" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_ChangeSpeedCtrl</SHORT-NAME>
+    <LONG-NAME>CP_ChangeSpeedCtrl</LONG-NAME>
+    <DESC>
+     <p>Control the behaviour of the MVCI protocol module in processing speed change messages.</p>
+     <p>When this ComParam is enabled, the speed rate change will be activated on a successful Send or SendRecv ComPrimitive when the transmitted or received message matches the CP_ChangeSpeedMessage (baud rate as specified in CP_ChangeSpeedRate and termination resistor as specified in CP_ChangeSpeedResCtrl).</p>
+     <p>In the case of monitoring mode, when a receive PDU is bound to a Receive Only ComPrimitive, and this ComParam is enabled, the speed rate change will also be activated and the corresponding ComParams will be interpreted accordingly</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Disabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Disabled_Enabled"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_ChangeSpeedMessage" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_ChangeSpeedMessage</SHORT-NAME>
+    <LONG-NAME>CP_ChangeSpeedMessage</LONG-NAME>
+    <DESC>
+     <p>Switch Speed Message</p>
+     <p>The message is monitored for transmit and receive. When this message is detected on the vehicle bus, the CP_ChangeSpeedRate and CP_ChangeSpeedResCtrl ComParams are processed.</p>
+     <p>NOTE: CP_ChangeSpeedCtrl is enabled for this ComParam to be active.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE/>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_BYTEFIELD_0_12_END_OF_PDU"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_ChangeSpeedRate" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_ChangeSpeedRate</SHORT-NAME>
+    <LONG-NAME>CP_ChangeSpeedRate</LONG-NAME>
+    <DESC>
+     <p>The data rate to be used when switching speed rates</p>
+     <p>When changed, this value is copied to CP_Baudrate ComParam.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_Baud"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_ChangeSpeedResCtrl" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_ChangeSpeedResCtrl</SHORT-NAME>
+    <LONG-NAME>CP_ChangeSpeedResCtrl</LONG-NAME>
+    <DESC>
+     <p>This ComParam is used in conjunction with CP_ChangeSpeedCtrl.</p>
+     <p>This ComParam is used to control automatic loading or unloading of the physical resource resistor when a change speed message has been transmitted or received.</p>
+     <p>NOTE: For AUTO_UNLOAD_RESISTOR, it is intended that CP_TerminationType be set to the initial value configured at the time of a PDUConnect.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Not used</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT8_ChangeSpeedResCtrl"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_ChangeSpeedTxDelay" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_ChangeSpeedTxDelay</SHORT-NAME>
+    <LONG-NAME>CP_ChangeSpeedTxDelay</LONG-NAME>
+    <DESC>
+     <p>Minimum amount of time to wait before allowing the next transmit message on the Vehicle Bus after the successful transmission of a baud rate change message</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_CyclicRespTimeout" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_CyclicRespTimeout</SHORT-NAME>
+    <LONG-NAME>CP_CyclicRespTimeout</LONG-NAME>
+    <DESC>
+     <p>This ComParam is used for ComPrimitives that have a NumRecvCycles set to IS-CYCLIC (-1, infinite).</p>
+     <p>The timer is enabled after the first positive response is received from an ECU. If CP_CyclicRespTimeout = 0, there is no receive timing enabled for the infinite receive ComPrimitive.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_EnablePerformanceTest" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_EnablePerformanceTest</SHORT-NAME>
+    <LONG-NAME>CP_EnablePerformanceTest</LONG-NAME>
+    <DESC>
+     <p>This ComParam (when enabled) will place the tester into a performance measurement mode.</p>
+     <p>Measurements will be collected during a normal ComPrimitive communications session.</p>
+     <p>ComParams such as P1Min, P2Min, Br, Cs will be tested in this mode. Once the testing is disabled, results of the testing will be returned to the client application.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Disabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Disabled_Enabled"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_Loopback" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_Loopback</SHORT-NAME>
+    <LONG-NAME>CP_Loopback</LONG-NAME>
+    <DESC>
+     <p>Echo Transmitted messages in the receive queue, including periodic messages.</p>
+     <p>Loopback messages shall only be sent after successful transmission of a message.</p>
+     <p>Loopback frames are not subject to message filtering.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Off</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Off_On"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_ModifyTiming" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_ModifyTiming</SHORT-NAME>
+    <LONG-NAME>CP_ModifyTiming</LONG-NAME>
+    <DESC>
+     <p>This parameter signals the D-PDU API to automatically modify timing parameters based on a response from the ECU.</p>
+     <p>For ISO 14230-2 this would apply to service 0x83/0xC3 with TPI of 1, 2 or 3.</p>
+     <p>For ISO 15765-3 this would apply to service 0x10/0x50. For functional addressing mode, the worst case timing parameter returned by the responding ECUs shall be used.</p>
+     <p>Based on the protocol, the following parameters are modified when a positive ECU response is received:</p>
+     <p>- CP_P2Max</p>
+     <p>- CP_P2Min</p>
+     <p>- CP_P2Star</p>
+     <p>- CP_P3Min</p>
+     <p>- CP_P4Min</p>
+     <p>NOTE: The values returned by an ECU are in a different time resolution than the ComParams to be automatically modified. The values will be reinterpreted from the protocol specified time resolution to the 1us resolution specified in the D-PDU API.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Disabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Disabled_Enabled"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_P2Max" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_P2Max</SHORT-NAME>
+    <LONG-NAME>CP_P2Max</LONG-NAME>
+    <DESC>
+     <p>Timeout in receiving an expected frame
+after a successful transmit complete</p>
+     <p>Also used for
+multiple ECU responses</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>150000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT27_0_125000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_P2Max_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_P2Max_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_P2Max_Ecu</LONG-NAME>
+    <DESC>
+     <p>Performance requirement for the server to start with the response message after the reception of a request message (indicated via N_USData.ind)</p>
+     <p>This is a performance requirement ComParam.</p>
+     <p>(CP_P2Max_ECU &lt; CP_P2Max - CP_CanTransmissionTime)</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>50000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT27_0_100000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_P2Min" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_P2Min</SHORT-NAME>
+    <LONG-NAME>CP_P2Min</LONG-NAME>
+    <DESC>
+     <p>This sets the minimum time between tester request and ECU responses, or two ECU responses.</p>
+     <p>After the request, the interface shall be capable of handling an immediate response (P2_min=0). For subsequent responses, a byte received after P1_MAX shall be considered as the start of the subsequent response.</p>
+     <p>This is a performance requirement ComParam.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT18_0_250000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_P2Star" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_P2Star</SHORT-NAME>
+    <LONG-NAME>CP_P2Star</LONG-NAME>
+    <DESC>
+     <p>Timeout for the client to expect the start of the response message after the reception of a negative response message (indicated via N_USData.ind) with response code 0x78 (enhanced response timing)</p>
+     <p>See CP_RC78Handling for details describing 0x78 0x7F handling.</p>
+     <p>This parameter is used for all protocols that support the negative response code 0x78. For some protocols it is used instead of the recommended P3Max parameter.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>5050000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT30_0_655350000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_P2Star_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_P2Star_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_P2Star_Ecu</LONG-NAME>
+    <DESC>
+     <p>Performance requirement for the server to start with the response message after the transmission of a negative response message (indicated via N_USData.con) with response code 0x78 (enhanced response timing).</p>
+     <p>This is a performance requirement ComParam.</p>
+     <p>NOTE: CP_P2Star_Ecu &lt; CP_P2Star - 0.5 * CP_CanTransmissionTime</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>5000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT30_0_655350000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_P3Func" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_P3Func</SHORT-NAME>
+    <LONG-NAME>CP_P3Func</LONG-NAME>
+    <DESC>
+     <p>Minimum time for the client to wait after the successful transmission of a functionally addressed request message (indicated via N_USData.con), before it can transmit the next functionally addressed request message, in case no response is required, or the requested data is only supported by a subset of thefunctionally addressed servers</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>150000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT27_0_125000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_P3Phys" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_P3Phys</SHORT-NAME>
+    <LONG-NAME>CP_P3Phys</LONG-NAME>
+    <DESC>
+     <p>Minimum time for the client to wait after the successful transmission of a physically addressed request message (indicated via N_USData.con) with no response required before it can transmit the next physically-addressed request message</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>150000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT27_0_125000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RC21CompletionTimeout" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RC21CompletionTimeout</SHORT-NAME>
+    <LONG-NAME>CP_RC21CompletionTimeout</LONG-NAME>
+    <DESC>
+     <p>Time period the tester accepts repeated negative responses with response code 0x21 and repeats the same request</p>
+     <p>Timer is started after reception of first negative response.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1300000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RC21Handling" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RC21Handling</SHORT-NAME>
+    <LONG-NAME>CP_RC21Handling</LONG-NAME>
+    <DESC>
+     <p>Repetition mode in case of response code 0x7F XX 0x21</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Continue unlimited</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT2_0_2_RC21Handling"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RC21RequestTime" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RC21RequestTime</SHORT-NAME>
+    <LONG-NAME>CP_RC21RequestTime</LONG-NAME>
+    <DESC>
+     <p>Time between negative response with response code 0x21 and the retransmission of the same request</p>
+     <p>If CP_P3Min is greater than CP_RC21RequestTime, the time delay prior to the retransmission of the same request will be CP_P3Min.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>200000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT27_0_100000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RC23CompletionTimeout" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RC23CompletionTimeout</SHORT-NAME>
+    <LONG-NAME>CP_RC23CompletionTimeout</LONG-NAME>
+    <DESC>
+     <p>Time period the tester accepts repeated negative responses with response code 0x23 and repeats the same request</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RC23Handling" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RC23Handling</SHORT-NAME>
+    <LONG-NAME>CP_RC23Handling</LONG-NAME>
+    <DESC>
+     <p>Repetition mode in case of response code 0x7F XX 0x23</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Disabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT2_0_2_RC23Handling"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RC23RequestTime" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RC23RequestTime</SHORT-NAME>
+    <LONG-NAME>CP_RC23RequestTime</LONG-NAME>
+    <DESC>
+     <p>The time the D-PDU API waits to re-request the message when receiving a negative response code 0x23</p>
+     <p>For some protocols (SAE_J1850_VPW) it is possible to get a positive response after receiving a negative response code 0x23, so the D-PDU API uses this ComParam as the time to receive a possible positive response before making the re-request.</p>
+     <p>On a positive response within this time, the re-request is cancelled. The D-PDU API postpones the re-request until the timeout of CP_RC23RequestTime (or a CP_P3Min timeout, in case CP_P3Min is greater than CP_RC23RequestTime).</p>
+     <p>For ISO 14230-3, there will be no positive response following a RC23 therefore the D-PDU API is expected to always make a re-request if enabled (CP_RC23Handling != 0).</p>
+     <p>The cycle of receiving negative response code 0x23 and retransmitting the request continues until CP_RC23CompletionTimeout expires (applicable only if CP_RC23Handling is set to 1).</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>200000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT27_0_100000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RC78CompletionTimeout" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RC78CompletionTimeout</SHORT-NAME>
+    <LONG-NAME>CP_RC78CompletionTimeout</LONG-NAME>
+    <DESC>
+     <p>Time period the tester accepts repeated negative responses with response code 0x78 and waits for a positive response further on</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>25000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RC78Handling" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RC78Handling</SHORT-NAME>
+    <LONG-NAME>CP_RC78Handling</LONG-NAME>
+    <DESC>
+     <p>Handling of 0x7F XX 0x78 ResponseTimeout and 0x78 Repetitions</p>
+     <p>The receive timeout value will be CP_P2Star. This timer will be reset on each consecutive reception of the 0x7F 0x78 response.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Continue unlimited</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT2_0_2_RC78Handling"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RCByteOffset" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RCByteOffset</SHORT-NAME>
+    <LONG-NAME>CP_RCByteOffset</LONG-NAME>
+    <DESC>
+     <p>This parameter is used by the MVCI Protocol Handlers to offset into the received negative response message (0x7F) to retrieve the response code byte.</p>
+     <p>Most protocols as a default place the response code as the last byte of the message. There are some protocols which place the response code after the Service Id (offset = 1).</p>
+     <p>A range is provided to allow for different negative response configurations</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Last byte</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT32_1_4294967295_RCByteOffset"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_RepeatReqCountApp" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RepeatReqCountApp</SHORT-NAME>
+    <LONG-NAME>CP_RepeatReqCountApp</LONG-NAME>
+    <DESC>
+     <p>This ComParam contains a counter to enable a re-transmission of the last request when either a transmit, receive error, or timeout with no response is detected.</p>
+     <p>This only applies to the application layer.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT17_0_127500"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_StartMsgIndEnable" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_StartMsgIndEnable</SHORT-NAME>
+    <LONG-NAME>CP_StartMsgIndEnable</LONG-NAME>
+    <DESC>
+     <p>Start Message Indication Enable</p>
+     <p>Upon receiving a first frame of a multi-frame message (ISO 15765), or upon receiving a first byte of a UART message, an indication will be set in the RX result item.</p>
+     <p>No data bytes will accompany the result item.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Disabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Disabled_Enabled"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_SuspendQueueOnError" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_SuspendQueueOnError</SHORT-NAME>
+    <LONG-NAME>CP_SuspendQueueOnError</LONG-NAME>
+    <DESC>
+     <p>This ComParam is used as a temporary ComParam for services that require a positive response before any further Com Primitives can be executed.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Do not suspend</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_SuspendQueueOnError"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_SwCan_HighVoltage" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_SwCan_HighVoltage</SHORT-NAME>
+    <LONG-NAME>CP_SwCan_HighVoltage</LONG-NAME>
+    <DESC>
+     <p>Indicates that the Single Wire CAN message should be transmitted as a High-Voltage Message.</p>
+     <p>Simultaneously transmitting in high voltage and high speed mode will result in undefined behaviour.</p>
+     <p>This ComParam is only applicable when the Bus Type selected is SAE_J2411_SWCAN.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Normal</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_SwCan_HighVoltage"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentAddrMode" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentAddrMode</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentAddrMode</LONG-NAME>
+    <DESC>
+     <p>Addressing Mode to be used for periodic Tester Present messages</p>
+     <p>Uses the PhysReqxxx or FuncReqxxx ComParams.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Functional</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_TesterPresentAddrMode"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentExpPosResp" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentExpPosResp</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentExpPosResp</LONG-NAME>
+    <DESC>
+     <p>Define the expected ECU positive response to a Tester Present Message.</p>
+     <p>This is only applicable if CP_TesterPresentReqRsp is set to 1 (ECU responses are expected on a Tester Present Message).</p>
+     <p>No header bytes or checksum bytes are included. Only the ParamActLen bytes in the array will be compared to the received ECU data.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE/>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_BYTEFIELD_0_12_END_OF_PDU"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentExpNegResp" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentExpNegResp</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentExpNegResp</LONG-NAME>
+    <DESC>
+     <p>Define the expected ECU negative response to a Tester Present Message.</p>
+     <p>This is only applicable if CP_TesterPresentReqRsp is set to 1 (ECU responses are expected on a Tester Present Message).</p>
+     <p>No header bytes or checksum bytes are included.</p>
+     <p>When a negative response is received to a tester present message, which cannot be handled by the MVCI Protocol module (See RC 21, RC 23 and RC 78), the MVCI protocol module should report a Tester Present Error, but continue sending Tester Present Messages. (See PDU_ERR_EVT_TESTER_PRESENT_ERROR)</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE/>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_BYTEFIELD_0_12_END_OF_PDU"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentHandling" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentHandling</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentHandling</LONG-NAME>
+    <DESC>
+     <p>Define Tester Present message generation settings</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Enabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Disabled_Enabled"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentMessage" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentMessage</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentMessage</LONG-NAME>
+    <DESC>
+     <p>Define the Tester Present Message</p>
+     <p>This message data does not include any header bytes or checksum information.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>3E80</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_BYTEFIELD_0_12_END_OF_PDU"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentReqRsp" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentReqRsp</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentReqRsp</LONG-NAME>
+    <DESC>
+     <p>Define settings for handling Tester Present ECU responses</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>No response</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_TesterPresentReqRsp"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentSendType" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentSendType</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentSendType</LONG-NAME>
+    <DESC>
+     <p>Define settings for the type of tester present transmits</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Periodic</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_TesterPresentSendType"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentTime" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentTime</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentTime</LONG-NAME>
+    <DESC>
+     <p>Time between Tester Present messages, or Time bus shall be idle before transmitting a Tester Present Message</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>2000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_30000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TesterPresentTime_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TESTER_PRESENT">
+    <SHORT-NAME>CP_TesterPresentTime_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_TesterPresentTime_Ecu</LONG-NAME>
+    <DESC>
+     <p>Time for the server to keep a diagnostic session (other than the default session) active while not receiving any diagnostic request message</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>5000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_30000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_3.CP_TransmitIndEnable" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_TransmitIndEnable</SHORT-NAME>
+    <LONG-NAME>CP_TransmitIndEnable</LONG-NAME>
+    <DESC>
+     <p>Transmit Indication Enable</p>
+     <p>On completion of a transmit message by the protocol, an indication will be set in the RX_FLAG result item.</p>
+     <p>No data bytes will accompany the result item.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Disabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Disabled_Enabled"/>
+   </COMPARAM>
+   <!--COMPARAM-SUBSET ID="ISO_15765_2" CATEGORY="TRANS"-->
+   <COMPARAM ID="ISO_15765_2.CP_Ar" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Ar</SHORT-NAME>
+    <LONG-NAME>CP_Ar</LONG-NAME>
+    <DESC>
+     <p>Time for transmission of the CAN frame (any N_PDU) on the receiver side</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Ar_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Ar_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_Ar_Ecu</LONG-NAME>
+    <DESC>
+     <p>Time for transmission of the CAN frame (any N_PDU) on the receiver side</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_As" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_As</SHORT-NAME>
+    <LONG-NAME>CP_As</LONG-NAME>
+    <DESC>
+     <p>Time for transmission of the CAN frame (any N_PDU) on the sender side</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_As_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_As_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_As_Ecu</LONG-NAME>
+    <DESC>
+     <p>Time for transmission of the CAN frame (any N_PDU) on the sender side</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_BlockSize" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_BlockSize</SHORT-NAME>
+    <LONG-NAME>CP_BlockSize</LONG-NAME>
+    <DESC>
+     <p>This sets the block size that the interface should report to the vehicle for receiving segmented transfers in a Transmit Flow Control Message.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT8"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_BlockSize_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_BlockSize_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_BlockSize_Ecu</LONG-NAME>
+    <DESC>
+     <p>This sets the block size that the ECU should report to the tester for receiving segmented transfers in a Transmit Flow Control Message.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT8"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_BlockSizeOverride" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_BlockSizeOverride</SHORT-NAME>
+    <LONG-NAME>CP_BlockSizeOverride</LONG-NAME>
+    <DESC>
+     <p>This sets the block size that the interface should use to send segmented messages to the vehicle.</p>
+     <p>The flow control value reported by the vehicle should be ignored.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>65535</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT16_BlockSizeOverride"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Br" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Br</SHORT-NAME>
+    <LONG-NAME>CP_Br</LONG-NAME>
+    <DESC>
+     <p>Time until transmission of the next FlowControl</p>
+     <p>This is equivalent to Th in J1939-21.</p>
+     <p>For ISO 15765-2 and ISO 15765-4, this value is a performance requirement ComParam and should not be used as a timeout value by the tester.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>10000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Br_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Br_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_Br_Ecu</LONG-NAME>
+    <DESC>
+     <p>Time until transmission of the next FlowControl</p>
+     <p>This is a performance requirement ComParam.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>10000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Bs" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Bs</SHORT-NAME>
+    <LONG-NAME>CP_Bs</LONG-NAME>
+    <DESC>
+     <p>Timeout until reception of the next FlowControl</p>
+     <p>This is equivalent to T4 in J1939-21.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Bs_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Bs_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_Bs_Ecu</LONG-NAME>
+    <DESC>
+     <p>Timeout until reception of the next FlowControl</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanDataSizeOffset" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_CanDataSizeOffset</SHORT-NAME>
+    <LONG-NAME>CP_CanDataSizeOffset</LONG-NAME>
+    <DESC>
+     <p>Offset subtracted from the total number of expected bytes received/transmitted in a first frame message</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT4_0_8"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanFillerByte" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_CanFillerByte</SHORT-NAME>
+    <LONG-NAME>CP_CanFillerByte</LONG-NAME>
+    <DESC>
+     <p>Padding data byte to be used to pad all USDT type transmits frames (SF, FC, and last CF)</p>
+     <p>NOTE: The padding data byte value is typically 0x00, 0x55, or 0xAA.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>85</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT8_HEX"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanFillerByteHandling" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_CanFillerByteHandling</SHORT-NAME>
+    <LONG-NAME>CP_CanFillerByteHandling</LONG-NAME>
+    <DESC>
+     <p>Enable Padding, forcing the DLC of a CAN frame to always be 8</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Enabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Disabled_Enabled"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanFirstConsecutiveFrameValue" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_CanFirstConsecutiveFrameValue</SHORT-NAME>
+    <LONG-NAME>CP_CanFirstConsecutiveFrameValue</LONG-NAME>
+    <DESC>
+     <p>First consecutive frame number to be transmitted/received on a multi-segment transfer</p>
+     <p>Used to override the normal first consecutive frame value of 1.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT4_HEX"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanFuncReqExtAddr" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_CanFuncReqExtAddr</SHORT-NAME>
+    <LONG-NAME>CP_CanFuncReqExtAddr</LONG-NAME>
+    <DESC>
+     <p>Address extension for enhanced diagnostics</p>
+     <p>The first byte of the requested CAN frame data contains the N_AE/N_TA byte followed by the correct number of PCI bytes.</p>
+     <p>This ComParam is used for all transmitted CAN Frames that have the “Can Address Extension” bit set in the CanIdFormat.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT8_HEX"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanFuncReqFormat" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_CanFuncReqFormat</SHORT-NAME>
+    <LONG-NAME>CP_CanFuncReqFormat</LONG-NAME>
+    <DESC>
+     <p>CAN Format used for a functional address transmit</p>
+     <p>See TEXTTABLE_UINT6_CanReqFormat</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>normal segmented 11-bit transmit with FC</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT6_CanReqFormat"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanFuncReqId" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_CanFuncReqId</SHORT-NAME>
+    <LONG-NAME>CP_CanFuncReqId</LONG-NAME>
+    <DESC>
+     <p>CAN ID used for a functional address transmit</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>2015</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT29_HEX"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanMaxNumWaitFrames" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_CanMaxNumWaitFrames</SHORT-NAME>
+    <LONG-NAME>CP_CanMaxNumWaitFrames</LONG-NAME>
+    <DESC>
+     <p>The maximum number of WAIT flow control frames allowed during a multi-segment transfer</p>
+     <p>For SAE J1939, this is the maximum number of allowed CTS frames.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>255</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT11_0_1027"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanPhysReqExtAddr" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanPhysReqExtAddr</SHORT-NAME>
+    <LONG-NAME>CP_CanPhysReqExtAddr</LONG-NAME>
+    <DESC>
+     <p>Address extension for enhanced diagnostics</p>
+     <p>The first byte of the requested CAN frame data contains the N_AE/N_TA byte followed by the correct number of PCI bytes.</p>
+     <p>This ComParam is used for all transmitted CAN Frames that have the “Can Address Extension” bit set in the CanIdFormat.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT8_HEX"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanPhysReqFormat" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanPhysReqFormat</SHORT-NAME>
+    <LONG-NAME>CP_CanPhysReqFormat</LONG-NAME>
+    <DESC>
+     <p>CAN Format used for a physical address transmit</p>
+     <p>See TEXTTABLE_UINT6_CanReqFormat</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>normal segmented 11-bit transmit with FC</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT6_CanReqFormat"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanPhysReqId" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanPhysReqId</SHORT-NAME>
+    <LONG-NAME>CP_CanPhysReqId</LONG-NAME>
+    <DESC>
+     <p>CAN ID used for a physical address transmit</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>2016</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT29_HEX"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanRespUSDTExtAddr" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanRespUSDTExtAddr</SHORT-NAME>
+    <LONG-NAME>CP_CanRespUSDTExtAddr</LONG-NAME>
+    <DESC>
+     <p>Extended Address used for a USDT response from an ECU if the CAN Format indicates address extension</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT8_HEX"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanRespUSDTFormat" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanRespUSDTFormat</SHORT-NAME>
+    <LONG-NAME>CP_CanRespUSDTFormat</LONG-NAME>
+    <DESC>
+     <p>CAN Format for the USDT CAN ID received from an ECU (Segment type Bit must = 1)</p>
+     <p>See TEXTTABLE_UINT4_4_15_CanRespUSDTFormat</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>normal segmented 11-bit receive with FC</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT4_4_15_CanRespUSDTFormat"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanRespUSDTId" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanRespUSDTId</SHORT-NAME>
+    <LONG-NAME>CP_CanRespUSDTId</LONG-NAME>
+    <DESC>
+     <p>Received USDT CAN ID from an ECU</p>
+     <p>NOTE: 0xFFFFFFFF indicates that the ComParam is not used. This ComParam is used in the Unique Response Identifier Table for CAN protocols.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>2024</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_HEX_CanRespId"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanRespUUDTExtAddr" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanRespUUDTExtAddr</SHORT-NAME>
+    <LONG-NAME>CP_CanRespUUDTExtAddr</LONG-NAME>
+    <DESC>
+     <p>Extended Address used for UUDT response if the CAN Format indicates address extension</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT8_HEX"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanRespUUDTFormat" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanRespUUDTFormat</SHORT-NAME>
+    <LONG-NAME>CP_CanRespUUDTFormat</LONG-NAME>
+    <DESC>
+     <p>Received CAN Format for CAN ID without segmentation (Segment Type Bit must = 0)</p>
+     <p>See TEXTTABLE_UINT4_0_10_CanRespUUDTFormat</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>normal unsegmented 11-bit receive</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT4_0_10_CanRespUUDTFormat"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_CanRespUUDTId" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="UNIQUE_ID">
+    <SHORT-NAME>CP_CanRespUUDTId</SHORT-NAME>
+    <LONG-NAME>CP_CanRespUUDTId</LONG-NAME>
+    <DESC>
+     <p>Received UUDT CAN ID from an ECU</p>
+     <p>NOTE: 0xFFFFFFFF indicates that the ComParam is not used. This ComParam is used in the Unique Response Identifier Table for CAN protocols.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>4294967295</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_HEX_CanRespId"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Cr" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Cr</SHORT-NAME>
+    <LONG-NAME>CP_Cr</LONG-NAME>
+    <DESC>
+     <p>Timeout for reception of the next ConsecutiveFrame</p>
+     <p>For SAE J1939-21, this is equivalent to T1.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Cr_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Cr_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_Cr_Ecu</LONG-NAME>
+    <DESC>
+     <p>Timeout for reception of the next ConsecutiveFrame</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1000000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Cs" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Cs</SHORT-NAME>
+    <LONG-NAME>CP_Cs</LONG-NAME>
+    <DESC>
+     <p>Time until transmission of the next Consecutive Frame</p>
+     <p>(This is used if FC is not enabled or if the STmin value in the FC=0 and STminOverride=0xFFFFFFFF.) See ISO 15765-2.</p>
+     <p>For ISO 15765-2 and ISO 15765-4, this is a performance requirement ComParam and should not be used as a timeout value by the tester.</p>
+     <p>For SAE J1939, this is equivalent to the time between sending packets in a multi-packet broadcast and a multi-packet destination-specific message. From text in SAE J1939-21:2006, 5.12.3.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>10000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_Cs_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_Cs_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_Cs_Ecu</LONG-NAME>
+    <DESC>
+     <p>Time until transmission of the next Consecutive Frame</p>
+     <p>(This is used if FC is not enabled or if the STmin value in the FC=0 and STminOverride=0xFFFFFFFF.) See ISO 15765-2.</p>
+     <p>This is a performance requirement ComParam.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>10000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT25_0_20000000_MicroSecond"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_RepeatReqCountTrans" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="ERRHDL">
+    <SHORT-NAME>CP_RepeatReqCountTrans</SHORT-NAME>
+    <LONG-NAME>CP_RepeatReqCountTrans</LONG-NAME>
+    <DESC>
+     <p>This ComParam contains a counter to enable a re-transmission of the last request when either a transmit, a receive error, or transport layer timeout is detected.</p>
+     <p>This applies to the transport layer only.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT8"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_RequestAddrMode" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_RequestAddrMode</SHORT-NAME>
+    <LONG-NAME>CP_RequestAddrMode</LONG-NAME>
+    <DESC>
+     <p>Addressing Mode to be used for the Com Primitive</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Physical</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT2_1_2_RequestAddrMode"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_SendRemoteFrame" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="COM">
+    <SHORT-NAME>CP_SendRemoteFrame</SHORT-NAME>
+    <LONG-NAME>CP_SendRemoteFrame</LONG-NAME>
+    <DESC>
+     <p>This ComParam is used for CAN remote frame handling.</p>
+     <p>(No data bytes are transmitted. Just the CAN ID. The first byte of the PDU Data shall contain the Data Length Code.)</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>No remote frame</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_SendRemoteFrame"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_StMin" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_StMin</SHORT-NAME>
+    <LONG-NAME>CP_StMin</LONG-NAME>
+    <DESC>
+     <p>This sets the separation time the interface should report to the vehicle for receiving segmented transfers in a Transmit Flow Control Message.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="SCALE_LINEAR_UINT8_INT32_MicroSecond_StMin"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_StMin_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_StMin_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_StMin_Ecu</LONG-NAME>
+    <DESC>
+     <p>The minimum time the sender shall wait between the transmissions of two ConsecutiveFrame N_PDUs</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>0</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="SCALE_LINEAR_UINT8_INT32_MicroSecond_StMin"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_15765_2.CP_StMinOverride" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="TIMING">
+    <SHORT-NAME>CP_StMinOverride</SHORT-NAME>
+    <LONG-NAME>CP_StMinOverride</LONG-NAME>
+    <DESC>
+     <p>This sets the separation time the interface should use to transmit segmented messages to the vehicle.</p>
+     <p>The flow control value reported by the vehicle should be ignored.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>4294967295</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_MicroSecond_StMinOverride"/>
+   </COMPARAM>
+   <!--COMPARAM-SUBSET ID="ISO_11898_2_DWCAN" CATEGORY="PHYS"-->
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_Baudrate" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_Baudrate</SHORT-NAME>
+    <LONG-NAME>CP_Baudrate</LONG-NAME>
+    <DESC>
+     <p>Represents the desired baud rate.</p>
+     <p>If the desired baud rate cannot be achieved within the tolerance of the protocol, the interface will remain at the previous baud rate.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>500000</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT32_Baud"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_BitSamplePoint" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_BitSamplePoint</SHORT-NAME>
+    <LONG-NAME>CP_BitSamplePoint</LONG-NAME>
+    <DESC>
+     <p>This sets the desired bit sample point as a percentage of the bit time.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>80</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT7_0_100_PerCent"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_BitSamplePoint_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_BitSamplePoint_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_BitSamplePoint_Ecu</LONG-NAME>
+    <DESC>
+     <p>This sets the desired bit sample point as a percentage of the bit time.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>80</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT7_0_100_PerCent"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_ListenOnly" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_ListenOnly</SHORT-NAME>
+    <LONG-NAME>CP_ListenOnly</LONG-NAME>
+    <DESC>
+     <p>Enable a Listen Only mode on the Com Logical Link</p>
+     <p>This will cause the link to no longer acknowledge received frames on the CAN Network.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>Disabled</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_Disabled_Enabled"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_SamplesPerBit" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_SamplesPerBit</SHORT-NAME>
+    <LONG-NAME>CP_SamplesPerBit</LONG-NAME>
+    <DESC>
+     <p>Number of samples per bit</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1-Sample</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_SamplesPerBit"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_SamplesPerBit_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_SamplesPerBit_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_SamplesPerBit_Ecu</LONG-NAME>
+    <DESC>
+     <p>Number of samples per bit for the ECU</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>1-Sample</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT1_SamplesPerBit"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_SyncJumpWidth" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_SyncJumpWidth</SHORT-NAME>
+    <LONG-NAME>CP_SyncJumpWidth</LONG-NAME>
+    <DESC>
+     <p>This sets the desired synchronization jump width as a percentage of the bit time.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>15</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT7_0_100_PerCent"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_SyncJumpWidth_Ecu" CPTYPE="STANDARD" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_SyncJumpWidth_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_SyncJumpWidth_Ecu</LONG-NAME>
+    <DESC>
+     <p>This sets the desired synchronization jump width as a percentage of the bit time.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>15</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="IDENTICAL_UINT7_0_100_PerCent"/>
+   </COMPARAM>
+   <COMPARAM ID="ISO_11898_2_DWCAN.CP_TerminationType" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_TerminationType</SHORT-NAME>
+    <LONG-NAME>CP_TerminationType</LONG-NAME>
+    <DESC>
+     <p>CAN termination settings</p>
+     <p>This ComParam can be used to manually change the termination being used on the vehicle bus line.</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>No termination</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT3_0_4_TerminationType"/>
+   </COMPARAM>
+   <!--COMPARAM-SUBSET ID="SAE_J2411_SWCAN" CATEGORY="PHYS"-->
+   <COMPARAM ID="SAE_J2411_SWCAN.CP_TerminationType_Ecu" CPTYPE="OPTIONAL" DISPLAY-LEVEL="1" PARAM-CLASS="BUSTYPE">
+    <SHORT-NAME>CP_TerminationType_Ecu</SHORT-NAME>
+    <LONG-NAME>CP_TerminationType_Ecu</LONG-NAME>
+    <DESC>
+     <p>CAN termination settings for SWCAN ECU emulation</p>
+    </DESC>
+    <PHYSICAL-DEFAULT-VALUE>No termination</PHYSICAL-DEFAULT-VALUE>
+    <DATA-OBJECT-PROP-REF ID-REF="TEXTTABLE_UINT3_0_6_TerminationType_Ecu"/>
+   </COMPARAM>
+  </COMPARAMS>
+  <DATA-OBJECT-PROPS>
+   <DATA-OBJECT-PROP ID="IDENTICAL_BYTEFIELD_0_12_END_OF_PDU">
+    <SHORT-NAME>IDENTICAL_BYTEFIELD_0_12_END_OF_PDU</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_BYTEFIELD_0_12_END_OF_PDU</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_BYTEFIELD" TERMINATION="END-OF-PDU" xsi:type="MIN-MAX-LENGTH-TYPE">
+     <MAX-LENGTH>12</MAX-LENGTH>
+     <MIN-LENGTH>0</MIN-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_BYTEFIELD"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT11_0_1027">
+    <SHORT-NAME>IDENTICAL_UINT11_0_1027</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT11_0_1027</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1027</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT16_BlockSizeOverride">
+    <SHORT-NAME>IDENTICAL_UINT16_BlockSizeOverride</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT16_BlockSizeOverride</LONG-NAME>
+    <DESC>
+     <p>65535 = Use the value reported by the vehicle</p>
+    </DESC>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>65535</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT17_0_127500">
+    <SHORT-NAME>IDENTICAL_UINT17_0_127500</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT17_0_127500</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>127500</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT18_0_250000_MicroSecond">
+    <SHORT-NAME>IDENTICAL_UINT18_0_250000_MicroSecond</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT18_0_250000_MicroSecond</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>250000</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT25_0_20000000_MicroSecond">
+    <SHORT-NAME>IDENTICAL_UINT25_0_20000000_MicroSecond</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT25_0_20000000_MicroSecond</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>20000000</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT25_0_30000000_MicroSecond">
+    <SHORT-NAME>IDENTICAL_UINT25_0_30000000_MicroSecond</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT25_0_30000000_MicroSecond</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>30000000</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT27_0_100000000_MicroSecond">
+    <SHORT-NAME>IDENTICAL_UINT27_0_100000000_MicroSecond</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT27_0_100000000_MicroSecond</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>100000000</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT27_0_125000000_MicroSecond">
+    <SHORT-NAME>IDENTICAL_UINT27_0_125000000_MicroSecond</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT27_0_125000000_MicroSecond</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>125000000</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT29_HEX">
+    <SHORT-NAME>IDENTICAL_UINT29_HEX</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT29_HEX</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>536870911</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT30_0_655350000_MicroSecond">
+    <SHORT-NAME>IDENTICAL_UINT30_0_655350000_MicroSecond</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT30_0_655350000_MicroSecond</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>655350000</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT32_Baud">
+    <SHORT-NAME>IDENTICAL_UINT32_Baud</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT32_Baud</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <UNIT-REF ID-REF="Baud"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT32_HEX_CanRespId">
+    <SHORT-NAME>IDENTICAL_UINT32_HEX_CanRespId</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT32_HEX_CanRespId</LONG-NAME>
+    <DESC>
+     <p>0xFFFFFFFF = indicates that the ComParam is not used.</p>
+     <p>This ComParam is used in the Unique Response Identifier Table for CAN protocols</p>
+    </DESC>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+    <INTERNAL-CONSTR>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>536870912</LOWER-LIMIT>
+       <UPPER-LIMIT>4294967294</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT32_MicroSecond">
+    <SHORT-NAME>IDENTICAL_UINT32_MicroSecond</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT32_MicroSecond</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT32_MicroSecond_StMinOverride">
+    <SHORT-NAME>IDENTICAL_UINT32_MicroSecond_StMinOverride</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT32_MicroSecond_StMinOverride</LONG-NAME>
+    <DESC>
+     <p>0xFFFFFFFF = Use the value reported by the vehicle</p>
+    </DESC>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>127001</LOWER-LIMIT>
+       <UPPER-LIMIT>4294967294</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT4_0_8">
+    <SHORT-NAME>IDENTICAL_UINT4_0_8</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT4_0_8</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>8</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT4_HEX">
+    <SHORT-NAME>IDENTICAL_UINT4_HEX</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT4_HEX</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>15</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT7_0_100_PerCent">
+    <SHORT-NAME>IDENTICAL_UINT7_0_100_PerCent</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT7_0_100_PerCent</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>100</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="PerCent"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT8">
+    <SHORT-NAME>IDENTICAL_UINT8</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT8</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>255</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="IDENTICAL_UINT8_HEX">
+    <SHORT-NAME>IDENTICAL_UINT8_HEX</SHORT-NAME>
+    <LONG-NAME>IDENTICAL_UINT8_HEX</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>IDENTICAL</CATEGORY>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UINT32" DISPLAY-RADIX="HEX"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>255</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="SCALE_LINEAR_UINT8_INT32_MicroSecond_StMin">
+    <SHORT-NAME>SCALE_LINEAR_UINT8_INT32_MicroSecond_StMin</SHORT-NAME>
+    <LONG-NAME>SCALE_LINEAR_UINT8_INT32_MicroSecond_StMin</LONG-NAME>
+    <DESC>
+     <p>0x00-0x7F: 0 µs-127.000 µs Resolution = 1 ms</p>
+     <p>0xF1-0xF9: 100µs - 900µs Resolution = 100 µs</p>
+     <p>use 3 COMPU-SCALEs for invertible linear computation between physical and internal value without overlapping ranges of physical value and domain A_INT32 with unit [µs]</p>
+    </DESC>
+    <COMPU-METHOD>
+     <CATEGORY>SCALE-LINEAR</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>physical value 0 µs, internal value 0x00</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-RATIONAL-COEFFS>
+         <COMPU-NUMERATOR>
+          <V>0</V>
+          <V>1000</V>
+         </COMPU-NUMERATOR>
+         <COMPU-DENOMINATOR>
+          <V>1</V>
+         </COMPU-DENOMINATOR>
+        </COMPU-RATIONAL-COEFFS>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>physical value range 1000 ... 127000 µs, internal value range 0x01 ... 0x7F</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <UPPER-LIMIT>127</UPPER-LIMIT>
+        <COMPU-RATIONAL-COEFFS>
+         <COMPU-NUMERATOR>
+          <V>0</V>
+          <V>1000</V>
+         </COMPU-NUMERATOR>
+         <COMPU-DENOMINATOR>
+          <V>1</V>
+         </COMPU-DENOMINATOR>
+        </COMPU-RATIONAL-COEFFS>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>physical value 100..900 µs, internal value 0xF1..0xF9</p>
+        </DESC>
+        <LOWER-LIMIT>241</LOWER-LIMIT>
+        <UPPER-LIMIT>249</UPPER-LIMIT>
+        <COMPU-RATIONAL-COEFFS>
+         <COMPU-NUMERATOR>
+          <V>-24000</V>
+          <V>100</V>
+         </COMPU-NUMERATOR>
+         <COMPU-DENOMINATOR>
+          <V>1</V>
+         </COMPU-DENOMINATOR>
+        </COMPU-RATIONAL-COEFFS>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_INT32"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>249</UPPER-LIMIT>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-VALID">
+       <LOWER-LIMIT>128</LOWER-LIMIT>
+       <UPPER-LIMIT>240</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+    <UNIT-REF ID-REF="MicroSecond"/>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_Disabled_Enabled">
+    <SHORT-NAME>TEXTTABLE_UINT1_Disabled_Enabled</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_Disabled_Enabled</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_Off_On">
+    <SHORT-NAME>TEXTTABLE_UINT1_Off_On</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_Off_On</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Off</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>On</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_SamplesPerBit">
+    <SHORT-NAME>TEXTTABLE_UINT1_SamplesPerBit</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_SamplesPerBit</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>1 sample per bit</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>1-Sample</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>3 samples per bit</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>3-Sample</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_SendRemoteFrame">
+    <SHORT-NAME>TEXTTABLE_UINT1_SendRemoteFrame</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_SendRemoteFrame</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>No Remote Frame Transmit</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>No remote frame</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Transmit a Remote Frame using the DLC in the PDU Data</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Transmit remote frame</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_SuspendQueueOnError">
+    <SHORT-NAME>TEXTTABLE_UINT1_SuspendQueueOnError</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_SuspendQueueOnError</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Do not suspend ComPrimitive Transmit Queue</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Do not suspend</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Suspend ComPrimitive Transmit Queue on a Timeout Error or on a non-handled 0x7F error (not an enabled protocol ComParam)</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Suspend</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_SwCan_HighVoltage">
+    <SHORT-NAME>TEXTTABLE_UINT1_SwCan_HighVoltage</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_SwCan_HighVoltage</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Normal Message</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Normal</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>High-Voltage Message</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>High voltage</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_TesterPresentAddrMode">
+    <SHORT-NAME>TEXTTABLE_UINT1_TesterPresentAddrMode</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_TesterPresentAddrMode</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Use Physical Addressing for the Tester Present message</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Physical</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Use Functional Addressing for the Tester Present message</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Functional</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_TesterPresentReqRsp">
+    <SHORT-NAME>TEXTTABLE_UINT1_TesterPresentReqRsp</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_TesterPresentReqRsp</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>No response returned by an ECU on a Tester Present message</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>No response</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>An ECU response is expected from a Tester Present message. The response message will be discarded by the MVCI Protocol Module.</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Response expected</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT1_TesterPresentSendType">
+    <SHORT-NAME>TEXTTABLE_UINT1_TesterPresentSendType</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT1_TesterPresentSendType</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Send on periodic interval defined by CP_TesterPresentTime</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Periodic</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Send when bus has been idle for CP_TesterPresentTime</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>On idle</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>1</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT2_0_2_RC21Handling">
+    <SHORT-NAME>TEXTTABLE_UINT2_0_2_RC21Handling</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT2_0_2_RC21Handling</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Continue handling negative responses until CP_RC21CompletionTimeout</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Continue until RC21 timeout</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Continue handling unlimited (until disabled)</p>
+        </DESC>
+        <LOWER-LIMIT>2</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Continue unlimited</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>2</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT2_0_2_RC23Handling">
+    <SHORT-NAME>TEXTTABLE_UINT2_0_2_RC23Handling</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT2_0_2_RC23Handling</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Continue handling negative responses until CP_RC23CompletionTimeout</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Continue until RC23 timeout</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Continue handling unlimited (until disabled)</p>
+        </DESC>
+        <LOWER-LIMIT>2</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Continue unlimited</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>2</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT2_0_2_RC78Handling">
+    <SHORT-NAME>TEXTTABLE_UINT2_0_2_RC78Handling</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT2_0_2_RC78Handling</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Continue handling negative responses until CP_RC78CompletionTimeout</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Continue until RC78 timeout</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Continue handling unlimited (until disabled)</p>
+        </DESC>
+        <LOWER-LIMIT>2</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Continue unlimited</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>2</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT2_1_2_RequestAddrMode">
+    <SHORT-NAME>TEXTTABLE_UINT2_1_2_RequestAddrMode</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT2_1_2_RequestAddrMode</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Use Physical Addressing for the request</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Physical</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>Use Functional Addressing for the request</p>
+        </DESC>
+        <LOWER-LIMIT>2</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Functional</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>1</LOWER-LIMIT>
+     <UPPER-LIMIT>2</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT32_1_4294967295_RCByteOffset">
+    <SHORT-NAME>TEXTTABLE_UINT32_1_4294967295_RCByteOffset</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT32_1_4294967295_RCByteOffset</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>first byte after the Service Id byte (0x7F)</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>First byte</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>last byte in message (not including checksum bytes)</p>
+        </DESC>
+        <LOWER-LIMIT>4294967295</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Last byte</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>1</LOWER-LIMIT>
+     <UPPER-LIMIT>4294967295</UPPER-LIMIT>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>2</LOWER-LIMIT>
+       <UPPER-LIMIT>4294967294</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT3_0_4_TerminationType">
+    <SHORT-NAME>TEXTTABLE_UINT3_0_4_TerminationType</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT3_0_4_TerminationType</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>No termination</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>AC termination</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>2</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>60 Ohm termination</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>3</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>120 Ohm termination</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>4</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>SWCAN termination</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>4</UPPER-LIMIT>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT3_0_6_TerminationType_Ecu">
+    <SHORT-NAME>TEXTTABLE_UINT3_0_6_TerminationType_Ecu</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT3_0_6_TerminationType_Ecu</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>No termination</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>5</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>SWCAN Unit Load termination</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <LOWER-LIMIT>6</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>SWCAN Primary Load termination</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>6</UPPER-LIMIT>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>1</LOWER-LIMIT>
+       <UPPER-LIMIT>4</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT4_0_10_CanRespUUDTFormat">
+    <SHORT-NAME>TEXTTABLE_UINT4_0_10_CanRespUUDTFormat</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT4_0_10_CanRespUUDTFormat</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x0</SHORT-LABEL>
+        <DESC>
+         <p>- Normal addressing for Target (ECU)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- UUDT Message Receive (No Flow Control)</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal unsegmented 11-bit receive</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x2</SHORT-LABEL>
+        <DESC>
+         <p>- Normal addressing for Target (ECU)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- UUDT Message Receive (No Flow Control)</p>
+        </DESC>
+        <LOWER-LIMIT>2</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal unsegmented 29-bit receive</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x8</SHORT-LABEL>
+        <DESC>
+         <p>- Extended addressing for Target (ECU)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- UUDT Message Receive (No Flow Control)</p>
+        </DESC>
+        <LOWER-LIMIT>8</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended unsegmented 11-bit receive</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0xA</SHORT-LABEL>
+        <DESC>
+         <p>- Extended addressing for Target (ECU)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- UUDT Message Receive (No Flow Control)</p>
+        </DESC>
+        <LOWER-LIMIT>10</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended unsegmented 29-bit receive</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>10</UPPER-LIMIT>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>1</LOWER-LIMIT>
+       <UPPER-LIMIT>1</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>3</LOWER-LIMIT>
+       <UPPER-LIMIT>7</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>9</LOWER-LIMIT>
+       <UPPER-LIMIT>9</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT4_4_15_CanRespUSDTFormat">
+    <SHORT-NAME>TEXTTABLE_UINT4_4_15_CanRespUSDTFormat</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT4_4_15_CanRespUSDTFormat</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x4</SHORT-LABEL>
+        <DESC>
+         <p>- Normal addressing for Target (ECU)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control is sent when a First Frame is received</p>
+        </DESC>
+        <LOWER-LIMIT>4</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 11-bit receive w/o FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x5</SHORT-LABEL>
+        <DESC>
+         <p>- Normal addressing for Target (ECU)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- Flow Control is sent when a First Frame is received</p>
+        </DESC>
+        <LOWER-LIMIT>5</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 11-bit receive with FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x6</SHORT-LABEL>
+        <DESC>
+         <p>- Normal addressing for Target (ECU)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control is sent when a First Frame is received</p>
+        </DESC>
+        <LOWER-LIMIT>6</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 29-bit receive w/o FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x7</SHORT-LABEL>
+        <DESC>
+         <p>- Normal addressing for Target (ECU)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- Flow Control is sent when a First Frame is received</p>
+        </DESC>
+        <LOWER-LIMIT>7</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 29-bit receive with FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0xC</SHORT-LABEL>
+        <DESC>
+         <p>- Extended addressing for Target (ECU)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control is sent when a First Frame is received</p>
+        </DESC>
+        <LOWER-LIMIT>12</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 11-bit receive w/o FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0xD</SHORT-LABEL>
+        <DESC>
+         <p>- Extended addressing for Target (ECU)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- Flow Control is sent when a First Frame is received</p>
+        </DESC>
+        <LOWER-LIMIT>13</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 11-bit receive with FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0xE</SHORT-LABEL>
+        <DESC>
+         <p>- Extended addressing for Target (ECU)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control is sent when a First Frame is received</p>
+        </DESC>
+        <LOWER-LIMIT>14</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 29-bit receive w/o FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0xF</SHORT-LABEL>
+        <DESC>
+         <p>- Extended addressing for Target (ECU)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- Flow Control is sent when a First Frame is received</p>
+        </DESC>
+        <LOWER-LIMIT>15</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 29-bit receive with FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>4</LOWER-LIMIT>
+     <UPPER-LIMIT>15</UPPER-LIMIT>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>8</LOWER-LIMIT>
+       <UPPER-LIMIT>11</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT6_CanReqFormat">
+    <SHORT-NAME>TEXTTABLE_UINT6_CanReqFormat</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT6_CanReqFormat</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x00</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal unsegmented 11-bit transmit</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x02</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>2</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal unsegmented 29-bit transmit</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x04</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>4</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 11-bit transmit w/o FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x05</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>5</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 11-bit transmit with FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x06</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>6</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 29-bit transmit w/o FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x07</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>7</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 29-bit transmit with FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x08</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>8</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended unsegmented 11-bit transmit</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x0A</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>10</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended unsegmented 29-bit transmit</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x0C</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>12</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 11-bit transmit w/o FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x0D</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>13</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 11-bit transmit with FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x0E</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>14</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 29-bit transmit w/o FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x0F</SHORT-LABEL>
+        <DESC>
+         <p>- Use CP_CanFillerByteHandling for padding control</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>15</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 29-bit transmit with FC</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x20</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>32</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal unsegmented 11-bit transmit with padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x22</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>34</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal unsegmented 29-bit transmit with padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x24</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>36</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 11-bit transmit w/o FC and padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x25</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>37</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 11-bit transmit with FC and padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x26</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>38</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 29-bit transmit w/o FC and padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x27</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>39</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 29-bit transmit with FC and padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x28</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>40</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended unsegmented 11-bit transmit with padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x2A</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>42</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended unsegmented 29-bit transmit with padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x2C</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>44</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 11-bit transmit w/o FC and padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x2D</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>45</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 11-bit transmit with FC and padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x2E</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>46</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 29-bit transmit w/o FC and padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x2F</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly disabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>47</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 29-bit transmit with FC and padding disabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x30</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>48</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal unsegmented 11-bit transmit with padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x32</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>50</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal unsegmented 29-bit transmit with padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x34</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>52</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 11-bit transmit w/o FC and padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x35</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>53</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 11-bit transmit with FC and padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x36</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>54</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 29-bit transmit w/o FC and padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x37</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Normal addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>55</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>normal segmented 29-bit transmit with FC and padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x38</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>56</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended unsegmented 11-bit transmit with padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x3A</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- UUDT Message Transmit (No PCI Bytes)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>58</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended unsegmented 29-bit transmit with padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x3C</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>60</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 11-bit transmit w/o FC and padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x3D</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 11-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>61</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 11-bit transmit with FC and padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x3E</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- No Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>62</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 29-bit transmit w/o FC and padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <SHORT-LABEL>0x3F</SHORT-LABEL>
+        <DESC>
+         <p>- Padding explicitly enabled for this CAN Id (overwrite CP_CanFillerByteHandling)</p>
+         <p>- Extended addressing for Source (Tester)</p>
+         <p>- USDT Message Transmit (Segmented transmits)</p>
+         <p>- 29-bit CAN ID Size</p>
+         <p>- Flow Control frames are expected from Target (ECU)</p>
+        </DESC>
+        <LOWER-LIMIT>63</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>extended segmented 29-bit transmit with FC and padding enabled</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>63</UPPER-LIMIT>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>1</LOWER-LIMIT>
+       <UPPER-LIMIT>1</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>3</LOWER-LIMIT>
+       <UPPER-LIMIT>3</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>9</LOWER-LIMIT>
+       <UPPER-LIMIT>9</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>11</LOWER-LIMIT>
+       <UPPER-LIMIT>11</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>16</LOWER-LIMIT>
+       <UPPER-LIMIT>31</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>33</LOWER-LIMIT>
+       <UPPER-LIMIT>33</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>35</LOWER-LIMIT>
+       <UPPER-LIMIT>35</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>41</LOWER-LIMIT>
+       <UPPER-LIMIT>41</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>43</LOWER-LIMIT>
+       <UPPER-LIMIT>43</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>49</LOWER-LIMIT>
+       <UPPER-LIMIT>49</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>51</LOWER-LIMIT>
+       <UPPER-LIMIT>51</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>57</LOWER-LIMIT>
+       <UPPER-LIMIT>57</UPPER-LIMIT>
+      </SCALE-CONSTR>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>59</LOWER-LIMIT>
+       <UPPER-LIMIT>59</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+   <DATA-OBJECT-PROP ID="TEXTTABLE_UINT8_ChangeSpeedResCtrl">
+    <SHORT-NAME>TEXTTABLE_UINT8_ChangeSpeedResCtrl</SHORT-NAME>
+    <LONG-NAME>TEXTTABLE_UINT8_ChangeSpeedResCtrl</LONG-NAME>
+    <COMPU-METHOD>
+     <CATEGORY>TEXTTABLE</CATEGORY>
+     <COMPU-INTERNAL-TO-PHYS>
+      <COMPU-SCALES>
+       <COMPU-SCALE>
+        <DESC>
+         <p>DISABLE_AUTO_RESISTOR</p>
+        </DESC>
+        <LOWER-LIMIT>0</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Not used</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>AUTO_LOAD_AC_RESISTOR</p>
+        </DESC>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>AC load resistor</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>AUTO_LOAD_60OHM_RESISTOR</p>
+        </DESC>
+        <LOWER-LIMIT>2</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>60 Ohm load resistor</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>AUTO_LOAD_120OHM_RESISTOR</p>
+        </DESC>
+        <LOWER-LIMIT>3</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>120 Ohm load resistor</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>AUTO_LOAD_SWCAN_RESISTOR</p>
+        </DESC>
+        <LOWER-LIMIT>4</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>SWCAN load resistor</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+       <COMPU-SCALE>
+        <DESC>
+         <p>AUTO_UNLOAD_RESISTOR</p>
+        </DESC>
+        <LOWER-LIMIT>128</LOWER-LIMIT>
+        <COMPU-CONST>
+         <VT>Unload resistor</VT>
+        </COMPU-CONST>
+       </COMPU-SCALE>
+      </COMPU-SCALES>
+     </COMPU-INTERNAL-TO-PHYS>
+    </COMPU-METHOD>
+    <DIAG-CODED-TYPE BASE-DATA-TYPE="A_UINT32" xsi:type="STANDARD-LENGTH-TYPE">
+     <BIT-LENGTH>32</BIT-LENGTH>
+    </DIAG-CODED-TYPE>
+    <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+    <INTERNAL-CONSTR>
+     <LOWER-LIMIT>0</LOWER-LIMIT>
+     <UPPER-LIMIT>128</UPPER-LIMIT>
+     <SCALE-CONSTRS>
+      <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+       <LOWER-LIMIT>5</LOWER-LIMIT>
+       <UPPER-LIMIT>127</UPPER-LIMIT>
+      </SCALE-CONSTR>
+     </SCALE-CONSTRS>
+    </INTERNAL-CONSTR>
+   </DATA-OBJECT-PROP>
+  </DATA-OBJECT-PROPS>
+  <UNIT-SPEC>
+   <UNITS>
+    <UNIT ID="Baud">
+     <SHORT-NAME>Baud</SHORT-NAME>
+     <LONG-NAME>Baud</LONG-NAME>
+     <DISPLAY-NAME>Bd</DISPLAY-NAME>
+    </UNIT>
+    <UNIT ID="MicroSecond">
+     <SHORT-NAME>MicroSecond</SHORT-NAME>
+     <LONG-NAME>Micro-Second</LONG-NAME>
+     <DISPLAY-NAME>µs</DISPLAY-NAME>
+    </UNIT>
+    <UNIT ID="PerCent">
+     <SHORT-NAME>PerCent</SHORT-NAME>
+     <LONG-NAME>Per Cent</LONG-NAME>
+     <DISPLAY-NAME>%</DISPLAY-NAME>
+    </UNIT>
+   </UNITS>
+  </UNIT-SPEC>
+ </COMPARAM-SPEC>
+</ODX>

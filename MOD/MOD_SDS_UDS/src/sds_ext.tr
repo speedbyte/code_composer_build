@@ -1,0 +1,13 @@
+#TRACE_ID '0x7F01B7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"SDSext_vTask: FBL Paddern = %08X" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '439 
+#TRACE_ID '0x7F01E3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Security Timer finished. So unlock" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '483 
+#TRACE_ID '0x7F0301 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"EEP is free - Reset ECU" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '769 
+#TRACE_ID '0x7F0306 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"EEP blocks - No ECU Reset - Retry" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '774 
+#TRACE_ID '0x7F0374 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '">> Get DTCInformationType=0x%04X request from Tester" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '884 
+#TRACE_ID '0x7F0385 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"das.DTC=0x%04X" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '901 
+#TRACE_ID '0x7F0386 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Get DTCStatusMask request from Tester=0x%04X" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '902 
+#TRACE_ID '0x7F0387 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Internal das.StatusOfDTC =0x%04X get from DEH" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '903 
+#TRACE_ID '0x7F0388 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"(DTCStatusMask & (das.StatusOfDTC & SDS_A_DTCStatusAvailabilityMask)=0x%04X" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '904 
+#TRACE_ID '0x7F0392 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"DTCStatusMask & (das.StatusOfDTC & SDS_A_DTCStatusAvailabilityMask) not match." '\MOD\MOD_SDS_UDS\src 'sds_ext.c '914 
+#TRACE_ID '0x7F039F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"StatusOfDTC=0x%04X goes to Tester" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '927 
+#TRACE_ID '0x7F03CC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Internal das.StatusOfDTC =0x%04X get from DEH" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '972 
+#TRACE_ID '0x7F03D1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"StatusOfDTC=0x%04X goes to Tester" '\MOD\MOD_SDS_UDS\src 'sds_ext.c '977 

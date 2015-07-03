@@ -1,0 +1,7 @@
+#TRACE_ID '0x9A012E 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"RT-13225: Entry to event handling  Procerr %d  PrevProcerr %d is_event %d event %ds" '\MOD\MOD_VCR\src 'VCR_StateHandler_SETTINGS.c '302 
+#TRACE_ID '0x9A0143 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"RT-13225: First event error  Procerr %d  PrevProcerr %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_SETTINGS.c '323 
+#TRACE_ID '0x9A014A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"RT-13225: Second event error  Procerr %d  PrevProcerr %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_SETTINGS.c '330 
+#TRACE_ID '0x9A0152 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"RT-13225: Third event error  Procerr %d  PrevProcerr %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_SETTINGS.c '338 
+#TRACE_ID '0x9A0485 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"RT-13225: First cmd  NRCmdProcerr %d  PrevProcerr %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_SETTINGS.c '1157 
+#TRACE_ID '0x9A048C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"RT-13225: Second cmd  NRCmdProcerr %d  PrevProcerr %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_SETTINGS.c '1164 
+#TRACE_ID '0x9A0494 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"RT-13225: Third cmd  NRCmdProcerr %d  PrevProcerr %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_SETTINGS.c '1172 

@@ -1,0 +1,27 @@
+[ChipConfiguration]
+Channels=1
+[Generation options]
+Driver=0
+Network management=0
+VW transport protocol 2.0=0
+DiagModuleType=0
+VersionCheck=1
+[SendMask]
+Mode0=NM
+Mode1=TP
+Mode2=DIAG
+Mode3=IL
+Mode4=APP
+Mode5=USER1
+Mode6=USER2
+Mode7=USER3
+[Config0]
+Name=PQ35_46_ICAN_V3_6_9_F_20081104_ASR_V1_2
+Channel=-1
+Workpath=
+Path=C:\_workspace_\VW_UHV_NAR_trunk\MOD\MOD_CAN_DYN\cfg\PQ35_46_ICAN_V3_6_9_F_20081104_ASR_V1_2.dbc
+CANeratorPath=
+Node=UHV_NAR
+Controller=222
+Compiler=26
+Processor=

@@ -1,0 +1,4 @@
+#ENUM  't_APP_STATE                                         'APP_STATE_IDLE                                                                           '0                            'ABCD   'ABCD.c  '123   
+#ENUM  't_APP_STATE                                         'APP_STATE_INDICATION                                                                     '1                            'ABCD   'ABCD.c  '123   
+#ENUM  't_APP_STATE                                         'APP_STATE_CONFIRMATION                                                                   '2                            'ABCD   'ABCD.c  '123   
+#ENUM  't_APP_STATE                                         'APP_STATE_PROCESS                                                                        '3                            'ABCD   'ABCD.c  '123   

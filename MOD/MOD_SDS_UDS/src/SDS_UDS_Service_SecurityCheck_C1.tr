@@ -1,0 +1,11 @@
+#TRACE_ID '0x89012A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"UDScub_SECURITY_ACCESS_SEED: Security timer is running!!!  ubSecState = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '298 
+#TRACE_ID '0x89012B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Security timer is running for %d seconds" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '299 
+#TRACE_ID '0x89012E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Read: TimeLockState 0x%02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '302 
+#TRACE_ID '0x890134 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"set Seed to 0x00000000  ubSecState = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '308 
+#TRACE_ID '0x890137 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"UDScub_SECURITY_ACCESS_SEED: Seed is sendig already, => send again the same Seed  ubSecState = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '311 
+#TRACE_ID '0x890150 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"UDScub_SECURITY_ACCESS_KEY: Security timer is running!!!  ubSecState = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '336 
+#TRACE_ID '0x89016C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"UDScub_SECURITY_ACCESS_KEY: Key valid  ubSecState = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '364 
+#TRACE_ID '0x890170 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"UDScub_SECURITY_ACCESS_KEY: three times wrong key !!!" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '368 
+#TRACE_ID '0x890176 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"UDScub_SECURITY_ACCESS_KEY: key error, attempt = %d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '374 
+#TRACE_ID '0x89017D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"ubSecState 0x%02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '381 
+#TRACE_ID '0x89017E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Read: TimeLockState 0x%02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service_SecurityCheck_C1.c '382 

@@ -1,0 +1,34 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="R:\09_audilib\01_prj\"
+ProjectType=Library
+CPUFamily=TMS470R1X
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\02_src\ADLATUS_EventHandlerAudi.c"
+Source="..\02_src\ADLATUS_KWP2000Audi.c"
+Source="..\02_src\ADLATUS_Main.c"
+Source="..\02_src\ADLATUS_SequenceAudi.c"
+Source="..\02_src\ADLATUS_SessionHandler.c"
+Source="..\02_src\ADLATUS_Setup.c"
+Source="..\02_src\ADLATUS_Timer.c"
+Source="..\02_src\ADLATUS_Tp.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o"r:\09_audilib\05_out\AUDILIB_cc_tms470_VW_UDS.lib" -v
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\Release\AUDILIB_cc_tms470_VW_UDS.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -ps -o2 -fr"r:\09_audilib\03_obj" -fs"r:\09_audilib\04_lst" -ft"r:\09_audilib\04_lst" -fb"r:\09_audilib\04_lst" -i"r:\05_header\int" -i"r:\05_header\ext" -d"_DEBUG" -mf -mt
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr"R:\09_audilib\01_prj\Release"
+

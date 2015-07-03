@@ -1,0 +1,1 @@
+#TRACE_ID '0x8D00FD 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_OSEK_INTERFACE '"Fatal OSEK Error: ErrorCode: 0x%04X ErrorNumber: 0x%04X - see TechnicalReference_osCAN3.pdf" '\MOD\MOD_SYS_INIT\src 'SYS_INIT_C.c '253 

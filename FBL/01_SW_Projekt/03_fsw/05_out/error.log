@@ -1,0 +1,13 @@
+Translating ..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out to Intel format...
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> .vectors
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> .text
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> .const
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> .cinit
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> .watchdog
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> .halfunctions
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> $fill000
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> $fill001
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> $fill002
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> $fill003
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> $fill004
+   "..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out"   ==> $fill005

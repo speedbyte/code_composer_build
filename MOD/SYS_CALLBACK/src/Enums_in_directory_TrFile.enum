@@ -1,0 +1,3 @@
+#ENUM  'WakeUp                                              'NO_RESET                                                                                 '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'WakeUp                                              'KLEMME30_RESET                                                                           '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'WakeUp                                              'CAN_WAKE_UP                                                                              '2                            'ABCD   'ABCD.c  '123   

@@ -1,0 +1,7 @@
+DEBUG_STATE_ENUM_NAME='PHY_BUT_DRV_ENUM_DYNAMIC_STATE       'DEBUG_STATE_NAME='enNoTransition                                                         'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='PHY_BUT_DRV_ENUM_DYNAMIC_STATE       'DEBUG_STATE_NAME='enButtonPressed_PosFlanke                                              'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='PHY_BUT_DRV_ENUM_DYNAMIC_STATE       'DEBUG_STATE_NAME='enButtonReleased_NegFlanke                                             'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='PHY_BUT_DRV_ENUM_DYNAMIC_STATE       'DEBUG_STATE_NAME='enDefaultState                                                         'DEBUG_STATE_NUMBER='255      '
+DEBUG_STATE_ENUM_NAME='PHY_BUT_DRV_ENUM_MOD_INTERNAL_STATE  'DEBUG_STATE_NAME='enPhyButDrvButtonPressed                                               'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='PHY_BUT_DRV_ENUM_MOD_INTERNAL_STATE  'DEBUG_STATE_NAME='enPhyButDrvButtonReleased                                              'DEBUG_STATE_NUMBER='1        '
+                       

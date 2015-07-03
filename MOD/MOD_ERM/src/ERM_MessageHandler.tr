@@ -1,0 +1,138 @@
+#TRACE_ID '0x5A009B 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_ERM '"AT Response OK owner = %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '155 
+#TRACE_ID '0x5A00D5 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"AT Response ERROR owner = %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '213 
+#TRACE_ID '0x5A00D9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"AT Response Extended Error Code: %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '217 
+#TRACE_ID '0x5A0119 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Flasherase ended - CK5050 does internal reset now -> init ERM" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '281 
+#TRACE_ID '0x5A0124 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT UPDATE EVENT: START of the transfer of the update file" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '292 
+#TRACE_ID '0x5A012B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT UPDATE EVENT: ERROR in the update (reboot will follow)" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '299 
+#TRACE_ID '0x5A0132 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT UPDATE EVENT: SUCCESS of the update (reboot will follow)" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '306 
+#TRACE_ID '0x5A0139 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT UPDATE EVENT: ERROR in the transfer of the update file (no reboot)" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '313 
+#TRACE_ID '0x5A0140 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT UPDATE EVENT: SUCCESS in the transfer of the update file" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '320 
+#TRACE_ID '0x5A0147 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT UPDATE EVENT: Update file version infos" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '327 
+#TRACE_ID '0x5A0150 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT UPDATE EVENT: md5 keys result is OK" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '336 
+#TRACE_ID '0x5A015C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT UPDATE EVENT: md5 keys result is not OK" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '348 
+#TRACE_ID '0x5A0164 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_ERM '"Unkonwn Bluteooth Update Event" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '356 
+#TRACE_ID '0x5A016D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Current Connection Mode %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '365 
+#TRACE_ID '0x5A019D 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Device id %d -> Connection Status %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '413 
+#TRACE_ID '0x5A01A2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"Got (*PSBD) but no data %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '418 
+#TRACE_ID '0x5A01B3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"SUCCESS triggering COMM and MIC vol" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '435 
+#TRACE_ID '0x5A01B9 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"FAILED triggering COMM and MIC vol" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '441 
+#TRACE_ID '0x5A01EA 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"PBSN: unknown service %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '490 
+#TRACE_ID '0x5A025A 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"CK5050+ CGMR Version = H%c%c%c%c" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '602 
+#TRACE_ID '0x5A025E 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"CK5050+ CGMR Version = S%c%c%c%c" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '606 
+#TRACE_ID '0x5A0267 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"received AT_RSP_MODEL_REV inc len %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '615 
+#TRACE_ID '0x5A026D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"received AT_RSP_MODEL_REV without data %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '621 
+#TRACE_ID '0x5A027D 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Parrot SW CGMREX:  %c.%c%c.%c" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '637 
+#TRACE_ID '0x5A0284 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"received AT_RSP_MODEL_REV_EXT inc len %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '644 
+#TRACE_ID '0x5A0297 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Parrot software description = %d " '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '663 
+#TRACE_ID '0x5A029D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"received AT_RSP_MODEL_REV_EXT without data %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '669 
+#TRACE_ID '0x5A02B7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"pairng successful: ERM_u8GetActivePhone() %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '695 
+#TRACE_ID '0x5A02B8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"pairng successful: pst_msg->data->pprs.device_id %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '696 
+#TRACE_ID '0x5A02B9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"pairng successful: _ERM_gContext.req.ctx.initPairing.deviceType %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '697 
+#TRACE_ID '0x5A02BA 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"pairng successful: deviceType: %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '698 
+#TRACE_ID '0x5A02C2 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"pairing successful deactivate phone service of old device" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '706 
+#TRACE_ID '0x5A02C8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"pairing successful deactivate player services of old device" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '712 
+#TRACE_ID '0x5A02CD 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"pairing successful dont deactivate anything" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '717 
+#TRACE_ID '0x5A02D3 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"pairing successful but deviceid equal to a connected device" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '723 
+#TRACE_ID '0x5A0312 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"call servicesupport changed" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '786 
+#TRACE_ID '0x5A031D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"CK5050 restart in state %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '797 
+#TRACE_ID '0x5A0362 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"CK5050 restart DONE in state %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '866 
+#TRACE_ID '0x5A037D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"inquiry device id %d is PHONE" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '893 
+#TRACE_ID '0x5A0385 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"inquiry device id %d is HEADSET" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '901 
+#TRACE_ID '0x5A038D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"inquiry device id %d is PLAYER" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '909 
+#TRACE_ID '0x5A0409 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"IsCDMAPhone: %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1033 
+#TRACE_ID '0x5A0414 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_ERM '"Parrot Flash full event - free space is less than 10%" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1044 
+#TRACE_ID '0x5A0418 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Parrot Flash full event - free space is above than 10 %" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1048 
+#TRACE_ID '0x5A0463 'DEBUG_VALUE4 'DBG_LEV_ERR 'MOD_ERM '"Reset necessary and usefull! mode: %d, iocap: %d, next mode: %d, next iocap: %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1123 
+#TRACE_ID '0x5A0476 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"Change SSP to eSSPMode = %d / eSSPIOCap = %d " '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1142 
+#TRACE_ID '0x5A047A 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_ERM '"Setup of SSP not needed." '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1146 
+#TRACE_ID '0x5A04AE 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"unsupported message: $ATResponseEnum$ = %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1198 
+#TRACE_ID '0x5A04DD 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"_ERM_SendMessage Request %d lastRequest %d -> invalid retry" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1245 
+#TRACE_ID '0x5A04E7 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"_ERM_SendMessage Request %d lastRequest %d -> busy" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1255 
+#TRACE_ID '0x5A04F2 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_ERM '"_ERM_SendMessage Request %d Callback %d -> try send" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1266 
+#TRACE_ID '0x5A0509 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"_ERM_SendMessage invalid message %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1289 
+#TRACE_ID '0x5A0511 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Prepare CK5050 Power off" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1297 
+#TRACE_ID '0x5A0518 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"SW Reset CK5050" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1304 
+#TRACE_ID '0x5A0520 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"BT SW Update mode %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1312 
+#TRACE_ID '0x5A0528 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"set Peca mode:  %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1320 
+#TRACE_ID '0x5A0530 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Connectable mode %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1328 
+#TRACE_ID '0x5A053F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Microphone Algorithm %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1343 
+#TRACE_ID '0x5A0548 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Microphone Choise %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1352 
+#TRACE_ID '0x5A0551 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Microphone Gain %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1361 
+#TRACE_ID '0x5A0559 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Speaker Volume Mode %d ApplySpkVol %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1369 
+#TRACE_ID '0x5A0566 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Microphone NR Max %d Dir %d InGain %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1382 
+#TRACE_ID '0x5A0573 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Microphone Equ0-3 %d %d %d %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1395 
+#TRACE_ID '0x5A0574 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Microphone Equ4-7 %d %d %d %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1396 
+#TRACE_ID '0x5A057F 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Microphone ADC GAIN %d %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1407 
+#TRACE_ID '0x5A0589 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Testcommand ADC CONF %d %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1417 
+#TRACE_ID '0x5A0593 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Testcommand MIC ADC GAIN %d %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1427 
+#TRACE_ID '0x5A059E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Testcommand LOOPBACK Start %d Mode %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1438 
+#TRACE_ID '0x5A05AE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Testcommand AUDIOLOOP" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1454 
+#TRACE_ID '0x5A05B6 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Testcommand TESTMODE ON" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1462 
+#TRACE_ID '0x5A05BF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Testcommand TEST_FREQ %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1471 
+#TRACE_ID '0x5A05CA 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"AUTO CONN ON" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1482 
+#TRACE_ID '0x5A05D5 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"AUTO CONN OFF" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1493 
+#TRACE_ID '0x5A05DF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"SET MAX PAIRED DEVICES %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1503 
+#TRACE_ID '0x5A05F0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Speaker Algorithm %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1520 
+#TRACE_ID '0x5A05FC 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Speaker Equ0-3 %d %d %d %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1532 
+#TRACE_ID '0x5A0600 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Speaker Equ4-7 %d %d %d %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1536 
+#TRACE_ID '0x5A0619 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Echo Cancellation Algorithm %d %d %d %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1561 
+#TRACE_ID '0x5A0622 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Ringtone volume %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1570 
+#TRACE_ID '0x5A062B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prompt volume %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1579 
+#TRACE_ID '0x5A0632 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"REQ_GET_IMSI" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1586 
+#TRACE_ID '0x5A063B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Comfort noise active %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1595 
+#TRACE_ID '0x5A0648 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"RX ALC active %d mode %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1608 
+#TRACE_ID '0x5A0654 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"RX soft limiter level - %d dB " '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1620 
+#TRACE_ID '0x5A0665 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"TX soft limiter level= %d, mode= %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1637 
+#TRACE_ID '0x5A0673 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"BT SW Update mode %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1651 
+#TRACE_ID '0x5A067D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Communication Volume %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1661 
+#TRACE_ID '0x5A0686 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Streaming Volume %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1670 
+#TRACE_ID '0x5A06B5 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"STOP Bluetooth Visibility %d -> %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1717 
+#TRACE_ID '0x5A06C2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"START Bluetooth Visibility %d -> %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1730 
+#TRACE_ID '0x5A0745 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"BT_NAME wrong check eeprom!" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1861 
+#TRACE_ID '0x5A074B 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Set BT Name0_3 to %c%c%c%c" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1867 
+#TRACE_ID '0x5A074C 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Set BT Name4_7 to %c%c%c%c" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1868 
+#TRACE_ID '0x5A074D 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Set BT Name8_11 to %c%c%c%c" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1869 
+#TRACE_ID '0x5A0756 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Audio gateway mode switch to UHV" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1878 
+#TRACE_ID '0x5A0760 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Delete all paired devices" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1888 
+#TRACE_ID '0x5A076C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Delete device id %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1900 
+#TRACE_ID '0x5A0774 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Ringtone Mode %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1908 
+#TRACE_ID '0x5A077C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Alternative Ringtone Enable %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1916 
+#TRACE_ID '0x5A0785 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Echo Cancellation Delay %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1925 
+#TRACE_ID '0x5A078E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Starting inquiry" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1934 
+#TRACE_ID '0x5A0797 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Cancelling inquiry" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1943 
+#TRACE_ID '0x5A07AA 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Get inquiry result" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1962 
+#TRACE_ID '0x5A07B7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to STOP HEADSET service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1975 
+#TRACE_ID '0x5A07C4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to START HEADSET service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '1988 
+#TRACE_ID '0x5A07D1 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to STOP AVRCP service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2001 
+#TRACE_ID '0x5A07DE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to START AVRCP service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2014 
+#TRACE_ID '0x5A07EB 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to STOP A2DP service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2027 
+#TRACE_ID '0x5A07F9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to START A2DP service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2041 
+#TRACE_ID '0x5A0806 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to STOP PHONE service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2054 
+#TRACE_ID '0x5A0813 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to START PHONE service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2067 
+#TRACE_ID '0x5A081E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to DELETE DEVICE pairing" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2078 
+#TRACE_ID '0x5A0829 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to CONNECT DEVICE" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2089 
+#TRACE_ID '0x5A0834 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to DISCONNECT DEVICE" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2100 
+#TRACE_ID '0x5A083F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to set set PLAY CALLER NAME mode" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2111 
+#TRACE_ID '0x5A0849 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Req play caller name mode" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2121 
+#TRACE_ID '0x5A0863 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"PAIRING device id %d, cmd %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2147 
+#TRACE_ID '0x5A0880 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Extented Inquiry Results 0x9D activated!" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2176 
+#TRACE_ID '0x5A088F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to DISABLE AUTO-CONNECTION for PHONE service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2191 
+#TRACE_ID '0x5A089B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to DISABLE AUTO-CONNECTION for A2DP service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2203 
+#TRACE_ID '0x5A08A7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to DISABLE AUTO-CONNECTION for AVRCP service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2215 
+#TRACE_ID '0x5A08BC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to DISABLE AUTO-CONNECTION for AUDIO GW service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2236 
+#TRACE_ID '0x5A08C8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to ENABLE AUTO-CONNECTION for PHONE service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2248 
+#TRACE_ID '0x5A08D4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to ENABLE AUTO-CONNECTION for A2DP service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2260 
+#TRACE_ID '0x5A08DF 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to ENABLE AUTO-CONNECTION for AVRCP service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2271 
+#TRACE_ID '0x5A08EB 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Trying to ENABLE AUTO-CONNECTION for  AUDIO GW service" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2283 
+#TRACE_ID '0x5A08F4 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Play Ringtone Action %d Index %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2292 
+#TRACE_ID '0x5A0908 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Testcommand Alternating Signal" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2312 
+#TRACE_ID '0x5A093A 'DEBUG_VALUE4 'DBG_LEV_DBG 'MOD_ERM '"SndMsg idx lastReq %d retVal %d ReqCnt %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2362 
+#TRACE_ID '0x5A094B 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"SndMsg ReqRetry %d Req %d lastReq %d UartOwner %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2379 
+#TRACE_ID '0x5A0990 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ATRespone ERROR Req %d lastReq %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2448 
+#TRACE_ID '0x5A0995 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_ERM '"ATRespone OK Req %d lastReq %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2453 
+#TRACE_ID '0x5A09B7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"STARTED INITIAL BT VISIBILITY" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2487 
+#TRACE_ID '0x5A09C7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Triggering the consistency check" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2503 
+#TRACE_ID '0x5A0A03 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Update BT PIN in Eeprom" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2563 
+#TRACE_ID '0x5A0A10 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"After AT*PLPD Send AT*PBSC" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2576 
+#TRACE_ID '0x5A0A72 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ATRespone ERROR Req %d lastReq %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2674 
+#TRACE_ID '0x5A0A77 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_ERM '"ATRespone OK Req %d lastReq %d" '\MOD\MOD_ERM\src 'ERM_MessageHandler.c '2679 

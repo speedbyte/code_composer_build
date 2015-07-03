@@ -1,0 +1,1620 @@
+// OIL-Definition-File
+OIL_VERSION = "2.3";
+
+#include <TMS470R1.I23>
+
+CPU dummy {
+   #include <TMS470R1.s23>
+
+   OS StdOS {
+      CC = AUTO;
+      STATUS = EXTENDED;
+      SCHEDULE = AUTO;
+      STARTUPHOOK = TRUE: "will be used to activate InitTask";
+      ERRORHOOK = TRUE: "will be used to report OSEK errors";
+      SHUTDOWNHOOK = FALSE;
+      PRETASKHOOK = FALSE: "will be used for runtime measurement";
+      POSTTASKHOOK = FALSE;
+      USEGETSERVICEID = TRUE;
+      USEPARAMETERACCESS = FALSE;
+      SystemStackSize = 200;
+      WithStackCheck = TRUE;
+      CpuFrequency = 60.000000: "CPU clock frequency is (15MHz / 2) * 8";
+      TimerClockDivider = AUTO;
+      TickTime = 1000: "Tick Time will used in ms";
+      SystemTimer = COMP1: "SystemTimer Comp1 will be used";
+      UseGeneratedFastAlarm = FALSE;
+      SupervisorStackSize = 254;
+      StartupStackSize = 200: "Stack size for startupHook and PreTaskHook";
+      IRQMaxNesting = 4;
+      IRQStackOffset = 254;
+      NotUsingRES_SCHEDULER = FALSE;
+      ThumbMode = FALSE;
+      UseRegistersForOS = FALSE;
+      UDEFHandler = AUTO;
+      SWIHandler = AUTO;
+      PABTHandler = AUTO;
+      DABTHandler = AUTO;
+      FIQHandler = AUTO;
+      NoFIQVector = FALSE;
+      GHSDebugSupport = FALSE;
+      ORTIDebugLevel = ORTI_21_Additional;
+      ErrorInfoLevel = STANDARD;
+      OSInternalChecks = Additional;
+      Compiler = TI;
+      ORTIDebugSupport = FALSE;
+      APIOptimization = Automatic;
+   }: "Standard object for operating system configuration";
+
+   TASK OsHostTask_10ms {
+      TYPE = AUTO;
+      SCHEDULE = NON: "this Task can not be scheduled";
+      PRIORITY = 10: "highest Priority Task during runtime";
+      ACTIVATION = 1: "it can be activated only for one instance";
+      AUTOSTART = TRUE
+      {
+         APPMODE = OSDEFAULTAPPMODE;
+      };
+      EVENT = evActivateHostTask_10ms;
+      EVENT = evHostTaskPhoneBapReq;
+      EVENT = evHostTaskPhoneBookBapReq;
+      EVENT = evHostTaskMdiBapReq;
+      EVENT = evHostTaskCyclicTxMsg;
+      EVENT = evHostTaskKpbBapReq;
+      EVENT = evHostTaskDiagnoseResponse;
+      EVENT = evHostTaskMflTimer;
+      EVENT = evHostTaskTelefonStates;
+      EVENT = evHostTaskASRCyclicTxMsg;
+      EVENT = evHostTaskASRStatus;
+      EVENT = evHostTaskASRTrigger;
+      EVENT = evHostTaskOnOffInfoSleepInd;
+      RESOURCE = UART_LockResource;
+      RESOURCE = EEPROM_LockResource;
+      RESOURCE = POOL_LockResource;
+      RESOURCE = DEH_LockResource;
+      RESOURCE = EEPROM_LAYOUT_LockResource;
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgPhoneBapIndication;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentPhoneBapIndQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgPhoneBapRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecPhoneBapReqQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgPhoneBookBapIndication;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentPhoneBookBapIndQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgPhoneBookBapRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecPhoneBookBapReqQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgMdiBapIndication;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentMdiBapIndQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgMdiBapRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecMdiBapReqQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgCANInfotainmentInfo;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentBSGmessageType";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgAppCanStates;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentAPP_CAN_MsgStates";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgKpbBapIndication;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentBapIndicationQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgKpbBapRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecBapReqQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgAppDiagDiagnoseResponse;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecAppDiagResp";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgAppDiagDiagnoseRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentAppDiagReq";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgButtonStateInfo_Mfl;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentMflKeyCodeType";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgTelefonStates;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecTelMuteBehaviorType";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgHostTaskASRStatus;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecVCRPerfMeasStatusMsgType";
+         DoNotGenerateBuffer = FALSE;
+      };
+      StackSize = 460;
+      NotUsingSchedule = FALSE;
+   }: "Task for CAN specific funktions, which must be called cyclic all 10ms";
+
+   TASK OsAppTask_event_100ms {
+      TYPE = AUTO;
+      SCHEDULE = FULL: "this Task can be scheduled";
+      PRIORITY = 8: "Priority 8";
+      ACTIVATION = 1: "it can be activated only for one instance";
+      AUTOSTART = FALSE;
+      EVENT = evActivateAppTask_event_100ms;
+      EVENT = evLogiButMan_ButtonInfo;
+      EVENT = evAppTaskPhoneBapInd;
+      EVENT = evAppTaskPhoneFctPending;
+      EVENT = evAppTaskPhoneBookBapInd;
+      EVENT = evAppTaskPhoneBookFctPending;
+      EVENT = evAppTaskMdiBapInd;
+      EVENT = evAppTaskMdiFctPending;
+      EVENT = evAppTaskERMBTVisibleTimer;
+      EVENT = evAppTaskCanStates;
+      EVENT = evAppTaskERMPending;
+      EVENT = evAppTaskVCRPending;
+      EVENT = evAppTaskPhoneBookBapFctPending;
+      EVENT = evAppTaskKpbBapInd;
+      EVENT = evAppTaskKpbPending;
+      EVENT = evAppTaskSmsFctPending;
+      EVENT = evAppTaskDiagnoseRequest;
+      EVENT = evAppTaskPhoneBapFctPending;
+      EVENT = evAppTaskMFLKeys;
+      EVENT = evAppTaskSdFctPending;
+      EVENT = evAppTaskDeviceFctPending;
+      EVENT = evAppTaskVCRSupervisor;
+      EVENT = evAppTaskSystemStates;
+      EVENT = evAppTaskMdiBapFctPending;
+      EVENT = evAppTaskApplATResponse;
+      EVENT = evAppTaskContaxtManHandleCalls;
+      EVENT = evAppTaskPhoneBapRequestPending;
+      EVENT = evAppTaskRollRadLongPressTimer;
+      EVENT = evAppTaskKpbSupervision;
+      RESOURCE = CK5050_WRITE_Resource;
+      RESOURCE = UART_LockResource;
+      RESOURCE = EEPROM_LockResource;
+      RESOURCE = POOL_LockResource;
+      RESOURCE = DEH_LockResource;
+      RESOURCE = EEPROM_LAYOUT_LockResource;
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgButtonStateInfo;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecLogiButMan_ButtonInfo";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgPhoneBapRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentPhoneBapReqQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgPhoneBapIndication;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecPhoneBapIndQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgPhoneBookBapIndication;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecPhoneBookBapIndQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgPhoneBookBapRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentPhoneBookBapReqQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgMdiBapIndication;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecMdiBapIndQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgMdiBapRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentMdiBapReqQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgAppCanStates;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "recAPP_CAN_MsgStates";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgKpbBapRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentBapRequestQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgKpbBapIndication;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecBapIndicationQueue";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgAppDiagDiagnoseResponse;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentAppDiagResp";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgAppDiagDiagnoseRequest;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecAppDiagReq";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgButtonStateInfo_Mfl;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecMflKeyCodeType";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgTelefonStates;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentTelMuteBehaviorType";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgHostTaskASRStatus;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentVCRPerfMeasStatusMsgType";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgAppTaskSystemStates;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecCSHDL_enSystemStates";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgApplATResponse;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecApplATResponse";
+         DoNotGenerateBuffer = FALSE;
+      };
+      StackSize = 1500;
+      NotUsingSchedule = FALSE;
+   }: "Task to handle the comunication between BAP, TMS470 and CK5050+";
+
+   TASK OsSystemTask_event {
+      TYPE = AUTO;
+      SCHEDULE = NON: "this Task can not be scheduled";
+      PRIORITY = 7: "Priority 7";
+      ACTIVATION = 1: "it can be activated only for one instance";
+      AUTOSTART = FALSE;
+      EVENT = evSystemStateBtModInitiated;
+      EVENT = evSystemTaskShutdown;
+      EVENT = evSystemTaskVoltageState;
+      EVENT = evSystemTaskCANInfotainmentInfo;
+      EVENT = evSystemTaskCallbackShutdown;
+      EVENT = evActivateSystemTask_event;
+      RESOURCE = UART_LockResource;
+      RESOURCE = DEH_LockResource;
+      RESOURCE = EEPROM_LAYOUT_LockResource;
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgPwrmgrState;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecPWMGR_enVoltageStates";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = RECEIVED
+      {
+         MESSAGE = msgCANInfotainmentInfo;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "RecBSGmessageType";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgAppTaskSystemStates;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentCSHDL_enSystemStates";
+         DoNotGenerateBuffer = FALSE;
+      };
+      StackSize = 240;
+      NotUsingSchedule = FALSE;
+   }: "working place for CentralStateHandler";
+
+   TASK OsDriverTask_1ms {
+      TYPE = AUTO;
+      SCHEDULE = FULL: "this Task can be scheduled";
+      PRIORITY = 4: "Priority 4";
+      ACTIVATION = 1: "it can be activated only for one instance";
+      AUTOSTART = FALSE;
+      EVENT = evActivateDriverTask_1ms;
+      EVENT = evDriverTask_TimerForButtonDetection_10ms;
+      RESOURCE = UART_LockResource;
+      RESOURCE = POOL_LockResource;
+      RESOURCE = DEH_LockResource;
+      RESOURCE = EEPROM_LockResource;
+      RESOURCE = EEPROM_LAYOUT_LockResource;
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgButtonStateInfo;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentPhyButDriver_ButtonInfo";
+         DoNotGenerateBuffer = FALSE;
+      };
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgApplATResponse;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentApplATResponse";
+         DoNotGenerateBuffer = FALSE;
+      };
+      StackSize = 400;
+      NotUsingSchedule = FALSE;
+   }: "cyclic Task for receiving AT commands from CK5050+";
+
+   TASK OsMonitorTask_50ms {
+      TYPE = AUTO;
+      SCHEDULE = FULL: "this Task can be scheduled";
+      PRIORITY = 2: "Priority 2";
+      ACTIVATION = 1: "it can be activated only for one instance";
+      AUTOSTART = FALSE;
+      EVENT = evActivateMonitorTask_50ms;
+      EVENT = evMonitorTask_MonitorAudio_for_DTC;
+      RESOURCE = UART_LockResource;
+      RESOURCE = CRC_LockResource;
+      RESOURCE = DEH_LockResource;
+      RESOURCE = EEPROM_LockResource;
+      RESOURCE = EEPROM_LAYOUT_LockResource;
+      ACCESSOR = SENT
+      {
+         MESSAGE = msgPwrmgrState;
+         WITHOUTCOPY = FALSE;
+         ACCESSNAME = "SentPWMGR_enVoltageStates";
+         DoNotGenerateBuffer = FALSE;
+      };
+      StackSize = 300;
+      NotUsingSchedule = FALSE;
+   }: "Handling of Power- and Temperaturemanagement";
+
+   TASK OsDatabaseTask_event {
+      TYPE = AUTO;
+      SCHEDULE = FULL: "this Task can be scheduled";
+      PRIORITY = 1: "Priority 1";
+      ACTIVATION = 1: "it can be activated only for one instance";
+      AUTOSTART = FALSE;
+      EVENT = evDatabaseCyclicEepromWrite;
+      EVENT = evTriggerWD;
+      RESOURCE = EEPROM_LockResource;
+      RESOURCE = UART_LockResource;
+      RESOURCE = DEH_LockResource;
+      RESOURCE = EEPROM_LAYOUT_LockResource;
+      StackSize = 200;
+      NotUsingSchedule = FALSE;
+   }: "Handling of the EEProm writing";
+
+   ALARM CTA_HOST {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evActivateHostTask_10ms;
+      }: "Task is in waiting state, till the event will be set by Alarm";
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "Alarm to activate the HostTask_10ms all 10ms with an event.";
+
+   ALARM CTA_MONITOR {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsMonitorTask_50ms;
+         EVENT = evActivateMonitorTask_50ms;
+      }: "Task is in waiting state, till the event will be set by Alarm";
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "Alarm to activate the MonitorTask_50ms all 50ms with an event.";
+
+   ALARM CTA_DRIVER {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsDriverTask_1ms;
+         EVENT = evActivateDriverTask_1ms;
+      }: "Task is in waiting state, till the event will be set by Alarm";
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "Alarm to activate the DriverTask_1ms all 1ms with an event.";
+
+   ALARM CTA_DATABASE_EEPROM_WRITE {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsDatabaseTask_event;
+         EVENT = evDatabaseCyclicEepromWrite;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "sets an event to cyclically write EEPROM pagewise";
+
+   ALARM CTA_APP {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evActivateAppTask_event_100ms;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "if AppTask_event_5ms detect that any more jobs must be done he activate this alarm.";
+
+   ALARM CTA_APP_PHONE_BAP_IND {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBapInd;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "if App Phone got a bap Indication but UART ressource is busy we set this alarm to try again later";
+
+   ALARM CTA_APP_PHONE_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "used to indicate that there are additional things to be done for last BapIndication";
+
+   ALARM CTA_APP_PHONEBOOK_BAP_IND {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBookBapInd;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "indicate that there is still a BAP message in queue";
+
+   ALARM CTA_APP_PHONEBOOK_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBookFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_MDI_BAP_IND {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskMdiBapInd;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "indicates that there is still a message in queue from BAP Dispatcher";
+
+   ALARM CTA_APP_MDI_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskMdiFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "indicates that there is a function still in progress and e.g. additional AT cmds have to be sent";
+
+   ALARM CTA_ERM_BT_VISIBILITY_TIMER {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskERMBTVisibleTimer;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "timer used for the BR visibility supervision";
+
+   ALARM CTA_SYSTEM {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsSystemTask_event;
+         EVENT = evActivateSystemTask_event;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "activate the SystemTask_event cyclic";
+
+   ALARM CTA_HOST_TASK_CYCLIC_CAN_TX_MSG {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskCyclicTxMsg;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "alarm to call every sec a Tx Msg";
+
+   ALARM CTA_VCR_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskVCRPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "used to indicate that there are additional things to be done for VCR";
+
+   ALARM CTA_ERM_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskERMPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "used to indicate that there are additional things to be done for VCR";
+
+   ALARM CTA_APP_PHONEBOOK_PB_INIT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBookBapFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "set when there is stil something to be done for phonebook init";
+
+   ALARM CTA_WD {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsDatabaseTask_event;
+         EVENT = evTriggerWD;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_ASG_SV_TIMEOUT {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskKpbSupervision;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_FRAME_DATA_ACK_TIMEOUT {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "KPB_cbFrameDataAckTimeout";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_SMS_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskSmsFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_PHONEBOOK_BAP_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBookBapFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_PHONE_BAP_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBapFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_MONITOR_AUDIO {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsMonitorTask_50ms;
+         EVENT = evMonitorTask_MonitorAudio_for_DTC;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "Alarm to set event for DTCs.";
+
+   ALARM CTA_APP_SD_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskSdFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_KPB_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskKpbPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_MFL_LONGPRESS_TIMER {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskRollRadLongPressTimer;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_SD_FRAME_TIMEOUT {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "APP_SD_cbFrameTimeout";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_DEVICE_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskDeviceFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_VCR_SUPERVISOR {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskVCRSupervisor;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_HOST_TASK_CYCLIC_CAN_ASR_TX_MSG {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskASRCyclicTxMsg;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "alarm to call every sec a ASR Tx Msg";
+
+   ALARM CTA_UART_SUPERVISION {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "ERM_UartSupervision";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_HOST_ASR_TRIGGER {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskASRTrigger;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_KPB_BAP_IND {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskKpbBapInd;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "indicates that there is still a message in queue from BAP Dispatcher";
+
+   ALARM CTA_DRIVER_TIMER_10MS {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsDriverTask_1ms;
+         EVENT = evDriverTask_TimerForButtonDetection_10ms;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "10 ms timer in Driver Task to call Button detection routines.";
+
+   ALARM CTA_CONTEXT_MAN_HANDLE_CALLS {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskContaxtManHandleCalls;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "to handle simultaneous processes when a button is pressed.";
+
+   ALARM CTA_APP_PHONEBOOK_BAP_ACT_PB_PEND {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBookBapFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_DIAG_WAIT_FOR_APP_CB {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "APP_DIAG_vHandlePendingResponseFromApplication";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_MDI_BAP_FCT_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskMdiBapFctPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "indicates that there is a bap function still in progress";
+
+   ALARM CTA_KPB_DISPLAY_STATUS_OFF {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "KPB_cbDisplayStatusOff";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_ERM_STOP_JINGLE {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "ctaERMStopJingle_cb";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_PHONE_OUTGOING_CALL_INDICATION_TIMER {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "APP_PHONE_cbOutgoingCallIndicationTimeout";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_BTMOD_TIMEOUT {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "ctaBtTimeout_cb";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "alarm for the first AT command of the BT module";
+
+   ALARM CTA_APP_PHONE_PATR_WORKAROUND_TIMER {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "APP_PHONE_cbOnPatrTimeout";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_LOGI_BUT_MAN_ROLL_BUTTON {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskMFLKeys;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_PHONEBOOK_SORTING_TIMEOUT {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "APP_PHONEBOOK_cbPbSortingTimeout";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_CAN_TO_NACHLAUFZEIT {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "APP_CAN_cbNachlaufzeitTimeout";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "timeout handling if a state hang of CHSDL";
+
+   ALARM CTA_HOST_R2FS_DIAG_RETRY {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "SDS_UDS_RetryMechanismR2FS";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_DIAG_RETRY_BUSY {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskDiagnoseRequest;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_APP_PHONE_BAP_REQUEST_PENDING {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBapRequestPending;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   }: "Timer used for busy handling of call info changed function";
+
+   ALARM CTA_HOST_ONOFF_INFO_SLEEP_IND {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskOnOffInfoSleepInd;
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   ALARM CTA_DEH_EE_WRITE_TIME {
+      COUNTER = SystemTimer;
+      ACTION = ALARMCALLBACK
+      {
+         ALARMCALLBACKNAME = "SDS_UDS_Wait_DEH_Write_Finish";
+      };
+      AUTOSTART = FALSE
+      {
+         StaticAlarm = FALSE;
+      };
+   };
+
+   RESOURCE CK5050_WRITE_Resource {
+      RESOURCEPROPERTY = STANDARD;
+   }: "Resource to save the writing for the AT commands from TMS470 to CK5050+";
+
+   RESOURCE EEPROM_LockResource {
+      RESOURCEPROPERTY = STANDARD;
+   }: "Resource to save the EEProm write";
+
+   RESOURCE UART_LockResource {
+      RESOURCEPROPERTY = STANDARD;
+   }: "resource to lock / release in DEBUG_Printf to save debug comments from task with lower priority";
+
+   RESOURCE CRC_LockResource {
+      RESOURCEPROPERTY = STANDARD;
+   }: "Resource to save the CRC";
+
+   RESOURCE POOL_LockResource {
+      RESOURCEPROPERTY = STANDARD;
+   }: "resource for Poll handling";
+
+   RESOURCE DEH_LockResource {
+      RESOURCEPROPERTY = STANDARD;
+   }: "Lock DTC Report Event call";
+
+   RESOURCE EEPROM_LAYOUT_LockResource {
+      RESOURCEPROPERTY = STANDARD;
+   }: "To avoid inconsistency between the ram data and the E2P data.";
+
+   EVENT evActivateHostTask_10ms {
+      MASK = AUTO;
+   }: "Event to activate the HostTask_10ms";
+
+   EVENT evActivateMonitorTask_50ms {
+      MASK = AUTO;
+   }: "Event to activate the MonitortTask_50ms";
+
+   EVENT evActivateDriverTask_1ms {
+      MASK = AUTO;
+   }: "Event to activate the DriverTask_1ms";
+
+   EVENT evActivateAppTask_event_100ms {
+      MASK = AUTO;
+   }: "Event to activate App task cyclically 100ms";
+
+   EVENT evDatabaseCyclicEepromWrite {
+      MASK = AUTO;
+   }: "event to cyclically write EEPROM pagewise";
+
+   EVENT evActivateSystemTask_event {
+      MASK = AUTO;
+   }: "event to activate the SystemTask_event";
+
+   EVENT evSystemStateBtModInitiated {
+      MASK = AUTO;
+   }: "event System State Bluetooth Module initialized";
+
+   EVENT evLogiButMan_ButtonInfo {
+      MASK = AUTO;
+   }: "event will be send every 10ms informing about the state of the buttons.";
+
+   EVENT evAppTaskPhoneBapInd {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskPhoneBapReq {
+      MASK = AUTO;
+   };
+
+   EVENT evSystemTaskShutdown {
+      MASK = AUTO;
+   }: "event to set the power down state!";
+
+   EVENT evAppTaskPhoneFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskPhoneBookBapInd {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskPhoneBookBapReq {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskPhoneBookFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskMdiBapInd {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskMdiBapReq {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskMdiFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskERMBTVisibleTimer {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskCanStates {
+      MASK = AUTO;
+   }: "indicates speed for phonebook";
+
+   EVENT evHostTaskTelefonStates {
+      MASK = AUTO;
+   }: "indicates mute behavior";
+
+   EVENT evSystemTaskVoltageState {
+      MASK = AUTO;
+   }: "signed that a new voltage state has occured";
+
+   EVENT evSystemTaskCANInfotainmentInfo {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskCyclicTxMsg {
+      MASK = AUTO;
+   }: "Event to handle 1s cyclic Tx Msg";
+
+   EVENT evAppTaskVCRPending {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskERMPending {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskPhoneBookBapFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evTriggerWD {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskKpbBapInd {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskKpbBapReq {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskKpbPending {
+      MASK = AUTO;
+   }: "event indicating KPB application has something to do";
+
+   EVENT evAppTaskSmsFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskDiagnoseResponse {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskDiagnoseRequest {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskPhoneBapFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskMFLKeys {
+      MASK = AUTO;
+   }: "Event from HostTask to AppTask for MFL";
+
+   EVENT evMonitorTask_MonitorAudio_for_DTC {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskSdFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskMflTimer {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskDeviceFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskVCRSupervisor {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskASRCyclicTxMsg {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskASRStatus {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskASRTrigger {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskSystemStates {
+      MASK = AUTO;
+   };
+
+   EVENT evSystemTaskCallbackShutdown {
+      MASK = AUTO;
+   }: "callback event from AppTask it disconnect is OK";
+
+   EVENT evDriverTask_TimerForButtonDetection_10ms {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskMdiBapFctPending {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskApplATResponse {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskContaxtManHandleCalls {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskPhoneBapRequestPending {
+      MASK = AUTO;
+   }: "event for retrying the indication from CK5050 in phone bap";
+
+   EVENT evAppTaskRollRadLongPressTimer {
+      MASK = AUTO;
+   };
+
+   EVENT evHostTaskOnOffInfoSleepInd {
+      MASK = AUTO;
+   };
+
+   EVENT evAppTaskKpbSupervision {
+      MASK = AUTO;
+   }: "used for the ASG supervision";
+
+   ISR Can0Interrupt {
+      CATEGORY = 2;
+      InterruptSource = HECCA;
+   }: "Interrupt for Standard Can Controller 1";
+
+   ISR UART1_TxISR {
+      CATEGORY = 1;
+      InterruptSource = SCITX;
+   }: "Interrupt Service Routine for UART transmit";
+
+   ISR UART1_RxISR {
+      CATEGORY = 1;
+      InterruptSource = SCIRX;
+   }: "Interrupt Service Routine for UART receive";
+
+   ISR UART2_TxISR {
+      CATEGORY = 1;
+      InterruptSource = EXT26;
+   }: "Interrupt Service Routine for UART 2 transmit";
+
+   ISR UART2_RxISR {
+      CATEGORY = 1;
+      InterruptSource = EXT17;
+   }: "Interrupt Service Routine for UART 2 receive";
+
+   ISR UART_ErrorISR {
+      CATEGORY = 1;
+      InterruptSource = SCIERR;
+   }: "Interrupt Service Routine for UART errors";
+
+   MESSAGE msgButtonStateInfo {
+      TYPE = UNQUEUED;
+      CDATATYPE = "PHY_BUT_DRV_ST_MESSAGE";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evLogiButMan_ButtonInfo;
+      };
+   }: "message to send the pressed Button to the application";
+
+   MESSAGE msgPhoneBapIndication {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 5;
+      };
+      CDATATYPE = "BapIndication";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBapInd;
+      };
+   };
+
+   MESSAGE msgPhoneBapRequest {
+      TYPE = UNQUEUED;
+      CDATATYPE = "BapRequest";
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskPhoneBapReq;
+      };
+   };
+
+   MESSAGE msgPhoneBookBapIndication {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 5;
+      };
+      CDATATYPE = "BapIndication";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskPhoneBookBapInd;
+      };
+   }: "bap indication for phonebook";
+
+   MESSAGE msgPhoneBookBapRequest {
+      TYPE = UNQUEUED;
+      CDATATYPE = "BapRequest";
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskPhoneBookBapReq;
+      };
+   };
+
+   MESSAGE msgMdiBapIndication {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 5;
+      };
+      CDATATYPE = "BapRequest";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskMdiBapInd;
+      };
+   }: "Message from BapDispatcher to MDI Application";
+
+   MESSAGE msgMdiBapRequest {
+      TYPE = UNQUEUED;
+      CDATATYPE = "BapRequest";
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskMdiBapReq;
+      };
+   }: "message from Mdi application to BapDispatcher";
+
+   MESSAGE msgPwrmgrState {
+      TYPE = UNQUEUED;
+      CDATATYPE = "PWMGR_enVoltageStates";
+      ACTION = SETEVENT
+      {
+         TASK = OsSystemTask_event;
+         EVENT = evSystemTaskVoltageState;
+      };
+   }: "message to signal the Voltage area to the CSHDL";
+
+   MESSAGE msgCANInfotainmentInfo {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 3;
+      };
+      CDATATYPE = "CanSignalMessageType";
+      ACTION = SETEVENT
+      {
+         TASK = OsSystemTask_event;
+         EVENT = evSystemTaskCANInfotainmentInfo;
+      };
+   };
+
+   MESSAGE msgAppCanStates {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 3;
+      };
+      CDATATYPE = "APP_CAN_MsgStates";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskCanStates;
+      };
+   }: "speed message for phonebook";
+
+   MESSAGE msgKpbBapIndication {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 5;
+      };
+      CDATATYPE = "BapIndication";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskKpbBapInd;
+      };
+   };
+
+   MESSAGE msgKpbBapRequest {
+      TYPE = UNQUEUED;
+      CDATATYPE = "BapRequest";
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskKpbBapReq;
+      };
+   };
+
+   MESSAGE msgAppDiagDiagnoseResponse {
+      TYPE = UNQUEUED;
+      CDATATYPE = "APP_DIAG_ST_DIAG_RESPONSE";
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskDiagnoseResponse;
+      };
+   };
+
+   MESSAGE msgAppDiagDiagnoseRequest {
+      TYPE = UNQUEUED;
+      CDATATYPE = "APP_DIAG_ST_DIAG_REQUEST";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskDiagnoseRequest;
+      };
+   };
+
+   MESSAGE msgButtonStateInfo_Mfl {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 4;
+      };
+      CDATATYPE = "PHY_BUT_DRV_ST_MESSAGE";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskMFLKeys;
+      };
+   };
+
+   MESSAGE msgTelefonStates {
+      TYPE = UNQUEUED;
+      CDATATYPE = "APP_PHONE_CanDataType";
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskTelefonStates;
+      };
+   }: "Telephone states";
+
+   MESSAGE msgHostTaskASRStatus {
+      TYPE = UNQUEUED;
+      CDATATYPE = "VCRPerfMeasStatusMsgType";
+      ACTION = SETEVENT
+      {
+         TASK = OsHostTask_10ms;
+         EVENT = evHostTaskASRStatus;
+      };
+   };
+
+   MESSAGE msgAppTaskSystemStates {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 2;
+      };
+      CDATATYPE = "CSHDL_enSystemStates";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskSystemStates;
+      };
+   };
+
+   MESSAGE msgApplATResponse {
+      TYPE = QUEUED
+      {
+         QUEUEDEPTH = 8;
+      };
+      CDATATYPE = "ATRspMessageType";
+      ACTION = SETEVENT
+      {
+         TASK = OsAppTask_event_100ms;
+         EVENT = evAppTaskApplATResponse;
+      };
+   };
+
+   COM StdCOM {
+      USEMESSAGERESOURCE = TRUE;
+      USEMESSAGESTATUS = TRUE;
+   }: "Standard object for communication configuration";
+
+}: "@T0x78@";
+

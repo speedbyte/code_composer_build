@@ -1,0 +1,11 @@
+..\05_out\ADLATUS_FSW_cc_TMS470_VW_UDS.out
+-o ..\05_out\T470_fsw.hex
+
+-image
+-zero
+-i
+
+ROMS
+{
+   ROW1: origin=0x00008000 len=0xB8000   romwidth=32
+}

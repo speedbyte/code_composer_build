@@ -1,0 +1,5 @@
+-z -q -a -emain -m"../05_out/ADLATUS_cc_TMS470_HIS.map" -o"../05_out/ADLATUS_cc_TMS470_HIS.out" -x -i"C:/ti/TMS470/cgtools_252/lib" -i"E:/Programme/CCStudio_v3.3/tms470/cgtools_271/lib"
+"r:\10_his\03_obj\ADLATUS_DummyMain.obj"
+"r:\10_his\03_obj\FlashLib_TMS470.obj"
+"R:\f35a_api\icall16.obj"
+"R:\10_his\01_prj\050094_TMS470_HIS.cmd"

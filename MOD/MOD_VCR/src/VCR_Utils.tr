@@ -1,0 +1,38 @@
+#TRACE_ID '0x9C00C4 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_VCR '"Init Menu Values" '\MOD\MOD_VCR\src 'VCR_Utils.c '196 
+#TRACE_ID '0x9C00DB 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_VCR '"Init VR-Result Values" '\MOD\MOD_VCR\src 'VCR_Utils.c '219 
+#TRACE_ID '0x9C00F8 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_VCR '"Init VR-MsgResult Values" '\MOD\MOD_VCR\src 'VCR_Utils.c '248 
+#TRACE_ID '0x9C013C 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"Default Language ID %d oor" '\MOD\MOD_VCR\src 'VCR_Utils.c '316 
+#TRACE_ID '0x9C0164 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"VCR_vSystemStopToIdle do not change the system state because new language will be loaded" '\MOD\MOD_VCR\src 'VCR_Utils.c '356 
+#TRACE_ID '0x9C016B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"VCR_vSystemStopToIdle stop playing prompt for immidiate ending VCR" '\MOD\MOD_VCR\src 'VCR_Utils.c '363 
+#TRACE_ID '0x9C017B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"SystemStopToIdle -> ReleaseMute" '\MOD\MOD_VCR\src 'VCR_Utils.c '379 
+#TRACE_ID '0x9C01BD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"requested language found %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '445 
+#TRACE_ID '0x9C01D1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"default language found %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '465 
+#TRACE_ID '0x9C01D9 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"default language not found %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '473 
+#TRACE_ID '0x9C01EA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"%d eLangTable%d" '\MOD\MOD_VCR\src 'VCR_Utils.c '490 
+#TRACE_ID '0x9C01F0 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"Languange change req %d cur %d cur_idx %d default %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '496 
+#TRACE_ID '0x9C01FD 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Current Language %d and required %d shall map" '\MOD\MOD_VCR\src 'VCR_Utils.c '509 
+#TRACE_ID '0x9C0316 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"ConnectPrompt no Categories" '\MOD\MOD_VCR\src 'VCR_Utils.c '790 
+#TRACE_ID '0x9C032D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"ConnectPrompt with Categories" '\MOD\MOD_VCR\src 'VCR_Utils.c '813 
+#TRACE_ID '0x9C03AD 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"remove result no dial %d NbrRecResults %d NbrResults %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '941 
+#TRACE_ID '0x9C03DB 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"remove LAST result same pbidx %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '987 
+#TRACE_ID '0x9C03E8 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"remove NOT LAST result same pbidx %d %d %d %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '1000 
+#TRACE_ID '0x9C0422 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"Event to MainEventHandler %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '1058 
+#TRACE_ID '0x9C043E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_VCR '"Event to MainEventHandler %d could not handled !!!" '\MOD\MOD_VCR\src 'VCR_Utils.c '1086 
+#TRACE_ID '0x9C0459 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"Cmd to MainEventHandler %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '1113 
+#TRACE_ID '0x9C045F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_VCR '"Cmd to MainEventHandler %d could not handled !!!" '\MOD\MOD_VCR\src 'VCR_Utils.c '1119 
+#TRACE_ID '0x9C048A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Cmd %d u8NbrResults %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '1162 
+#TRACE_ID '0x9C048F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '" No Command received - cancel VR" '\MOD\MOD_VCR\src 'VCR_Utils.c '1167 
+#TRACE_ID '0x9C0BE0 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"Prompt type:%d->$ATSIVRPromptTypeEnum$" '\MOD\MOD_VCR\src 'VCR_Utils.c '3040 
+#TRACE_ID '0x9C0BE1 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"PromptID: %d->$ATSIVRPromptEnum$" '\MOD\MOD_VCR\src 'VCR_Utils.c '3041 
+#TRACE_ID '0x9C0BE2 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"Current Language: %d->$ATSIVRLanguagesEnum$" '\MOD\MOD_VCR\src 'VCR_Utils.c '3042 
+#TRACE_ID '0x9C0BE6 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_VCR '"Error in building PromptID %d in line %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '3046 
+#TRACE_ID '0x9C0BFC 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"Error occurred in Line %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '3068 
+#TRACE_ID '0x9C0C0A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"NOTIFY_SIVR_ACTIVATE -> SD" '\MOD\MOD_VCR\src 'VCR_Utils.c '3082 
+#TRACE_ID '0x9C0C0E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"NOTIFY_SIVR_DEACTIVATE -> SD" '\MOD\MOD_VCR\src 'VCR_Utils.c '3086 
+#TRACE_ID '0x9C0C41 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"Start VCR Supervisortype %d" '\MOD\MOD_VCR\src 'VCR_Utils.c '3137 
+#TRACE_ID '0x9C0C54 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_VCR '"Stop VCR Supervisor" '\MOD\MOD_VCR\src 'VCR_Utils.c '3156 
+#TRACE_ID '0x9C0C77 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Music is not coded" '\MOD\MOD_VCR\src 'VCR_Utils.c '3191 
+#TRACE_ID '0x9C0C99 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"SMS is not supported by mobile" '\MOD\MOD_VCR\src 'VCR_Utils.c '3225 
+#TRACE_ID '0x9C0CB8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Short Dialog E2P-Write successful" '\MOD\MOD_VCR\src 'VCR_Utils.c '3256 
+#TRACE_ID '0x9C0CBD 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Long Dialog E2P-Write successful" '\MOD\MOD_VCR\src 'VCR_Utils.c '3261 
+#TRACE_ID '0x9C0CCF 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"VoiceFeedback E2P Read FAIL" '\MOD\MOD_VCR\src 'VCR_Utils.c '3279 

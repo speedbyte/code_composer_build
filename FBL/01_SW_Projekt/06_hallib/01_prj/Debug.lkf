@@ -1,0 +1,8 @@
+-r
+"r:\06_hallib\05_out\HALLIB_cc_tms470_VW_UDS.lib"
+"r:\06_hallib\03_obj\ADLATUS_CanHandler.obj"
+"r:\06_hallib\03_obj\ADLATUS_CanHandlerRAM.obj"
+"r:\06_hallib\03_obj\ADLATUS_FUN_CChal_HISCheck.obj"
+"r:\06_hallib\03_obj\ADLATUS_Hal.obj"
+"r:\06_hallib\03_obj\ADLATUS_HalRAM.obj"
+"R:\f35a_api\u_div16.obj"

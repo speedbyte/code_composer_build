@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- =======================================================================
+ Examples of typical SourceMonitor command line script commands.
+======================================================================== -->
+
+<sourcemonitor_commands>
+
+    <!-- ===================================================================
+     The write_log element value is used for execution of commands in this
+     file, not the log errors flag set in SourceMonitor's options dialog.
+     If this element is missing, command progress and errors will be written
+     to the SourceMonitor log file.
+     =================================================================== -->
+
+    <write_log>true</write_log>
+
+    <!-- ===============================================================
+      This command is typical for a project that does not yet exist.
+      The file name becomes the project name of the new project.
+    ================================================================ -->
+
+    <command>
+
+        <project_file>.\UHVNAR.smp</project_file>
+
+        <!-- ===============================================================
+         For a new project, you must specify the language and the location
+         of the source code.
+        ================================================================ -->
+
+        <project_language>C</project_language>
+        <source_directory>.\MOD</source_directory>
+
+        <!-- ===============================================================
+         If the optional flag element, "exclude_subdirectories", is "true"
+         then the listed subdirectories are NOT.to be included in the
+         project (all other subdirectories WILL be included). If this flag
+         element is missing or "false" then only the subdirectories listed
+         will be included in the project. The "source_subtree" element
+         identifies the parent of a subdirectory tree, all of which will be
+         included/excluded. Element "source_subdirectory" applies to a
+         single directory and not its children (if any).
+        ================================================================ -->
+
+        <source_subdirectory_list>
+            <exclude_subdirectories>true</exclude_subdirectories>
+            <source_subtree></source_subtree>
+            <source_subdirectory></source_subdirectory>
+        </source_subdirectory_list>
+
+        <checkpoint_name>Baseline</checkpoint_name>
+        <checkpoint_date></checkpoint_date>
+
+        <!-- ===============================================================
+         For either a new or existing project, you can override the default
+         or current file extensions (set in the Options dialog) for source
+         files to be included in a new checkpoint. All files with the
+         extensions you specify here will be included in the new checkpoint.
+        ================================================================ -->
+
+        <file_extensions>*.h,*.c,*.def</file_extensions>
+        <include_subdirectories>true</include_subdirectories>
+        <ignore_headers_footers>true</ignore_headers_footers>
+
+        <!-- ===============================================================
+         Export of metrics data is supported for a single checkpoint per
+         command (the one identified in the <checkpoint_name> tag or one that
+         is automatically created as explained below). Exported metrics data
+         is specified by the export type: "1" for the project summary as XML,
+         "2" for checkpoint details as XML, or "3" project details as CSV.
+         You specify the type with a number 1, 2 or 3 in the element's
+         contents. All other text is ignored. The following examples are
+         all valid specification of export type 2:
+           <export_type>2 (project details as XML)</export_type>
+           <export_type>Project details as XML: 2</export_type>
+           <export_type>2</export_type>
+        ================================================================ -->
+        
+        <export>      
+            <export_file>.\UHVNAR.xml</export_file>
+            <export_type>2 (project details as XML)</export_type>
+            <export_insert>xml-stylesheet type='text/xsl' href='S1NN_SourcMonitor.xsl'</export_insert>
+        </export>  
+      
+        <!-- ===============================================================
+         When the </command> tag is encountered, the command specified above
+         is executed. In this sample command, the project and checkpoint are
+         created and the XML export file is generated.
+        ================================================================ -->
+
+    </command> 
+    <command>
+
+        <project_file>.\UHVNAR.smp</project_file>
+        <checkpoint_name>Baseline</checkpoint_name>
+        
+        <export>
+            <export_file>.\UHVNAR_All.xml</export_file>
+            <export_type>1 (project details as XML)</export_type>
+            <export_insert>xml-stylesheet type='text/xsl' href='S1NN_SourcMonitor.xsl'</export_insert>                
+        </export>  
+      
+        <!-- ===============================================================
+         When the </command> tag is encountered, the command specified above
+         is executed. In this sample command, the project and checkpoint are
+         created and the XML export file is generated.
+        ================================================================ -->
+
+    </command>       
+</sourcemonitor_commands>

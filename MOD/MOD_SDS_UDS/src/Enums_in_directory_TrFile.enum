@@ -1,0 +1,16 @@
+#ENUM  'tSDSextWrite_Return                                 'SDS_IO_USER_WRITE_SUCCESSFUL                                                             '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextWrite_Return                                 'SDS_IO_USER_WRITE_FAILED                                                                 '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextWrite_Return                                 'SDS_IO_USER_WRITE_NOT_ALLOWED                                                            '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextWrite_Return                                 'SDS_IO_USER_WRITE_OUT_OF_RANGE                                                           '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextWrite_Return                                 'SDS_IO_USER_WRITE_REQUEST_SEQUENCE_ERROR                                                 '4                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextWrite_Return                                 'SDS_IO_USER_WRITE_NO_RESPONSE_FROM_SUB_COMPONENT                                         '5                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextWrite_Return                                 'SDS_IO_USER_WRITE_TRY_AGAIN                                                              '6                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextRead_Return                                  'SDSext_IO_USER_READ_SUCCESSFUL                                                           '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextRead_Return                                  'SDSext_IO_USER_READ_FAILED                                                               '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDSextRead_Return                                  'SDSext_IO_USER_READ_NOT_ALLOWED                                                          '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'extFingerprint                                      'SDS_UDS_PROG_DATE                                                                        '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'extFingerprint                                      'SDS_UDS_REPAIR_SHOP_CODE                                                                 '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'extFingerprint                                      'SDS_UDS_PROG_STATE                                                                       '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'TriStateType_DEH_EE_Waiting_Time                    'DEH_EE_WAIT_TIME_IDLE                                                                    '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'TriStateType_DEH_EE_Waiting_Time                    'DEH_EE_WAIT_TIME_START                                                                   '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'TriStateType_DEH_EE_Waiting_Time                    'DEH_EE_WAIT_TIME_STOP                                                                    '2                            'ABCD   'ABCD.c  '123   

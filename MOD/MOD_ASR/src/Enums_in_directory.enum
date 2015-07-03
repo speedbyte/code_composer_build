@@ -1,0 +1,8 @@
+DEBUG_STATE_ENUM_NAME='ASR_CmdStateType                     'DEBUG_STATE_NAME='ASR_CMD_STATE_ONE_CMD                                                  'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='ASR_CmdStateType                     'DEBUG_STATE_NAME='ASR_CMD_STATE_MORE_CMD                                                 'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='ASR_CmdStateType                     'DEBUG_STATE_NAME='ASR_CMD_STATE_POOL_FREE                                                'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='ASR_CmdStateType                     'DEBUG_STATE_NAME='ASR_CMD_STATE_IDLE                                                     'DEBUG_STATE_NUMBER='3        '
+DEBUG_STATE_ENUM_NAME='ASR_MoreCmds                         'DEBUG_STATE_NAME='ASR_NO_SUBCMD                                                          'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='ASR_MoreCmds                         'DEBUG_STATE_NAME='ASR_ONE_SUBCMD                                                         'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='ASR_MoreCmds                         'DEBUG_STATE_NAME='ASR_MORE_SUBCMD                                                        'DEBUG_STATE_NUMBER='2        '
+                       

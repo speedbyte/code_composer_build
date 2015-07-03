@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX xsi:noNamespaceSchemaLocation="odx.xsd" MODEL-VERSION="2.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <VEHICLE-INFO-SPEC ID="VI_VW36X">
+    <SHORT-NAME>VI_VW36X</SHORT-NAME>
+    <LONG-NAME>VW36X</LONG-NAME>
+    <DESC>
+      <p>Diese Datei dient der Auflistung aller Logical Links für die in der Fahrzeugplattform VW36X verwendeten Steuergeräte.</p>
+    </DESC>
+    <ADMIN-DATA>
+      <DOC-REVISIONS>
+        <DOC-REVISION>
+          <TEAM-MEMBER-REF ID-REF="Compy_VW.TM_VW"/>
+          <REVISION-LABEL>001001</REVISION-LABEL>
+          <STATE>DRAFT</STATE>
+          <DATE>2011-01-18T08:06:42</DATE>
+          <TOOL>Version42, Release 3.8.0 (build 0384)</TOOL>
+          <MODIFICATIONS>
+            <MODIFICATION>
+              <CHANGE>Generiert durch version42</CHANGE>
+              <REASON>PDX erstellt für Fahrzeugplattform VW36X_2_92</REASON>
+            </MODIFICATION>
+          </MODIFICATIONS>
+        </DOC-REVISION>
+      </DOC-REVISIONS>
+    </ADMIN-DATA>
+    <COMPANY-DATAS>
+      <COMPANY-DATA ID="Compy_VW">
+        <SHORT-NAME>Compy_VW</SHORT-NAME>
+        <LONG-NAME>VW</LONG-NAME>
+        <DESC>
+          <p>Volkswagen</p>
+        </DESC>
+        <TEAM-MEMBERS>
+          <TEAM-MEMBER ID="Compy_VW.TM_VW">
+            <SHORT-NAME>TM_VW</SHORT-NAME>
+            <LONG-NAME>VW</LONG-NAME>
+            <ROLES>
+              <ROLE>Contact person OEM</ROLE>
+            </ROLES>
+            <DEPARTMENT>VW</DEPARTMENT>
+            <ADDRESS>-</ADDRESS>
+            <CITY>-</CITY>
+            <PHONE>-</PHONE>
+            <EMAIL>-</EMAIL>
+          </TEAM-MEMBER>
+        </TEAM-MEMBERS>
+      </COMPANY-DATA>
+    </COMPANY-DATAS>
+    <INFO-COMPONENTS>
+      <INFO-COMPONENT xsi:type="OEM" ID="VI_VW36X.IC_VW">
+        <SHORT-NAME>IC_VW</SHORT-NAME>
+        <LONG-NAME>VW</LONG-NAME>
+      </INFO-COMPONENT>
+      <INFO-COMPONENT xsi:type="VEHICLE-MODEL" ID="VI_VW36X.IC_VW36X">
+        <SHORT-NAME>IC_VW36X</SHORT-NAME>
+        <LONG-NAME>VW36X</LONG-NAME>
+      </INFO-COMPONENT>
+      <INFO-COMPONENT xsi:type="MODEL-YEAR" ID="VI_VW36X.IC_2011">
+        <SHORT-NAME>IC_2011</SHORT-NAME>
+        <LONG-NAME>2011</LONG-NAME>
+      </INFO-COMPONENT>
+    </INFO-COMPONENTS>
+    <VEHICLE-INFORMATIONS>
+      <VEHICLE-INFORMATION>
+        <SHORT-NAME>VINFO_VW36X</SHORT-NAME>
+        <LONG-NAME>VW36X</LONG-NAME>
+        <INFO-COMPONENT-REFS>
+          <INFO-COMPONENT-REF ID-REF="VI_VW36X.IC_VW"/>
+          <INFO-COMPONENT-REF ID-REF="VI_VW36X.IC_VW36X"/>
+          <INFO-COMPONENT-REF ID-REF="VI_VW36X.IC_2011"/>
+        </INFO-COMPONENT-REFS>
+        <VEHICLE-CONNECTORS>
+          <VEHICLE-CONNECTOR>
+            <SHORT-NAME>VC_DiagnOnCANConne</SHORT-NAME>
+            <LONG-NAME>Diagnostics On CAN Connector</LONG-NAME>
+            <VEHICLE-CONNECTOR-PINS>
+              <VEHICLE-CONNECTOR-PIN TYPE="HI" ID="VI_VW36X.CANH">
+                <SHORT-NAME>CANH</SHORT-NAME>
+                <LONG-NAME>CAN High</LONG-NAME>
+                <PIN_NUMBER>6</PIN_NUMBER>
+              </VEHICLE-CONNECTOR-PIN>
+              <VEHICLE-CONNECTOR-PIN TYPE="LOW" ID="VI_VW36X.CANL">
+                <SHORT-NAME>CANL</SHORT-NAME>
+                <LONG-NAME>CAN Low</LONG-NAME>
+                <PIN_NUMBER>14</PIN_NUMBER>
+              </VEHICLE-CONNECTOR-PIN>
+            </VEHICLE-CONNECTOR-PINS>
+          </VEHICLE-CONNECTOR>
+        </VEHICLE-CONNECTORS>
+        <LOGICAL-LINKS><LOGICAL-LINK xsi:type="MEMBER-LOGICAL-LINK" ID="LL_AllOBDSyste">
+            <SHORT-NAME>LL_AllOBDSyste</SHORT-NAME>
+            <LONG-NAME>All OBD systems</LONG-NAME>
+            <PHYSICAL-VEHICLE-LINK-REF ID-REF="CAN1"/>
+            <PROTOCOL-REF DOCTYPE="LAYER" DOCREF="PR_OBDOnCAN" ID-REF="PR_OBDOnCAN"/>
+            <FUNCTIONAL-GROUP-REF DOCTYPE="LAYER" DOCREF="FG_AllOBDSyste" ID-REF="FG_AllOBDSyste"/>
+            <LINK-COMPARAM-REFS>
+              <LINK-COMPARAM-REF ID-REF="ISO_15765_4.CP_CanFuncReqId" DOCTYPE="COMPARAM-SPEC" DOCREF="ISO_OBD_on_ISO_15765_4">
+                <VALUE>1792</VALUE>
+              </LINK-COMPARAM-REF>
+              <LINK-COMPARAM-REF ID-REF="ISO_15765_4.CP_RequestAddrMode" DOCTYPE="COMPARAM-SPEC" DOCREF="ISO_OBD_on_ISO_15765_4">
+                <VALUE>Functional</VALUE>
+              </LINK-COMPARAM-REF>
+            </LINK-COMPARAM-REFS>
+          </LOGICAL-LINK><LOGICAL-LINK xsi:type="MEMBER-LOGICAL-LINK" ID="LL_AllUDSSyste">
+            <SHORT-NAME>LL_AllUDSSyste</SHORT-NAME>
+            <LONG-NAME>All UDS Systems</LONG-NAME>
+            <PHYSICAL-VEHICLE-LINK-REF ID-REF="CAN1"/>
+            <PROTOCOL-REF DOCTYPE="LAYER" DOCREF="PR_UDSOnCAN" ID-REF="PR_UDSOnCAN"/>
+            <FUNCTIONAL-GROUP-REF DOCTYPE="LAYER" DOCREF="FG_AllUDSSyste" ID-REF="FG_AllUDSSyste"/>
+            <LINK-COMPARAM-REFS>
+              <LINK-COMPARAM-REF ID-REF="ISO_15765_2.CP_RequestAddrMode" DOCTYPE="COMPARAM-SPEC" DOCREF="ISO_15765_3_on_ISO_15765_2">
+                <VALUE>Functional</VALUE>
+              </LINK-COMPARAM-REF>
+            </LINK-COMPARAM-REFS>
+          </LOGICAL-LINK><LOGICAL-LINK xsi:type="MEMBER-LOGICAL-LINK" ID="LL_TelepUDS">
+            <SHORT-NAME>LL_TelepUDS</SHORT-NAME>
+            <LONG-NAME>Telephone UDS</LONG-NAME>
+            <PHYSICAL-VEHICLE-LINK-REF ID-REF="CAN1"/>
+            <PROTOCOL-REF DOCTYPE="LAYER" DOCREF="PR_UDSOnCAN" ID-REF="PR_UDSOnCAN"/>
+            <BASE-VARIANT-REF DOCTYPE="LAYER" DOCREF="BV_TelepUDS" ID-REF="BV_TelepUDS"/>
+          <LINK-COMPARAM-REFS><LINK-COMPARAM-REF DOCREF="ISO_15765_3_on_ISO_15765_2" DOCTYPE="COMPARAM-SPEC" ID-REF="ISO_15765_2.CP_StMinOverride"><VALUE>2000</VALUE></LINK-COMPARAM-REF></LINK-COMPARAM-REFS></LOGICAL-LINK><LOGICAL-LINK xsi:type="MEMBER-LOGICAL-LINK" ID="LL_AllEmissRelatUDSSyste">
+            <SHORT-NAME>LL_AllEmissRelatUDSSyste</SHORT-NAME>
+            <LONG-NAME>All emissions-related UDS systems</LONG-NAME>
+            <PHYSICAL-VEHICLE-LINK-REF ID-REF="CAN1"/>
+            <PROTOCOL-REF DOCTYPE="LAYER" DOCREF="PR_UDSOnCAN" ID-REF="PR_UDSOnCAN"/>
+            <FUNCTIONAL-GROUP-REF DOCTYPE="LAYER" DOCREF="FG_AllEmissRelatUDSSyste" ID-REF="FG_AllEmissRelatUDSSyste"/>
+            <LINK-COMPARAM-REFS>
+              <LINK-COMPARAM-REF ID-REF="ISO_15765_2.CP_CanFuncReqId" DOCTYPE="COMPARAM-SPEC" DOCREF="ISO_15765_3_on_ISO_15765_2">
+                <VALUE>1795</VALUE>
+              </LINK-COMPARAM-REF>
+              <LINK-COMPARAM-REF ID-REF="ISO_15765_2.CP_RequestAddrMode" DOCTYPE="COMPARAM-SPEC" DOCREF="ISO_15765_3_on_ISO_15765_2">
+                <VALUE>Functional</VALUE>
+              </LINK-COMPARAM-REF>
+            </LINK-COMPARAM-REFS>
+          </LOGICAL-LINK></LOGICAL-LINKS>
+        <PHYSICAL-VEHICLE-LINKS>
+          <PHYSICAL-VEHICLE-LINK TYPE="ISO_11898_2_DWCAN" ID="CAN1">
+            <SHORT-NAME>CAN1</SHORT-NAME>
+            <LONG-NAME>CAN1 (500kBit)</LONG-NAME>
+            <VEHICLE-CONNECTOR-PIN-REFS>
+              <VEHICLE-CONNECTOR-PIN-REF ID-REF="VI_VW36X.CANH"/>
+              <VEHICLE-CONNECTOR-PIN-REF ID-REF="VI_VW36X.CANL"/>
+            </VEHICLE-CONNECTOR-PIN-REFS>
+          </PHYSICAL-VEHICLE-LINK>
+        </PHYSICAL-VEHICLE-LINKS>
+      </VEHICLE-INFORMATION>
+    </VEHICLE-INFORMATIONS>
+  </VEHICLE-INFO-SPEC>
+</ODX>

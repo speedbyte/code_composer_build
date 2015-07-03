@@ -1,0 +1,47 @@
+
+ALOA version 3.1.0.
+Copyright (c) 2003 - 2004 PERA Software Solutions GmbH.
+Written by Ralf Holly (rholly@pera-software.com).
+This program is free software according to the GNU
+General Public License and comes WITHOUT ANY WARRANTY.
+For details, run aloa without arguments.
+
+Lint output file ........... : HIS.xml
+Total number of issues found : 50
+Total severity score ....... : 50
+
+File List
+-----------
+
+   Rank  Score Issues   MMsg MSev   File
+
+      1     46     46    950    1   R:\10_his\02_src\FlashLib_TMS470.c
+      2      4      4    923    1   R:\10_his\02_src\ADLATUS_DummyMain.c
+
+Issue List
+----------
+
+   Rank    Msg  Sev  Count
+
+      1    950    1     34
+      2    923    1     15
+      3    912    1      1
+
+Legend
+------
+
+Severity level   1 : Elective note
+Severity level   2 : Informational
+Severity level   3 : Warning
+Severity level   4 : Syntax error
+Severity level 999 : PC-Lint error
+
+Score  Severity score
+MMsg   Number of issue with the highest severity encountered
+MSev   Severity level of the severest issue encountered
+Msg    Lint issue number
+Sev    Issue severity level
+Count  Total number of occurrences of issue in project
+Issues Total number of issues in file
+
+

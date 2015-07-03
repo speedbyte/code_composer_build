@@ -1,0 +1,893 @@
+TMS470 C/C++ CODE GENERATION TOOLS
+Release 4.1.4 April 2006
+
+
+================================================================================
+Table of Contents
+================================================================================
+
+1.  New --default_order linker switch
+2.  Updated Linker Allocation Errors
+3.  Removal of Unreferenced Code at Link-Time (-ms)
+4.  Allocation Using Multiple Memory Areas
+5.  Automatic Splitting of Code/Data
+6.  Defining Load-Time Addresses, Dimensions at Link-Time
+7.  Link-Time Patching of Far Memory Calls (--large_model)
+8.  Specifying Library Members as Input Sections
+9.  New linker command file operator, palign
+10. Linker XML Output
+
+================================================================================
+New Linker Features In Separate Readme Files
+================================================================================
+1.   Linker-generated Copy Tables - see file linker_copy_tables.txt
+
+================================================================================
+1. New --default_order linker switch
+================================================================================
+
+The default linker algorithm to allocate sections not listed in a linker
+command file changed with version 2.52.  The new algorithm is a sized-based
+algorithm.  This meant applications relying on the old behavior encountered
+linker errors.  The old behavior found in version 2.51 and earlier is available
+with a new linker switch, --default_order. For example:
+
+cl470 file.c -z --default_order lnk.cmd ...
+
+or
+
+lnk470 --default_order file.obj lnk.cmd ...
+
+================================================================================
+2. Updated Linker Allocation Errors
+================================================================================
+
+The diagnostic message that is printed when the linker fails to allocate an
+output section has been updated. When allocation fails, the linker will now
+find information about all of the memory areas that it is trying to
+allocate a given output section into.  The diagnostic message will look like
+this:
+
+>>   error: can't allocate named_sect, size 00004054
+              (page 0) in P_MEM (avail: 00000300),
+              MEM2 (avail: 00000bf4), D_MEM (avail:
+              00000500)
+
+where "named_sect" is a given output section and P_MEM, MEM2, and D_MEM are the
+memory areas that we could allocate named_sect into (if we had the available
+space).  Each memory area is annotated with the size of its largest available
+ANODE.
+
+================================================================================
+3.  Removal of Unreferenced Code at Link-Time (-ms)
+================================================================================
+
+The code generation tools now provide a command-line shell option, -ms, that 
+instructs the compiler to generate code for functions into separate, uniquely
+named subsections.
+
+Subsections
+-----------
+
+Subsections are smaller sections within larger sections.  Like sections, 
+subsections can be manipulated by the linker.  Subsections give you tighter
+control of the memory map.  The syntax for a subsection name is:
+
+	<section name>:<subsection name>
+
+A subsection is identified by the base section name followed by a colon, then
+the name of the subsection.  A subsection can be allocated separately or
+grouped with other sections using the same base name. The -ms option causes 
+the compiler to generate code for the function foo(), for example, into a 
+subsection called ".text:_foo".
+
+You can allocate ".text:_foo" separately or with other .text sections.
+
+Removing Unreferenced Sections at Link-Time
+-------------------------------------------
+
+In addition to generating code for a function into a subsection, the compiler
+will also annotate that subsection with a conditional linking directive, 
+.clink.  This directive marks the section as a candidate to be removed if it
+is not referenced by any other section in the program.  The compiler will not
+place a .clink directive in a subsection for a trap or interrupt function, as
+these may be needed by a program even though there is no symbolic reference
+to them anywhere in the program.
+
+If a section that has been marked as a candidate for conditional linking is
+never referenced by any other section in the program, that section is removed
+from the program.  Conditional linking is disabled when performing a partial
+link or when relocation information is kept with the output of the link.
+Conditional linking can also be disabled with the "-j" linker command-line
+option.
+
+
+================================================================================
+4.  Allocation Using Multiple Memory Areas
+================================================================================
+
+Background
+----------
+
+You may have a choice of many different memory areas in which your
+code or data can be allocated.  In fact, you may not be concerned about
+which memory area a piece of code or data ends up in, as long as it is
+safely allocated.
+
+One way to handle this situation is to annotate the memory areas with
+attributes and then use an attribute encoding in the allocation
+specification of a given output section.  For example:
+ 
+   MEMORY
+   {
+      P_MEM1 (RWXI): origin = 02000h, length = 01000h;
+      P_MEM2 (RWX) : origin = 04000h, length = 01000h;
+      P_MEM3 (RI)  : origin = 06000h, length = 01000h;
+      P_MEM4 (RW)  : origin = 08000h, length = 01000h;
+   }
+
+   SECTIONS
+   {
+      .text: { } > (RW)
+   }
+
+The linker will attempt to allocate the ".text" output section in one
+of the available memory areas that has the attributes named in the
+allocation specification (P_MEM1, P_MEM2, or P_MEM4).  The linker will
+go through the list of memory areas from top to bottom until it
+makes a successful allocation.
+
+A New Way to Specify Allocation to Multiple Memory Area
+-------------------------------------------------------
+
+Another way to deal with the situation is to specify an explicit list of
+memory areas that are available to allocate an output section into.
+The linker now supports this capability with an extension to the existing
+allocation specification syntax.  Consider the following example:
+
+   MEMORY
+   {
+      P_MEM1: origin = 02000h, length = 01000h;
+      P_MEM2: origin = 04000h, length = 01000h;
+      P_MEM3: origin = 06000h, length = 01000h;
+      P_MEM4: origin = 08000h, length = 01000h;
+   }
+
+   SECTIONS
+   {
+      .text: { } > P_MEM1 | P_MEM2 | P_MEM4
+   }
+
+This specification is equivalent to the attribute allocation example
+described earlier.  The ".text" output section is allocated in one piece
+in the first memory area in which it fits.  That is, the linker will
+attempt to allocate the ".text" output section in the P_MEM1 area first.
+If that fails, it will attempt to allocate the ".text" output section in
+the P_MEM2 memory area, then P_MEM4.  If the allocation is not successful
+in any of the named memory areas, then the linker will emit an error to
+indicate the failed allocation of the ".text" section.
+
+If you want to express a preference for which memory area to allocate a
+section into, then the order of the named memory areas can be modified.
+The attempted allocations will always take place in the order in which
+the memory areas are specified.  So, if you would rather allocate ".text"
+into P_MEM2, if possible, then the above SECTIONS directive could be
+rewritten as follows:
+
+   SECTIONS
+   {
+      .text: { } > P_MEM2 | P_MEM1 | P_MEM4
+   }
+
+This new capability allows you to avoid having to revisit the SECTIONS
+directive specification when an output section grows beyond the size of
+the area that it is allocated to.  The linker will simply find an area
+on the list of candidate memory areas in which the output section fits.
+
+
+================================================================================
+5.  Automatic Splitting of Code/Data Among Non-Contiguous Memory Areas
+================================================================================
+
+The Need for Splitting Code/Data
+--------------------------------
+
+Some embedded systems may call for a non-contiguous memory map in which
+you would like to distribute code or data among more than one memory area.
+In previous versions of the linker, you would have to manually specify
+which input sections were to go in which memory area.  This was done by
+specifying multiple output sections and separately allocating them.
+Consider the following example:
+
+   MEMORY
+   {
+      P_MEM1: origin = 02000h, length = 01000h;
+      P_MEM2: origin = 04000h, length = 01000h;
+      P_MEM3: origin = 06000h, length = 01000h;
+      P_MEM4: origin = 08000h, length = 01000h;
+   }
+
+   SECTIONS
+   {
+      .text_1: { f1.obj(.text), f2.obj(.text), f3.obj(.text) } > P_MEM1
+      .text_2: { f4.obj(.text), f5.obj(.text), f6.obj(.text) } > P_MEM2
+      .text_3: { f7.obj(.text), f8.obj(.text), f9.obj(.text) } > P_MEM3
+      .text_4: { f10.obj(.text), f11.obj(.text) }              > P_MEM4
+   }
+
+Splitting Code/Data Among Multiple Memory Areas
+-----------------------------------------------
+
+Now, the linker has the capability to split output sections among
+multiple memory areas to automatically achieve an efficient allocation
+of the output section among several memory areas.  This is done using
+a ">>" operator to indicate that an output section is permitted to
+be split, if needed.  The SECTIONS directive in the example above could
+be rewritten as follows:
+
+   SECTIONS
+   {
+      .text: { *(.text) } >> P_MEM1 | P_MEM2 | P_MEM3 | P_MEM4
+   }
+
+Note the use of the ">>" operator to indicate that the output section
+is permitted to be split.  All available memory areas can be specified
+in a simple list joined by "|" operators (as described earlier).
+
+Splitting Code/Data in a Single Memory Area
+-------------------------------------------
+
+You may also use the ">>" split operator to indicate that an output
+section can be split within a single memory area.  This is useful
+when several output sections must be allocated into the same memory
+area, and the restrictions placed on one of the output sections causes
+the memory area to be partitioned such that the previous linker would
+require a complicated SECTIONS directive to effectively utilize all of the
+available memory in the area.  Consider an example:
+
+   MEMORY
+   {
+      RAM: origin = 01000h, length = 08000h
+   }
+
+   SECTIONS
+   {
+      .special: { f1.obj(.text) } = 04000h
+      .text:    { *(.text) } >> RAM
+   }
+
+This SECTIONS directive will allocate the ".special" output section at
+address 04000h in the RAM area, breaking the RAM area near the middle.
+The new syntax allows the linker to split the ".text" output section
+around the ".special" output section, if needed.  This allows you to
+place special restrictions on certain output sections without
+complicating the SECTIONS directive for the rest of the input sections.
+
+Splitting Code/Data Among Attributed Memory Areas
+-------------------------------------------------
+
+The ">>" split operator can also be used to split an output section
+among all of the memory areas that match a specified attribute combination.
+For example:
+
+   MEMORY
+   {
+      P_MEM1 (RWX): origin = 01000h, length = 02000h
+      P_MEM2 (RWI): origin = 04000h, length = 01000h
+   }
+
+   SECTIONS
+   {
+      .text: { *(.text) } >> (RW)
+   }
+
+This SECTIONS directive has the same effect as:
+
+   SECTIONS
+   {
+      .text: { *(.text) } >> P_MEM1 | P_MEM2
+   }
+
+The linker will consider any memory area whose attributes match those
+specified in the output section's memory specification as a candidate
+to allocate all or part of the output section to.
+
+Restrictions on the Use of Split Operator, ">>"
+-----------------------------------------------
+
+A program may contain output sections that should not be permitted to
+be split.  The ".cinit" section, for example, contains the auto-initial-
+ization table for a C/C++ program and must not be split in order to
+preserve the integrity of the runtime environment that is set up for a
+C/C++ program.  Another such output section that is not permitted to
+be split is the ".pinit" section.  The .pinit section contains the list
+of global constructors which need to be executed as part of the runtime
+environment setup of a C++ program.  When a split operator is specified
+on the memory specification for either of these sections, the linker 
+will emit a warning and ignore the split operator.
+
+Use of the split operator can also be influenced by the input section(s)
+specification.  If you provide an expression to be evaluated as part of
+the input section specification, the linker assumes that the output
+section cannot be split as the expression may define a symbol that is
+used in the program to manage the output section at run-time.  Attempts
+to use the split operator in this situation will cause the linker to
+emit a warning and ignore the split operator.
+
+Any output section that has separate LOAD and RUN allocations may not
+be split.  This is not allowed because the code which copies the
+output section from its load-time location to its run-time location
+cannot be aware of where an output section split might occur.  Attempts
+to use the split operator in this situation will cause the linker to
+emit a warning and ignore the split operator.
+
+Any output section that is a GROUP member may not be split.  This is not
+allowed because the intent of the GROUP directive is to provide the user
+with a mechanism to force contiguous allocation of GROUP member output
+sections.  Attempts to use the split operator in this situation will
+cause the linker to emit a warning and ignore the split operator.
+
+Any output section that has a START(), END(), or SIZE() operator (as
+described in Section 2.20-4. below) applied to it cannot be split.  The 
+START(), END(), and SIZE() operators provide information about a section's 
+load or run address and size.  If the section is allowed to be split, then 
+the integrity of the operator is compromised.  Attempts to use the split
+operator in this situation will cause the linker to emit a warning and
+ignore the split operator.
+
+
+================================================================================
+6.  Defining Load-Time Addresses and Dimensions at Link-Time
+================================================================================
+
+Why Load-Time Addresses and Dimensions May be Needed
+----------------------------------------------------
+
+The code generation tools currently support the ability to load program
+code in one area of (slow) memory and run it in another (faster) area.
+This is done by specifying separate load and run addresses for an output
+section or group in the linker command file, then executing a sequence of
+instructions (the copying code) that moves the program code from its load
+area to its run area before it is needed.
+
+There are several responsibilities that a programmer must take on when
+setting up a system with this feature.  One of these responsibilities is
+to determine the size and location of the program code to be moved.  
+The current mechanisms to do this involve the use of .label directives 
+in the copying code.
+
+Here is a simple example (from the TMS470 ALT book):
+
+  ; program code
+
+        .sect   ".fir"
+        .label  fir_src                         ; load address of scn
+  fir:                                          ; run address of scn
+        <.fir section program code>
+
+        .label  fir_end                         ; load address of scn end
+
+  ; copying code
+
+        .text
+	LDR	r4, fir_s		; get fir load address start
+	LDR	r5, fir_e		; get fir load address start
+	LDR	r3, fir_a		; get fir load address start
+  $1:	CMP	r4, r5
+	LDRCC	r0, [r4], #4		; copy fir routine to run space
+	STRCC	r0, [r3], #4
+	BCC	$1
+
+        B	fir                     ; branch to fir's run address
+
+fir_a	.word	fir
+fir_s	.word	fir_start
+fir_e	.word	fir_end
+
+This method of specifying the size and load address of the program code
+has limitations.  While it works fine for an individual input section that
+is contained entirely within one source file, what if the program code
+section is spread over several source files?  What if we want to copy an
+entire output section from load space to run space?
+
+Another problem with this method is that is does not account for the
+possibility that the section being moved may have an associated far
+call trampoline section that needs to be moved with it.  More detail
+on this problem and a solution to it is provided below in section 2.20-5.
+
+Why the "Dot" Operator - '.' - Doesn't Always Work
+--------------------------------------------------
+
+The dot operator is used to define symbols at link-time with a particular
+address inside of an output section.  It is interpreted like a PC.
+Whatever the current offset within the current section is, that is the
+value associated with the dot.  Consider an output section specification
+within a SECTIONS directive:
+
+        outsect:
+        {
+                s1.obj(.text)
+                end_of_s1   = .;
+                start_of_s2 = .;
+                s2.obj(.text)
+                end_of_s2 = .;
+        }
+
+This statement creates three symbols:
+
+        end_of_s1       - the end address of .text in s1.obj
+        start_of_s2     - the start address of .text in s2.obj
+        end_of_s2       - the end address of .text in s2.obj
+
+Suppose there is padding between s1.obj and s2.obj that is created as a
+result of alignment.  Then "start_of_s2" is not really the start address
+of the .text section in s2.obj, but it is the address before the padding
+needed to align the .text section in s2.obj.  This is due to the linker's
+interpretation of the dot operator as the current "PC".  It is also due
+to the fact that the dot operator is evaluated independently of the input
+sections around it.
+
+Another potential problem in the above example is that "end_of_s2" may
+not account for any padding that was required at the end of the output
+section.  "end_of_s2" cannot reliably be used as the end address of
+the output section.  One way to get around this problem is to create
+a dummy section immediately after the output section in question. i.e.
+
+        GROUP
+        {
+                outsect:
+                {
+                        start_of_outsect = .;
+                        ...
+                }
+                dummy: { size_of_outsect = . - start_of_outsect; }
+        }
+
+This is not the most elegant of solutions.
+
+Some New Operators
+------------------
+
+Six new operators have been added to the linker command file syntax:
+
+  LOAD_START(<sym>)
+  START(<sym>)      - define <sym> with load-time start address of related
+                      allocation unit.
+
+  LOAD_END(<sym>)
+  END(<sym>)        - define <sym> with load-time end address of related
+                      allocation unit.
+
+  LOAD_SIZE(<sym>)
+  SIZE(<sym>)       - define <sym> with load-time size of related allocation
+                      unit.
+
+  RUN_START(<sym>)  - define <sym> with run-time start address of related
+                      allocation unit.
+
+  RUN_END(<sym>)    - define <sym> with run-time end address of related
+                      allocation unit.
+
+  RUN_SIZE(<sym>)   - define <sym> with run-time size of related allocation
+                      unit.
+
+  Note: LOAD_START() and START() are equivalent, as are LOAD_END()/END() and
+        LOAD_SIZE()/SIZE().
+
+
+Using the New Operators
+-----------------------
+
+The new address and dimension operators can be associated with several
+different kinds of allocation units, including: input items, output
+sections, GROUPs, and UNIONs.  This section provides some examples of
+how the operators can be used in each case.
+
+<input items>
+
+Consider the example from section 3.2 above:
+
+        outsect:
+        {
+                s1.obj(.text)
+                end_of_s1   = .;
+                start_of_s2 = .;
+                s2.obj(.text)
+                end_of_s2 = .;
+        }
+
+This can be rewritten using the START and END operators as follows:
+
+        outsect:
+        {
+                s1.obj(.text) { END(end_ofs1) }
+                s2.obj(.text) { START(start_of_s2), END(end_of_s2) }
+        }
+
+The values of "end_of_s1" and "end_of_s2" will be the same as if you had
+used the dot operator in the original example, but "start_of_s2" would be
+defined after any necessary padding that needs to be added between the two
+.text sections.  Remember that the dot operator would cause "start_of_s2"
+to be defined before any necessary padding is inserted between the two
+input sections.
+
+The syntax for using these operators in association with input sections
+calls for braces '{', '}' to enclose the operator list.  The operators
+specified in the list will be applied to the input item that occurs
+immediately before it.
+
+<output section>
+
+The START, END, and SIZE operators can also be associated with an output
+section.  Here's an example:
+
+        outsect: START(start_of_outsect), SIZE(size_of_outsect)
+        {
+                <list of input items>
+        }
+
+Note that in this case, the SIZE operator defines "size_of_outsect" to
+incorporate any padding that is required in the output section to conform
+to any alignment requirements that are imposed.
+
+The syntax for specifying the operators with an output section do not
+require braces to enclose the operator list.  The operator list is simply
+included as part of the allocation specification for an output section.
+
+<GROUPs>
+
+Here is another use of the START and SIZE operators in the context of a
+GROUP specification:
+
+        GROUP
+        {
+                outsect1: { ... }
+                outsect2: { ... }
+        } load = ROM, run = RAM, START(group_start), SIZE(group_size);
+
+This can be useful if the whole GROUP is to be loaded in one location and
+run in another.  The copying code can use "group_start" and "group_size"
+as parameters for where to copy from and how much is to be copied.  This
+makes the use of .label in the source code unnecessary.
+
+<UNIONs>
+
+The RUN_SIZE and LOAD_SIZE operators provide a mechanism to distinguish
+between the size of a UNION's load space and the size of the space where
+its constituents are going to be copied before they are run.  Here is an
+example:
+
+        UNION: run = RAM, LOAD_START(union_load_addr),
+               LOAD_SIZE(union_ld_sz), RUN_SIZE(union_run_sz)
+        {
+                .text1: load = ROM, SIZE(text1_size) { f1.obj(.text) }
+                .text2: load = ROM, SIZE(text2_size) { f2.obj(.text) }
+        }
+
+Here, "union_ld_sz" is going to be equal to the sum of the sizes of all
+output sections placed in the union.  "union_run_sz" is equivalent to the
+largest output section in the union.  Both of these symbols incorporate
+any padding due to blocking or alignment requirements.
+
+
+================================================================================
+7.  Link-Time Patching of Calls to Far Memory (--large_model linker option)
+================================================================================
+
+Problem Definition
+------------------
+
+Some CPUs (like the TMS470) have PC-relative call and PC-relative branch
+instructions whose range is smaller than the entire address space.  When
+these instructions are used, the destination address must be near enough
+to the instruction that the difference between the call and the destination
+fits in the available encoding bits.  If the callee is too far away from the
+caller, the linker generates an error.
+
+The alternative to a PC-relative call is generally an "absolute" call, which
+is often implemented simply as an indirect call: load the callee address
+into a register, and call via that register.  This is often undesirable
+because it takes more instructions (speed- and size-wise) and requires
+killing an extra register (to contain the address).
+
+Compiler Solutions
+------------------
+
+The compiler provides two methods to solve the problem of reaching call
+destinations that are far away, both of which require user intervention:
+
+  o Code is compiled with a "far-mode" flag (-ml for TMS470 compiler) which
+    dictates that ALL of the calls generated will be "far" calls (call via 
+    register).
+
+  o Source code is annotated to indicate which functions should always be
+    called with a far call.  This is not currently supported in the TMS470
+    code generation tools.
+
+This first solution has the disadvantage that it is always generates slower
+and larger code, and the compiler does this even when long calls are
+unnecessary.
+
+The second solution is error-prone, since it requires the user to synchronize
+their source code with the way they link their code.  The user would be 
+required to anticipate which functions will be linked "too far" away from 
+their call sites.
+
+Objective
+---------
+
+Ideally, the code generation tools should be able to automatically transform
+near calls to reach far destinations without user intervention.
+
+This has two major benefits:
+
+  o Reduces run-time penalty incurred.  Only those calls that need to reach
+    far destinations would be transformed by the linker.  This is much better
+    than forcing the user to make all calls far (even when a near call will
+    reach) as with a "far-mode".
+
+  o Removes any need for intervention from the user.  The user does not need
+    to declare which functions are far or near in order to inform the compiler
+    which type of call to generate.  This remains true even as the program
+    evolves.
+
+Generating Far Call Trampolines at Link-Time
+--------------------------------------------
+
+The compiler can always generate "near" calls.  The linker will then be
+responsible for "fixing" each call site which is linked out-of-range of
+its callee destination.  To "fix" a call site, the linker generates a
+trampoline code section near the call site.  The trampoline code section
+contains a sequence of instructions that performs a transparent long
+branch to the original callee.  Each call site which is out-of-range from
+the callee function is redirected to the trampoline.
+
+Example
+
+  Given a function, "bar", which calls a function, "foo", the compiler
+  initially generates:
+
+  bar:
+        ...
+        call    foo     ; call the function "foo"
+        ...
+
+  If "foo" is placed out-of-range from the call to "foo" inside of "bar",
+  then the linker will ...
+
+  -> change the original call to "foo" into a call to "foo_trampoline":
+
+  bar:
+        ...
+        call    foo_trampoline  ; call a trampoline for foo
+        ...
+
+  -> generate a trampoline code section, "foo_trampoline", containing code
+     which executes a long branch to the original callee, "foo":
+
+  foo_trampoline:
+        branch_long     foo
+
+Trampolines can be shared among call sites to the same callee function.
+The only requirement is that all call sites to the callee be linked near
+the callee's trampoline.
+
+Carrying Trampolines from Load Space to Run Space
+-------------------------------------------------
+
+It is sometimes useful to load code in one location in memory and run it
+in another.  The linker provides the capability to specify separate load
+and run allocations for a section.  The burden of actually copying the
+code from the load space to the run space is left to the programmer.
+
+A copy function must be executed before the real function can be executed
+in its run space.  To facilitate this copy function, the assembler provides
+a ".label" directive which allows a programmer to define a load-time
+address.  These load-time addresses can then be used to determine the
+start address and size of the code to be copied.  However, this mechanism
+will NOT work if the code contains a call that requires a trampoline to
+reach its callee.  This is because the trampoline code is generated
+at link-time, after the load-time addresses associated with the ".label"
+directive have been defined.  If the linker detects the definition of a
+".label" symbol in an input section which contains a trampoline call,
+then a warning will be generated.
+
+To solve this problem, we have introduced new START(), END(), and SIZE()
+operators (described above in section 2.20-4.) which allow the programmer to
+define symbols to represent the load-time start address and size inside
+the linker command file.  These symbols can be referenced by the copy code,
+and their values are not resolved until link-time, after the trampoline
+sections have been allocated.
+
+Here is an example of how you could use the START() and SIZE() operators
+in association with an output section to copy the trampoline code section
+along with the code containing the call sites that need trampolines:
+
+Suppose we have the following SECTIONS directive:
+
+  SECTIONS
+  {
+     .foo : load = ROM, run = RAM, start(foo_start), size(foo_size)
+            { x.obj(.text) }
+
+     .text: {} > ROM
+
+     .far : { -lrts.lib(.text) } > FAR_MEM
+  }
+
+A function in x.obj contains an RTS call.  The RTS library is placed in
+far memory and so the call is out-of-range.  A trampoline section will
+be added to the .foo output section by the linker.  The copy code can
+refer to the symbols "foo_start" and "foo_size" as parameters for the
+load start address and size of the entire .foo output section.  This
+allows the copy code to copy the trampoline section along with the
+original x.obj code in .text from its load space to its run space.
+
+Disadvantages of Using Trampolines
+----------------------------------
+
+An alternative method of "fixing" a call site that cannot reach its callee
+is to actually modify the code at the call site in-line.  In some cases
+this can be done without affecting the size of the code.  However, in
+general, this approach is extremely difficult, especially when the size
+of the code is affected by the transformation.
+
+While generating far call trampolines provides a more straightforward
+solution, trampolines have the disadvantage that they are somewhat slower
+than directly calling the callee function.  They require both a call and
+a branch.  Additionally, while inline code could be tailored to the
+environment of the call site, trampolines are generated in a more general
+manner, and may be slightly less efficient than inline code.
+
+Trampoline Statistics
+---------------------
+
+When the linker produces a map file and it has produced one or more
+trampolines, then the map file will contain statistics about what
+trampolines were generated to reach which functions.  A list of call
+sites for each trampoline is also provided in the map file.
+
+
+================================================================================
+8.  Specifying Library Members as Input Sections
+================================================================================
+
+The linker command file syntax has been extended to provide a mechanism for
+specifying one or more members of an object library for input to an output
+section.
+
+Consider this SECTIONS directive:
+
+  SECTIONS
+  {
+     .boot > BOOT1
+     {
+        /* THIS IS THE NEW SUPPORT */
+        -lrts.lib<boot.obj> (.text)
+        rts.lib<exit.obj strcpy.obj> (.text)
+     }
+
+     .rts > BOOT2
+     {
+        -lrts.lib (.text)
+     }
+
+     .text  > RAM
+     {
+        * (.text)
+     }
+  }
+
+In this example, boot.obj, exit.obj, and strcpy.obj are extracted from the
+runtime support library and placed in the ".boot" output section.  The
+remainder of the runtime support library object that is referenced is
+allocated to the ".rts" output section.  An archive member, or list of
+members, can now be specified via < >'s after the library name.
+
+Note that the -l, which normally implies a library path search be made for
+the named file, is optional in this syntax since the < > mechanism requires
+that the file from which the members are selected must be an archive.  The
+linker will always utilize a library path search to find the archive in this
+case.
+
+
+================================================================================
+9. New linker command file operator, palign 
+================================================================================
+
+The linker will now support the use of a "palign" operator in the 
+linker command file. This operator can be applied to any output
+section specified in the LCF. The palign operator works just like
+an align operator. It will cause the placement of its section to be
+aligned to a specified byte boundary. In addition, palign will ensure
+that the size of its section is a multiple of its placement alignment
+restrictions, padding the section size up to such a boundary, as needed.
+
+Syntax
+------
+
+.text: palign(4) {} > PMEM
+
+The above section specification will cause the linker to place the
+.text section on a 4-byte boundary within the PMEM memory area. The
+.text section size is also guaranteed to be a multiple of 4 bytes.
+
+Another way to specify the palign operator is as follows:
+
+.text: palign = 4 {} > PMEM
+
+This has the same effect as the previous specification of the .text
+section.
+
+Padding
+-------
+
+If the palign operator is applied to an initialized output section,
+and the linker needs to add padding to the output section to meet
+the palign requirements, then the linker will also initialize the
+padding space that it has created. By default, padding space will
+be filled with a value of 0 (zero). However, if the output section
+has a fill operator applied to it, then any padding created by the
+linker to meet the palign requirements will be filled with the 
+value provided align with the fill operator.
+
+For example, consider the following section specification ...
+
+.mytext: palign(8), fill = 0xffffffff {} > PMEM
+
+Assume that the length of the .mytext section is 17 bytes before
+the palign operator is applied. Assume also that the contents
+of .mytext are as follows:
+
+addr content
+---- ----------
+0000 0x12345678
+0004 0x12345678
+0008 0x12345678
+000c 0x12345678
+0010 0x12
+
+After the palign operator is applied, the length of .mytext will
+be 24 bytes, and its contents will be as follows:
+
+addr content
+---- ----------
+0000 0x12345678
+0004 0x12345678
+0008 0x12345678
+000c 0x12345678
+0010 0x12ffffff
+0014 0xffffffff
+
+The size of .mytext has been bumped to a multiple of 8 bytes and the
+padding created by the linker has been filled with 0xff. 
+
+Note that the fill value specified in the LCF is interpreted as a 32-bit 
+constant, so if you specify:
+
+.mytext: palign(8), fill = 0xff {} > PMEM
+
+The fill value assumed by the linker is "0x000000ff", and .mytext will
+then have the following contents:
+
+addr content
+---- ----------
+0000 0x12345678
+0004 0x12345678
+0008 0x12345678
+000c 0x12345678
+0010 0x120000ff
+0014 0x000000ff
+
+If the palign operator is applied to an uninitialized section, then
+the size of the section will be bumped to the appropriate boundary,
+as needed, but any padding created will NOT be initialized.
+
+
+================================================================================
+10.  Linker XML Output
+================================================================================
+The linker option '--xml_link_info <file>' will produce an XML file that
+contains detailed information about the results of a link, such things as
+logical groupings, memory placement, symbol names and values, various
+statistics, etc.

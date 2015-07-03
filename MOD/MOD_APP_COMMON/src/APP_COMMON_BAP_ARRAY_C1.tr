@@ -1,0 +1,9 @@
+#TRACE_ID '0x6006F 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_COMMON '"POOL_sfAllocate( POOL_enBapArrayHeader) failed" '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '111 
+#TRACE_ID '0x600AC 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_COMMON '"POOL_sfAllocate( POOL_enBapArrayHeader) failed" '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '172 
+#TRACE_ID '0x60179 'DEBUG_VALUE4 'DBG_LEV_DBG 'MOD_APP_COMMON '"Converted ArrayHeader: mode: %x, start: %x, elements:%x " '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '377 
+#TRACE_ID '0x6017A 'DEBUG_VALUE4 'DBG_LEV_DBG 'MOD_APP_COMMON '"to ConvHeader: forward: %d, start: %x, elements:%x" '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '378 
+#TRACE_ID '0x601B1 'DEBUG_VALUE4 'DBG_LEV_DBG 'MOD_APP_COMMON '"Converted ArrayHeader: mode: %x, start: %x, elements:%x " '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '433 
+#TRACE_ID '0x601B2 'DEBUG_VALUE4 'DBG_LEV_DBG 'MOD_APP_COMMON '"to ConvHeader: forward: %d, start: %x, elements:%x" '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '434 
+#TRACE_ID '0x601DC 'DEBUG_VALUE4 'DBG_LEV_DBG 'MOD_APP_COMMON '"ConvSWArrayHeader: mode: %x, start: %x, elements:%x " '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '476 
+#TRACE_ID '0x601DD 'DEBUG_VALUE4 'DBG_LEV_DBG 'MOD_APP_COMMON '"to ConvHeader: forward: %d, start: %x, elements:%x" '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '477 
+#TRACE_ID '0x60205 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_APP_COMMON '"sfSetPOs: IndexSize is not set although pos (%x) is > 0xFF" '\MOD\MOD_APP_COMMON\src 'APP_COMMON_BAP_ARRAY_C1.c '517 

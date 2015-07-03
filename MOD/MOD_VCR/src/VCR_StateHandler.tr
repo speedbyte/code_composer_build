@@ -1,0 +1,182 @@
+#ENUM  'VCRMenuEventEnum 'UNDEF                        '0 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '131 
+#ENUM  'VCRMenuEventEnum 'SIVR_SUPPORTED               '1 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '132 
+#ENUM  'VCRMenuEventEnum 'SIVR_STARTED                 '2 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '133 
+#ENUM  'VCRMenuEventEnum 'SIVR_STOPPED                 '3 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '134 
+#ENUM  'VCRMenuEventEnum 'LANGNUM_AVAIL                '4 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '135 
+#ENUM  'VCRMenuEventEnum 'LANGMAP_AVAIL                '5 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '136 
+#ENUM  'VCRMenuEventEnum 'CUR_LANG_AVAIL               '6 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '137 
+#ENUM  'VCRMenuEventEnum 'CUR_LANG_CHANGED             '7 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '138 
+#ENUM  'VCRMenuEventEnum 'LANG_CHANG_REG               '8 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '139 
+#ENUM  'VCRMenuEventEnum 'STRING_PRMT_OK               '9 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '140 
+#ENUM  'VCRMenuEventEnum 'START_PROMTP_END             '10 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '141 
+#ENUM  'VCRMenuEventEnum 'STOP_PROMPT_END              '11 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '142 
+#ENUM  'VCRMenuEventEnum 'CONNECT_PROMTP_END           '12 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '143 
+#ENUM  'VCRMenuEventEnum 'PROC_ERROR                   '13 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '144 
+#ENUM  'VCRMenuEventEnum 'PTT                          '14 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '145 
+#ENUM  'VCRMenuEventEnum 'CALL                         '15 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '146 
+#ENUM  'VCRMenuEventEnum 'OK                           '16 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '147 
+#ENUM  'VCRMenuEventEnum 'VRSTARTED                    '17 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '148 
+#ENUM  'VCRMenuEventEnum 'DIAL_OK                      '18 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '149 
+#ENUM  'VCRMenuEventEnum 'CK5050_DOWN                  '19 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '150 
+#ENUM  'VCRMenuEventEnum 'ON_MUTE_DELAY                '20 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '151 
+#ENUM  'VCRMenuEventEnum 'MDI_PAUSED                   '21 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '152 
+#ENUM  'VCRMenuEventEnum 'PREP_OK                      '22 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '153 
+#ENUM  'VCRMenuEventEnum 'REDIAL_PROMPT_END            '23 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '154 
+#ENUM  'VCRMenuEventEnum 'REDIAL_DONE                  '24 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '155 
+#ENUM  'VCRMenuEventEnum 'ERROR                        '25 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '156 
+#ENUM  'VCRMenuEventEnum 'PBENTRY_DATA_AVAIL           '26 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '157 
+#ENUM  'VCRMenuEventEnum 'APP_TRIG_PB_QUERY            '27 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '158 
+#ENUM  'VCRMenuEventEnum 'READ_SMS                     '28 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '159 
+#ENUM  'VCRMenuEventEnum 'SMS_INFO_AVAIL               '29 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '160 
+#ENUM  'VCRMenuEventEnum 'MANUAL_PB_SYNC               '30 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '161 
+#ENUM  'VCRMenuEventEnum 'MANUAL_PB_SYNC_OK            '31 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '162 
+#ENUM  'VCRMenuEventEnum 'DELAY_LIST_READ              '32 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '163 
+#ENUM  'VCRMenuEventEnum 'STR_PRMT_END_PTT             '33 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '164 
+#ENUM  'VCRMenuEventEnum 'STR_PRMT_END_CALL            '34 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '165 
+#ENUM  'VCRMenuEventEnum 'STR_PRMT_END_OK              '35 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '166 
+#ENUM  'VCRMenuEventEnum 'PRMT_END_RESTART             '36 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '167 
+#ENUM  'VCRMenuEventEnum 'APP_TRIGGER                  '37 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '168 
+#ENUM  'VCRMenuEventEnum 'NAME_RECORDED                '38 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '169 
+#ENUM  'VCRMenuEventEnum 'NAME_RECORD_FAIL             '39 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '170 
+#ENUM  'VCRMenuEventEnum 'NAME_RECORD_FAIL_SHORT       '40 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '171 
+#ENUM  'VCRMenuEventEnum 'NAME_RECORD_FAIL_NOT_UNIQUE  '41 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '172 
+#ENUM  'VCRMenuEventEnum 'VT_ADD_DONE                  '42 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '173 
+#ENUM  'VCRMenuEventEnum 'VT_DELETE_DONE               '43 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '174 
+#ENUM  'VCRMenuEventEnum 'VT_QUERY_DONE                '44 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '175 
+#ENUM  'VCRMenuEventEnum 'HAPTIC                       '45 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '176 
+#ENUM  'VCRMenuEventEnum 'INCOMING_CALL                '46 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '177 
+#ENUM  'VCRMenuEventEnum 'REC_TRAINING_INFO            '47 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '178 
+#ENUM  'VCRMenuEventEnum 'TRAINING_REJECT              '48 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '179 
+#ENUM  'VCRMenuEventEnum 'TRAINING_ACCEPT              '49 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '180 
+#ENUM  'VCRMenuEventEnum 'TRAINING_FINISH              '50 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '181 
+#ENUM  'VCRMenuEventEnum 'ADDCONTACT_NUMBER            '51 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '182 
+#ENUM  'VCRMenuEventEnum 'SELECT_ENTRY                 '52 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '183 
+#ENUM  'VCRMenuEventEnum 'MARK_SMS_READ                '53 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '184 
+#ENUM  'VCRMenuEventEnum 'ASR_RETRIGGER                '54 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '185 
+#ENUM  'VCRMenuEventEnum 'OUTGOING_CALL                '55 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '186 
+#ENUM  'VCRMenuEventEnum 'CK5050_POWER_OFF             '56 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '187 
+#ENUM  'VCRMenuEventEnum 'REQUEST_MUTE                 '57 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '188 
+#ENUM  'VCRMenuEventEnum 'WAIT_MUTE_ACK                '58 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '189 
+#ENUM  'VCRMenuEventEnum 'MUTE_ACK_START_ENGINE        '59 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '190 
+#ENUM  'VCRMenuEventEnum 'VT_DELETE_ALL_DONE           '60 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '191 
+#ENUM  'VCRMenuEventEnum 'APP_TRIG_PB_SEARCH_ID        '61 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '192 
+#ENUM  'VCRMenuEventEnum 'APP_PB_ID_AVAIL              '62 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '193 
+#ENUM  'VCRMenuEventEnum 'CALL_PB_SELECTION            '63 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '194 
+#TRACE_ID '0x9600D5 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_VCR '"internal Event %d MenuState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '213 
+#TRACE_ID '0x9600E0 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_VCR '"internal Command %d MenuState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '224 
+#TRACE_ID '0x960231 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"VCRMenuEvent: $VCRMenuEventEnum$=%d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '561 
+#ENUM  'VCRMenuTreeEnum 'IDLE                                   '0 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '574 
+#ENUM  'VCRMenuTreeEnum 'MAIN                                   '1 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '575 
+#ENUM  'VCRMenuTreeEnum 'DIALNAMECONFIRM                        '2 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '576 
+#ENUM  'VCRMenuTreeEnum 'DIALNAMECONFIRMCATEGORIES              '3 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '577 
+#ENUM  'VCRMenuTreeEnum 'DIALNAMECONFIRMRESOLVEAMBINAMES        '4 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '578 
+#ENUM  'VCRMenuTreeEnum 'DIALNUMBER                             '5 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '579 
+#ENUM  'VCRMenuTreeEnum 'DIALNUMBERCORRECT                      '6 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '580 
+#ENUM  'VCRMenuTreeEnum 'MUSIC                                  '7 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '581 
+#ENUM  'VCRMenuTreeEnum 'MOREOPTIONS                            '8 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '582 
+#ENUM  'VCRMenuTreeEnum 'PLAYADDRESSBOOK                        '9 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '583 
+#ENUM  'VCRMenuTreeEnum 'PLAYADDRESSBOOKENTRY                   '10 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '584 
+#ENUM  'VCRMenuTreeEnum 'PLAYADDRESSBOOKOPTIONS                 '11 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '585 
+#ENUM  'VCRMenuTreeEnum 'RESOLVEMULTIPLENUMPERCATEGORY          '12 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '586 
+#ENUM  'VCRMenuTreeEnum 'RESETNAMECONFIRM                       '13 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '587 
+#ENUM  'VCRMenuTreeEnum 'CALLSTACKS                             '14 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '588 
+#ENUM  'VCRMenuTreeEnum 'READCALLSTACKS                         '15 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '589 
+#ENUM  'VCRMenuTreeEnum 'CALLSTACKSOPTIONS                      '16 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '590 
+#ENUM  'VCRMenuTreeEnum 'CALLSTACKSRESETCONFIRM                 '17 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '591 
+#ENUM  'VCRMenuTreeEnum 'SETTINGS                               '18 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '592 
+#ENUM  'VCRMenuTreeEnum 'BLUETOOTHOPTIONS                       '19 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '593 
+#ENUM  'VCRMenuTreeEnum 'CHANGEBLUETOOTHPIN                     '20 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '594 
+#ENUM  'VCRMenuTreeEnum 'CHANGEBLUETOOTHPINCORRECT              '21 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '595 
+#ENUM  'VCRMenuTreeEnum 'CALLBACKMISSEDCALLS                    '22 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '596 
+#ENUM  'VCRMenuTreeEnum 'RESTOREFACTORYDEFAULTSCONFIRM          '23 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '597 
+#ENUM  'VCRMenuTreeEnum 'RINGTONE                               '24 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '598 
+#ENUM  'VCRMenuTreeEnum 'RINGTONEOPTIONS                        '25 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '599 
+#ENUM  'VCRMenuTreeEnum 'CHANGELANGUAGE                         '26 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '600 
+#ENUM  'VCRMenuTreeEnum 'CHANGELANGUAGECONFIRM                  '27 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '601 
+#ENUM  'VCRMenuTreeEnum 'DELETEALLVOICETAGSCONFIRM              '28 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '602 
+#ENUM  'VCRMenuTreeEnum 'VOICEMEMOS                             '39 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '603 
+#ENUM  'VCRMenuTreeEnum 'VOICEMEMOSPLAYMEMOS                    '30 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '604 
+#ENUM  'VCRMenuTreeEnum 'VOICEMEMOSPLAYMEMOSOPTIONS             '31 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '605 
+#ENUM  'VCRMenuTreeEnum 'VOICEMEMOSCONFIRMDELETE                '32 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '606 
+#ENUM  'VCRMenuTreeEnum 'VOICEMEMOSCONFIRMDELETEALL             '33 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '607 
+#ENUM  'VCRMenuTreeEnum 'TRAINING                               '34 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '608 
+#ENUM  'VCRMenuTreeEnum 'READSMS                                '35 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '609 
+#ENUM  'VCRMenuTreeEnum 'READSMSOPTIONS                         '36 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '610 
+#ENUM  'VCRMenuTreeEnum 'DELETESMSCONFIRM                       '37 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '611 
+#ENUM  'VCRMenuTreeEnum 'CALLBACKSMSCONFIRM                     '38 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '612 
+#ENUM  'VCRMenuTreeEnum 'TRAININGREADPROMPT                     '49 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '613 
+#ENUM  'VCRMenuTreeEnum 'STORENAME                              '40 '\MOD\MOD_VCR\src 'VCR_StateHandler.c '614 
+#TRACE_ID '0x96026C 'DEBUG_STATE2 'DBG_LEV_TRC 'MOD_VCR '"Menu $VCRMenuTreeEnum$ -> $VCRMenuTreeEnum$ (%d->%d)" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '620 
+#TRACE_ID '0x960272 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = Idle" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '626 
+#TRACE_ID '0x960276 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = MainMenu" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '630 
+#TRACE_ID '0x96027A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = DialNameConfirm" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '634 
+#TRACE_ID '0x96027E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = DialNameConfirmCategories" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '638 
+#TRACE_ID '0x960282 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = DialNameConfirmResolveAmbiguouseNames" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '642 
+#TRACE_ID '0x960286 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = DialNumber" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '646 
+#TRACE_ID '0x96028A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = DialNumberCorrect" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '650 
+#TRACE_ID '0x96028E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = Music" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '654 
+#TRACE_ID '0x960292 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = MoreOptions" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '658 
+#TRACE_ID '0x960296 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = PlayAddressbook" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '662 
+#TRACE_ID '0x96029A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = PlayAddressbookEntry" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '666 
+#TRACE_ID '0x96029E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = PlayAddressbookOptions" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '670 
+#TRACE_ID '0x9602A2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ResolveMultipleNumbersPerCategory" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '674 
+#TRACE_ID '0x9602A6 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ResetNameConfirm" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '678 
+#TRACE_ID '0x9602AA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = CallStacks" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '682 
+#TRACE_ID '0x9602AE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ReadCallStacks" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '686 
+#TRACE_ID '0x9602B2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = CallStacksOptions" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '690 
+#TRACE_ID '0x9602B6 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = CallStacksResetConfirm" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '694 
+#TRACE_ID '0x9602BA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = Settings" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '698 
+#TRACE_ID '0x9602BE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = BluetoothOptions" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '702 
+#TRACE_ID '0x9602C2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ChangeBluetoothPIN" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '706 
+#TRACE_ID '0x9602C6 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ChangeBluetoothPINCorrect" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '710 
+#TRACE_ID '0x9602CA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = CallBackMissedCalls" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '714 
+#TRACE_ID '0x9602CE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = RestoreFactoryDefaultsConfirm" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '718 
+#TRACE_ID '0x9602D2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = Ringtone" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '722 
+#TRACE_ID '0x9602D6 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = RingtoneOptions" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '726 
+#TRACE_ID '0x9602DA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ChangeLanguage" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '730 
+#TRACE_ID '0x9602DE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ChangeLanguageConfirm" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '734 
+#TRACE_ID '0x9602E2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = DeleteAllVoiceTagsConfirm" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '738 
+#TRACE_ID '0x9602E6 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = Training" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '742 
+#TRACE_ID '0x9602EA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ReadSMS" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '746 
+#TRACE_ID '0x9602EE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = ReadSMSOptions" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '750 
+#TRACE_ID '0x9602F2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = DeleteSMSConfirm" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '754 
+#TRACE_ID '0x9602F6 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = CallBackSMSConfirm" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '758 
+#TRACE_ID '0x9602FA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> %d = StoreName" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '762 
+#TRACE_ID '0x9602FE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"MenuState %d -> MenuState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '766 
+#TRACE_ID '0x960307 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"NOT processed isEvent %d Event %d Cmd %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '775 
+#TRACE_ID '0x960308 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"NOT processed State %d -> State %d        " '\MOD\MOD_VCR\src 'VCR_StateHandler.c '776 
+#TRACE_ID '0x960354 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_VCR '"Mark SMS %d Read Error Resp %d - set mark back to 0" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '852 
+#TRACE_ID '0x960362 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"SIVR MuteRequest not accepted !" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '866 
+#TRACE_ID '0x96036D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"SIVR MuteRequest accepted -> wait for Mute ACK" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '877 
+#TRACE_ID '0x960380 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"SIVR still waits for Mute ACK - Retry %d Max %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '896 
+#TRACE_ID '0x96038A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_VCR '"SIVR didn't get a Mute ACK after %d Retries !!! -> give up" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '906 
+#TRACE_ID '0x960397 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"SIVR had a Error or was ousted -> give up" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '919 
+#TRACE_ID '0x9603A5 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"SIVR still in SYNC - Retry %d Max %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '933 
+#TRACE_ID '0x9603E1 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Language current %d required %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '993 
+#TRACE_ID '0x9603F3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Original settings restored" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1011 
+#TRACE_ID '0x9603FE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VR START ignored MenuState %d SysState" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1022 
+#TRACE_ID '0x960417 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"STOP INVALID MenuState %d SysState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1047 
+#TRACE_ID '0x960423 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"start SMS Mark Read %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1059 
+#TRACE_ID '0x96042D 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_VCR '"STOP MenuState %d SysState %d  - ignored" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1069 
+#TRACE_ID '0x96043B 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Goto menu music" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1083 
+#TRACE_ID '0x960453 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"received DIAL OK" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1107 
+#TRACE_ID '0x96046E 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"Stop VR-Call/POFF in MenuState %d SysState %d EngineState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1134 
+#TRACE_ID '0x960497 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"PTT ignored in MenuState: $ATSIVRPromptEnum$ = %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1175 
+#TRACE_ID '0x960498 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"SysState: $VCRSystemStateEnum$ = %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1176 
+#TRACE_ID '0x960499 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"  EngineState: $ATSIVREngStatusEnum$ = %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1177 
+#TRACE_ID '0x9604AA 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Ignore PTT Press" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1194 
+#TRACE_ID '0x9604B4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"PTT but Pending Stop - Stop Engine" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1204 
+#TRACE_ID '0x9604BA 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"PTT pressed - Stop Engine" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1210 
+#TRACE_ID '0x9604C4 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"PTT ignored in MenuState: $ATSIVRPromptEnum$ = %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1220 
+#TRACE_ID '0x9604C5 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"SysState: $VCRSystemStateEnum$ = %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1221 
+#TRACE_ID '0x9604C6 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"  EngineState: $ATSIVREngStatusEnum$ = %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1222 
+#TRACE_ID '0x9604D4 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"RETRY SYSSTOP in MenuState %d SysState %d EngineState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1236 
+#TRACE_ID '0x9604E0 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"PTT ignored in MenuState %d SysState %d EngineState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1248 
+#TRACE_ID '0x9604E8 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"OK ignored in MenuState %d SysState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1256 
+#TRACE_ID '0x9604EC 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Hook ignored in MenuState %d SysState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1260 
+#TRACE_ID '0x960550 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Language change trig ignore %d SysState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1360 
+#TRACE_ID '0x960584 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Language changed" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1412 
+#TRACE_ID '0x960611 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"PTT ignored in MenuState %d SysState %d EngineState %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1553 
+#TRACE_ID '0x96064C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"HandleMainMenuEvent event: %d is_event %d" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1612 
+#TRACE_ID '0x960699 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"HandleMainMenuEvent VCR_MEVT_PTT: simulate STRING_PRMT_OK, bugfix USA-BMG SOP2" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1689 
+#TRACE_ID '0x9606ED 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"RT-13225: Main Menu Settings command identified" '\MOD\MOD_VCR\src 'VCR_StateHandler.c '1773 

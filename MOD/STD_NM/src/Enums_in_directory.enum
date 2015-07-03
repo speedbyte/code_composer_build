@@ -1,0 +1,12 @@
+DEBUG_STATE_ENUM_NAME='NMModeName                           'DEBUG_STATE_NAME='BusSleep                                                               'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='NMModeName                           'DEBUG_STATE_NAME='Awake                                                                  'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='NmInitType                           'DEBUG_STATE_NAME='NM_DISABLE                                                             'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='NmInitType                           'DEBUG_STATE_NAME='NM_NORMAL                                                              'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='NmInitType                           'DEBUG_STATE_NAME='NM_NMPASSIVE                                                           'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='NmInitType                           'DEBUG_STATE_NAME='NM_SLEEPIND                                                            'DEBUG_STATE_NUMBER='3        '
+DEBUG_STATE_ENUM_NAME='NmInitType                           'DEBUG_STATE_NAME='NM_SLEEPIND_NMPASSIVE                                                  'DEBUG_STATE_NUMBER='4        '
+DEBUG_STATE_ENUM_NAME='NmInitType                           'DEBUG_STATE_NAME='NM_SENDSLEEPACK                                                        'DEBUG_STATE_NUMBER='5        '
+DEBUG_STATE_ENUM_NAME='tNmCommStateType                     'DEBUG_STATE_NAME='CarWupOff                                                              'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='tNmCommStateType                     'DEBUG_STATE_NAME='CarWupOn                                                               'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='tNmCommStateType                     'DEBUG_STATE_NAME='CarWupOn1stReq                                                         'DEBUG_STATE_NUMBER='2        '
+                       

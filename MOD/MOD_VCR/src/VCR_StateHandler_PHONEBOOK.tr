@@ -1,0 +1,25 @@
+#TRACE_ID '0x990121 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR readpb name pb_entries %d  name_idx %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '289 
+#TRACE_ID '0x990132 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR readpb name pb_entries %d  name_avail %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '306 
+#TRACE_ID '0x9901B5 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"unhandled PTT is handled now" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '437 
+#TRACE_ID '0x9901B9 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"unhandled PTT could not handled" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '441 
+#TRACE_ID '0x9901BF 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"unhandled HOOK is handled now in PB" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '447 
+#TRACE_ID '0x990213 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"handle PTT later" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '531 
+#TRACE_ID '0x990261 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"VCR name data n=%d c=%d n_cat=%d loc_avail=%d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '609 
+#TRACE_ID '0x990267 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR name data location_id=%d IC=%d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '615 
+#TRACE_ID '0x9902B7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"HELP CMD AFTER LIST END" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '695 
+#TRACE_ID '0x99033D 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_VCR '"VCR name data n=%d c=%d n_cat=%d loc_avail=%d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '829 
+#TRACE_ID '0x990343 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR name data location_id=%d IC=%d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '835 
+#TRACE_ID '0x9903A2 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Ignore further PTT press" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '930 
+#TRACE_ID '0x9904F3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"unhandled PTT is handled now in CS" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1267 
+#TRACE_ID '0x9904F9 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"unhandled PTT could not handled in CS" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1273 
+#TRACE_ID '0x9904FF 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"unhandled HOOK is handled now in CS" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1279 
+#TRACE_ID '0x990503 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Bugfix VCR, Nummer unbekannt, HOOK button pressed" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1283 
+#TRACE_ID '0x990593 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"handle PTT later in CS" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1427 
+#TRACE_ID '0x9905B6 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Hook Button ignored in ReadCallStacksEvent" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1462 
+#TRACE_ID '0x990690 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"name_avail=%d phone_number_len%d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1680 
+#TRACE_ID '0x990772 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Trigger next read Current %d Total %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1906 
+#TRACE_ID '0x99077C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Read %d of %d - no next read" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1916 
+#TRACE_ID '0x990786 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Trigger next read immediately Current %d Total %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '1926 
+#TRACE_ID '0x990878 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR SMS numbers unread %d read %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '2168 
+#TRACE_ID '0x990B3D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"VR still in SYNC -> wait" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '2877 
+#TRACE_ID '0x990B9A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR store name change to numbertype %d is_for_contact %d" '\MOD\MOD_VCR\src 'VCR_StateHandler_PHONEBOOK.c '2970 

@@ -1,0 +1,6 @@
+#ENUM  'CrcmgrBackupStatesType                              'CRC_BACKUP_NORMALMODE_NO_CRC_ERROR                                                       '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'CrcmgrBackupStatesType                              'CRC_BACKUP_READ_BACKUPDATA                                                               '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'CrcmgrBackupStatesType                              'CRC_BACKUP_RESET_CRC                                                                     '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'CrcmgrBackupStatesType                              'CRC_BACKUP_WRITE_BACKUPDATA                                                              '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'CrcmgrBackupStatesType                              'CRC_BACKUP_CALULATE_NEW_CRC                                                              '4                            'ABCD   'ABCD.c  '123   
+#ENUM  'CrcmgrBackupStatesType                              'CRC_BACKUP_CHECK_RECOVER_DATA_AGAINST_NEW_CRC                                            '5                            'ABCD   'ABCD.c  '123   

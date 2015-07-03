@@ -1,0 +1,4 @@
+DEBUG_STATE_ENUM_NAME='WakeUp                               'DEBUG_STATE_NAME='NO_RESET                                                               'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='WakeUp                               'DEBUG_STATE_NAME='KLEMME30_RESET                                                         'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='WakeUp                               'DEBUG_STATE_NAME='CAN_WAKE_UP                                                            'DEBUG_STATE_NUMBER='2        '
+                       

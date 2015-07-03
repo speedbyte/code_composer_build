@@ -1,0 +1,27 @@
+/* Kernbauer Version: 1.14 Konfiguration: TMS470 Erzeugungsgangnummer: 372 */
+
+/*****************************************************************************
+| Project Name: OIL 2.3
+|    File Name: TMS470R1.s23
+|
+|  General code: @Version: 3.54b@
+|  Module version: $vv$=1.00
+|
+|  Description: Definition of implementation specific standard objects 
+|
+|-----------------------------------------------------------------------------
+|               C O P Y R I G H T
+|-----------------------------------------------------------------------------
+| Copyright (c) 2001-2007 Vector Informatik GmbH               All rights reserved.
+|****************************************************************************/
+
+COUNTER SystemTimer {
+   MAXALLOWEDVALUE = 0x7FFFFFFF:"0xFFFFFFFF if UseGeneratedFastAlarm";
+   TICKSPERBASE = 1;
+   MINCYCLE = 1;
+};
+
+APPMODE OSDEFAULTAPPMODE;
+
+
+// End of TMS470R1.s23

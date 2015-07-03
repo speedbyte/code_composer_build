@@ -1,0 +1,28 @@
+#TRACE_ID '0x1C00DB 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vHandleErmATOk: invalid fctId %d (rsp %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '219 
+#TRACE_ID '0x1C00EF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_PHONE '"HaErmATOk: fctId %d" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '239 
+#TRACE_ID '0x1C0103 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_PHONE '"HaErmATError: fctId %d" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '259 
+#TRACE_ID '0x1C0162 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"OnDialResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '354 
+#TRACE_ID '0x1C0185 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnDialIndexResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '389 
+#TRACE_ID '0x1C01A8 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnRedialResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '424 
+#TRACE_ID '0x1C01CC 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnDialNumberTypeResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '460 
+#TRACE_ID '0x1C01DD 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnAcceptCallResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '477 
+#TRACE_ID '0x1C01F2 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnHangUpCallResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '498 
+#TRACE_ID '0x1C022C 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnHangUpAllCallResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '556 
+#TRACE_ID '0x1C0241 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnPhoneStatusResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '577 
+#TRACE_ID '0x1C0253 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnCallStateResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '595 
+#TRACE_ID '0x1C0264 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnCallInfoResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '612 
+#TRACE_ID '0x1C0286 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnSendDtmfResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '646 
+#TRACE_ID '0x1C0299 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnPlpdRequestResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '665 
+#TRACE_ID '0x1C02AB 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnCallHoldResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '683 
+#TRACE_ID '0x1C02BD 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnCallReplaceResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '701 
+#TRACE_ID '0x1C02CE 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnResumeCallResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '718 
+#TRACE_ID '0x1C02EE 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnHeadsetOnOffResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '750 
+#TRACE_ID '0x1C0312 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnHandsFreeOnOffResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '786 
+#TRACE_ID '0x1C0335 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnMicroMuteOnOffResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '821 
+#TRACE_ID '0x1C0348 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnSwitchCallsResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '840 
+#TRACE_ID '0x1C035A 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnJoinConferenceResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '858 
+#TRACE_ID '0x1C036C 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnSplitConferenceResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '876 
+#TRACE_ID '0x1C0387 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnRelActAccWaitCall: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '903 
+#TRACE_ID '0x1C0399 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnPutCallsThrough: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '921 
+#TRACE_ID '0x1C03AB 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_PHONE '"vOnHfpVersionResult: invalid state %d (fctId %d)" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '939 
+#TRACE_ID '0x1C03B8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_PHONE '"SetOuCallDet: called" '\MOD\MOD_APP_PHONE\src 'APP_PHONE_ERM_C1.c '952 

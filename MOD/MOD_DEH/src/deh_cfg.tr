@@ -1,0 +1,12 @@
+#TRACE_ID '0x510437 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_DEH '"Read DEH_UnlearnCounter from eeprom = %d" '\MOD\MOD_DEH\src 'deh_cfg.c '1079 
+#TRACE_ID '0x51043F 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_DEH '"E2P Read FAIL" '\MOD\MOD_DEH\src 'deh_cfg.c '1087 
+#TRACE_ID '0x510488 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_DEH '"Set Failure Memory at Position: %d,Size %d" '\MOD\MOD_DEH\src 'deh_cfg.c '1160 
+#TRACE_ID '0x51048A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_DEH '"Internal DTC-NBR %d, Status %d" '\MOD\MOD_DEH\src 'deh_cfg.c '1162 
+#TRACE_ID '0x510496 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_DEH '"EEPROM Write for DEH is busy for Error Memory Entries" '\MOD\MOD_DEH\src 'deh_cfg.c '1174 
+#TRACE_ID '0x5104BC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_DEH '"EEPROM DEH Write register was OK in retry part" '\MOD\MOD_DEH\src 'deh_cfg.c '1212 
+#TRACE_ID '0x5104C2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_DEH '"EEPROM DEH Write not register. Try: %d" '\MOD\MOD_DEH\src 'deh_cfg.c '1218 
+#TRACE_ID '0x5104C9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_DEH '"MAX EEPROM WRITE RETRIES reached for DEH - Stop." '\MOD\MOD_DEH\src 'deh_cfg.c '1225 
+#TRACE_ID '0x51056C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_DEH '"Verlernzaehler %d" '\MOD\MOD_DEH\src 'deh_cfg.c '1388 
+#TRACE_ID '0x510577 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_DEH '"No Diagnose 1 Nachricht, Last saved Verlernzaehler %d" '\MOD\MOD_DEH\src 'deh_cfg.c '1399 
+#TRACE_ID '0x5105DC 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_DEH '"DEH_EventNumber_muT: %d, DEH_StEV_stRepEvent_mu8: %d" '\MOD\MOD_DEH\src 'deh_cfg.c '1500 
+#TRACE_ID '0x5105E0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_DEH '"Attention: DTC %d isn#t stored !" '\MOD\MOD_DEH\src 'deh_cfg.c '1504 

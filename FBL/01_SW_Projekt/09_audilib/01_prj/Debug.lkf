@@ -1,0 +1,10 @@
+-rv
+"r:\09_audilib\05_out\AUDILIB_cc_tms470_VW_UDS.lib"
+"r:\09_audilib\03_obj\ADLATUS_EventHandlerAudi.obj"
+"r:\09_audilib\03_obj\ADLATUS_KWP2000Audi.obj"
+"r:\09_audilib\03_obj\ADLATUS_Main.obj"
+"r:\09_audilib\03_obj\ADLATUS_SequenceAudi.obj"
+"r:\09_audilib\03_obj\ADLATUS_SessionHandler.obj"
+"r:\09_audilib\03_obj\ADLATUS_Setup.obj"
+"r:\09_audilib\03_obj\ADLATUS_Timer.obj"
+"r:\09_audilib\03_obj\ADLATUS_Tp.obj"

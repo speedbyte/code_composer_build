@@ -1,0 +1,148 @@
+#TRACE_ID '0x590096 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM devicetable: BTDev: %d PhyDev: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '150 
+#TRACE_ID '0x590099 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM devicetable: UserTable: %d PlayerHsTable %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '153 
+#TRACE_ID '0x59009C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM devicetable: ActProfileList %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '156 
+#TRACE_ID '0x5901E8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"InitBTDeviceValues %d ooR" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '488 
+#TRACE_ID '0x5902B9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"ERM_DeleteDeviceIfPpdeTimeout INVALID DEVICEID" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '697 
+#TRACE_ID '0x5902FC 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_ERM '"ERM DeviceConnectionUpdate id: (%d connected %d)" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '764 
+#TRACE_ID '0x5902FE 'DEBUG_VALUE4 'DBG_LEV_ERR 'MOD_ERM '"ERM DeviceConnectionUpdate %d %d %d %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '766 
+#TRACE_ID '0x590303 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"ERM DeviceConnectionUpdate .............%d " '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '771 
+#TRACE_ID '0x590309 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"BTDeviceConnectionUpdate %d ooR" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '777 
+#TRACE_ID '0x590334 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_ERM '"Send Message to APP_CAN with BT state $BooleanType$ = %d " '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '820 
+#TRACE_ID '0x59034E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"_ERM_sFBTSdpUpdate %d ooR" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '846 
+#TRACE_ID '0x590381 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"BTSupportedServiceUpdate %d ooR" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '897 
+#TRACE_ID '0x5903C5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"FillDeviceInfo id ooR %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '965 
+#TRACE_ID '0x59040A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM SN %d not supported (%d)" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1034 
+#TRACE_ID '0x59042F 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM ServiceRes ooR %d (%d)" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1071 
+#TRACE_ID '0x590443 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM Service Update ooR %d (%d)" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1091 
+#TRACE_ID '0x59045D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM new Notify %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1117 
+#TRACE_ID '0x5905ED 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"ConsistCheck: invalid state %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1517 
+#TRACE_ID '0x5905F5 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"BT device table is incons" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1525 
+#TRACE_ID '0x5905FD 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"Phy device table is incons" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1533 
+#TRACE_ID '0x590605 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"UserTable is incons" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1541 
+#TRACE_ID '0x59060D 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"PlHsTable table is incons" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1549 
+#TRACE_ID '0x590615 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"BT device table is incons" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1557 
+#TRACE_ID '0x59061D 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"ActProf_Pl is incons" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1565 
+#TRACE_ID '0x590625 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"ActProf_Hs is incons" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1573 
+#TRACE_ID '0x590641 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"ConsistencyCheck finished!" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1601 
+#TRACE_ID '0x590654 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"OnConsistencyCheckCb rsp %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1620 
+#TRACE_ID '0x59067B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCBTDeviceTable: btAddr doesn't match %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1659 
+#TRACE_ID '0x590684 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCBTDeviceTable: not found in PhyDevTable %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1668 
+#TRACE_ID '0x5906A6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCBTDeviceTable: no profile found %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1702 
+#TRACE_ID '0x5906BC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCBTDeviceTable: SendMessage error %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1724 
+#TRACE_ID '0x5906E4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: device id invalid %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1764 
+#TRACE_ID '0x5906EF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: not found in BT device table %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1775 
+#TRACE_ID '0x5906FB 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: dev name len: %d invalid %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1787 
+#TRACE_ID '0x590715 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: DelPersPhyTable: Eeprom write busy" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1813 
+#TRACE_ID '0x59071B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: DelPersPhyTable error %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1819 
+#TRACE_ID '0x590743 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCUserTable: dev id invalid %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1859 
+#TRACE_ID '0x59074E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCUserTable: not found in BT dev table %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1870 
+#TRACE_ID '0x590764 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCUserTable: not found in ActProfList %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1892 
+#TRACE_ID '0x59077B 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: DelPersUserTable: Eeprom write busy" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1915 
+#TRACE_ID '0x590781 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: DelPersUserTable error %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1921 
+#TRACE_ID '0x5907A7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPlayHsTable: dev id invalid %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1959 
+#TRACE_ID '0x5907B2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPlayHsTable: not found in BT devtable %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1970 
+#TRACE_ID '0x5907CD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPlayHsTable: not found in BT devtable %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '1997 
+#TRACE_ID '0x5907E0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPlayHsTable: not found in ActProfList(Headset) %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2016 
+#TRACE_ID '0x5907F8 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: DelPersPlHSTable: Eeprom write busy" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2040 
+#TRACE_ID '0x5907FE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: DelPersPlHSTable error %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2046 
+#TRACE_ID '0x590824 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCActProfileUser: dev id invalid %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2084 
+#TRACE_ID '0x59082F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCActProfileUser: not found in UserTable %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2095 
+#TRACE_ID '0x590847 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: DelPersActProfUser: Eeprom write busy" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2119 
+#TRACE_ID '0x59084D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: DelPersActProfUser error %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2125 
+#TRACE_ID '0x590874 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCActProfPlay: dev id invalid %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2164 
+#TRACE_ID '0x59087F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCActProfPlay: not found in PlHsTable %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2175 
+#TRACE_ID '0x590897 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: _ERM_rcDelPersActProfPl: Eeprom write busy" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2199 
+#TRACE_ID '0x59089D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: _ERM_rcDelPersActProfPl error %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2205 
+#TRACE_ID '0x5908C4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCActProfHS: dev id invalid %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2244 
+#TRACE_ID '0x5908CF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCActProfHS: not found in PlHsTable %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2255 
+#TRACE_ID '0x5908E6 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: _ERM_rcDelPersActProfHs: Eeprom write busy" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2278 
+#TRACE_ID '0x5908EC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"CCPhyTable: _ERM_rcDelPersActProfHs error %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '2284 
+#TRACE_ID '0x590CE6 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_ERM '"user profile idx %d read %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3302 
+#TRACE_ID '0x590CEB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read BUSY: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3307 
+#TRACE_ID '0x590CF0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read FAIL: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3312 
+#TRACE_ID '0x590CF7 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"user profile idx oor %d > %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3319 
+#TRACE_ID '0x590D13 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"WrPersUserProf: prof %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3347 
+#TRACE_ID '0x590D27 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"WrPersUserProf: failed prof %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3367 
+#TRACE_ID '0x590D54 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"CopyTmpUsrProfToRam idx: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3412 
+#TRACE_ID '0x590D82 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_ERM '"user playerhs idx %d read %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3458 
+#TRACE_ID '0x590D87 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read BUSY: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3463 
+#TRACE_ID '0x590D8C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read FAIL: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3468 
+#TRACE_ID '0x590D93 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"playerhs profile idx oor %d > %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3475 
+#TRACE_ID '0x590DAF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"WrPersPlHsProf: prof %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3503 
+#TRACE_ID '0x590DC4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"WrPersPlHsProf: failed prof %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3524 
+#TRACE_ID '0x590DF0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"CopyTmpPlHsProfToRam idx: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3568 
+#TRACE_ID '0x590E1D 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_ERM '"phy device idx %d read %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3613 
+#TRACE_ID '0x590E22 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read BUSY: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3618 
+#TRACE_ID '0x590E27 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read FAIL: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3623 
+#TRACE_ID '0x590E2E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"phy device idx oor %d > %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3630 
+#TRACE_ID '0x590E4A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"WrPersPhyDev: prof %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3658 
+#TRACE_ID '0x590E5F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"WrPersPhyDev: failed prof %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3679 
+#TRACE_ID '0x590EAE 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"CopyTmpPhyDevToRam idx: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3758 
+#TRACE_ID '0x590EB3 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"CopyTmpPhyDevToRam: _ERM_stPhyDevTable ooR (%d,%d)" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3763 
+#TRACE_ID '0x590EBC 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"CopyTmpPhyDevToRam: _ERM_stBTDeviceTable ooR (%d,%d)" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3772 
+#TRACE_ID '0x590F03 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"RdPersActProf ok" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3843 
+#TRACE_ID '0x590F08 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read BUSY: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3848 
+#TRACE_ID '0x590F0D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read FAIL: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3853 
+#TRACE_ID '0x590F29 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"CopyTmpActProfileListToRam" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3881 
+#TRACE_ID '0x590F45 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"WrPersActProfList Trying" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3909 
+#TRACE_ID '0x590F51 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"WrPersActProfList UserProfileListChanged" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3921 
+#TRACE_ID '0x590F58 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"WrPersActProfList PlayerProfileList" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3928 
+#TRACE_ID '0x590F5F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"WrPersActProfList HeadsetProfileList" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3935 
+#TRACE_ID '0x590F73 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"WrPersActProfList cant write" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3955 
+#TRACE_ID '0x590F91 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"RdPersUserList ok" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3985 
+#TRACE_ID '0x590F96 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read BUSY: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3990 
+#TRACE_ID '0x590F9B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"E2P Read FAIL: %d ERM_DeviceHandler.c" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '3995 
+#TRACE_ID '0x591123 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"ERM_bPlayerIdIsInphgoneList: pUserProfile empty " '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '4387 
+#TRACE_ID '0x591127 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM_bPlayerIdIsInphgoneList: pUserProfile->deviceIndex %d , deviceId %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '4391 
+#TRACE_ID '0x59114A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"bMaxVoiceTagsForUserRecorder no act user profile" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '4426 
+#TRACE_ID '0x59115B 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"bMaxVcTagsForUsrRec possible User %d %d Overall %d %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '4443 
+#TRACE_ID '0x591166 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"bMaxVcTagsForUsrRec not possible User %d %d Overall %d %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '4454 
+#TRACE_ID '0x591379 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_EepromUpdate msg: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '4985 
+#TRACE_ID '0x591390 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_DeleteUserProfile idx: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5008 
+#TRACE_ID '0x59139A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_DeleteUserProfile idx: %d Noth. to do" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5018 
+#TRACE_ID '0x5913B1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"Prepare_AddUserProfile: existing for dev %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5041 
+#TRACE_ID '0x5913BD 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddUserProfile newSlot: %d (%d) ,play: %d,hs: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5053 
+#TRACE_ID '0x5913CD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddUserProfile: newSlot: %d No free slot" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5069 
+#TRACE_ID '0x5913E9 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_AssociatedPlayer %d to %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5097 
+#TRACE_ID '0x5913F3 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_AssociatedPlayer invalid index %d to %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5107 
+#TRACE_ID '0x591402 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_AssociatedPlayer %d to %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5122 
+#TRACE_ID '0x59140F 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_AssociatedPlayer invalid index %d to %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5135 
+#TRACE_ID '0x59142B 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_AssociatedHeadset %d to %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5163 
+#TRACE_ID '0x591436 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_AssociatedHeadset invalid %d %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5174 
+#TRACE_ID '0x591451 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_Ringtone: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5201 
+#TRACE_ID '0x59145C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_Ringtone: invalid idx %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5212 
+#TRACE_ID '0x591476 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangePhyTable_Name: devId %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5238 
+#TRACE_ID '0x591487 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangePhyTable_Name: invalid devId %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5255 
+#TRACE_ID '0x5914A1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_PbCompletelyLoaded %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5281 
+#TRACE_ID '0x5914AD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_PbCompletelyLoaded invalid idx %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5293 
+#TRACE_ID '0x5914C9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_RingtoneAlternate %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5321 
+#TRACE_ID '0x5914D4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_RingtoneAlternate invalid idx %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5332 
+#TRACE_ID '0x5914EF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_AudioMode %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5359 
+#TRACE_ID '0x5914FA 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_AudioMode invalid idx %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5370 
+#TRACE_ID '0x591514 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangePhyTable_Voicetags num: %d, ongoing: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5396 
+#TRACE_ID '0x591520 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangePhyTable_Voicetags invalid idx %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5408 
+#TRACE_ID '0x59154F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangeUserProfile_Mailboxnumber invalid idx %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5455 
+#TRACE_ID '0x591569 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangePlayerHeadsetProfile_AuthMode prof %d to mode: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5481 
+#TRACE_ID '0x591574 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_ChangePlayerHeadsetProfile_AuthMode prof %d to mode: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5492 
+#TRACE_ID '0x59158A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_DeletePlayerHeadsetProfile idx: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5514 
+#TRACE_ID '0x591593 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_DeletePlayerHeadsetProfile Invalid idx: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5523 
+#TRACE_ID '0x5915A8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddPlayerHeadsetProfile existing dev: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5544 
+#TRACE_ID '0x5915B4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddPlayerHeadsetProfile newSlot: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5556 
+#TRACE_ID '0x5915BF 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddPlayerHeadsetProfile No free slot" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5567 
+#TRACE_ID '0x5915D4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_DeletePhysicalDevice devId: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5588 
+#TRACE_ID '0x5915DD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_DeletePhysicalDevice invalid id %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5597 
+#TRACE_ID '0x5915F4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddPhysicalDevice devId: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5620 
+#TRACE_ID '0x5915FD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddPhysicalDevice invalid id %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5629 
+#TRACE_ID '0x591612 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddActiveProfile %d, type: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5650 
+#TRACE_ID '0x591640 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"Prepare_AddActiveProfile unknown profile %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5696 
+#TRACE_ID '0x59166C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Overwrite old act dev Id %d (profile %d)" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5740 
+#TRACE_ID '0x591675 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddActiveProfile profileIdx=%d i=%d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5749 
+#TRACE_ID '0x591687 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddActivePhoneProfileWhenNotConnectedAsPhone %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5767 
+#TRACE_ID '0x5916AA 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddActivePhoneProfileWhenNotConnectedAsPhone pProfileList[0]=%d, [1]=%d, [2]=%d, [3]=%d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5802 
+#TRACE_ID '0x5916B0 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_AddActivePhoneProfileWhenNotConnectedAsPhone profileIdx=%d i=%d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5808 
+#TRACE_ID '0x5916C9 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prepare_DeleteActiveProfile %d, type: %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5833 
+#TRACE_ID '0x5916F1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"Prepare_DeleteActiveProfile unknown profile %d" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5873 
+#TRACE_ID '0x591714 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"Prep_DelActProf dev to remove not match profIdx (%d,%d)" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '5908 
+#TRACE_ID '0x5917B0 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"ERM_vCheckforprofileId CALLED" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '6064 
+#TRACE_ID '0x5917B5 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"ERM_vCheckforprofileId VALID" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '6069 
+#TRACE_ID '0x5917B9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"ERM_vCheckforprofileId INVALID" '\MOD\MOD_ERM\src 'ERM_DeviceHandler.c '6073 

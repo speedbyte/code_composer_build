@@ -1,0 +1,20 @@
+#TRACE_ID '0x3900A3 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_AT_PARSER '"No '\\0' received" '\MOD\MOD_AT_Parser\src 'ATParser.c '163 
+#TRACE_ID '0x3900E2 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_AT_PARSER '"expected LF after CR!!" '\MOD\MOD_AT_Parser\src 'ATParser.c '226 
+#TRACE_ID '0x3900F5 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_AT_PARSER '"Idle Counter %d in ATParserRxMsgState %d -> init buffer" '\MOD\MOD_AT_Parser\src 'ATParser.c '245 
+#TRACE_ID '0x390122 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_AT_PARSER '"Msg length mismatch StringLen %d ATParserRxMsgCount %d" '\MOD\MOD_AT_Parser\src 'ATParser.c '290 
+#TRACE_ID '0x390131 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_AT_PARSER '"New message" '\MOD\MOD_AT_Parser\src 'ATParser.c '305 
+#TRACE_ID '0x3905EB 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_AT_PARSER '"Parser IGNORE PPDE END" '\MOD\MOD_AT_Parser\src 'ATParser.c '1515 
+#TRACE_ID '0x3905F1 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_AT_PARSER '"Parser simple PPDE" '\MOD\MOD_AT_Parser\src 'ATParser.c '1521 
+#TRACE_ID '0x390641 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_AT_PARSER '"*RSTUEX Parsing Error" '\MOD\MOD_AT_Parser\src 'ATParser.c '1601 
+#TRACE_ID '0x390647 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_AT_PARSER '"*RSTUEX Parsing Error - memory error" '\MOD\MOD_AT_Parser\src 'ATParser.c '1607 
+#TRACE_ID '0x390B3E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_AT_PARSER '"PSBF: feature = %d, result = %d" '\MOD\MOD_AT_Parser\src 'ATParser.c '2878 
+#TRACE_ID '0x390B3F 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_AT_PARSER '"PSBF: device = %d, type = %d" '\MOD\MOD_AT_Parser\src 'ATParser.c '2879 
+#TRACE_ID '0x390B6B 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_PARSER '"send failed for dupl message %d" '\MOD\MOD_AT_Parser\src 'ATParser.c '2923 
+#TRACE_ID '0x390B71 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_PARSER '"alloc failed for dupl message %d" '\MOD\MOD_AT_Parser\src 'ATParser.c '2929 
+#TRACE_ID '0x390B81 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_AT_PARSER '"Command received: $ATResponseEnum$ = %d, parsing failed" '\MOD\MOD_AT_Parser\src 'ATParser.c '2945 
+#TRACE_ID '0x390B8A 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_PARSER '"mem error %d" '\MOD\MOD_AT_Parser\src 'ATParser.c '2954 
+#TRACE_ID '0x390B90 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_AT_PARSER '"Unsupported message" '\MOD\MOD_AT_Parser\src 'ATParser.c '2960 
+#TRACE_ID '0x390B97 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_PARSER '"Send msg %d to %d " '\MOD\MOD_AT_Parser\src 'ATParser.c '2967 
+#TRACE_ID '0x390B9D 'DEBUG_STATE1 'DBG_LEV_WNG 'MOD_AT_PARSER '"Command $ATResponseEnum$ = %d" '\MOD\MOD_AT_Parser\src 'ATParser.c '2973 
+#TRACE_ID '0x390B9E 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_AT_PARSER '"extract fail" '\MOD\MOD_AT_Parser\src 'ATParser.c '2974 
+#TRACE_ID '0x390BB7 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_AT_PARSER '"SendMesssage buffer is FULL" '\MOD\MOD_AT_Parser\src 'ATParser.c '2999 

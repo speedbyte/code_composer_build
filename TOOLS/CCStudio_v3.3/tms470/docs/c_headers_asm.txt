@@ -1,0 +1,724 @@
+TMS470 C/C++ CODE GENERATION TOOLS
+Release 4.1.4 April 2006
+
+================================================================================
+Sharing C Header Files With Assembly Source
+================================================================================
+The .cdecls directive has been introduced into the Assembler to allow 
+programmers to use C header files in assembly code.  
+
+Contents
+
+1. Overview
+2. .cdecls Syntax
+3. Notes on C/C++ Conversions
+      3.1  Comments
+      3.2  Conditional Compilation (#if/#else/#ifdef/etc.)
+      3.3  Pragmas
+      3.4  #error/#warning Directives
+      3.5  Predefined symbol __ASM_HEADER__
+      3.6  Usage within C/C++ asm() statements
+      3.7  #include directives
+      3.8  #define Macro Conversion
+      3.9  #undef
+      3.10 Enumerations
+      3.11 C Strings
+      3.12 sizeof(), offsetof(), etc.
+      3.13 Structures and Unions
+      3.14 Function/Variable Prototypes
+      3.15 Prepending "_" to function/variable names
+      3.16 Basic C/C++ Types
+4. Notes on C++ Specific Conversions
+      4.1 Name Mangling
+      4.2 Derived Classes
+      4.3 Templates
+      4.4 Virtual Functions
+5. New Assembler Support
+      5.1 Enumerations (.enum/.emember/.endenum)
+      5.2 .define
+      5.3 .undef/.unasg
+      5.4 $defined()
+      5.5 $sizeof()
+      5.6 Structure/Union Alignment & $alignof()
+      5.7 .cstring
+
+==============================================================================
+1. Overview
+==============================================================================
+
+The .cdecls directive allows programmers in mixed assembly and C/C++
+environments to share C headers containing declarations and prototypes between
+the C and assembly code.  Any legal C/C++ can be used in a .cdecls block and the
+C/C++ declarations will cause suitable assembly to be generated automatically,
+allowing the programmer to reference the C/C++ constructs in assembly code --
+calling functions, allocating space, and accessing structure members -- using
+the equivalent assembly mechanisms.  While function and variable DEFINITIONS are
+ignored, most common C/C++ elements are converted to assembly: enumerations,
+(non function-like) macros, function and variable prototypes, structures, and
+unions.
+
+     Example:
+     ------------------------------------------------------------
+                                                       myheader.h
+
+        #define WANT_ID 1
+        #define NAME "John\n"
+
+        extern int a_variable;
+        extern float cvt_integer(int src);
+
+        struct myCstruct { int member_a; float member_b; };
+
+        enum status_enum { OK = 1, FAILED = 256, RUNNING = 0 };
+  
+     ------------------------------------------------------------
+                                                        myasm.asm
+              .cdecls C,LIST,"myheader.h"
+
+     size:    .int $sizeof(myCstruct)
+     aoffset: .int myCstruct.member_a 
+     boffset: .int myCstruct.member_b 
+
+     okvalue: .int status_enum.OK
+     failval: .int status_enum.FAILED
+
+              .if $defined(WANT_ID)
+     id       .cstring NAME
+              .endif
+
+     ------------------------------------------------------------
+
+==============================================================================
+2. .cdecls Syntax
+==============================================================================
+
+Single Line Syntax:
+
+	.cdecls <OPTIONAL PARAMETERS>, "filename" [, "additional filenames"]
+
+Multiple Line Syntax:
+
+        .cdecls <OPTIONAL PARAMETERS>
+        %{
+            /*-------------------------------------------*/
+            /* C/C++ code - Typically a list of          */
+            /* #include's and a few defines.             */
+            /*-------------------------------------------*/
+        %}
+
+The directive is .cdecls.  In the single line format, the options (see
+below) are followed by one or more filenames to include.  The
+filenames and parameters are separated by commas.  Each file listed
+will act as if '#include "filename"' was specified in the multiple
+line format.  In the multiple line format, the line following the
+directive must contain the opening .cdecls block indicator -- "%{" --
+as shown above.  Everything after the "%{", up to the closing block
+indicator -- "%}" -- will be treated as C/C++ source and processed.
+Ordinary assembler processing then resumes on the line following the
+closing %}.
+
+Note that because .cdecls is an assembler directive, it cannot begin
+in column 0.
+
+The directive's parameters control what language the code is treated
+as and how to present the .cdecls block and the converted code to the
+user.  The possible parameters are as follows, and may appear in any
+order:
+
+   /-------------------------------------------------------------------------\
+   | Parameter   Meaning                                                     |
+   | ---------   -------                                                     |
+   | C           Treat the code in the .cdecls block as C source code.       |
+   |             (DEFAULT)                                                   |
+   |                                                                         |
+   | CPP         Treat the code in the .cdecls block as C++ source code.     |
+   |             This is the opposite of the "C" parameter.                  |
+   |                                                                         |
+   | NOLIST      Do NOT include the converted assembly code in any listing   |
+   |             file generated for the containing assembly file.            |
+   |             (DEFAULT)                                                   |
+   |                                                                         |
+   | LIST        DO include the converted assembly code in any listing       |
+   |             file generated for the containing assembly file.            |
+   |             This is the opposite of the "NOLIST" parameter.             |
+   |                                                                         |
+   | NOWARN      Do NOT emit warnings on STDERR about unconvertable          |
+   |             C/C++ contructs while parsing the .cdecls source block.     |
+   |             (DEFAULT)                                                   |
+   |                                                                         |
+   | WARN        DO generate warnings on STDERR about unconvertable          |
+   |             C/C++ constructs while parsing the .cdecls source block.    |
+   |             This is the opposite of the "NOWARN" parameter.             |
+   |                                                                         |
+   \-------------------------------------------------------------------------/
+
+The text within "%{ ... %}" is passed to the C/C++ compiler to convert
+it to assembly language.  Much of C language syntax, including
+function and variable definitions as well as function-like macros, is
+NOT supported and will be ignored during the conversion.  However, all
+of what traditionally appears in C header files is supported,
+including function/variable prototypes, structure/union declarations,
+NON-FUNCTION-LIKE macros, enumerations, and #define's.  The resulting
+assembly language is included in the assembly file at the point of the
+.cdecls directive as if it were written there by the programmer.  If
+the LIST parameters is used, the listing file will reflect this
+converted assembly as it would for any file that was .include'd or
+.copy'd.
+
+Because the resulting assembly is treated as an .include'd file, use
+of .cdecls within .include'd or .copy'd files is subject to the same
+nesting limits as those directives.
+
+The .cdecls directive may appear anywhere in an assembly source file,
+and may occur multiple times within a file.  NOTE, however, that the
+C/C++ environment created by one .cdecls is NOT inherited by a later
+.cdecls; the C/C++ environment begins again anew for each .cdecls.
+
+Example:
+
+The following code:
+
+        .cdecls C,NOLIST
+        %{
+            #define ASMTEST 1
+        %}
+
+        .cdecls C,NOLIST
+        %{
+            #ifndef ASMTEST
+                #warn "ASMTEST not defined!"   /* will be issued */
+            #endif
+        %}
+
+...will cause the warning to be issued!  Therefore, a typical use of
+the .cdecls block is expected to be a single usage near the beginning
+of the assembly source file, in which all necessary C/C++ header files
+will be included.  
+
+Use the compiler shell's -I<path> include path options to specify
+additional include file paths needed for the header files used
+in assembly, as you would when compiling C files.
+
+Any C/C++ errors or warnings generated by the code of the .cdecls will
+be emitted as they normally would for the C/C++ source code.  C/C++
+errors will cause the directive to fail, and any resulting converted
+assembly will not be included.
+
+C/C++ constructs that cannot be converted, such as function-like
+macros or variable definitions, will cause a comment to be output to
+the converted assembly file.  For example:
+
+        ; ASM HEADER WARNING - variable definition 'ABCD' ignored
+
+The prefix "ASM HEADER WARNING" will appear the beginning of each such
+message.  Note that to see the warnings, either the WARN parameter
+needs to be specified so the messages are displayed on STDERR, or else
+the LIST parameter needs to be specified so the warnings appear in the
+listing file, if any.
+
+Finally, note that the converted assembly code will not appear in the
+same order as the original C/C++ source code and C/C++ constructs
+may be simplified to a normalized form during the conversion process,
+but this should not affect their final usage.
+
+==============================================================================
+3. Notes on C/C++ Conversions
+==============================================================================
+
+3.1 Comments
+--------------
+Comments are consumed entirely at the C level, and do not appear in the
+resulting converted assembly file.
+
+
+3.2 Conditional Compilation (#if/#else/#ifdef/etc.)
+----------------------------------------------------- 
+Conditional compilation is handled entirely at the C level during the
+conversion step.  Define any necessary macros either on the
+command line (using the shell "-DNAME=value" option) or within a
+.cdecls block using #define.  The #if/#ifdef/etc. C/C++ directives are
+NOT converted to assembly .if/.else/etc. directives.
+
+
+3.3 Pragmas
+-------------
+Pragmas found in the C/C++ source code will cause a warning to be
+generated (also see the WARN/NOWARN parameter discussion for where
+these warnings are created) as they are not converted.  They have no
+other effect on the resulting assembly file.
+
+
+3.4 #error/#warning Directives
+--------------------------------
+These preprocessor directives are handled completely by the compiler
+during the parsing step of conversion.  If one of these directives is
+encountered, the appropriate error or warning message is emitted.
+These directives are not converted to .emsg or .wmsg in the assembly
+output.
+
+
+3.5 Predefined symbol __ASM_HEADER__
+--------------------------------------
+The C/C++ macro __ASM_HEADER__ will be defined in the compiler while
+processing code within .cdecls.  This is to allow programmers to make
+changes in their code, such as not compiling definitions, during the
+.cdecls processing.
+
+Note that the programmer must be very careful not to use this macro to
+introduce any changes in the code that could result in inconsistencies
+between the code processed while compiling the C/C++ source and while
+converting to assembly!
+
+
+3.6 Usage within C/C++ asm() statements
+-----------------------------------------
+The .cdecls directive is not allowed within C/C++ asm() statements
+and will cause an error to be generated.
+
+
+3.7 #include directives
+-------------------------
+The C/C++ preprocessor directive #include is handled transparently by
+the compiler during the conversion step.  Such #includes can be nested
+as deeply as desired as in C/C++ source.  The assembly directives
+.include and .copy are not used or needed within a .cdecls. Use
+the command line -I<path> option to specify additional paths
+to be searched for included files, as you would for C compilation.
+
+
+3.8 #define Macro Conversion
+------------------------------
+ONLY OBJECT-LIKE MACROS ARE CONVERTED TO ASSEMBLY.  Function-like
+macros have no assembly representation and so cannot be converted.
+Pre-defined and built in C/C++ macros are not converted to assembly
+(i.e. __FILE__, __TIME__, __TI_COMPILER_VERSION__, etc.)
+
+     Example:
+     ---------------------------------------------------------------
+        // the following is converted to assembly because it is
+        // an object-like macro
+        #define NAME Charley
+
+        // the following function-like macro is not converted
+        #define MAX(x,y) (x>y ? x : y)
+     ---------------------------------------------------------------
+
+Some macros, while they are converted, have no functional use in
+the containing assembly file.  For example:
+
+        #define FOREVER while(1)
+
+results in the assembly substitution symbol FOREVER being set to the
+value "while(1)", although this has no useful use in assembly because
+"while(1)" is not legal assembly code.
+
+Also note that macro values are NOT interpreted as they are
+converted.  For example:
+
+        #define OFFSET  5+12
+
+will result in the assembler substitution symbol OFFSET being set to
+the LITERAL string value "5+12" and NOT the value 17!  This happens
+because the semantics of the C/C++ language require that macros are
+evaluated in context and not when they are parsed.
+
+A note about string macros: because macros in C/C++ are evaluated in
+their usage context, C/C++ printf escape sequence such as \n are not
+converted to a single character in the converted assembly macro.  See
+section 3.11 for suggestions on how to use C/C++ macro strings.
+
+Macros are converted using the new .define directive (see section
+5.2), which functions similar the existing .asg directive, except that
+it disallows redefinitions of register symbols and mnemonics to
+prevent the conversion from corrupting the basic assembly environment.
+To remove a macro from the assembly scope, .undef can be used
+following the .cdecls that defines it (see section 5.3).
+
+Note that the macro functionality of # (stringize operator) is only
+useful within functional macros, which are not supported by this
+process, so # is not supported either.  ## (concatenation operator) is
+really only useful in a functional context, but can be used
+degenerately to concatenate two strings and so it is supported in that
+context.
+
+
+3.9 #undef
+------------
+Symbols #undef'ined before the end of the .cdecls will not be
+converted to assembly.
+
+
+3.10 Enumerations
+-------------------
+Enumeration members are converted to .enum elements in assembly. For
+example:
+
+   enum state { ACTIVE=0x10, SLEEPING=0x01, INTERRUPT=0x100, POWEROFF, LAST};
+
+is converted to the following assembly code:
+
+   state      .enum
+   ACTIVE     .emember 16
+   SLEEPING   .emember 1
+   INTERRUPT  .emember 256
+   POWEROFF   .emember 257
+   LAST       .emember 258
+              .endenum
+
+and then are used via the pseudo-scoping created by the .enum directive:
+
+   AC0 = #(state.ACTIVE)
+
+The usage is similar to that for accessing structure members,
+"enum_name.member".  
+
+This pseudo-scoping is used to prevent enumeration member names from
+corrupting other symbols within the assembly environment.
+
+
+3.11 C Strings
+--------------
+Because C string escapes such as '\n' and '\t' are not converted to
+hex characters 0x0A and 0x09 until their use in a string constant in a
+C/C++ program, C macros whose values are strings may not be
+represented as expected in assembly substitution symbols.  For
+example:
+
+        #define MSG "\tHI\n"
+
+becomes, in assembly:
+
+        .define """\tHI\n""",MSG  ; 6 quoted characters! not 5!
+
+When used in a C string context, the programmer expects this to be
+converted to 5 characters (tab, H, I, newline, NULL), but the
+assembler's .string directive does not know how to perform the C
+escape conversions.
+
+The new .cstring directive can be used by the programmer to cause the
+escape sequences and NULL termination to be properly handled as they
+would in C/C++.  Using the above symbol MSG with a .cstring directive
+results in 5 characters of memory being allocated, the same characters
+as would result if used in a C/C++ strong context.  (See section 5.7
+for additional info about the .cstring directive.)
+
+
+3.12 sizeof(), offsetof(), etc.
+---------------------------------
+The C/C++ builtin functions, such as sizeof(), will not get translated
+to their assembly counterparts, if any, if they are used in macros, and
+also will not have their C expression values inserted into the resulting
+assembly macro because macros are evaluated in context and there
+is no active context when converting the macros to assembly.
+
+Suitable functions such as $sizeof() are available in assembly
+expressions, although since the basic types such as int/char/float
+have no "type" representation in assembly, there is no way to ask for
+$sizeof(int), for example, in assembly.
+
+
+3.13 Structures and Unions
+----------------------------
+C/C++ structures and unions are converted to assembly .struct and
+.union elements.  Padding and ending alignment are added as necessary
+to make the resulting assembly structure have the same size and member
+offsets as the C/C++ source.  The primary purpose is to allow
+accessing members of C/C++ structures, as well as to facilitate
+debugging of the assembly code.  For nested structures, the assembly
+.tag feature is used to refer to other structures/unions.  The
+alignment is also passed from the C/C++ source so that the assembly
+symbol is marked with the same alignment as the C/C++ symbol.  (See
+section 3.3 for information about pragmas, which may attempt to modify
+structures.)  Because the alignment of structures is stored in the
+assembly symbol, builtin assembly functions like $sizeof() and
+$alignof() can be used on the resulting structure name symbol.
+
+Note when using unnamed structures (or unions) in typedefs -- for
+example 
+
+        typedef struct { int a_member; } mystrname;
+
+that this is really a shorthand way of writing:
+
+        struct <temporary name> { int a_member; };
+        typedef <temporary name> mystrname;
+
+and that the conversion will process it in the same manner, generating
+a "temporary" name for the structure and then using .define to output
+a "typedef" from the temporary name to the user name.  You should use
+your "mystrname" in assembly the same as you would in C/C++, but do
+not be confused by the assembly structure definition in the list,
+which contains the temporary name.  If you want to avoid the temporary
+name, specify a name for the structure, as in 
+
+        typedef struct a_st_name { ... } mystrname;
+
+If a shorthand method is used in C to declare a variable with a
+particular structure, for example
+
+        extern struct a_name { int a_member; } a_variable;
+
+then after the structure is converted to assembly, a .tag directive
+will be generated to declare the structure of the external variable,
+for example:
+
+        _a_variable .tag a_st_name
+
+This allows the assembly programmer to refer to _a_variable.a_member
+in their assembly code.
+
+
+3.14 Function/Variable Prototypes
+---------------------------------
+Non-static function and variable prototypes (not definitions) will
+result in a .global directive being generated for each symbol found.
+
+Also see section 3.15 for issued related to the format of the names and
+the "_" prefix, and section 4.1 for C++ name mangling issues.
+
+Function and variable definitions will result in a warning message
+being generated (also see the WARN/NOWARN parameter discussion for
+where these warnings are created) for each, and they will not be
+represented in the converted assembly.
+
+Note that the assembly symbol representing the variable declarations
+will not contain type information about those symbols.  Only a .global
+will be issued for them.  Therefore, it is the programmers
+responsibility to ensure the symbol is used appropriately.
+
+See the latter portion section 3.13 for information on variables names
+which are of a structure/union type.
+
+
+3.15 Prepending "_" to function/variable names
+-----------------------------------------------
+C/C++ variables and functions declared at global scope are written out
+with a prepended underscore "_", as is the current C/C++ convention
+used by the TI Compiler tools.  Be sure to prepend the "_" when
+calling these C/C++ functions from assembly.
+
+Other global scope C names, such as structure tags and macro names,
+will be written out in the assembly include file without the
+underscore.  Check the resulting listing (see the LIST/NOLIST
+parameters) when in doubt.
+
+
+3.16 Basic C/C++ Types
+-----------------------
+Only complex types (i.e. structures and unions) in the C/C++ source
+code are converted to assembly.  Basic types such as int, char, float,
+etc. are not converted or represented in assembly beyond any existing
+.int, .char, .float, etc. directives that previously existed in
+assembly.
+
+Typedefs of basic types are therefore also not represented in the
+converted assembly.
+
+
+==============================================================================
+4. Notes on C++ Specific Conversions
+==============================================================================
+
+4.1 Name Mangling
+-------------------
+Symbol names may be mangled in C++ source files. When mangling occurs,
+the converted assembly will use the mangled names to avoid symbol name
+clashes.  The user can use the demangler (demXX) to demangle names and
+identify the correct symbols to use in assembly.
+
+To defeat name mangling in C++ for symbols where polymorphism (calling
+a function of the same name with different kinds of arguments) is not
+required, use the following syntax:
+
+        extern "C" void somefunc(int arg);
+
+The above format is the short method for declaring a single
+function.  To use this method for multiple functions, you can also
+use the following syntax:
+
+        extern "C"
+        {
+           void somefunc(int arg);
+           int  anotherfunc(int arg);
+           ...
+        }
+
+
+4.2 Derived Classes
+-------------------
+
+Derived classes are only partially supported when converting to
+assembly because of issues related to C++ scoping which does not exist
+in assembly.  The greatest difference is that base class members do
+not automatically become full (top-level) members of the derived
+class.
+
+     Example:
+     ------------------------------------------------------------
+        class base
+        {
+            public:
+                int b1;
+        };
+
+        class derived : public base
+        {
+            public:
+                int d1;
+        }
+     ------------------------------------------------------------
+
+In C++ code, the class derived would contain both integers b1 and d1.
+In the converted assembly structure "derived", the members of the base
+class must be accessed using the name of the base class, such as
+derived.__b_base.b1 rather than the expected derived.b1
+
+Note that a non-virtual, non-empty base class will have __b_ prepended
+to it's named within the derived class to signify it is a base class
+name.  That is why the example above is derived.__b_base.b1 and
+not simply derived.base.b1!
+
+
+4.3 Templates
+-------------
+No support exists for templates.
+
+
+4.4 Virtual Functions
+---------------------
+No support exists for virtual functions, as they have no assembly
+representation.
+
+
+==============================================================================
+5. New Assembler Support
+==============================================================================
+
+5.1 Enumerations (.enum/.emember/.endenum)
+------------------------------------------
+New directives have been created to support a pseudo-scoping for enumerations.
+The format of these new directives is:
+
+ENUM_NAME       .enum
+MEMBER1         .emember [optional value, first member defaults to 0 as in C]
+MEMBER2         .emember [optional value, defaults to previous value + 1]
+...
+                .endenum
+
+The .enum directive begins the enumeration definition and .endenum
+terminates it.
+
+The format to use the value of a member is ENUM_NAME.MEMBER, similar
+to a structure member usage.
+
+The .emember directive optionally accepts the value to set the member
+to, just as in C/C++.  If not specified, the member will take a value
+one more than the previous member.  As in C/C++, member names cannot
+be duplicated, although values may be.  Unless specified with
+.emember, the first enumeration member will be given the value 0
+(zero), as in C/C++.
+
+The enumeration name (ENUM_NAME) cannot be used to allocate space; it's
+size is reported as zero.
+
+.endenum cannot be used with a label, as structure .endstruct
+directives can, as the .endenum directive has no value like the
+.endstruct does (containing the size of the structure).
+
+Conditional compilation directives (.if/.else/.elsif/.endif) are the
+only other non-enumeration code allowed within the .enum/.endenum
+sequence.
+
+
+5.2 .define
+-----------
+
+        .define <substitution string>,<substitution symbol name>
+
+The new .define directive functions the same as the existing .asg
+directive, except that it disallows creation of a substitution symbol
+that has the same name as a register symbol or mnemonic.  It does not
+create a new symbol name space in the assembler, rather it uses
+the existing substitution symbol name space.
+
+The directive is used to prevent corruption of the assembly
+environment when converting C/C++ headers.
+
+Also see section 5.3, which discusses the .undef/.unasg directive.
+
+
+5.3 .undef/.unasg
+-----------------
+
+        .undef <substitution symbol name>
+        .unasg <substitution symbol name>
+
+The .undef directive is used to remove the definition of a
+substitution symbol created using .define or .asg.  This directive
+will remove the named symbol from the substitution symbol table from
+the point of the .undef to the end of the assembly file.
+
+This can be used to remove from the assembly environment any C/C++
+macros that may cause a problem.
+
+Also see section 5.2, convering the .define directive.
+
+
+5.4 $defined()
+--------------
+
+        $defined(<substitution symbol name>)
+
+Returns true/1 or false/0 depending on whether the name exists in the
+current substitution symbol table or the standard symbol table.  In
+essence, returns TRUE if the assembler has any user symbol in scope by
+that name.  This differs from $isdefed in that $isdefed only tests for
+NON-substitution symbols.
+
+A statement such as ".if $defined(macroname)" is then similar to the C
+code "#ifdef macroname".
+
+See sections 5.2 and 5.3 for the use of .define and .undef in
+assembly.
+
+
+5.5 $sizeof()
+-------------
+
+        $sizeof(<structure name>)
+
+The new assembly builtin function $sizeof() can be used to query the
+size of a structure in assembly.  It is an alias for the already
+existing $structsz().
+
+This can then be used similarly to the C builtin function sizeof().
+
+Note that the assembler's $sizeof() builtin function cannot be used to
+ask for the size of basic C/C++ types, such as $sizeof(int), because
+those basic type names are not represented in assembly.  Only complex
+type are converted from C/C++ to assembly.
+
+Also see section 3.12 which notes that this conversion will not happen
+automatically if the C/C++ sizeof() builtin function is used within a
+macro.
+
+
+5.6 Structure/Union Alignment & $alignof()
+------------------------------------------
+The assembly .struct and .union directives now take an optional second
+argument which can be used to specify a minimum alignment to be
+applied to the symbol name.  This is used by the conversion process to
+pass the specific alignment from C/C++ to assembly.
+
+The assembly builtin function $alignof() can be used to report the
+alignment of these structures.  This can be used even on assembly
+structures, and the function will return the minimum alignment
+calculated by the assembler.
+
+
+5.7 .cstring
+------------
+
+        .cstring "String with C escapes.\nWill be NULL terminated.\012"
+
+See section 3.11 for more information on the new .cstring directive.

@@ -1,0 +1,11 @@
+../05_out/ADLATUS_cc_TMS470_VW_UDS.out
+-o ../05_out/ADLATUS_cc_TMS470_VW_UDS.hex
+
+-image
+-zero
+-i
+
+ROMS
+{
+   ROW1: origin=0x00000000 len=0x8000   romwidth=32 fill=0xFFFFFFFF
+}

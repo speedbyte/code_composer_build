@@ -1,0 +1,4 @@
+#TRACE_ID '0x850144 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"$31: RoutineIdentifier = %04X not allowed" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service31_C1.c '324 
+#TRACE_ID '0x8501BF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"$31: RoutineIdentifier = %04X not allowed" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service31_C1.c '447 
+#TRACE_ID '0x85022C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"$31: RoutineIdentifier = %04X not allowed" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service31_C1.c '556 
+#TRACE_ID '0x850236 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"$31: ControlType %02X not allowed" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service31_C1.c '566 

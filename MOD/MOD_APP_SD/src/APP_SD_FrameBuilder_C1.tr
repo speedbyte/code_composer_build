@@ -1,0 +1,10 @@
+#TRACE_ID '0x270384 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_APP_SD '"FB_SaAFrame: Unsupported ctxId %d (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '900 
+#TRACE_ID '0x27038F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SD '"FB_SaAFrame: failed (%d)" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '911 
+#TRACE_ID '0x27111D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SD '"Found %U" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '4381 
+#TRACE_ID '0x27112D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Total Len = %d" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '4397 
+#TRACE_ID '0x271191 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Device Length = %d" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '4497 
+#TRACE_ID '0x2711C9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Device Length = %d" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '4553 
+#TRACE_ID '0x271CDF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Device Length = %d" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '7391 
+#TRACE_ID '0x27278F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"Device Length = %d" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '10127 
+#TRACE_ID '0x27335D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vSetCell: invalid content length: %d" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '13149 
+#TRACE_ID '0x273375 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SD '"vPresReqOff: line %d" '\MOD\MOD_APP_SD\src 'APP_SD_FrameBuilder_C1.c '13173 

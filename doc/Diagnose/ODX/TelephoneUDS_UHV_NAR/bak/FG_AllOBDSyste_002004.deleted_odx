@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <DIAG-LAYER-CONTAINER ID="DLC_FG_AllOBDSyste">
+  <SHORT-NAME>DLC_FG_AllOBDSyste</SHORT-NAME>
+  <LONG-NAME>All OBD systems</LONG-NAME>
+  <FUNCTIONAL-GROUPS>
+   <FUNCTIONAL-GROUP ID="FG_AllOBDSyste">
+    <SHORT-NAME>FG_AllOBDSyste</SHORT-NAME>
+    <LONG-NAME>All OBD systems</LONG-NAME>
+    <DESC>
+     <p>Funktionale Gruppe für alle OBD-Systeme</p>
+    </DESC>
+    <ADMIN-DATA>
+     <LANGUAGE>deu</LANGUAGE>
+     <DOC-REVISIONS>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001001</REVISION-LABEL>
+       <STATE>REVIEW</STATE>
+       <DATE>2007-08-16T00:00:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>Erstellung</CHANGE>
+         <REASON>Zusammenfassung der gemeinsamen Dienste aus BV_EnginContrModul*UDS und BV_TransContrModulUDS</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001001</REVISION-LABEL>
+       <STATE>REVIEW</STATE>
+       <DATE>2007-09-14T00:00:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>DiagnServi_ClearResetEmissRelatDiagnInfor aus PR_OBDOnCAN überschrieben</CHANGE>
+         <REASON>Ausführbarkeit auf LOGICAL-LINKS mit PROTOCOL-REF auf anderes PROTOCOL</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001002</REVISION-LABEL>
+       <STATE>REVIEW</STATE>
+       <DATE>2008-01-15T00:00:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>alle (fehlenden) DIAG-COMMS aus PR_OBDOnCAN überschrieben</CHANGE>
+         <REASON>Ausführbarkeit auf LOGICAL-LINKS mit PROTOCOL-REF auf anderes PROTOCOL</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>Elimination aufgehoben für
+Elimination aufgehoben für
+- DiagnServi_RequeCurrePowerDiagnData
+- DiagnServi_RequeVehicInfor</CHANGE>
+         <REASON>DiagnServi_RequeCurrePowerDiagnData muss für GFS in der FG verfügbar sein, die Services werden (sofern nötig) in den BVs eliminiert</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001003</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2008-06-03T01:00:00+02:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>Suffix &quot;NegatRespo&quot; an allen NEG-RESPONSE-REFS wieder hinzugefügt</CHANGE>
+         <REASON>CCB-Beschluss</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>SEMANTIC an allen DIAG-COMMS und PARAMs mit Anhang A der Autorenrichtlinie abgeglichen und ggf. korrigiert</CHANGE>
+         <REASON>CCB-Beschluss</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>DESCs an allen DIAG-COMMs überarbeitet</CHANGE>
+         <REASON>Anpassung an Autorenrichtlinie</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>STRUC_DataRecorVWTesteCodinInfor aus PR_UDSOnCAN_A01012 eingefügt</CHANGE>
+         <REASON>Ausgabe der Länge der Codierung in ECM und TCM</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001004</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2009-10-22T01:00:00+02:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>PARENT-REF auf PR_UDSOnCAN entfernt</CHANGE>
+         <REASON>Trennung UDS-Bedatung von OBD</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>folgende Elemente entfernt:
+- DOP_TEXTTABLEIUMPRRecor
+- STRUC_DataRecorIUMPRAdditInfor
+- STRUC_DataRecorIUMPRRecorNumbe
+- STRUC_DataRecorVWTesteCodinInfor
+- STRUC_DataRecorMeasuValueOBDAgingCount
+- TAB_RecorDataIdentIUMPRRecor
+- DiagnServi_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu
+- DiagnServi_ReadDataByIdentIUMPRRecor
+- Req_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu
+- Req_ReadDataByIdentIUMPRRecor
+- Resp_ReadDataByIdentIUMPRRecor</CHANGE>
+         <REASON>verschoben in neue FG_AllEmissRelatUDSSyste (Trennung UDS-Bedatung von OBD)</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>FUNCT-CLASS-REF an folgenden DIAG-COMMs auf PR_OBDOnCAN/FunctClass_EmissRelatDiagnServi geändert:
+- DiagnServi_RequeCurrePowerDiagnData
+- DiagnServi_RequeCurrePowerDiagnDataReadSuppoPIDs
+- DiagnServi_ClearResetEmissRelatDiagnInfor
+- DiagnServi_RequeVehicInfor
+- DiagnServi_RequeVehicInforReadSuppoINFOT</CHANGE>
+         <REASON>neue FUNCT-CLASS im PR_OBDOnCAN</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>RELATED-DIAG-COMM-REFS an folgenden DIAG-COMMs entfernt:
+- DiagnServi_RequeCurrePowerDiagnData
+- DiagnServi_RequeCurrePowerDiagnDataReadSuppoPIDs
+- DiagnServi_ClearResetEmissRelatDiagnInfor
+- DiagnServi_RequeVehicInfor
+- DiagnServi_RequeVehicInforReadSuppoINFOT</CHANGE>
+         <REASON>kein Session-Modell bei OBD</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>002004</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2009-10-23T01:00:00+02:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>Version ohne Änderung erhöht</CHANGE>
+         <REASON>Verlinkung in version42</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+     </DOC-REVISIONS>
+    </ADMIN-DATA>
+    <DIAG-COMMS>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL" ID="DiagnServi_RequeCurrePowerDiagnData" SEMANTIC="FUNCTION">
+      <SHORT-NAME>DiagnServi_RequeCurrePowerDiagnData</SHORT-NAME>
+      <LONG-NAME TI="SER00041">Request Current Powertrain Diagnostic Data</LONG-NAME>
+      <DESC>
+       <p>The purpose of this service is to allow access to current emission-related data values, including analogue inputs and outputs, digital inputs and outputs, and system status information. The request for information includes a parameter identification (PID) value that indicates to the on-board system the specific information requested. PID specifications, scaling information and display formats are included in Appendix B.</p>
+       <p>The ECU(s) shall respond to this message by transmitting the requested data value last determined by the system. All data values returned for sensor readings shall be actual readings, not default or substitute values used by the system because of a fault with that sensor.</p>
+       <p>Not all PIDs are applicable or supported by all systems. PID $00 is a bit-encoded value that indicates for each ECU which PIDs are supported. PID $00 indicates support for PIDs from $01 to $20. PID $20 indicates support for PIDs $21 through $40, etc. This is the same concept for PIDs/OBD Monitor IDs/TIDs/InfoTypes support in Services $01, $02, $06, $08, $09. PID $00 is required for those ECUs that respond to a corresponding Service $01 request message as specified in Appendix A.</p>
+       <p>
+        <b>IMPORTANT — All emissions-related OBD ECUs which at least support one of the services defined in this document shall support Service $01 and PID $00. Service $01 with PID $00 is defined as the universal &quot;initialization/keep alive/ping&quot; message for all emissions-related OBD ECUs.</b>
+       </p>
+       <p>The request message may contain up to six (6) PIDs. An external test equipment is not allowed to request a combination of PIDs supported and PIDs, which report data values. The ECU shall support requests for up to six (6) PIDs. The request message may contain the same PID multiple times. The ECU shall treat each PID as a separate parameter and respond with data for each PID (data returned may be different for the same PID) as often as requested.</p>
+       <p>The order of the PIDs in the response message is not required to match the order in the request message.</p>
+      </DESC>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_EmissRelatDiagnServi"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <REQUEST-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Req_RequeCurrePowerDiagnData"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Resp_RequeCurrePowerDiagnData"/>
+      </POS-RESPONSE-REFS>
+     </DIAG-SERVICE>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL" ID="DiagnServi_RequeCurrePowerDiagnDataReadSuppoPIDs" SEMANTIC="FUNCTION">
+      <SHORT-NAME>DiagnServi_RequeCurrePowerDiagnDataReadSuppoPIDs</SHORT-NAME>
+      <LONG-NAME TI="SER00041">Request Current Powertrain Diagnostic Data / Read supported PIDs</LONG-NAME>
+      <DESC>
+       <p>The purpose of this service is to allow access to current emission-related data values, including analogue inputs and outputs, digital inputs and outputs, and system status information. The request for information includes a parameter identification (PID) value that indicates to the on-board system the specific information requested. PID specifications, scaling information and display formats are included in Appendix B.</p>
+       <p>The ECU(s) shall respond to this message by transmitting the requested data value last determined by the system. All data values returned for sensor readings shall be actual readings, not default or substitute values used by the system because of a fault with that sensor.</p>
+       <p>Not all PIDs are applicable or supported by all systems. PID $00 is a bit-encoded value that indicates for each ECU which PIDs are supported. PID $00 indicates support for PIDs from $01 to $20. PID $20 indicates support for PIDs $21 through $40, etc. This is the same concept for PIDs/OBD Monitor IDs/TIDs/InfoTypes support in Services $01, $02, $06, $08, $09. PID $00 is required for those ECUs that respond to a corresponding Service $01 request message as specified in Appendix A.</p>
+       <p>
+        <b>IMPORTANT — All emissions-related OBD ECUs which at least support one of the services defined in this document shall support Service $01 and PID $00. Service $01 with PID $00 is defined as the universal &quot;initialization/keep alive/ping&quot; message for all emissions-related OBD ECUs.</b>
+       </p>
+       <p>The request message may contain up to six (6) PIDs. An external test equipment is not allowed to request a combination of PIDs supported and PIDs, which report data values. The ECU shall support requests for up to six (6) PIDs. The request message may contain the same PID multiple times. The ECU shall treat each PID as a separate parameter and respond with data for each PID (data returned may be different for the same PID) as often as requested.</p>
+       <p>The order of the PIDs in the response message is not required to match the order in the request message.</p>
+      </DESC>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_EmissRelatDiagnServi"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <REQUEST-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Req_RequeCurrePowerDiagnDataReadSuppoPIDs"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Resp_RequeCurrePowerDiagnDataReadSuppoPIDs"/>
+      </POS-RESPONSE-REFS>
+     </DIAG-SERVICE>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL" ID="DiagnServi_ClearResetEmissRelatDiagnInfor" SEMANTIC="FAULTCLEAR">
+      <SHORT-NAME>DiagnServi_ClearResetEmissRelatDiagnInfor</SHORT-NAME>
+      <LONG-NAME TI="SER00044">Clear/Reset Emission-Related Diagnostic Information</LONG-NAME>
+      <DESC>
+       <p>The purpose of this service is to provide a means for the external test equipment to command ECUs to clear all emission-related
+diagnostic information. This includes:<ul>
+         <li>MIL and number of diagnostic trouble codes (can be read with Service $01, PID $01);</li>
+         <li>Clear the I/M (Inspection/Maintenance) readiness bits (Service $01, PID $01 and $41);</li>
+         <li>Confirmed diagnostic trouble codes (can be read with Service $03);</li>
+         <li>Pending diagnostic trouble codes (can be read with Service $07);</li>
+         <li>Diagnostic trouble code for freeze frame data (can be read with Service $02, PID $02);</li>
+         <li>Freeze frame data (can be read with Service $02);</li>
+         <li>Status of system monitoring tests (can be read with Service $01, PID $01);</li>
+         <li>On-board monitoring test results (can be read with Service $06);</li>
+         <li>Distance traveled while MIL is activated (can be read with Service $01, PID $21);</li>
+         <li>Number of warm-ups since DTCs cleared (can be read with Service $01, PID $30);</li>
+         <li>Distance traveled since DTCs cleared (can be read with Service $01, PID $31);</li>
+         <li>Time run by the engine while MIL is activated (can be read with Service $01, PID $4D);</li>
+         <li>Time since diagnostic trouble codes cleared (can be read with Service $01, PID $4E);</li>
+         <li>Reset misfire counts of standardized Test ID $0B to zero (can be read with Service $06).</li>
+        </ul>
+       </p>
+       <p>Other manufacturer-specific &quot;clearing/resetting&quot; actions may also occur in response to this request message. All ECUs shall respond to this request message with ignition ON and with the engine not running.</p>
+       <p>For safety and/or technical design reasons, ECUs that can not perform this operation under other conditions, such as with the engine running, shall send a negative response message with response code $22 - conditionsNotCorrect.</p>
+      </DESC>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_EmissRelatDiagnServi"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <REQUEST-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Req_ClearResetEmissRelatDiagnInfor"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Resp_ClearResetEmissRelatDiagnInfor"/>
+      </POS-RESPONSE-REFS>
+     </DIAG-SERVICE>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL" ID="DiagnServi_RequeVehicInfor" SEMANTIC="FUNCTION">
+      <SHORT-NAME>DiagnServi_RequeVehicInfor</SHORT-NAME>
+      <LONG-NAME TI="SER00049">Request Vehicle Information</LONG-NAME>
+      <DESC>
+       <p>The purpose of this service is to enable the external test equipment to request vehicle-specific vehicle information such as Vehicle Identification Number (VIN) and Calibration IDs. Some of this information may be required by regulations and some may be desirable to be reported in a standard format if supported by the vehicle manufacturer. INFOTYPEs are defined in Appendix G.</p>
+       <p>Not all Infotypes are applicable or supported by all systems. Infotype $00 is a bit-encoded value that indicates for each ECU which Infotypes are supported. Infotype $00 indicates support for Infotypes from $01 to $20. Infotype $20 indicates support for Infotypes $21 through $40, etc. This is the same concept for PIDs/TIDs/Infotypes support in Services $01, $02, $06, $08, $09. Infotype $00 is required for those ECUs that respond to a corresponding Service $09 request message as specified in Appendix A.</p>
+       <p>The request message including supported InfoTypes may contain up to six (6) Infotypes. A request message including an InfoType, which reports vehicle information shall only contain one (1) Infotype. An external test equipment shall not request a combination of Infotypes supported and a single Infotype, which reports vehicle information. The ECU shall support requests for up to six (6) supported Infotypes and only one (1) Infotype which reports vehicle information.</p>
+       <p>If INFOTYPE $02 (VIN) is indicated as supported, the ECU shall respond within P2max timing even if the VIN is missing or incomplete. For example, a development ECU may respond with $FF characters for VIN because the VIN has not been programmed.</p>
+      </DESC>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_EmissRelatDiagnServi"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <REQUEST-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Req_RequeVehicInfor"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Resp_RequeVehicInfor"/>
+      </POS-RESPONSE-REFS>
+     </DIAG-SERVICE>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL" ID="DiagnServi_RequeVehicInforReadSuppoINFOT" SEMANTIC="FUNCTION">
+      <SHORT-NAME>DiagnServi_RequeVehicInforReadSuppoINFOT</SHORT-NAME>
+      <LONG-NAME TI="SER00049">Request Vehicle Information / Read supported INFOTYPEs</LONG-NAME>
+      <DESC>
+       <p>The purpose of this service is to enable the external test equipment to request vehicle-specific vehicle information such as Vehicle Identification Number (VIN) and Calibration IDs. Some of this information may be required by regulations and some may be desirable to be reported in a standard format if supported by the vehicle manufacturer. INFOTYPEs are defined in Appendix G.</p>
+       <p>Not all Infotypes are applicable or supported by all systems. Infotype $00 is a bit-encoded value that indicates for each ECU which Infotypes are supported. Infotype $00 indicates support for Infotypes from $01 to $20. Infotype $20 indicates support for Infotypes $21 through $40, etc. This is the same concept for PIDs/TIDs/Infotypes support in Services $01, $02, $06, $08, $09. Infotype $00 is required for those ECUs that respond to a corresponding Service $09 request message as specified in Appendix A.</p>
+       <p>The request message including supported InfoTypes may contain up to six (6) Infotypes. A request message including an InfoType, which reports vehicle information shall only contain one (1) Infotype. An external test equipment shall not request a combination of Infotypes supported and a single Infotype, which reports vehicle information. The ECU shall support requests for up to six (6) supported Infotypes and only one (1) Infotype which reports vehicle information.</p>
+       <p>If INFOTYPE $02 (VIN) is indicated as supported, the ECU shall respond within P2max timing even if the VIN is missing or incomplete. For example, a development ECU may respond with $FF characters for VIN because the VIN has not been programmed.</p>
+      </DESC>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_EmissRelatDiagnServi"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <REQUEST-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Req_RequeVehicInforReadSuppoINFOT"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="Resp_RequeVehicInforReadSuppoINFOT"/>
+      </POS-RESPONSE-REFS>
+     </DIAG-SERVICE>
+    </DIAG-COMMS>
+    <IMPORT-REFS>
+     <IMPORT-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="ES_DataLibra"/>
+    </IMPORT-REFS>
+    <PARENT-REFS>
+     <PARENT-REF xsi:type="PROTOCOL-REF" DOCREF="PR_OBDOnCAN" DOCTYPE="LAYER" ID-REF="PR_OBDOnCAN"/>
+    </PARENT-REFS>
+   </FUNCTIONAL-GROUP>
+  </FUNCTIONAL-GROUPS>
+ </DIAG-LAYER-CONTAINER>
+</ODX>

@@ -1,0 +1,2 @@
+#TRACE_ID '0x37009F 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CheckDTFMValue inco DTMF value %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Utils.c '159 
+#TRACE_ID '0x3700B5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_AT_CMD_HANDLER '"ATCMD UART REINIT %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Utils.c '181 

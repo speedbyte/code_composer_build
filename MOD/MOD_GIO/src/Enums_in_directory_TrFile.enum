@@ -1,0 +1,4 @@
+#ENUM  'GIOPOLARITY                                         'FallingEdge                                                                              '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'GIOPOLARITY                                         'RisingEdge                                                                               '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'GIOPRIORITY                                         'LowPriority                                                                              '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'GIOPRIORITY                                         'HighPriority                                                                             '1                            'ABCD   'ABCD.c  '123   

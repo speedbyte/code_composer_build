@@ -1,0 +1,13 @@
+#TRACE_ID '0x350090 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHldPB inco mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '144 
+#TRACE_ID '0x3500A6 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHldPB inco type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '166 
+#TRACE_ID '0x3500C2 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHldPB inco call hist act %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '194 
+#TRACE_ID '0x3500E2 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHldPB ppbr idx error start_idx %d end_idx %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '226 
+#TRACE_ID '0x3500F8 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHldPB pppb idx error %d %d %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '248 
+#TRACE_ID '0x350169 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel PPAS oor %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '361 
+#TRACE_ID '0x35017B 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel PPASEX oor %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '379 
+#TRACE_ID '0x350196 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"ATCmdVcr inco rvta type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '406 
+#TRACE_ID '0x3501A6 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"ATCmdVcr inco rvta action %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '422 
+#TRACE_ID '0x3501B2 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHldPB unsupported type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '434 
+#TRACE_ID '0x3501BE 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHldPB werr msg %d len %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '446 
+#TRACE_ID '0x3501C8 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHldPB berr msg %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '456 
+#TRACE_ID '0x3501CE 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHldPB res blocked" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_PhoneBook.c '462 

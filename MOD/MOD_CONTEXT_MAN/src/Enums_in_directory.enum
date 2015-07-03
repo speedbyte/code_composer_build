@@ -1,0 +1,13 @@
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnInfoCall                                             'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnServiceCall                                          'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnSosCall                                              'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnInfoCall_Hangup                                      'DEBUG_STATE_NUMBER='3        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnServiceCall_Hangup                                   'DEBUG_STATE_NUMBER='4        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnSosCall_Hangup                                       'DEBUG_STATE_NUMBER='5        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnHangUpCall                                           'DEBUG_STATE_NUMBER='6        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnActiveCall                                           'DEBUG_STATE_NUMBER='7        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerFnNoActiveCall                                         'DEBUG_STATE_NUMBER='8        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enWaitToAvoidDoubleOkPress                                             'DEBUG_STATE_NUMBER='9        '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerConnectLastUsedDevice                                  'DEBUG_STATE_NUMBER='10       '
+DEBUG_STATE_ENUM_NAME='CONTEXT_MAN_ENUM_FN_BUTTONS          'DEBUG_STATE_NAME='enContextManagerDeleteAllDevices                                       'DEBUG_STATE_NUMBER='11       '
+                       

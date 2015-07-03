@@ -1,0 +1,59 @@
+#TRACE_ID '0xF0105 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"AddProfile: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '261 
+#TRACE_ID '0xF013B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SaveBtName: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '315 
+#TRACE_ID '0xF01E2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"APP_DEVICE_rcDeleteUserProfile: devType: %d, fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '482 
+#TRACE_ID '0xF0209 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"APP_DEVICE_rcDeleteAllProfiles: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '521 
+#TRACE_ID '0xF0237 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"APP_DEVICE_rcSetRingtoneAlternate: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '567 
+#TRACE_ID '0xF0262 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"rcSetPbCompletelyLoaded: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '610 
+#TRACE_ID '0xF028F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"APP_DEVICE_rcSetHeadsetAuthMode: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '655 
+#TRACE_ID '0xF02C0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SetPlAuthMode: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '704 
+#TRACE_ID '0xF02F7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SetPlayerHsName: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '759 
+#TRACE_ID '0xF032E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SetUserName: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '814 
+#TRACE_ID '0xF0365 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"ChangeDeviceName: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '869 
+#TRACE_ID '0xF039E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SetRingt: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '926 
+#TRACE_ID '0xF03D5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SetVoiceMailbNum: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '981 
+#TRACE_ID '0xF040B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"AddMisUserProf: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1035 
+#TRACE_ID '0xF0449 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"AddMisPlProf: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1097 
+#TRACE_ID '0xF047E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"InitCKForUserProf: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1150 
+#TRACE_ID '0xF049F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"AssocHsToUser: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1183 
+#TRACE_ID '0xF04BF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"vChangePBSortingOrder: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1215 
+#TRACE_ID '0xF04DF 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"AssocPlToUser: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1247 
+#TRACE_ID '0xF0501 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"UpdatedeletedPlayerInUserProfiles called" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1281 
+#TRACE_ID '0xF050A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_rcUpdatedeletedPlayerInUserProfiles: actual pUserProfile empty, finished " '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1290 
+#TRACE_ID '0xF0510 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_rcUpdatedeletedPlayerInUserProfiles: pUserProfile->deviceIndex %d has also player deviceId %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1296 
+#TRACE_ID '0xF0515 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_rcUpdatedeletedPlayerInUserProfiles:numberOfProfilesToBeUpdatedBecauseOfDeletedPlayer %d " '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1301 
+#TRACE_ID '0xF051E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"UpdatedeletedPlayerInUserProfiles: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1310 
+#TRACE_ID '0xF0540 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"UpErmActProfTable: fctType 0x%02x busy" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1344 
+#TRACE_ID '0xF0575 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"Add miss. player prof. failed. Invalid val for oldest prof.: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1397 
+#TRACE_ID '0xF0583 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"Add miss. player: Deleting oldest player profile: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1411 
+#TRACE_ID '0xF058A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"Add miss. player: Deleting oldest headset profile: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1418 
+#TRACE_ID '0xF05EB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"Add miss. user prof. failed. Invalid val for oldest prof.: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1515 
+#TRACE_ID '0xF07BC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_sfHandlePendingUpdateDeletedPlayerInProfiles(actual pUserProfile empty, finished " '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1980 
+#TRACE_ID '0xF07C0 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_sfHandlePendingUpdateDeletedPlayerInProfiles numberOfProfilesToBeUpdatedBecauseOfDeletedPlayer == 0 release context" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1984 
+#TRACE_ID '0xF07CA 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_sfHandlePendingUpdateDeletedPlayerInProfiles: delete in userprofile with deviceindex %d the playerdeviceId %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '1994 
+#TRACE_ID '0xF07D9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_sfHandlePendingUpdateDeletedPlayerInProfiles: busy: try again" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2009 
+#TRACE_ID '0xF0856 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"PendingInitCK5050ForUser: ringtone %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2134 
+#TRACE_ID '0xF0874 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"PendingInitCK5050ForUser: ringtoneAlt. %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2164 
+#TRACE_ID '0xF08A5 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_DEVICE '"Cannot save pb compl. loaded cause of no active user" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2213 
+#TRACE_ID '0xF0A44 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"DelAllProfs state %x type %x" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2628 
+#TRACE_ID '0xF0A5F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"Delete user profile %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2655 
+#TRACE_ID '0xF0A84 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"Delete headset profile %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2692 
+#TRACE_ID '0xF0A8D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"Delete player profile %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2701 
+#TRACE_ID '0xF0B32 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"SaveBtName: state %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2866 
+#TRACE_ID '0xF0BB3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"OnAddProfToEep_Cb: devT PHONE added, but not active! so we do no update over bap" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '2995 
+#TRACE_ID '0xF0BC2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"OnAddProfToEep_Cb: invalid devT %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3010 
+#TRACE_ID '0xF0BD4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"HandlePlayerProfileAdded" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3028 
+#TRACE_ID '0xF0BEC 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_DEVICE '"OnAppDevNot: ActMdiDev %d failed" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3052 
+#TRACE_ID '0xF0BF5 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_APP_MDI '"OnAppDevNot: invalid %d or no player enabled %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3061 
+#TRACE_ID '0xF0C76 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"_APP_DEVICE_vOnChangeAssociatedPlayerAfterDeletedPlayer_Cb: numberOfProfiles to be updated %d " '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3190 
+#TRACE_ID '0xF0CF1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"InitCk_CB: err st. %d, set idle retr. flag" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3313 
+#TRACE_ID '0xF0DB4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"HaeNoUserProfAvail: SD avail, skip" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3508 
+#TRACE_ID '0xF0DB9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"HaeNoUserProfAvail: no SD, add prof" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3513 
+#TRACE_ID '0xF0DCE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"HaNoPlProfAvail: SD avail, skip" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3534 
+#TRACE_ID '0xF0DD3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"HaNoPlProfAvail: no SD, add prof" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3539 
+#TRACE_ID '0xF0DE9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"HaNoHsProfAvail: SD avail, skip" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3561 
+#TRACE_ID '0xF0DEE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"HaNoHsProfAvail: no SD, but SKIP" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3566 
+#TRACE_ID '0xF0E15 'DEBUG_VALUE4 'DBG_LEV_ERR 'MOD_APP_DEVICE '"GetAddedProfId: failed devT %d (fct %d, devT %d) %c" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3605 
+#TRACE_ID '0xF0E2A 'DEBUG_VALUE4 'DBG_LEV_ERR 'MOD_APP_DEVICE '"GetAddedProfId: failed devT %d (fct %d, devT %d) %c" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3626 
+#TRACE_ID '0xF0E32 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_DEVICE '"GetAddedProfId: inv. devType %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3634 
+#TRACE_ID '0xF0E38 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetAddedProfId: devT %d devId %d -> profId %d %c" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3640 
+#TRACE_ID '0xF0E89 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_DEVICE '"HandlePhoneStateChanged: change PB sorting order for new user" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_Profiles_C1.c '3721 

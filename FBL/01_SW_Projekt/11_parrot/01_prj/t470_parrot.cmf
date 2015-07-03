@@ -1,0 +1,11 @@
+..\05_out\ADLATUS_cc_TMS470_PARROT.out
+-o ..\05_out\ADLATUS_cc_TMS470_PARROT.hex
+
+-image
+-zero
+-i
+
+ROMS
+{
+   ROW1: origin=0x00004000 length=0x900 romwidth=32 fill=0xFFFFFFFF
+}

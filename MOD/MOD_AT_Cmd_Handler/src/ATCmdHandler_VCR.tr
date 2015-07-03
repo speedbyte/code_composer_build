@@ -1,0 +1,25 @@
+#TRACE_ID '0x3800A3 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHldPB inco call hist act %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '163 
+#TRACE_ID '0x3800C2 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr unsup vtaction %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '194 
+#TRACE_ID '0x3800DC 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr unsup vkidx %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '220 
+#TRACE_ID '0x3800EA 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr unsup vkaction %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '234 
+#TRACE_ID '0x380102 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr PTVK unsup vkidx %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '258 
+#TRACE_ID '0x38011B 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr PPVK unsup vkidx %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '283 
+#TRACE_ID '0x380132 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr PDVK unsup vkidx %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '306 
+#TRACE_ID '0x380157 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr unsupported menuid %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '343 
+#TRACE_ID '0x380170 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdVcr prompt inco %d %d %d\r\n" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '368 
+#TRACE_ID '0x380189 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr prompt oor %d\r\n" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '393 
+#TRACE_ID '0x3801A2 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr prompt opt inval %d %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '418 
+#TRACE_ID '0x3801E3 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr numopt oor %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '483 
+#TRACE_ID '0x3801ED 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr prompt oor %d %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '493 
+#TRACE_ID '0x3801F6 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr unsupported prompt %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '502 
+#TRACE_ID '0x38023D 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr format oor %d %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '573 
+#TRACE_ID '0x38025E 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"AT_Cmd_HandlerVCR ppbr idx error start_idx %d end_idx %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '606 
+#TRACE_ID '0x380275 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr pppb idx error %d %d %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '629 
+#TRACE_ID '0x38028A 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"ATCmdVcr inco mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '650 
+#TRACE_ID '0x3802A0 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"ATCmdVcr inco type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '672 
+#TRACE_ID '0x3802C8 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"ATCmdVcr inco type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '712 
+#TRACE_ID '0x3802DE 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"ATCmdVcr inco action %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '734 
+#TRACE_ID '0x3802E7 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr unsupported type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '743 
+#TRACE_ID '0x3802F5 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr write err for msg %d len %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '757 
+#TRACE_ID '0x3802FC 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr build err for msg %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '764 
+#TRACE_ID '0x380302 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"ATCmdVcr res blocked" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_VCR.c '770 

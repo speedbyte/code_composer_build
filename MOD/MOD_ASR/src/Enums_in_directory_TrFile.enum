@@ -1,0 +1,7 @@
+#ENUM  'ASR_CmdStateType                                    'ASR_CMD_STATE_ONE_CMD                                                                    '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'ASR_CmdStateType                                    'ASR_CMD_STATE_MORE_CMD                                                                   '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'ASR_CmdStateType                                    'ASR_CMD_STATE_POOL_FREE                                                                  '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'ASR_CmdStateType                                    'ASR_CMD_STATE_IDLE                                                                       '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'ASR_MoreCmds                                        'ASR_NO_SUBCMD                                                                            '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'ASR_MoreCmds                                        'ASR_ONE_SUBCMD                                                                           '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'ASR_MoreCmds                                        'ASR_MORE_SUBCMD                                                                          '2                            'ABCD   'ABCD.c  '123   

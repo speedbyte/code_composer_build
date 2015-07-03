@@ -1,0 +1,4 @@
+#TRACE_ID '0x5C0071 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_FBL_DATA '"UpdateAfterReflash: Application reflashed (CAN) %x" '\MOD\MOD_FBL_DATA\src 'FBL_Data_C1.c '113 
+#TRACE_ID '0x5C009A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_FBL_DATA '"UpdateAfterReflash: Application reflashed (JTEG) %x" '\MOD\MOD_FBL_DATA\src 'FBL_Data_C1.c '154 
+#TRACE_ID '0x5C00AA 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_FBL_DATA '"UpdateAfterReflash: Application is up to date" '\MOD\MOD_FBL_DATA\src 'FBL_Data_C1.c '170 
+#TRACE_ID '0x5C00B1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_FBL_DATA '"UpdateAfterReflash: Incorrect EEPROM value %x" '\MOD\MOD_FBL_DATA\src 'FBL_Data_C1.c '177 

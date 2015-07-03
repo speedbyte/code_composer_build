@@ -1,0 +1,50 @@
+#TRACE_ID '0x480073 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"From APP: Lsg=0x%02X Fct=0x%02X, Type=%02X" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '115 
+#TRACE_ID '0x480083 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"From APP: Lsg=0x%02X Fct=0x%02X, Type=%02X" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '131 
+#TRACE_ID '0x480093 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"From APP: Lsg=0x%02X Fct=0x%02X, Type=%02X" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '147 
+#TRACE_ID '0x4800A5 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"From APP: Lsg=0x%02X Fct=0x%02X, Type=%02X" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '165 
+#TRACE_ID '0x4800C7 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init(BapLsg_Telephone) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '199 
+#TRACE_ID '0x4800CF 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init(BapLsg_Phonebook) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '207 
+#TRACE_ID '0x4800D7 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init(BapLsg_MDI) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '215 
+#TRACE_ID '0x4800E1 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init(BapLsg_SD) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '225 
+#TRACE_ID '0x4800EC 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"InitSendbuffer(BapLsg_Telephone) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '236 
+#TRACE_ID '0x4800F4 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"InitSendbuffer(BapLsg_Phonebook) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '244 
+#TRACE_ID '0x4800FD 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"InitSendbuffer(BapLsg_MDI) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '253 
+#TRACE_ID '0x480106 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"InitSendbuffer(BapLsg_SD) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '262 
+#TRACE_ID '0x48011F 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Start(BapLsg_Telephone) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '287 
+#TRACE_ID '0x480128 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Start(BapLsg_Phonebook) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '296 
+#TRACE_ID '0x480132 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Start(BapLsg_MDI) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '306 
+#TRACE_ID '0x48013C 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Start(BapLsg_SD) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '316 
+#TRACE_ID '0x480142 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"SYS_PERF: BAP Startup Event: %d ms (BAP is ready)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '322 
+#TRACE_ID '0x480159 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_SD_Start(BapLsg_SD) failed, error: %h" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '345 
+#TRACE_ID '0x480172 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Shutdown(BapLsg_Telephone) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '370 
+#TRACE_ID '0x48017B 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Shutdown(BapLsg_Phonebook) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '379 
+#TRACE_ID '0x480185 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Shutdown(BapLsg_MDI) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '389 
+#TRACE_ID '0x48018F 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Shutdown(BapLsg_SD) failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '399 
+#TRACE_ID '0x480195 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"SYS_PERF: BAP Startup Event: %d ms (BAP is ready)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '405 
+#TRACE_ID '0x4801AC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_SD_Shutdown(BapLsg_SD) failed, error %h" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '428 
+#TRACE_ID '0x4801CF 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndVoid: IndManager failed (0x%02x, 0x%02x)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '463 
+#TRACE_ID '0x4801F1 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndInt8: IndManager failed (0x%02x, 0x%02x)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '497 
+#TRACE_ID '0x480213 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndInt16: IndManager failed (0x%02x, 0x%02x)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '531 
+#TRACE_ID '0x480235 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndInt32: IndManager failed (0x%02x, 0x%02x)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '565 
+#TRACE_ID '0x480264 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndByteSeq: indSize shortened for LsgId 0x%02x!" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '612 
+#TRACE_ID '0x48027A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndByteSeq: indSize shortened for LsgId 0x%02x!" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '634 
+#TRACE_ID '0x480285 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndByteSeq: indSize shortened for LsgId 0x%02x!" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '645 
+#TRACE_ID '0x480290 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndByteSeq: indSize shortened for LsgId 0x%02x!" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '656 
+#TRACE_ID '0x480296 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"Unknown LsgID: LsgId 0x%02x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '662 
+#TRACE_ID '0x48029E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndByteSeq: Allocate failed LsgId: 0x%02x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '670 
+#TRACE_ID '0x4802A9 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndByteSeq: IndManager failed (0x%02x, 0x%02x)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '681 
+#TRACE_ID '0x4802CB 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"IndError: IndManager failed (0x%02x, 0x%02x)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '715 
+#TRACE_ID '0x480303 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"Send BAPMsg (FctID 0x%02x) to AppTelephone" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '771 
+#TRACE_ID '0x480309 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"Send BAPMsg (FctID 0x%02x) to AppPhonebook" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '777 
+#TRACE_ID '0x48030F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"Send BAPMsg (FctID 0x%02x) to AppMDI" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '783 
+#TRACE_ID '0x480315 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"Send BAPMsg (FctID 0x%02x) to KPB" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '789 
+#TRACE_ID '0x48031B 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"Unhandled BAP Message: LsgId 0x%02x FctID 0x%02x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '795 
+#TRACE_ID '0x480324 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"SendMessage failed: LsgId 0x%02x FctID 0x%02x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '804 
+#TRACE_ID '0x480363 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"SendMsg: (FctID 0x%02x) to BapStack" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '867 
+#TRACE_ID '0x4803A5 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"SendMsg: INVALID REQ:fctid=0x%02X type=0x%02X" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '933 
+#TRACE_ID '0x4803AF 'DEBUG_VALUE4 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"SendMsg: send_err 0x%02X 0x%02X err=%d" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '943 
+#TRACE_ID '0x4803D0 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"Ack used for lsg=0x%02X fct=0x%02X ack=%d" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '976 
+#TRACE_ID '0x4803F8 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_BAP_DISPATCHER '"BAP_Ack: fct 0x%02X data_type %d" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '1016 
+#TRACE_ID '0x480400 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"BAP_Ack: fct 0x%02X length %d succ sent" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '1024 
+#TRACE_ID '0x48040D 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Ack: ack recvd w/o pending lsg=0x%02X fct=0x%02X" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '1037 
+#TRACE_ID '0x480414 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"Ack UNused for lsg=0x%02X fct=0x%02X" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_C1.c '1044 

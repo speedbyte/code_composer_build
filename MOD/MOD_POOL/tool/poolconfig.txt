@@ -1,0 +1,216 @@
+#
+# Configuration file for pool handling
+
+# ----------------------------------------------------------------
+# Message from ATParser to Applications running in AppTask context
+# ----------------------------------------------------------------
+POOL ATRspAllType {
+#
+# Payload structure
+#
+   STRUCTURE ATRspAllType
+#
+# where to find the include file
+# this file must define the structure above
+# and be found by the C compiler
+# This will translate to
+# -- #include "/some/where/in/the/file/system/include.h"
+#
+   INCLUDE   "ATParser.h"
+#
+# Number of elements in the pool
+#
+   COUNT    2
+}
+
+# ----------------------------------------------------------------
+# POOL for saving current PLPD list (paired device list)
+# ----------------------------------------------------------------
+#POOL ATRspPlpdInfoType {
+#   STRUCTURE ATRspPlpdInfoType
+#   INCLUDE   "ATParser.h"
+#   COUNT     5
+#}
+
+# ------------------------------------------------------------------------------
+# POOL for saving current PLCC list (call list)
+# ------------------------------------------------------------------------------
+POOL ATRspCallStatValType {
+   STRUCTURE ATRspCallStatValType
+   INCLUDE   "ATParser.h"
+   COUNT     2
+}
+
+# ------------------------------------------------------------------------------
+# POOL for saving phonebook entries from AT-Parser
+# ( UsersPB, Missed-,Received-,Dialed-Numbers )
+# ------------------------------------------------------------------------------
+#POOL ATRspPBReadEntryType {
+#   STRUCTURE ATRspPBReadEntryType
+#   INCLUDE   "ATParser.h"
+##   COUNT     10
+#   COUNT     5
+#}
+
+# ------------------------------------------------------------------------------
+# POOL for saving phonebook numbers for a phonebook entry 
+# ------------------------------------------------------------------------------
+#POOL ATRspPBReadNumberType {
+#    STRUCTURE ATRspPBReadNumberType
+#    INCLUDE   "ATParser.h"
+#    # up to 5 numbers for one PB entry are supported
+#    COUNT     20
+#}
+
+# ------------------------------------------------------------------------------
+# POOL for saving requested sms 
+# ------------------------------------------------------------------------------
+#POOL ATRspSmsReceiveMsgType {
+#    STRUCTURE ATRspSmsReceiveMsgType
+#    INCLUDE   "ATParser.h"
+#    # up to 5 sms per request are supported 
+#    COUNT     5 
+#}
+
+# ------------------------------------------------------------------------------
+# POOL for message from Application (AppTask) to BapDispatcher (HostTask)
+# ------------------------------------------------------------------------------
+POOL BapReqDataType {
+   STRUCTURE BapReqDataType
+   INCLUDE   "APP_COMMON_Pool.h"
+   COUNT     1
+}
+
+# ------------------------------------------------------------------------------
+# POOL for message from BapDispatcher (HostTask) to Phone Application (AppTask)
+# ------------------------------------------------------------------------------
+POOL BapIndDataTypeAppPhone {
+   STRUCTURE BapIndDataTypeAppPhone
+   INCLUDE   "APP_COMMON_Pool.h"
+   COUNT     5 
+}
+
+# ------------------------------------------------------------------------------
+# POOL for message from BapDispatcher (HostTask) to PB Application (AppTask)
+# ------------------------------------------------------------------------------
+POOL BapIndDataTypeAppPB {
+   STRUCTURE BapIndDataTypeAppPB
+   INCLUDE   "APP_COMMON_Pool.h"
+   COUNT     5
+}
+
+# ------------------------------------------------------------------------------
+# POOL for message from BapDispatcher (HostTask) to PB Application (AppTask)
+# this Pool should be used to satisfy large PB messages, like SMSSend
+# ------------------------------------------------------------------------------
+POOL BapIndDataTypeAppPBLarge {
+   STRUCTURE BapIndDataTypeAppPBLarge
+   INCLUDE   "APP_COMMON_Pool.h"
+   COUNT     1
+}
+
+# ------------------------------------------------------------------------------
+# POOL for message from BapDispatcher (HostTask) to MDI Application (AppTask)
+# ------------------------------------------------------------------------------
+POOL BapIndDataTypeAppMdi {
+   STRUCTURE BapIndDataTypeAppMdi
+   INCLUDE   "APP_COMMON_Pool.h"
+   COUNT     5
+}
+
+# ------------------------------------------------------------------------------
+# POOL for message from BapDispatcher (HostTask) to KPB Module (AppTask)
+# ------------------------------------------------------------------------------
+POOL BapIndDataTypeKpb {
+   STRUCTURE BapIndDataTypeKpb
+   INCLUDE   "APP_COMMON_Pool.h"
+   COUNT     5
+}
+
+# ------------------------------------------------------------------------------
+# POOL for saving the bap array header of array indications
+# ------------------------------------------------------------------------------
+POOL BapArrayHeader {
+    STRUCTURE BapArrayHeaderDataType
+    INCLUDE   "APP_COMMON_Pool.h"
+    # for each application at least 1 element 
+    COUNT     3
+}
+
+# ------------------------------------------------------------------------------
+# POOL for bap ack queuing element header (one for each element to queue)
+# ------------------------------------------------------------------------------
+POOL BapDispAckQueueElem {
+    STRUCTURE BAP_DISP_AckQueueElem
+    INCLUDE   "BAP_Dispatcher_Ack.h"
+    # one for each element to queue 
+    COUNT     4 
+
+}
+
+# ------------------------------------------------------------------------------
+# POOL for the payload of a queued ack element 
+# ------------------------------------------------------------------------------
+POOL BapDispAckQueuePayloadType {
+    STRUCTURE BAP_DISP_AckQueuePayloadType
+    INCLUDE   "BAP_Dispatcher_Ack.h"
+    # one for each element to queue 
+    COUNT     4
+}
+
+# ------------------------------------------------------------------------------
+# POOL for KPB FrameData element 
+# ------------------------------------------------------------------------------
+#POOL KpbFrameDataReqType {
+#    STRUCTURE KpbFrameDataReqType
+#    INCLUDE   "KPB.h"
+#    COUNT     1
+#}
+
+# ------------------------------------------------------------------------------
+# POOL for VCRPerfMeasCmdType element 
+# ------------------------------------------------------------------------------
+POOL VCRPerfMeasCmdType {
+    STRUCTURE VCRPerfMeasCmdValueType
+    INCLUDE   "VCR_ASR.h"
+    COUNT     3
+}
+
+
+# ------------------------------------------------------------------------------
+# POOL for AppSdEventQueueType element 
+# ------------------------------------------------------------------------------
+POOL AppSdEventQueueType {
+    STRUCTURE AppSdEventQueueType
+    INCLUDE   "APP_SD_CI.h"
+    COUNT    5
+}
+
+
+#
+# Checks to be done
+#
+# TRUE enables a check
+# FALSE disables it
+#
+#
+# Check the start pattern if it was overwritten
+#
+CHECK START_PATTERN TRUE
+#
+# Check the end pattern if it was overwritten
+#
+CHECK END_PATTERN FALSE
+#
+# Check if the element was already freed
+#
+CHECK FREE FALSE
+#
+# erase the buffer before giving it to application
+#
+CHECK INITIALIZATION_AT_ALLOCATE TRUE
+#
+# Check the address ranges for the pointers in sfFree
+#
+CHECK ADDRESS_RANGE FALSE
+#

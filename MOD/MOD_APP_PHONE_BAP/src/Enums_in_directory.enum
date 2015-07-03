@@ -1,0 +1,7 @@
+DEBUG_STATE_ENUM_NAME='APP_PHONE_BAP_enFunctionIdType       'DEBUG_STATE_NAME='PHONE_BAP_INVALID_FCT_ID                                               'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='BAP_enResultProcessing               'DEBUG_STATE_NAME='CK5050_RESULT_RECEIVED                                                 'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='BAP_enResultProcessing               'DEBUG_STATE_NAME='BAP_LINESTATE_SENT                                                     'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='BAP_enResultProcessing               'DEBUG_STATE_NAME='BAP_CALLSTATE_SENT                                                     'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='BAP_enResultProcessing               'DEBUG_STATE_NAME='BAP_CALLINFO_SENT                                                      'DEBUG_STATE_NUMBER='3        '
+DEBUG_STATE_ENUM_NAME='BAP_enResultProcessing               'DEBUG_STATE_NAME='BAP_RESULT_ERROR                                                       'DEBUG_STATE_NUMBER='4        '
+                       

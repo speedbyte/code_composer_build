@@ -1,0 +1,895 @@
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    1
+
+       1                    ; Kernbauer Version: 1.14 Konfiguration: TMS470 Erzeugungsgangnummer: 372 
+       2                    
+       3                    ;*****************************************************************************
+       4                    ; Project Name: OSEK 2.2
+       5                    ;    File Name: osekasm.asm
+       6                    ;
+       7                    ;  Module version: $vv$=1.09
+       8                    ;
+       9                    ;  Description: Assembler functions for OSEK ARM7 (TI compiler version)
+      10                    ;
+      11                    ;-----------------------------------------------------------------------------
+      12                    ;               C O P Y R I G H T
+      13                    ;-----------------------------------------------------------------------------
+      14                    ; Copyright (c) 2000 Vector Informatik GmbH               All rights reserved.
+      15                    ;****************************************************************************/
+      16                    
+      17                    
+      18                    ; some OSEK constants
+      19 00000000 AAAAAAAA  osRef_AAAAAAAA             .word 0AAAAAAAAh
+      20                    
+      21          00000000  PRE_READY                  .equ 0
+      22          00000001  RUNNING                    .equ 1
+      23          00000003  READY                      .equ 3
+      24                    
+      25          00000000  STANDARD_STATUS            .equ 0
+      26          00000001  EXTENDED_STATUS            .equ 1
+      27                    
+      28                    
+      29                      .include "tcb.inc"
+      30                    
+      31                    ; Vector release management 
+      32                    ; KB begin vrmAsmReleaseNumber 
+      33                    ; Assembler source release number 
+      34          00000003  osdVrmAsmMajRelNum           .set 3
+      35          0000000A  osdVrmAsmMinRelNum           .set 10
+      36                    ; KB end vrmAsmReleaseNumber 
+      37                      .include "vrm.inc"
+      38                    
+      39                      .def _osDispatcher
+      40                      .def _osDirectSWIDispatcher
+      41                      .def _osStartOSasm
+      42                    
+      43                      .def _osPrefetchAbort
+      44                      .def _osFIQ
+      45                      .def _osUnhandledExceptionWrapper
+      46                      .def _osDataAbort
+      47                      .def _osSWI
+      48                      .def _osUndefInstruction
+      49                    
+      50                    osExtRef .macro rname
+      51                      .ref _:rname:
+      52                    osRef_:rname:    .word  _:rname:
+      53                     .endm
+      54                    
+      55                    
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    2
+
+      56                     .if (osdRegisterOpt == 0)
+      57 00000004             osExtRef osActiveTaskIndex
+1                             .ref _osActiveTaskIndex
+1        00000004 00000000! osRef_osActiveTaskIndex    .word  _osActiveTaskIndex
+      58 00000008             osExtRef osHighReadyTaskPrio
+1                             .ref _osHighReadyTaskPrio
+1        00000008 00000000! osRef_osHighReadyTaskPrio    .word  _osHighReadyTaskPrio
+      59                     .endif
+      60 0000000c             osExtRef osActiveTaskPrio
+1                             .ref _osActiveTaskPrio
+1        0000000c 00000000! osRef_osActiveTaskPrio    .word  _osActiveTaskPrio
+      61 00000010             osExtRef osHighReadyTaskIndex
+1                             .ref _osHighReadyTaskIndex
+1        00000010 00000000! osRef_osHighReadyTaskIndex    .word  _osHighReadyTaskIndex
+      62 00000014             osExtRef osTcbSP
+1                             .ref _osTcbSP
+1        00000014 00000000! osRef_osTcbSP    .word  _osTcbSP
+      63                     .if (osdNonPreempt == 0)
+      64 00000018             osExtRef osLockDispatcher
+1                             .ref _osLockDispatcher
+1        00000018 00000000! osRef_osLockDispatcher    .word  _osLockDispatcher
+      65                     .endif
+      66 0000001c             osExtRef osTcbTaskState
+1                             .ref _osTcbTaskState
+1        0000001c 00000000! osRef_osTcbTaskState    .word  _osTcbTaskState
+      67 00000020             osExtRef oskTcbStackTop
+1                             .ref _oskTcbStackTop
+1        00000020 00000000! osRef_oskTcbStackTop    .word  _oskTcbStackTop
+      68 00000024             osExtRef oskTcbTaskStartAddress
+1                             .ref _oskTcbTaskStartAddress
+1        00000024 00000000! osRef_oskTcbTaskStartAddress    .word  _oskTcbTaskStartAddress
+      69 00000028             osExtRef osStartOSc
+1                             .ref _osStartOSc
+1        00000028 00000000! osRef_osStartOSc    .word  _osStartOSc
+      70 0000002c             osExtRef osSystemStack
+1                             .ref _osSystemStack
+1        0000002c 00000000! osRef_osSystemStack    .word  _osSystemStack
+      71 00000030             osExtRef osIrqStack
+1                             .ref _osIrqStack
+1        00000030 00000000! osRef_osIrqStack    .word  _osIrqStack
+      72 00000034             osExtRef osSupervisorStack
+1                             .ref _osSupervisorStack
+1        00000034 00000000! osRef_osSupervisorStack    .word  _osSupervisorStack
+      73 00000038             osExtRef osStartDispatcher
+1                             .ref _osStartDispatcher
+1        00000038 00000000! osRef_osStartDispatcher    .word  _osStartDispatcher
+      74 0000003c             osExtRef osUnhandledException
+1                             .ref _osUnhandledException
+1        0000003c 00000000! osRef_osUnhandledException    .word  _osUnhandledException
+      75 00000040             osExtRef osOccupyInternalResource
+1                             .ref _osOccupyInternalResource
+1        00000040 00000000! osRef_osOccupyInternalResource    .word  _osOccupyInternalResource
+      76                    
+      77                      .ref osdStartupStack
+      78 00000044 00000000! osRef_osdStartupStack  .word osdStartupStack
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    3
+
+      79                    
+      80                    
+      81                     .if (osOwnApplSWIHandler == 1) 
+      82                       .ref osdApplSWIHandler
+      83                     .endif
+      84                    
+      85                     .if (osdORTIDebug == 1) 
+      86                     .if (osdORTIVersion == 200)
+      87                      osExtRef osORTICurrentServiceId
+      88                      osExtRef osTcbORTIServiceId
+      89                     .endif
+      90                     .endif
+      91                    
+      92                     .if (osdMixedPreempt == 1)
+      93 00000048             osExtRef oskTcbTaskPreemption
+1                             .ref _oskTcbTaskPreemption
+1        00000048 00000000! osRef_oskTcbTaskPreemption    .word  _oskTcbTaskPreemption
+      94                     .endif
+      95                    
+      96                     .if (osdPreTaskHook == 1)
+      97                      osExtRef osPreTaskHook
+      98                     .endif
+      99                     .if (osdPostTaskHook == 1)
+     100                      osExtRef osPostTaskHook
+     101                     .endif
+     102                    
+     103                     .if (STATUS_LEVEL == EXTENDED_STATUS)
+     104                     .if (osdThumbMode == 0)
+     105 0000004c             osExtRef osMissingTerminateError
+1                             .ref _osMissingTerminateError
+1        0000004c 00000000! osRef_osMissingTerminateError    .word  _osMissingTerminateError
+     106                     .else
+     107                      .ref $osMissingTerminateError
+     108                    osRef_osMissingTerminateError:    .word  $osMissingTerminateError
+     109                     .endif
+     110                     .endif
+     111                    
+     112                     .if (osdStackCheck == 1)
+     113 00000050             osExtRef osStackOverflow
+1                             .ref _osStackOverflow
+1        00000050 00000000! osRef_osStackOverflow    .word  _osStackOverflow
+     114 00000054             osExtRef oskTcbStackBottom
+1                             .ref _oskTcbStackBottom
+1        00000054 00000000! osRef_oskTcbStackBottom    .word  _oskTcbStackBottom
+     115 00000058             osExtRef osFillSystemStack
+1                             .ref _osFillSystemStack
+1        00000058 00000000! osRef_osFillSystemStack    .word  _osFillSystemStack
+     116 0000005c             osExtRef osLastActiveTaskIndex
+1                             .ref _osLastActiveTaskIndex
+1        0000005c 00000000! osRef_osLastActiveTaskIndex    .word  _osLastActiveTaskIndex
+     117                     .endif
+     118                    
+     119                    
+     120          FFFFFF34  osREQMASK .equ 0xffffff34
+     121          FFFFFD30  osPCR     .equ 0xfffffd30
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    4
+
+     122          FFFFFFFC  osSSIR    .equ 0xfffffffc
+     123          FFFFFFF8  osSSIF    .equ 0xfffffff8
+     124          FFFFFF28  osCIMIVEC .equ 0xffffff28
+     125          FFFFFFDC  osGLBCTRL .equ 0xffffffdc
+     126                    
+     127 00000060 FFFFFD30  osRef_PCR             .word osPCR
+     128 00000064 00000006  osRef_osdNumberOfAllTasks  .word osdNumberOfAllTasks
+     129 00000068 000000C8! osRef_SystemStackTop   .word _osSystemStack+osdSystemStackSize
+     130 0000006c 000005DC! osRef_StartupStackTop   .word osdStartupStack+osdStartupStackSize
+     131 00000070 000000C8! osRef_SupervisorStackTop   .word _osSupervisorStack+osdSupervisorStackSize
+     132 00000074 0000017C! osRef_IrqStackTop   .word _osIrqStack+osdIrqStackSize
+     133                    
+     134                    ; register mapping for Dispatcher
+     135                       .asg r0,  RegCPSRval              
+     136                       .asg r1,  RegTaskLR               
+     137                       .asg r2,  RegTaskSP               
+     138                       .asg r3,  RegAdr_osTcbSP          
+     139                       .asg r4,  RegAdr_osTcbTaskState   
+     140                      .if (osdRegisterOpt == 0)
+     141                       .asg r5,  RegAdr_oskTcbStackTop   
+     142                       .asg r6,  RegTmp1      
+     143                       .asg r7,  RegTmp2                 
+     144                       .asg r8,  RegTmp3                 
+     145                       .asg r9,  RegTmp4                 
+     146                       .asg r10, RegAdr_osActiveTaskIndex
+     147                       .asg r11, Reg_osActiveTaskIndex   
+     148                      .else
+     149                       .asg r5,  Reg_osActiveTaskIndex   
+     150                       .asg r6,  Reg_osHighReadyTaskPrio      
+     151                       .asg r7,  RegTmp1                 
+     152                       .asg r8,  RegTmp2                 
+     153                       .asg r9,  RegTmp3                 
+     154                       .asg r10, RegTmp4
+     155                       .asg r11, RegAdr_oskTcbStackTop
+     156                      .endif
+     157                       .asg r12, RegNoActiveTask         
+     158                    
+     159                    
+     160                    ; Stack frame:
+     161                    ;
+     162                    ;    r0
+     163                    ;    r1
+     164                    ;    r2
+     165                    ;    SPSR
+     166                    ;    lr (svc) = return of interrupt
+     167                    ;    lr (task) = saved task context
+     168                    ;    r3
+     169                    ;    r4
+     170                    ;    r5
+     171                    ;    r6
+     172                    ;    r7
+     173                    ;    r8
+     174                    ;    r9
+     175                    ;    r10
+     176                    ;    r11
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    5
+
+     177                    ;    r12
+     178                    
+     179                    
+     180                    ;-+--------------------------------------------------------------------------
+     181                    ; osDispatcher                                                               
+     182                    ; Funktion: osDispatcher                                                       
+     183                    ;   - saves old task kontext
+     184                    ;   - switches to new task
+     185                    ;   - contains IDLE-Loop                                                     
+     186                    ; Parameter:                                                                 
+     187                    ; Returnvalue:                                                               
+     188                    ;----------------------------------------------------------------------------
+     189                    
+     190 00000078           _osDirectSWIDispatcher    ; called directly by SWI vector
+     191 00000078 E92D0007    stmfd  sp!,{r0-r2}
+     192                    
+     193 0000007c           _osDispatcher
+     194                    
+     195                      ; switch to system mode (for stack access)
+     196 0000007c E10F0000    mrs    RegCPSRval, CPSR                         ; RegCPSRval : saved CPSR
+     197 00000080 E380001F    orr    RegCPSRval, RegCPSRval, #011111b
+     198 00000084 E129F000    msr    CPSR, RegCPSRval
+     199                    
+     200                      ; get SP of system/user mode
+     201 00000088 E1A0200D    mov    RegTaskSP, sp                            ; RegTaskSP : task SP
+     202 0000008c E1A0100E    mov    RegTaskLR, lr                            ; RegTaskLR : task LR
+     203                    
+     204                      ; switch back to SVC mode
+     205 00000090 E3C0000C    bic    RegCPSRval, RegCPSRval, #01100b
+     206 00000094 E129F000    msr    CPSR, RegCPSRval
+     207                    
+     208                     .if (osdRegisterOpt == 0)
+     209 00000098 E9221C00    stmfd  RegTaskSP!,{RegAdr_osActiveTaskIndex-RegNoActiveTask}  ; save r10-r12 (on task stack!) 
+     210                      ; load osActiveTaskIndex into Reg_osActiveTaskIndex
+     211 0000009c E51FA0A0    ldr    RegAdr_osActiveTaskIndex, osRef_osActiveTaskIndex           ; RegAdr_osActiveTaskIndex : &osA
+     212 000000a0 E1DAB0B0    ldrh   Reg_osActiveTaskIndex, [RegAdr_osActiveTaskIndex]      ; Reg_osActiveTaskIndex : osActiveTask
+     213                     .else
+     214                      stmfd  RegTaskSP!,{RegNoActiveTask}                           ; save r12 (on task stack!) 
+     215                      ; osActiveTaskIndex is already located in Reg_osActiveTaskIndex
+     216                     .endif
+     217                    
+     218                    ;  ldr    RegNoActiveTask, osdNoActiveTask                      ; RegNoActiveTask : osdNoActiveTask
+     219 000000a4 E3A0C801    mov    RegNoActiveTask,#0x10000
+     220 000000a8 E24CC001    sub    RegNoActiveTask,RegNoActiveTask,#1
+     221 000000ac E15B000C    cmp    Reg_osActiveTaskIndex, RegNoActiveTask                 ; osActiveTaskIndex == osdNoActiveTask
+     222                    
+     223                     .if (osdStackCheck == 1)
+     224                      ; check task stack
+     225 000000b0 1A000009    bne    osDispNoCheck
+     226                    
+     227 000000b4 E28DD00C    add    sp,sp,#12              ; if not saving old context: restore SP
+     228                    
+     229 000000b8 E51F706C    ldr    RegTmp2, osRef_oskTcbStackBottom                         ; RegTmp2 : &oskTcbStackBottom
+     230 000000bc E51F8068    ldr    RegTmp3, osRef_osLastActiveTaskIndex                     ; RegTmp3 : &osLastActiveTaskIndex
+     231 000000c0 E1D890B0    ldrh   RegTmp4,[RegTmp3]                                   ; RegTmp4 : osLastActiveTaskIndex
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    6
+
+     232 000000c4 E7978109    ldr    RegTmp3,[RegTmp2, +RegTmp4, lsl #2]        ; RegTmp3 : oskTcbStackBottom[RegTmp4]
+     233 000000c8 E5987000    ldr    RegTmp2, [RegTmp3];
+     234 000000cc E51F80D4    ldr    RegTmp3, osRef_AAAAAAAA;
+     235 000000d0 E1570008    cmp    RegTmp2, RegTmp3
+     236                     .if (osdThumbMode == 1)
+     237                      ldr    RegTmp2, osRef_osStackOverflow
+     238                      mov    lr, pc
+     239                      bxne   RegTmp2
+     240                     .else
+     241 000000d4 1BFFFFC9!   blne   _osStackOverflow
+     242                     .endif
+     243 000000d8 EA000010    b      osNextTask
+     244                    
+     245                    osDispNoCheck
+     246                     .else   ; no stack check
+     247                      addeq  sp,sp,#12              ; if not saving old context: restore SP
+     248                      beq    osNextTask
+     249                     .endif
+     250                    
+     251                      ; save old task context (on task stack!)
+     252                     .if (osdRegisterOpt == 0)
+     253 000000dc E92203FA    stmfd  RegTaskSP!,{RegTaskLR, RegAdr_osTcbSP-RegTmp4}  ; save LR, r3-r9
+     254                     .else
+     255                      stmfd  RegTaskSP!,{RegTaskLR, RegAdr_osTcbSP-RegAdr_osTcbTaskState, RegTmp1-RegAdr_oskTcbStackTop}  
+     256                     .endif
+     257                    
+     258 000000e0 E14F9000    mrs    RegTmp4, SPSR
+     259 000000e4 E8BD01C0    ldmfd  sp!,{RegTmp1, RegTmp2, RegTmp3}      ; get task registers from SVC stack
+     260 000000e8 E92243C0    stmfd  RegTaskSP!,{RegTmp1-RegTmp4,lr}      ; save task registers on task stack
+     261                     
+     262                     .if (osdORTIDebug == 1) 
+     263                     .if (osdORTIVersion == 200)
+     264                       ; store CurrentService into tcb
+     265                       ldr    RegTmp3,osRef_osORTICurrentServiceId
+     266                       ldr    RegTmp2,osRef_osTcbORTIServiceId
+     267                       ldrb   RegTmp3,[RegTmp3]
+     268                       strb   RegTmp3,[RegTmp2, +Reg_osActiveTaskIndex]  
+     269                     .endif
+     270                     .endif
+     271                      
+     272 000000ec E51F40D8    ldr    RegAdr_osTcbTaskState, osRef_osTcbTaskState                   ; RegAdr_osTcbTaskState : &osTc
+     273 000000f0 E7D4800B    ldrb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]  ; RegTmp3 : osTcbTaskState[osActiveT
+     274 000000f4 E3580001    cmp    RegTmp3,#1
+     275                    
+     276                     .if (osdPostTaskHook == 1)
+     277                      bne    osL01
+     278                      ; call PostTaskHook
+     279                      mov    RegTmp3, sp
+     280                      mov    sp, RegTaskSP
+     281                    
+     282                     .if (osdThumbMode == 1)
+     283                      stmfd  sp!,{a1-a4,r8,r9,ip}
+     284                      ldr    a1, osRef_osPostTaskHook
+     285                      mov    lr, pc
+     286                      bx     a1
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    7
+
+     287                      ldmfd  sp!,{a1-a4,r8,r9,ip}
+     288                     .else
+     289                      stmfd  sp!,{a1-a4,ip}
+     290                      bl     _osPostTaskHook
+     291                      ldmfd  sp!,{a1-a4,ip}
+     292                     .endif
+     293                    
+     294                      mov    sp, RegTmp3
+     295                    
+     296                      ; set old task state to READY
+     297                      mov    RegTmp3,#READY         
+     298                      strb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]  ; RegTmp3 : osTcbTaskState[osActiveT
+     299                     .else
+     300 000000f8 03A08003    moveq    RegTmp3,#READY         
+     301 000000fc 07C4800B    streqb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]  ; RegTmp3 : osTcbTaskState[osActiv
+     302                     .endif
+     303                    
+     304                      
+     305                    osL01:
+     306                     .if (osdStackCheck == 1)
+     307                      ; check task stack
+     308 00000100 E51F70B4    ldr    RegTmp2, osRef_oskTcbStackBottom                              ; RegTmp2 : &oskTcbStackBottom
+     309 00000104 E797810B    ldr    RegTmp3,[RegTmp2, +Reg_osActiveTaskIndex, lsl #2]        ; RegTmp3 : oskTcbStackBottom[Reg_os
+     310 00000108 E5987000    ldr    RegTmp2, [RegTmp3];
+     311 0000010c E51F8114    ldr    RegTmp3, osRef_AAAAAAAA;
+     312 00000110 E1570008    cmp    RegTmp2, RegTmp3
+     313                    
+     314                     .if (osdThumbMode == 1)
+     315                      ldr    RegTmp2, osRef_osStackOverflow
+     316                      mov    lr, pc
+     317                      bxne   RegTmp2
+     318                     .else
+     319 00000114 1BFFFFB9!   blne   _osStackOverflow
+     320                     .endif
+     321                     .endif
+     322                    
+     323                      ; save stack pointer
+     324 00000118 E51F310C    ldr    RegAdr_osTcbSP, osRef_osTcbSP                         ; RegAdr_osTcbSP : &osTcbSP
+     325 0000011c E783210B    str    RegTaskSP,[RegAdr_osTcbSP, +Reg_osActiveTaskIndex, lsl #2] ; osTcbSP[osActiveTaskIndex] = SP 
+     326                    
+     327 00000120           osNextTask   ; start next task
+     328 00000120 E51F6118    ldr    RegTmp1, osRef_osHighReadyTaskIndex                   ; RegTmp1 : &osHighReadyTaskIndex
+     329 00000124 E1D6B0B0    ldrh   Reg_osActiveTaskIndex,[RegTmp1]       
+     330                     .if (osdRegisterOpt == 0)               
+     331 00000128 E1CAB0B0    strh   Reg_osActiveTaskIndex,[RegAdr_osActiveTaskIndex] ; Reg_osActiveTaskIndex : osActiveTaskIndex 
+     332                     .endif
+     333                    
+     334                     .if (osdRegisterOpt == 0)
+     335 0000012c E51F712C    ldr    RegTmp2, osRef_osHighReadyTaskPrio                    ; RegTmp2 : &osHighReadyTaskPrio
+     336 00000130 E1D780B0    ldrh   RegTmp3,[RegTmp2]                                ; RegTmp3 : osHighReadyTaskPrio
+     337 00000134 E51F7130    ldr    RegTmp2, osRef_osActiveTaskPrio                       ; RegTmp2 : &osActiveTaskPrio  
+     338 00000138 E1C780B0    strh   RegTmp3,[RegTmp2]                                ; osActiveTaskPrio = osHighReadyTaskPrio
+     339                     .else
+     340                      ldr    RegTmp2, osRef_osActiveTaskPrio                       ; RegTmp2 : &osActiveTaskPrio  
+     341                      strh   Reg_osHighReadyTaskPrio,[RegTmp2]                                ; osActiveTaskPrio = osHighR
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    8
+
+     342                     .endif
+     343                    
+     344 0000013c E15B000C    cmp    Reg_osActiveTaskIndex, RegNoActiveTask           ; (new) osActiveTaskIndex == OS_NO_ACTIVE_TA
+     345 00000140 0A000031    beq    IdleLoop
+     346                    
+     347                      ; switch to next task
+     348                      ; if there are internal resources check if an internal resource needs to be occupied
+     349                     .if (osdNumberOfInternalResources > 0)
+     350                      stmfd  sp!,{a1-a4,r8,r9,ip}
+     351                      bl _osOccupyInternalResource
+     352                      ldmfd  sp!,{a1-a4,r8,r9,ip}
+     353                     .endif
+     354                     
+     355                     .if (osdMixedPreempt == 1)
+     356                      ; lock dispatcher for nonpreemptive tasks, unlock for preemptive tasks
+     357 00000144 E51F7104    ldr    RegTmp2, osRef_oskTcbTaskPreemption                   ; RegTmp2 : &oskTcbTaskPreemption  
+     358 00000148 E7D7800B    ldrb   RegTmp3,[RegTmp2, +Reg_osActiveTaskIndex]        ; RegTmp3 : oskTaskPreemption[osActiveTaskIn
+     359 0000014c E2288001    eor    RegTmp3,RegTmp3,#1                               ; if RegTmp3 = 1 then RegTmp3 = 0 else RegTm
+     360 00000150 E51F7140    ldr    RegTmp2, osRef_osLockDispatcher                       ; RegTmp2 : &osLockDispatcher  
+     361 00000154 E5C78000    strb   RegTmp3,[RegTmp2]             
+     362                     .endif
+     363                    
+     364 00000158 E51F4144    ldr    RegAdr_osTcbTaskState, osRef_osTcbTaskState           ; RegAdr_osTcbTaskState : &osTcbTaskSta
+     365 0000015c E7D4800B    ldrb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]     ; RegTmp3 : osTcbTaskState[osActi
+     366                    
+     367 00000160 E3580000    cmp    RegTmp3,#PRE_READY                                ; osTcbTaskState[osActiveTaskIndex] == PRE_
+     368 00000164 1A000013    bne    RestoreContext             
+     369                    
+     370                      ; task is running for the first time: create new stack frame
+     371                     .if (osdORTIDebug == 1) 
+     372                     .if (osdORTIVersion == 200)
+     373                      ; osORTICurrentServiceId=osdORTINoService; 
+     374                      ldr    RegTmp1, osRef_osORTICurrentServiceId
+     375                      mov    RegTmp2, #osdORTINoService
+     376                      strb   RegTmp2,[RegTmp1]
+     377                     .endif
+     378                     .endif
+     379 00000168 E51F7150    ldr    RegTmp2, osRef_oskTcbStackTop                         ; RegTmp2 : &oskTcbStackTop  
+     380 0000016c E797510B    ldr    RegAdr_oskTcbStackTop,[RegTmp2, +Reg_osActiveTaskIndex, lsl #2]  ; RegAdr_oskTcbStackTop : ne
+     381                    
+     382                      ; set task state to running
+     383 00000170 E3A08001    mov    RegTmp3,#RUNNING                                                  ; RegTmp3 : RUNNING
+     384 00000174 E7C4800B    strb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]          ; osTcbTaskState[osActiveTas
+     385                    
+     386                      ; reset osStartDispatcher
+     387 00000178 E51F7148    ldr    RegTmp2, osRef_osStartDispatcher                                      ; RegTmp2 : &osStartDis
+     388 0000017c E0288008    eor    RegTmp3, RegTmp3, RegTmp3                                        ; RegTmp3 : 0
+     389 00000180 E5C78000    strb   RegTmp3, [RegTmp2]                                               ; osStartDispatcher = 0;
+     390                    
+     391                      ; get task start address
+     392 00000184 E51F7168    ldr    RegTmp2, osRef_oskTcbTaskStartAddress                                 ; RegTmp2 : &oskTcbTask
+     393 00000188 E797810B    ldr    RegTmp3,[RegTmp2, +Reg_osActiveTaskIndex, lsl #2]                ; RegTmp3 : oskTcbTaskStartA
+     394                    
+     395                      ; switch to system mode (for stack access)
+     396 0000018c E380001F    orr    RegCPSRval, RegCPSRval, #0x1F
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE    9
+
+     397 00000190 E129F000    msr    CPSR, RegCPSRval
+     398                    
+     399 00000194 E1A0D005    mov    sp, RegAdr_oskTcbStackTop            ; set task SP of system/user mode
+     400                    
+     401                     .if (osdPreTaskHook == 1)
+     402                      ; call PreTaskHook
+     403                      str    RegCPSRval,[sp, #-4]!                 ; push RegCPSRval
+     404                     .if (osdThumbMode == 1)
+     405                      stmfd  sp!,{a1-a4,r8,r9,ip}
+     406                      ldr    a1, osRef_osPreTaskHook
+     407                      mov    lr, pc
+     408                      bx   a1
+     409                      ldmfd  sp!,{a1-a4,r8,r9,ip}
+     410                     .else
+     411                      stmfd  sp!,{a1-a4,ip}
+     412                      bl     _osPreTaskHook
+     413                      ldmfd  sp!,{a1-a4,ip}
+     414                     .endif
+     415                      ldr    RegCPSRval,[sp],#4                 ; pop RegCPSRval
+     416                     .endif
+     417                    
+     418                     .if (STATUS_LEVEL == EXTENDED_STATUS)
+     419                      ; set lr to error handler
+     420 00000198 E51FE154    ldr    lr, osRef_osMissingTerminateError
+     421                     .endif
+     422                    
+     423                      ; switch back to SVC mode
+     424 0000019c E3C0000C    bic    RegCPSRval, RegCPSRval, #01100b
+     425 000001a0 E129F000    msr    CPSR, RegCPSRval
+     426                    
+     427                      ; init status register
+     428 000001a4 E14F7000    mrs    RegTmp2, SPSR
+     429 000001a8 E3C770AF    bic    RegTmp2, RegTmp2, #10101111b
+     430                     .if (osdThumbMode == 1)
+     431                      .if (osdTasksInUserMode == 1)
+     432                      orr    RegTmp2, RegTmp2, #00110000b
+     433                      .else
+     434                      orr    RegTmp2, RegTmp2, #00111111b
+     435                      .endif
+     436                     .else
+     437                      .if (osdTasksInUserMode == 1)
+     438                      orr    RegTmp2, RegTmp2, #00010000b
+     439                      .else
+     440 000001ac E387701F    orr    RegTmp2, RegTmp2, #00011111b
+     441                      .endif
+     442                     .endif
+     443 000001b0 E169F007    msr    SPSR, RegTmp2
+     444                    
+     445 000001b4 E1B0F008    movs   pc, RegTmp3            ; jump to new task
+     446                    
+     447                    
+     448                    RestoreContext
+     449                      ; task was running before: restore old task context
+     450                    
+     451                     .if (osdORTIDebug == 1) 
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE   10
+
+     452                     .if (osdORTIVersion == 200)
+     453                       ; restore tcb into CurrentService
+     454                       ldr    RegTmp2,osRef_osTcbORTIServiceId
+     455                       ldr    RegTmp3,osRef_osORTICurrentServiceId
+     456                       ldrb   RegTmp2,[RegTmp2, +Reg_osActiveTaskIndex]  
+     457                       strb   RegTmp2,[RegTmp3]
+     458                     .endif
+     459                     .endif
+     460                    
+     461                      ; restore stack pointer
+     462 000001b8 E51F31AC    ldr    RegAdr_osTcbSP, osRef_osTcbSP                                 ; RegAdr_osTcbSP : osTcbSP
+     463 000001bc E793710B    ldr    RegTmp2,[RegAdr_osTcbSP, +Reg_osActiveTaskIndex, lsl #2] ; RegTmp2 = osTcbSP[osActiveTaskInde
+     464                    
+     465                      ; set task state to RUNNING
+     466 000001c0 E51F41AC    ldr    RegAdr_osTcbTaskState, osRef_osTcbTaskState                   ; RegAdr_osTcbTaskState : &osTc
+     467 000001c4 E3A08001    mov    RegTmp3,#RUNNING                                          ; RegTmp3 : RUNNING
+     468 000001c8 E7C4800B    strb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]  ; osTcbTaskState[osActiveTaskIndex] 
+     469                    
+     470                      ; reset osStartDispatcher
+     471 000001cc E51F619C    ldr    RegTmp1, osRef_osStartDispatcher                              ; RegTmp1 : &osStartDispatcher 
+     472 000001d0 E0288008    eor    RegTmp3, RegTmp3, RegTmp3                                ; RegTmp3 : 0
+     473 000001d4 E5C68000    strb   RegTmp3, [RegTmp1]                                       ; osStartDispatcher = 0;
+     474                    
+     475                      ; restore task context
+     476                    
+     477 000001d8 E8B70100    ldmfd  RegTmp2!,{RegTmp3}   ; pop first register
+     478 000001dc E92D0100    stmfd  sp!,{RegTmp3}
+     479                    
+     480 000001e0 E8B74106    ldmfd  RegTmp2!,{RegTaskLR-RegTaskSP, RegTmp3, lr}   ; pop next 2 registers, SPSR (to RegTmp3) and L
+     481                    
+     482 000001e4 E169F008    msr    SPSR, RegTmp3
+     483                      
+     484                      ; switch to system mode (for stack access)
+     485                    
+     486 000001e8 E380001F    orr    RegCPSRval, RegCPSRval, #0x1F
+     487 000001ec E129F000    msr    CPSR, RegCPSRval
+     488                    
+     489 000001f0 E1A0D007    mov    sp, RegTmp2                                    ; set task SP 
+     490                    
+     491                     .if (osdPreTaskHook == 1)
+     492                      ; call PreTaskHook
+     493                    
+     494                     .if (osdThumbMode == 1)
+     495                      stmfd  sp!,{a1-a4,r8,r9,ip}
+     496                      ldr    a1, osRef_osPreTaskHook
+     497                      mov    lr, pc
+     498                      bx     a1
+     499                      ldmfd  sp!,{a1-a4,r8,r9,ip}
+     500                     .else
+     501                      stmfd  sp!,{a1-a4,ip}
+     502                      bl     _osPreTaskHook
+     503                      ldmfd  sp!,{a1-a4,ip}
+     504                     .endif
+     505                    
+     506                     .endif
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE   11
+
+     507                    
+     508 000001f4 E49DE004    ldr    lr,[sp],#4                                     ; pop lr
+     509                     .if (osdRegisterOpt == 0)
+     510 000001f8 E8BD1FF8    ldmfd  sp!,{RegAdr_osTcbSP-RegNoActiveTask} 
+     511                     .else
+     512                      ldmfd  sp!,{RegAdr_osTcbSP-RegAdr_osTcbTaskState, RegTmp1-RegNoActiveTask} 
+     513                     .endif
+     514                    
+     515                      ; now all registers except RegCPSRval are valid and RegCPSRval ist pushed to SVC stack
+     516                    
+     517                      ; switch back to SVC mode
+     518 000001fc E3C0000C    bic    RegCPSRval, RegCPSRval, #01100b
+     519 00000200 E129F000    msr    CPSR, RegCPSRval
+     520                    
+     521 00000204 E49D0004    ldr    RegCPSRval,[sp],#4            ; pop RegCPSRval
+     522 00000208 E1B0F00E    movs   pc,lr                         ; return from dispatcher
+     523                    
+     524 0000020c           IdleLoop
+     525                      ; called if no task is READY
+     526                    
+     527                      ; switch to system mode (for stack access)
+     528 0000020c E10F8000    mrs    RegTmp3, CPSR                               ; switch to SYSTEM mode
+     529 00000210 E388801F    orr    RegTmp3, RegTmp3, #0x1F
+     530 00000214 E129F008    msr    CPSR, RegTmp3
+     531                      
+     532                      ; set stack pointer to IRQ-Stack to avoid corrupted task stack
+     533                      ; when saving scratch registers after entering dispatcher from
+     534                      ; idle loop
+     535 00000218 E51FD1AC    ldr sp, osRef_IrqStackTop
+     536                    
+     537                      ; switch back to SVC mode 
+     538 0000021c E3C8800C    bic    RegTmp3, RegTmp3, #01100b
+     539 00000220 E129F008    msr    CPSR, RegTmp3
+     540                      
+     541                     .if (osdMixedPreempt == 1)
+     542                      ; unlock dispatcher
+     543 00000224 E3A08000    mov    RegTmp3, #0
+     544 00000228 E51F7218    ldr    RegTmp2, osRef_osLockDispatcher    ; RegTmp2 : &osLockDispatcher  
+     545 0000022c E5C78000    strb   RegTmp3,[RegTmp2]             
+     546                     .endif
+     547                    
+     548                      ; simulate end of interrupt
+     549 00000230 E14F0000    mrs    r0, SPSR                      ; copy SPSR to CPSR
+     550                     .if (osdThumbMode == 1)
+     551                      bic    r0, r0, #00100000b;
+     552                     .endif
+     553 00000234 E129F000    msr    CPSR, r0
+     554                    
+     555                    InnerIdleLoop
+     556                    
+     557                     .if (osdNonPreempt == 1)
+     558                      ; poll osStartDispatcher
+     559                      ldr    RegTmp2, osRef_osStartDispatcher   
+     560                      ldrb   RegTmp3, [RegTmp2]
+     561                      cmp    RegTmp3, #0
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE   12
+
+     562                      ; if osStartDispatcher == TRUE activate delayed interrupt
+     563                      beq    l_nodelayedint
+     564                      swi    #0x81    ; start dispatcher
+     565                     .endif
+     566 00000238           l_nodelayedint
+     567 00000238 EAFFFFFE    b InnerIdleLoop
+     568                    
+     569                    
+     570                    ; handlers for unhandled exceptions
+     571                    
+     572                    _osUndefInstruction:
+     573                     .if (osdThumbMode == 1)
+     574                      ldr    a1, osRef_osUnhandledException
+     575                      mov    lr, pc
+     576                      bx     a1
+     577                     .else
+     578 0000023c EBFFFF6F!   bl     _osUnhandledException
+     579                     .endif
+     580                    
+     581                      
+     582 00000240           _osSWI:
+     583 00000240 E92D0007    stmfd  sp!,{r0-r2}
+     584                    
+     585                     .if (osdThumbMode == 1)
+     586                      ldrb   r1,[lr, #-1]
+     587                     .else
+     588 00000244 E15E10B2    ldrh   r1,[lr, #-2]
+     589                     .endif
+     590 00000248 E3A00080    mov    r0, #128
+     591 0000024c E0412000    sub    r2, r1, r0
+     592 00000250 E3520080    cmp    r2, #128
+     593 00000254 2A000004    bcs    osSWIL1
+     594                    
+     595 00000258 E3510081    cmp    r1, #0x81
+     596 0000025c 1A000000    bne    osSWIL2
+     597                      
+     598                      ; goto Dispatcher
+     599 00000260 EAFFFF85    b      _osDispatcher
+     600                    
+     601 00000264           osSWIL2:   ; goto r3 fct
+     602 00000264 E8BD0007    ldmfd  sp!,{r0-r2}
+     603 00000268 E1A0F003    mov    pc, r3
+     604                    
+     605 0000026c           osSWIL1:   ; link to appl SWI handler
+     606 0000026c E8BD0007    ldmfd  sp!,{r0-r2}    
+     607                    
+     608 00000270 EAFFFF62!   b      osdApplSWIHandler
+     609                    
+     610                    
+     611                    _osPrefetchAbort:
+     612                     .if (osdThumbMode == 1)
+     613                      ldr    a1, osRef_osUnhandledException
+     614                      mov    lr, pc
+     615                      bx     a1
+     616                     .else
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE   13
+
+     617 00000274 EBFFFF61!   bl     _osUnhandledException
+     618                     .endif
+     619                    
+     620                      
+     621                    _osDataAbort:
+     622                     .if (osdThumbMode == 1)
+     623                      ldr    a1, osRef_osUnhandledException
+     624                      mov    lr, pc
+     625                      bx     a1
+     626                     .else
+     627 00000278 EBFFFF60!   bl     _osUnhandledException
+     628                     .endif
+     629                    
+     630                    _osFIQ:
+     631                     .if (osdThumbMode == 1)
+     632                      ldr    a1, osRef_osUnhandledException
+     633                      mov    lr, pc
+     634                      bx     a1
+     635                     .else
+     636 0000027c EBFFFF5F!   bl     _osUnhandledException
+     637                     .endif
+     638                    
+     639                    
+     640                    _osUnhandledExceptionWrapper:
+     641                     .if (osdThumbMode == 1)
+     642                      ldr    a1, osRef_osUnhandledException
+     643                      mov    lr, pc
+     644                      bx     a1
+     645                     .else
+     646 00000280 EBFFFF5E!   bl     _osUnhandledException
+     647                     .endif
+     648                    
+     649                    
+     650                    ;-+--------------------------------------------------------------------------
+     651                    ; osStartOSasm                                                               
+     652                    ; Funktion: Assembler startup code                                                       
+     653                    ;   - assembler initialisation code                                                 
+     654                    ;   - jumps to osStartOSc
+     655                    ;   - never returns
+     656                    ; Parameter:                                                                 
+     657                    ; Returnvalue:                                                               
+     658                    ;----------------------------------------------------------------------------
+     659                       
+     660                     .if (osdThumbMode == 1)
+     661                      .def $osStartOSasm
+     662                    $osStartOSasm
+     663                      .state16
+     664                      bx     pc
+     665                      nop
+     666                     .endif
+     667 00000284             .state32
+     668                    
+     669 00000284           _osStartOSasm
+     670                      ; set IRQ mode, disable IRQ
+     671 00000284 E10F0000    mrs a1, CPSR
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE   14
+
+     672 00000288 E3C0002D    bic a1, a1, #00101101b
+     673 0000028c E3800092    orr a1, a1, #10010010b
+     674 00000290 E129F000    msr CPSR, a1
+     675                    
+     676                      ; set IRQ stack pointer
+     677 00000294 E51FD228    ldr sp, osRef_IrqStackTop
+     678                    
+     679                     .if (osdSupervisorStackSize > 0)
+     680                      ; switch to supervisor mode
+     681 00000298 E3C0000C    bic a1, a1, #00001100b
+     682 0000029c E3800093    orr a1, a1, #10010011b
+     683 000002a0 E129F000    msr CPSR, a1
+     684                    
+     685                      ; set SVC stack pointer
+     686 000002a4 E51FD23C    ldr sp, osRef_SupervisorStackTop
+     687                     .endif
+     688                    
+     689                      ; switch to system mode
+     690 000002a8 E380009F    orr a1, a1, #10011111b
+     691 000002ac E129F000    msr CPSR, a1
+     692                    
+     693                      ; set stack pointer to startup stack
+     694 000002b0 E51FD24C    ldr sp, osRef_StartupStackTop
+     695                    
+     696                     .if (osdStackCheck == 1)
+     697                      ; fill system stack with empty pattern
+     698                     .if (osdThumbMode == 1)
+     699                      ldr   a1, osRef_osFillSystemStack
+     700                      mov   lr, pc
+     701                      bx    a1
+     702                     .else
+     703 000002b4 EBFFFF51!   bl _osFillSystemStack
+     704                     .endif
+     705                     .endif
+     706                    
+     707                     .if (!$$defined(osdTMS470PVF24))
+     708                      ; peripheral enable
+     709                      ldr    a1, osRef_PCR
+     710                      ldr    a2, [a1]
+     711                      orr    a2, a2, #1
+     712                      str    a2, [a1]
+     713                     .endif
+     714                    
+     715                     .if (osdStackCheck == 1)
+     716                      ; fill task stacks
+     717 000002b8 EB000000    bl    osFillTaskStacks
+     718                     .endif
+     719                    
+     720                     .if (osdThumbMode == 1)
+     721                      ; jump to osStartOSc  (never returns)
+     722                      ldr   a1, osRef_osStartOSc
+     723                      bx    a1
+     724                     .else
+     725 000002bc EAFFFF4F!   b     _osStartOSc
+     726                     .endif
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekasm.asm                                                          PAGE   15
+
+     727                     
+     728                    
+     729                    
+     730                     .if (osdStackCheck == 1)
+     731                    ;-+--------------------------------------------------------------------------
+     732                    ; osFillTaskStacks                                                               
+     733                    ; Funktion: Fill task stacks with empty pattern                                                       
+     734                    ; Parameter:                                                                 
+     735                    ; Returnvalue:                                                               
+     736                    ;----------------------------------------------------------------------------
+     737                       
+     738 000002c0           osFillTaskStacks:
+     739 000002c0 E3A00000    mov a1, #0                      ; a1: task index
+     740 000002c4 E51F3268    ldr a4, osRef_osdNumberOfAllTasks      ; a4: number of tasks
+     741 000002c8 E51FC2D0    ldr r12, osRef_AAAAAAAA
+     742                      
+     743 000002cc           osFillLoop1                         ; for all tasks
+     744 000002cc E1500003    cmp a1, a4
+     745 000002d0 2A00000E    bcs osExitFillTaskStack
+     746                    
+     747 000002d4 E51F22BC    ldr a3, osRef_oskTcbStackTop   
+     748 000002d8 E7921100    ldr a2,[a3, +a1, lsl #2]          ; a2: oskTcbStackTop[task index]
+     749                    
+     750 000002dc E1110001    tst a2, a2
+     751 000002e0 0A000008    beq osNextTaskIndex       
+     752                    
+     753 000002e4 E51F2280    ldr a3, osRef_StartupStackTop      ; if stack == startup stack fill only from current sp
+     754 000002e8 E1510002    cmp a2, a3
+     755 000002ec 01A0100D    moveq a2, sp                                                                                    
+     756                    
+     757 000002f0 E51F22A4    ldr a3, osRef_oskTcbStackBottom
+     758 000002f4 E7922100    ldr a3,[a3, +a1, lsl #2]          ; a3: oskTcbStackBottom[task index]
+     759                    
+     760 000002f8           osFillLoop2                         ; for all stack words
+     761 000002f8 E1520001    cmp a3, a2
+     762 000002fc 2A000001    bcs osNextTaskIndex
+     763                    
+     764 00000300 E521C004    str r12, [a2, #-4]!                ; fill with empty pattern
+     765 00000304 EAFFFFFB    b   osFillLoop2
+     766                      
+     767 00000308           osNextTaskIndex  
+     768 00000308 E2800001    add a1, a1, #1                     ; next task index
+     769 0000030c EAFFFFEE    b   osFillLoop1
+     770                      
+     771 00000310           osExitFillTaskStack
+     772 00000310 E1A0F00E    mov pc,lr
+     773                     .endif
+     774                    
+
+No Assembly Errors, No Assembly Warnings

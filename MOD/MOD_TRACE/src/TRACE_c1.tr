@@ -1,0 +1,3 @@
+#TRACE_ID '0x8F005E 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_TRACE '"Trace Messages: %d TxBufferSuccess: %d" '\MOD\MOD_TRACE\src 'TRACE_c1.c '94 
+#TRACE_ID '0x8F0064 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_TRACE '"Trace Messages: %d TxBufferFails: %d" '\MOD\MOD_TRACE\src 'TRACE_c1.c '100 
+#TRACE_ID '0x8F006B 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_TRACE '"Tracing of following Trace ID: 0x%X is not possible - please check if called inside a OSEK-Task" '\MOD\MOD_TRACE\src 'TRACE_c1.c '107 

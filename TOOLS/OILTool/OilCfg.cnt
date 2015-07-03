@@ -1,0 +1,74 @@
+:Base OilCfg.hlp
+1 Overview
+2 OilCfg Overview=OHID_Ueberblick
+2 Functional features of OilCfg
+1 Windows, Menus and Keyboard
+2 Windows
+3 Main window=Main_Window
+3 Toolbar
+4 Toolbar of the main window=OHID_Symbolleiste
+2 Menus
+3 Main menu=OHID_G_Hauptmenuezeile
+3 Menus of the main menu
+4 "File" menu=File_menu
+4 "Edit" menu=Edit_menu
+4 "Generators" menu=Generators_menu
+4 "Options" Menu=Options_Menu
+4 "Help" Menu=OHID_M_Hilfe
+3 Context menus
+4 Context menu=OHID_G_Kontextmenue
+1 Procedures
+2 Working with files
+3 Creating new files=Creating_new_files
+3 Opening files=Opening_files
+3 Saving files=Saving_files
+3 Select implementation=IDH_SELECT_IMPLEMENTATION
+2 Editing Oil files
+3 Editing CPU properties=IDH_CPU_PROPERTIES
+3 Editing OSEK objects=IDH_DIALOG_OBJECTS
+3 Adding new OSEK objects=Adding_new_OSEK_objects
+3 Duplicating OSEK objects=Duplicating_OSEK_objects
+3 Deleting OSEK objects=Deleting_OSEK_objects
+3 OSEK object properties
+4 Properties tab=IDH_DIALOG_PROPS
+4 Additional tabs=Additional_tabs
+4 Parameterized attributes tab=Parameterized_attributes
+4 Multiple attributes tab=IDH_MULTIPLE_ATTR_TAB
+4 Multiple parameterized attributes tab=Multiple_parameterized_attributes
+2 Codegeneration
+3 Generation process=Starting_the_generation_process
+2 General settings
+3 Implementations
+4 Overview=Implementations
+4 Configuration of implementations=IDH_IMP
+4 Changing the implementation=IDH_CHANGING_IMPLEMENTATION
+3 Generators
+4 Overview=Generators
+4 Configuration of generators=IDH_GEN
+1 Tips
+2 Tips on dialogs
+3 Activating a Dialog=Activating_a_Dialog
+3 Help on the active dialog=OHID_Hilfe_zum_aktiven_Dialog
+3 Moving a Dialog=Moving_a_Dialog
+3 Closing a Dialog=Closing_a_Dialog
+1 Messages
+2 Messages overview=IDH_ERROR_MESSAGES
+2 Configurator Messages
+3 Configurator Errors, Warnings and Informations=Configurator_messages
+2 Generator Messages
+3 Generator Errors, Warnings and Informations=Generator_Messages
+2 Troubleshooting
+1 General information
+2 Typographic conventions=OHID_TYPOGRAFIE
+2 Copyright=OHID_Copyright
+2 OIL 2.2 language concept=OIL_2_2_language_concept
+2 Backup Files=Backup_Files
+2 Files
+3 Files overview=Files_and_directories
+3 Ini files=Ini_files
+3 OilCfg.ini=OilCfg_ini
+3 OilGen.ini=OilGen_ini
+3 OIL files=OIL_files
+3 Main OIL files=Main_OIL_files
+3 Implementation definition files=Implementation_definition_files
+3 Standard object files=Standard_object_files

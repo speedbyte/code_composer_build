@@ -1,0 +1,50 @@
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_SUCCESSFUL                      '0 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '171 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_FAILED                          '1 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '172 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_NOT_ALLOWED                     '2 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '173 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_OUT_OF_RANGE                    '3 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '174 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_REQUEST_SEQUENCE_ERROR          '4 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '175 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_NO_RESPONSE_FROM_SUB_COMPONENT  '5 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '176 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_TRY_AGAIN                       '6 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '177 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_REPEAT_FOR_COMPLETE_E2P_WRITE         '7 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '178 
+#TRACE_ID '0x8300F0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"invalid value in first byte 0x%02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '240 
+#TRACE_ID '0x830104 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"invalid number sent from Tester 0x%02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '260 
+#TRACE_ID '0x8301C3 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_SDS_UDS '"Service2E: value not found!!! %04X instead of %04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '451 
+#TRACE_ID '0x8301EC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Denied access, No function activated" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '492 
+#TRACE_ID '0x8301F9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Security access allowed %04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '505 
+#TRACE_ID '0x8301FD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Security access NOT allowed %04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '509 
+#TRACE_ID '0x830212 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Give up Busy Response%04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '530 
+#TRACE_ID '0x83021B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Give up WAit Retry %04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '539 
+#TRACE_ID '0x830226 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Error %04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '550 
+#TRACE_ID '0x83022D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"SUCCESS %04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '557 
+#TRACE_ID '0x830237 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Give up No Response %04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '567 
+#TRACE_ID '0x83024C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Coding:FalschReihenfolge" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '588 
+#TRACE_ID '0x83028C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Set DTC Masking" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '652 
+#TRACE_ID '0x8302C0 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Write: CDMA write" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '704 
+#TRACE_ID '0x830300 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"%02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '768 
+#TRACE_ID '0x83030E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Start Service 2E write E2P data" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '782 
+#TRACE_ID '0x830312 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"EEprom Write ReturnCode -> $tSDSextWrite_Return$=%d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '786 
+#TRACE_ID '0x830322 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Writing EE-Data. Try: %d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '802 
+#TRACE_ID '0x830326 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"MAX EEPROM WRITE RETRIES reached - Stop. Phone->EEprom error" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '806 
+#TRACE_ID '0x83033D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"ServiceComplete write 2E data to E2P" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '829 
+#TRACE_ID '0x830342 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Still writing EE-Data. Try: %d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '834 
+#TRACE_ID '0x830347 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"MAX EEPROM WRITE RETRIES reached. Stop." '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '839 
+#TRACE_ID '0x830351 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"RamServiceComplete" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '849 
+#TRACE_ID '0x83037A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_SDS_UDS '"2E WriteServ.: LengthCheckforID=%04X with length %d OK" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '890 
+#TRACE_ID '0x83037B 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_SDS_UDS '"min len=%d,max len=%d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '891 
+#TRACE_ID '0x830380 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"2E-WriteServ.: LengthCheckforID=%04X with length %d not okay" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '896 
+#TRACE_ID '0x830381 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"min len=%d,max len=%d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '897 
+#TRACE_ID '0x8303F5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Write: Range Check for SID=%04X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1013 
+#TRACE_ID '0x8303F6 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"Byte=%d, Value=%d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1014 
+#TRACE_ID '0x8303FF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Write: Range Check for ID = %04X not okay" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1023 
+#TRACE_ID '0x830401 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"received value = %02X, max value = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1025 
+#TRACE_ID '0x83040C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Write: Range Check for ID = %04X not okay" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1036 
+#TRACE_ID '0x83040E 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"received value = %02X, max value = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1038 
+#TRACE_ID '0x830414 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Write: Range Check for ID = %04X not okay" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1044 
+#TRACE_ID '0x830416 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"received value = %02X, min value = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1046 
+#TRACE_ID '0x83041E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Write: Range Check for ID = %04X not okay" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1054 
+#TRACE_ID '0x830420 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"received value = %02X, max value = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1056 
+#TRACE_ID '0x83043C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_SDS_UDS '"Write: Range Check for ID = %04X not okay" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1084 
+#TRACE_ID '0x83043E 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"received value = %02X, max value = %02X" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1086 
+#TRACE_ID '0x83044F 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_SDS_UDS '"Write: Range Check for ID = %04X not okay, received value = %02X, max value = 0x1" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1103 
+#TRACE_ID '0x83045D 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_SDS_UDS ' '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1117 
+#TRACE_ID '0x83046C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_SDS_UDS '"Write: Range Check for ID %04X not okay for Len = %d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service2E_C1.c '1132 

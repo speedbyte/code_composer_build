@@ -1,0 +1,17 @@
+-----------------
+/Tools/BuildScripts/trunk/GenerateBuildHelpFiles.py
+/Tools/BuildScripts/trunk/VersionHistory.txt
+
+07.09.2011
+#13975: Include Freescale, TMS570 , more directores in include path.
+Change Notes:
+1. Added Controllers TMS570 and MPC560
+2. Added "src" in the compiler include path.
+3. Removed blank space between compiler option -I and the path of the include directory.
+4. Added VersionHistory.txt
+
+[Ticket]: 13975
+
+-----------------
+
+

@@ -1,0 +1,40 @@
+#TRACE_ID '0x6000B0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"ParseBapInd: failed fctId: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '176 
+#TRACE_ID '0x6000D3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseBapOperationState invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '211 
+#TRACE_ID '0x6000E9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseBapOperationState unknown opstate: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '233 
+#TRACE_ID '0x600116 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseBapAsgCapabilities invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '278 
+#TRACE_ID '0x600124 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseBapAsgCapabilities invalid payload length: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '292 
+#TRACE_ID '0x60013C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseBapAsgCapabilities invalid displaySize: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '316 
+#TRACE_ID '0x60016C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseBapAsgConfig invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '364 
+#TRACE_ID '0x60017A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseBapAsgConfig invalid payload length: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '378 
+#TRACE_ID '0x60018D 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_KPB '"sfParseBapAsgConfig: unsup version: (%d.%d), fb 1.1" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '397 
+#TRACE_ID '0x6001B8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseBapLsgStatus invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '440 
+#TRACE_ID '0x6001F1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseMflBlockDefinition invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '497 
+#TRACE_ID '0x6001FE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseMflBlockDefinition invalid payload length: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '510 
+#TRACE_ID '0x60021B 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_KPB '"sfParseMflBlockDefinition invalid keyBlock[%d]: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '539 
+#TRACE_ID '0x60022B 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_KPB '"sfParseMflBlockDefinition invalid keyBlock[%d]: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '555 
+#TRACE_ID '0x600256 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameStatus invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '598 
+#TRACE_ID '0x600264 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameStatus invalid payload length: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '612 
+#TRACE_ID '0x600279 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameStatus invalid rel Prio: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '633 
+#TRACE_ID '0x600284 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameStatus invalid focussedFrameId: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '644 
+#TRACE_ID '0x60029E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameStatus invalid AsgResponse: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '670 
+#TRACE_ID '0x6002B0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameStatus invalid FsgRequest: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '688 
+#TRACE_ID '0x6002D8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameData invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '728 
+#TRACE_ID '0x6002E2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameData invalid payload length: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '738 
+#TRACE_ID '0x6002F8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameData: inval frameId %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '760 
+#TRACE_ID '0x600304 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameData sfReadHeader failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '772 
+#TRACE_ID '0x60032B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameDataAck invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '811 
+#TRACE_ID '0x60033A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameDataAck reserved FrameId: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '826 
+#TRACE_ID '0x600363 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfParseFrameDataAck invalid IndType: 0x%02x" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '867 
+#TRACE_ID '0x6003AA 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"vBapSendAsgCapabilities: POOL_sfAllocate() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '938 
+#TRACE_ID '0x6003DB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vBapSendAsgConfig invalid KPB version: %d" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '987 
+#TRACE_ID '0x6003E9 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"vBapSendAsgConfig: POOL_sfAllocate() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1001 
+#TRACE_ID '0x600435 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"vBapSendMflBlockDefinition: POOL_sfAllocate() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1077 
+#TRACE_ID '0x600461 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"vBapSendFrameStatus: POOL_sfAllocate() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1121 
+#TRACE_ID '0x600490 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"vBapSendScrollBar: POOL_sfAllocate() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1168 
+#TRACE_ID '0x6004BD 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"sfBapSendFrameDataEmpty: pGetHeader == NULL" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1213 
+#TRACE_ID '0x6004C6 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"sfBapSendFrameDataEmpty: frameId is invalid" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1222 
+#TRACE_ID '0x6004D1 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"sfBapSendFrameData: POOL_sfAllocate() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1233 
+#TRACE_ID '0x60051E 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"_KPB_sfBapSendFrameDataEmpty: SendBapRequest() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1310 
+#TRACE_ID '0x600545 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"sfBapSendFrameData: provided frameData is NULL!!!" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1349 
+#TRACE_ID '0x600551 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"sfBapSendFrameData: POOL_sfAllocate() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1361 
+#TRACE_ID '0x6005C7 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"sfBapSendFrameData: SendBapRequest() failed" '\MOD\MOD_KPB\src 'KPB_BAP_C1.c '1479 

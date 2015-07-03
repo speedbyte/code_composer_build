@@ -1,0 +1,69 @@
+// Project specified PCLint rules
+
+/*  No Misra Rule 1 for this project */
+-e950   /* flag non-ANSI word or construct */
+/*  No Misra Rule 77 for this check for this project */
+-e917       /* prototype coercion */ 
+/* supress warnings */
+-e537      /* supress warning 537:  */
+/* sets a warning level for processing library headers */
+-wlib(1)   /* Error messages only (when processing library code.) */
+
+// The function 'snprintf' has its Error 119 ignored. This function is owned by TI.
+-esym(119,snprintf)
+
+//PC-Lint cannot find the definition for 'inline'. This is owned by TI.
+-esym(129,inline)
+
+
+// Following are various PREPROCESSOR definitions which are required during compilation:
+-dPROCESSOR_55BA
+-dIAPP_PHONE_ERM_INTERNAL
+-dIAPP_PHONEBOOK_INTERNAL
+-dIAPP_MDI_ERM_INTERNAL
+-dIAPP_SMS_ERM_EXTERNAL
+-dICSHDL_BLUETOOTH_UPDATE
+-dIAPP_PHONE_BAP_INIT
+-dIAPP_SMS_INTERNAL
+-dIAPP_PHONE_INTERNAL
+-dIAPP_PHONE_EVENTS
+-dIAPP_PHONEBOOK_EXTERNAL
+-dIAPP_PHONE_BAP_INTERNAL
+-dIAPP_SD_INTERNAL_ICONS
+-dERM_FULL_DEVICE_TABLE
+-dICONTEXT_MAN_FAHRZEUG_MARKE
+-dNO_VCR_PLAY_RINGTONE
+-dUHV_ACTIVATE_FEATURE_SMS
+-dUHV_ACTIVATE_FEATURE_BAP_MDI
+-dUHV_ACTIVATE_FEATURE_HEADSET
+-dREAD_CODING_EEPROM_AT_STARTUP
+-dUSE_DEBUGGING_WITH_TRACE_ID
+-dCRADLE_RESTRICTION_ACTIVE
+-dUHV_ACTIVATE_COMPLETE_USER_HANDLING
+-dIAPP_DIAG_EEPROM_GET
+-dAPP_SD_LIST_CTRL_EXTENDED
+-dPROCESSOR_TMS470R1SF55BA
+-dPROCESSOR_TMS470R1VF55BA
+
+// Set the tabsize to 4 spaces. The default tabsize is 8 spaces.
+-t4
+
+//supress Warning 621. Identifier clash.
+-e621
+
+//suppress Info 766 : Header file not used in module
+-e766
+
+//suppress Info 91: Too many characters in one line
+-e91
+
+//suppress Warning 534 :Ignoring return value of function
+-esym(534,osGetResource,osReleaseResource)
+
+
+//-idlen(xx) 
+// the above option can be used instead of -e621 
+// where 'xx' is the maximum identifier clash count
+
+// List of moduls you want to scan with PClint
+TEMP\SoftwareBuild_SourceFilesToBeCheck.lnt

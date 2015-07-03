@@ -1,0 +1,2 @@
+subst r: /d
+pause

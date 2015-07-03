@@ -1,0 +1,4 @@
+#TRACE_ID '0x3200D9 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHdlDEVICE unsupported type %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_DEVICE.c '217 
+#TRACE_ID '0x3200E6 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHdlDEVICE write err for msg %d len %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_DEVICE.c '230 
+#TRACE_ID '0x3200EE 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHdlDEVICE build err for msg %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_DEVICE.c '238 
+#TRACE_ID '0x3200F5 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHdlDEVICE res blocked" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_DEVICE.c '245 

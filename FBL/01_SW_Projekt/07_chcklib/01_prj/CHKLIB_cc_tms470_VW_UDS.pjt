@@ -1,0 +1,37 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="R:\07_chcklib\01_prj\"
+ProjectType=Library
+CPUFamily=TMS470R1X
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\02_src\ADLATUS_FUN_Val_Alternate2QuickCheck_UB.c"
+Source="..\02_src\ADLATUS_FUN_Val_AlternateQuickcheck_UB.c"
+Source="..\02_src\ADLATUS_FUN_Val_CanMsgObjectTest_UB.c"
+Source="..\02_src\ADLATUS_FUN_Val_CCITT_UB.c"
+Source="..\02_src\ADLATUS_FUN_Val_CRC32.c"
+Source="..\02_src\ADLATUS_FUN_Val_LinAdd16Acc16Bit_UB.c"
+Source="..\02_src\ADLATUS_FUN_Val_LinAdd8Acc16Bit_UB.c"
+Source="..\02_src\ADLATUS_FUN_Val_LinAdd8Acc8Bit_UB.c"
+Source="..\02_src\ADLATUS_FUN_Val_QuickCheck_UB.c"
+Source="..\02_src\ADLATUS_FUN_Val_RamPatternTest_UB.c"
+Source="..\02_src\ADLATUS_ValHandler.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o"r:\07_chcklib\05_out\CHKLIB_cc_tms470_VW_UDS.lib" -v
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\Release\CHKLIB_cc_tms470_VW_UDS.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-g -q -ps -o2 -fr"r:\07_chcklib\03_obj\" -fs"r:\07_chcklib\04_lst" -ft"r:\07_chcklib\04_lst" -fb"r:\07_chcklib\04_lst" -ff"r:\07_chcklib\04_lst" -i"r:\05_header\int" -i"r:\05_header\ext" -d"_DEBUG" -mf -mt
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr"R:\07_chcklib\01_prj\"
+

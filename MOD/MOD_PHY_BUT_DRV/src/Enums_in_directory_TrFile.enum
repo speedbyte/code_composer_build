@@ -1,0 +1,6 @@
+#ENUM  'PHY_BUT_DRV_ENUM_DYNAMIC_STATE                      'enNoTransition                                                                           '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'PHY_BUT_DRV_ENUM_DYNAMIC_STATE                      'enButtonPressed_PosFlanke                                                                '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'PHY_BUT_DRV_ENUM_DYNAMIC_STATE                      'enButtonReleased_NegFlanke                                                               '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'PHY_BUT_DRV_ENUM_DYNAMIC_STATE                      'enDefaultState                                                                           '255                          'ABCD   'ABCD.c  '123   
+#ENUM  'PHY_BUT_DRV_ENUM_MOD_INTERNAL_STATE                 'enPhyButDrvButtonPressed                                                                 '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'PHY_BUT_DRV_ENUM_MOD_INTERNAL_STATE                 'enPhyButDrvButtonReleased                                                                '1                            'ABCD   'ABCD.c  '123   

@@ -1,0 +1,12 @@
+#TRACE_ID '0x3400CC 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHdlTel inco hangup mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '204 
+#TRACE_ID '0x340123 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel inco dev id %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '291 
+#TRACE_ID '0x34012B 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel inco pair mode %d\r\n" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '299 
+#TRACE_ID '0x340147 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel inco mute mode %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '327 
+#TRACE_ID '0x340164 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel inco audio transfer %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '356 
+#TRACE_ID '0x34017F 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel inco audio gateway %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '383 
+#TRACE_ID '0x34019A 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel inco audio gateway %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '410 
+#TRACE_ID '0x3401B4 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"_ERM deviceid oor %d (0..%d)" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '436 
+#TRACE_ID '0x3401BE 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_AT_CMD_HANDLER '"CmdHdlTel unsupported msg %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '446 
+#TRACE_ID '0x3401CA 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHdlTel write err for msg %d len %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '458 
+#TRACE_ID '0x3401D0 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHdlTel build err for msg %d" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '464 
+#TRACE_ID '0x3401D7 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_AT_CMD_HANDLER '"CmdHdlTel res blocked" '\MOD\MOD_AT_Cmd_Handler\src 'ATCmdHandler_Phone.c '471 

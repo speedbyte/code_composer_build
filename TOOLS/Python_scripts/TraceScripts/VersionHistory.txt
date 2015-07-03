@@ -1,0 +1,10 @@
+-----------------
+
+06.09.2011
+Release Notes:
+1. The _old.tr will be automatically deleted from the OUT directory.
+2. The *.enum and _old.tr will be automatically deleted from the C:\AllTraceFiles Directory.
+
+-----------------
+
+

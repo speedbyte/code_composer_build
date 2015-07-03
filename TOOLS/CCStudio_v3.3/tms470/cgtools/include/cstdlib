@@ -1,0 +1,21 @@
+/*****************************************************************************/
+/* cstdlib   v4.1.4                                                          */
+/* Copyright (c) 1999-2006 Texas Instruments Incorporated                    */
+/*****************************************************************************/
+
+#ifndef _CSTDLIB
+#define _CSTDLIB
+
+#define _CPP_STYLE_HEADER
+#include <stdlib.h>
+#undef _CPP_STYLE_HEADER
+
+#ifdef __embedded_cplusplus
+//----------------------------------------------------------------------------
+// We cannot expect the embedded C++ user to use std namespace. So we include
+// the using directive when compiled under embedded C++.
+//----------------------------------------------------------------------------
+using namespace std;
+#endif /* __embedded_cplusplus */
+
+#endif /* ! _CSTDLIB */

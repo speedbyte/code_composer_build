@@ -1,0 +1,33 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="R:\10_his\01_prj\"
+ProjectType=Executable
+CPUFamily=TMS470R1X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\f35a_api\icall16.obj"
+Source="..\02_src\ADLATUS_DummyMain.c"
+Source="..\02_src\FlashLib_TMS470.c"
+Source="050094_TMS470_HIS.cmd"
+
+["Debug" Settings]
+FinalBuildCmd=r:\10_his\01_prj\make_his.bat
+
+["Compiler" Settings: "Debug"]
+Options=-g -k -q -ss -pr -os -o2 -fr"r:\10_his\03_obj" -fs"r:\10_his\04_lst" -ft"r:\10_his\04_lst" -fb"r:\10_his\04_lst" -i"r:\05_header\ext" -i"r:\05_header\int" -i"r:\12_customer_files" -d"_DEBUG" -mf -ml -mt
+
+["Compiler" Settings: "Release"]
+Options=-g -k -q -ss -pr -os -o2 -fr"r:\01_adlatus\03_obj" -fs"r:\01_adlatus\04_lst" -ft"r:\01_adlatus\04_lst" -fb"r:\01_adlatus\04_lst" -i"r:\05_header\int" -i"r:\05_header\ext" -i"r:\12_customer_files" -d"_DEBUG" -mf -mt --abi=tiabi
+
+["Linker" Settings: "Debug"]
+Options=-q -a -emain -m"..\05_out\ADLATUS_cc_TMS470_HIS.map" -o"..\05_out\ADLATUS_cc_TMS470_HIS.out" -x -i"C:\ti\TMS470\cgtools_252\lib"
+
+["Linker" Settings: "Release"]
+Options=-q -c -m".\Release\ADLATUS_cc_TMS470_VW_UDS.map" -o".\Release\ADLATUS_cc_TMS470_VW_UDS.out" -x
+

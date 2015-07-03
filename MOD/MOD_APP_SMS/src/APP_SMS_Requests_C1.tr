@@ -1,0 +1,6 @@
+#TRACE_ID '0x2F00AE 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_APP_SMS '"HdlATRsp: Ign. new sms, not init." '\MOD\MOD_APP_SMS\src 'APP_SMS_Requests_C1.c '174 
+#TRACE_ID '0x2F00C5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SMS '"HdlATRsp: Ign. msg %d" '\MOD\MOD_APP_SMS\src 'APP_SMS_Requests_C1.c '197 
+#TRACE_ID '0x2F00CB 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_SMS '"HdlATRsp: Ign. msg %d due to sms feat. deact.!" '\MOD\MOD_APP_SMS\src 'APP_SMS_Requests_C1.c '203 
+#TRACE_ID '0x2F0105 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SMS '"HandleSmsMsg: invalid req sms type %d" '\MOD\MOD_APP_SMS\src 'APP_SMS_Requests_C1.c '261 
+#TRACE_ID '0x2F0117 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_SMS '"HandleSmsMsg: replace unknown origin" '\MOD\MOD_APP_SMS\src 'APP_SMS_Requests_C1.c '279 
+#TRACE_ID '0x2F0289 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_SMS '"RequestSms: invalid req sms type %d" '\MOD\MOD_APP_SMS\src 'APP_SMS_Requests_C1.c '649 

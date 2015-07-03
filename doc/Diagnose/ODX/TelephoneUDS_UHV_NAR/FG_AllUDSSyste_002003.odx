@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <DIAG-LAYER-CONTAINER ID="DLC_FG_AllUDSSyste">
+  <SHORT-NAME>DLC_FG_AllUDSSyste</SHORT-NAME>
+  <LONG-NAME>All UDS Systems</LONG-NAME>
+  <FUNCTIONAL-GROUPS>
+   <FUNCTIONAL-GROUP ID="FG_AllUDSSyste">
+    <SHORT-NAME>FG_AllUDSSyste</SHORT-NAME>
+    <LONG-NAME>All UDS Systems</LONG-NAME>
+    <DESC>
+     <p>Funktionale Gruppe für alle UDS-Systeme</p>
+    </DESC>
+    <ADMIN-DATA>
+     <LANGUAGE>deu</LANGUAGE>
+     <DOC-REVISIONS>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_Audi.TM_AndreWalls"/>
+       <REVISION-LABEL>X01001</REVISION-LABEL>
+       <STATE>DRAFT</STATE>
+       <DATE>2005-02-15T18:22:27</DATE>
+       <TOOL>VisualODX</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>creation of layer</CHANGE>
+         <REASON>separate layer for functional addressing of all UDS ECUs is necessary</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_Audi.TM_AndreWalls"/>
+       <REVISION-LABEL>X01002</REVISION-LABEL>
+       <STATE>DRAFT</STATE>
+       <DATE>2006-02-02T21:23:02</DATE>
+       <TOOL>DatabaseDesigner</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>Add new OBD-Services $1, $4 and $9</CHANGE>
+         <REASON>OBD-Services are required for Vehicle Identification and to clear DTCs in emission-related ECUs</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>X01003</REVISION-LABEL>
+       <STATE>DRAFT</STATE>
+       <DATE>2006-03-10T16:00:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>various changes (t.b.d.)</CHANGE>
+         <REASON>adaption to merged ES_DataLibrary</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>X01004</REVISION-LABEL>
+       <STATE>DRAFT</STATE>
+       <DATE>2006-03-24T13:30:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>added DiagnServi_DiagnSessiContrExtenDiagnSessiFUNCT</CHANGE>
+         <REASON>workaround for functional addressing in flash job (DTS bug)</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_Audi.TM_AndreWalls"/>
+       <REVISION-LABEL>X01005</REVISION-LABEL>
+       <STATE>DRAFT</STATE>
+       <DATE>2006-05-10T13:03:41</DATE>
+       <TOOL>DatabaseDesigner</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>Subfunction in Extended Session Diag-Comm overwritten</CHANGE>
+         <REASON>bugfix for VAS Tester Application</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>X01006</REVISION-LABEL>
+       <STATE>DRAFT</STATE>
+       <DATE>2006-05-19T16:23:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>removed overwritten Req_DiagnSessiContrExtenSessi and changed REQUEST-REF to PR layer</CHANGE>
+         <REASON>bugfix for VAS Tester application broke other DiagnSessi services</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>added DiagnServi_TestePreseCycli</CHANGE>
+         <REASON>service for TesterPresent workaround in flash job</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_Audi.TM_AndreWalls"/>
+       <REVISION-LABEL>A01001</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2006-07-28T16:28:36</DATE>
+       <TOOL>DatabaseDesigner</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>Bugfixes for VAS-Tester removed</CHANGE>
+         <REASON>bugfix not longer required</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_Audi.TM_AndreWalls"/>
+       <REVISION-LABEL>A01002</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2006-08-30T08:32:34</DATE>
+       <TOOL>DatabaseDesigner</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>unified parameter names for service ids in requests and responses</CHANGE>
+         <REASON>done</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>A01003</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2006-08-30T10:29:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>added DiagnServi_DiagnSessiContrFUNCT</CHANGE>
+         <REASON>generic service for changing sessions in jobs</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>extended FunctionalCANIDTable</CHANGE>
+         <REASON>support for new BASE-VARIANTS and all OBD IDs</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>A01004</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2007-04-12T10:30:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>DOCREF in COMPARAM-REFS auf DiagCanComparamSpec_A01 geändert</CHANGE>
+         <REASON>inkompatible Referenzen auf DiagCanComparamSpec_X01 in parallel existierender Datei mit identischer Version A01003</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>CAN-IDs für den LIN-Subbus am Gateway (728/792) aus FunctionalCANIDTable entfernt</CHANGE>
+         <REASON>bereits entfernt in parallel existierender Datei mit identischer Version A01003; BDM am LIN gehört nicht zur FUNCTIONAL-GROUP</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>fehlende TIs ergänzt</CHANGE>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>3SOFT GmbH durch Elektrobit Automotive GmbH ersetzt</CHANGE>
+         <REASON>3SOFT is now Elektrobit</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001000</REVISION-LABEL>
+       <STATE>DRAFT</STATE>
+       <DATE>2007-07-23T00:00:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>Anpassung von SHORT-NAME, ID und aller toten Referenzen</CHANGE>
+         <REASON>neues Versionsmanagement, aktualisierter ES- und PR-Layer</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>DiagnServi_DiagnSessiContrExtenDiagnSessiFUNCT, DiagnServi_TestePreseCycli und Req_TestePresei entfernt</CHANGE>
+         <REASON>nicht mehr verwendet</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>DOP_TEXTTABLEOBDParamIDsServi01, DOP_TEXTTABLEOBDInfotServi09, STRUC_OBDParamID01Servi01, STRUC_OBDInfot02Servi09, TAB_OBDParamIDsServi01, TAB_OBDInfotServi09, DiagnServi_RequeCurrePowerDiagnData, DiagnServi_RequeVehicInfor, Req_RequeCurrePowerDiagnData, Req_RequeVehicInfor, Resp_RequeCurrePowerDiagnData und Resp_RequeVehicInfor entfernt bzw. verschoben nach PR_OBDOnCAN</CHANGE>
+         <REASON>OBD-relevante Sachverhalte werden in PR_OBDOnCAN bedatet</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>DiagnServi_DiagnSessiContrFUNCT verschoben nach PR_UDSOnCAN</CHANGE>
+         <REASON>soll im PR bedatet werden und wird von dort vererbt</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>COMPARAM-REFs entfernt bzw. verschoben nach PR_UDSOnCAN</CHANGE>
+         <REASON>FunctionalRequestCANID muss bereits im PR bedatet sein, FunctionalCANIDTable muss aufgrund der Einschränungen auf 10 ID-Paare in der VIS überschrieben werden</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001001</REVISION-LABEL>
+       <STATE>REVIEW</STATE>
+       <DATE>2007-08-16T00:00:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>folgende Elemente umbenannt und Referenzen angepasst:
+- Req_ClearResetEmissRelatDiagnInfor -&gt; Req_ClearResetEmissRelatDiagnInforAllUDSSyste
+- Resp_ClearResetEmissRelatDiagnInfor -&gt; Resp_ClearResetEmissRelatDiagnInforAllUDSSyste</CHANGE>
+         <REASON>Vermeidung von SHORT-NAME-Konflikten bei gleichzeitiger Vererbung von PR_OBDOnCAN in OBD-BVs (Requests/Responses können nicht eliminiert werden)</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>BASE-TYPE-ENCONDING=NONE bei A_UINT32 und A_BYTEFIELD entfernt</CHANGE>
+         <REASON>Datenreduktion</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>TI an DiagnServi_ClearResetEmissRelatDiagnInfor bedatet</CHANGE>
+         <REASON>von I/GS-42 vergeben</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001001</REVISION-LABEL>
+       <STATE>REVIEW</STATE>
+       <DATE>2007-09-14T00:00:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>DiagnServi_ClearResetEmissRelatDiagnInfor, Req_ClearResetEmissRelatDiagnInforAllUDSSyste und Resp_ClearResetEmissRelatDiagnInforAllUDSSyste entfernt</CHANGE>
+         <REASON>verschoben nach PR_OBDOnCAN</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001002</REVISION-LABEL>
+       <STATE>REVIEW</STATE>
+       <DATE>2008-01-15T00:00:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>DOC-REVISIONS aktualisiert</CHANGE>
+         <REASON>fehlende Einträge</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>DiagnServi_RequeCurrePowerDiagnData und DiagnServi_ClearResetEmissRelatDiagnInfor und alle notwendigen referenzierten Elemente aus FG_AllOBDSyste kopiert</CHANGE>
+         <REASON>Die beiden Dienste müssen für die GFS vorübergehend noch auf LL_AllUDSSyste ausführbar sein.</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001003</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2008-06-03T01:00:00+02:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>SEMANTIC an allen DIAG-COMMS und PARAMs mit Anhang A der Autorenrichtlinie abgeglichen und ggf. korrigiert</CHANGE>
+         <REASON>CCB-Beschluss</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>DESCs an allen DIAG-COMMs, REQUESTs und POS-RESPONSEs überarbeitet</CHANGE>
+         <REASON>Anpassung an Autorenrichtlinie</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>folgende Elemente umbenannt und REFs angepasst:
+- DOP_TEXTTABLEParamIDs -&gt; DOP_TEXTTABLEParamIDsAllUDSSyste
+- STRUC_PID01MonitStatuSinceDTCsClear -&gt; STRUC_PID01MonitStatuSinceDTCsClearAllUDSSyste
+- TAB_ParamIDs -&gt; TAB_ParamIDsAllUDSSyste
+- Req_ClearResetEmissRelatDiagnInfor -&gt; Req_ClearResetEmissRelatDiagnInforAllUDSSyste</CHANGE>
+         <REASON>SHORT-NAME-Konflikte bei Vererbung der Elemente in BVs, die auch von FG_AllOBDSyste erben</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>002003</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2009-10-23T01:00:00+02:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>COMPARAM-REF mit ISO_15765_2.CP_RequestAddrMode=&quot;Functional&quot; an DiagnServi_ClearResetEmissRelatDiagnInfor hinzugefügt</CHANGE>
+         <REASON>CCB-Beschluss</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>UPPER-LIMIT an allen COMPU-SCALEs mit UPPER-LIMIT=LOWER-LIMIT entfernt</CHANGE>
+         <REASON>redundant</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+     </DOC-REVISIONS>
+    </ADMIN-DATA>
+    <DIAG-DATA-DICTIONARY-SPEC>
+     <DATA-OBJECT-PROPS>
+      <DATA-OBJECT-PROP ID="DOP_TEXTTABLEParamIDsAllUDSSyste">
+       <SHORT-NAME>DOP_TEXTTABLEParamIDsAllUDSSyste</SHORT-NAME>
+       <LONG-NAME>TEXT TABLE Parameter IDs (All UDS Systems)</LONG-NAME>
+       <DESC>
+        <p>Liste der Parameter IDs für die Services $01 und $02</p>
+       </DESC>
+       <COMPU-METHOD>
+        <CATEGORY>TEXTTABLE</CATEGORY>
+        <COMPU-INTERNAL-TO-PHYS>
+         <COMPU-SCALES>
+          <COMPU-SCALE>
+           <SHORT-LABEL>$01</SHORT-LABEL>
+           <LOWER-LIMIT>1</LOWER-LIMIT>
+           <COMPU-CONST>
+            <VT>PID $01</VT>
+           </COMPU-CONST>
+          </COMPU-SCALE>
+         </COMPU-SCALES>
+        </COMPU-INTERNAL-TO-PHYS>
+       </COMPU-METHOD>
+       <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+        <BIT-LENGTH>8</BIT-LENGTH>
+       </DIAG-CODED-TYPE>
+       <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+       <INTERNAL-CONSTR>
+        <LOWER-LIMIT>1</LOWER-LIMIT>
+        <UPPER-LIMIT>1</UPPER-LIMIT>
+       </INTERNAL-CONSTR>
+      </DATA-OBJECT-PROP>
+     </DATA-OBJECT-PROPS>
+     <STRUCTURES>
+      <STRUCTURE ID="STRUC_PID01MonitStatuSinceDTCsClearAllUDSSyste">
+       <SHORT-NAME>STRUC_PID01MonitStatuSinceDTCsClearAllUDSSyste</SHORT-NAME>
+       <LONG-NAME>PID 01: Monitor status since DTCs cleared (All UDS Systems)</LONG-NAME>
+       <BYTE-SIZE>4</BYTE-SIZE>
+       <PARAMS>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_MalfuIndicLampMILStatu</SHORT-NAME>
+         <LONG-NAME TI="MAS00317">Malfunction Indicator Lamp (MIL) Status</LONG-NAME>
+         <BYTE-POSITION>0</BYTE-POSITION>
+         <BIT-POSITION>7</BIT-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEOnOff"/>
+        </PARAM>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_NumbeOfDTCsStoreInThisECU</SHORT-NAME>
+         <LONG-NAME TI="MAS00503">Number of DTCs stored in this ECU</LONG-NAME>
+         <BYTE-POSITION>0</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC7Bit"/>
+        </PARAM>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_ComplStatuOfNonContiMonitSinceDTCClear</SHORT-NAME>
+         <LONG-NAME>Completion Status Of Non-Continuous Monitors Since DTC Cleared</LONG-NAME>
+         <BYTE-POSITION>3</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_BYTEFIELD1Byte"/>
+        </PARAM>
+       </PARAMS>
+      </STRUCTURE>
+     </STRUCTURES>
+     <TABLES>
+      <TABLE ID="TAB_ParamIDsAllUDSSyste">
+       <SHORT-NAME>TAB_ParamIDsAllUDSSyste</SHORT-NAME>
+       <LONG-NAME>Parameter IDs (All UDS Systems)</LONG-NAME>
+       <KEY-DOP-REF ID-REF="DOP_TEXTTABLEParamIDsAllUDSSyste"/>
+       <TABLE-ROW ID="TAB_ParamIDsAllUDSSyste.TABROW_PID01">
+        <SHORT-NAME>TABROW_PID01</SHORT-NAME>
+        <LONG-NAME>PID $01</LONG-NAME>
+        <KEY>PID $01</KEY>
+        <STRUCTURE-REF ID-REF="STRUC_PID01MonitStatuSinceDTCsClearAllUDSSyste"/>
+       </TABLE-ROW>
+      </TABLE>
+     </TABLES>
+    </DIAG-DATA-DICTIONARY-SPEC>
+    <DIAG-COMMS>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL" ID="DiagnServi_RequeCurrePowerDiagnData" SEMANTIC="FUNCTION">
+      <SHORT-NAME>DiagnServi_RequeCurrePowerDiagnData</SHORT-NAME>
+      <LONG-NAME TI="SER00041">Request Current Powertrain Diagnostic Data</LONG-NAME>
+      <DESC>
+       <p>The purpose of this service is to allow access to current emission-related data values, including analogue inputs and outputs, digital inputs and outputs, and system status information. The request for information includes a parameter identification (PID) value that indicates to the on-board system the specific information requested. PID specifications, scaling information and display formats are included in Appendix B.</p>
+       <p>The ECU(s) shall respond to this message by transmitting the requested data value last determined by the system. All data values returned for sensor readings shall be actual readings, not default or substitute values used by the system because of a fault with that sensor.</p>
+       <p>Not all PIDs are applicable or supported by all systems. PID $00 is a bit-encoded value that indicates for each ECU which PIDs are supported. PID $00 indicates support for PIDs from $01 to $20. PID $20 indicates support for PIDs $21 through $40, etc. This is the same concept for PIDs/OBD Monitor IDs/TIDs/InfoTypes support in Services $01, $02, $06, $08, $09. PID $00 is required for those ECUs that respond to a corresponding Service $01 request message as specified in Appendix A.</p>
+       <p>
+        <b>IMPORTANT — All emissions-related OBD ECUs which at least support one of the services defined in this document shall support Service $01 and PID $00. Service $01 with PID $00 is defined as the universal &quot;initialization/keep alive/ping&quot; message for all emissions-related OBD ECUs.</b>
+       </p>
+       <p>The request message may contain up to six (6) PIDs. An external test equipment is not allowed to request a combination of PIDs supported and PIDs, which report data values. The ECU shall support requests for up to six (6) PIDs. The request message may contain the same PID multiple times. The ECU shall treat each PID as a separate parameter and respond with data for each PID (data returned may be different for the same PID) as often as requested.</p>
+       <p>The order of the PIDs in the response message is not required to match the order in the request message.</p>
+      </DESC>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_DataTrans"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <RELATED-DIAG-COMM-REFS>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrOBDIIAndVWDefauSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrDevelSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+      </RELATED-DIAG-COMM-REFS>
+      <REQUEST-REF ID-REF="Req_RequeCurrePowerDiagnDataAllUDSSyste"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF ID-REF="Resp_RequeCurrePowerDiagnData"/>
+      </POS-RESPONSE-REFS>
+     </DIAG-SERVICE>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL" ID="DiagnServi_ClearResetEmissRelatDiagnInfor" SEMANTIC="FAULTCLEAR">
+      <SHORT-NAME>DiagnServi_ClearResetEmissRelatDiagnInfor</SHORT-NAME>
+      <LONG-NAME TI="SER00044">Clear/Reset Emission-Related Diagnostic Information</LONG-NAME>
+      <DESC>
+       <p>The purpose of this service is to provide a means for the external test equipment to command ECUs to clear all emission-related
+diagnostic information. This includes:<ul>
+         <li>MIL and number of diagnostic trouble codes (can be read with Service $01, PID $01);</li>
+         <li>Clear the I/M (Inspection/Maintenance) readiness bits (Service $01, PID $01 and $41);</li>
+         <li>Confirmed diagnostic trouble codes (can be read with Service $03);</li>
+         <li>Pending diagnostic trouble codes (can be read with Service $07);</li>
+         <li>Diagnostic trouble code for freeze frame data (can be read with Service $02, PID $02);</li>
+         <li>Freeze frame data (can be read with Service $02);</li>
+         <li>Status of system monitoring tests (can be read with Service $01, PID $01);</li>
+         <li>On-board monitoring test results (can be read with Service $06);</li>
+         <li>Distance traveled while MIL is activated (can be read with Service $01, PID $21);</li>
+         <li>Number of warm-ups since DTCs cleared (can be read with Service $01, PID $30);</li>
+         <li>Distance traveled since DTCs cleared (can be read with Service $01, PID $31);</li>
+         <li>Time run by the engine while MIL is activated (can be read with Service $01, PID $4D);</li>
+         <li>Time since diagnostic trouble codes cleared (can be read with Service $01, PID $4E);</li>
+         <li>Reset misfire counts of standardized Test ID $0B to zero (can be read with Service $06).</li>
+        </ul>
+       </p>
+       <p>Other manufacturer-specific &quot;clearing/resetting&quot; actions may also occur in response to this request message. All ECUs shall respond to this request message with ignition ON and with the engine not running.</p>
+       <p>For safety and/or technical design reasons, ECUs that can not perform this operation under other conditions, such as with the engine running, shall send a negative response message with response code $22 - conditionsNotCorrect.</p>
+      </DESC>
+      <COMPARAM-REFS>
+       <COMPARAM-REF DOCREF="ISO_15765_3_on_ISO_15765_2" DOCTYPE="COMPARAM-SPEC" ID-REF="ISO_15765_2.CP_RequestAddrMode">
+        <VALUE>Functional</VALUE>
+        <PROTOCOL-SNREF SHORT-NAME="PR_UDSOnCAN"/>
+       </COMPARAM-REF>
+      </COMPARAM-REFS>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_StoreDataTrans"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <RELATED-DIAG-COMM-REFS>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrOBDIIAndVWDefauSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrDevelSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+      </RELATED-DIAG-COMM-REFS>
+      <REQUEST-REF ID-REF="Req_ClearResetEmissRelatDiagnInforAllUDSSyste"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF ID-REF="Resp_ClearResetEmissRelatDiagnInfor"/>
+      </POS-RESPONSE-REFS>
+     </DIAG-SERVICE>
+    </DIAG-COMMS>
+    <REQUESTS>
+     <REQUEST ID="Req_RequeCurrePowerDiagnDataAllUDSSyste">
+      <SHORT-NAME>Req_RequeCurrePowerDiagnDataAllUDSSyste</SHORT-NAME>
+      <LONG-NAME>Request Current Powertrain Diagnostic Data (All UDS Systems)</LONG-NAME>
+      <PARAMS>
+       <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+        <SHORT-NAME>Param_RequeServiId</SHORT-NAME>
+        <LONG-NAME>Request Service Id</LONG-NAME>
+        <BYTE-POSITION>0</BYTE-POSITION>
+        <CODED-VALUE>1</CODED-VALUE>
+        <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+         <BIT-LENGTH>8</BIT-LENGTH>
+        </DIAG-CODED-TYPE>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="ID">
+        <SHORT-NAME>Param_OBDParamID</SHORT-NAME>
+        <LONG-NAME>OBD Parameter-ID</LONG-NAME>
+        <BYTE-POSITION>1</BYTE-POSITION>
+        <DOP-REF ID-REF="DOP_TEXTTABLEParamIDsAllUDSSyste"/>
+       </PARAM>
+      </PARAMS>
+     </REQUEST>
+     <REQUEST ID="Req_ClearResetEmissRelatDiagnInforAllUDSSyste">
+      <SHORT-NAME>Req_ClearResetEmissRelatDiagnInforAllUDSSyste</SHORT-NAME>
+      <LONG-NAME>Clear/Reset Emission-Related Diagnostic Information (All UDS Systems)</LONG-NAME>
+      <PARAMS>
+       <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+        <SHORT-NAME>Param_RequeServiId</SHORT-NAME>
+        <LONG-NAME>Request Service Id</LONG-NAME>
+        <BYTE-POSITION>0</BYTE-POSITION>
+        <CODED-VALUE>4</CODED-VALUE>
+        <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+         <BIT-LENGTH>8</BIT-LENGTH>
+        </DIAG-CODED-TYPE>
+       </PARAM>
+      </PARAMS>
+     </REQUEST>
+    </REQUESTS>
+    <POS-RESPONSES>
+     <POS-RESPONSE ID="Resp_RequeCurrePowerDiagnData">
+      <SHORT-NAME>Resp_RequeCurrePowerDiagnData</SHORT-NAME>
+      <LONG-NAME>Request Current Powertrain Diagnostic Data</LONG-NAME>
+      <PARAMS>
+       <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+        <SHORT-NAME>Param_RespoServiId</SHORT-NAME>
+        <LONG-NAME>Response Service Id</LONG-NAME>
+        <BYTE-POSITION>0</BYTE-POSITION>
+        <CODED-VALUE>65</CODED-VALUE>
+        <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+         <BIT-LENGTH>8</BIT-LENGTH>
+        </DIAG-CODED-TYPE>
+       </PARAM>
+       <PARAM xsi:type="TABLE-KEY" SEMANTIC="ID" ID="Resp_RequeCurrePowerDiagnData.Param_OBDParamID">
+        <SHORT-NAME>Param_OBDParamID</SHORT-NAME>
+        <LONG-NAME>OBD Parameter-ID</LONG-NAME>
+        <BYTE-POSITION>1</BYTE-POSITION>
+        <TABLE-REF ID-REF="TAB_ParamIDsAllUDSSyste"/>
+       </PARAM>
+       <PARAM xsi:type="TABLE-STRUCT" SEMANTIC="DATA">
+        <SHORT-NAME>Param_ParamIDDataRecor</SHORT-NAME>
+        <LONG-NAME>Parameter-ID Data Record</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <TABLE-KEY-REF ID-REF="Resp_RequeCurrePowerDiagnData.Param_OBDParamID"/>
+       </PARAM>
+       <PARAM xsi:type="MATCHING-REQUEST-PARAM" SEMANTIC="ID">
+        <SHORT-NAME>Param_MatchParamID</SHORT-NAME>
+        <LONG-NAME>Matching Parameter ID</LONG-NAME>
+        <BYTE-POSITION>1</BYTE-POSITION>
+        <REQUEST-BYTE-POS>1</REQUEST-BYTE-POS>
+        <BYTE-LENGTH>1</BYTE-LENGTH>
+       </PARAM>
+      </PARAMS>
+     </POS-RESPONSE>
+     <POS-RESPONSE ID="Resp_ClearResetEmissRelatDiagnInfor">
+      <SHORT-NAME>Resp_ClearResetEmissRelatDiagnInfor</SHORT-NAME>
+      <LONG-NAME>Clear/Reset Emission-Related Diagnostic Information</LONG-NAME>
+      <PARAMS>
+       <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+        <SHORT-NAME>Param_RespoServiId</SHORT-NAME>
+        <LONG-NAME>Response Service Id</LONG-NAME>
+        <BYTE-POSITION>0</BYTE-POSITION>
+        <CODED-VALUE>68</CODED-VALUE>
+        <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+         <BIT-LENGTH>8</BIT-LENGTH>
+        </DIAG-CODED-TYPE>
+       </PARAM>
+      </PARAMS>
+     </POS-RESPONSE>
+    </POS-RESPONSES>
+    <IMPORT-REFS>
+     <IMPORT-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="ES_DataLibra"/>
+    </IMPORT-REFS>
+    <PARENT-REFS>
+     <PARENT-REF xsi:type="PROTOCOL-REF" DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="PR_UDSOnCAN"/>
+    </PARENT-REFS>
+   </FUNCTIONAL-GROUP>
+  </FUNCTIONAL-GROUPS>
+ </DIAG-LAYER-CONTAINER>
+</ODX>

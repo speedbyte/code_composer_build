@@ -1,0 +1,11 @@
+..\05_out\ADLATUS_cc_TMS470_HIS.out
+-o ..\05_out\ADLATUS_cc_TMS470_HIS.hex
+
+-image
+-zero
+-i
+
+ROMS
+{
+   ROW1: origin=0x00002000 len=0x900   romwidth=32 fill=0xFFFFFFFF
+}

@@ -1,0 +1,27 @@
+#TRACE_ID '0x6800B5 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! Wake Up No Reset!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '181 
+#TRACE_ID '0x6800BA 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! Wake Up KL30 Reset!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '186 
+#TRACE_ID '0x6800BF 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! Wake Up Can Wake!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '191 
+#TRACE_ID '0x6800C7 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! KL15 ON!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '199 
+#TRACE_ID '0x6800CE 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! DIAG ON KL15 Off!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '206 
+#TRACE_ID '0x6800D5 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! Sleep Delay Abgelaufen!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '213 
+#TRACE_ID '0x6800E8 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! ATleast one message is missing !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '232 
+#TRACE_ID '0x6800EF 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! No Eigen Diag allowed !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '239 
+#TRACE_ID '0x6800F6 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_NM '" !!! One Line CAN betrieb!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '246 
+#TRACE_ID '0x680114 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!!ApplNmCanNormal : Switch CAN to Wake up!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '276 
+#TRACE_ID '0x680131 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_NM '" !!! ERROR : Switch CAN to StandBy!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '305 
+#TRACE_ID '0x68013A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! Switch CAN to StandBy!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '314 
+#TRACE_ID '0x680154 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! ApplNmCanBusSleep : Wake UP CAN !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '340 
+#TRACE_ID '0x680160 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! ApplNmCanBusSleep : Shut CAN !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '352 
+#TRACE_ID '0x680176 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! ApplNmBusOffEnd !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '374 
+#TRACE_ID '0x68018D 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_NM '" !!! BUS OFF Error !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '397 
+#TRACE_ID '0x6801CA 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! Bus Sleep in Limp Home !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '458 
+#TRACE_ID '0x68021A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '"INHIBIT is Low in normal Can transceiver mode" '\MOD\MOD_NM\src 'NM_CB.c '538 
+#TRACE_ID '0x680227 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '"End INHIBIT BusOff DTC Waiting Time" '\MOD\MOD_NM\src 'NM_CB.c '551 
+#TRACE_ID '0x68023F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! ApplHandleBusOffWaitingTime Starts!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '575 
+#TRACE_ID '0x680244 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! ApplHandleBusOffWaitingTime Ends!!!!!" '\MOD\MOD_NM\src 'NM_CB.c '580 
+#TRACE_ID '0x68025E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_NM '"ADC DirektBatt = %d .Detect UnderVoltage in case of BusOff" '\MOD\MOD_NM\src 'NM_CB.c '606 
+#TRACE_ID '0x680262 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_NM '"ADC DirektBatt = %d in case of BusOff" '\MOD\MOD_NM\src 'NM_CB.c '610 
+#TRACE_ID '0x680266 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_NM '"NWDFdet = %d in case of BusOff" '\MOD\MOD_NM\src 'NM_CB.c '614 
+#TRACE_ID '0x680293 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! ApplNmWaitBusSleep !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '659 
+#TRACE_ID '0x68029E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! ApplNmWaitBusSleepCancel !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '670 
+#TRACE_ID '0x6802AC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_NM '" !!! ApplNmBusStart !!!!!" '\MOD\MOD_NM\src 'NM_CB.c '684 

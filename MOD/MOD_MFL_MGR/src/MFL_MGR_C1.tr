@@ -1,0 +1,19 @@
+#TRACE_ID '0x6600A7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '167 
+#TRACE_ID '0x6600B8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '184 
+#TRACE_ID '0x6600C8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '200 
+#TRACE_ID '0x6600D2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '210 
+#TRACE_ID '0x6600DB 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '219 
+#TRACE_ID '0x6600E4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '228 
+#TRACE_ID '0x660105 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Last Saved Ticks %d " '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '261 
+#TRACE_ID '0x66010D 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Received Tick Counter, RollUp with Overflow wrap around %d %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '269 
+#TRACE_ID '0x66011B 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Received Tick Counter, RollDn with overflow wrap around %d %d " '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '283 
+#TRACE_ID '0x660121 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Received Tick Counter, RollUp %d %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '289 
+#TRACE_ID '0x660127 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Received Tick Counter, RollDown %d %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '295 
+#TRACE_ID '0x660132 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '306 
+#TRACE_ID '0x66013C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '316 
+#TRACE_ID '0x660146 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_MFL_MGR '"MFL Tasten: Cyclic No button press CAN msg" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '326 
+#TRACE_ID '0x66014F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten: MFL Event Release" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '335 
+#TRACE_ID '0x66016A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten Kon: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '362 
+#TRACE_ID '0x660174 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten Kon: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '372 
+#TRACE_ID '0x66017D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten Kon: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '381 
+#TRACE_ID '0x660186 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_MFL_MGR '"MFL Tasten Kon: Event to Application for %d" '\MOD\MOD_MFL_MGR\src 'MFL_MGR_C1.c '390 

@@ -1,0 +1,6 @@
+DEBUG_STATE_ENUM_NAME='PORTQUAL                             'DEBUG_STATE_NAME='PortFunctional                                                         'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='PORTQUAL                             'DEBUG_STATE_NAME='PortIoIn                                                               'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='PORTQUAL                             'DEBUG_STATE_NAME='PortIoOut                                                              'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='PORTQUAL                             'DEBUG_STATE_NAME='PortIoOutHigh                                                          'DEBUG_STATE_NUMBER='3        '
+DEBUG_STATE_ENUM_NAME='PORTQUAL                             'DEBUG_STATE_NAME='PortIoOutLow                                                           'DEBUG_STATE_NUMBER='4        '
+                       

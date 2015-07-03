@@ -1,0 +1,112 @@
+#
+#  Global Make options
+#
+
+# Define environment directory
+TOOLSDIR = $(TOP)/TOOLS
+BUILDDIR = $(TOP)/BUILD
+TEMPDIR = $(TOP)/TEMP
+CONTROLLERDIR = $(TOP)/MOD
+
+# Define debug directory
+DEBUGDIR = $(TOP)/MOD/debug/
+
+# Define output image directory
+OUTDIR = $(TOP)/OUT/
+
+
+
+# includes
+include $(TEMPDIR)/makeoptsinc
+include $(BUILDDIR)/SYS/ucopts
+
+# Define shell
+#defining CYGPATH, allows make to run within CMD prompt
+CYGPATH	= $(TOOLSDIR)/cygwin
+SHELL	= $(CYGPATH)/bin/sh.exe
+MAKE	= $(CYGPATH)/bin/make.exe
+CAT	= $(CYGPATH)/bin/cat.exe
+LS	= $(CYGPATH)/bin/ls.exe
+RM	= $(CYGPATH)/bin/rm.exe
+ECHO	= $(CYGPATH)/bin/echo.exe
+MV	= $(CYGPATH)/bin/mv.exe
+PWD	= $(CYGPATH)/bin/pwd.exe
+CP	= $(CYGPATH)/bin/cp.exe
+
+
+CRCSIGN     = python $(TOOLSDIR)/Python_scripts/Crc_Script/uhv_crc.py
+MODULECLEAN = \
+    $(RM) -f $(OBJS) $(LIBRARY) *.bak *.id *.tr *.enum *~ $(DEBUGDIR)*.c $(DEBUGDIR)*.asm $(OUTDIR)$(LIBRARY)
+
+
+# set path to Tracescripts
+TRID = python $(TOOLSDIR)/Python_scripts/TraceScripts/GenerateTraceID.py
+
+# set path to Compiler & Flags
+CC		= $(TOOLSDIR)/CCStudio_v3.3/tms470/cgtools/bin/cl470.exe
+CFLAGS	= -g -as -mn --abi=tiabi -o2 --diag_suppress=232 --small-enum --diag_error=225 --diag_error=190 --diag_error=193 --diag_error=188
+#--diag_error=770
+#--display_error_number --issue_remarks
+
+# set path to assambler & Flags
+AS   = $(TOOLSDIR)/CCStudio_v3.3/tms470/cgtools/bin/asm470.exe
+ASFLAGS	= -g -o1 --asm_listing
+
+# set paths	to Linker & Flags (note linkopts is an options file)
+LN		= $(TOOLSDIR)/CCStudio_v3.3/tms470/cgtools/bin/cl470.exe
+LFLAGS = --verbose -z -c -x --heap_size=1
+LINKOPTSFILE = linker32.cmd
+
+# Librarian
+AR      = $(TOOLSDIR)/CCStudio_v3.3/tms470/cgtools/bin/ar470.exe
+ARFLAGS = -v
+
+# set paths	to Formatter & Flags
+F2H		= $(TOOLSDIR)/CCStudio_v3.3/tms470/cgtools/bin/hex470.exe
+F2HFLAGS= -q -image -zero -i
+ROMOPTSFILE = roms32.cmf
+
+FULLH           = python $(TOOLSDIR)/Python_scripts/BuildScripts/CompleteFlashHexBuild.py
+BOLO            = $(TOP)/FBL/01_SW_Projekt/01_adlatus/05_out/ADLATUS_cc_TMS470_VW_UDS.hex
+
+# Setup	suffixes for File types
+# Clear	existing definitions
+.SUFFIXES :
+#
+# Create new suffix definition	.c
+#
+.SUFFIXES :	.c .obj
+.c.obj :
+	$(ECHO)
+	$(ECHO)	Parsing for TraceMsgs $<
+	$(TRID) file $*.c $*.id $*.tr $*.enum
+	$(ECHO)	Compiling uC file $<
+	$(CC) $(CFLAGS)	$(CINC) $(COPTIONS) $*.c
+#
+# Create new suffix definition	.asm
+#
+.SUFFIXES :	.asm .obj
+.asm.obj :
+	$(ECHO)
+	$(ECHO)	Assembling uC file $<
+	$(AS) $(ASFLAGS) $(CINC) $(COPTIONS) $*.asm
+
+	
+MODULEMAKE = \
+    $(ECHO);\
+    $(ECHO) Building uC library $(LIBRARY);\
+    if [ -f $(LIBRARY) ]; then 					\
+		$(AR) -r $(LIBRARY) $(OBJS);	\
+        $(ECHO) "using linker option -r"; \
+	else										\
+		$(AR) -a $(LIBRARY) $(OBJS);	\
+        $(ECHO) "using linker option -a"; \
+	fi;    \
+    $(ECHO) End of Building uC library $(LIBRARY);\
+    $(ECHO) Copy Part;\
+    $(CP) *.c $(DEBUGDIR);\
+    $(CP) $(LIBRARY) $(OUTDIR);\
+    $(ECHO) End of Copy Part;\
+    
+DEPEND = $(OBJS)	: $(@:.obj=.c) ../inc/*.h 
+	

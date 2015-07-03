@@ -1,0 +1,28 @@
+--------------------  ADLATUS_cc_TMS470_PARROT.pjt - Debug  --------------------
+[ADLATUS_DummyMain.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -k -q -ss -pr -os -o2 -fr"r:/11_parrot/03_obj" -fs"r:/11_parrot/04_lst" -ft"r:/11_parrot/04_lst" -fb"r:/11_parrot/04_lst" -i"r:/05_header/ext" -i"r:/05_header/int" -i"r:/12_customer_files" -d"_DEBUG" -mf -ml -mt -@"../01_prj/Debug.lkf" "ADLATUS_DummyMain.c"
+
+[ADLATUS_ParrotHal.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -k -q -ss -pr -os -o2 -fr"r:/11_parrot/03_obj" -fs"r:/11_parrot/04_lst" -ft"r:/11_parrot/04_lst" -fb"r:/11_parrot/04_lst" -i"r:/05_header/ext" -i"r:/05_header/int" -i"r:/12_customer_files" -d"_DEBUG" -mf -ml -mt -@"../01_prj/Debug.lkf" "ADLATUS_ParrotHal.c"
+
+[ADLATUS_SciHandler.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -k -q -ss -pr -os -o2 -fr"r:/11_parrot/03_obj" -fs"r:/11_parrot/04_lst" -ft"r:/11_parrot/04_lst" -fb"r:/11_parrot/04_lst" -i"r:/05_header/ext" -i"r:/05_header/int" -i"r:/12_customer_files" -d"_DEBUG" -mf -ml -mt -@"../01_prj/Debug.lkf" "ADLATUS_SciHandler.c"
+
+[FlashLib_TMS470_PARROT.c] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -g -k -q -ss -pr -os -o2 -fr"r:/11_parrot/03_obj" -fs"r:/11_parrot/04_lst" -ft"r:/11_parrot/04_lst" -fb"r:/11_parrot/04_lst" -i"r:/05_header/ext" -i"r:/05_header/int" -i"r:/12_customer_files" -d"_DEBUG" -mf -ml -mt -@"../01_prj/Debug.lkf" "FlashLib_TMS470_PARROT.c"
+
+[Linking...] "E:\Programme\CCStudio_v3.3\tms470\cgtools_271\bin\cl470" -@"Debug.lkf"
+>> R:\11_parrot\01_prj\086350_TMS470_PARROT.cmd, line 169: warning: 
+               (.cinit) not found
+>> warning: entry point symbol _c_int00 undefined
+
+r:\11_parrot\01_prj\make_parrot.bat
+
+R:\11_parrot\01_prj>r:\12_tools\hex470 -@ t470_parrot.cmf  1>error.log 
+>> WARNING: invalid option: -@
+>> WARNING: section '.const' at 030h falls in unconfigured memory (skipped)
+>> WARNING: section '.text' at 040h falls in unconfigured memory (skipped)
+>> WARNING: section '$fill000' overlaps unconfigured memory at 03ff0h ($fill000
+            incomplete)
+
+R:\11_parrot\01_prj>..\..\12_tools\srec_cat ..\05_out\ADLATUS_cc_TMS470_PARROT.hex -Intel -offset 0x401000 -Output ..\05_out\ADLATUS_cc_TMS470_PARROT.hex -Intel 
+
+Build Complete,
+  0 Errors, 2 Warnings, 0 Remarks.
+  Please view the build output for errors and warnings for any custom steps.

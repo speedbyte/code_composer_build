@@ -1,0 +1,71 @@
+/*****************************************************************************/
+/* typeinfo  v4.1.4                                                          */
+/* Copyright (c) 1996-2006 Texas Instruments Incorporated                    */
+/*****************************************************************************/
+#if __EXCEPTIONS
+#define THROW(throw_spec) throw(throw_spec)
+#define THROW_NOTHING() throw()
+#else /* !__EXCEPTIONS */
+#define THROW(throw_spec) /* Nothing. */
+#define THROW_NOTHING() /* Nothing. */
+#endif /* __EXCEPTIONS */
+
+#ifndef _TYPEINFO
+#define _TYPEINFO
+
+#ifndef __embedded_cplusplus
+
+#include <stdexcept>
+namespace std 
+{
+
+   class bad_cast   
+   {
+   public:
+     bad_cast() throw() { };
+     bad_cast(const bad_cast&) throw() {};
+     bad_cast& operator=(const bad_cast& rhs) throw() 
+	{   
+	    operator=(rhs);
+            return *this;
+        }
+     virtual ~bad_cast() throw() {};
+     virtual const char* what() const throw() { return ""; };
+   };
+   class bad_typeid 
+   {
+   public:
+	bad_typeid() throw() {};
+	bad_typeid(const bad_typeid& ) throw() {};
+	bad_typeid& operator=(const bad_typeid& rhs) throw()
+	{
+  	  operator=(rhs);
+  	  return *this;
+	};	
+        virtual ~bad_typeid() throw() {};
+	virtual const char* what() const throw() { return ""; };
+  };
+
+#pragma define_type_info
+   class type_info 
+   {
+      public:
+	 virtual ~type_info();
+	 bool operator==(const type_info& rhs) const;
+	 bool operator!=(const type_info& rhs) const;
+	 bool before( const type_info& rhs) const;
+	 const char* name() const;
+      protected:
+	 type_info(const type_info& rhs);
+      private:
+	 type_info& operator=(const type_info& rhs);
+
+#ifdef __EDG_IA64_ABI
+  private:
+    const char *__type_name;
+#endif /* ifdef __EDG_IA64_ABI */
+   };
+
+}
+#endif /* __embedded_cplusplus */
+#endif /*_TYPEINFO */

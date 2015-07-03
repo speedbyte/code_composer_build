@@ -1,0 +1,727 @@
+/****************************************************************************/
+/* GEL																		*/
+/* Example																	*/
+/* DEVICE:	TMS470SF55B													*/
+/****************************************************************************/
+
+
+/* The StartUp() function is called every time you start					*/
+/* Code Composer.  You can customize this function to						*/
+/* perform initializations.													*/
+
+
+memmap()
+{
+	GEL_MapOn();
+	GEL_MapReset();
+		
+		 	 /* address   ,page,   length, readable, writeable*/
+	GEL_MapAdd(0x00000000,   0  , 0x000C0000,  1       , 0);
+	GEL_MapAdd(0x00400000,   0  , 0x0000C000,  1       , 1);
+	GEL_MapAdd(0x00800000,   0  , 0x00000600,  1       , 1);
+	GEL_MapAdd(0xFFE84000,   0  , 0x00008000,  1       , 1);
+	GEL_MapAdd(0xFFF00000,   0  , 0x00100000,  1       , 1);
+}
+
+StartUp()
+{
+    memmap();	/* perform a memory map definition	*/
+}
+
+//-------------------------------------------------------------------------------------
+
+menuitem "DMA Register"
+
+	hotmenu DMA()
+	{
+		GEL_WatchAdd("*(int*)0xFFFFFE80,x","DMACCR0");
+		GEL_WatchAdd("*(int*)0xFFFFFE84,x","DMACCR1");
+		GEL_WatchAdd("*(int*)0xFFFFFE88,x","DMASR");
+		GEL_WatchAdd("*(int*)0xFFFFFE8C,x","DMAIO0");
+		GEL_WatchAdd("*(int*)0xFFFFFE90,x","DMAIO1");
+		GEL_WatchAdd("*(int*)0xFFFFFE94,x","DMACPSR");
+		GEL_WatchAdd("*(int*)0xFFFFFE98,x","DMACPSCR");
+		GEL_WatchAdd("*(int*)0xFFFFFE9C,x","DMAGCR");
+		GEL_WatchAdd("*(int*)0xFFFFFEA0,x","DMAGDR");
+		GEL_WatchAdd("*(int*)0xFFFFFEA4,x","DMAACR");
+		GEL_WatchAdd("*(int*)0xFFFFFEA8,x","DMACCPR0");
+		GEL_WatchAdd("*(int*)0xFFFFFEAC,x","DMACCPR1");
+		GEL_WatchAdd("*(int*)0xFFFFFEB0,x","DMACCPR2");
+		GEL_WatchAdd("*(int*)0xFFFFFEB4,x","DMACCPR3");
+	}
+	
+//---------------------------
+
+	hotmenu DMA_CPs()
+	{
+	 	GEL_WatchAdd("*(int*)0xFFFFF800,x","CP0_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF804,x","CP0_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF808,x","CP0_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF80C,x","CP0_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF810,x","CP1_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF814,x","CP1_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF818,x","CP1_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF81C,x","CP1_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF820,x","CP2_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF824,x","CP2_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF828,x","CP2_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF82C,x","CP2_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF830,x","CP3_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF834,x","CP3_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF838,x","CP3_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF83C,x","CP3_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF840,x","CP4_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF844,x","CP4_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF848,x","CP4_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF84C,x","CP4_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF850,x","CP5_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF854,x","CP5_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF858,x","CP5_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF85C,x","CP5_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF860,x","CP6_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF864,x","CP6_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF868,x","CP6_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF86C,x","CP6_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF870,x","CP7_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF874,x","CP7_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF878,x","CP7_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF87C,x","CP7_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF880,x","CP8_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF884,x","CP8_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF888,x","CP8_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF88C,x","CP8_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF890,x","CP9_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF894,x","CP9_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF898,x","CP9_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF89C,x","CP9_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF8A0,x","CP10_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8A4,x","CP10_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8A8,x","CP10_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8AC,x","CP10_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF8B0,x","CP11_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8B4,x","CP11_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8B8,x","CP11_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8BC,x","CP11_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF8C0,x","CP12_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8C4,x","CP12_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8C8,x","CP12_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8CC,x","CP12_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF8D0,x","CP13_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8D4,x","CP13_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8D8,x","CP13_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8DC,x","CP13_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF8E0,x","CP14_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8E4,x","CP14_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8E8,x","CP14_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8EC,x","CP14_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF8F0,x","CP15_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8F4,x","CP15_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8F8,x","CP15_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF8FC,x","CP15_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF900,x","CP16_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF904,x","CP16_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF908,x","CP16_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF90C,x","CP16_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF910,x","CP17_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF914,x","CP17_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF918,x","CP17_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF91C,x","CP17_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF920,x","CP18_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF924,x","CP18_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF928,x","CP18_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF92C,x","CP18_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF930,x","CP19_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF934,x","CP19_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF938,x","CP19_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF93C,x","CP19_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF940,x","CP20_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF944,x","CP20_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF948,x","CP20_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF94C,x","CP20_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF950,x","CP21_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF954,x","CP21_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF958,x","CP21_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF95C,x","CP21_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF960,x","CP22_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF964,x","CP22_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF968,x","CP22_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF96C,x","CP22_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF970,x","CP23_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF974,x","CP23_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF978,x","CP23_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF97C,x","CP23_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF980,x","CP24_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF984,x","CP24_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF988,x","CP24_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF98C,x","CP24_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF990,x","CP25_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF994,x","CP25_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF998,x","CP25_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF99C,x","CP25_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF9A0,x","CP26_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9A4,x","CP26_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9A8,x","CP26_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9AC,x","CP26_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF9B0,x","CP27_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9B4,x","CP27_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9B8,x","CP27_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9BC,x","CP27_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF9C0,x","CP28_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9C4,x","CP28_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9C8,x","CP28_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9CC,x","CP28_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF9D0,x","CP29_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9D4,x","CP29_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9D8,x","CP29_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9DC,x","CP29_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF9E0,x","CP30_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9E4,x","CP30_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9E8,x","CP30_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9EC,x","CP30_Transfercountsize");
+	 	
+	 	GEL_WatchAdd("*(int*)0xFFFFF9F0,x","CP31_Configword");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9F4,x","CP31_Sourceadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9F8,x","CP31_Destinationadr");
+	 	GEL_WatchAdd("*(int*)0xFFFFF9FC,x","CP31_Transfercountsize");
+	}
+
+//-------------------------------------------------------------------------------------
+
+menuitem "Flash Register"
+
+	hotmenu Power()
+	{		
+		GEL_WatchAdd("*(int*)0xFFE8BC10,x","FMTCR");
+	}
+
+//---------------------------
+
+	hotmenu Bank0()
+	{		
+		GEL_WatchAdd("*(int*)0xFFE88000,x","FMBAC1");
+		GEL_WatchAdd("*(int*)0xFFE88004,x","FMBAC2");
+		GEL_WatchAdd("*(int*)0xFFE88008,x","FMBSEA");
+		GEL_WatchAdd("*(int*)0xFFE8800C,x","FMBSEB");
+		GEL_WatchAdd("*(int*)0xFFE88010,x","FMBRDY");
+		GEL_WatchAdd("*(int*)0xFFE89C00,x","FMREGOPT");
+		GEL_WatchAdd("*(int*)0xFFE89C08,x","FMBBUSY");
+		GEL_WatchAdd("*(int*)0xFFE89C0C,x","FMPKEY");
+		GEL_WatchAdd("*(int*)0xFFE8A810,x","FMPTR4");
+		GEL_WatchAdd("*(int*)0xFFE8A814,x","FMPRDY");
+		GEL_WatchAdd("*(int*)0xFFE8BC00,x","FMMAC1");
+		GEL_WatchAdd("*(int*)0xFFE8BC04,x","FMMAC2");
+		GEL_WatchAdd("*(int*)0xFFE8BC08,x","FMPAGP");
+		GEL_WatchAdd("*(int*)0xFFE8BC0C,x","FMSTAT");
+	}
+	
+	hotmenu Bank1()
+	{
+		GEL_WatchAdd("*(int*)0xFFE90000,x","FMBAC1");
+		GEL_WatchAdd("*(int*)0xFFE90004,x","FMBAC2");
+		GEL_WatchAdd("*(int*)0xFFE90008,x","FMBSEA");
+		GEL_WatchAdd("*(int*)0xFFE9000C,x","FMBSEB");
+		GEL_WatchAdd("*(int*)0xFFE90010,x","FMBRDY");
+		GEL_WatchAdd("*(int*)0xFFE91C00,x","FMREGOPT");	
+		GEL_WatchAdd("*(int*)0xFFE91C08,x","FMBBUSY");
+		GEL_WatchAdd("*(int*)0xFFE91C0C,x","FMPKEY");
+		GEL_WatchAdd("*(int*)0xFFE92814,x","FMPRDY");
+		GEL_WatchAdd("*(int*)0xFFE93C00,x","FMMAC1");
+		GEL_WatchAdd("*(int*)0xFFE93C04,x","FMMAC2");
+   		GEL_WatchAdd("*(int*)0xFFE93C08,x","FMPAGP");
+		GEL_WatchAdd("*(int*)0xFFE93C0C,x","FMMSTAT");	
+	}
+
+	hotmenu Bank2()
+	{
+		GEL_WatchAdd("*(int*)0xFFEA0000,x","FMBAC1");
+		GEL_WatchAdd("*(int*)0xFFEA0004,x","FMBAC2");
+		GEL_WatchAdd("*(int*)0xFFEA0008,x","FMBSEA");
+		GEL_WatchAdd("*(int*)0xFFEA000C,x","FMBSEB");
+		GEL_WatchAdd("*(int*)0xFFEA0010,x","FMBRDY");
+		GEL_WatchAdd("*(int*)0xFFEA1C00,x","FMREGOPT");	
+		GEL_WatchAdd("*(int*)0xFFEA1C08,x","FMBBUSY");
+		GEL_WatchAdd("*(int*)0xFFEA1C0C,x","FMPKEY");
+		GEL_WatchAdd("*(int*)0xFFEA2814,x","FMPRDY");
+		GEL_WatchAdd("*(int*)0xFFEA3C00,x","FMMAC1");
+		GEL_WatchAdd("*(int*)0xFFEA3C04,x","FMMAC2");
+		GEL_WatchAdd("*(int*)0xFFEA3C08,x","FMPAGP");
+		GEL_WatchAdd("*(int*)0xFFEA3C0C,x","FMMSTAT");	
+	}
+
+//-------------------------------------------------------------------------------------
+
+menuitem "Peripherals"
+
+	hotmenu ADC1()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7F000,x","ADCR1");
+		GEL_WatchAdd("*(int*)0xFFF7F004,x","ADCR2");
+		GEL_WatchAdd("*(int*)0xFFF7F008,x","ADSR");
+		GEL_WatchAdd("*(int*)0xFFF7F00C,x","ADEISR");
+		GEL_WatchAdd("*(int*)0xFFF7F010,x","ADISR1");
+		GEL_WatchAdd("*(int*)0xFFF7F014,x","ADISR2");
+		GEL_WatchAdd("*(int*)0xFFF7F018,x","ADCALR");
+		GEL_WatchAdd("*(int*)0xFFF7F09C,x","ADINR");
+		GEL_WatchAdd("*(int*)0xFFF7F0A0,x","ADCPC");
+		GEL_WatchAdd("*(int*)0xFFF7F0B0,x","ADSAMPEV");
+		GEL_WatchAdd("*(int*)0xFFF7F0B4,x","ADSAMP1");
+		GEL_WatchAdd("*(int*)0xFFF7F0B8,x","ADSAMP2");
+		GEL_WatchAdd("*(int*)0xFFF7F0BC,x","ADBCR1");
+		GEL_WatchAdd("*(int*)0xFFF7F0C0,x","ADBCR2");
+		GEL_WatchAdd("*(int*)0xFFF7F0C4,x","ADBCR3");
+		GEL_WatchAdd("*(int*)0xFFF7F0C8,x","ADBST");
+		GEL_WatchAdd("*(int*)0xFFF7F0CC,x","ADTHREV");
+		GEL_WatchAdd("*(int*)0xFFF7F0D0,x","ADTHRG1");
+		GEL_WatchAdd("*(int*)0xFFF7F0D4,x","ADTHRG2");
+		GEL_WatchAdd("*(int*)0xFFF7F0D8,x","ADEVTSRC");
+	}
+	
+	hotmenu ECP1x()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7EF00,x","ECPCTRL");
+	}
+	
+	hotmenu GIO()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7EC00,x","GIOPWDN");
+		GEL_WatchAdd("*(int*)0xFFF7EC04,x","GIOENA1");
+		GEL_WatchAdd("*(int*)0xFFF7EC08,x","GIOPOL1");
+		GEL_WatchAdd("*(int*)0xFFF7EC0C,x","GIOFLG1");
+		GEL_WatchAdd("*(int*)0xFFF7EC10,x","GIOPRY1");
+		GEL_WatchAdd("*(int*)0xFFF7EC14,x","GIOOFFA");
+		GEL_WatchAdd("*(int*)0xFFF7EC18,x","GIOEMUA");
+		GEL_WatchAdd("*(int*)0xFFF7EC1C,x","GIOOFFB");
+		GEL_WatchAdd("*(int*)0xFFF7EC20,x","GIOEMUB");
+		GEL_WatchAdd("*(int*)0xFFF7EC24,x","GIODIRA");
+		GEL_WatchAdd("*(int*)0xFFF7EC28,x","GIODINA");
+		GEL_WatchAdd("*(int*)0xFFF7EC2C,x","GIODOUTA");
+		GEL_WatchAdd("*(int*)0xFFF7EC30,x","GIODSETA");
+		GEL_WatchAdd("*(int*)0xFFF7EC34,x","GIODCLRA");
+		GEL_WatchAdd("*(int*)0xFFF7EC38,x","GIODIRB");
+		GEL_WatchAdd("*(int*)0xFFF7EC3C,x","GIODINB");
+		GEL_WatchAdd("*(int*)0xFFF7EC40,x","GIODOUTB");
+		GEL_WatchAdd("*(int*)0xFFF7EC44,x","GIODSETB");
+		GEL_WatchAdd("*(int*)0xFFF7EC48,x","GIODCLRB");
+		GEL_WatchAdd("*(int*)0xFFF7EC4C,x","GIODIRC");
+		GEL_WatchAdd("*(int*)0xFFF7EC50,x","GIODINC");
+		GEL_WatchAdd("*(int*)0xFFF7EC54,x","GIODOUTC");
+		GEL_WatchAdd("*(int*)0xFFF7EC58,x","GIODSETC");
+		GEL_WatchAdd("*(int*)0xFFF7EC5C,x","GIODCLRC");
+		GEL_WatchAdd("*(int*)0xFFF7EC60,x","GIODIRD");
+		GEL_WatchAdd("*(int*)0xFFF7EC64,x","GIODIND");
+		GEL_WatchAdd("*(int*)0xFFF7EC68,x","GIODOUTD");
+		GEL_WatchAdd("*(int*)0xFFF7EC6C,x","GIOSETD");
+		GEL_WatchAdd("*(int*)0xFFF7EC70,x","GIOCLRD");
+		GEL_WatchAdd("*(int*)0xFFF7EC74,x","GIODIRE");
+		GEL_WatchAdd("*(int*)0xFFF7EC78,x","GIODINE");
+		GEL_WatchAdd("*(int*)0xFFF7EC7C,x","GIODOUTE");
+		GEL_WatchAdd("*(int*)0xFFF7EC80,x","GIODSETE");
+		GEL_WatchAdd("*(int*)0xFFF7EC84,x","GIODCLRE");
+		GEL_WatchAdd("*(int*)0xFFF7EC88,x","GIODIRF");
+		GEL_WatchAdd("*(int*)0xFFF7EC8C,x","GIODINF");
+		GEL_WatchAdd("*(int*)0xFFF7EC90,x","GIODOUTF");
+		GEL_WatchAdd("*(int*)0xFFF7EC94,x","GIODSETF");
+		GEL_WatchAdd("*(int*)0xFFF7EC98,x","GIODCLRF");
+		GEL_WatchAdd("*(int*)0xFFF7EC9C,x","GIODIRG");
+		GEL_WatchAdd("*(int*)0xFFF7ECA0,x","GIODING");
+		GEL_WatchAdd("*(int*)0xFFF7ECA4,x","GIODOUTG");
+		GEL_WatchAdd("*(int*)0xFFF7ECA8,x","GIODSETG");
+		GEL_WatchAdd("*(int*)0xFFF7ECAC,x","GIODCLRG");
+		GEL_WatchAdd("*(int*)0xFFF7ECB0,x","GIODIRH");
+		GEL_WatchAdd("*(int*)0xFFF7ECB4,x","GIODINH");
+		GEL_WatchAdd("*(int*)0xFFF7ECB8,x","GIODOUTH");
+		GEL_WatchAdd("*(int*)0xFFF7ECBC,x","GIODSETH");
+		GEL_WatchAdd("*(int*)0xFFF7ECC0,x","GIODCLRH");
+		GEL_WatchAdd("*(int*)0xFFF7ECC4,x","GIOENA2");
+		GEL_WatchAdd("*(int*)0xFFF7ECC8,x","GIOPOL2");
+		GEL_WatchAdd("*(int*)0xFFF7ECCC,x","GIOFLG2");
+		GEL_WatchAdd("*(int*)0xFFF7ECD0,x","GIOPRY2");
+	}
+	
+	hotmenu HECC1()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7E800,x","CANME");
+		GEL_WatchAdd("*(int*)0xFFF7E804,x","CANMD");
+		GEL_WatchAdd("*(int*)0xFFF7E808,x","CANTRS");
+		GEL_WatchAdd("*(int*)0xFFF7E80C,x","CANTRR");
+		GEL_WatchAdd("*(int*)0xFFF7E810,x","CANTA");
+		GEL_WatchAdd("*(int*)0xFFF7E814,x","CANAA");
+		GEL_WatchAdd("*(int*)0xFFF7E818,x","CANRMP");
+		GEL_WatchAdd("*(int*)0xFFF7E81C,x","CANRML");
+		GEL_WatchAdd("*(int*)0xFFF7E820,x","CANRFP");
+	/*	GEL_WatchAdd("*(int*)0xFFF7E824,x","CANGAM");    Reserved in HECC */
+		GEL_WatchAdd("*(int*)0xFFF7E828,x","CANMC");
+		GEL_WatchAdd("*(int*)0xFFF7E82C,x","CANBTC");
+		GEL_WatchAdd("*(int*)0xFFF7E830,x","CANES");
+		GEL_WatchAdd("*(int*)0xFFF7E834,x","CANTEC");
+		GEL_WatchAdd("*(int*)0xFFF7E838,x","CANREC");
+		GEL_WatchAdd("*(int*)0xFFF7E83C,x","CANGIF0");
+		GEL_WatchAdd("*(int*)0xFFF7E840,x","CANGIM");
+		GEL_WatchAdd("*(int*)0xFFF7E844,x","CANGIF1");
+		GEL_WatchAdd("*(int*)0xFFF7E848,x","CANMIM");
+		GEL_WatchAdd("*(int*)0xFFF7E84C,x","CANMIL");
+		GEL_WatchAdd("*(int*)0xFFF7E850,x","CANOPC");
+		GEL_WatchAdd("*(int*)0xFFF7E854,x","CANTIOC");
+		GEL_WatchAdd("*(int*)0xFFF7E858,x","CANRIOC");
+		GEL_WatchAdd("*(int*)0xFFF7E85C,x","CANLNT");
+		GEL_WatchAdd("*(int*)0xFFF7E860,x","CANTOC");
+		GEL_WatchAdd("*(int*)0xFFF7E864,x","CANTOS");
+	}
+	
+	hotmenu HECC2()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7EA00,x","CANME");
+		GEL_WatchAdd("*(int*)0xFFF7EA04,x","CANMD");
+		GEL_WatchAdd("*(int*)0xFFF7EA08,x","CANTRS");
+		GEL_WatchAdd("*(int*)0xFFF7EA0C,x","CANTRR");
+		GEL_WatchAdd("*(int*)0xFFF7EA10,x","CANTA");
+		GEL_WatchAdd("*(int*)0xFFF7EA14,x","CANAA");
+		GEL_WatchAdd("*(int*)0xFFF7EA18,x","CANRMP");
+		GEL_WatchAdd("*(int*)0xFFF7EA1C,x","CANRML");
+		GEL_WatchAdd("*(int*)0xFFF7EA20,x","CANRFP");
+		GEL_WatchAdd("*(int*)0xFFF7EA24,x","CANGAM");  /*  Reserved in HECC */
+		GEL_WatchAdd("*(int*)0xFFF7EA28,x","CANMC");
+		GEL_WatchAdd("*(int*)0xFFF7EA2C,x","CANBTC");
+		GEL_WatchAdd("*(int*)0xFFF7EA30,x","CANES");
+		GEL_WatchAdd("*(int*)0xFFF7EA34,x","CANTEC");
+		GEL_WatchAdd("*(int*)0xFFF7EA38,x","CANREC");
+		GEL_WatchAdd("*(int*)0xFFF7EA3C,x","CANGIF0");
+		GEL_WatchAdd("*(int*)0xFFF7EA40,x","CANGIM");
+		GEL_WatchAdd("*(int*)0xFFF7EA44,x","CANGIF1");
+		GEL_WatchAdd("*(int*)0xFFF7EA48,x","CANMIM");
+		GEL_WatchAdd("*(int*)0xFFF7EA4C,x","CANMIL");
+		GEL_WatchAdd("*(int*)0xFFF7EA50,x","CANOPC");
+		GEL_WatchAdd("*(int*)0xFFF7EA54,x","CANTIOC");
+		GEL_WatchAdd("*(int*)0xFFF7EA58,x","CANRIOC");
+		GEL_WatchAdd("*(int*)0xFFF7EA5C,x","CANLNT");
+		GEL_WatchAdd("*(int*)0xFFF7EA60,x","CANTOC");
+		GEL_WatchAdd("*(int*)0xFFF7EA64,x","CANTOS");
+	}
+	
+	hotmenu HECC3()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7D000,x","CANME");
+		GEL_WatchAdd("*(int*)0xFFF7D004,x","CANMD");
+		GEL_WatchAdd("*(int*)0xFFF7D008,x","CANTRS");
+		GEL_WatchAdd("*(int*)0xFFF7D00C,x","CANTRR");
+		GEL_WatchAdd("*(int*)0xFFF7D010,x","CANTA");
+		GEL_WatchAdd("*(int*)0xFFF7D014,x","CANAA");
+		GEL_WatchAdd("*(int*)0xFFF7D018,x","CANRMP");
+		GEL_WatchAdd("*(int*)0xFFF7D01C,x","CANRML");
+		GEL_WatchAdd("*(int*)0xFFF7D020,x","CANRFP");
+		GEL_WatchAdd("*(int*)0xFFF7D024,x","CANGAM");  /*  Reserved in HECC */
+		GEL_WatchAdd("*(int*)0xFFF7D028,x","CANMC");
+		GEL_WatchAdd("*(int*)0xFFF7D02C,x","CANBTC");
+		GEL_WatchAdd("*(int*)0xFFF7D030,x","CANES");
+		GEL_WatchAdd("*(int*)0xFFF7D034,x","CANTEC");
+		GEL_WatchAdd("*(int*)0xFFF7D038,x","CANREC");
+		GEL_WatchAdd("*(int*)0xFFF7D03C,x","CANGIF0");
+		GEL_WatchAdd("*(int*)0xFFF7D040,x","CANGIM");
+		GEL_WatchAdd("*(int*)0xFFF7D044,x","CANGIF1");
+		GEL_WatchAdd("*(int*)0xFFF7D048,x","CANMIM");
+		GEL_WatchAdd("*(int*)0xFFF7D04C,x","CANMIL");
+		GEL_WatchAdd("*(int*)0xFFF7D050,x","CANOPC");
+		GEL_WatchAdd("*(int*)0xFFF7D054,x","CANTIOC");
+		GEL_WatchAdd("*(int*)0xFFF7D058,x","CANRIOC");
+		GEL_WatchAdd("*(int*)0xFFF7D05C,x","CANLNT");
+		GEL_WatchAdd("*(int*)0xFFF7D060,x","CANTOC");
+		GEL_WatchAdd("*(int*)0xFFF7D064,x","CANTOS");
+	}
+	
+	hotmenu HET()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7FC00,x","HETGCR");
+		GEL_WatchAdd("*(int*)0xFFF7FC04,x","HETPFR");
+		GEL_WatchAdd("*(int*)0xFFF7FC08,x","HETADDR");
+		GEL_WatchAdd("*(int*)0xFFF7FC0C,x","HETOFF1");
+		GEL_WatchAdd("*(int*)0xFFF7FC10,x","HETOFF2");
+		GEL_WatchAdd("*(int*)0xFFF7FC14,x","HETEXC1");
+		GEL_WatchAdd("*(int*)0xFFF7FC18,x","HETEXC2");
+		GEL_WatchAdd("*(int*)0xFFF7FC1C,x","HETPRY");
+		GEL_WatchAdd("*(int*)0xFFF7FC20,x","HETFLG");
+		/* 0x..24 and 0x..28 are reserved */
+		GEL_WatchAdd("*(int*)0xFFF7FC2C,x","HETHRSH");
+		GEL_WatchAdd("*(int*)0xFFF7FC30,x","HETXOR");
+		GEL_WatchAdd("*(int*)0xFFF7FC34,x","HETDIR");
+		GEL_WatchAdd("*(int*)0xFFF7FC38,x","HETDIN");
+		GEL_WatchAdd("*(int*)0xFFF7FC3C,x","HETDOUT");
+		GEL_WatchAdd("*(int*)0xFFF7FC40,x","HETDSET");
+		GEL_WatchAdd("*(int*)0xFFF7FC44,x","HETDCLR");
+	}
+	
+	hotmenu SCI1()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7F400,x","SCICCR");
+		GEL_WatchAdd("*(int*)0xFFF7F404,x","SCICTL1");
+		GEL_WatchAdd("*(int*)0xFFF7F408,x","SCICTL2");
+		GEL_WatchAdd("*(int*)0xFFF7F40C,x","SCICLT3");
+		GEL_WatchAdd("*(int*)0xFFF7F410,x","SCIRXST");
+		GEL_WatchAdd("*(int*)0xFFF7F414,x","SCIHBAUD");
+		GEL_WatchAdd("*(int*)0xFFF7F418,x","SCIMBAUD");
+		GEL_WatchAdd("*(int*)0xFFF7F41C,x","SCILBAUD");
+		GEL_WatchAdd("*(int*)0xFFF7F420,x","SCIRXEMU");
+		GEL_WatchAdd("*(int*)0xFFF7F424,x","SCIRXBUF");
+		GEL_WatchAdd("*(int*)0xFFF7F428,x","SCITXBUF");
+		GEL_WatchAdd("*(int*)0xFFF7F42C,x","SCIPC1");
+		GEL_WatchAdd("*(int*)0xFFF7F430,x","SCIPC2");
+		GEL_WatchAdd("*(int*)0xFFF7F434,x","SCIPC3");
+	}
+	
+	hotmenu SCI2()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7F500,x","SCICCR");
+		GEL_WatchAdd("*(int*)0xFFF7F504,x","SCICTL1");
+		GEL_WatchAdd("*(int*)0xFFF7F508,x","SCICTL2");
+		GEL_WatchAdd("*(int*)0xFFF7F50C,x","SCICLT3");
+		GEL_WatchAdd("*(int*)0xFFF7F510,x","SCIRXST");
+		GEL_WatchAdd("*(int*)0xFFF7F514,x","SCIHBAUD");
+		GEL_WatchAdd("*(int*)0xFFF7F518,x","SCIMBAUD");
+		GEL_WatchAdd("*(int*)0xFFF7F51C,x","SCILBAUD");
+		GEL_WatchAdd("*(int*)0xFFF7F520,x","SCIRXEMU");
+		GEL_WatchAdd("*(int*)0xFFF7F524,x","SCIRXBUF");
+		GEL_WatchAdd("*(int*)0xFFF7F528,x","SCITXBUF");
+		GEL_WatchAdd("*(int*)0xFFF7F52C,x","SCIPC1");
+		GEL_WatchAdd("*(int*)0xFFF7F530,x","SCIPC2");
+		GEL_WatchAdd("*(int*)0xFFF7F534,x","SCIPC3");
+	}
+	
+	hotmenu SPI1()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7F800,x","SPICTRL1");
+		GEL_WatchAdd("*(int*)0xFFF7F804,x","SPICTRL2");
+		GEL_WatchAdd("*(int*)0xFFF7F808,x","SPICTRL3");
+		GEL_WatchAdd("*(int*)0xFFF7F80C,x","SPIDAT0");
+		GEL_WatchAdd("*(int*)0xFFF7F810,x","SPIDAT1");
+		GEL_WatchAdd("*(int*)0xFFF7F814,x","SPIBUF");
+		GEL_WatchAdd("*(int*)0xFFF7F818,x","SPIEMU");
+		GEL_WatchAdd("*(int*)0xFFF7F81C,x","SPIPC1");
+		GEL_WatchAdd("*(int*)0xFFF7F820,x","SPIPC2");
+		GEL_WatchAdd("*(int*)0xFFF7F824,x","SPIPC3");
+		GEL_WatchAdd("*(int*)0xFFF7F828,x","SPIPC4");
+		GEL_WatchAdd("*(int*)0xFFF7F82C,x","SPIPC5");
+		GEL_WatchAdd("*(int*)0xFFF7F830,x","SPIPC6");
+	}
+	
+	hotmenu SPI2()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7D400,x","SPICTRL1");
+		GEL_WatchAdd("*(int*)0xFFF7D404,x","SPICTRL2");
+		GEL_WatchAdd("*(int*)0xFFF7D408,x","SPICTRL3");
+		GEL_WatchAdd("*(int*)0xFFF7D40C,x","SPIDAT0");
+		GEL_WatchAdd("*(int*)0xFFF7D410,x","SPIDAT1");
+		GEL_WatchAdd("*(int*)0xFFF7D414,x","SPIBUF");
+		GEL_WatchAdd("*(int*)0xFFF7D418,x","SPIEMU");
+		GEL_WatchAdd("*(int*)0xFFF7D41C,x","SPIPC1");
+		GEL_WatchAdd("*(int*)0xFFF7D420,x","SPIPC2");
+		GEL_WatchAdd("*(int*)0xFFF7D424,x","SPIPC3");
+		GEL_WatchAdd("*(int*)0xFFF7D428,x","SPIPC4");
+		GEL_WatchAdd("*(int*)0xFFF7D42C,x","SPIPC5");
+		GEL_WatchAdd("*(int*)0xFFF7D430,x","SPIPC6");
+	}
+	
+	hotmenu SPI3()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7D500,x","SPICTRL1");
+		GEL_WatchAdd("*(int*)0xFFF7D504,x","SPICTRL2");
+		GEL_WatchAdd("*(int*)0xFFF7D508,x","SPICTRL3");
+		GEL_WatchAdd("*(int*)0xFFF7D50C,x","SPIDAT0");
+		GEL_WatchAdd("*(int*)0xFFF7D510,x","SPIDAT1");
+		GEL_WatchAdd("*(int*)0xFFF7D514,x","SPIBUF");
+		GEL_WatchAdd("*(int*)0xFFF7D518,x","SPIEMU");
+		GEL_WatchAdd("*(int*)0xFFF7D51C,x","SPIPC1");
+		GEL_WatchAdd("*(int*)0xFFF7D520,x","SPIPC2");
+		GEL_WatchAdd("*(int*)0xFFF7D524,x","SPIPC3");
+		GEL_WatchAdd("*(int*)0xFFF7D528,x","SPIPC4");
+		GEL_WatchAdd("*(int*)0xFFF7D52C,x","SPIPC5");
+		GEL_WatchAdd("*(int*)0xFFF7D530,x","SPIPC6");
+	}
+
+        hotmenu SPI4()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7D600,x","SPICTRL1");
+		GEL_WatchAdd("*(int*)0xFFF7D604,x","SPICTRL2");
+		GEL_WatchAdd("*(int*)0xFFF7D608,x","SPICTRL3");
+		GEL_WatchAdd("*(int*)0xFFF7D60C,x","SPIDAT0");
+		GEL_WatchAdd("*(int*)0xFFF7D610,x","SPIDAT1");
+		GEL_WatchAdd("*(int*)0xFFF7D614,x","SPIBUF");
+		GEL_WatchAdd("*(int*)0xFFF7D618,x","SPIEMU");
+		GEL_WatchAdd("*(int*)0xFFF7D61C,x","SPIPC1");
+		GEL_WatchAdd("*(int*)0xFFF7D620,x","SPIPC2");
+		GEL_WatchAdd("*(int*)0xFFF7D624,x","SPIPC3");
+		GEL_WatchAdd("*(int*)0xFFF7D628,x","SPIPC4");
+		GEL_WatchAdd("*(int*)0xFFF7D62C,x","SPIPC5");
+		GEL_WatchAdd("*(int*)0xFFF7D630,x","SPIPC6");
+	}
+
+	hotmenu SPI5()
+	{
+		GEL_WatchAdd("*(int*)0xFFF7D700,x","SPICTRL1");
+		GEL_WatchAdd("*(int*)0xFFF7D704,x","SPICTRL2");
+		GEL_WatchAdd("*(int*)0xFFF7D708,x","SPICTRL3");
+		GEL_WatchAdd("*(int*)0xFFF7D70C,x","SPIDAT0");
+		GEL_WatchAdd("*(int*)0xFFF7D710,x","SPIDAT1");
+		GEL_WatchAdd("*(int*)0xFFF7D714,x","SPIBUF");
+		GEL_WatchAdd("*(int*)0xFFF7D718,x","SPIEMU");
+		GEL_WatchAdd("*(int*)0xFFF7D71C,x","SPIPC1");
+		GEL_WatchAdd("*(int*)0xFFF7D720,x","SPIPC2");
+		GEL_WatchAdd("*(int*)0xFFF7D724,x","SPIPC3");
+		GEL_WatchAdd("*(int*)0xFFF7D728,x","SPIPC4");
+		GEL_WatchAdd("*(int*)0xFFF7D72C,x","SPIPC5");
+		GEL_WatchAdd("*(int*)0xFFF7D730,x","SPIPC6");
+	}
+
+menuitem "System"	
+
+	hotmenu System()
+	{
+		GEL_WatchAdd("*(int*)0xFFFFFD2C,x","WCR0");
+		GEL_WatchAdd("*(int*)0xFFFFFD30,x","PCR");
+		GEL_WatchAdd("*(int*)0xFFFFFD34,x","PLR");
+		GEL_WatchAdd("*(int*)0xFFFFFD38,x","PPROT");
+		GEL_WatchAdd("*(int*)0xFFFFFFD0,x","CLKCNTL");
+		GEL_WatchAdd("*(int*)0xFFFFFFDC,x","GLBCTRL");
+		GEL_WatchAdd("*(int*)0xFFFFFFE0,x","SYSECR");
+		GEL_WatchAdd("*(int*)0xFFFFFFE4,x","SYSESR");
+		GEL_WatchAdd("*(int*)0xFFFFFFE8,x","ABRTESR");
+		GEL_WatchAdd("*(int*)0xFFFFFFEC,x","GLBSTAT");
+		GEL_WatchAdd("*(int*)0xFFFFFFF0,x","DEV");
+		GEL_WatchAdd("*(int*)0xFFFFFFF8,x","SSIF");
+		GEL_WatchAdd("*(int*)0xFFFFFFFC,x","SSIR");
+	}
+	
+	hotmenu CIM()
+	{
+		GEL_WatchAdd("*(int*)0xFFFFFF20,x","IRQIVEQ");
+		GEL_WatchAdd("*(int*)0xFFFFFF24,x","FIQIVEQ");
+		GEL_WatchAdd("*(int*)0xFFFFFF28,x","CIMIVEQ");
+		GEL_WatchAdd("*(int*)0xFFFFFF2C,x","FIRQPR");
+		GEL_WatchAdd("*(int*)0xFFFFFF30,x","INTREQ");
+		GEL_WatchAdd("*(int*)0xFFFFFF34,x","REQMASK");
+	}
+	
+	hotmenu DEC()
+	{
+		GEL_WatchAdd("*(int*)0xFFFFFE00,x","MFBAHR0");
+		GEL_WatchAdd("*(int*)0xFFFFFE04,x","MFBALR0");
+		GEL_WatchAdd("*(int*)0xFFFFFE08,x","MFBAHR1");
+		GEL_WatchAdd("*(int*)0xFFFFFE0C,x","MFBALR1");
+		GEL_WatchAdd("*(int*)0xFFFFFE10,x","MFBAHR2");
+		GEL_WatchAdd("*(int*)0xFFFFFE14,x","MFBALR2");
+		GEL_WatchAdd("*(int*)0xFFFFFE18,x","MFBAHR3");
+		GEL_WatchAdd("*(int*)0xFFFFFE1C,x","MFBALR3");
+		GEL_WatchAdd("*(int*)0xFFFFFE20,x","MFBAHR4");
+		GEL_WatchAdd("*(int*)0xFFFFFE24,x","MFBALR4");
+		GEL_WatchAdd("*(int*)0xFFFFFE28,x","MFBAHR5");
+		GEL_WatchAdd("*(int*)0xFFFFFE2C,x","MFBALR5");
+		GEL_WatchAdd("*(int*)0xFFFFFE30,x","MCBAHR0");
+		GEL_WatchAdd("*(int*)0xFFFFFE34,x","MCBALR0");
+		GEL_WatchAdd("*(int*)0xFFFFFE38,x","MCBAHR1");
+		GEL_WatchAdd("*(int*)0xFFFFFE3C,x","MCBALR1");
+		GEL_WatchAdd("*(int*)0xFFFFFE40,x","MCBAHR2");
+		GEL_WatchAdd("*(int*)0xFFFFFE44,x","MCBALR2");
+		GEL_WatchAdd("*(int*)0xFFFFFE48,x","MCBAHR3");
+		GEL_WatchAdd("*(int*)0xFFFFFE4C,x","MCBALR3");
+		GEL_WatchAdd("*(int*)0xFFFFFE50,x","MCBAHR4");
+		GEL_WatchAdd("*(int*)0xFFFFFE54,x","MCBALR4");
+		GEL_WatchAdd("*(int*)0xFFFFFE58,x","MCBAHR5");
+		GEL_WatchAdd("*(int*)0xFFFFFE5C,x","MCBALR5");
+	}
+	
+	hotmenu IEM()
+	{
+		GEL_WatchAdd("*(int*)0xFFFFFC00,x","INTPEND0");
+		GEL_WatchAdd("*(int*)0xFFFFFC04,x","INTPEND1");
+		GEL_WatchAdd("*(int*)0xFFFFFC20,x","INTCTRL0");
+		GEL_WatchAdd("*(int*)0xFFFFFC24,x","INTCTRL1");
+		GEL_WatchAdd("*(int*)0xFFFFFC28,x","INTCTRL2");
+		GEL_WatchAdd("*(int*)0xFFFFFC2C,x","INTCTRL3");
+		GEL_WatchAdd("*(int*)0xFFFFFC30,x","INTCTRL4");
+		GEL_WatchAdd("*(int*)0xFFFFFC34,x","INTCTRL5");
+		GEL_WatchAdd("*(int*)0xFFFFFC38,x","INTCTRL6");
+		GEL_WatchAdd("*(int*)0xFFFFFC3C,x","INTCTRL7");
+		GEL_WatchAdd("*(int*)0xFFFFFC40,x","INTCTRL8");
+		GEL_WatchAdd("*(int*)0xFFFFFC44,x","INTCTRL9");
+		GEL_WatchAdd("*(int*)0xFFFFFC48,x","INTCTRL10");
+		GEL_WatchAdd("*(int*)0xFFFFFC4C,x","INTCTRL11");
+		GEL_WatchAdd("*(int*)0xFFFFFC50,x","INTCTRL12");
+		GEL_WatchAdd("*(int*)0xFFFFFC54,x","INTCTRL13");
+		GEL_WatchAdd("*(int*)0xFFFFFC58,x","INTCTRL14");
+		GEL_WatchAdd("*(int*)0xFFFFFC5C,x","INTCTRL15");
+   
+	}
+
+	hotmenu MMC()
+	{
+		GEL_WatchAdd("*(int*)0xFFFFFD00,x","SMCR0");
+		GEL_WatchAdd("*(int*)0xFFFFFD04,x","SMCR1");
+		GEL_WatchAdd("*(int*)0xFFFFFD08,x","SMCR2");
+		GEL_WatchAdd("*(int*)0xFFFFFD0C,x","SMCR3");
+		GEL_WatchAdd("*(int*)0xFFFFFD10,x","SMCR4");
+		GEL_WatchAdd("*(int*)0xFFFFFD14,x","SMCR5");
+		GEL_WatchAdd("*(int*)0xFFFFFD18,x","SMCR6");
+		GEL_WatchAdd("*(int*)0xFFFFFD1C,x","SMCR7");
+		GEL_WatchAdd("*(int*)0xFFFFFD20,x","SMCR8");
+		GEL_WatchAdd("*(int*)0xFFFFFD24,x","SMCR9");
+	}
+	
+	hotmenu MPU()
+	{
+		GEL_WatchAdd("*(int*)0xFFE84000,x","MPUAHR0");
+		GEL_WatchAdd("*(int*)0xFFE84004,x","MPUAHR0");
+		GEL_WatchAdd("*(int*)0xFFE84008,x","MPUAHR1");
+		GEL_WatchAdd("*(int*)0xFFE8400C,x","MPUAHR1");
+		GEL_WatchAdd("*(int*)0xFFE84010,x","MPUAHR2");
+		GEL_WatchAdd("*(int*)0xFFE84014,x","MPUAHR2");
+		GEL_WatchAdd("*(int*)0xFFE84018,x","MPUAHR3");
+		GEL_WatchAdd("*(int*)0xFFE8401C,x","MPUAHR3");
+		GEL_WatchAdd("*(int*)0xFFE84020,x","MPUCTRL");
+	}
+	
+	hotmenu PSA()
+	{
+		GEL_WatchAdd("*(int*)0xFFFFFF40,x","CPUPSA");
+		GEL_WatchAdd("*(int*)0xFFFFFF50,x","PSAENABLE");
+	}
+	
+	hotmenu RTI()
+	{
+		GEL_WatchAdd("*(int*)0xFFFFFF00,x","RTICNTR");
+		GEL_WatchAdd("*(int*)0xFFFFFF04,x","RTIPCTL");
+		GEL_WatchAdd("*(int*)0xFFFFFF08,x","RTICNTL");
+		GEL_WatchAdd("*(int*)0xFFFFFF0C,x","RTIWKEY");
+		GEL_WatchAdd("*(int*)0xFFFFFF10,x","RTICMP1");
+		GEL_WatchAdd("*(int*)0xFFFFFF14,x","RTICMP2");
+		GEL_WatchAdd("*(int*)0xFFFFFF18,x","RTICINT");
+		GEL_WatchAdd("*(int*)0xFFFFFF1C,x","RTICNTEN");
+	}
+	

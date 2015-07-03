@@ -1,0 +1,24 @@
+/* Kernbauer Version: 1.06 Konfiguration: TiArm7 Erzeugungsgangnummer: 189 */
+
+/*****************************************************************************
+| Project Name: OIL 2.2
+|    File Name: TMS470_B31B.s22
+|
+|  Module version: $vv$=1.00
+|
+|  Description: Definition of implementation specific standard objects 
+|
+|-----------------------------------------------------------------------------
+|               C O P Y R I G H T
+|-----------------------------------------------------------------------------
+| Copyright (c) 2000 Vector Informatik GmbH               All rights reserved.
+|****************************************************************************/
+
+COUNTER SystemTimer {
+   MAXALLOWEDVALUE = 0x7FFFFFFF:"0xFFFFFFFF if UseGeneratedFastAlarm";
+   TICKSPERBASE = 1;
+   MINCYCLE = 1;
+};
+
+
+// End of TMS470_B31B.s22

@@ -1,0 +1,19 @@
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_SUCCESSFUL                      '0 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '216 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_FAILED                          '1 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '217 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_NOT_ALLOWED                     '2 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '218 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_OUT_OF_RANGE                    '3 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '219 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_REQUEST_SEQUENCE_ERROR          '4 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '220 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_NO_RESPONSE_FROM_SUB_COMPONENT  '5 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '221 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_WRITE_TRY_AGAIN                       '6 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '222 
+#ENUM  'tSDSextWrite_Return 'SDS_IO_USER_REPEAT_FOR_COMPLETE_E2P_WRITE         '7 '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '223 
+#TRACE_ID '0x820104 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Service write E2P by address Started" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '260 
+#TRACE_ID '0x820107 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"EEprom Write ReturnCode -> $tSDSextWrite_Return$=%d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '263 
+#TRACE_ID '0x82010D 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"EEprom Write ReturnCode -> $tSDSextWrite_Return$=%d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '269 
+#TRACE_ID '0x820116 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Service write E2P by address finish" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '278 
+#TRACE_ID '0x82011D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Still writing EE-Data. Try: %d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '285 
+#TRACE_ID '0x820121 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"MAX EEPROM WRITE RETRIES reached. Stop." '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '289 
+#TRACE_ID '0x82012C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_SDS_UDS '"Writing EE-Data. Try: %d" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '300 
+#TRACE_ID '0x820130 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"MAX EEPROM WRITE RETRIES reached. Stop." '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '304 
+#TRACE_ID '0x820139 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"Not implemented return code. Give Diag. error back" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '313 
+#TRACE_ID '0x820204 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"diagnosis timeout or change diagnosis session" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '516 
+#TRACE_ID '0x8202E9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_SDS_UDS '"E2P Retry" '\MOD\MOD_SDS_UDS\src 'SDS_UDS_Service22_C1.c '745 

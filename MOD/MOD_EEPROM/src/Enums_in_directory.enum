@@ -1,0 +1,13 @@
+DEBUG_STATE_ENUM_NAME='EEStateType                          'DEBUG_STATE_NAME='EE_STATE_IDLE                                                          'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='EEStateType                          'DEBUG_STATE_NAME='EE_STATE_WRITE                                                         'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='EEStateType                          'DEBUG_STATE_NAME='EE_STATE_READ                                                          'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='EEPROM_STATUS_ENUM                   'DEBUG_STATE_NAME='EE_STATUS_READY                                                        'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='EEPROM_STATUS_ENUM                   'DEBUG_STATE_NAME='EE_STATUS_WORKING                                                      'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='EEPROM_STATUS_ENUM                   'DEBUG_STATE_NAME='EE_STATUS_DONE                                                         'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='EEPROM_STATUS_ENUM                   'DEBUG_STATE_NAME='EE_STATUS_FAILED                                                       'DEBUG_STATE_NUMBER='4        '
+DEBUG_STATE_ENUM_NAME='EEPROM_enFunctionIdType              'DEBUG_STATE_NAME='EEPROM_INVALID_FCT                                                     'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='EEPROM_enFunctionIdType              'DEBUG_STATE_NAME='EEPROM_SERVICE_READ                                                    'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='EEPROM_enFunctionIdType              'DEBUG_STATE_NAME='EEPROM_SERVICE_WRITE                                                   'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='EEInitMode                           'DEBUG_STATE_NAME='INIT_FOR_WRITE                                                         'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='EEInitMode                           'DEBUG_STATE_NAME='INIT_FOR_READ                                                          'DEBUG_STATE_NUMBER='1        '
+                       

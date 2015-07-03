@@ -1,0 +1,5 @@
+DEBUG_STATE_ENUM_NAME='t_APP_STATE                          'DEBUG_STATE_NAME='APP_STATE_IDLE                                                         'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='t_APP_STATE                          'DEBUG_STATE_NAME='APP_STATE_INDICATION                                                   'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='t_APP_STATE                          'DEBUG_STATE_NAME='APP_STATE_CONFIRMATION                                                 'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='t_APP_STATE                          'DEBUG_STATE_NAME='APP_STATE_PROCESS                                                      'DEBUG_STATE_NUMBER='3        '
+                       

@@ -1,0 +1,21 @@
+// Compiler specified PCLint rules
+
+// -d__io=
+// -d__interrupt=
+// -d__near=
+// -dNOP=
+// -dnop= 
+// -dC_COMP_FUJITSU_16LX_HL
+// -dMB90F352S=
+//-d__CPU_MB90F352S__= 
+
+// +libh(mb90350.h,mb90340.h)
+-elib(*)
+
+//-e46
+//-e10
+//-e19
+//-e40
+//-e309
+
+//-w1

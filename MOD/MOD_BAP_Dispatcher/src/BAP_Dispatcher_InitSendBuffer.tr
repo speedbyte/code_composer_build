@@ -1,0 +1,47 @@
+#TRACE_ID '0x490084 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitializeTelefonInt8Sendbuffer() failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '132 
+#TRACE_ID '0x49008D 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitializeTelefonByteSendbuffer() failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '141 
+#TRACE_ID '0x490097 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitializePhonebookInt8Sendbuffer() failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '151 
+#TRACE_ID '0x4900A0 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitializePhonebookByteSendbuffer() failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '160 
+#TRACE_ID '0x4900AA 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitializeMDIInt8Sendbuffer() failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '170 
+#TRACE_ID '0x4900B3 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitializeMDIByteSendbuffer() failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '179 
+#TRACE_ID '0x4900BD 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitializeSDInt8Sendbuffer() failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '189 
+#TRACE_ID '0x4900C6 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitializeSDByteSendbuffer() failed" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '198 
+#TRACE_ID '0x4900CD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_DISP_InitSendbuffer: unknown LSG: %02x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '205 
+#TRACE_ID '0x4900EB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed Telephone LockState: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '235 
+#TRACE_ID '0x4900F7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed Telephone OperationState: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '247 
+#TRACE_ID '0x490103 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed Telephone RegisterState: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '259 
+#TRACE_ID '0x490110 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed Telephone LineState: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '272 
+#TRACE_ID '0x49011C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed Telephone SignalQuality: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '284 
+#TRACE_ID '0x490128 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed Telephone HandsFreeOnOff: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '296 
+#TRACE_ID '0x490134 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed Telephone MircoMuteOnOff: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '308 
+#TRACE_ID '0x49015A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for Telephone ActiveUser: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '346 
+#TRACE_ID '0x490168 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for Telephone NetworkProvider: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '360 
+#TRACE_ID '0x490176 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for Telephone FSG_Setup: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '374 
+#TRACE_ID '0x490185 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for Telephone MobileServiceSupport: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '389 
+#TRACE_ID '0x490192 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for Telephone CallState: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '402 
+#TRACE_ID '0x4901B1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for PB OpertationState: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '433 
+#TRACE_ID '0x4901BD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for PB FSGSETUP:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '445 
+#TRACE_ID '0x4901E1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for PB MobileServiceSupport: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '481 
+#TRACE_ID '0x4901EE 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for PB MissedCalledIndication:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '494 
+#TRACE_ID '0x4901FB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for PB PbState:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '507 
+#TRACE_ID '0x490208 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for PB VoiceMailboxNumber:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '520 
+#TRACE_ID '0x490215 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for PB SMSState:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '533 
+#TRACE_ID '0x490232 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI OperationState:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '562 
+#TRACE_ID '0x49023E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI FSGSETUP:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '574 
+#TRACE_ID '0x49024A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI PlayStatus:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '586 
+#TRACE_ID '0x490261 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI MediaEvent:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '609 
+#TRACE_ID '0x49026D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI Random:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '621 
+#TRACE_ID '0x490279 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI Repeat:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '633 
+#TRACE_ID '0x490296 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI MDserviceSupport: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '662 
+#TRACE_ID '0x4902A2 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI MDactive:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '674 
+#TRACE_ID '0x4902AF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI TimePositon:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '687 
+#TRACE_ID '0x4902BC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI CurrentFileName:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '700 
+#TRACE_ID '0x4902C9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for MDI CurrentFileInfo:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '713 
+#TRACE_ID '0x4902E9 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for SD FSG-OperationState:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '745 
+#TRACE_ID '0x4902F4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for SD FrameDataAck:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '756 
+#TRACE_ID '0x4902FF 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for SD LsgStatus:%x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '767 
+#TRACE_ID '0x49031C 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for SD ASG_Capabilities: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '796 
+#TRACE_ID '0x490328 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for SD ASG_Capabilities: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '808 
+#TRACE_ID '0x490335 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for SD MFL_BlockDefinition: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '821 
+#TRACE_ID '0x490341 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for SD FrameStatus: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '833 
+#TRACE_ID '0x49034D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"BAP_Init failed for SD ScrollBar: %x" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_InitSendBuffer.c '845 

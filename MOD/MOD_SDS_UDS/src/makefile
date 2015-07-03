@@ -1,0 +1,47 @@
+################################################################################
+
+
+# For a full build in cygnus bash shell type :
+#   > make clean
+#   > make
+#
+# Global project options are set in makeopts at top level of project tree.
+# Each lower level makefile must define TOP as the relative path to the top
+# of the project tree.  This allows all tools to run from within the project
+# structure (and to be included in the project for version control!).
+# All lower make files should include a clean definition which deletes all
+# buildable objects.
+#
+# Make will build the specified targets (all is the default) in the list of
+# subdirectories provided. This Makefile is for GNU make.
+
+# define top directory relative to this working directory
+TOP       = ../../..
+TEMPDIR = $(TOP)/TEMP
+# include global make options
+include $(TOP)/BUILD/SYS/makeopts
+include $(TEMPDIR)/uCprojectopts
+
+LIBRARY = $(LIB_MOD_SDS_UDS)
+OBJS= \
+	sds_ext.obj\
+SDS_UDS_CB_C1.obj\
+SDS_UDS_ReadWriteEEProm_C1.obj\
+SDS_UDS_Service22_C1.obj\
+SDS_UDS_Service2E_C1.obj\
+SDS_UDS_Service2F_C1.obj\
+SDS_UDS_Service31_C1.obj\
+SDS_UDS_Service_DataDownload_C1.obj\
+SDS_UDS_Service_DTC_C1.obj\
+SDS_UDS_Service_SecurityCheck_C1.obj\
+SDS_UDS_StartUp_C1.obj\
+
+all : $(LIBRARY)
+$(LIBRARY): $(OBJS)
+	$(MODULEMAKE)
+
+$(DEPEND)
+
+
+clean:
+	$(MODULECLEAN)

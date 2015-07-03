@@ -1,0 +1,35 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="R:\11_parrot\01_prj\"
+ProjectType=Executable
+CPUFamily=TMS470R1X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\f35a_api\u_div32.obj"
+Source="..\02_src\ADLATUS_DummyMain.c"
+Source="..\02_src\ADLATUS_ParrotHal.c"
+Source="..\02_src\ADLATUS_SciHandler.c"
+Source="..\02_src\FlashLib_TMS470_PARROT.c"
+Source="086350_TMS470_PARROT.cmd"
+
+["Debug" Settings]
+FinalBuildCmd=r:\11_parrot\01_prj\make_parrot.bat
+
+["Compiler" Settings: "Debug"]
+Options=-g -k -q -ss -pr -os -o2 -fr"r:\11_parrot\03_obj" -fs"r:\11_parrot\04_lst" -ft"r:\11_parrot\04_lst" -fb"r:\11_parrot\04_lst" -i"r:\05_header\ext" -i"r:\05_header\int" -i"r:\12_customer_files" -d"_DEBUG" -mf -ml -mt
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr"R:\11_parrot\01_prj\Release"
+
+["Linker" Settings: "Debug"]
+Options=-q -a -ec_int00 -m"..\05_out\ADLATUS_cc_TMS470_PARROT.map" -o"..\05_out\ADLATUS_cc_TMS470_PARROT.out" -x -i"C:\ti\TMS470\cgtools_252\lib"
+
+["Linker" Settings: "Release"]
+Options=-q -c -m".\Release\ADLATUS_cc_TMS470_PARROT.map" -o".\Release\ADLATUS_cc_TMS470_PARROT.out" -x
+

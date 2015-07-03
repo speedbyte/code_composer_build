@@ -1,0 +1,4 @@
+DEBUG_STATE_ENUM_NAME='TriStateType_DEH_EE                  'DEBUG_STATE_NAME='DEH_EE_NOT_REGISTER                                                    'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='TriStateType_DEH_EE                  'DEBUG_STATE_NAME='DEH_EE_REGISTER                                                        'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='TriStateType_DEH_EE                  'DEBUG_STATE_NAME='DEH_EE_NOTHING_TODO                                                    'DEBUG_STATE_NUMBER='255      '
+                       

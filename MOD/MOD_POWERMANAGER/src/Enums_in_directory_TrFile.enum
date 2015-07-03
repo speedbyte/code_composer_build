@@ -1,0 +1,14 @@
+#ENUM  'PWMGR_enVoltageStates                               'PWMGR_NormalVoltage                                                                      '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'PWMGR_enVoltageStates                               'PWMGR_NormalLowVoltage                                                                   '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'PWMGR_enVoltageStates                               '/** \brief device in valid Power state                                                   '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'PWMGR_enVoltageStates                               'PWMGR_NormalLowRecoverVoltage                                                            '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'PWMGR_enVoltageStates                               'PWMGR_NormalHighVoltage                                                                  '4                            'ABCD   'ABCD.c  '123   
+#ENUM  'PWMGR_enVoltageStates                               '/** \brief device in valid Power state                                                   '5                            'ABCD   'ABCD.c  '123   
+#ENUM  'PWMGR_enVoltageStates                               'PWMGR_NormalHighRecoverVoltage                                                           '6                            'ABCD   'ABCD.c  '123   
+#ENUM  'PwrmgrStateType                                     'PWRMGR_STATE_NORMAL                                                                      '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'PwrmgrStateType                                     'PWRMGR_STATE_NORMAL_LOW_RECOVER                                                          '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'PwrmgrStateType                                     'PWRMGR_STATE_HIGH_RECOVER                                                                '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'PwrmgrStateType                                     'PWRMGR_STATE_NORMAL_HIGH                                                                 '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'PwrmgrStateType                                     'PWRMGR_STATE_NORMAL_LOW                                                                  '4                            'ABCD   'ABCD.c  '123   
+#ENUM  'PwrmgrStateType                                     'PWRMGR_STATE_SHUTDOWN                                                                    '5                            'ABCD   'ABCD.c  '123   
+#ENUM  'PwrmgrStateType                                     'PWRMGR_STATE_IS_SHUTDOWN                                                                 '6                            'ABCD   'ABCD.c  '123   

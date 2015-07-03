@@ -1,0 +1,779 @@
+/* Kernbauer Version: 1.14 Konfiguration: TMS470 Erzeugungsgangnummer: 372 */
+
+/*****************************************************************************
+| Project Name: OIL 2.3
+|    File Name: TMS470PVF24.i23
+|
+|  General code: @Version: 3.54b@
+|  Module version: $vv$=1.11
+|
+|  Description: Definition of implementation specific attributes
+|
+|-----------------------------------------------------------------------------
+|               C O P Y R I G H T
+|-----------------------------------------------------------------------------
+| Copyright (c) 2001-2008 Vector Informatik GmbH          All rights reserved.
+|****************************************************************************/
+
+
+IMPLEMENTATION
+TMS470PVF24
+{
+   // **********************************************************************
+   // OS
+   // **********************************************************************
+   OS {
+      // standard attributes 
+      ENUM WITH_AUTO [BCC1, BCC2, ECC1, ECC2] CC = NO_DEFAULT:"@DAUTO@This \c
+      \attribute should usually be set to AUTO. The exact conformance class can be \c
+      \calculated from other attribute values. \
+      \It is possible to preselect the CC attribute, if there are restrictions \c
+      \to use a specific conformance class for a project. An error message is \c
+      \created if there are differences between the preselected and the \c
+      \calculated conformance class.";
+
+      ENUM [STANDARD, EXTENDED] STATUS:"@DEXTENDED@The STATUS attribute \c
+      \specifies whether a system performs checks and returns error codes from \c
+      \API functions according to the standard or extended status.";
+
+      ENUM WITH_AUTO [NON, FULL, MIXED] SCHEDULE = NO_DEFAULT:"@DAUTO@This \c
+      \attribute should usually be set to AUTO. The exact scheduling policy can be \c
+      \calculated from other attribute values. \
+      \It is possible to preselect the SCHEDULE attribute, if there are \c
+      \restrictions to use a special scheduling policy for a project. An error \c
+      \message is created if there are differences between the preselected and the \c
+      \calculated scheduling policy.\
+      \NON selects a completely non-preemptive behaviour, FULL selects a completely \c
+      \full-preemptive behaviour and MIXED allows a mixture of full- and non-preemptive \c
+      \tasks in the same system.";
+      
+
+      BOOLEAN STARTUPHOOK:"If selected, the StartupHook routine will be called \c
+      \by the operating system in the startup phase (after calling StartOS and \c
+      \before starting the first task).\
+      \\
+      \The function StartupHook has to be provided by the application";
+      
+      BOOLEAN ERRORHOOK:"If selected, the ErrorHook routine is called, \c
+      \if an OSEK-API function returns with an error code unequal to E_OK. It is \c
+      \also called if OS internal errors are detected.\
+      \\
+      \The function ErrorHook has to be provided by the application";
+      
+      BOOLEAN SHUTDOWNHOOK:"If selected, the ShutdownHook routine will be called, \c
+      \if the API-function ShutdownOS is either called by the application or by the \c
+      \operating system.\
+      \\
+      \The function ShutdownHook has to be provided by the application";
+      
+      BOOLEAN PRETASKHOOK:"If selected, the PreTaskHook routine will be called \c
+      \any time the operating system starts or resumes a task\
+      \\
+      \The function PreTaskHook has to be provided by the application";
+      
+      BOOLEAN POSTTASKHOOK:"If selected, the PostTaskHook routine will be called \c
+      \any time the operating system interrupts or terminates a task\
+      \\
+      \The function PostTaskHook has to be provided by the application";
+      
+      BOOLEAN USEGETSERVICEID:"If selected, the usage of the access macros to the \c
+      \service ID information in the error hook is enabled."; 
+      
+      BOOLEAN USEPARAMETERACCESS:"If selected, the usage of the access macros to the \c
+      \context related information in the error hook is enabled."; 
+      
+
+
+      // specific attributes 
+      UINT32 [0..0xFFFF] SystemStackSize = NO_DEFAULT:"@D200@System and \c
+      \interrupt stack size in bytes.";   
+
+      BOOLEAN WithStackCheck = NO_DEFAULT:"@DTRUE@If selected, at each task switch \c
+      \a stack check is performed.";
+
+      FLOAT CpuFrequency = NO_DEFAULT:"CpuFrequency in MHz.\
+      \\
+      \Example: 32.000";
+
+      UINT32 [2..0xFFFFFFFF] TimerClockDivider= NO_DEFAULT:"Rate of RTICLK ticks to Counter increments.\
+      \\
+      \The prescaler value equals one plus the desired CPUC register value. If the used HW Counter is \c
+      \not used for further purposes, 2 should be used for optimal accuracy.";
+
+      UINT32 [1..4294967295] TickTime = NO_DEFAULT:"@D1000@Duration of ticks of the SystemTimer in us.\
+      \The OS configures the cycletime of the timer interrupt accordingly.";
+
+      ENUM [COMP0_on_Counter0,
+            COMP0_on_Counter1,
+            COMP1_on_Counter0,
+            COMP1_on_Counter1,
+            COMP2_on_Counter0,
+            COMP2_on_Counter1,
+            COMP3_on_Counter0,
+            COMP3_on_Counter1,
+            UserDefined
+           ] SystemTimer=NO_DEFAULT:"Interrupt source used for System Timer. \c
+           \The initialization of the selected \c
+           \timer is done automatically by the operating system except for UserDefined.";
+      UINT32 WITH_AUTO [0..31] SystemTimerIntPrio = AUTO:"@DAUTO@Interrupt priority of system timer.\
+           \\
+           \AUTO selects the default hardware priority of the used comparator (no VIM remapping).";
+
+      BOOLEAN UseGeneratedFastAlarm = NO_DEFAULT:"@DFALSE@Controls the OS-internal handling of \c
+      \alarms, based on the system timer. If UseGeneratedFastAlarm is selected, code is \c
+      \generated for each alarm. If UseGeneratedFastAlarm is set to FALSE, alarms are handled \c
+      \with sorted data structures. Enabling generated alarms leads to a better performance if \c
+      \only few alarms are used. Please note, that this attribute has \c
+      \to be set to TRUE whenever additional (user defined) counters exist.";
+
+      UINT32 [0..0xFFFF] SupervisorStackSize = NO_DEFAULT:"Supervisor \c
+      \stack size in bytes.";   
+      
+      UINT32 [0..0xFFFF] StartupStackSize= NO_DEFAULT:"Startup Stack Size.\
+      \\
+      \Size of stack used during startup. Function PreTaskHook is using startup stack.\c
+      \If startup stack fits into biggest task stack, both stacks are sharing memory.";
+      
+      UINT32 [0..255] IRQMaxNesting= NO_DEFAULT:"Maximum nesting depth for IRQ interrupts.\
+      \\
+      \Note: System timer interrupt is enabling nested interrupts.\c
+      \Therefore IRQMaxNesting must be set at least to 2 if any other IRQ interrupt \c
+      \is used by the application";
+      
+      UINT32 IRQStackOffset= 0:"@D0@IRQ stack offset.\
+      \\
+      \Size of IRQ stack is extended by this value (bytes). Use this attribute \c
+      \to add stack for category 1 interrupts.";
+      
+      BOOLEAN	NotUsingRES_SCHEDULER = FALSE:"@DFALSE@Set to TRUE if RES_SCHEDULER is never used.\
+      \\
+      \RES_SCHEDULER is not generated when set to TRUE";
+      
+      BOOLEAN	ThumbMode= NO_DEFAULT:"Support for 16/32 bit mixed ARM/THUMB mode.\
+      \\
+      \Note: If set to FALSE, use no 16 bit THUMB code!";
+      
+      BOOLEAN UseRegistersForOS = FALSE: "If set to true, the CPU registers \c
+      \R5 and R6 are \c
+      \used for global variable register allocation for some frequently \c
+      \used system variables. If enabled, all modules have to include \c
+      \<osek.h> to ensure that these registers are not used by the \c
+      \application.";
+      
+      STRING WITH_AUTO UDEFHandler= AUTO:"@DAUTO@UDEFHandler\
+      \\
+      \Handler for undefined instruction exception";
+      STRING WITH_AUTO SWIHandler= AUTO:"@DAUTO@SWIHandler\
+      \\
+      \Handler for software interrupt exception";
+      STRING WITH_AUTO PABTHandler= AUTO:"@DAUTO@PABTHandler\
+      \\
+      \Handler for prefetch abort exception";
+      STRING WITH_AUTO DABTHandler= AUTO:"@DAUTO@DABTHandler\
+      \\
+      \Handler for data abort exception";
+      STRING WITH_AUTO FIQHandler= AUTO:"@DAUTO@FIQHandler\
+      \\
+      \Handler for FIQ exception";
+      
+      BOOLEAN NoFIQVector=FALSE:"@DFALSE@Suppress generation of FIQ vector\
+      \\
+      \If set to TRUE, no FIQ vector is generated into the ARM vector table. \c
+      The FIQ handler might be linked directly at the end of the vector table.";
+      
+      BOOLEAN GHSDebugSupport=FALSE:"@DFALSE@Green Hills support for osCAN\
+      \\
+      \If set to TRUE, constant tables for Green Hills MULTI are generated.";
+      
+      ENUM [
+         ORTI_20,
+         ORTI_21_Standard,
+         ORTI_21_Additional
+      ] ORTIDebugLevel = NO_DEFAULT:"@DORTI_21_Additional@ORTI Debug Level\
+      \\
+      \ORTI_20: Support of ORTI 2.0\
+      \ORTI_21_STANDARD: Support of ORTI 2.1, no overhead\
+      \ORTI_21_Additional: Support of ORTI 2.1, additional features, requires some\c
+      \additional runtime and memory";
+
+      ENUM [STANDARD, Modulnames] ErrorInfoLevel = NO_DEFAULT:"@DSTANDARD@If set to \c
+      \STANDARD, the operating system will report standard OSEK error codes. \c
+      \If set to Modulenames, additional information about the error location \c
+      \will be reported. Setting to Modulenames increases ROM size.";
+      
+      ENUM [STANDARD, Additional] OSInternalChecks = NO_DEFAULT:"@DAdditional@If \c
+      \set to STANDARD, the operating system will perform standard OSEK error \c
+      \checking. If set to Additional, some additional checks will be \c
+      \performed. Setting to Additional will increase the execution time \c
+      \of API functions.";
+
+      ENUM [GHS,TI] Compiler = NO_DEFAULT:"@DGHS@Compiler\
+      \\
+      \Compiler used to build application.\
+      \\
+      \GHS : Green Hills\
+      \TI  : Texas Instruments";
+
+
+      BOOLEAN ORTIDebugSupport = FALSE:"@DFALSE@This implementation supports ORTI \c
+      \debug information (ORTI-file) if this attribute is selected.";
+
+
+      ENUM [None, STANDARD, StackOptimisation] SupportOfProcedures = None:"@DNone@@A0x02@If \c
+      \set to STANDARD, C code will be generated for the task bodies. \c
+      \If set to StackOptimisation, optimised assembler code will be \c
+      \generated which allows for the overlay of tasks stacks. \c
+      \Note that StackOptimisation only works for non-preemptive tasks.";
+
+      ENUM [
+         Manual {
+            BOOLEAN ActivateTask=TRUE:"@DTRUE@";
+            BOOLEAN TerminateTask=TRUE:"@DTRUE@";
+            BOOLEAN ChainTask=TRUE:"@DTRUE@";
+            BOOLEAN Schedule=TRUE:"@DTRUE@";
+            BOOLEAN GetTaskID=TRUE:"@DTRUE@";
+            BOOLEAN GetTaskState=TRUE:"@DTRUE@";
+            BOOLEAN DisableAllInterrupts=TRUE:"@DTRUE@";
+            BOOLEAN EnableAllInterrupts=TRUE:"@DTRUE@";
+            BOOLEAN SuspendOSInterrupts=TRUE:"@DTRUE@";
+            BOOLEAN ResumeOSInterrupts=TRUE:"@DTRUE@";
+            BOOLEAN SuspendAllInterrupts=TRUE:"@DTRUE@";
+            BOOLEAN ResumeAllInterrupts=TRUE:"@DTRUE@";
+            BOOLEAN GetResource=TRUE:"@DTRUE@";
+            BOOLEAN ReleaseResource=TRUE:"@DTRUE@";
+            BOOLEAN SetEvent=TRUE:"@DTRUE@";
+            BOOLEAN ClearEvent=TRUE:"@DTRUE@";
+            BOOLEAN GetEvent=TRUE:"@DTRUE@";
+            BOOLEAN WaitEvent=TRUE:"@DTRUE@";
+            BOOLEAN GetAlarmBase=TRUE:"@DTRUE@";
+            BOOLEAN GetAlarm=TRUE:"@DTRUE@";
+            BOOLEAN SetRelAlarm=TRUE:"@DTRUE@";
+            BOOLEAN SetAbsAlarm=TRUE:"@DTRUE@";
+            BOOLEAN CancelAlarm=TRUE:"@DTRUE@";
+            BOOLEAN GetActiveApplicationMode=TRUE:"@DTRUE@";
+            BOOLEAN StartCOM=TRUE:"@DTRUE@";
+            BOOLEAN StopCOM=TRUE:"@DTRUE@";
+            BOOLEAN SendMessage=TRUE:"@DTRUE@";
+            BOOLEAN ReceiveMessage=TRUE:"@DTRUE@";
+            BOOLEAN GetMessageResource=TRUE:"@DTRUE@";
+            BOOLEAN ReleaseMessageResource=TRUE:"@DTRUE@";
+            BOOLEAN GetMessageStatus=TRUE:"@DTRUE@";
+         },
+         Automatic
+      ] APIOptimization=Automatic:"@DAutomatic@@A0x08@"; 
+
+      BOOLEAN [
+         TRUE {
+            UINT32 TraceDepth=100:"@D100@Size of the trace buffer.";
+            ENUM [None, SystemCounter, UserDefined] TimeStamp=SystemCounter:"@DSystemCounter@This \c
+      \attribute defines what type of time stamp is used in the trace buffer. If set to None no \c
+      \time stamp is used, if set to SystemCounter the time stamp is generated from the system tick \c
+      \if set to UserDefined the time stamp must be provided by the application.";
+            BOOLEAN UsePrintout=FALSE:"@DFALSE@Under the condition that the platform provides printf \c
+      \functionality the content of the trace buffer is printed if this attribute is switched on.";
+         },
+         FALSE
+      ] InternalTrace=FALSE:"@DFALSE@@A0x04@This attribute enables the internal trace function of osCAN."; 
+   }:"@M1@";
+
+   // **********************************************************************
+   // TASK
+   // **********************************************************************
+   TASK {
+      STRING Component= "Main Component":"@A0x01@";
+
+      // standard attributes 
+      ENUM WITH_AUTO [BASIC, EXTENDED] TYPE = NO_DEFAULT:"@DAUTO@This \c
+      \attribute should usually be set to AUTO. The exact task type can be calculated \c
+      \from other attribute values. \
+      \It is possible to preselect the TYPE attribute, if there are \c
+      \restrictions to use a special task type. An error \c
+      \message is created if there are differences between the preselected and the \c
+      \calculated task type.";
+
+      ENUM [NON, FULL] SCHEDULE:"The SCHEDULE attribute defines if the task \c
+      \may be preempted by other, higher priority tasks or not. NON selects a \c
+      \non-preemptive behaviour, FULL selects the full-preemptive behaviour";
+
+      UINT32 PRIORITY:"The priority of the task has to be understood as a relative \c
+      \value; this means the values of PRIORITY show only the relative \c
+      \ordering of the tasks.\
+      \\
+      \OSEK defines the lowest priority as zero (0), \c
+      \a bigger value of the PRIORITY attribute corresponds to a higher \c
+      \priority. The priority may be set with gaps.\
+      \\
+      \With BCC1 and ECC1 each priority level may \c
+      \only be assigned to one task. With BCC2 and ECC2 several tasks may \c
+      \be set to the same priority level.";
+
+      UINT32 [1..255] ACTIVATION:"\c
+      \@D1@The ACTIVATION attribute defines the \c
+      \maximum number of queued activation requests for the task. A value \c
+      \equal to 1 means that at any time only a single activation is permitted \c
+      \for this task.\
+      \\
+      \An activation count can only be set to 1 if events are received by this task.";
+
+      BOOLEAN [
+         TRUE 
+         { 
+            APPMODE_TYPE APPMODE[]:"@M8@The APPMODE reference is used to select the \c
+            \application mode in which the task is started automatically during \c
+            \system start-up."; 
+         },
+         FALSE
+      ] AUTOSTART:"If selected the task \c
+      \is activated automatically during the system start-up procedure.";
+
+      EVENT_TYPE EVENT[]:"@M32@\c
+      \The EVENT reference is used to define a event the \c
+      \extended task may react on.\
+      \\
+      \If events are to be received by the task, the activation attribute has to be \c
+      \set to 1.";
+     
+      RESOURCE_TYPE RESOURCE[]:"@A0x40@This referred resource is defined to be \c
+      \accessed by the task. An assignment of the resource to the task is elementary \c
+      \to the calculation of the resources ceiling priority and therefore for \c
+      \the correct behaviour of the resource handling";
+   
+      ENUM [
+         SENT
+         {
+            MESSAGE_TYPE MESSAGE:"The MESSAGE reference parameter defines the \c
+            \message to be sent by the task.";
+      
+            BOOLEAN WITHOUTCOPY:"@DFALSE@The WITHOUTCOPY parameter specifies if a local \c
+            \copy of message is used";
+      
+            STRING ACCESSNAME:"@F1@The ACCESSNAME parameter defines the reference \c
+            \which can be used by the application to access the message data";
+      
+            BOOLEAN DoNotGenerateBuffer = FALSE:"@DFALSE@It is possible to use a \c
+            \local message buffer instead of the global generated buffer. If \c
+            \DoNotGenerateBuffer is set to TRUE no global data buffer is \c
+            \generated and the ACCESSNAME can't be used. The name of a local \c
+            \message buffer has to be used as access name";
+         },
+         RECEIVED
+         {
+            MESSAGE_TYPE MESSAGE:"The MESSAGE reference parameter defines the \c
+            \message to be received by the task.";
+      
+            BOOLEAN WITHOUTCOPY:"@DFALSE@The WITHOUTCOPY parameter specifies if a local \c
+            \copy of message is used";
+      
+            STRING ACCESSNAME:"@F1@The ACCESSNAME parameter defines the reference \c
+            \which can be used by the application to access the message data";
+      
+            BOOLEAN DoNotGenerateBuffer = FALSE:"@DFALSE@It is possible to use a \c
+            \local message buffer instead of the global generated buffer. If \c
+            \DoNotGenerateBuffer is set to TRUE no global data buffer is \c
+            \generated and the ACCESSNAME can't be used. The name of a local \c
+            \message buffer has to be used as access name";
+         }
+      ] ACCESSOR[]:"@A0x10@The ACCESSOR is used to define a reference to sent or \c
+      \received messages.";
+
+      // specific attributes 
+      ENUM [
+         InitProcedure {
+            STRING Name = NO_DEFAULT:"@F1@";      
+         },
+         EventProcedure {
+            EVENT_TYPE EVENT:"The EVENT reference parameter defines the event \c
+            \on which the EventProcedure is invoked.";
+            STRING Name[]:"@F1@";      
+         }
+      ] Procedure[]:"@A0x02@The Procedure attribute defines a list of procedures \c
+      \which is invoked by a generated task body either on initialisation \c
+      \of the task or on reception of an event.";  
+ 
+      UINT32 [0..0xFFFF] StackSize = NO_DEFAULT
+      :"@D200@\c
+      \Stack size of the task in bytes";
+
+      BOOLEAN NotUsingSchedule=FALSE:"In certain cases stacks my be shared \c
+      \between different non-preemptive basic-tasks. This depends on the usage \c
+      \of the API-function Schedule. If the application programmer does not \c
+      \use the API-function Schedule stacks may be shared. In this case the \c
+      \attribute NotUsingSchedule may enable the stack sharing. This attribute \c
+      \is only available if the implementation supports stacks.";
+      
+      UINT64 ComputationTime= 0:"@A0x80@The worst-case computation time.\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+      
+      UINT64 Period= 0:"@A0x80@The minimum activation period of the task.\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+      
+      UINT64 Deadline= 0:"@A0x80@The deadline of the task.\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+      
+      BOOLEAN
+      [
+         TRUE
+         {
+            RESOURCE_TYPE Resource: "Reference to a Resource";
+            UINT64 OccupationTime= NO_DEFAULT: "Maximum duration of Resource usage in the task";
+         },
+         FALSE
+      ] UseResourceOccupation[]:"@A0x80@Switch to enable a new list item for the attribute pair \c
+      \Resource and OccupationTime.\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+
+   }
+   :"@M65535@";
+
+   // **********************************************************************
+   // COUNTER
+   // **********************************************************************
+   COUNTER { 
+      STRING Component= "Main Component":"@A0x01@";
+
+      // standard attributes 
+      UINT32 [0..0xFFFFFFFF] MINCYCLE:
+      "The MINCYCLE attribute specifies the minimum allowed \c
+      \number of ticks for a cyclic alarm linked to the counter.";
+
+      UINT32 [0..0xFFFFFFFF] MAXALLOWEDVALUE:
+      "The MAXALLOWEDVALUE attribute \c
+      \defines the maximum allowed counter value.";
+
+      UINT32 TICKSPERBASE:"The TICKSPERBASE attribute specifies the number \c
+      \of ticks required to reach a counter specific unit. The interpretation \c
+      \is application specific.";
+   }
+   :"@M256@";
+
+
+   // **********************************************************************
+   // ALARM
+   // **********************************************************************
+   ALARM {
+      STRING Component= "Main Component":"@A0x01@";
+
+      // standard attributes 
+      COUNTER_TYPE COUNTER:"@DSystemTimer@The COUNTER reference defines the \c
+      \counter assigned to this alarm. Each alarm has to be assigned to one \c
+      \particular counter.";
+
+      ENUM [
+         ACTIVATETASK {
+            TASK_TYPE TASK:"The TASK reference parameter defines the task to \c
+            \be activated when the alarm expires.";
+         }, 
+         SETEVENT {
+            TASK_TYPE TASK:"The TASK reference parameter defines the task for \c
+            \which the event is to be set.";
+      
+            EVENT_TYPE EVENT:"The EVENT reference parameter defines the event \c
+            \to be set when the alarm expires.";
+         }, 
+         ALARMCALLBACK {
+            STRING ALARMCALLBACKNAME:"@F1@The ALARMCALLBACKNAME parameter defines \c
+            \the name of the callback routine which is called when the alarm \c
+            \expires.";
+         } 
+      ] ACTION:"The ACTION attribute defines which type of task notification \c
+      \is used when the alarm expires.";
+
+      BOOLEAN [
+       TRUE {
+          // standard attributes
+          UINT32 ALARMTIME:"ALARMTIME in units specified by the attribute AlarmUnit";
+      
+          UINT32 CYCLETIME:"CYCLETIME in units specified by the attribute AlarmUnit";
+      
+          APPMODE_TYPE APPMODE[]:"@M8@The APPMODE reference is used to select the \c
+          \application mode in which the alarm is started automatically during \c
+          \system start-up."; 
+      
+          // specific attributes 
+          ENUM [USEC,MSEC,SEC,Ticks] AlarmUnit=Ticks:"@DTicks@unit \c
+          \for AlarmTime and CycleTime";
+      
+          BOOLEAN StaticAlarm= FALSE:"If the alarm times do not change \c
+          \during runtime the ALARMTIME and CYCLETIME can be set \c
+          \statically. This results in less RAM consumption.";
+       },
+       FALSE {
+          BOOLEAN [
+            TRUE {
+                // specific attributes
+                UINT32 AlarmTime=NO_DEFAULT:"AlarmTime in units specified by the attribute AlarmUnit";
+            
+                UINT32 CycleTime=NO_DEFAULT:"CycleTime in units specified by the attribute AlarmUnit";
+            
+                ENUM [USEC,MSEC,SEC,Ticks] AlarmUnit=NO_DEFAULT:"@DMSEC@unit \c
+                \for AlarmTime and CycleTime";
+            },
+            FALSE
+         ] StaticAlarm = FALSE:"If the alarm times do not change \c
+          \at runtime the AlarmTime and CycleTime can be set \c
+          \statically. This results in less RAM consumption.";
+       } 
+      ] AUTOSTART:"If selected, the alarm is started automatically at the \c
+      \start of the operating system.";
+      
+   }
+   :"@M32767@";
+
+
+   // **********************************************************************
+   // EVENT
+   // **********************************************************************
+   EVENT  {
+      STRING Component= "Main Component":"@A0x01@";
+
+      UINT64 WITH_AUTO [0x00000001..0x80000000] MASK:"@DAUTO@\c
+      \An Event is represented as a single bit in a field of bits. To address the \c
+      \bit an event mask is used. The event mask can either be calculated automatically \c
+      \or it can be set up manually if the event-bit should be located on a certain \c
+      \position.";
+   };
+
+
+   // **********************************************************************
+   // ISR
+   // **********************************************************************
+   ISR {
+      STRING Component= "Main Component":"@A0x01@";
+
+      // standard attributes
+      UINT32 [1, 2] CATEGORY:"The CATEGORY attribute defines the category \c
+      \of ISR. Only values 1 and 2 are allowed\
+      \\
+      \Interrupts of category 1 are not allowed to use operating system services.\
+      \Interrupts of category 2 are allowed to use operating system services and \c
+      \may cause task switches.";
+
+      ENUM [
+         SENT
+         {
+            MESSAGE_TYPE MESSAGE:"The MESSAGE reference parameter defines the \c
+            \message to be sent by the ISR.";
+      
+            STRING ACCESSNAME:"@F1@The ACCESSNAME parameter defines the reference \c
+            \which can be used by the application to access the message data";
+      
+            BOOLEAN DoNotGenerateBuffer = FALSE:"@DFALSE@It is possible to use a \c
+            \local message buffer instead of the global generated buffer. If \c
+            \DoNotGenerateBuffer is set to TRUE no global data buffer is \c
+            \generated and the ACCESSNAME can't be used. The name of local \c
+            \message buffer has to be used as access name";
+         },
+         RECEIVED
+         {
+            MESSAGE_TYPE MESSAGE:"The MESSAGE reference parameter defines the \c
+            \message to be received by the ISR.";
+      
+            STRING ACCESSNAME:"@F1@The ACCESSNAME parameter defines the reference \c
+            \which can be used by the application to access the message data";
+      
+            BOOLEAN DoNotGenerateBuffer = FALSE:"@DFALSE@It is possible to use a \c
+            \local message buffer instead of the global generated buffer. If \c
+            \DoNotGenerateBuffer is set to TRUE no global data buffer is \c
+            \generated and the ACCESSNAME can't be used. The name of local \c
+            \message buffer has to be used as access name";
+         }
+      ] ACCESSOR[]:"The ACCESSOR is used to define a reference to sent or \c
+      \received messages.";
+
+      RESOURCE_TYPE RESOURCE[]
+      :"@A0x40@\c
+      \The RESOURCE reference is used to define a resource accessed by the ISR";
+
+      UINT64 AnalysisPriority= 0:"@A0x80@The AnalysisPriority corresponds to the Task attribute PRIORITY. \c
+      \The AnalysisPriority is an extension of the priority values from tasks to ISRs, so all ISR priorities \c
+      \must have higher values as all task priorities to get correct analysis results. \
+      \(Some OS Implementations use an attribute similar to 'priority' for the hardware interrupt level. \c
+      \Therefore to the timing analysis an own attribute was introduced).\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+      
+      UINT64 ComputationTime= 0:"@A0x80@The worst-case computation time.\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+      
+      UINT64 Period= 0:"@A0x80@The minimum activation period or the minimum interarrival time of the ISR.\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+      
+      UINT64 Deadline= 0:"@A0x80@The deadline of the ISR.\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+      
+      BOOLEAN
+      [
+         TRUE
+         {
+            RESOURCE_TYPE Resource: "Reference to a Resource";
+            UINT64 OccupationTime= NO_DEFAULT: "Maximum duration of Resource usage in the ISR";
+         },
+         FALSE
+      ] UseResourceOccupation[]:"@A0x80@Switch to enable a new list item for the attribute pair Resource and OccupationTime.\
+      \This attribute is needed for DMA timing analysis performed by the osCAN TimingAnalyzer.";
+
+      // specific attributes
+            ENUM [
+               IRQ,
+               FIQ
+            ] InterruptTarget = IRQ:"@DIRQ@Interrupt target (IRQ or FIQ)";
+      
+            ENUM [
+               Flash_ECC,
+               RAM_ECC,
+               System_Error,
+               SSI,
+               RTI_COMP0,
+               RTI_COMP1,
+               RTI_COMP2,
+               RTI_COMP3,
+               RTI_OVL0,
+               RTI_OVL1,
+               RTI_TB,
+               GIOA,
+               GIOB,
+               HET1_level0,
+               HET1_level1,
+               SPI1_level0,
+               SPI1_level1,
+               SCI1ERR,
+               SCI1RX,
+               SCI1TX,
+               LIN1_level0,
+               LIN1_level1,
+               SCC1_level0,
+               SCC1_level1,
+               ADC1_event_group,
+               ADC1_sw_group1,
+               ADC1_sw_group2,
+               SPI2_level0,
+               SPI2_level1,
+               SCC2_level0,
+               SCC2_level1,
+               ADC1_MTI
+            ] InterruptSource= NO_DEFAULT:"Interrupt source.\
+            \\
+            \The interrupt vector table is generated by the operating system \c
+            \automatically. All interrupts used in a software system have to \c
+            \be entered in the OIL-configurator.";
+      UINT32 WITH_AUTO [0..31] InterruptPriority = AUTO:"@DAUTO@Interrupt priority.\
+            \\
+            \VIM priority for this interrupt. If AUTO is selected, the \c
+            \default hardware priority of the selected source is used.";
+
+      BOOLEAN [
+         TRUE {
+            STRING FunctionName = NO_DEFAULT:"Name of interrupt handler function";
+         },
+         FALSE
+      ] UseSpecialFunctionName = FALSE:"If set to FALSE, the attribute <Name> is used as function \c
+      \name of the ISR handler (default). If set to TRUE, a different function name can be assigned \c
+      \(necessary for multiple interrupt sources with shared interrupt handler function).";
+   };
+
+
+   // **********************************************************************
+   // RESOURCE
+   // **********************************************************************
+   RESOURCE {
+      STRING Component= "Main Component":"@A0x01@";
+
+      //standard attributes
+      ENUM [
+         STANDARD,
+         LINKED 
+         { 
+            RESOURCE_TYPE LINKEDRESOURCE:"Reference to another resource with the \c
+            \property STANDARD or LINKED. A link to an internal resource is not \c
+            \allowed.";
+         },
+         INTERNAL
+      ] RESOURCEPROPERTY:"@DSTANDARD@This attribute can take the following values:\
+      \\
+      \STANDARD: A normal resource which is not linked to another resource and is \c
+      \not an internal resource.\
+      \\
+      \LINKED: A resource which is linked to another resource with the property \c
+      \STANDARD or LINKED.\
+      \\
+      \INTERNAL: An internal resource which cannot be accessed by the application.";
+   }
+   :"@M8192@@A0x40@";
+
+
+   // **********************************************************************
+   // MESSAGE
+   // **********************************************************************
+   MESSAGE {
+      STRING Component= "Main Component":"@A0x01@";
+
+      ENUM [
+         UNQUEUED, 
+         QUEUED {
+            UINT64 QUEUEDEPTH:"The attribute QUEUEDEPTH specifies the \c
+            \number of queue elements. The type of a queue element is defined by \c
+            \the attribute CDATATYPE";
+         }
+      ] TYPE:"The TYPE attribute defines if the message has a queue or not. \c
+      \If queued messages are used for internal communication the COM \c
+      \conformance class will be CCCB";
+   
+      STRING CDATATYPE:"The CDATATYPE parameter describes the data type of \c
+      \message data according to the C-language (e.g. int or a structure name).\
+      \\
+      \Note: The message data type must be defined in the header file umsgtype.h \c
+      \if the type is not a basic data type.";
+
+      ENUM [
+         NONE,
+         ACTIVATETASK {
+            TASK_TYPE TASK:"The TASK reference parameter defines the task to \c
+            \be activated when the message is sent";
+         },
+         SETEVENT {
+            TASK_TYPE TASK:"The TASK reference parameter defines the task for \c
+            \which the event is to be set.";
+      
+            EVENT_TYPE EVENT:"The EVENT reference parameter defines the event \c
+            \to be set when the message is sent";
+         },
+         CALLBACK {
+            STRING CALLBACKNAME:"@F1@The CALLBACKNAME parameter defines the function \c
+            \which is called when the message is sent";
+         },
+         FLAG {
+            STRING FLAGNAME:"@F1@The FLAGNAME parameter defines the name of the flag \c
+            \which is set when the message is sent";
+         }
+      ] ACTION[]:"The ACTION attribute defines which type of notification is \c
+      \used when the message is sent. For unqueued messages more than one \c
+      \action per message is possible. For queued messages only one action is allowed.";  
+   }:"@M65535@@A0x10@";
+
+   // **********************************************************************
+   // COM / NM / APPMODE
+   // **********************************************************************
+   COM {
+      BOOLEAN USEMESSAGERESOURCE:"@DTRUE@The USEMESSAGERESOURCE attribute specifies \c
+      \if the message resource mechanism is used. If used for internal \c
+      \communication the COM conformance class will be CCCB";
+   
+      BOOLEAN USEMESSAGESTATUS:"@DTRUE@The USEMESSAGESTATUS attribute specifies \c
+      \if the message status is available. If used for internal \c
+      \communication the COM conformance class will be CCCB";
+   }:"@M1@";
+
+   NM {}:"@M0@";
+
+   APPMODE {}:"@M8@";
+}:"@B1:Components:Off@
+@B2:Procedure Support:Off@
+@B3:Internal Trace:Off@
+@B4:API Optimization:On@
+@B5:COM/Message Support:On@
+@B6:Application Modes:On@
+@B7:Resource Usage:On@
+@B8:Timing Analysis:Off@
+@B9:Semaphores:Off@
+";
+
+// End of TMS470PVF24.i23

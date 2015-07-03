@@ -1,0 +1,7 @@
+DEBUG_STATE_ENUM_NAME='CrcmgrBackupStatesType               'DEBUG_STATE_NAME='CRC_BACKUP_NORMALMODE_NO_CRC_ERROR                                     'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='CrcmgrBackupStatesType               'DEBUG_STATE_NAME='CRC_BACKUP_READ_BACKUPDATA                                             'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='CrcmgrBackupStatesType               'DEBUG_STATE_NAME='CRC_BACKUP_RESET_CRC                                                   'DEBUG_STATE_NUMBER='2        '
+DEBUG_STATE_ENUM_NAME='CrcmgrBackupStatesType               'DEBUG_STATE_NAME='CRC_BACKUP_WRITE_BACKUPDATA                                            'DEBUG_STATE_NUMBER='3        '
+DEBUG_STATE_ENUM_NAME='CrcmgrBackupStatesType               'DEBUG_STATE_NAME='CRC_BACKUP_CALULATE_NEW_CRC                                            'DEBUG_STATE_NUMBER='4        '
+DEBUG_STATE_ENUM_NAME='CrcmgrBackupStatesType               'DEBUG_STATE_NAME='CRC_BACKUP_CHECK_RECOVER_DATA_AGAINST_NEW_CRC                          'DEBUG_STATE_NUMBER='5        '
+                       

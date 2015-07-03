@@ -1,0 +1,743 @@
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    1
+
+       1                    ; Kernbauer Version: 1.14 Konfiguration: TMS470 Erzeugungsgangnummer: 372 
+       2                    
+       3                    ;*****************************************************************************
+       4                    ; Project Name: OSEK 2.2
+       5                    ;    File Name: osekint.asm
+       6                    ;
+       7                    ;  Module version: $vv$=1.05
+       8                    ;
+       9                    ;  Description: Interrupt handling functions for OSEK ARM7 (TI compiler version)
+      10                    ;
+      11                    ;-----------------------------------------------------------------------------
+      12                    ;               C O P Y R I G H T
+      13                    ;-----------------------------------------------------------------------------
+      14                    ; Copyright (c) 2000 Vector Informatik GmbH               All rights reserved.
+      15                    ;****************************************************************************/
+      16                    
+      17                    
+      18                      .include "tcb.inc"
+      19                    
+      20                    ; Vector release management 
+      21                    ; KB begin vrmAsmReleaseNumber 
+      22                    ; Assembler source release number 
+      23          00000003  osdVrmAsmMajRelNum           .set 3
+      24          0000000A  osdVrmAsmMinRelNum           .set 10
+      25                    ; KB end vrmAsmReleaseNumber 
+      26                      .include "vrm.inc"
+      27                    
+      28                      .def _osCheckInterruptsEnabled
+      29                      .def _osCheckInterruptsDisabled
+      30                     
+      31                      .def _osDisableGlobal
+      32                      .def _osEnableGlobal
+      33                      .def _osSaveDisableLevel
+      34                      .def _osRestoreEnableLevel
+      35                      .def _osDisableLevel           
+      36                      .def _osEnableLevel      
+      37                     .if (osdUseAsmIntFuncs == 1)      
+      38                      .def _osSaveDisableLevelNested
+      39                      .def _osSaveDisableGlobal
+      40                      .def _osRestoreEnableGlobal 
+      41                      .def _osSaveDisableGlobalNested
+      42                      .def _osRestoreEnableGlobalNested
+      43                      .def _osRestoreEnableLevelNested
+      44                     .endif
+      45                     .if (osdTasksInUserMode==1)
+      46                      .def _osSWIDisableGlobal
+      47                      .def _osSWIEnableGlobal
+      48                      .def _osSWISaveDisableLevel
+      49                      .def _osSWISaveDisableLevelNested
+      50                      .def _osSWISaveDisableGlobal
+      51                      .def _osSWIRestoreEnableGlobal 
+      52                      .def _osSWIRestoreEnableLevelNested
+      53                      .def _osSWIRestoreEnableLevel
+      54                     .endif
+      55                    
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    2
+
+      56                     .if (osdTasksInUserMode == 1)
+      57                    osRef_osSWIEnableLevel    .field  _osSWIEnableLevel,32
+      58                    osRef_osSWIDisableLevel    .field  _osSWIDisableLevel,32
+      59                    osRef_osSWISaveDisableLevel    .field  _osSWISaveDisableLevel,32
+      60                    osRef_osSWIDisableGlobal    .field  _osSWIDisableGlobal,32
+      61                    osRef_osSWIEnableGlobal    .field  _osSWIEnableGlobal,32
+      62                    osRef_osSWISaveDisableGlobal    .field  _osSWISaveDisableGlobal,32
+      63                    osRef_osSWIRestoreEnableGlobal    .field  _osSWIRestoreEnableGlobal,32
+      64                    osRef_osSWISaveDisableGlobalNested    .field  _osSWISaveDisableGlobalNested,32
+      65                    osRef_osSWIRestoreEnableGlobalNested    .field  _osSWIRestoreEnableGlobalNested,32
+      66                    osRef_osSWISaveDisableLevelNested    .field  _osSWISaveDisableLevelNested,32
+      67                    osRef_osSWIRestoreEnableLevelNested    .field  _osSWIRestoreEnableLevelNested,32
+      68                    osRef_osSWIRestoreEnableLevel    .field  _osSWIRestoreEnableLevel,32
+      69                    osRef_osSWIEnterSysMode    .field  _osSWIEnterSysMode,32
+      70                    osRef_osSWIEnterUserMode    .field  _osSWIEnterUserMode,32
+      71                    
+      72                      .def _osSWIEnterSysMode      
+      73                      .def _osSWIEnterUserMode      
+      74                     .endif
+      75                    
+      76                      .ref _osSavedIntLevelNested
+      77 00000000 00000000! osRef_osSavedIntLevelNested    .field  _osSavedIntLevelNested,32
+      78                      .ref _osIntSaveDisableCounter
+      79 00000004 00000000! osRef_osIntSaveDisableCounter  .field  _osIntSaveDisableCounter,32
+      80                      .ref _osSavedIntLevel
+      81 00000008 00000000! osRef_osSavedIntLevel             .field  _osSavedIntLevel,32
+      82                      .ref _osSavedGlobalInt
+      83 0000000c 00000000! osRef_osSavedGlobalInt         .field  _osSavedGlobalInt,32
+      84                      .ref _osIntSaveDisableCounterGlobal
+      85 00000010 00000000! osRef_osIntSaveDisableCounterGlobal .field _osIntSaveDisableCounterGlobal,32
+      86                      .ref _osSavedIntGlobalNested
+      87 00000014 00000000! osRef_osSavedIntGlobalNested  .field _osSavedIntGlobalNested,32
+      88                    
+      89                    
+      90                    ; Header for THUMB mode
+      91                    osThumbHeader .macro fname
+      92                     .if (osdThumbMode == 1)
+      93                      .def $:fname:
+      94                    
+      95                    $:fname:
+      96                      .state16
+      97                      bx     pc
+      98                      nop
+      99                     .endif
+     100                      .state32
+     101                      .endm
+     102                    
+     103                    
+     104                    ;-+--------------------------------------------------------------------------
+     105                    ; osCheckInterruptsEnabled                                                               
+     106                    ; Funktion: check if interrupts are enabled                                                       
+     107                    ; Parameter:                                                                 
+     108                    ; Returnvalue: 1: interrupts enabled    0: interrupts disabled                                        
+     109                    ;----------------------------------------------------------------------------
+     110 00000018             osThumbHeader osCheckInterruptsEnabled
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    3
+
+1                            .if (osdThumbMode == 1)
+1                             .def $:fname:
+1                           
+1                           $:fname:
+1                             .state16
+1                             bx     pc
+1                             nop
+1                            .endif
+1        00000018             .state32
+     111 00000018           _osCheckInterruptsEnabled
+     112 00000018 E10F1000    mrs    a2, CPSR
+     113 0000001c E3110080    tst    a2, #0x80     ; check IRQ flag
+     114 00000020 03A00001    moveq  a1, #1
+     115 00000024 13A00000    movne  a1, #0
+     116                    
+     117 00000028 E12FFF1E    bx     lr
+     118                    
+     119                    
+     120                    ;-+--------------------------------------------------------------------------
+     121                    ; osCheckInterruptsDisabled                                                               
+     122                    ; Funktion: check if interrupts are disabled                                                       
+     123                    ; Parameter:                                                                 
+     124                    ; Returnvalue: 1: interrupts disabled    0: interrupts enabled                                        
+     125                    ;----------------------------------------------------------------------------
+     126 0000002c             osThumbHeader osCheckInterruptsDisabled
+1                            .if (osdThumbMode == 1)
+1                             .def $:fname:
+1                           
+1                           $:fname:
+1                             .state16
+1                             bx     pc
+1                             nop
+1                            .endif
+1        0000002c             .state32
+     127 0000002c           _osCheckInterruptsDisabled
+     128 0000002c E10F1000    mrs    a2, CPSR
+     129 00000030 E3110080    tst    a2, #0x80     ; check IRQ flag
+     130 00000034 03A00000    moveq  a1, #0
+     131 00000038 13A00001    movne  a1, #1
+     132                    
+     133 0000003c E12FFF1E    bx     lr
+     134                    
+     135                    
+     136                    ;-+--------------------------------------------------------------------------
+     137                    ; osDisableLevel                                                               
+     138                    ; Funktion: save level and disable up to system level, no nesting                                     
+     139                    ; Parameter:                                                                 
+     140                    ; Returnvalue:                                                             
+     141                    ;----------------------------------------------------------------------------
+     142 00000040             osThumbHeader osDisableLevel
+1                            .if (osdThumbMode == 1)
+1                             .def $:fname:
+1                           
+1                           $:fname:
+1                             .state16
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    4
+
+1                             bx     pc
+1                             nop
+1                            .endif
+1        00000040             .state32
+     143 00000040           _osDisableLevel           
+     144 00000040 E10F0000    mrs a1, CPSR
+     145                     .if (osdTasksInUserMode==1)
+     146                      tst a1,#0x0f
+     147                      ldreq a4,osRef_osSWIDisableLevel
+     148                      swieq #0x80
+     149                      beq osLblDL
+     150                     .endif
+     151 00000044 E3800080    orr a1, a1, #10000000b
+     152 00000048 E129F000    msr CPSR, a1
+     153 0000004c E1A00000    nop
+     154 00000050           osLblDL:
+     155 00000050 E12FFF1E    bx     lr
+     156                    
+     157                    
+     158                     .if (osdTasksInUserMode==1)
+     159                    _osSWIDisableLevel           
+     160                      mrs a1, SPSR
+     161                      orr a1, a1, #10000000b
+     162                      msr SPSR, a1
+     163                      movs   pc, lr
+     164                     .endif
+     165                    
+     166                    
+     167                    ;-+--------------------------------------------------------------------------
+     168                    ; osEnableLevel                                                               
+     169                    ; Funktion: Enable task level, no nesting                                                       
+     170                    ; Parameter:                                                                 
+     171                    ; Returnvalue:                                                             
+     172                    ;----------------------------------------------------------------------------
+     173 00000054             osThumbHeader osEnableLevel
+1                            .if (osdThumbMode == 1)
+1                             .def $:fname:
+1                           
+1                           $:fname:
+1                             .state16
+1                             bx     pc
+1                             nop
+1                            .endif
+1        00000054             .state32
+     174 00000054           _osEnableLevel            ;  Enable task level, no nesting 
+     175 00000054 E10F0000    mrs a1, CPSR
+     176                     .if (osdTasksInUserMode==1)
+     177                      tst a1,#0x0f
+     178                      ldreq a4,osRef_osSWIEnableLevel
+     179                      swieq #0x80
+     180                      beq osLblEL
+     181                     .endif
+     182 00000058 E3C00080    bic a1, a1, #10000000b
+     183 0000005c E129F000    msr CPSR, a1
+     184 00000060 E1A00000    nop
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    5
+
+     185 00000064           osLblEL:
+     186 00000064 E12FFF1E    bx     lr
+     187                    
+     188                     .if (osdTasksInUserMode==1)
+     189                    _osSWIEnableLevel            ;  Enable task level, no nesting 
+     190                      mrs a1, SPSR
+     191                      bic a1, a1, #10000000b
+     192                      msr SPSR, a1
+     193                      movs   pc, lr
+     194                     .endif
+     195                    
+     196                    
+     197                    ;-+--------------------------------------------------------------------------
+     198                    ; osDisableGlobal                                                               
+     199                    ; Funktion: disable all interrupts, no nesting                                                       
+     200                    ; Parameter:                                                                 
+     201                    ; Returnvalue:                                                             
+     202                    ;----------------------------------------------------------------------------
+     203 00000068             osThumbHeader osDisableGlobal
+1                            .if (osdThumbMode == 1)
+1                             .def $:fname:
+1                           
+1                           $:fname:
+1                             .state16
+1                             bx     pc
+1                             nop
+1                            .endif
+1        00000068             .state32
+     204 00000068           _osDisableGlobal
+     205 00000068 E10F0000    mrs a1, CPSR
+     206                     .if (osdTasksInUserMode==1)
+     207                      tst a1,#0x0f
+     208                      ldreq a4,osRef_osSWIDisableGlobal
+     209                      swieq #0x80
+     210                      beq osLblDG
+     211                     .endif
+     212 0000006c E38000C0    orr a1, a1, #11000000b     ; set IRQ and FIQ flag
+     213 00000070 E129F000    msr CPSR, a1
+     214 00000074 E1A00000    nop
+     215 00000078           osLblDG:
+     216 00000078 E12FFF1E    bx     lr
+     217                      
+     218                     .if (osdTasksInUserMode==1)
+     219                    _osSWIDisableGlobal
+     220                      mrs a1, SPSR
+     221                      orr a1, a1, #11000000b     ; set IRQ and FIQ flag
+     222                      msr SPSR, a1
+     223                      movs   pc, lr
+     224                     .endif  
+     225                    
+     226                    
+     227                    ;-+--------------------------------------------------------------------------
+     228                    ; osEnableGlobal                                                               
+     229                    ; Funktion: Enable all interrupts, no nesting                                                       
+     230                    ; Parameter:                                                                 
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    6
+
+     231                    ; Returnvalue:                                                             
+     232                    ;----------------------------------------------------------------------------
+     233 0000007c             osThumbHeader osEnableGlobal
+1                            .if (osdThumbMode == 1)
+1                             .def $:fname:
+1                           
+1                           $:fname:
+1                             .state16
+1                             bx     pc
+1                             nop
+1                            .endif
+1        0000007c             .state32
+     234 0000007c           _osEnableGlobal
+     235 0000007c E10F0000    mrs a1, CPSR
+     236                     .if (osdTasksInUserMode==1)
+     237                      tst a1,#0x0f
+     238                      ldreq a4,osRef_osSWIEnableGlobal
+     239                      swieq #0x80
+     240                      beq osLblEG
+     241                     .endif
+     242 00000080 E3C000C0    bic a1, a1, #11000000b     ; reset IRQ and FIQ flag
+     243 00000084 E129F000    msr CPSR, a1
+     244 00000088           osLblEG:
+     245 00000088 E12FFF1E    bx     lr
+     246                    
+     247                     .if (osdTasksInUserMode==1)
+     248                    _osSWIEnableGlobal
+     249                      mrs a1, SPSR
+     250                      bic a1, a1, #11000000b     ; reset IRQ and FIQ flag
+     251                      msr SPSR, a1
+     252                      movs   pc, lr
+     253                     .endif
+     254                    
+     255                    
+     256                    ;-+--------------------------------------------------------------------------
+     257                    ; osSaveDisableLevel                                                               
+     258                    ; Funktion: save level and disable up to system level, no nesting                                     
+     259                    ; Parameter:                                                                 
+     260                    ; Returnvalue:                                                             
+     261                    ;----------------------------------------------------------------------------
+     262 0000008c             osThumbHeader osSaveDisableLevel
+1                            .if (osdThumbMode == 1)
+1                             .def $:fname:
+1                           
+1                           $:fname:
+1                             .state16
+1                             bx     pc
+1                             nop
+1                            .endif
+1        0000008c             .state32
+     263 0000008c           _osSaveDisableLevel
+     264 0000008c E10F0000    mrs a1, CPSR
+     265                     .if (osdTasksInUserMode==1)
+     266                      tst a1,#0x0f
+     267                      ldreq a4,osRef_osSWISaveDisableLevel
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    7
+
+     268                      swieq #0x80
+     269                      beq osLblSDL
+     270                     .endif
+     271 00000090 E51F1090    ldr a2, osRef_osSavedIntLevel
+     272 00000094 E3802080    orr a3, a1, #0x80
+     273 00000098 E129F002    msr CPSR, a3
+     274 0000009c E5C10000    strb a1, [a2]
+     275 000000a0 E1A00000    nop
+     276 000000a4           osLblSDL:
+     277 000000a4 E12FFF1E    bx     lr
+     278                    
+     279                     .if (osdTasksInUserMode==1)
+     280                    _osSWISaveDisableLevel
+     281                      mrs a1, SPSR
+     282                      ldr a2, osRef_osSavedIntLevel
+     283                      orr a3, a1, #0x80
+     284                      msr SPSR, a3
+     285                      strb a1, [a2]
+     286                      movs   pc, lr
+     287                     .endif
+     288                      
+     289                    
+     290                    ;-+--------------------------------------------------------------------------
+     291                    ; osSaveDisableGlobal                                                              
+     292                    ; Funktion: save and disable all interrupts, no nesting                                               
+     293                    ; Parameter:                                                                 
+     294                    ; Returnvalue:                                                             
+     295                    ;----------------------------------------------------------------------------
+     296                      .if (osdUseAsmIntFuncs == 1)
+     297                    
+     298                      osThumbHeader osSaveDisableGlobal
+     299                    _osSaveDisableGlobal  
+     300                      mrs a1, CPSR
+     301                     .if (osdTasksInUserMode==1)
+     302                      tst a1,#0x0f
+     303                      ldreq a4,osRef_osSWISaveDisableGlobal
+     304                      swieq #0x80
+     305                      beq osLblSDG
+     306                     .endif
+     307                      ldr a2, osRef_osSavedGlobalInt
+     308                      orr a3, a1, #11000000b
+     309                      msr CPSR, a3      ; set IRQ and FIQ flag
+     310                      strb a1, [a2]       ; store old status of IRQ and FIQ
+     311                      nop
+     312                    osLblSDG:
+     313                      bx     lr
+     314                    
+     315                     .if (osdTasksInUserMode==1)
+     316                    _osSWISaveDisableGlobal  
+     317                      mrs a1, SPSR
+     318                      ldr a2, osRef_osSavedGlobalInt
+     319                      orr a3, a1, #11000000b
+     320                      msr SPSR, a3      ; set IRQ and FIQ flag
+     321                      strb a1, [a2]       ; store old status of IRQ and FIQ
+     322                      movs   pc, lr
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    8
+
+     323                     .endif
+     324                     .endif
+     325                      
+     326                    
+     327                    ;-+--------------------------------------------------------------------------
+     328                    ; osRestoreEnableGlobal                                                              
+     329                    ; Funktion: restore and enable all interrupts, no nesting                                             
+     330                    ; Parameter:                                                                 
+     331                    ; Returnvalue:                                                             
+     332                    ;----------------------------------------------------------------------------
+     333                      .if (osdUseAsmIntFuncs == 1)
+     334                    
+     335                      osThumbHeader osRestoreEnableGlobal
+     336                    _osRestoreEnableGlobal 
+     337                      mrs a1, CPSR
+     338                     .if (osdTasksInUserMode==1)
+     339                      tst a1,#0x0f
+     340                      ldreq a4,osRef_osSWIRestoreEnableGlobal
+     341                      swieq #0x80
+     342                      beq osLblREG
+     343                     .endif
+     344                      ldr a2, osRef_osSavedGlobalInt 
+     345                      ldrb a3, [a2]              
+     346                      bic a1, a1, #11000000b    ; restore status of IRQ and FIQ
+     347                      bic a3, a3, #00111111b
+     348                      orr a1, a1, a3
+     349                      msr CPSR, a1
+     350                    osLblREG:
+     351                      bx     lr
+     352                    
+     353                     .if (osdTasksInUserMode==1)
+     354                    _osSWIRestoreEnableGlobal 
+     355                      mrs a1, SPSR
+     356                      ldr a2, osRef_osSavedGlobalInt 
+     357                      ldrb a3, [a2]              
+     358                      bic a1, a1, #11000000b    ; restore status of IRQ and FIQ
+     359                      bic a3, a3, #00111111b
+     360                      orr a1, a1, a3
+     361                      msr SPSR, a1
+     362                      movs   pc, lr
+     363                     .endif
+     364                     .endif
+     365                    
+     366                    
+     367                    ;-+--------------------------------------------------------------------------
+     368                    ; osSaveDisableLevelNested                                                              
+     369                    ; Funktion: save level and disable up to system level, with nesting                                   
+     370                    ; Parameter:                                                                 
+     371                    ; Returnvalue:                                                             
+     372                    ;----------------------------------------------------------------------------
+     373                      .if (osdUseAsmIntFuncs == 1)
+     374                    
+     375                      osThumbHeader osSaveDisableLevelNested
+     376                    _osSaveDisableLevelNested  
+     377                      ldr a3, osRef_osIntSaveDisableCounter  ; a3 = &osIntSaveDisableCounter
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE    9
+
+     378                      ldrb a2, [a3]                  ; a2 = osIntSaveDisableCounter
+     379                      tst a2, a2
+     380                      ; if osIntSaveDisableCounter == 0 save level
+     381                      bne osLblSDLN
+     382                    
+     383                      mrs a1, CPSR
+     384                     .if (osdTasksInUserMode==1)
+     385                      tst a1,#0x0f
+     386                      ldreq a4,osRef_osSWISaveDisableLevelNested
+     387                      swieq #0x80
+     388                      beq osLblSDLN
+     389                     .endif
+     390                      orr a4, a1, #0x80
+     391                      msr CPSR, a4  
+     392                      ldr a4, osRef_osSavedIntLevelNested
+     393                      strb a1, [a4]         
+     394                    
+     395                    osLblSDLN:
+     396                      ; increment osIntSaveDisableCounter
+     397                      add a2,a2,#1
+     398                      strb a2,[a3]
+     399                      bx     lr
+     400                    
+     401                     .if (osdTasksInUserMode==1)
+     402                    _osSWISaveDisableLevelNested  
+     403                      mrs a1, SPSR
+     404                      orr a4, a1, #0x80
+     405                      msr SPSR, a4  
+     406                      ldr a4, osRef_osSavedIntLevelNested
+     407                      strb a1, [a4]         
+     408                      movs   pc, lr
+     409                     .endif
+     410                     .endif
+     411                    
+     412                    
+     413                    ;-+--------------------------------------------------------------------------
+     414                    ; osRestoreEnableLevelNested                                                              
+     415                    ; Funktion: restore level, with nesting                                                       
+     416                    ; Parameter:                                                                 
+     417                    ; Returnvalue:                                                             
+     418                    ;----------------------------------------------------------------------------
+     419                      .if (osdUseAsmIntFuncs == 1)
+     420                      osThumbHeader osRestoreEnableLevelNested
+     421                    _osRestoreEnableLevelNested        
+     422                      ldr a3, osRef_osIntSaveDisableCounter  ; a3 = &osIntSaveDisableCounter
+     423                      ldrb a4, [a3]                  ; a4 = osIntSaveDisableCounter
+     424                      subs a4,a4,#1                    ; decrement osIntSaveDisableCounter
+     425                      strb a4, [a3]
+     426                      bne osLblRELN
+     427                    
+     428                      ; osIntSaveDisableCounter == 0 restore level0
+     429                      mrs a1, CPSR
+     430                     .if (osdTasksInUserMode==1)
+     431                      tst a1,#0x0f
+     432                      ldreq a4,osRef_osSWIRestoreEnableLevelNested
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE   10
+
+     433                      swieq #0x80
+     434                      beq osLblRELN
+     435                     .endif
+     436                      ldr a2, osRef_osSavedIntLevelNested 
+     437                      ldrb a3, [a2]
+     438                    
+     439                      bic a1, a1, #10000000b
+     440                      bic a3, a3, #01111111b
+     441                      orr a1, a1, a3
+     442                      msr CPSR, a1
+     443                    
+     444                    osLblRELN:
+     445                      bx     lr
+     446                    
+     447                     .if (osdTasksInUserMode==1)
+     448                    _osSWIRestoreEnableLevelNested        
+     449                      mrs a1, SPSR
+     450                      ldr a2, osRef_osSavedIntLevelNested 
+     451                      ldrb a3, [a2]
+     452                    
+     453                      bic a1, a1, #10000000b
+     454                      bic a3, a3, #01111111b
+     455                      orr a1, a1, a3
+     456                      msr SPSR, a1
+     457                      movs   pc, lr
+     458                     .endif
+     459                     .endif
+     460                    
+     461                    
+     462                    ;-+--------------------------------------------------------------------------
+     463                    ; osSaveDisableGlobalNested                                                              
+     464                    ; Funktion: save and disable all interrupts, with nesting                                             
+     465                    ; Parameter:                                                                 
+     466                    ; Returnvalue:                                                             
+     467                    ;----------------------------------------------------------------------------
+     468                      .if (osdUseAsmIntFuncs == 1)
+     469                      osThumbHeader osSaveDisableGlobalNested
+     470                    _osSaveDisableGlobalNested  
+     471                      ldr a3, osRef_osIntSaveDisableCounterGlobal  ; a3 = &osIntSaveDisableCounterGlobal
+     472                      ldrb a2, [a3]                  ; a2 = osIntSaveDisableCounterGlobal
+     473                      tst a2, a2
+     474                      ; if osIntSaveDisableCounterGlobal == 0 save ints
+     475                      bne osLblSDGN
+     476                    
+     477                      mrs a1, CPSR
+     478                     .if (osdTasksInUserMode==1)
+     479                      tst a1,#0x0f
+     480                      ldreq a4,osRef_osSWISaveDisableGlobalNested
+     481                      swieq #0x80
+     482                      beq osLblSDGN
+     483                     .endif
+     484                      orr a4, a1, #0xC0
+     485                      msr CPSR, a4  
+     486                      ldr a4, osRef_osSavedIntGlobalNested
+     487                      strb a1, [a4]         
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE   11
+
+     488                    
+     489                    osLblSDGN:
+     490                      ; increment osIntSaveDisableCounterGlobal
+     491                      add a2,a2,#1
+     492                      strb a2,[a3]
+     493                      bx     lr
+     494                    
+     495                     .if (osdTasksInUserMode==1)
+     496                    _osSWISaveDisableGlobalNested  
+     497                      mrs a1, SPSR
+     498                      orr a4, a1, #0xC0
+     499                      msr SPSR, a4  
+     500                      ldr a4, osRef_osSavedIntGlobalNested
+     501                      strb a1, [a4]         
+     502                      movs   pc, lr
+     503                     .endif
+     504                     .endif
+     505                    
+     506                    
+     507                    ;-+--------------------------------------------------------------------------
+     508                    ; osRestoreEnableGlobalNested                                                              
+     509                    ; Funktion: restore ints, with nesting                                                       
+     510                    ; Parameter:                                                                 
+     511                    ; Returnvalue:                                                             
+     512                    ;----------------------------------------------------------------------------
+     513                      .if (osdUseAsmIntFuncs == 1)
+     514                      osThumbHeader osRestoreEnableGlobalNested
+     515                    _osRestoreEnableGlobalNested        
+     516                      ldr a3, osRef_osIntSaveDisableCounterGlobal  ; a3 = &osIntSaveDisableCounterGlobal
+     517                      ldrb a4, [a3]                  ; a4 = osIntSaveDisableCounterGlobal
+     518                      subs a4,a4,#1                    ; decrement osIntSaveDisableCounterGlobal
+     519                      strb a4, [a3]
+     520                      bne osLblREGN
+     521                    
+     522                      ; osRef_osIntSaveDisableCounterGlobal == 0 restore ints
+     523                      mrs a1, CPSR
+     524                     .if (osdTasksInUserMode==1)
+     525                      tst a1,#0x0f
+     526                      ldreq a4,osRef_osSWIRestoreEnableGlobalNested
+     527                      swieq #0x80
+     528                      beq osLblREGN
+     529                     .endif
+     530                      ldr a2, osRef_osSavedIntGlobalNested 
+     531                      ldrb a3, [a2]
+     532                    
+     533                      bic a1, a1, #11000000b
+     534                      bic a3, a3, #00111111b
+     535                      orr a1, a1, a3
+     536                      msr CPSR, a1
+     537                    
+     538                    osLblREGN:
+     539                      bx     lr
+     540                    
+     541                     .if (osdTasksInUserMode==1)
+     542                    _osSWIRestoreEnableGlobalNested        
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE   12
+
+     543                      mrs a1, SPSR
+     544                      ldr a2, osRef_osSavedIntGlobalNested 
+     545                      ldrb a3, [a2]
+     546                    
+     547                      bic a1, a1, #11000000b
+     548                      bic a3, a3, #00111111b
+     549                      orr a1, a1, a3
+     550                      msr SPSR, a1
+     551                      movs   pc, lr
+     552                     .endif
+     553                     .endif
+     554                    
+     555                    
+     556                    ;-+--------------------------------------------------------------------------
+     557                    ; osRestoreEnableLevel                                                              
+     558                    ; Funktion: restore level, no nesting                                                       
+     559                    ; Parameter:                                                                 
+     560                    ; Returnvalue:                                                             
+     561                    ;----------------------------------------------------------------------------
+     562 000000a8             osThumbHeader osRestoreEnableLevel
+1                            .if (osdThumbMode == 1)
+1                             .def $:fname:
+1                           
+1                           $:fname:
+1                             .state16
+1                             bx     pc
+1                             nop
+1                            .endif
+1        000000a8             .state32
+     563 000000a8           _osRestoreEnableLevel      
+     564 000000a8 E10F0000    mrs a1, CPSR
+     565                     .if (osdTasksInUserMode==1)
+     566                      tst a1,#0x0f
+     567                      ldreq a4,osRef_osSWIRestoreEnableLevel
+     568                      swieq #0x80
+     569                      beq osLblSDL
+     570                     .endif
+     571 000000ac E51F10AC    ldr a2, osRef_osSavedIntLevel 
+     572 000000b0 E5D12000    ldrb a3, [a2]              
+     573 000000b4 E3C00080    bic a1, a1, #10000000b
+     574 000000b8 E3C2207F    bic a3, a3, #01111111b
+     575 000000bc E1800002    orr a1, a1, a3
+     576 000000c0 E129F000    msr CPSR, a1
+     577 000000c4 E12FFF1E    bx     lr
+     578                    
+     579                     .if (osdTasksInUserMode==1)
+     580                    _osSWIRestoreEnableLevel      
+     581                      mrs a1, SPSR
+     582                      ldr a2, osRef_osSavedIntLevel 
+     583                      ldrb a3, [a2]              
+     584                      bic a1, a1, #10000000b
+     585                      bic a3, a3, #01111111b
+     586                      orr a1, a1, a3
+     587                      msr SPSR, a1
+     588                      movs   pc, lr
+TMS470 COFF Assembler PC v4.1.4 Tue Oct 29 13:05:27 2013
+
+Tools Copyright (c) 1996-2006 Texas Instruments Incorporated
+osekint.asm                                                          PAGE   13
+
+     589                    
+     590                    
+     591                      osThumbHeader osSWIEnterSysMode
+     592                    _osSWIEnterSysMode      
+     593                      mrs a1, SPSR
+     594                      orr a1, a1, #00001111b
+     595                      msr SPSR, a1
+     596                      movs   pc, lr
+     597                    
+     598                      osThumbHeader osSWIEnterUserMode
+     599                    _osSWIEnterUserMode      
+     600                      mrs a1, SPSR
+     601                      bic a1, a1, #00001111b
+     602                      msr SPSR, a1
+     603                      movs   pc, lr
+     604                     .endif
+
+No Assembly Errors, No Assembly Warnings

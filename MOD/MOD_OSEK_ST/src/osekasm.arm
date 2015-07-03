@@ -1,0 +1,750 @@
+; Kernbauer Version: 1.14 Konfiguration: TMS470 Erzeugungsgangnummer: 372 
+
+;*****************************************************************************
+; Project Name: OSEK 2.2
+;    File Name: osekasm.arm
+;
+;  Module version: $vv$=1.05
+;
+;  Description: Assembler functions for OSEK ARM7 (GHS compiler version)
+;
+;-----------------------------------------------------------------------------
+;               C O P Y R I G H T
+;-----------------------------------------------------------------------------
+; Copyright (c) 2000 Vector Informatik GmbH               All rights reserved.
+;****************************************************************************/
+
+
+  .section ".oscode", "ax"
+
+; Vector release management 
+#include <vrm.h>
+; KB begin vrmReleaseNumber 
+/* Source release number */
+#define osdVrmMajRelNum 3
+#define osdVrmMinRelNum 10
+; KB end vrmReleaseNumber 
+#include <vrm.h>
+
+#define osdPreTCB  1        
+#define osdPostTCB 0 
+#define osdTcbDefinesOnly
+#include "tcb.h"
+
+
+; some OSEK constants
+
+#define PRE_READY                0
+#define RUNNING                  1
+#define READY                    3
+
+#define STANDARD_STATUS          0
+#define EXTENDED_STATUS          1
+
+
+  EXPORT osDispatcher
+  EXPORT osDirectSWIDispatcher
+  EXPORT osStartOSasm
+
+  IMPORT osActiveTaskIndex
+  IMPORT osActiveTaskPrio
+  IMPORT osHighReadyTaskIndex
+  IMPORT osHighReadyTaskPrio
+  IMPORT osTcbSP
+#if (osdNonPreempt == 0)
+  IMPORT osLockDispatcher
+#endif
+  IMPORT osTcbTaskState
+  IMPORT oskTcbStackTop
+  IMPORT oskTcbTaskStartAddress
+  IMPORT osStartOSc
+  IMPORT osSystemStack
+  IMPORT osInitIntVect
+  IMPORT osIrqStack
+  IMPORT osSupervisorStack
+  IMPORT osStartDispatcher
+  IMPORT osUnhandledException
+  IMPORT osOccupyInternalResource
+
+#ifdef osdStartupStack
+  IMPORT osdStartupStack
+#else
+  IMPORT osSystemStack
+#endif
+ 
+  IMPORT osdApplSWIHandler
+
+#if ((osdORTIDebug == 1) && (osdORTIVersion == 200))
+  IMPORT osORTICurrentServiceId
+  IMPORT osTcbORTIServiceId
+  #include <testmac1.h>
+#endif
+
+#if (osdMixedPreempt == 1)
+  IMPORT oskTcbTaskPreemption
+#endif
+
+#if (osdPreTaskHook == 1)
+  IMPORT osPreTaskHook
+#endif
+#if (osdPostTaskHook == 1)
+  IMPORT osPostTaskHook
+#endif
+
+#if (STATUS_LEVEL == EXTENDED_STATUS)
+  IMPORT osMissingTerminateError
+#endif
+
+#if (osdStackCheck == 1)
+  IMPORT osStackOverflow
+  IMPORT oskTcbStackBottom
+  IMPORT osFillSystemStack
+  IMPORT osLastActiveTaskIndex
+#endif
+
+#if (osdIEM == 1)
+  IMPORT osIEMInitTable
+#endif
+
+#define osREQMASK  0xffffff34
+#define osPCR      0xfffffd30
+#define osSSIR     0xfffffffc
+#define osSSIF     0xfffffff8
+#define osCIMIVEC  0xffffff28
+#define osGLBCTRL  0xffffffdc
+
+
+; register mapping for Dispatcher
+#define RegCPSRval               r0  
+#define RegTaskLR                r1  
+#define RegTaskSP                r2  
+#define RegAdr_osTcbSP           r3   
+#define RegAdr_osTcbTaskState    r4   
+#define RegAdr_oskTcbStackTop    r5   
+#define RegTmp1                  r6   
+#define RegTmp2                  r7   
+#define RegTmp3                  r8   
+#define RegTmp4                  r9   
+#define RegAdr_osActiveTaskIndex r10  
+#define Reg_osActiveTaskIndex    r11   
+#define RegNoActiveTask          r12   
+
+; Stack frame:
+;
+;    r0
+;    r1
+;    r2
+;    SPSR
+;    lr (IRQ) = return of interrupt
+;    lr (task) = saved task context
+;    r3
+;    r4
+;    r5
+;    r6
+;    r7
+;    r8
+;    r9
+;    r10
+;    r11
+;    r12
+
+
+;-+--------------------------------------------------------------------------
+; osDispatcher                                                               
+; Funktion: osDispatcher                                                       
+;   - saves old task kontext
+;   - switches to new task
+;   - contains IDLE-Loop                                                     
+; Parameter:                                                                 
+; Returnvalue:                                                               
+;----------------------------------------------------------------------------
+
+   .section ".oscode","ax"
+
+.nothumb
+
+osDirectSWIDispatcher    ; called directly by SWI vector
+  stmfd  sp!,{r0-r2}
+
+osDispatcher
+
+  ; switch to system mode (for stack access)
+  mrs    RegCPSRval, CPSR                         ; RegCPSRval : saved CPSR
+  orr    RegCPSRval, RegCPSRval, #0b011111
+  msr    CPSR_c, RegCPSRval
+
+  ; get SP of system/user mode
+  mov    RegTaskSP, sp                            ; RegTaskSP : task SP
+  mov    RegTaskLR, lr                            ; RegTaskLR : task LR
+
+  ; switch back to SVC mode
+  bic    RegCPSRval, RegCPSRval, #0b01100
+  msr    CPSR_c, RegCPSRval
+
+  stmfd  RegTaskSP!,{RegAdr_osActiveTaskIndex-RegNoActiveTask}  ; save RegAdr_osActiveTaskIndex-RegNoActiveTask (on task stack!) 
+
+  ldr    RegAdr_osActiveTaskIndex, =osActiveTaskIndex           ; RegAdr_osActiveTaskIndex : &osActiveTaskIndex
+  ldrh   Reg_osActiveTaskIndex, [RegAdr_osActiveTaskIndex]      ; Reg_osActiveTaskIndex : osActiveTaskIndex
+
+  mov    RegNoActiveTask,#0x10000
+  sub    RegNoActiveTask,RegNoActiveTask,#1
+  cmp    Reg_osActiveTaskIndex, RegNoActiveTask                 ; osActiveTaskIndex == osdNoActiveTask ?
+
+#if (osdStackCheck == 1)
+  ; check task stack
+  bne    osDispNoCheck
+
+  add    sp,sp,#12              ; if not saving old context: restore SP
+
+  ldr    RegTmp2, =oskTcbStackBottom                         ; RegTmp2 : &oskTcbStackBottom
+  ldr    RegTmp3, =osLastActiveTaskIndex                     ; RegTmp3 : &osLastActiveTaskIndex
+  ldrh   RegTmp4,[RegTmp3]                                   ; RegTmp4 : osLastActiveTaskIndex
+  ldr    RegTmp3,[RegTmp2, +RegTmp4, lsl #2]        ; RegTmp3 : oskTcbStackBottom[RegTmp4]
+  ldr    RegTmp2, [RegTmp3];
+  ldr    RegTmp3, =0xAAAAAAAA;
+  cmp    RegTmp2, RegTmp3
+#if (osdThumbMode == 1)
+  ldr    RegTmp2, =osStackOverflow
+  mov    lr, pc
+  bxne   RegTmp2
+#else
+  blne   osStackOverflow
+#endif
+  b      osNextTask
+
+osDispNoCheck
+#else   
+  ; no stack check
+  addeq  sp,sp,#12              ; if not saving old context: restore SP
+  beq    osNextTask
+#endif
+
+  ; save old task context (on task stack!)
+  stmfd  RegTaskSP!,{RegTaskLR, RegAdr_osTcbSP-RegTmp4}
+
+  mrs    RegTmp4, SPSR
+  ldmfd  sp!,{RegTmp1, RegTmp2, RegTmp3}      ; get task registers from IRQ or SVC stack
+  stmfd  RegTaskSP!,{RegTmp1-RegTmp4,lr}      ; save task registers on task stack
+ 
+#if ((osdORTIDebug == 1) && (osdORTIVersion == 200))
+   ; store CurrentService into tcb
+   ldr    RegTmp3,=osORTICurrentServiceId
+   ldr    RegTmp2,=osTcbORTIServiceId
+   ldrb   RegTmp3,[RegTmp3]
+   strb   RegTmp3,[RegTmp2, +Reg_osActiveTaskIndex]  
+#endif
+  
+  ldr    RegAdr_osTcbTaskState, =osTcbTaskState                   ; RegAdr_osTcbTaskState : &osTcbTaskState  
+  ldrb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]  ; RegTmp3 : osTcbTaskState[osActiveTaskIndex]
+  cmp    RegTmp3,#1
+  bne    osL01
+
+#if (osdPostTaskHook == 1)
+  bne    osL01
+  ; call PostTaskHook
+  mov    RegTmp3, sp
+  mov    sp, RegTaskSP
+
+#if (osdThumbMode == 1)
+  stmfd  sp!,{a1-a4,r8,r9,ip}
+  ldr    a1, =osPostTaskHook
+  mov    lr, pc
+  bx     a1
+  ldmfd  sp!,{a1-a4,r8,r9,ip}
+#else
+  stmfd  sp!,{a1-a4,ip}
+  bl     osPostTaskHook
+  ldmfd  sp!,{a1-a4,ip}
+#endif
+
+  mov    sp, RegTmp3
+
+  ; set old task state to READY
+  mov    RegTmp3,READY         
+  strb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]  ; RegTmp3 : osTcbTaskState[osActiveTaskIndex]
+#else
+  ; set old task state to READY
+  moveq    RegTmp3,READY         
+  streqb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]  ; RegTmp3 : osTcbTaskState[osActiveTaskIndex]
+#endif
+ 
+osL01:
+#if (osdStackCheck == 1)
+  ; check task stack
+  ldr    RegTmp2, =oskTcbStackBottom                              ; RegTmp2 : &oskTcbStackBottom
+  ldr    RegTmp3,[RegTmp2, +Reg_osActiveTaskIndex, lsl #2]        ; RegTmp3 : oskTcbStackBottom[Reg_osActiveTaskIndex]
+  ldr    RegTmp2, [RegTmp3];
+  ldr    RegTmp3, =0xAAAAAAAA;
+  cmp    RegTmp2, RegTmp3
+
+#if (osdThumbMode == 1)
+  ldr    RegTmp2, =osStackOverflow
+  mov    lr, pc
+  bxne   RegTmp2
+#else
+  blne   osStackOverflow
+#endif
+#endif
+
+  ; save stack pointer
+  ldr    RegAdr_osTcbSP, =osTcbSP                         ; RegAdr_osTcbSP : &osTcbSP
+  str    RegTaskSP,[RegAdr_osTcbSP, +Reg_osActiveTaskIndex, lsl #2] ; osTcbSP[osActiveTaskIndex] = SP (task)
+
+osNextTask   ; start next task
+  ldr    RegTmp1, =osHighReadyTaskIndex                   ; RegTmp1 : &osHighReadyTaskIndex
+  ldrh   Reg_osActiveTaskIndex,[RegTmp1]                    
+  strh   Reg_osActiveTaskIndex,[RegAdr_osActiveTaskIndex] ; Reg_osActiveTaskIndex : osActiveTaskIndex = osHighReadyTaskIndex
+
+  ldr    RegTmp2, =osHighReadyTaskPrio                    ; RegTmp2 : &osHighReadyTaskPrio
+  ldrh   RegTmp3,[RegTmp2]                                ; RegTmp3 : osHighReadyTaskPrio
+  ldr    RegTmp2, =osActiveTaskPrio                       ; RegTmp2 : &osActiveTaskPrio  
+  strh   RegTmp3,[RegTmp2]                                ; osActiveTaskPrio = osHighReadyTaskPrio
+
+  cmp    Reg_osActiveTaskIndex, RegNoActiveTask           ; (new) osActiveTaskIndex == OS_NO_ACTIVE_TASK ?
+  beq    IdleLoop
+
+  ; switch to next task
+  ; if there are internal resources check if an internal resource needs to be occupied
+#if (osdNumberOfInternalResources > 0)
+  stmfd  sp!,{a1-a4,r8,r9,ip}
+  bl osOccupyInternalResource
+  ldmfd  sp!,{a1-a4,r8,r9,ip}
+#endif
+ 
+#if (osdMixedPreempt == 1)
+  ; lock dispatcher for nonpreemptive tasks, unlock for preemptive tasks
+  ldr    RegTmp2, =oskTcbTaskPreemption                   ; RegTmp2 : &oskTcbTaskPreemption  
+  ldrb   RegTmp3,[RegTmp2, +Reg_osActiveTaskIndex]        ; RegTmp3 : oskTaskPreemption[osActiveTaskIndex]
+  eor    RegTmp3,RegTmp3,#1                               ; if RegTmp3 = 1 then RegTmp3 = 0 else RegTmp3 = 1
+  ldr    RegTmp2, =osLockDispatcher                       ; RegTmp2 : &osLockDispatcher  
+  strb   RegTmp3,[RegTmp2]             
+#endif
+
+  ldr    RegAdr_osTcbTaskState, =osTcbTaskState           ; RegAdr_osTcbTaskState : &osTcbTaskState  
+  ldrb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]     ; RegTmp3 : osTcbTaskState[osActiveTaskIndex]
+
+  cmp    RegTmp3,PRE_READY                                ; osTcbTaskState[osActiveTaskIndex] == PRE_READY ?
+  bne    RestoreContext             
+
+  ; task is running for the first time: create new stack frame
+#if ((osdORTIDebug == 1) && (osdORTIVersion == 200))
+  ; osORTICurrentServiceId=osdORTINoService; 
+  ldr    RegTmp1, =osORTICurrentServiceId
+  mov    RegTmp2, osdORTINoService
+  strb   RegTmp2,[RegTmp1]
+#endif
+
+  ldr    RegTmp2, =oskTcbStackTop                         ; RegTmp2 : &oskTcbStackTop  
+  ldr    RegAdr_oskTcbStackTop,[RegTmp2, +Reg_osActiveTaskIndex, lsl #2]  ; RegAdr_oskTcbStackTop : new task SP = oskTcbStackTop[osActiveTaskIndex]
+
+  ; set task state to running
+  mov    RegTmp3,RUNNING                                                  ; RegTmp3 : RUNNING
+  strb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]          ; osTcbTaskState[osActiveTaskIndex] = RUNNING
+
+  ; reset osStartDispatcher
+  ldr    RegTmp2, =osStartDispatcher                                      ; RegTmp2 : &osStartDispatcher  
+  eor    RegTmp3, RegTmp3, RegTmp3                                        ; RegTmp3 : 0
+  strb   RegTmp3, [RegTmp2]                                               ; osStartDispatcher = 0;
+
+  ; get task start address
+  ldr    RegTmp2, =oskTcbTaskStartAddress                                 ; RegTmp2 : &oskTcbTaskStartAddress   
+  ldr    RegTmp3,[RegTmp2, +Reg_osActiveTaskIndex, lsl #2]                ; RegTmp3 : oskTcbTaskStartAddress[osActiveTaskIndex]
+
+  ; switch to system mode (for stack access)
+  orr    RegCPSRval, RegCPSRval, #0x1F
+  msr    CPSR_c, RegCPSRval
+
+  mov    sp, RegAdr_oskTcbStackTop            ; set task SP of system/user mode
+
+#if (osdPreTaskHook == 1)
+  ; call PreTaskHook
+  str    RegCPSRval,[sp, -4]!                 ; push RegCPSRval
+#if (osdThumbMode == 1)
+  stmfd  sp!,{a1-a4,r8,r9,ip}
+  ldr    a1, =osPreTaskHook
+  mov    lr, pc
+  bx   a1
+  ldmfd  sp!,{a1-a4,r8,r9,ip}
+#else
+  stmfd  sp!,{a1-a4,ip}
+  bl     osPreTaskHook
+  ldmfd  sp!,{a1-a4,ip}
+#endif
+  ldr    RegCPSRval,[sp],+4                 ; pop RegCPSRval
+#endif
+
+#if (STATUS_LEVEL == EXTENDED_STATUS)
+  ; set lr to error handler
+  ldr    lr, =osMissingTerminateError
+#endif
+
+  ; switch back to SVC mode
+  bic    RegCPSRval, RegCPSRval, #0b01100
+  msr    CPSR_c, RegCPSRval
+
+  ; init status register
+  mrs    RegTmp2, SPSR
+  bic    RegTmp2, RegTmp2, #0b10101111
+#if (osdThumbMode == 1)
+ #if (osdTasksInUserMode == 1)
+  orr    RegTmp2, RegTmp2, #0b00110000
+ #else
+  orr    RegTmp2, RegTmp2, #0b00111111
+ #endif
+#else
+ #if (osdTasksInUserMode == 1)
+  orr    RegTmp2, RegTmp2, #0b00010000
+ #else
+  orr    RegTmp2, RegTmp2, #0b00011111
+ #endif
+#endif
+  msr    SPSR_c, RegTmp2
+
+  movs   pc, RegTmp3            ; jump to new task
+
+
+RestoreContext
+  ; task was running before: restore old task context
+
+#if ((osdORTIDebug == 1) && (osdORTIVersion == 200))
+   ; restore tcb into CurrentService
+   ldr    RegTmp2,=osTcbORTIServiceId
+   ldr    RegTmp3,=osORTICurrentServiceId
+   ldrb   RegTmp2,[RegTmp2, +Reg_osActiveTaskIndex]  
+   strb   RegTmp2,[RegTmp3]
+#endif
+
+  ; restore stack pointer
+  ldr    RegAdr_osTcbSP, =osTcbSP                                 ; RegAdr_osTcbSP : osTcbSP
+  ldr    RegTmp2,[RegAdr_osTcbSP, +Reg_osActiveTaskIndex, lsl #2] ; RegTmp2 = osTcbSP[osActiveTaskIndex]
+
+  ; set task state to RUNNING
+  ldr    RegAdr_osTcbTaskState, =osTcbTaskState                   ; RegAdr_osTcbTaskState : &osTcbTaskState  
+  mov    RegTmp3,RUNNING                                          ; RegTmp3 : RUNNING
+  strb   RegTmp3,[RegAdr_osTcbTaskState, +Reg_osActiveTaskIndex]  ; osTcbTaskState[osActiveTaskIndex] = RUNNING
+
+  ; reset osStartDispatcher
+  ldr    RegTmp1, =osStartDispatcher                              ; RegTmp1 : &osStartDispatcher  
+  eor    RegTmp3, RegTmp3, RegTmp3                                ; RegTmp3 : 0
+  strb   RegTmp3, [RegTmp1]                                       ; osStartDispatcher = 0;
+
+  ; restore task context
+  ldmfd  RegTmp2!,{RegTmp3}   ; pop first register
+  stmfd  sp!,{RegTmp3}
+
+  ldmfd  RegTmp2!,{RegTaskLR-RegTaskSP, RegTmp3, lr}   ; pop next 2 registers, SPSR (to RegTmp3) and LR
+
+  msr    SPSR_cxsf, RegTmp3
+
+  ; switch to system mode (for stack access)
+  orr    RegCPSRval, RegCPSRval, #0x1F
+  msr    CPSR_c, RegCPSRval
+
+  mov    sp, RegTmp2                                    ; set task SP 
+
+#if (osdPreTaskHook == 1)
+  ; call PreTaskHook
+
+#if (osdThumbMode == 1)
+  stmfd  sp!,{a1-a4,r8,r9,ip}
+  ldr    a1, =osPreTaskHook
+  mov    lr, pc
+  bx     a1
+  ldmfd  sp!,{a1-a4,r8,r9,ip}
+#else
+  stmfd  sp!,{a1-a4,ip}
+  bl     osPreTaskHook
+  ldmfd  sp!,{a1-a4,ip}
+#endif
+
+#endif
+
+  ldr    lr,[sp],+4                                     ; pop lr
+  ldmfd  sp!,{RegAdr_osTcbSP-RegNoActiveTask} 
+
+  ; now all registers except RegCPSRval are valid and RegCPSRval ist pushed to SVC stack
+
+  ; switch back to SVC mode
+  bic    RegCPSRval, RegCPSRval, #0b01100
+  msr    CPSR_c, RegCPSRval
+
+  ldr    RegCPSRval,[sp],+4            ; pop RegCPSRval
+  movs   pc,lr                         ; return from dispatcher
+
+IdleLoop
+  ; called if no task is READY
+
+  ; switch to system mode (for stack access)
+  mrs    RegTmp3, CPSR                               ; switch to SYSTEM mode
+  orr    RegTmp3, RegTmp3, #0x1F
+  msr    CPSR_c, RegTmp3
+  
+  ; set stack pointer to IRQ-Stack to avoid corrupted task stack
+  ; when saving scratch registers after entering dispatcher from
+  ; idle loop
+  ldr sp, =osIrqStack+osdIrqStackSize
+
+  ; switch back to SVC mode 
+  bic    RegTmp3, RegTmp3, #0b01100
+  msr    CPSR_c, RegTmp3
+  
+#if (osdMixedPreempt == 1)
+  ; unlock dispatcher
+  mov    RegTmp3, #0
+  ldr    RegTmp2, =osLockDispatcher    ; RegTmp2 : &osLockDispatcher  
+  strb   RegTmp3,[RegTmp2]             
+#endif
+
+  ; simulate end of interrupt
+  mrs    r0, SPSR                      ; copy SPSR to CPSR
+#if (osdThumbMode == 1)
+  bic    r0, r0, 0b00100000;
+#endif
+  msr    CPSR_cxsf, r0
+
+InnerIdleLoop
+
+#if (osdNonPreempt == 1)
+  ; poll osStartDispatcher
+  ldr    RegTmp2, =osStartDispatcher   
+  ldrb   RegTmp3, [RegTmp2]
+  cmp    RegTmp3, 0
+  ; if osStartDispatcher == TRUE activate delayed interrupt
+  beq    l_nodelayedint
+  swi    #0x81    ; start dispatcher
+#endif
+l_nodelayedint
+  b InnerIdleLoop
+
+.type  osDispatcher,$function
+.size  osDispatcher,.-osDispatcher
+
+
+; handlers for unhandled exceptions
+
+osUndefInstruction::
+#if (osdThumbMode == 1)
+  ldr    a1, =osUnhandledException
+  mov    lr, pc
+  bx     a1
+#else
+  bl     osUnhandledException
+#endif
+.type  osUndefInstruction,$function
+.size  osUndefInstruction,.-osUndefInstruction
+
+  
+osSWI::
+  stmfd  sp!,{r0-r2}
+#if (osdThumbMode == 1)
+  ldrb   r1,[lr, #-1]
+#else
+  ldrh   r1,[lr, #-2]
+#endif
+  mov    r0, #128
+  sub    r2, r1, r0
+  cmp    r2, #128
+  bcs    osSWIL1
+
+  cmp    r1, #0x81
+  bne    osSWIL2
+  
+  ; goto Dispatcher
+  b      osDispatcher
+
+osSWIL2:   ; goto r3 fct
+  ldmfd  sp!,{r0-r2}
+  mov    pc, r3
+
+osSWIL1:   ; link to appl SWI handler
+  ldmfd  sp!,{r0-r2}    
+
+  b      osdApplSWIHandler
+.type  osSWI,$function
+.size  osSWI,.-osSWI
+
+
+osPrefetchAbort::
+#if (osdThumbMode == 1)
+  ldr    a1, =osUnhandledException
+  mov    lr, pc
+  bx     a1
+#else
+  bl     osUnhandledException
+#endif
+.type  osPrefetchAbort,$function
+.size  osPrefetchAbort,.-osPrefetchAbort
+
+  
+osDataAbort::
+#if (osdThumbMode == 1)
+  ldr    a1, =osUnhandledException
+  mov    lr, pc
+  bx     a1
+#else
+  bl     osUnhandledException
+#endif
+.type  osDataAbort,$function
+.size  osDataAbort,.-osDataAbort
+
+osFIQ::
+#if (osdThumbMode == 1)
+  ldr    a1, =osUnhandledException
+  mov    lr, pc
+  bx     a1
+#else
+  bl     osUnhandledException
+#endif
+.type  osFIQ,$function
+.size  osFIQ,.-osFIQ
+
+
+osUnhandledExceptionWrapper::
+#if (osdThumbMode == 1)
+  ldr    a1, =osUnhandledException
+  mov    lr, pc
+  bx     a1
+#else
+  bl     osUnhandledException
+#endif
+.type  osUnhandledExceptionWrapper,$function
+.size  osUnhandledExceptionWrapper,.-osUnhandledExceptionWrapper
+
+
+   .section ".oscode","ax"
+;-+--------------------------------------------------------------------------
+; osStartOSasm                                                               
+; Funktion: Assembler startup code                                                       
+;   - assembler initialisation code                                                 
+;   - jumps to osStartOSc
+;   - never returns
+; Parameter:                                                                 
+; Returnvalue:                                                               
+;----------------------------------------------------------------------------
+   
+osStartOSasm
+  ; set IRQ mode, disable IRQ
+  mrs a1, CPSR
+  bic a1, a1, #0b00111111
+  orr a1, a1, #0b10010010
+  msr CPSR_c, a1
+
+  ; set IRQ stack pointer
+  ldr sp, =osIrqStack+osdIrqStackSize
+
+#if (osdSupervisorStackSize > 0)
+  ; switch to supervisor mode
+  bic a1, a1, #0b00001100
+  orr a1, a1, #0b10010011
+  msr CPSR_c, a1
+
+  ; set SVC stack pointer
+  ldr sp, =osSupervisorStack+osdSupervisorStackSize
+#endif
+
+  ; switch to system mode
+  orr a1, a1, #0b10011111
+  msr CPSR_c, a1
+
+  ; set stack pointer to startup stack
+  ldr sp, =osdStartupStack+osdStartupStackSize
+
+#if (osdStackCheck == 1)
+  ; fill system stack with empty pattern
+#if (osdThumbMode == 1)
+  ldr   a1, =osFillSystemStack
+  mov   lr, pc
+  bx    a1
+#else
+  bl osFillSystemStack
+#endif
+#endif
+
+#ifndef osdTMS470PVF24
+  ; peripheral enable
+  ldr    a1, =osPCR
+  ldr    a2, [a1]
+  orr    a2, a2, #1
+  str    a2, [a1]
+#endif
+
+#if (osdIEM == 1)
+  ; initialize IEM
+  ldr    a1, =osIEMInitTable
+  ldr    a2, =osdINTCTRL0
+  mov    a3, #0
+osStartInitIEMloop
+  ldr    a4, [a1, +a3, lsl #2]
+  str    a4, [a2, +a3, lsl #2]
+  add    a3, a3, 1
+  cmp    a3, #16
+  bne    osStartInitIEMloop
+#endif
+
+#if (osdStackCheck == 1)
+  ; fill task stacks
+  bl    osFillTaskStacks
+#endif
+
+#if (osdThumbMode == 1)
+  ; jump to osStartOSc  (never returns)
+  ldr   a1, =osStartOSc
+  bx    a1
+#else
+  b     osStartOSc
+#endif
+  ret  ; dummy, osStartOSc never returns
+  
+.type  osStartOSasm,$function
+.size  osStartOSasm,.-osStartOSasm
+
+
+#if (osdStackCheck == 1)
+;-+--------------------------------------------------------------------------
+; osFillTaskStacks                                                               
+; Funktion: Fill task stacks with empty pattern                                                       
+; Parameter:                                                                 
+; Returnvalue:                                                               
+;----------------------------------------------------------------------------
+   
+osFillTaskStacks::
+  ldr a1, =0x0                      ; a1: task index
+  ldr a4, =osdNumberOfAllTasks      ; a4: number of tasks
+  ldr r12, =0xAAAAAAAA
+  
+osFillLoop1                         ; for all tasks
+  cmp a1, a4
+  bhs osExitFillTaskStack
+
+  ldr a3, =oskTcbStackTop   
+  ldr a2,[a3, +a1, lsl #2]          ; a2: oskTcbStackTop[task index]
+
+  tst a2, a2
+  beq osNextTaskIndex       
+
+  ldr a3, =osdStartupStack      ; if stack == startup stack fill only from current sp
+  cmp a2, a3
+  moveq a2, sp                                                                                    
+
+  ldr a3, =oskTcbStackBottom
+  ldr a3,[a3, +a1, lsl #2]          ; a3: oskTcbStackBottom[task index]
+
+osFillLoop2                         ; for all stack words
+  cmp a3, a2
+  bhs osNextTaskIndex
+
+  str r12, [a2, -4]!                ; fill with empty pattern
+  b   osFillLoop2
+  
+osNextTaskIndex  
+  add a1, a1, 1                     ; next task index
+  b   osFillLoop1
+  
+osExitFillTaskStack
+  ret
+.type  osFillTaskStacks,$function
+.size  osFillTaskStacks,.-osFillTaskStacks 
+#endif
+
+
+  END

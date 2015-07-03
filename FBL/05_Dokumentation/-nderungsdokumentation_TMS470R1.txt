@@ -1,0 +1,56 @@
+/*------------------------------------------------------------------------------+
+|            ____    ___            ____    _____           ____                |
+|           |    |  |   \   |      |    |     |    |    |  |                    |
+|           |____|  |    |  |      |____|     |    |    |  |____                |
+|           |    |  |    |  |      |    |     |    |    |       |               |
+|           |    |  |___/   |____  |    |     |    |____|   ____|               |
+|                                                                               |
+|           T H E   S M A R T   E M B E D D E D   S O L U T I O N               |
+|                                                                               |
++-------------------------------------------------------------------------------+
+| P R O J E C T    I N F O R M A T I O N                                        |
++-------------------------------------------------------------------------------+
+
+Diese Datei beinhaltet wichtige Aenderungsdokumentationen ueber die Software im 
+Texas Instruments TMS470R1VF448. 
+
+Folgende Aenderungen sind in Version V1.07 für S1NN entstanden:
++----+-------------------------------------------------------------------------+
+| Nr | Beschreibung                                                            |
+|----+-------------------------------------------------------------------------+
+|  1 | Erweiterung um einen neuen Speichertyp zur adressierung des Parrot      |
+|    | BT Modules. Parrot Treiber erstellt.                                    |
+|----+-------------------------------------------------------------------------+
+|  2 | Derivatsanpassungen für TMS470R1VF55BB: Protectionkey-Adressen,         |
+|    | Registeradressen, SectorMap im Flashtreiber                             |
+|----+-------------------------------------------------------------------------+
+
+Die Erweiterung der V1.07 für S1NN wird als V1.00 des S1NN BlfIso bezeichnet!
+
+
+
+Folgende Aenderungen sind von Version V1.07 auf V1.08 in der AUDI/VW Refernz-
+implementierung enthalten:
++----+-------------------------------------------------------------------------+
+| Nr | Beschreibung                                                            |
+|----+-------------------------------------------------------------------------+
+|  1 | Derivatsanpassungen für TMS470R1VF448: Protectionkey-Adressen,          |
+|    | Registeradressen, SectorMap im Flashtreiber                             |
+|----+-------------------------------------------------------------------------+
+|  2 | ADLATUS_Eep.c: Verwendung der korrekten Watchdogfunktion:               |
+|    | FUN_CCwtdog_TriggerWatchdogEraseMem_V() anstatt                         |
+|    | FUN_CCtim_SystemTimerCheck_V()                                          |
+|----+-------------------------------------------------------------------------+
+|  3 | ADLATUS_FUN_Val_CRC32.c: Korrektur der verwendeten Längenangabe beim    |
+|    | kopieren der CRC32 Table ins RAM                                        |
+|----+-------------------------------------------------------------------------+
+|  4 | Überarbeitung der Interrupttabelle der Dummy-Applikation damit die      |
+|    | Interrupttabelle des ADLATUS die korrekte Sprungweite erhält            |
+|----+-------------------------------------------------------------------------+
+|  5 | FlashLib_TMS470.c: Überarbeitung der FlashLib und Inkrementierung der   |
+|    | HIS-Version: Optimierungen zur Reduizerung des Flashbedarfs, Beenden    | 
+|    | des Kompaktierens beim letzten vorhandenen Sektor                       |
+|----+-------------------------------------------------------------------------+
+|  6 | ADLATUS_KWP2000Audi.c: korrekte Sequenzweiterschaltung nach             |
+|    | erfolgreichem CheckMemory                                               |
+|----+-------------------------------------------------------------------------+

@@ -1,0 +1,14 @@
+#TRACE_ID '0x15006D 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_MDI '"vReInitApp: reset fctId %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '109 
+#TRACE_ID '0x150086 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_MDI '"RelCtxt: call for next job" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '134 
+#TRACE_ID '0x15009E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_MDI '"SendResRelCtxt: fctId %d res %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '158 
+#TRACE_ID '0x1500A1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_MDI '"SendResRelCtxt: line %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '161 
+#TRACE_ID '0x1500B9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_MDI '"vJM: new job [%d]" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '185 
+#TRACE_ID '0x1500C0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_MDI '"vJM: overwrite job [%d]" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '192 
+#TRACE_ID '0x1500C7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_MDI '"vJM: ERROR invalid job [%d]" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '199 
+#TRACE_ID '0x1500D0 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_MDI '"vJM: pending job [%d]" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '208 
+#TRACE_ID '0x150124 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_MDI '"HaPenFu %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '292 
+#TRACE_ID '0x15014D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_MDI '"FAIL for %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '333 
+#TRACE_ID '0x150160 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_MDI '"HaPeFu: GetMute() failed, safe the unmute request to not loose it" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '352 
+#TRACE_ID '0x15017F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_MDI '"vMuteGetAck: RESPONSE %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '383 
+#TRACE_ID '0x15018D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_MDI '"vMuteGetAck: JOB_DPLY failed %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '397 
+#TRACE_ID '0x150196 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_MDI '"vMuteGetAck: DEFAULT failed %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_StateHandler.c '406 

@@ -1,0 +1,5 @@
+DEBUG_STATE_ENUM_NAME='GIOPOLARITY                          'DEBUG_STATE_NAME='FallingEdge                                                            'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='GIOPOLARITY                          'DEBUG_STATE_NAME='RisingEdge                                                             'DEBUG_STATE_NUMBER='1        '
+DEBUG_STATE_ENUM_NAME='GIOPRIORITY                          'DEBUG_STATE_NAME='LowPriority                                                            'DEBUG_STATE_NUMBER='0        '
+DEBUG_STATE_ENUM_NAME='GIOPRIORITY                          'DEBUG_STATE_NAME='HighPriority                                                           'DEBUG_STATE_NUMBER='1        '
+                       

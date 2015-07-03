@@ -1,0 +1,8 @@
+#TRACE_ID '0x140070 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_APP_MDI '"HandleErmATRes: %d, Fct %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_ERM_C1.c '112 
+#TRACE_ID '0x140092 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_APP_MDI '"HandleErmATRes: Unknown Fct %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_ERM_C1.c '146 
+#TRACE_ID '0x1400E7 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_MDI '"HandleErmNot: SetALCKMode failed" '\MOD\MOD_APP_MDI\src 'APP_MDI_ERM_C1.c '231 
+#TRACE_ID '0x140108 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_MDI '"APP_MDI_ERM_vHandleErmNotification: a2dp not equal avrcp device!!" '\MOD\MOD_APP_MDI\src 'APP_MDI_ERM_C1.c '264 
+#TRACE_ID '0x14010D 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_APP_MDI '"APP_MDI_ERM_vHandleErmNotification: invalid a2dp device" '\MOD\MOD_APP_MDI\src 'APP_MDI_ERM_C1.c '269 
+#TRACE_ID '0x140152 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_MDI '"OnServVisRes: failed %d" '\MOD\MOD_APP_MDI\src 'APP_MDI_ERM_C1.c '338 
+#TRACE_ID '0x1401AC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_MDI '"vOnPGMTResult: PGMT failed, retry after 5 sec." '\MOD\MOD_APP_MDI\src 'APP_MDI_ERM_C1.c '428 
+#TRACE_ID '0x1401B2 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_MDI '"vOnPGMTResult: PGMT failed, max retry reached, giving up!." '\MOD\MOD_APP_MDI\src 'APP_MDI_ERM_C1.c '434 

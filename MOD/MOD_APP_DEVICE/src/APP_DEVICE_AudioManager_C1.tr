@@ -1,0 +1,40 @@
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enTelephoneCall      '0 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '101 
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enVoicePrompts       '1 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '102 
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enEmergencyCall      '2 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '103 
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enNavigation         '3 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '104 
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enOperateCall        '4 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '105 
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enRing               '5 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '106 
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enBroadBandCall      '6 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '107 
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enAudioStream        '7 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '108 
+#ENUM  'APP_CAN_enSourceIdType 'APP_CAN_enInvalidSource      '255 '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '109 
+#TRACE_ID '0xA009E 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute: source $APP_CAN_enSourceIdType$=%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '158 
+#TRACE_ID '0xA00AB 'DEBUG_STATE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute: ousted application through $APP_CAN_enSourceIdType$ = %d, active src $APP_CAN_enSourceIdType$ = %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '171 
+#TRACE_ID '0xA00BA 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute: already Pasa:0" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '186 
+#TRACE_ID '0xA00C8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute: already Pasa:2" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '200 
+#TRACE_ID '0xA00D3 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute: already Pasa:1" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '211 
+#TRACE_ID '0xA00DC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute: wait for Pasa" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '220 
+#TRACE_ID '0xA00E3 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute: equal source $APP_CAN_enSourceIdType$=%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '227 
+#TRACE_ID '0xA00F2 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute: Special handling for incoming call by active VCR" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '242 
+#TRACE_ID '0xA00FB 'DEBUG_STATE2 'DBG_LEV_WNG 'MOD_APP_DEVICE '"GetMute: active src $APP_CAN_enSourceIdType$=%d < request src $APP_CAN_enSourceIdType$=%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '251 
+#TRACE_ID '0xA0109 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"GetMute:Call back is not pointing to zero, notify the application first before overwriting it!!!" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '265 
+#TRACE_ID '0xA014E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"ReleaseMute: Special handling for incoming call by active VCR" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '334 
+#TRACE_ID '0xA0152 'DEBUG_STATE2 'DBG_LEV_TRC 'MOD_APP_DEVICE '"ReleaseMute: active src $APP_CAN_enSourceIdType$=%d == request src $APP_CAN_enSourceIdType$=%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '338 
+#TRACE_ID '0xA0174 'DEBUG_STATE2 'DBG_LEV_WNG 'MOD_APP_DEVICE '"ReleaseMute: active src $APP_CAN_enSourceIdType$=%d != request src $APP_CAN_enSourceIdType$=%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '372 
+#TRACE_ID '0xA0187 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"TimeoutTime: cooperative mute active radio: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '391 
+#TRACE_ID '0xA018C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"TimeoutTime: Radio ACK already received" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '396 
+#TRACE_ID '0xA01A1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"TimeoutTime: cooperative mute inactive radio: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '417 
+#TRACE_ID '0xA01AE 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"TimeoutTime: return delayTime %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '430 
+#TRACE_ID '0xA01C7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"Pasa:0 received" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '455 
+#TRACE_ID '0xA01D5 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"Pasa:%d received" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '469 
+#TRACE_ID '0xA01FC 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_APP_DEVICE '"vOnAppCshdl: Mute in Shutdown state: %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '508 
+#TRACE_ID '0xA0217 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"Mute Delay = %d msecs" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '535 
+#TRACE_ID '0xA022B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"Cooperative Mute = %d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '555 
+#TRACE_ID '0xA0247 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendDataToCan wire unMUTE" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '583 
+#TRACE_ID '0xA024C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"SendDataToCan wire MUTE" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '588 
+#TRACE_ID '0xA025F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"cbWaitForCANAck: called" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '607 
+#TRACE_ID '0xA0273 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"cbReleaseCanMute: called" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '627 
+#TRACE_ID '0xA0292 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"Radio ACK received" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '658 
+#TRACE_ID '0xA029D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"Reject Radio ACK: not coded by Diagnose" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '669 
+#TRACE_ID '0xA02CC 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_APP_DEVICE '"OustedApplication: Stop Ringtone activeSource $APP_CAN_enSourceIdType$=%d" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '716 
+#TRACE_ID '0xA02E7 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"SetDiagAudioMuteByWire unMUTE successful" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '743 
+#TRACE_ID '0xA02EC 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_APP_DEVICE '"SetDiagAudioMuteByWire MUTE successful" '\MOD\MOD_APP_DEVICE\src 'APP_DEVICE_AudioManager_C1.c '748 

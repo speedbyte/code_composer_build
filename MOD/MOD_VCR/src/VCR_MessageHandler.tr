@@ -1,0 +1,191 @@
+#TRACE_ID '0x9500BC 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"Response OK - LastMsgSend %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '188 
+#TRACE_ID '0x9500C0 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"Response ERROR - LastMsgSend %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '192 
+#TRACE_ID '0x95011B 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"Response OK not handled - LastMsgSend %d " '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '283 
+#TRACE_ID '0x950131 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"Response ERROR - LastMsgSend %d EngineState %d -> ignore" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '305 
+#TRACE_ID '0x950137 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"Response ERROR - LastMsgSend %d -> Stop Engine" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '311 
+#TRACE_ID '0x95014C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Response ERROR - LastMsgSend = VCR_MSG_NAME_VOICE_TAG_QUERY -> Stop Engine" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '332 
+#TRACE_ID '0x95015A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Response ERROR - LastMsgSend = VCR_MSG_START_ENGINE -> Stop Engine" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '346 
+#TRACE_ID '0x95016E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Response ERROR - LastMsgSend = VCR_MSG_START_RECO -> Stop Engine" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '366 
+#TRACE_ID '0x950176 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"Response ERROR - LastMsgSend %d -> Stop Engine" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '374 
+#TRACE_ID '0x9501CC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"SYS_PERF: VCR Startup Event: %d ms" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '460 
+#TRACE_ID '0x9501F4 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR LangIndex %d LangID %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '500 
+#TRACE_ID '0x9501FC 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = US-English" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '508 
+#TRACE_ID '0x950200 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = UK-English" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '512 
+#TRACE_ID '0x950204 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = French" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '516 
+#TRACE_ID '0x950208 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Canadian French" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '520 
+#TRACE_ID '0x95020C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = German" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '524 
+#TRACE_ID '0x950210 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Italien" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '528 
+#TRACE_ID '0x950214 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Spanish" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '532 
+#TRACE_ID '0x950218 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Dutsch" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '536 
+#TRACE_ID '0x95021C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Mandarin Chinese" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '540 
+#TRACE_ID '0x950220 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = US-Spanish" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '544 
+#TRACE_ID '0x950224 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Korean" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '548 
+#TRACE_ID '0x950228 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Japanese" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '552 
+#TRACE_ID '0x95022C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Portuguese" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '556 
+#TRACE_ID '0x950230 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Brazilian" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '560 
+#TRACE_ID '0x950234 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Russian" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '564 
+#TRACE_ID '0x950238 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Polish" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '568 
+#TRACE_ID '0x95023C 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Turkey" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '572 
+#TRACE_ID '0x950240 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Danish" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '576 
+#TRACE_ID '0x950244 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Swedish" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '580 
+#TRACE_ID '0x950248 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"*RGSL:%d,%d = Czech" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '584 
+#TRACE_ID '0x95024C 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_VCR '"*RGSL:%d,%d = unknown Language" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '588 
+#TRACE_ID '0x950256 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"VCR missing data in msg GET_SUPPORTED_LANG" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '598 
+#TRACE_ID '0x950272 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"VCR missing data in msg SET_CURRENT_LANG" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '626 
+#TRACE_ID '0x950282 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"*RSTS:%d = VR engine is in IDLE (not started)" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '642 
+#TRACE_ID '0x950285 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"*RSTS:%d = VR engine is started" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '645 
+#TRACE_ID '0x950288 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"*RSTS:%d = beginning of the VR acquisition" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '648 
+#TRACE_ID '0x95028B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"*RSTS:%d = end of the VR acquisition" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '651 
+#TRACE_ID '0x95028F 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"*RSTS:%d->$ATSIVREngStatusEnum$" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '655 
+#TRACE_ID '0x950290 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"Beginning of the prompt: %d->$ATSIVRPromptEnum$" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '656 
+#TRACE_ID '0x950294 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"*RSTS:%d->$ATSIVREngStatusEnum$" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '660 
+#TRACE_ID '0x950295 'DEBUG_STATE1 'DBG_LEV_TRC 'MOD_VCR '"End of prompt: %d->$ATSIVRPromptEnum$" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '661 
+#TRACE_ID '0x950298 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"*RSTS:%d = beginning of SIVR synchronisation" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '664 
+#TRACE_ID '0x95029B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"*RSTS:%d = end of SIVR synchronisation" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '667 
+#TRACE_ID '0x95029E 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"*RSTS:%d = unknown SIVR State" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '670 
+#TRACE_ID '0x9502CE 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"eLastSend:%d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '718 
+#TRACE_ID '0x9502D6 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_VCR '"PromptRequired:%d = %d PromptSend" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '726 
+#TRACE_ID '0x9502E4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"Sequence of system start prompts resumed" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '740 
+#TRACE_ID '0x95039E 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"VCR missing data in msg  %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '926 
+#TRACE_ID '0x9503C6 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"RT-13225: Cmd not recongnized  Procerr %d  PrevProcerr %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '966 
+#TRACE_ID '0x95040B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd %d = HELP" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1035 
+#TRACE_ID '0x95040F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd %d = CANCEL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1039 
+#TRACE_ID '0x950414 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = DIAL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1044 
+#TRACE_ID '0x950418 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = DIAL_NUMBER" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1048 
+#TRACE_ID '0x95041C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = REDIAL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1052 
+#TRACE_ID '0x950421 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = MUSIC" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1057 
+#TRACE_ID '0x950426 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = MORE_OPTIONS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1062 
+#TRACE_ID '0x95042B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = PLAY_ADDRESSBOOK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1067 
+#TRACE_ID '0x950430 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = READ_SMS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1072 
+#TRACE_ID '0x950435 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = CALL_STACKS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1077 
+#TRACE_ID '0x95043A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = SETTINGS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1082 
+#TRACE_ID '0x95043F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = VOICE_MEMOS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1087 
+#TRACE_ID '0x950444 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MainMenu %d = TRAINING" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1092 
+#TRACE_ID '0x950449 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNameConfirm %d = DIAL_DIALNAMECONFIRM" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1097 
+#TRACE_ID '0x95044E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNameConfirm %d = YES_DIALNAMECONFIRM" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1102 
+#TRACE_ID '0x950453 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNameConfirm %d = NO_DIALNAMECONFIRM" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1107 
+#TRACE_ID '0x950459 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNameConfirm %d = CATEGORY" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1113 
+#TRACE_ID '0x95045F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNameConfirmResolveAmbiguouseNames %d = YES_RESOLVEAMBINAME" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1119 
+#TRACE_ID '0x950464 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNameConfirmResolveAmbiguouseNames %d = REPEAT_NAMES" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1124 
+#TRACE_ID '0x950469 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNameConfirmResolveAmbiguouseNames %d = NO_RESOLVEAMBINAME" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1129 
+#TRACE_ID '0x95046F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNumber %d = DIALNUM_D_BLOCK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1135 
+#TRACE_ID '0x950475 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNumberCorrect %d = DIAL_DIALNUMCORRECT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1141 
+#TRACE_ID '0x95047A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNumberCorrect %d = SAVE_DIALNUMCORRECT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1146 
+#TRACE_ID '0x95047F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNumberCorrect %d = NUMCORRECT_D_BLOCK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1151 
+#TRACE_ID '0x950484 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNumberCorrect %d = CORRECTION" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1156 
+#TRACE_ID '0x950489 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNumberCorrect %d = DELETE_DIALNUMCORRECT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1161 
+#TRACE_ID '0x95048E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DialNumberCorrect %d = REPEAT_DIALNUMCORRECT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1166 
+#TRACE_ID '0x950494 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Music %d = MUSIC_PLAY" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1172 
+#TRACE_ID '0x950499 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Music %d = MUSIC_PAUSE" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1177 
+#TRACE_ID '0x95049E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Music %d = MUSIC_STOP" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1182 
+#TRACE_ID '0x9504A3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Music %d = MUSIC_NEXT_TRACK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1187 
+#TRACE_ID '0x9504A8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Music %d = MUSIC_PREV_TRACK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1192 
+#TRACE_ID '0x9504AE 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MoreOptions %d = PLAY_ADDBOOK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1198 
+#TRACE_ID '0x9504B3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MoreOptions %d = READ_SMS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1203 
+#TRACE_ID '0x9504B8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MoreOptions %d = CALL_STACKS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1208 
+#TRACE_ID '0x9504BD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MoreOptions %d = SETTINGS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1213 
+#TRACE_ID '0x9504C2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MoreOptions %d = VOICE_MEMOS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1218 
+#TRACE_ID '0x9504C7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of MoreOptions %d = TRAINING" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1223 
+#TRACE_ID '0x9504CD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbook %d = PAB_ADD_NEW_CONTACT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1229 
+#TRACE_ID '0x9504D2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbook %d = PAB_NAME_PLAY_ADDBOOK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1234 
+#TRACE_ID '0x9504D7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbook %d = PAB_READ_ALL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1239 
+#TRACE_ID '0x9504DC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbook %d = REFRESH_ADDBOOK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1244 
+#TRACE_ID '0x9504E1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbook %d = PLAY_ADDBOOK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1249 
+#TRACE_ID '0x9504E7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookEntry %d = PAB_YES_PLAY_PAB_ENTRY" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1255 
+#TRACE_ID '0x9504EC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookEntry %d = PAB_REPEAT_PAB_ENTRY" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1260 
+#TRACE_ID '0x9504F1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookEntry %d = PAB_NO_PLAY_PAB_ENTRY" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1265 
+#TRACE_ID '0x9504F7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookOptions %d = CMD_PAB_OPT_DIAL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1271 
+#TRACE_ID '0x9504FC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookOptions %d = PAB_OPT_CHANGE_NAME" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1276 
+#TRACE_ID '0x950501 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookOptions %d = PAB_OPT_RESET_NAME" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1281 
+#TRACE_ID '0x950507 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookOptions %d = PAB_OPT_GO_AHEAD" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1287 
+#TRACE_ID '0x95050D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookOptions %d = PAB_OPT_GO_BACK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1293 
+#TRACE_ID '0x950512 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookOptions %d = PAB_OPT_NEXT_LETTER" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1298 
+#TRACE_ID '0x950517 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of PlayAddressbookOptions %d = PAB_OPT_PREV_LETTER" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1303 
+#TRACE_ID '0x95051D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ResolveMultipleNumbersPerCategory %d = RES_MULTIPLENUM" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1309 
+#TRACE_ID '0x950522 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ResolveMultipleNumbersPerCategory %d = RES_MULTIPLENUM" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1314 
+#TRACE_ID '0x950527 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ResolveMultipleNumbersPerCategory %d = NO_RES_MULTIPLENUM" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1319 
+#TRACE_ID '0x95052C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ResetNameConfirm %d = YES_RESETNAMECONFIRM" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1324 
+#TRACE_ID '0x950531 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ResetNameConfirm %d = NO_RESETNAMECONFIRM" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1329 
+#TRACE_ID '0x950537 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallStacks %d = CSTACK_RECEIVED_CALL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1335 
+#TRACE_ID '0x95053C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallStacks %d = CSTACK_MISSED_CALL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1340 
+#TRACE_ID '0x950541 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallStacks %d = CSTACK_DIALLED_NUMBERS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1345 
+#TRACE_ID '0x950546 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallStacks %d = CSTACK_CLEAR_ALL_STACK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1350 
+#TRACE_ID '0x95054C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadCallStacks %d = CSTACK_YES_READ" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1356 
+#TRACE_ID '0x950551 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadCallStacks %d = CSTACK_REPEAT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1361 
+#TRACE_ID '0x950556 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadCallStacks %d = CSTACK_NO_READ" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1366 
+#TRACE_ID '0x95055C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallStacksOptions %d = CSTACK_DIAL_CSOPT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1372 
+#TRACE_ID '0x950562 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallStacksResetConfirm %d = CSTACK_YES_RESETCONF" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1378 
+#TRACE_ID '0x950567 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallStacksResetConfirm %d = CSTACK_NO_RESETCONF" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1383 
+#TRACE_ID '0x95056D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Settings %d = VOICE_FEEDBACK_OFF" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1389 
+#TRACE_ID '0x950572 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Settings  %d = VOICE_FEEDBACK_ON" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1394 
+#TRACE_ID '0x950577 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Settings %d = BLUETOOTH_OPTIONS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1399 
+#TRACE_ID '0x95057C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Settings %d = RINGTONE" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1404 
+#TRACE_ID '0x950581 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Settings %d = CHANGE_LANGUAGE" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1409 
+#TRACE_ID '0x950586 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Settings %d = CHANGE_VM_NUMBER" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1414 
+#TRACE_ID '0x95058B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Settings %d = DELETE_VOICE_TAGS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1419 
+#TRACE_ID '0x950590 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of Settings %d = RESTORE_FACTORY" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1424 
+#TRACE_ID '0x950596 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of BluetoothOptions %d = BLUETOOTH_VISIBLE" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1430 
+#TRACE_ID '0x95059B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of BluetoothOptions %d = BLUETOOTH_CHANGE_PIN" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1435 
+#TRACE_ID '0x9505A1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ChangeBluetoothPIN %d = BLUETOOTH_PIN_BLOCK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1441 
+#TRACE_ID '0x9505A7 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ChangeBluetoothPINCorrect %d = BTPIN_COR_SAVE" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1447 
+#TRACE_ID '0x9505AC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ChangeBluetoothPINCorrect %d = BTPIN_COR_BLOCK" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1452 
+#TRACE_ID '0x9505B1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ChangeBluetoothPINCorrect %d = BTPIN_COR_CORRECT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1457 
+#TRACE_ID '0x9505B6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ChangeBluetoothPINCorrect %d = BTPIN_COR_REPEAT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1462 
+#TRACE_ID '0x9505BC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallBackMissedCalls %d = MISSED_CALL_DIAL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1468 
+#TRACE_ID '0x9505C1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallBackMissedCalls %d = MISSED_CALL_YES" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1473 
+#TRACE_ID '0x9505C6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallBackMissedCalls %d = MISSED_CALL_NO" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1478 
+#TRACE_ID '0x9505CC 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of RestoreFactoryDefaultsConfirm %d = RESTOREFACTORY_YES" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1484 
+#TRACE_ID '0x9505D1 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of RestoreFactoryDefaultsConfirm %d = RESTOREFACTORY_NO" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1489 
+#TRACE_ID '0x9505D8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DeleteAllVoiceTagsConfirm %d = DELETEVT_CONF_YES" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1496 
+#TRACE_ID '0x9505DD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DeleteAllVoiceTagsConfirm %d = DELETEVT_CONF_NO" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1501 
+#TRACE_ID '0x9505E3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadSMS %d = READSMS_YES" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1507 
+#TRACE_ID '0x9505E8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadSMS %d = READSMSOPT_REPEAT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1512 
+#TRACE_ID '0x9505ED 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadSMS %d = READSMS_NO" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1517 
+#TRACE_ID '0x9505F3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadSMSOptions %d = READSMSOPT_CALL_YES" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1523 
+#TRACE_ID '0x9505F8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadSMSOptions %d = READSMSOPT_REPEAT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1528 
+#TRACE_ID '0x9505FD 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadSMSOptions %d = READSMSOPT_DELETE" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1533 
+#TRACE_ID '0x950602 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadSMSOptions %d = READSMSOPT_PREVIOUS" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1538 
+#TRACE_ID '0x950607 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of ReadSMSOptions %d = READSMSOPT_NEXT" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1543 
+#TRACE_ID '0x95060D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DeleteSMSConfirm %d = DELETESMS_YES" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1549 
+#TRACE_ID '0x950612 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DeleteSMSConfirm %d = DELETESMS_DELETE" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1554 
+#TRACE_ID '0x950617 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of DeleteSMSConfirm %d = DELETESMS_NO" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1559 
+#TRACE_ID '0x95061D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallBackSMSConfirm %d = CALLBACKSMS_YES" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1565 
+#TRACE_ID '0x950622 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallBackSMSConfirm %d = CALLBACKSMS_DIAL" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1570 
+#TRACE_ID '0x950627 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of CallBackSMSConfirm %d = CALLBACKSMS_NO" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1575 
+#TRACE_ID '0x95062D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"User cmd of StoreName %d = STORE_NAME_REC" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1581 
+#TRACE_ID '0x95065D 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR result %d %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1629 
+#TRACE_ID '0x950695 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_VCR '"VCR rsp trigger %d %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1685 
+#TRACE_ID '0x95069B 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_VCR '"VCR rsp %d %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1691 
+#TRACE_ID '0x9506E6 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"VCR inval result type %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1766 
+#TRACE_ID '0x9506F0 'DEBUG_VALUE4 'DBG_LEV_DBG 'MOD_VCR '"VCR rsp cnt %d %d %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1776 
+#TRACE_ID '0x9506F8 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"VCR mis data msg %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1784 
+#TRACE_ID '0x950723 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_VCR '"VCR msg %d inco restype %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1827 
+#TRACE_ID '0x95072C 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"VCR unsup msg %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1836 
+#TRACE_ID '0x950733 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"VCR proc msg %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1843 
+#TRACE_ID '0x950765 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_VCR '"error %d discard msg %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1893 
+#TRACE_ID '0x950773 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_VCR '"VCR get UART %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1907 
+#TRACE_ID '0x950779 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"error AT discard msg %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1913 
+#TRACE_ID '0x950786 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"Error - stop system" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1926 
+#TRACE_ID '0x9507A3 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_VCR '"Discard Msg %d Retry %d " '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '1955 
+#TRACE_ID '0x9507DA 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_VCR '"msg send failed - msg_type %d msg %d " '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2010 
+#TRACE_ID '0x95080A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"VCR APP call APP_PHONE_rcDialNumber numberLen %d " '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2058 
+#TRACE_ID '0x950824 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"n_location %d->PPBP index=%d " '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2084 
+#TRACE_ID '0x950836 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR APP call APP_PHONE_rcDialPnIndex pbid %d idx %d (MultipleNumbersPerCat)" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2102 
+#TRACE_ID '0x95083F 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"VCR APP call APP_PHONE_rcDialPnIndex pbid %d pnidx %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2111 
+#TRACE_ID '0x95084A 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"VCR inco dial status" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2122 
+#TRACE_ID '0x95085B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"VCR APP call APP_PHONE_rcDialPbIndex pbid %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2139 
+#TRACE_ID '0x950862 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"VCR inco dial" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2146 
+#TRACE_ID '0x95087A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"VCR APP call APP_PHONE_rcDialNumber numberLen %d " '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2170 
+#TRACE_ID '0x950885 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"VCR inco dial" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2181 
+#TRACE_ID '0x950895 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_VCR '"VCR APP call APP_PHONE_rcRedial" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2197 
+#TRACE_ID '0x950899 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"VCR APP call APP_PHONE_rcRedial -> Redial failed" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2201 
+#TRACE_ID '0x9508AD 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"_VCR_sFSendAPPMessage succes msg_type %d req_type %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2221 
+#TRACE_ID '0x9508B4 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_VCR '"_VCR_sFSendAPPMessage failed msg_type %d req_type %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2228 
+#TRACE_ID '0x950991 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_VCR '"VCT VTAdd inco type %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2449 
+#TRACE_ID '0x9509C3 'DEBUG_VALUE2 'DBG_LEV_DBG 'MOD_VCR '"SendAT succes msg_type %d req_type %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2499 
+#TRACE_ID '0x9509CB 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_VCR '"SendAT failed msg_type %d req_type %d -> Release UART" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2507 
+#TRACE_ID '0x950B7E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"_VCR_vSendASRMessage reco_status %d menu_id %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2942 
+#TRACE_ID '0x950B89 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"ASR command pool alloc failed" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2953 
+#TRACE_ID '0x950B90 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_VCR '"ASR command num_cmd %d cmd_id %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2960 
+#TRACE_ID '0x950B9A 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_VCR '"ASR unsup type %d" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2970 
+#TRACE_ID '0x950BA6 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_VCR '"ASR free pool" '\MOD\MOD_VCR\src 'VCR_MessageHandler.c '2982 

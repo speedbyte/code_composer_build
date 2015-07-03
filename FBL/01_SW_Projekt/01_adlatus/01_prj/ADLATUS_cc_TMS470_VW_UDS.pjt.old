@@ -1,0 +1,77 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="R:\01_adlatus\01_prj\"
+ProjectType=Executable
+CPUFamily=TMS470R1X
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Project Dependencies]
+Source="..\..\06_hallib\01_prj\HALLIB_cc_tms470_VW_UDS.pjt"
+Source="..\..\07_chcklib\01_prj\CHKLIB_cc_tms470_VW_UDS.pjt"
+Source="..\..\08_corelib\01_prj\CORELIB_cc_tms470_VW_UDS.pjt"
+Source="..\..\09_audilib\01_prj\AUDILIB_cc_tms470_VW_UDS.pjt"
+
+["..\..\06_hallib\01_prj\HALLIB_cc_tms470_VW_UDS.pjt" Settings]
+MatchConfigName=true
+
+["..\..\07_chcklib\01_prj\CHKLIB_cc_tms470_VW_UDS.pjt" Settings]
+MatchConfigName=true
+
+["..\..\08_corelib\01_prj\CORELIB_cc_tms470_VW_UDS.pjt" Settings]
+MatchConfigName=true
+
+["..\..\09_audilib\01_prj\AUDILIB_cc_tms470_VW_UDS.pjt" Settings]
+MatchConfigName=true
+
+[Source Files]
+Source="..\..\06_hallib\05_out\HALLIB_cc_tms470_VW_UDS.lib"
+Source="..\..\07_chcklib\05_out\CHKLIB_cc_tms470_VW_UDS.lib"
+Source="..\..\08_corelib\05_out\CORELIB_cc_tms470_VW_UDS.lib"
+Source="..\..\09_audilib\05_out\AUDILIB_cc_tms470_VW_UDS.lib"
+Source="..\..\f05a_api\icall16.obj"
+Source="..\..\f05a_api\u_div16.obj"
+Source="..\02_src\ADLATUS_ApplicationInterface.c"
+Source="..\02_src\ADLATUS_CheckDependAudi.c"
+Source="..\02_src\ADLATUS_ConfigProject.c"
+Source="..\02_src\ADLATUS_CusInterfaceAudi.c"
+Source="..\02_src\ADLATUS_DataPrepareAudi.c"
+Source="..\02_src\ADLATUS_Eep.c"
+Source="..\02_src\ADLATUS_ExternalWatchdog.c"
+Source="..\02_src\ADLATUS_ExternalWatchdogFlash.c"
+Source="..\02_src\ADLATUS_NvmHandler.c"
+Source="..\02_src\ADLATUS_Periphery.c"
+Source="..\02_src\ADLATUS_SecurityAudi.c"
+Source="..\02_src\ADLATUS_SSIHandler.c"
+Source="..\02_src\ADLATUS_Startup.C"
+Source="..\02_src\ADLATUS_ValidationAudi.c"
+Source="..\02_src\ADLATUS_vectors.asm"
+Source="..\02_src\ADLATUS_vectors2.asm"
+Source="..\02_src\lld_SPI.c"
+Source="050094_TMS470_UDS.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -k -q -ss -ps -os -o2 -fr"r:\01_adlatus\03_obj" -fs"r:\01_adlatus\04_lst" -ft"r:\01_adlatus\04_lst" -fb"r:\01_adlatus\04_lst" -i"r:\05_header\int" -i"r:\05_header\ext" -i"r:\12_customer_files" -d"_DEBUG" -mf -mt -mv4 --abi=tiabi
+
+["Compiler" Settings: "Release"]
+Options=-q -o3 -fr"R:\01_adlatus\01_prj\Release"
+
+["Linker" Settings: "Debug"]
+Options=-q -a -ec_int00 -m"..\05_out\ADLATUS_cc_TMS470_VW_UDS.map" -o"..\05_out\ADLATUS_cc_TMS470_VW_UDS.out" -x -i"C:\ti\TMS470\cgtools_252\lib"
+
+["Linker" Settings: "Release"]
+Options=-q -c -m".\Release\ADLATUS_cc_TMS470_VW_UDS.map" -o".\Release\ADLATUS_cc_TMS470_VW_UDS.out" -x
+
+["..\02_src\ADLATUS_ApplicationInterface.c" Settings: "Debug"]
+Options="Compiler" +{-pr} -{-ps}
+
+["..\02_src\ADLATUS_Startup.C" Settings: "Debug"]
+Options="Compiler" +{-pr} -{-ps -mt}
+
+["..\02_src\lld_SPI.c" Settings: "Debug"]
+Options="Compiler" +{-pr} -{-ps}
+

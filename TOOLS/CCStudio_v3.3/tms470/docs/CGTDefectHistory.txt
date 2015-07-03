@@ -1,0 +1,6928 @@
+TMS470 C/C++ CODE GENERATION TOOLS
+Release 4.1.4 April 2006
+
+
+================================================================================
+			TMS470 CGT Release History
+================================================================================
+
+  v2.1x thread      v2.20 thread         v2.21 thread       v2.30/v2.40 thread
+  ------------      ------------         -------------      ------------------
+
+  v2.10             v2.20                v2.21 (CCS 2.20    v2.30
+    |                 |                    |    release)      |
+    V                 V                    V                  V
+  v2.11             v2.201e              v2.22 (CCS 2.20    v2.31beta
+    |                 |                    |    release)      |
+    V                 V                    V                  V
+  v2.12             v2.202e              v2.23 (CCS 2.20    v2.32beta
+    |                 |                    |    release)      |
+    +-> v2.121e       +----> v2.202.01e    V                  V
+    |     |           |        |         v2.24 (CCS 2.20    v2.33beta
+    V     V         v2.203e    V           |    release)      |
+  v2.13 v2.122e       |      v2.202.02e    V                  V
+    |     |           V        |         v2.25 (CCS 2.20    v2.34
+    V     V         v2.204e    V                update)       |
+  v2.14 v2.123e       |      v2.202.03e                       V
+    |                 V        |                            v2.40beta
+    V               v2.205e    V                              |
+  v2.15               |      v2.202.04e                       V
+    |                 V                                     v2.41beta
+    V               v2.206e                                   |
+  v2.16               |                                       V
+    |                 V                                     v2.42
+    +-->  v2.161e   v2.207e                                   |
+    |       |         |                                       V
+    V       V         V                                     v2.43beta
+  v2.17   v2.162e   v2.208e                                   |
+    |       |         |                                       V
+    V       V         V                                     v2.44beta
+  v2.18   v2.163e   v2.209e                                   |
+    |       |                                                 V
+    V       V                                               v2.45
+  v2.19   v2.164e                                             |
+    |       |                                                 V
+    V       V                                               v2.46
+  v2.191e v2.165e                                             |
+    |       |                                                 V
+    V       V                                               v2.47
+  v2.192e v2.166e                                             |
+    |       |                                                 V
+    V       V                                               v2.48beta
+  v2.193e v2.167e                                             |
+    |                                                         V
+    V                                                       v2.49beta
+  v2.194e                                                     |
+    |                                                         V
+    V                                                       v2.50beta
+  v2.195e                                                     |
+    |                                                         V
+    V                                                       v2.51
+  v2.196e                                                     |
+    |                                                         V
+    V                                                       v2.52
+  v2.197e                                                     |
+    |                                                         V
+    V                                                       v2.53
+  v2.198e                                                     |
+    |                                                         V
+    V                                                       v2.54 
+  v2.199e                                                     | 
+							      V
+                                                            v2.55
+							      |
+							      V
+                                                            v2.56
+							      |
+							      V
+                                                            v2.57
+							      |
+							      V
+                                                            v2.58
+							      |
+							      V
+                                                            v2.59
+							      |
+							      V
+                                                            v2.60
+							      |
+							      V
+                                                            v2.61
+							      |
+							      V
+                                                            v2.62
+							      |
+
+							      V
+
+                                                            v2.58
+
+							      |
+
+							      V
+
+                                                            v2.59
+
+							      |
+
+							      V
+
+                                                            v2.60
+
+							      |
+
+							      V
+
+                                                            v2.61
+
+							      |
+
+							      V
+
+                                                            v2.62
+
+
+
+  v3.0.0 thread         v4.1.0 thread
+  -------------         -------------
+  No longer
+  maintained            v4.00.01 alpha
+                          |
+                          V
+                        v4.00.02 alpha
+                          |
+                          V
+                        v4.00.03 alpha
+                          |
+                          V
+                        v4.00.04 alpha
+                          |
+                          V
+                        v4.1.0B2 beta
+			  |
+                          V
+                        v4.1.0
+			  |
+                          V
+                        v4.1.1
+			  |
+                          V
+                        v4.1.2
+			  |
+                          V
+                        v4.1.3
+			  |
+                          V
+                        v4.1.4
+			  |
+
+                          V
+
+                        v4.1.4
+
+
+
+================================================================================
+			TMS470 CGT Defect Repair History
+================================================================================
+
+This history of defect repairs is listed from release v1.20, circa April 1997,
+to release v4.1.4, June 2006.
+
+NOTE:
+
+In general, all bugs that are fixed in a given version are also fixed
+in subsequent releases.  For example, all bugs fixed in v2.17 are also
+fixed in every version released since v2.17.
+
+
+--------------------------------------------------------------------------------
+   v4.1.4
+--------------------------------------------------------------------------------
+
+1.  SDSsq33886
+
+Headline: Declaring a C++ member function as an ISR doesn't work as expected.
+
+-----------------------------
+RELEASE NOTE
+
+Declaring a C++ member function as an ISR doesn't work as expected.
+
+int a;
+struct X { static void foo(); };
+
+#pragma INTERRUPT()
+void X::foo()
+{
+  a = 1;
+}
+
+Compiling the test case gives a warning message.
+
+cl470 -k t.c
+"t.c", line 5: warning: interrupt declarations can only be applied to
+file scope functions returning void
+
+2.  SDSsq40184
+
+Headline: The "interrupt" keyword ignored if using a C++ with  templates.
+
+-----------------------------
+RELEASE NOTE
+
+The interrupt C++ keyword is ignored if using a C++ template. The resultant 
+output code does not have the interrupt handling support.
+
+3.  SDSsq42308
+
+Headline: Compiler crash:
+
+INTERNAL ERROR: no match for SRL when using -mt on code with long long. 
+
+-----------------------------
+RELEASE NOTE
+
+The compiler may abnormally terminate when compiling C code with 
+variables of 'long long' type in THUMB-mode.  The error message will 
+look like --
+
+    INTERNAL ERROR: no match for SRL 
+
+4.  SDSsq42320
+
+Headline: Loops may be incorrectly transformed at -o3.
+
+-----------------------------
+RELEASE NOTE
+
+The optimizer may generate an incorrect simplification of AND with integer.  
+Given a loop like
+
+for (; i >= 0; i--)
+  ...
+    if ((1 << i) & e)
+
+where "e" is a literal integer (eg, 27), the "(1 << i) & e" may be
+incorrectly assumed never to equal zero.
+
+5.  SDSsq42331
+
+Headline: strcmp() does not return expected negative value for
+(string a < string b).
+
+-----------------------------
+RELEASE NOTE
+
+strcmp() does not generate an expected negative result when the first 
+string is lexicographically less than the second string.
+
+    char a[5] = { 0x61, 0x62, 0x0 };
+    char b[5] = { 0x61, 0xA9, 0x0 };
+    int  x    = strcmp(a, b);
+
+6.  SDSsq43408
+
+Headline: Assembler generates error for certain USAT instructions.
+
+-----------------------------
+RELEASE NOTE
+
+The assembler incorrectly generates an error for this V6 instruction:
+
+USAT r1,#0,r2,ASR #1
+
+The assembler was basing the error check on the first immediate instead
+of the ASR immediate.
+
+7.  SDSsq43499
+
+Headline: optimizer seems to assume that the if condition is always true.
+
+-----------------------------
+RELEASE NOTE
+
+Optimizer seems to assume that the if condition in the following code 
+snippet is always true:
+
+void function(void)
+{
+  short cnt,idx=0;
+  short array[100];
+
+  for(cnt=0; cnt<5; cnt++)
+  {
+    if( ((27 >> cnt) & 1) == 1)
+    {
+      array[idx++]=1;
+    }
+    else
+    {
+      array[idx++]=-1;
+    }
+  }
+}
+
+When compiled with optimization level -o2 and 16-bit instruction set, 
+following is the assembly generated that corresponds to the for() loop:
+
+        MOV       A1, #5
+        MOV       A2, SP
+L1:    
+        STRH      A3, [A2, #0]
+        ADD       A2, #2
+        SUB       A1, #1
+        BQNE      L1
+
+This assembly code is generated with command line:
+	cl470 -k file.c -o2 -mt
+
+8.  SDSsq43530
+
+Headline: Compiler generates both static and dynamic init for array 
+initialization.
+
+-----------------------------
+RELEASE NOTE
+
+Consider the following C++ code:
+
+double test [] = 
+{ 
+-18.4615,
+-18.0705,
+-18.0551,
+0
+};
+
+main()
+{
+   return 0;
+}
+
+
+The compiler generates .cinit section for static initialization and 
+also generates __sti__ function to dynamically initialize this array. 
+
+9.  SDSsq43668
+
+Headline: Using archiver to replace certain modules in lib removes other 
+modules.
+
+-----------------------------
+RELEASE NOTE
+
+Using the archiver to replace certain object files in a library results in 
+another object being removed from the library.
+
+10.  SDSsq43910
+
+Headline: Optimizer appears to be placing incorrect address in register.
+
+-----------------------------
+RELEASE NOTE
+
+Under certain obscure circumstances involving integers cast to pointers
+and then dereferenced as structs, the optimiser may use a temporary
+variable without having assigned it first.
+
+11.  SDSsq43922
+
+Headline: In boot.asm in the run-time library, .armfunc directive is missing 
+for _c_int00.
+
+-----------------------------
+RELEASE NOTE
+
+The runtime source file (boot.asm) is missing the .armfunc directive 
+for _c_int00. This directive will be necessary in cases where users 
+write their own initialization routines which in turn call _c_int00. 
+Without the .armfunc directive, the linker will generate warnings.
+
+12.  SDSsq43997
+
+Headline: Thumb2 compiler does not support BE-8 mode.
+
+-----------------------------
+RELEASE NOTE
+
+The thumb2 compiler needs to support BE-8 mode for ARM11.  This is the 
+big-endian mode for these architectures.  This change does not affect data.  
+Instructions need to be encoded in little endian mode though.  The 
+linker is required to swap instruction bytes.
+
+13.  SDSsq44036
+
+Headline: Optimizer generates incorrect code for certain structure code 
+constructs.
+
+-----------------------------
+RELEASE NOTE
+
+The optimizer is generating incorrect code for certain code constructs 
+involving structures.
+
+14.  SDSsq44086
+
+Headline: Linker crashes trying to generate trampolines in a NOLOAD section.
+
+-----------------------------
+RELEASE NOTE
+
+In some situations, the linker will crash because it is trying to 
+generate trampolines for a NOLOAD section.  The linker cannot generate 
+trampolines in a NOLOAD section, because there is no raw data section 
+that is generated.
+
+15.  SDSsq44638
+
+Headline: Optimizer does not consider that macro parameter is modified by 
+function.
+
+-----------------------------
+RELEASE NOTE
+
+If function A defines a local object and places its address in another
+object which is then passed as the argument in a call to function B, the
+optimiser may not allow for possible modifications of the array in B,
+and allow uses which follow the call to move ahead of it.  In other words,
+it assumes that local variables in A are not visible in B, and misses the
+exception when the local's address is taken.
+
+16.  SDSsq44641
+
+Headline: Optimization is eliminating if statement and assuming null.
+
+-----------------------------
+RELEASE NOTE
+
+If function A() calls function B() more than once, and function A() is
+called from outside the file, and one of its calls to B() supplies a
+constant argument while another is a pass-through of its own parameter,
+then optimisation at -o3 may erroneously conclude that the parameter of
+B() is always constant and specialise it away.
+
+17.  SDSsq44772
+
+Headline: Bugs in RTS function fgets().
+
+-----------------------------
+RELEASE NOTE
+
+There are 2 loops in the test case. These loops use the fgets function
+to read from a file and write to the STDIO.
+
+The issue with the fgets in the first loop is: The fgets doesn't
+terminate the string with a '\0' because of which the final line of the
+file is longer that expected.
+
+The issue with the fgets in the second loop is: the expression "fgets (
+buffer, 100, fp ) != NULL" is evaluate to true while reading the
+last-but-oneth-line. Because of this the last line doesn't get read 
+from
+the file.
+
+Both issues disappear by inserting a "strcpy(buffer, "");" line after 
+consuming the read line (using the fgets).
+
+18.  SDSsq44806
+
+Headline: Loop inversion optimization problem with -o2.
+
+-----------------------------
+RELEASE NOTE
+
+At optimisation levels -o2 or -o3, a loop with a pointer-typed index
+variable, and an iteration range that is not divisible by the loop
+increment, may incorrectly iterate one extra time.  For example, a loop
+of char*x from &a to &a+4 by 16;  it should only iterate once.
+
+19.  SDSsq44864
+
+Headline: Optimizer generates wrong code for function calls involving state 
+change.
+
+-----------------------------
+RELEASE NOTE
+
+Optimizer may not preserve register contents for function calls 
+involving mode changes from 32 BIS to 16 BIS.
+
+20.  SDSsq44954
+
+Headline: Optimization assumes that an if statement is always true.
+
+-----------------------------
+RELEASE NOTE
+
+An expression of the form "(i == 0) || (i > 0x80000000))", where i is
+an unsigned integer variable, may be incorrectly transformed in such a
+way that it simplifies to 1.  When used as an IF predicate, the
+incorrect result will cause the IF to fold away.
+
+21.  SDSsq44975
+
+Headline: Linker generates warning when linking library with .text subsections. 
+
+-----------------------------
+RELEASE NOTE
+
+If a source file that contains .text subsections is partially linked, 
+then built into a library and then the library is linked into a 
+project, the linker generates the warnings: 
+
+>> warning: Cannot find state of callee routine at addr 196916 called 
+>> from ...
+
+22.  SDSsq44980
+
+Headline: With -o2 certain registers are not initialized before use.
+
+-----------------------------
+RELEASE NOTE
+
+Statements of the form
+
+  a.b op= ... a.b ...
+
+(ie, +=, -=, and similar operations, with the same structure reference
+appearing on both left- and right-hand sides of the assignment operator)
+may optimise incorrectly, resulting in an uninitialised temp variable.
+
+23.  SDSsq44995
+
+Headline: Using -o3 and -mf generates incorrect code.
+
+-----------------------------
+RELEASE NOTE
+
+The optimiser may incorrectly fold away an entire IF condition if it
+is of the form "if ((A>>k)&1)" and A has an integer type wider than
+int and k is an integer literal whose value is the width of an integer
+or larger.  For example, if A is unsigned-long-long and k is 39, on a
+target with 32-bit integers.
+
+The situation may arise implicitly as a result of converting division
+by an integer literal into a multiplication on a target with a fast
+32x32->64 multiply.  This only when optimising at -o2 or -o3 and using -mf.
+
+24.  SDSsq45010
+
+Headline: Assembler does not correctly handle MCRR, MRRC instructions.
+
+-----------------------------
+RELEASE NOTE
+
+The assembler gives an incorrect error when assembling a legal MCRR 
+instruction
+
+"mcrr.asm", ERROR!   at line 2: [E0004] Fourth operand, Cn, must be a
+                                        coprocessor register
+                MCRR    p15,#0,r1,r0,c14   
+
+
+The fourth operand should be coproc register for MCR & MRC 
+instructions, but core register for MCRR/MRRC instructions
+
+25.  SDSsq45018
+
+Headline: Optimizer generates wrong address offsets for bitfields in big 
+structure.
+
+-----------------------------
+RELEASE NOTE
+
+Certain situations involving long sequences of writes to different fields
+of the same structure, when compiled for Thumb, may cause a subsequent
+bitfield write to go astray.
+
+
+--------------------------------------------------------------------------------
+   v4.1.4
+
+--------------------------------------------------------------------------------
+
+
+
+1.  SDSsq33886
+
+
+
+Headline: Declaring a C++ member function as an ISR doesn't work as expected.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Declaring a C++ member function as an ISR doesn't work as expected.
+
+
+
+int a;
+
+struct X { static void foo(); };
+
+
+
+#pragma INTERRUPT()
+
+void X::foo()
+
+{
+
+  a = 1;
+
+}
+
+
+
+Compiling the test case gives a warning message.
+
+
+
+cl470 -k t.c
+
+"t.c", line 5: warning: interrupt declarations can only be applied to
+
+file scope functions returning void
+
+
+
+2.  SDSsq40184
+
+
+
+Headline: The "interrupt" keyword ignored if using a C++ with  templates.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The interrupt C++ keyword is ignored if using a C++ template. The resultant 
+
+output code does not have the interrupt handling support.
+
+
+
+3.  SDSsq42308
+
+
+
+Headline: Compiler crash:
+
+
+
+INTERNAL ERROR: no match for SRL when using -mt on code with long long. 
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The compiler may abnormally terminate when compiling C code with 
+
+variables of 'long long' type in THUMB-mode.  The error message will 
+
+look like --
+
+
+
+    INTERNAL ERROR: no match for SRL 
+
+
+
+4.  SDSsq42320
+
+
+
+Headline: Loops may be incorrectly transformed at -o3.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The optimizer may generate an incorrect simplification of AND with integer.  
+
+Given a loop like
+
+
+
+for (; i >= 0; i--)
+
+  ...
+
+    if ((1 << i) & e)
+
+
+
+where "e" is a literal integer (eg, 27), the "(1 << i) & e" may be
+
+incorrectly assumed never to equal zero.
+
+
+
+5.  SDSsq42331
+
+
+
+Headline: strcmp() does not return expected negative value for
+
+(string a < string b).
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+strcmp() does not generate an expected negative result when the first 
+
+string is lexicographically less than the second string.
+
+
+
+    char a[5] = { 0x61, 0x62, 0x0 };
+
+    char b[5] = { 0x61, 0xA9, 0x0 };
+
+    int  x    = strcmp(a, b);
+
+
+
+6.  SDSsq43408
+
+
+
+Headline: Assembler generates error for certain USAT instructions.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The assembler incorrectly generates an error for this V6 instruction:
+
+
+
+USAT r1,#0,r2,ASR #1
+
+
+
+The assembler was basing the error check on the first immediate instead
+
+of the ASR immediate.
+
+
+
+7.  SDSsq43499
+
+
+
+Headline: optimizer seems to assume that the if condition is always true.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Optimizer seems to assume that the if condition in the following code 
+
+snippet is always true:
+
+
+
+void function(void)
+
+{
+
+  short cnt,idx=0;
+
+  short array[100];
+
+
+
+  for(cnt=0; cnt<5; cnt++)
+
+  {
+
+    if( ((27 >> cnt) & 1) == 1)
+
+    {
+
+      array[idx++]=1;
+
+    }
+
+    else
+
+    {
+
+      array[idx++]=-1;
+
+    }
+
+  }
+
+}
+
+
+
+When compiled with optimization level -o2 and 16-bit instruction set, 
+
+following is the assembly generated that corresponds to the for() loop:
+
+
+
+        MOV       A1, #5
+
+        MOV       A2, SP
+
+L1:    
+
+        STRH      A3, [A2, #0]
+
+        ADD       A2, #2
+
+        SUB       A1, #1
+
+        BQNE      L1
+
+
+
+This assembly code is generated with command line:
+
+	cl470 -k file.c -o2 -mt
+
+
+
+8.  SDSsq43530
+
+
+
+Headline: Compiler generates both static and dynamic init for array 
+
+initialization.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Consider the following C++ code:
+
+
+
+double test [] = 
+
+{ 
+
+-18.4615,
+
+-18.0705,
+
+-18.0551,
+
+0
+
+};
+
+
+
+main()
+
+{
+
+   return 0;
+
+}
+
+
+
+
+
+The compiler generates .cinit section for static initialization and 
+
+also generates __sti__ function to dynamically initialize this array. 
+
+
+
+9.  SDSsq43668
+
+
+
+Headline: Using archiver to replace certain modules in lib removes other 
+
+modules.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Using the archiver to replace certain object files in a library results in 
+
+another object being removed from the library.
+
+
+
+10.  SDSsq43910
+
+
+
+Headline: Optimizer appears to be placing incorrect address in register.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Under certain obscure circumstances involving integers cast to pointers
+
+and then dereferenced as structs, the optimiser may use a temporary
+
+variable without having assigned it first.
+
+
+
+11.  SDSsq43922
+
+
+
+Headline: In boot.asm in the run-time library, .armfunc directive is missing 
+
+for _c_int00.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The runtime source file (boot.asm) is missing the .armfunc directive 
+
+for _c_int00. This directive will be necessary in cases where users 
+
+write their own initialization routines which in turn call _c_int00. 
+
+Without the .armfunc directive, the linker will generate warnings.
+
+
+
+12.  SDSsq43997
+
+
+
+Headline: Thumb2 compiler does not support BE-8 mode.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The thumb2 compiler needs to support BE-8 mode for ARM11.  This is the 
+
+big-endian mode for these architectures.  This change does not affect data.  
+
+Instructions need to be encoded in little endian mode though.  The 
+
+linker is required to swap instruction bytes.
+
+
+
+13.  SDSsq44036
+
+
+
+Headline: Optimizer generates incorrect code for certain structure code 
+
+constructs.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The optimizer is generating incorrect code for certain code constructs 
+
+involving structures.
+
+
+
+14.  SDSsq44086
+
+
+
+Headline: Linker crashes trying to generate trampolines in a NOLOAD section.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+In some situations, the linker will crash because it is trying to 
+
+generate trampolines for a NOLOAD section.  The linker cannot generate 
+
+trampolines in a NOLOAD section, because there is no raw data section 
+
+that is generated.
+
+
+
+15.  SDSsq44638
+
+
+
+Headline: Optimizer does not consider that macro parameter is modified by 
+
+function.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+If function A defines a local object and places its address in another
+
+object which is then passed as the argument in a call to function B, the
+
+optimiser may not allow for possible modifications of the array in B,
+
+and allow uses which follow the call to move ahead of it.  In other words,
+
+it assumes that local variables in A are not visible in B, and misses the
+
+exception when the local's address is taken.
+
+
+
+16.  SDSsq44641
+
+
+
+Headline: Optimization is eliminating if statement and assuming null.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+If function A() calls function B() more than once, and function A() is
+
+called from outside the file, and one of its calls to B() supplies a
+
+constant argument while another is a pass-through of its own parameter,
+
+then optimisation at -o3 may erroneously conclude that the parameter of
+
+B() is always constant and specialise it away.
+
+
+
+17.  SDSsq44772
+
+
+
+Headline: Bugs in RTS function fgets().
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+There are 2 loops in the test case. These loops use the fgets function
+
+to read from a file and write to the STDIO.
+
+
+
+The issue with the fgets in the first loop is: The fgets doesn't
+
+terminate the string with a '\0' because of which the final line of the
+
+file is longer that expected.
+
+
+
+The issue with the fgets in the second loop is: the expression "fgets (
+
+buffer, 100, fp ) != NULL" is evaluate to true while reading the
+
+last-but-oneth-line. Because of this the last line doesn't get read 
+
+from
+
+the file.
+
+
+
+Both issues disappear by inserting a "strcpy(buffer, "");" line after 
+
+consuming the read line (using the fgets).
+
+
+
+18.  SDSsq44806
+
+
+
+Headline: Loop inversion optimization problem with -o2.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+At optimisation levels -o2 or -o3, a loop with a pointer-typed index
+
+variable, and an iteration range that is not divisible by the loop
+
+increment, may incorrectly iterate one extra time.  For example, a loop
+
+of char*x from &a to &a+4 by 16;  it should only iterate once.
+
+
+
+19.  SDSsq44864
+
+
+
+Headline: Optimizer generates wrong code for function calls involving state 
+
+change.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Optimizer may not preserve register contents for function calls 
+
+involving mode changes from 32 BIS to 16 BIS.
+
+
+
+20.  SDSsq44954
+
+
+
+Headline: Optimization assumes that an if statement is always true.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+An expression of the form "(i == 0) || (i > 0x80000000))", where i is
+
+an unsigned integer variable, may be incorrectly transformed in such a
+
+way that it simplifies to 1.  When used as an IF predicate, the
+
+incorrect result will cause the IF to fold away.
+
+
+
+21.  SDSsq44975
+
+
+
+Headline: Linker generates warning when linking library with .text subsections. 
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+If a source file that contains .text subsections is partially linked, 
+
+then built into a library and then the library is linked into a 
+
+project, the linker generates the warnings: 
+
+
+
+>> warning: Cannot find state of callee routine at addr 196916 called 
+
+>> from ...
+
+
+
+22.  SDSsq44980
+
+
+
+Headline: With -o2 certain registers are not initialized before use.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Statements of the form
+
+
+
+  a.b op= ... a.b ...
+
+
+
+(ie, +=, -=, and similar operations, with the same structure reference
+
+appearing on both left- and right-hand sides of the assignment operator)
+
+may optimise incorrectly, resulting in an uninitialised temp variable.
+
+
+
+23.  SDSsq44995
+
+
+
+Headline: Using -o3 and -mf generates incorrect code.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The optimiser may incorrectly fold away an entire IF condition if it
+
+is of the form "if ((A>>k)&1)" and A has an integer type wider than
+
+int and k is an integer literal whose value is the width of an integer
+
+or larger.  For example, if A is unsigned-long-long and k is 39, on a
+
+target with 32-bit integers.
+
+
+
+The situation may arise implicitly as a result of converting division
+
+by an integer literal into a multiplication on a target with a fast
+
+32x32->64 multiply.  This only when optimising at -o2 or -o3 and using -mf.
+
+
+
+24.  SDSsq45010
+
+
+
+Headline: Assembler does not correctly handle MCRR, MRRC instructions.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The assembler gives an incorrect error when assembling a legal MCRR 
+
+instruction
+
+
+
+"mcrr.asm", ERROR!   at line 2: [E0004] Fourth operand, Cn, must be a
+
+                                        coprocessor register
+
+                MCRR    p15,#0,r1,r0,c14   
+
+
+
+
+
+The fourth operand should be coproc register for MCR & MRC 
+
+instructions, but core register for MCRR/MRRC instructions
+
+
+
+25.  SDSsq45018
+
+
+
+Headline: Optimizer generates wrong address offsets for bitfields in big 
+
+structure.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Certain situations involving long sequences of writes to different fields
+
+of the same structure, when compiled for Thumb, may cause a subsequent
+
+bitfield write to go astray.
+
+
+
+
+
+--------------------------------------------------------------------------------
+
+   v4.1.3
+--------------------------------------------------------------------------------
+
+1.  SDSsq42459
+
+Headline: Optimizer generates incorrect code for do..while loop.
+
+-----------------------------
+RELEASE NOTE
+
+Loops whose termination depends on unsigned-integer wraparound may have
+their trip counts computed incorrectly, which may lead to the loop's
+incorrect deletion.
+
+There is code that is trying to calculate a loop's trip count, in
+general form as "N - I";  when both N and I are ICONs, which the
+optimizer computes using the literal values instead of building a
+symbolic expression, aiming to have a more precise value for the trip count.
+
+However, when the loop depends on an unsigned integer wrapping
+around, I will be 0 or greater and N can be 0, and the simple "N - I"
+gives the wrong answer.
+
+-----------------------------
+TEST CASE
+
+typedef  unsigned long  u32;
+typedef  unsigned short u16;
+typedef  unsigned char  u8;
+
+int bug(void)
+{
+    int test;
+    u32 param;
+
+    test = 1;
+
+    param = 0x10000000;
+    do
+    {
+        test++;
+        test++;
+        param += 0x10000000;
+    } while(param != 0);
+
+    return test;
+}
+
+
+volatile int ret;
+
+void c_main(int p)
+{
+    ret = bug();
+}
+
+2. SDSsq42460
+
+Headline: Compiler generates incorrect code for certain switch statements.
+
+-----------------------------
+RELEASE NOTE
+
+The compiler may sometimes generate incorrect code for certain switch 
+statements.
+
+The bug is that a branch to incorrect label is being generated, instead
+of branch to default label.
+
+In the failing test case, the control flow looks like this
+
+L0:
+	Bcond   SWITCH_BLOC
+L1:	...
+	...
+	B       SOMEWHERE_ELSE
+SWITCH_BLOC:
+	switch prolog
+SW1: ; switch statement
+
+When SW1 is being processed for switch table compression by the code-gen
+(happens with optimization in Thumb mode), the compression logic tries
+to convert the switch SW1 into a compare branch sequence. At the end of
+the compare-branch sequence, the control needs to be transferred to the
+default case label. The original logic in switch table compression
+assumes that the switch table predecessor branches to the default case.
+In the above sequence, the switch table predecessor block L0 branches to
+the switch block (SWITCH_BLOC). This causes the switch table
+compare-branch sequence to generate a branch to SWITCH_BLOC at the end
+of compare-branch sequence causing an infinite loop.
+
+3. SDSsq42677
+
+Headline: Optimizer bug with code involving stack objects and logical 
+operations.
+
+-----------------------------
+RELEASE NOTE
+
+The optimizer may incorrectly simplify A&A or A|A to just A, even if
+A has side effects -- eg, printf("x")&printf("x") would become
+printf("x").
+
+-----------------------------
+TEST CASE
+
+struct Stack
+{
+    int m_aValues[32];
+    int* m_paValues;
+};
+
+void
+push(Stack* pStack, int value)
+{
+    *++pStack->m_paValues = value;
+}
+
+int
+pop(Stack* pStack)
+{
+    return *pStack->m_paValues--;
+}
+
+void
+bitwiseAnd(Stack* pStack)
+{
+    push(pStack, pop(pStack) & pop(pStack));
+}
+
+4. SDSsq41866
+
+Headline: cg470 crashes with "CONSTANT TABLE ERROR" message.
+
+-----------------------------
+RELEASE NOTE
+The cg470 can crash with the following message:
+
+   INTERNAL ERROR: CONSTANT TABLE ERROR - CODEGEN ABORTED
+
+   This may be a serious problem.  Please contact customer support with a
+   description of this problem and a sample of the source files that caused
+   this INTERNAL ERROR message to appear.
+
+5.  SDSsq41559
+
+Headline: cg crashes with INTERNAL ERROR "no match for ...".
+
+-----------------------------
+RELEASE NOTE
+
+Certain function calls in thumb-mode that are intrinsic calls in arm-mode,
+__disable_interrupts() for example, can cause a code generator crash.   This
+is caused by a bug in the optimizer.
+
+6.  SDSsq41996
+
+Headline: Error: Optimizer terminated abnormally.
+
+-----------------------------
+RELEASE NOTE
+
+Certain cases involving struct-typed parameters may cause optimiser
+aborts when compiling at -o3.
+
+7.  SDSsq42040
+
+Headline: In rts.src CIOBUFSIZ should be defined as (BUFSIZ+32).
+
+-----------------------------
+RELEASE NOTE
+
+In trgcio.h in the rts.src file, CIOBUFSIZ should be defined as
+(BUFSIZ + 32), not BUFSIZ + 32 (the parenthesis are required).
+
+8.  SDSsq42248
+
+Headline: optimizer is ignoring volatile qualifier when propogating constant.
+
+-----------------------------
+RELEASE NOTE
+
+The optimizer is ignoring the "volatile" qualifier when deciding to
+propagate a constant from a "const" global variable.
+
+-----------------------------
+TEST CASE
+
+   typedef unsigned char unsigned8_T;
+   volatile const unsigned8_T obj_1 = (unsigned8_T)(1200.0/8.);
+
+   extern int obj_2;
+
+   void foo()
+   {
+      obj_2 = obj_1*32;
+   }
+
+9.  SDSsq42995
+
+Headline: Compiler generates segmentation fault with certain source files.
+
+-----------------------------
+RELEASE NOTE
+
+The compiler may sometimes generate segmentation fault when building
+certain code with a command line that specifies an object file but
+linking is not enabled.
+
+For exammple, building certain code with the following options will
+generate a segmentation fault:
+cl470 -mt -eo .o main.c -o main.o
+
+The compiler error is:
+
+INTERNAL ERROR: cg470 experienced a segmentation fault while
+                processing function _test_init
+
+10.  SDSsq42401
+
+Headline: Mixed mode window is not correctly associated with disassembly.
+
+-----------------------------
+RELEASE NOTE
+
+The compiler is generating bogus source position information for
+compiler-generated functions.  It should not be generating any source
+info, as these functions do not appear in the source.
+
+
+--------------------------------------------------------------------------------
+   v4.1.2
+--------------------------------------------------------------------------------
+
+1.  SDSsq31999
+
+    Headline: Trailing radix indicator mishandled on command line options.             
+    --------------------------
+    RELEASE NOTE
+
+    Compiler/linker does not correctly parse command-line hex numbers of 
+    the using the trailing indicators, i.e ABCDh for a hex number or 6543Q 
+    for an octal number.  Numbers of the form 0xABCD and 06543 are parsed 
+    correctly.
+
+
+2.  SDSsq37922
+
+    Headline: Linker does not add call to trampoline when needed.
+
+    --------------------------
+    RELEASE NOTE
+
+    It is possible that the linker will miss adding a call to a trampoline
+    for a call that requires one.  This occurs even though the correct 
+    trampoline has been generated, resulting in a fatal error from the 
+    linker. 
+
+3.  SDSsq39451
+
+    Headline: Parser crash using pragmas with C++ template functions.
+
+4.  SDSsq40969
+
+    Headline: Linker gives no error when call to trampoline is greater than 
+    4MB away.  
+
+    --------------------------
+    RELEASE NOTE
+
+    Linker should be able to identify situations where call to trampoline 
+    could be greater than than 4MB away.
+
+
+5.  SDSsq41014
+
+    Headline: Linker -f fill option allows 32-bit signed int instead of 
+    unsigned int. 
+
+    --------------------------
+    RELEASE NOTE
+
+    The compiler/linker accepted only SIGNED values for the -f (linker fill)
+    option.  For example, for only values <= 0x7FFF FFFF are accepted.
+
+
+6.  SDSsq41215
+
+    Headline: Optimizer crash.
+
+
+7.  SDSsq41431
+
+    Headline: 4.1.1 Assembler causes a segmentation fault. 
+
+    --------------------------
+    RELEASE NOTE
+
+    4.1.1 Assembler causes a segmentation fault with the following code:
+
+    cl470 a.asm
+
+    Here is a.asm:
+
+             .title  "whatever"
+             .state32
+     QWERTY  .equ    (1 << 12)
+             .sect   ".xyz"
+             .global _abc
+     _abc:
+             MRC     P15, #0, R0, C1, C0, #0       
+             ORR     R0, R0, #QWERTY               
+             MCR     P15, #0, R0, C1, C0, #0       
+             B       $ + 4
+             MOV     PC, R14                       
+             .end
+
+8.  SDSsq41482
+
+    Headline: Optimiser crash with "x += a && b"                                      
+    --------------------------
+    RELEASE NOTE
+
+    Statements of the form "x += a && b" may cause the optimiser to crash.
+
+9.  SDSsq41736
+
+    Headline: Linker memory bugs.
+
+    --------------------------
+    RELEASE NOTE
+
+    There are 2 issues in the linker related to trampolines that could cause 
+    the linker to crash.
+
+10.  SDSsq41311
+
+    Headline: There is a bug in the code generator switch table optimization.
+
+    --------------------------
+    RELEASE NOTE
+
+    The bug in compress switch table logic happens in the following case. 
+
+    When a switch stmt is optimized to generate compare/branch sequences 
+    instead of table (when generating a table is more expensive), the 
+    following code sequence is generated.
+
+     Lp: 
+        CMP reg,switch_limit         OR      CMP reg, switch_limit 
+        BGT  default_case_label              BLE  Lsw 
+                                             B 
+
+     default_case_label; /* if the default_case_label is too far we need to use 
+                            uncond branch */
+     Lsw:                                    
+        switch_2_t 
+
+    The switch_2_t instruction matches switch prolog (ie. the set of 
+    instructions needed to generate a switch table). In case we decide to 
+    replace this with compare/branch sequence,  the following code must 
+    result
+
+        CMP reg,switch_limit 
+        BGT  default_case_label 
+     Lsw: 
+        SUB reg,#val1 
+        BEQ  val1_label 
+        SUB reg,#val2 
+        BEQ val2_label 
+        .... 
+        SUB reg,#valn 
+        BEQ valn_label 
+        B default_case_label 
+
+    That is, a branch to the default_case_label should be generated at the 
+    end of the compare/branch sequence. This case label is obtain from the 
+    predecessor of switch_2_t block. To do this, the original logic simply 
+    went back as far as it could until it finds an unconditional branch or 
+    condition branch. 
+
+    However, the constant table logic can insert a constant table entry 
+    block between the blocks Lp and Lsw as follows 
+
+        Lp: 
+                ... 
+                B Lsw 
+                const table entry 
+        Lsw: 
+                .... 
+
+
+
+    This would cause the default case label discovery logic to wrongly 
+    assume that Lsw is the default case label which searching backwards 
+    resulting in a code sequence as follows
+
+        Lsw: 
+                SUB reg,#val1 
+                BEQ val1_label 
+                .... 
+                SUB reg,#valn 
+                BEQ valn_label 
+                B Lsw           ;/* Wrong */ 
+
+
+    --------------------------
+    TEST CASE
+
+    The attached file should be compiled with "-o3 -mt -k". 
+    In the assembly file generated, look for the constant table inserted
+    before the switch statement. The branch around the constant table is
+    incorrect. Also at the end of the switch statement branch logic, the
+    final unconditional branch should not be to the beginning of the switch
+
+
+11. SDSsq41271
+
+    Headline: Optimizer (-o2 and -o3) generates incorrect code for nested loops.
+
+    --------------------------
+    RELEASE NOTE
+
+    For ARM and MSP only, the optimiser may generate incorrect code for a
+    loop nest with an early exit (eg, a return) from the inner loop with an
+    expression that uses the outer loop's control variable, when that
+    variable is not of type int.
+
+    --------------------------
+    TEST CASE
+
+    Example C-Code:
+
+        unsigned char func1(unsigned char* arg1)
+        {
+            unsigned char abc;
+            unsigned char def;
+            unsigned char ghi;
+
+            for(abc = 0; abc < 8; abc++)
+            {
+                ghi = *(arg1 + 7 - abc);
+
+                if(ghi != 0)
+                {
+                    for(def = 0; def < 8; def++)
+                        if((ghi & (0x80 >> def)) != 0)
+                            return (((7-abc)*8)+(7-def));
+                }
+             }
+             return 0;
+         }
+
+    Assembly-Code:
+
+        ...
+        ;** ----------------------- def = 0;
+        MOV A1, #0
+        ...
+        ;** 20 ----------------------- return (unsigned char)(63-def);
+        MOV A2, #63
+        SUB A1, A2, A1 ; compiler uses wrong loop counter
+        LSL A1, A1, #24
+        LSR A1, A1, #24
+        POP {V1, PC}
+        ...
+
+
+--------------------------------------------------------------------------------
+   v4.1.1
+--------------------------------------------------------------------------------
+
+1.  SDSsq39505
+
+    Headline: Bad trampoline generated, trampoline has near branch to lower 16 
+    bits.
+
+    --------------------------
+    RELEASE NOTE
+
+    Linker may generate an incorrect trampoline during a final link for a
+    call to a function that is defined inside a partially linked module
+    that has a non-zero run location upon input into the final link step.
+
+
+2.  SDSsq39848
+
+    Headline: The optimizer generates incorrect code in thumb-mode with -o2 and 
+    higher.
+
+    --------------------------
+    RELEASE NOTE
+
+    There is a bug in the optimizer that can occur with level 2 optimization
+    or higher.  The bug can occur only under the following conditions:
+
+    1. This only involves local, non-volatile and non-const variables that
+    are of type unsigned char or unsigned short.
+    2. That local cannot be used as a loop induction variable.
+    3. This local can only be used in simple expressions of =, ==, !=, +, or -.
+    4. The right hand side of that expression can only be a small set of 
+    constants.
+    5. In that small set of constants one of them, not the smallest, is 
+    frequently used in the function.
+
+    The optimizer will try to scale the constants such that the frequently
+    used one becomes 1 or 0.  The bug can occur at this point if such
+    scaling creates a negative constant.
+
+    --------------------------
+    TEST CASE
+
+    In this test case:
+
+       enum E_2
+       { N,
+         L,
+         A
+       };
+
+       typedef struct
+       {
+           enum E_2 G_2;
+       } ST_1; 
+
+       ST_1 G_1;
+
+       extern signed long LFunc(signed long, signed long, signed long);
+       extern int check;
+
+       void Func (void)
+       {   
+          unsigned char  XX_1;
+          signed short XX_9 = 1;
+          signed short  XX_8 = 4;
+
+          XX_1 = G_1.G_2;
+
+          XX_9 = LFunc(XX_9, 0, 256);
+
+          if((XX_1 == 6) || (XX_1 == 5) || (XX_1 == 3) || (XX_1 == 2))
+          {
+            check = 2;
+          }
+
+          if ( (XX_1 == 6) || (XX_1 == 3))
+          {
+             XX_9 = XX_8;
+          }
+
+          XX_9 = LFunc(XX_9, -255, 255);
+       }
+
+    the constants compared with variable "XX_1" is scaled back by three. 
+    The code generated assumes a comparison with -1 can take place.  Since
+    "XX_1" is unsigned however, this comparison is not possible.
+
+
+3.  SDSsq39995
+
+    Headline: TMS470 malloc() rts routine can incorrectly return NULL.
+
+    --------------------------
+    RELEASE NOTE
+
+    The _sys_memory first packet needs to be initialized to the equivalent
+    of a call to minit().  This requires the packet size to be the total
+    heap size minus the BLOCK_OVERHEAD, which is the sizeof(long).  This was
+    being incorrectly set to the heap size minus the sizeof(PACKET).  If the
+    last packet is freed after the heap is entirely allocated, the next
+    packet pointer will be out of the valid heap area.  The net result is
+    that a call to malloc() would return NULL even though there is enough
+    free space in the heap.
+
+
+4.  SDSsq40054
+
+    Headline: Assembler does not recognize CPSR/SPSR new field mask bits.
+
+    --------------------------
+    RELEASE NOTE
+
+    The assembler only accepts these fields in the CPSR/SPSR register as 
+    part of the MSR instruction:
+
+    MSR CPSR_ALL, reg
+    MSR CPSR_FLG, reg
+
+    The latest ARM syntax is changed to:
+
+    MSR CPSR_c, reg
+    MSR CPSR_x, reg
+    MSR CPSR_s, reg
+    MSR CPSR_f, reg
+
+    where each field mask represents specific mask bits in the PSR 
+    registers.
+
+
+5.  SDSsq40212
+
+    Headline: Compiler generates incorrect code for certain specific functions.
+
+    --------------------------
+    RELEASE NOTE
+
+    When the following test case is compiled with "-mt -o2":
+
+    typedef  unsigned long  u32;
+    typedef  unsigned short u16;
+    typedef  unsigned char  u8;
+
+    u8  global8;
+    u32 global32;
+
+    u8 many_paramaters1( u32 r0, u32 r1, u32 r2, u32 r3, u8 stk0, u8 stk1)
+    {
+        if (r0)
+            stk1 = 1;
+
+        if (stk1 == 5)
+            global32 = 2;
+
+        return 0;
+    }
+
+    u8 many_paramaters2( u32 r0, u32 r1, u32 r2, u32 r3, u16 stk0, u8 stk1)
+    {
+        if (r0)
+            stk1 = 1;
+
+        if (stk1 == 5)
+            global32 = 2;
+
+        return 0;
+    }
+
+    main()
+    {
+        global32 = 3;
+        global8  = 3;
+
+        global8 = many_paramaters1(0, 1, 2, 3, 4, 5);
+        global8 = many_paramaters2(0, 1, 2, 3, 4, 5);
+    }
+
+    these assembler warnings are generated:
+
+    "bug.asm", WARNING! at line 99: [W0002] Offset not word aligned
+                    STR       A2, [V4, #1]          ; |14|
+
+    The bug involves passing a char or short type as an argument to a routine 
+    where the number of arguments requires the char or short type to be passed 
+    on the stack.  Our compiler will always create a local copy of the same name
+    of these arguments.  The optimizer and the codegen will attempt different 
+    optimizations on these copies.  One optimization is that the optimizer will 
+    attempt to widen the local to a word size.  This makes sense, particularly 
+    in thumb, since you can generate better code with word-size objects than 
+    byte, or half-word objects.  A latter codegen pass attempts to remove the 
+    copy instruction by using the same stack location as the argument.  The bug 
+    occurs at this point.  The copy instruction, after widening, was a move from
+    the 8-bit char argument to a 32-bit local copy.  The codegen makes an 
+    address change of the 32-bit copy to the original argument location.  Except
+    this is a 8-bit aligned address, which doesn't work on ARM when loading or 
+    storing 32-bits.  
+
+    The bug will always create an assembler warning in thumb-mode, since the 
+    offset needs to be scaled by 4.  The bug will exist in arm-mode, but no 
+    assembler warning is generated since the offset in a [reg, #imm12] indirect 
+    operand is not scaled.
+
+
+6.  SDSsq40392
+
+    Headline: Compiler sometimes generates BLX with incorrect offset.
+
+    --------------------------
+    RELEASE NOTE
+
+    When generating the relocation value for a BL instruction that is to be 
+    converted to BLX (for cross-mode calls), for example to ensure that the 
+    Thumb-mode reloc value is word-aligned, the least significant encoded bit 
+    needs to be 0.  This is because all ARM routines are word aligned and BLX 
+    instruction transfers control to ARM (Thumb-mode BLX).  Hence the 
+    least-significant encoded bit must be 0.  In this case the Bit[0] was not 
+    zero, which caused the instruction to be treated as an undefined 
+    instruction and caused a hardware abort.
+
+
+7.  SDSsq40423
+
+    Headline: Assembler crashes instead of issuing diagnostic and exiting.
+
+    --------------------------
+    RELEASE NOTE
+
+    The .thumbfunc and .armfunc assembler directives should be used only in the 
+    modules in which the function is defined.  The linker uses this mode info 
+    for implementing veneers.  These directives in files other than those that
+    define the function are useless and hence we should issue a warning.  These
+    directives in this situation were causing the assembler to crash.
+
+
+--------------------------------------------------------------------------------
+   v4.1.0
+--------------------------------------------------------------------------------
+
+1.  SDSsq37014
+
+    Headline: .byte directive should generate error when reloc entries are 
+    required.  
+
+    --------------------------
+    RELEASE NOTE
+
+    Consider the following asm code.
+
+        .global sym1
+        .byte  sym1
+
+    The assembler generates 0 for this .byte directive. It does not 
+    generate the relocation entry required to patch the value by the 
+    assembler. Since byte sized relocation is not useful for our targets, 
+    (since all our targets have 16 or 32 bit address) the assembler should 
+    generate error.
+
+2.  SDSsq37309
+
+    Headline: C++ file with templates fails compile.
+
+    --------------------------
+    RELEASE NOTE
+
+    In some cases, function template instances that were not fully instantiated.
+    For example:
+
+      template <class T> void f(T){}
+      int main() {
+        f(1);
+      }
+
+    would generate a undefined symbol error in the assembler.
+
+3.  SDSsq37463
+
+    Headline: An asm .cdecl directive fails if parser is not in path environment
+    variable.
+
+    --------------------------
+    RELEASE NOTE
+
+    The assembler, when calling the parser to process the .cdecls 
+    directive, was not invoke the parser using the inherited path that was 
+    used to invoke the assembler.  As a result, if the path to the parser 
+    is not included in the PATH environment variable, the .cdecls 
+    processing will fail.  For example, if the assembler is invoked with
+
+    C:\blah\mybin\asm470 ...
+
+    the assembler should invoke the parser using the same path:
+
+    C:\blah\mybin\acp470 ... , instead it invokes it using
+
+    acp470 .... 
+
+    --------------------------
+    TEST CASE
+
+    run /path/to/cl470 --v --f hello.asm
+
+    with an asm file that contains a .cdecls, and note that when acp470 is 
+    executed, it does not have the full path, like asm does.
+
+4.  SDSsq38729
+
+    Headline: Bug with CIO RTS functions (eg: sprintf,printf) with format 
+    specification.
+
+    --------------------------
+    RELEASE NOTE
+
+    The C code 'printf("%+.0f", .001)' should print '+0' instead of '+0.'
+
+    The bug is in function _pconv(). The code that decides to emit a decimal
+    point was, 
+
+     putdec = (dpt != (int)strlen(result) || _STCHK(pfield, _PFPOUND)) ? 1 : 0;
+
+    dpt is the offset to the decimal point in the result. This check assumes
+    that dpt cannot be negative in other wards assumes that if dpt is
+    negative decimal point is emitted always. This is not true, dpt would be
+    negaive if the actual decimal point is before any imaginary zeroes at
+    the beginning. So the correct test should be 'Did we write any
+    fractional part?' This can be done by checking if _fcpy(), which
+    actually copies the fractional point, copied any value. This is done by
+    comparing the *a_it value before and after the call to _fcpy(); if they
+    are same no fraction value was written.
+
+    --------------------------
+    TEST CASE
+
+    #include <stdio.h>
+    void main()
+    {                                 
+       char chain[15];
+       sprintf( chain, "%+.0f\n",0.001);
+       printf("%s\n",chain);
+    }
+
+    Output chain "+0." instead of  "+0"
+
+    char chain[50];
+    sprintf( chain, "%+.0f",0.1);
+
+    Output chain "+0" correct
+
+    If the fractional part of the data starts with non zero digit(i.e. 
+    like 0.123) this problem doesn't exists. It appears only with numbers 
+    like 0.001.
+
+5.  SDSsq39399
+
+    Headline: Wrong peephole optimization in the TMS470 code generator.
+
+    --------------------------
+    RELEASE NOTE
+
+    There is a bug in the ARM-mode peephole rules. It occurs in the 
+    following sequence 
+
+        MOV     A1, A1, LSR #16 
+        MOVS    A1, A1, LSR #15 
+
+        gets peepholed into 
+
+        MOV     A1, A1, LSR #31 
+
+    Which destroys the condition code set by the MOVS. The correct 
+    generated sequence should be MOVS A1, A1, LSR #31. This bug could 
+    happen with other peephole rules that combine logical right shifts, 
+    and moves. 
+
+6.  SDSsq39516
+
+    Headline: mklib utility doesn't recognize newer compile options.                   
+    --------------------------
+    RELEASE NOTE
+
+    Added the following options to mk470:
+
+      -ab=#
+      --abi=eabi,tiabi,ti_arm9_abi
+      --align_structs=<bytecount>
+      --disable_branch_chaining
+      --plain_char=signed,unsigned
+      -mv=4,5e,6
+      --static_template_instantiation
+      -oi<N>
+
+
+--------------------------------------------------------------------------------
+   v4.1.0B2
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq36154
+
+   Description: The optimizer was failing to share local structure objects
+   that contained arrays.  For example, in the following test case, a 
+   separate local object was allocated on the stack for each switch case:
+
+   typedef struct {
+	int a[248];
+   }myStruct;
+
+   void main(void)
+   {
+	while(1);
+   }
+
+   void foo(int i)
+   {
+	switch (i) {
+	case (1):
+		{
+			{
+				myStruct a;
+				memset(a, 0, 248);
+			}
+		}
+		break;
+	case (2):
+		{
+			{
+				myStruct a;
+				memset(a, 0, 248);
+			}
+		}
+		break;
+	case (3):
+		{
+			{
+				myStruct a;
+				memset(a, 0, 248);
+			}
+		}
+		break;
+	}
+
+   }
+
+   Fix: The optimizer was updated to fix this bug.
+
+2. DDTS #: SDSsq36752
+
+   Description: The following problems with certain shell switches
+   has been fixed:
+
+   --static_template_instantiation: Added missing switch
+
+   --version: No longer hidden in shell help list
+
+   --default_order: No longer hidden in shell help list
+
+   --align_structs=<n>: No longer hidden in shell help list
+
+   --abi=ti_arm9_abi,tiabi: No longer hidden in shell help list
+
+3. DDTS #: SDSsq36376
+
+   Description: When compiled for thumb little endian mode, the following 
+   test fails:
+
+   double d1 = 10.0;
+   unsigned long long ull = (unsigned long long) d1;
+   if (ull != 10) error();
+
+   Fix: Update the rts file fd_toull16.asm.
+
+
+--------------------------------------------------------------------------------
+   v3.0.0B2
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq36752
+
+   Description: The following problems with certain shell switches has been
+   fixed:
+
+   --static_template_instantiation: Added missing switch
+
+   --version: No longer hidden in shell help list
+
+   --default_order: No longer hidden in shell help list
+
+   --disable_branch_chaining: Added missing switch
+
+   --align_structs=<n>: No longer hidded from shell help list
+
+2. DDTS #: SDSsq31603
+
+   Description: With STABS debug, the CODE_STATE pragma was not correctly
+   changing the function prefix for the new mode.  For example:
+
+   #pragma CODE_STATE (func, 32)
+   void func(void)
+
+   should create to a global symbol _func when compiling in 16-bit mode.
+   The code generator was incorectly creating a global symbol $func.
+
+   Fix: The code generator was updated to fix this bug.
+
+3. DDTS #: SDSsq30535
+
+   Description: A parser error could generate an extra '\' character in the 
+   path name.
+
+   For example, when a simple hello.c program is compiled using the
+   following command line: cl470 -g ..\hello.c
+   it generates the error:
+
+   "..\\hello.c", line 4: error: identifier "true" is undefined
+   "..\\hello.c", line 5: error: identifier "i" is undefined
+
+   Fix: The parser was updated to fix this bug.
+
+
+********************************************************************************
+   v2.62
+********************************************************************************
+
+-----------------------------
+1.  SDSsq44688
+-----------------------------
+
+Headline: Optimizer deletes a function's parameter which causes an error.
+
+-----------------------------
+RELEASE NOTE
+
+Under certain circumstances, calling a function with two arguments that
+are different pointers into the same string literal will produce
+unexpected results, if the literal is propagated into the called function
+through one parameter but not the other and the string literal is cloned
+into two objects.
+
+
+-----------------------------
+2.  SDSsq44787
+-----------------------------
+
+Headline: Function inlining cause wrong constant propagation.
+
+-----------------------------
+RELEASE NOTE
+
+The optimiser's parameter-specialisation pass may incorrectly conclude
+that a function's parameter is always passed the same value, under
+particular circumstances including one call that passes a global variable
+and another that passes a dereference of a pointer-to-void.
+
+
+-----------------------------
+3.  SDSsq44806
+-----------------------------
+
+Headline: Loop inversion optimization problem with -o2.
+
+-----------------------------
+RELEASE NOTE
+
+At optimisation levels -o2 or -o3, a loop with a pointer-typed index
+variable, and an iteration range that is not divisible by the loop
+increment, may incorrectly iterate one extra time.  For example, a loop
+of char*x from &a to &a+4 by 16;  it should only iterate once.
+
+
+-----------------------------
+4.  SDSsq44864
+-----------------------------
+
+Headline: Optimizer generates wrong code for function calls involving state 
+change.
+
+-----------------------------
+RELEASE NOTE
+
+Optimizer may not preserve register contents for function calls 
+involving mode changes from 32 BIS to 16 BIS.
+
+
+********************************************************************************
+   v2.61
+********************************************************************************
+
+-----------------------------
+1.  SDSsq44525
+-----------------------------
+
+Headline: Linker goes into infinite loop. 
+
+-----------------------------
+RELEASE NOTE
+
+The linker can go into an infinite loop under the following conditions:
+
+1. A handed-coded assembly file is assembled with the -g debug switch.
+2. This assembly file must include the .clink directive to conditionally
+link routines in the source.
+3. There must be 2 different sections that are reference through the
+.clink directives.
+
+When the resulting object file is included in the link, the debug
+information can cause the linker to go into an infinite loop.  This only
+occurs with the 2.5x or 2.60 releases.  The assembler is fixed to
+generate the correct debug info.  The linker has been updated to avoid
+an infinite loop if this incorrect debug info is included in the object
+file by the assembler.
+
+-----------------------------
+2.  SDSsq44638
+-----------------------------
+
+Headline: Optimizer does not consider that macro parameter is modified by 
+          function.
+
+-----------------------------
+RELEASE NOTE
+
+If function A defines a local object and places its address in another
+object which is then passed as the argument in a call to function B, the
+optimiser may not allow for possible modifications of the array in B,
+and allow uses which follow the call to move ahead of it.  In other words,
+it assumes that local variables in A are not visible in B, and misses the
+exception when the local's address is taken.
+
+
+-----------------------------
+3.  SDSsq44641
+-----------------------------
+
+Headline: Optimization is eliminating if statement and assuming null.
+
+-----------------------------
+RELEASE NOTE
+
+If function A() calls function B() more than once, and function A() is
+called from outside the file, and one of its calls to B() supplies a
+constant argument while another is a pass-through of its own parameter,
+then optimisation at -o3 may erroneously conclude that the parameter of
+B() is always constant and specialise it away.
+
+
+********************************************************************************
+   v2.60
+********************************************************************************
+
+-----------------------------
+1.  SDSsq30834
+-----------------------------
+
+Headline: Parser may crash when a prototype of a function is missing.
+
+-----------------------------
+RELEASE NOTE
+
+Parser may crash under a condtion while processing 
+the statement
+
+    (void)fp;
+
+where fp is a pointer to a class.
+
+
+-----------------------------
+2.  SDSsq31061
+-----------------------------
+
+Headline: Parser crashes for C++ code.
+
+-----------------------------
+RELEASE NOTE
+
+In rare cases the parser can crash in expressions of the form
+  TYPE obj = p->()(arg);
+where obj is a local variable of some class type and p is a pointer to 
+a virtual function, which is being called indirectly.
+
+
+-----------------------------
+3.  SDSsq34468, SDSsq44402
+-----------------------------
+
+Headline: Compiling with optimization accesses an uninitialized local variable.
+
+-----------------------------
+RELEASE NOTE
+
+Compiling C++ code with optimization may generate code which accesses a local 
+variable before the initial value has been assigned to it.
+
+
+-----------------------------
+4.  SDSsq42313
+-----------------------------
+
+Headline: Thumb-mode generates incorrect result when using 'long long'.
+
+-----------------------------
+RELEASE NOTE
+
+Incorrect results for code using 'long long' are generated when 
+building for Thumb-mode (-mt).
+
+
+-----------------------------
+5.  SDSsq43668
+-----------------------------
+
+Headline: Using archiver to replace certain modules in lib removes other 
+modules.
+
+-----------------------------
+RELEASE NOTE
+
+Using the archiver to replace certain object files in a library 
+results in another object being removed from the library.
+
+
+-----------------------------
+6.  SDSsq44036
+-----------------------------
+
+Headline: Optimizer generates incorrect code for certain structure code 
+constructs.
+
+-----------------------------
+RELEASE NOTE
+
+The optimizer is generating incorrect code for certain code constructs 
+involving structures.
+
+Consider the following C code:
+
+typedef unsigned short int TP_UInt16;
+struct MPD_Mm_Plmn
+{
+  TP_UInt16 mcc;
+  TP_UInt16 mnc;
+  TP_UInt16 accessTechnology;
+};
+
+/* copying a small structure with combined pointer increment */
+void ZeroPlmn1 ( struct MPD_Mm_Plmn *plmn, TP_UInt16 num )
+{
+  static const struct MPD_Mm_Plmn zeroPlmn = {0, 0, 0};
+  while ( num-- )
+  {
+    *plmn++ = zeroPlmn;
+  }
+}
+
+The assembly generated for this construct is incorrect.
+
+    *plmn++ = zeroPlmn;
+
+This produces
+        .line   8
+        STRH      A3, [A1, #0]          ; |40| 
+        ADD       A1, #8                ; |40| 
+        STRH      A3, [A1, #2]          ; |40| 
+        ADD       A1, #8                ; |40| 
+        STRH      A3, [A1, #4]          ; |40| 
+        ADD       A1, #8                ; |40| 
+ 
+There are extra "ADD A1, #8" instructions being generated. Only 1 
+would be expected for a structure 8 bytes in size.
+ 
+-----------------------------
+WORKAROUND
+
+Avoid side effects on the left-hand side of structure assignments.  In
+this case, assign the structure in one statement, and increment the
+pointer in another.
+
+
+-----------------------------
+7.  SDSsq44060
+-----------------------------
+
+Headline: Optimizer generates fatal error when compiling program.
+
+-----------------------------
+RELEASE NOTE
+
+Certain cases involving function calls on the left-hand side of
+assignments may cause an optimiser crash in the ARM 2.40 series and the
+LEAD3 2.70 series of tools.
+
+
+-----------------------------
+8.  SDSsq44170
+-----------------------------
+
+Headline: Bad hoisting leads to use of undefined variable.
+
+-----------------------------
+RELEASE NOTE
+
+Using a "const" variable that is declared within a loop body and also 
+updated on each iteration may cause that variable to be used before 
+it's defined as the expression is moved in front of the loop
+
+-----------------------------
+WORKAROUND
+
+Avoid "const" on variables declared and updated within loops.
+
+
+********************************************************************************
+   v2.59
+********************************************************************************
+
+-----------------------------
+1. SDSsq43910
+-----------------------------
+
+Headline: Optimizer appears to be placing incorrect address in register.
+
+-----------------------------
+RELEASE NOTE
+
+In the optimizer there is a pass that occurs prior to the partial redundancy 
+elimination optimization.  In this pre-pass certain expressions are identified 
+that will be associated with temporary variables.  There is a specific 
+circumstance that could cause a temporary to be used but the assignment to that 
+temp could be missing.  This can happen with an array of integers such that 
+every of use of the array values is cast to a structure pointer and 
+dereferenced.
+
+
+********************************************************************************
+   v2.58
+********************************************************************************
+
+-----------------------------
+1.  SDSsq41431
+-----------------------------
+
+Headline: Assembler causes a segmentation fault.
+
+-----------------------------
+RELEASE NOTE
+
+The assembler can cause a segmentation fault with the following code:
+
+cl470 a.asm
+
+Here is a.asm:
+
+        .title  "whatever"
+        .state32
+QWERTY  .equ    (1 << 12)
+        .sect   ".xyz"
+        .global _abc
+_abc:
+        MRC     P15, #0, R0, C1, C0, #0       
+        ORR     R0, R0, #QWERTY               
+        MCR     P15, #0, R0, C1, C0, #0       
+        B       $ + 4
+        MOV     PC, R14                       
+        .end
+
+-----------------------------
+2.  SDSsq42331
+-----------------------------
+
+Headline: The rts routine strcmp() may not return expected negative value 
+when (string a < string b).
+
+-----------------------------
+RELEASE NOTE
+
+The rts routine strcmp() does not generate an expected negative result when 
+the first string is lexicographically less than the second string in the
+following example:
+
+    char a[5] = { 0x61, 0x62, 0x0 };
+    char b[5] = { 0x61, 0xA9, 0x0 };
+    int  x    = strcmp(a, b);
+
+-----------------------------
+3.  SDSsq42700
+-----------------------------
+
+Headline: The compiler generates incorrect results returned for 
+'int b=INT_MIN; return b>=INT_MIN;'.
+
+-----------------------------
+RELEASE NOTE
+
+When optimization is not used, the TMS470 compiler can generate incorrect 
+code for this sample code:
+
+int f1() { int b=INT_MIN; return b>=INT_MIN; }
+
+-----------------------------
+4.  SDSsq43499
+-----------------------------
+
+Headline: The optimizer may incorrectly assume that an if condition is always 
+true in certain code.
+
+-----------------------------
+RELEASE NOTE
+
+In certain code, the optimizer will generate code based on an incorrect
+assumption that certain comparison expression are always evaluated to true.
+The bug only occurs in expressions such as (1 << i) && 11.  The expression 
+requires an integer constant shifted by a integer type variable that is ANDED 
+with another integer constant.  This second integer constant (11 in this 
+example) can not contain a bit pattern of consecutive 1's.  For example, if the 
+expression is (1 << i) && 15 the bug does not occur. 
+
+
+--------------------------------------------------------------------------------
+********************************************************************************
+
+   v2.62
+
+********************************************************************************
+
+
+
+-----------------------------
+
+1.  SDSsq44688
+
+-----------------------------
+
+
+
+Headline: Optimizer deletes a function's parameter which causes an error.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Under certain circumstances, calling a function with two arguments that
+
+are different pointers into the same string literal will produce
+
+unexpected results, if the literal is propagated into the called function
+
+through one parameter but not the other and the string literal is cloned
+
+into two objects.
+
+
+
+
+
+-----------------------------
+
+2.  SDSsq44787
+
+-----------------------------
+
+
+
+Headline: Function inlining cause wrong constant propagation.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The optimiser's parameter-specialisation pass may incorrectly conclude
+
+that a function's parameter is always passed the same value, under
+
+particular circumstances including one call that passes a global variable
+
+and another that passes a dereference of a pointer-to-void.
+
+
+
+
+
+-----------------------------
+
+3.  SDSsq44806
+
+-----------------------------
+
+
+
+Headline: Loop inversion optimization problem with -o2.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+At optimisation levels -o2 or -o3, a loop with a pointer-typed index
+
+variable, and an iteration range that is not divisible by the loop
+
+increment, may incorrectly iterate one extra time.  For example, a loop
+
+of char*x from &a to &a+4 by 16;  it should only iterate once.
+
+
+
+
+
+-----------------------------
+
+4.  SDSsq44864
+
+-----------------------------
+
+
+
+Headline: Optimizer generates wrong code for function calls involving state 
+
+change.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Optimizer may not preserve register contents for function calls 
+
+involving mode changes from 32 BIS to 16 BIS.
+
+
+
+
+
+********************************************************************************
+
+   v2.61
+
+********************************************************************************
+
+
+
+-----------------------------
+
+1.  SDSsq44525
+
+-----------------------------
+
+
+
+Headline: Linker goes into infinite loop. 
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The linker can go into an infinite loop under the following conditions:
+
+
+
+1. A handed-coded assembly file is assembled with the -g debug switch.
+
+2. This assembly file must include the .clink directive to conditionally
+
+link routines in the source.
+
+3. There must be 2 different sections that are reference through the
+
+.clink directives.
+
+
+
+When the resulting object file is included in the link, the debug
+
+information can cause the linker to go into an infinite loop.  This only
+
+occurs with the 2.5x or 2.60 releases.  The assembler is fixed to
+
+generate the correct debug info.  The linker has been updated to avoid
+
+an infinite loop if this incorrect debug info is included in the object
+
+file by the assembler.
+
+
+
+-----------------------------
+
+2.  SDSsq44638
+
+-----------------------------
+
+
+
+Headline: Optimizer does not consider that macro parameter is modified by 
+
+          function.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+If function A defines a local object and places its address in another
+
+object which is then passed as the argument in a call to function B, the
+
+optimiser may not allow for possible modifications of the array in B,
+
+and allow uses which follow the call to move ahead of it.  In other words,
+
+it assumes that local variables in A are not visible in B, and misses the
+
+exception when the local's address is taken.
+
+
+
+
+
+-----------------------------
+
+3.  SDSsq44641
+
+-----------------------------
+
+
+
+Headline: Optimization is eliminating if statement and assuming null.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+If function A() calls function B() more than once, and function A() is
+
+called from outside the file, and one of its calls to B() supplies a
+
+constant argument while another is a pass-through of its own parameter,
+
+then optimisation at -o3 may erroneously conclude that the parameter of
+
+B() is always constant and specialise it away.
+
+
+
+
+
+********************************************************************************
+
+   v2.60
+
+********************************************************************************
+
+
+
+-----------------------------
+
+1.  SDSsq30834
+
+-----------------------------
+
+
+
+Headline: Parser may crash when a prototype of a function is missing.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Parser may crash under a condtion while processing 
+
+the statement
+
+
+
+    (void)fp;
+
+
+
+where fp is a pointer to a class.
+
+
+
+
+
+-----------------------------
+
+2.  SDSsq31061
+
+-----------------------------
+
+
+
+Headline: Parser crashes for C++ code.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+In rare cases the parser can crash in expressions of the form
+
+  TYPE obj = p->()(arg);
+
+where obj is a local variable of some class type and p is a pointer to 
+
+a virtual function, which is being called indirectly.
+
+
+
+
+
+-----------------------------
+
+3.  SDSsq34468, SDSsq44402
+
+-----------------------------
+
+
+
+Headline: Compiling with optimization accesses an uninitialized local variable.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Compiling C++ code with optimization may generate code which accesses a local 
+
+variable before the initial value has been assigned to it.
+
+
+
+
+
+-----------------------------
+
+4.  SDSsq42313
+
+-----------------------------
+
+
+
+Headline: Thumb-mode generates incorrect result when using 'long long'.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Incorrect results for code using 'long long' are generated when 
+
+building for Thumb-mode (-mt).
+
+
+
+
+
+-----------------------------
+
+5.  SDSsq43668
+
+-----------------------------
+
+
+
+Headline: Using archiver to replace certain modules in lib removes other 
+
+modules.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Using the archiver to replace certain object files in a library 
+
+results in another object being removed from the library.
+
+
+
+
+
+-----------------------------
+
+6.  SDSsq44036
+
+-----------------------------
+
+
+
+Headline: Optimizer generates incorrect code for certain structure code 
+
+constructs.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The optimizer is generating incorrect code for certain code constructs 
+
+involving structures.
+
+
+
+Consider the following C code:
+
+
+
+typedef unsigned short int TP_UInt16;
+
+struct MPD_Mm_Plmn
+
+{
+
+  TP_UInt16 mcc;
+
+  TP_UInt16 mnc;
+
+  TP_UInt16 accessTechnology;
+
+};
+
+
+
+/* copying a small structure with combined pointer increment */
+
+void ZeroPlmn1 ( struct MPD_Mm_Plmn *plmn, TP_UInt16 num )
+
+{
+
+  static const struct MPD_Mm_Plmn zeroPlmn = {0, 0, 0};
+
+  while ( num-- )
+
+  {
+
+    *plmn++ = zeroPlmn;
+
+  }
+
+}
+
+
+
+The assembly generated for this construct is incorrect.
+
+
+
+    *plmn++ = zeroPlmn;
+
+
+
+This produces
+
+        .line   8
+
+        STRH      A3, [A1, #0]          ; |40| 
+
+        ADD       A1, #8                ; |40| 
+
+        STRH      A3, [A1, #2]          ; |40| 
+
+        ADD       A1, #8                ; |40| 
+
+        STRH      A3, [A1, #4]          ; |40| 
+
+        ADD       A1, #8                ; |40| 
+
+ 
+
+There are extra "ADD A1, #8" instructions being generated. Only 1 
+
+would be expected for a structure 8 bytes in size.
+
+ 
+
+-----------------------------
+
+WORKAROUND
+
+
+
+Avoid side effects on the left-hand side of structure assignments.  In
+
+this case, assign the structure in one statement, and increment the
+
+pointer in another.
+
+
+
+
+
+-----------------------------
+
+7.  SDSsq44060
+
+-----------------------------
+
+
+
+Headline: Optimizer generates fatal error when compiling program.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Certain cases involving function calls on the left-hand side of
+
+assignments may cause an optimiser crash in the ARM 2.40 series and the
+
+LEAD3 2.70 series of tools.
+
+
+
+
+
+-----------------------------
+
+8.  SDSsq44170
+
+-----------------------------
+
+
+
+Headline: Bad hoisting leads to use of undefined variable.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+Using a "const" variable that is declared within a loop body and also 
+
+updated on each iteration may cause that variable to be used before 
+
+it's defined as the expression is moved in front of the loop
+
+
+
+-----------------------------
+
+WORKAROUND
+
+
+
+Avoid "const" on variables declared and updated within loops.
+
+
+
+
+
+********************************************************************************
+
+   v2.59
+
+********************************************************************************
+
+
+
+-----------------------------
+
+1. SDSsq43910
+
+-----------------------------
+
+
+
+Headline: Optimizer appears to be placing incorrect address in register.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+In the optimizer there is a pass that occurs prior to the partial redundancy 
+
+elimination optimization.  In this pre-pass certain expressions are identified 
+
+that will be associated with temporary variables.  There is a specific 
+
+circumstance that could cause a temporary to be used but the assignment to that 
+
+temp could be missing.  This can happen with an array of integers such that 
+
+every of use of the array values is cast to a structure pointer and 
+
+dereferenced.
+
+
+
+
+
+********************************************************************************
+
+   v2.58
+
+********************************************************************************
+
+
+
+-----------------------------
+
+1.  SDSsq41431
+
+-----------------------------
+
+
+
+Headline: Assembler causes a segmentation fault.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The assembler can cause a segmentation fault with the following code:
+
+
+
+cl470 a.asm
+
+
+
+Here is a.asm:
+
+
+
+        .title  "whatever"
+
+        .state32
+
+QWERTY  .equ    (1 << 12)
+
+        .sect   ".xyz"
+
+        .global _abc
+
+_abc:
+
+        MRC     P15, #0, R0, C1, C0, #0       
+
+        ORR     R0, R0, #QWERTY               
+
+        MCR     P15, #0, R0, C1, C0, #0       
+
+        B       $ + 4
+
+        MOV     PC, R14                       
+
+        .end
+
+
+
+-----------------------------
+
+2.  SDSsq42331
+
+-----------------------------
+
+
+
+Headline: The rts routine strcmp() may not return expected negative value 
+
+when (string a < string b).
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+The rts routine strcmp() does not generate an expected negative result when 
+
+the first string is lexicographically less than the second string in the
+
+following example:
+
+
+
+    char a[5] = { 0x61, 0x62, 0x0 };
+
+    char b[5] = { 0x61, 0xA9, 0x0 };
+
+    int  x    = strcmp(a, b);
+
+
+
+-----------------------------
+
+3.  SDSsq42700
+
+-----------------------------
+
+
+
+Headline: The compiler generates incorrect results returned for 
+
+'int b=INT_MIN; return b>=INT_MIN;'.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+When optimization is not used, the TMS470 compiler can generate incorrect 
+
+code for this sample code:
+
+
+
+int f1() { int b=INT_MIN; return b>=INT_MIN; }
+
+
+
+-----------------------------
+
+4.  SDSsq43499
+
+-----------------------------
+
+
+
+Headline: The optimizer may incorrectly assume that an if condition is always 
+
+true in certain code.
+
+
+
+-----------------------------
+
+RELEASE NOTE
+
+
+
+In certain code, the optimizer will generate code based on an incorrect
+
+assumption that certain comparison expression are always evaluated to true.
+
+The bug only occurs in expressions such as (1 << i) && 11.  The expression 
+
+requires an integer constant shifted by a integer type variable that is ANDED 
+
+with another integer constant.  This second integer constant (11 in this 
+
+example) can not contain a bit pattern of consecutive 1's.  For example, if the 
+
+expression is (1 << i) && 15 the bug does not occur. 
+
+
+
+
+
+   v2.57
+--------------------------------------------------------------------------------
+
+1.  SDSsq42459
+
+Headline: Optimizer generates incorrect code for do..while loop.
+
+-----------------------------
+RELEASE NOTE
+
+Loops whose termination depends on unsigned-integer wraparound may have
+their trip counts computed incorrectly, which may lead to the loop's
+incorrect deletion.
+
+There is code that is trying to calculate a loop's trip count, in
+general form as "N - I";  when both N and I are ICONs, which the
+optimizer computes using the literal values instead of building a
+symbolic expression, aiming to have a more precise value for the trip count.
+
+However, when the loop depends on an unsigned integer wrapping
+around, I will be 0 or greater and N can be 0, and the simple "N - I"
+gives the wrong answer.
+
+-----------------------------
+TEST CASE
+
+typedef  unsigned long  u32;
+typedef  unsigned short u16;
+typedef  unsigned char  u8;
+
+int bug(void)
+{
+    int test;
+    u32 param;
+
+    test = 1;
+
+    param = 0x10000000;
+    do
+    {
+        test++;
+        test++;
+        param += 0x10000000;
+    } while(param != 0);
+
+    return test;
+}
+
+
+volatile int ret;
+
+void c_main(int p)
+{
+    ret = bug();
+}
+
+2. SDSsq42460
+
+Headline: Compiler generates incorrect code for certain switch statements.
+
+-----------------------------
+RELEASE NOTE
+
+The compiler may sometimes generate incorrect code for certain switch 
+statements.
+
+The bug is that a branch to incorrect label is being generated, instead
+of branch to default label.
+
+In the failing test case, the control flow looks like this
+
+L0:
+	Bcond   SWITCH_BLOC
+L1:	...
+	...
+	B       SOMEWHERE_ELSE
+SWITCH_BLOC:
+	switch prolog
+SW1: ; switch statement
+
+When SW1 is being processed for switch table compression by the code-gen
+(happens with optimization in Thumb mode), the compression logic tries
+to convert the switch SW1 into a compare branch sequence. At the end of
+the compare-branch sequence, the control needs to be transferred to the
+default case label. The original logic in switch table compression
+assumes that the switch table predecessor branches to the default case.
+In the above sequence, the switch table predecessor block L0 branches to
+the switch block (SWITCH_BLOC). This causes the switch table
+compare-branch sequence to generate a branch to SWITCH_BLOC at the end
+of compare-branch sequence causing an infinite loop.
+
+3. SDSsq42677
+
+Headline: Optimizer bug with code involving stack objects and logical 
+operations.
+
+-----------------------------
+RELEASE NOTE
+
+The optimizer may incorrectly simplify A&A or A|A to just A, even if
+A has side effects -- eg, printf("x")&printf("x") would become
+printf("x").
+
+-----------------------------
+TEST CASE
+
+struct Stack
+{
+    int m_aValues[32];
+    int* m_paValues;
+};
+
+void
+push(Stack* pStack, int value)
+{
+    *++pStack->m_paValues = value;
+}
+
+int
+pop(Stack* pStack)
+{
+    return *pStack->m_paValues--;
+}
+
+void
+bitwiseAnd(Stack* pStack)
+{
+    push(pStack, pop(pStack) & pop(pStack));
+}
+
+4. SDSsq41866
+
+Headline: cg470 crashes with "CONSTANT TABLE ERROR" message.
+
+-----------------------------
+RELEASE NOTE
+The cg470 can crash with the following message:
+
+   INTERNAL ERROR: CONSTANT TABLE ERROR - CODEGEN ABORTED
+
+   This may be a serious problem.  Please contact customer support with a
+   description of this problem and a sample of the source files that caused
+   this INTERNAL ERROR message to appear.
+
+5. SDSsq42192
+
+Headline: Optimizer generates code with a missing struct variable assignment.
+
+-----------------------------
+RELEASE NOTE
+
+The optimizer may remove an assignment to a nested structure bitfield.  Example 
+code:
+
+        void missing_assignment (void)  
+        {
+           structure1.b2_UN.b_ST.bit0 = global2;
+
+           //This assignment is missing in generated ASM
+           structure1.ubyte1 = global3; 
+
+           structure1.b1_UN.b_ST.bit2 = global1;
+
+           if (structure1.b1_UN.b_ST.bit3)  
+           { 
+              structure1.uword1 = global4;  
+           } 
+        }
+
+During optimisation, we have code that looks like this internally:
+
+        K$1 = &structure1;
+        ((unsigned *)K$1)[6] = *((unsigned *)&structure1+24) & 0xffff7fffu| *
+                                &global2*32768&0x8000;
+        ((unsigned *)K$1)[6] = *((unsigned *)&structure1+24) & 0xffffffdfu| *
+                                &global1*32&0x20;
+
+The optimiser does not recognise that "((unsigned *)K$1)[6]" and
+"*((unsigned *)&structure1+24)" refer to the same location -- the
+casts confuse things -- and thus erroneously concludes that the first
+array assignment can be removed as "dead."
+
+6. SDSsq42769
+
+Headline: Compiler is missing --v5e switch and support for ARM v5 instructions.
+
+-----------------------------
+RELEASE NOTE
+
+In compiler version 2.25, there is assembler support for the new DSP
+instructions found in ARM architecture version V5E.  This support is
+through a shell switch -v5e or an assembler switch --v5e.  This support
+is now included in the 2.5x compilers.  These instruction are supported:
+
+  CLZ
+  QADD
+  QSUB
+  QDADD
+  QDSUB
+  SMLABB
+  SMLABT
+  SMLATB
+  SMLATT
+  SMLAL
+  SMLALBB
+  SMLALBT
+  SMLALTB
+  SMLALTT
+  SMLAWB
+  SMLAWT
+  SMULBB
+  SMULBT
+  SMULTB
+  SMULTT
+  SMULL
+  SMULWB
+  SMULWT
+  UMLAL
+  UMULL
+
+
+--------------------------------------------------------------------------------
+   v2.56
+--------------------------------------------------------------------------------
+
+1.  SDSsq40054 
+
+    Headline: Assembler does not recognize CPSR/SPSR new field mask bits.
+
+    --------------------------
+    RELEASE NOTE
+
+    The assembler only accepts these fields in the CPSR/SPSR register as 
+    part of the MSR instruction:
+
+    MSR CPSR_ALL, reg
+    MSR CPSR_FLG, reg
+
+    The latest ARM syntax was changed to:
+
+    MSR CPSR_c, reg
+    MSR CPSR_x, reg
+    MSR CPSR_s, reg
+    MSR CPSR_f, reg
+
+    where each field mask represents specific mask bits in the PSR registers.
+    The 2.55 assembler does not accept these newer fields.
+
+2.  SDSsq40212 
+
+    Headline: Compiler generates incorrect code for certain specific functions.
+
+    --------------------------
+    RELEASE NOTE
+
+    When the following test case is compiled with "-mt -o2":
+
+    typedef  unsigned long  u32;
+    typedef  unsigned short u16;
+    typedef  unsigned char  u8;
+
+    u8  global8;
+    u32 global32;
+
+    u8 many_paramaters1( u32 r0, u32 r1, u32 r2, u32 r3, u8 stk0, u8 stk1)
+    {
+        if (r0)
+            stk1 = 1;
+
+        if (stk1 == 5)
+            global32 = 2;
+
+        return 0;
+    }
+
+    u8 many_paramaters2( u32 r0, u32 r1, u32 r2, u32 r3, u16 stk0, u8 stk1)
+    {
+        if (r0)
+            stk1 = 1;
+
+        if (stk1 == 5)
+            global32 = 2;
+
+        return 0;
+    }
+
+    main()
+    {
+        global32 = 3;
+        global8  = 3;
+
+        global8 = many_paramaters1(0, 1, 2, 3, 4, 5);
+        global8 = many_paramaters2(0, 1, 2, 3, 4, 5);
+    }
+
+    these assembler warnings are generated:
+
+    "bug.asm", WARNING! at line 99: [W0002] Offset not word aligned
+                STR       A2, [V4, #1]          ; |14|
+
+    The bug involves passing a char or short type as an argument to a routine 
+    where the number of arguments requires the char or short type to be passed 
+    on the stack.  Our compiler will always create a local copy of the same 
+    name of these arguments.  The optimizer and the codegen will attempt 
+    different optimizations on these copies.  One optimization is that the 
+    optimizer will attempt to widen the local to a word size.  This makes 
+    sense, particularly in thumb, since you can generate better code with 
+    word-size objects than byte, or half-word objects.  A latter codegen pass 
+    attempts to remove the copy instruction by using the same stack location as 
+    the argument.  The bug occurs at this point.  The copy instruction, after 
+    widening, was a move from the 8-bit char argument to a 32-bit local copy.  
+    The codegen makes an address change of the 32-bit copy to the original 
+    argument location.  Except this is a 8-bit aligned address, which doesn't 
+    work on ARM when loading or storing 32-bits.  
+
+    The bug will always create an assembler warning in thumb-mode, since the 
+    offset needs to be scaled by 4.  The bug will exist in arm-mode, but no 
+    assembler warning is generated since the offset in a [reg, #imm12] indirect 
+    operand is not scaled.
+
+3.  SDSsq31999
+
+    Headline: Trailing radix indicator mishandled on command line options.             
+    --------------------------
+    RELEASE NOTE
+
+    Compiler/linker does not correctly parse command-line hex numbers of 
+    the using the trailing indicators, i.e ABCDh for a hex number or 6543Q 
+    for an octal number.  Numbers of the form 0xABCD and 06543 are parsed 
+    correctly.
+
+4.  SDSsq37922
+
+    Headline: Linker does not add call to trampoline when needed.
+
+    --------------------------
+    RELEASE NOTE
+
+    It is possible that the linker will miss adding a call to a trampoline
+    for a call that requires one.  This occurs even though the correct 
+    trampoline has been generated, resulting in a fatal error from the 
+    linker. 
+
+5.  SDSsq39451
+
+    Headline: Parser crash using pragmas with C++ template functions.
+
+6.  SDSsq40969
+
+    Headline: Linker gives no error when call to trampoline is greater than 
+    4MB away.  
+
+    --------------------------
+    RELEASE NOTE
+
+    Linker should be able to identify situations where call to trampoline 
+    could be greater than than 4MB away.
+
+7.  SDSsq41014
+
+    Headline: Linker -f fill option allows 32-bit signed int instead of 
+    unsigned int. 
+
+    --------------------------
+    RELEASE NOTE
+
+    The compiler/linker accepted only SIGNED values for the -f (linker fill)
+    option.  For example, for only values <= 0x7FFF FFFF are accepted.
+
+8.  SDSsq41215
+
+    Headline: Optimizer crash.
+
+9.  SDSsq41311
+
+    Headline: Codegen doesn't account for constant table in the middle of 
+    switch table.
+
+    --------------------------
+    RELEASE NOTE
+
+    The code generator may not account for a constant table in the middle 
+    of a switch table code, therby generating incorrect code.
+
+10. SDSsq41482
+
+    Headline: Optimiser crash with "x += a && b"                                      
+    --------------------------
+    RELEASE NOTE
+
+    Statements of the form "x += a && b" may cause the optimiser to crash.
+
+11. SDSsq41736
+
+    Headline: Linker memory bugs.
+
+    --------------------------
+    RELEASE NOTE
+
+    There are 2 issues in the linker related to trampolines that could cause 
+    the linker to crash.
+
+12. SDSsq41271
+
+    Headline: Optimizer (-o2 and -o3) generates incorrect code for nested loops.
+
+    --------------------------
+    RELEASE NOTE
+
+    For ARM and MSP only, the optimiser may generate incorrect code for a
+    loop nest with an early exit (eg, a return) from the inner loop with an
+    expression that uses the outer loop's control variable, when that
+    variable is not of type int.
+
+    --------------------------
+    TEST CASE
+    
+    Example C-Code:
+    
+        unsigned char func1(unsigned char* arg1)
+        {
+            unsigned char abc;
+            unsigned char def;
+            unsigned char ghi;
+
+            for(abc = 0; abc < 8; abc++)
+            {
+                ghi = *(arg1 + 7 - abc);
+
+                if(ghi != 0)
+                {
+                    for(def = 0; def < 8; def++)
+                        if((ghi & (0x80 >> def)) != 0) 
+                            return (((7-abc)*8)+(7-def));
+                }
+             }
+             return 0;
+         }
+
+    Assembly-Code:
+
+        ...
+        ;** ----------------------- def = 0;
+        MOV A1, #0
+        ...
+        ;** 20 ----------------------- return (unsigned char)(63-def);
+        MOV A2, #63
+        SUB A1, A2, A1 ; compiler uses wrong loop counter
+        LSL A1, A1, #24
+        LSR A1, A1, #24
+        POP {V1, PC} 
+        ...
+
+
+--------------------------------------------------------------------------------
+   v2.55
+--------------------------------------------------------------------------------
+
+1.  SDSsq37048
+
+    Headline: While loop with default case in a switch stalls the optimizer 
+    indefinite.
+
+    --------------------------
+    RELEASE NOTE
+
+    While loop with default case in a switch stalls the optimizer 
+    indefinitely.  Can get the following test case compiled after removing 
+    the default case in the switch.
+
+    #define STATE	0x00
+    #define DELAY	15000
+
+    void main()
+    {
+        unsigned short int           v_state;
+        while(1)
+        {
+            switch (v_state)
+            {
+                case STATE:
+                {
+                    break;
+                }
+		default:
+                {
+                    break;
+                }
+            }
+        }
+    }
+
+2.  SDSsq37207
+
+    Headline: Internal error compiling (E, call()) if call returns a structure.
+
+    --------------------------
+    RELEASE NOTE
+
+    The compiler may abort with an internal error on an expression where a 
+    comma-operator has an operand which is a function call, as in: "s1 = 
+    (E, call());". For this failure to occur, two additional conditions 
+    are required: 1) the call returns a structure type, and 2) the result 
+    of the expression is used (for example, in an assignment or other 
+    expression). The compiler aborts with a message such as: ">> foo.c, 
+    line 7: INTERNAL ERROR: no match for SCOMMA".
+
+    --------------------------
+    TEST CASE
+
+    /* compile without optimization */
+
+    struct S { int a; int b; };
+
+    int x,y;
+
+    struct S foo()
+    {
+       return (x=y),foo();
+    }
+
+    --------------------------
+    WORKAROUND
+
+    Rearrange the expression to not use a comma operator, as in "E; s1 = 
+    call();"
+
+3.  SDSsq37212
+
+    Headline: Narrowing cast of volatile expression incorrectly narrows memory 
+    operand in little endian mode.
+
+    --------------------------
+    RELEASE NOTE
+
+    When an expression which reads a memory object is cast to a narrower
+    type, the compiler optimizes the memory reference by narrowing the type
+    to the type it will eventually be cast to.  That is, the compiler
+    doesn't bother to load the extra bytes that are going to be ignored,
+    anyway.  However, this optimization is not legal for volatile objects. 
+    Such objects must always be accessed with exactly the type of the object.
+    This bug does not affect big-endian targets.
+
+    --------------------------
+    TEST CASE
+
+    #include <limits.h>
+
+    #if INT_MAX > CHAR_MAX
+    unsigned int foo0(register volatile unsigned int *addr)
+    {
+        return (char)addr[6];
+    }
+    #endif
+
+    #if INT_MAX > SHRT_MAX
+    unsigned int foo1(register volatile unsigned int *addr)
+    {
+        return (short)addr[6];
+    }
+    #endif
+
+    #if !_TMS320C6X
+    unsigned long foo2(register volatile unsigned long *addr)
+    {
+        return (char)addr[6];
+    }
+    #endif
+
+    #if defined(LLONG_MAX) && (LLONG_MAX > INT_MAX)
+    unsigned long long foo3(register volatile unsigned long long *addr)
+    {
+        return (int)addr[6];
+    }
+    #endif
+
+4.  SDSsq37224
+
+    Headline: 2.54 compiler missing dead function list with subsections.
+
+    --------------------------
+    RELEASE NOTE
+
+    In certain situations, the linker will remove unreferenced functions.
+    For example, veneers that are not called or functions compiled with the
+    subsection (-ms) switch that are not called.  To obtain a text file of
+    those functions removed by the linker, use the --
+    generate_dead_funcs_list.
+
+     For example:
+       cl470 aa.c -z --generate_dead_funcs_list
+
+    which will create a text file called dead_funcs.txt.  To write the list
+    to a different file name use:
+
+       cl470 aa.c -z --generate_dead_funcs_list=fname
+
+    The switch can also be passed directly to the linker:
+
+       lnk470 --generate_dead_funcs_lis
+
+5.  SDSsq37921
+
+    Headline: Compiler incorrectly places certain code in .const sections.
+
+    --------------------------
+    RELEASE NOTE
+
+    If a constant C++ array object is initialized with both a integer value
+    and a class member object, it is possible that the array object will be
+    placed in the .const section but also dynamically initialized at run
+    time.  For example,
+
+    class X
+    {
+       public:
+         static const int a;
+    };
+    static const int arr[] = { 0, X::a };
+
+    In this example, the array is placed in the .const section and its first
+    element is initialized as 0.  The second element is then initialized in
+    the __sti function that is called at boot time.  The bug here is that the
+    .const section should not be written to at run.
+
+    The bug fix is that the codegen will now recognize this situation and
+    place these objects in the .bss section.
+
+    --------------------------
+    TEST CASE
+
+    void f_test(void);
+
+    class Test
+    {
+    public:
+        typedef void (*fTest)(void);
+
+        enum eTest
+        {
+            test_1,
+            test_2
+        };
+
+        static const fTest tTest[];
+    };
+
+    /* This structure will be map into memory */
+    static const Test::fTest my_test_ok[] = 
+    {
+        Test::tTest[Test::test_1]
+    };
+
+    /* This structure will be map into flash */
+    static const Test::fTest my_test_ko[] = 
+    {
+        Test::tTest[Test::test_1],
+        f_test
+    };
+
+6.  SDSsq38036
+
+    Headline: Tail merging could merge into an entry block resulting in an 
+    assembler failure.
+
+    --------------------------
+    RELEASE NOTE
+
+    It is possible with a test case where a loop is merged with an entry
+    block, that the loop branch will be to the entry block label.  Since tail
+    merging takes place before the prolog code is generated, this would
+    create incorrect code.  Here is a sample test case:
+
+    void func()
+    {
+        int a = 0, b = 0, c = 0;
+        int i;
+
+        foo1(a, b, c);
+        foo2();
+
+        for ( ; ; )
+        {
+           a = 0; b = 1000; c = 1;
+           foo1(a, b, c);
+           foo2();
+
+           blah();
+
+           a = 0; b = 0; c = 0;
+           foo1(a, b, c);
+           foo2();
+        }
+    }
+
+    This will only occur if the entire entry block is merged, as in the test
+    case above.  The code generator will now split the entry block in the
+    above case, which will ensure the label will be placed after the prolog
+    code.
+
+    --------------------------
+    TEST CASE
+
+    {
+        int a = 0, b = 0, c = 0;
+        int i;
+
+        foo1(a, b, c);
+        foo2();
+
+        for ( ; ; )
+        {
+           a = 0; b = 1000; c = 1;
+           foo1(a, b, c);
+           foo2();
+
+           blah();
+
+           a = 0; b = 0; c = 0;
+           foo1(a, b, c);
+           foo2();
+        }
+    }
+
+7.  SDSsq38362
+
+    Headline: Linker conditional linking ignores -u symbol inclusion.
+
+    --------------------------
+    RELEASE NOTE
+
+    If an input section containing the definition of a -u symbol is also a
+    candidate for conditional linking, the linker may erroneously exclude
+    that section from the link if the symbol is not referenced by any other
+    part of the application.
+
+8.  SDSsq38656
+
+    Headline: Compiler generates incorrect code for shift and division by 
+    constant.
+
+    --------------------------
+    RELEASE NOTE
+
+    The compiler may generate incorrect code for a shift and division by a 
+    constant with 16-bit values. The 8 MSBs of the 16-bit value are lost. 
+    The problem appears in arm-mode with -o3 -mf options.
+
+9.  SDSsq38660
+
+    Headline: Linker generates bad error about multiple mappings of 
+    sub-sections.
+
+    --------------------------
+    RELEASE NOTE
+
+    The linker may generate a bad error message about trying to map
+    an input section to multiple output sections if the input section
+    is a subsection that has already been allocated when there is a
+    reference to the subsection's base name in a subsequent output
+    section specification.
+
+    SECTIONS
+    {
+       OS1: { file.obj(.scn:_sub) } > MEM1
+       OS2: { file.obj(.scn)      } > MEM2
+    }
+
+    In the above example, the linker will generate an error about trying
+    to add ".scn:_sub" to multiple output sections when the reference to
+    "file.obj(.scn)" is being processed.
+
+    --------------------------
+    TEST CASE
+
+    main.asm:
+
+       .sect   ".text:_main"
+       nop
+       nop
+       nop
+
+       .sect   ".text:_foo"
+       nop
+       nop
+       nop
+
+       .sect   ".text"
+       nop
+       nop
+       nop
+
+       .sect   ".text:_bar"
+       nop
+       nop
+       nop
+
+    bug.cmd:
+
+    main.obj
+
+    -o bug.out
+    -m bug.map
+
+    MEMORY
+    {
+       MEM1: origin = 0x0100, length = 0x400
+       MEM2: origin = 0x1100, length = 0x400
+    }
+
+    SECTIONS
+    {
+       OS1: { main.obj(.text:_main) } > MEM1
+       OS2: { main.obj(.text)       } > MEM2
+    }
+
+
+    --------------------------
+    WORKAROUND
+
+    Place special code in a uniquely named section using CODE_SECTION or
+    DATA_SECTION pragma.  For sections that require special placement,
+    avoid using sub-sections whose base name matches any other sections 
+    in the application.
+
+10.  SDSsq36847
+
+    Headline: Compiler, under optimization, omits add when mixed with 32-bit 
+    divides.
+
+    --------------------------
+    RELEASE NOTE
+
+
+    The optimizer attempts to rewrite the expression:
+
+       (((x * 2048) / y) + 8) / 16
+
+    as basically
+
+       ((x * 2048) / (16 * y)) + 8/16
+
+    Since 8/16 is 0 with an integer type, the final expression ends up as
+
+       ((x * 248) / (16 * y))
+
+    which is wrong.  In other words, the optimizer tries to simplify an integer
+    division expression but performed an incorrect transformation.
+
+11.  SDSsq37645
+
+    Headline: Optimizer produces code which generates an infinite loop.
+
+    --------------------------
+    RELEASE NOTE
+
+    The use of a shift-and-assign sequence ('var<<=expr' or equivalent)
+    assigning to a variable used in an expression controlling the loop can
+    result in an infinite loop.  Below is a snap shot of the resultant code:
+
+    unsigned long testfunc(unsigned long d)
+    {
+        unsigned long dadj = d;
+        unsigned long cnt = 0;
+
+        while (dadj < (0x08000000)) {
+            dadj <<= 5; //dadj *= 32;
+            cnt++;
+        }
+        return cnt;
+    }
+
+    With -o2 and -o3, an infinite loop will be generated (for the while
+    loop), with -o1, correct code will be generated.
+
+12.  SDSsq38664
+
+    Headline: Shell does not accept --default_order linker option.
+
+    --------------------------
+    RELEASE NOTE
+
+    The --default_order option does not work when passed through the
+    shell. It works when passed to the linker directly.
+
+    the following does not work:
+    cl470 *.c -z --default_order lnk32.cmd -o test.out
+
+    this works:
+    lnk470 *.obj --default_order lnk32.cmd -o test.out
+
+13.  SDSsq38712
+
+    Headline: Linker trampoline branches to wrong function.
+
+    --------------------------
+    RELEASE NOTE
+
+    If a call is made from one function to another, where the caller and
+    callee are in the same source file, but in separate sections, and if
+    the caller and callee sections are placed far enough away from each
+    other such that a trampoline is needed to help the caller reach the
+    callee at run-time, the linker may generate the trampoline to the
+    wrong location.
+
+14.  SDSsq38857
+
+    Headline: Comparison of signed long variable with negative number is 
+    incorrect.
+
+    --------------------------
+    RELEASE NOTE
+
+    The codegen would transform a signed int compare with a negative constant:
+
+    x < > -1
+
+    to
+
+    x + 1 < > 0
+
+    The codegen would also transform a greater than or equal compare to 0,
+    or a less than to 0, as follows:
+
+    BLT ==> BMI (minus)
+    BGE ==> BPL (plus)
+
+    The bug occurs if the result of the codegen created add expression
+    overflows since BMI or BPL will not check for overflow.
+
+15.  SDSsq39093
+
+    Headline: Constant table entries in the middle of a function can create
+    incorrect code.
+
+    --------------------------
+    RELEASE NOTE
+
+    If the distance between 2 uses of a global variable causes a constant table
+    entry for that variable in the middle of the routine, it is possible the
+    code generator may create incorrect code.  For example, in this test case:
+
+    static void test(char idx, char b)
+    {
+        volatile char *ptr;
+
+        ptr = buffer;
+
+        (*ptr)++;
+        (*ptr)++;
+        (*ptr)++;
+
+        *ptr = idx;
+        *ptr = b;
+    }
+
+    if the constant table entry for the variable "buffer" occurs in the middle
+    of this routine, before the use of the 2 arguments, the code generator 
+    will incorrectly determine that the arguments are not used in the routine 
+    and the calling function may not set up the code to pass the arguments to 
+    the function "test".
+
+16.  SDSsq39401
+
+    Headline: The thumb-mode longjmp RTS routine will not work correctly in 
+    cross-mode code.
+
+    --------------------------
+    RELEASE NOTE
+
+    The thumb-mode longjmp routine is defined in the setjmp16.asm file as part 
+    of the RTS source code.  The return instruction for this routine is 
+    MOV PC, LR.  This instruction will not change modes.  Therefore, if setjmp 
+    was called in arm-mode, then longjmp called in thumb-mode to return to the 
+    arm-mode location, the mode-change will not take place.  For example:
+
+    jmp_buf buffer;
+    #pragma CODE_STATE(fun32, 32)
+    #pragma CODE_STATE(fun16, 16)
+
+    void fun32();
+    void fun16();
+
+    void main()
+    {
+       fun32();
+    }
+
+    void fun32()
+    {
+       setjmp(buffer);
+       fun16();
+    }
+
+    void fun16()
+    {
+       longjmp(buffer, 0);
+    }
+
+    the longjmp() call in func16() will not return to arm-mode.  The return 
+    instruction needs to be a BX LR instruction.
+
+17.  SDSsq39239
+
+    Headline: Linker trampoline code does not support ARM9 (v5TE) in Thumb mode.
+
+    --------------------------
+    RELEASE NOTE
+
+    In version 2.54, a thumb trampoline will make the call through a POP 
+    instruction.  On ARM V4, POP { PC } ignores bit[0] in the callee address, 
+    and no mode-change can take place.  Therefore, the 2.54 linker will not 
+    make any change to the callee address and bit[0] remains 0.  On ARM V5E and 
+    higher, POP { PC } will change mode based on bit[0] of the address and thus 
+    2.54 thumb trampolines perform an unintended mode change.  The linker is 
+    fixed to set bit[0] in this case, since it is ignored in ARM V4 but will 
+    behave as expected on the later architectures.
+
+18.  SDSsq39455
+
+    --------------------------
+    RELEASE NOTE
+
+    The compiler may sometimes incorrectly removing a compare instruction prior 
+    to a conditional branch.  For example, if the code generator generates this 
+    sequence of instructions:
+
+       mov reg2, reg1
+       any instruction not using reg1, reg2, or reg3, and does not set status
+       compare reg2, reg3 conditional branch
+
+    The codegen optimizes this into:
+
+       compare reg1, reg3
+       any instruction not using reg1, reg2, or reg3, and does not set status
+       conditional branch
+
+    What could happen is if any of the registers in the instruction between the 
+    compare and the branch spills, and the spill instruction is turned into a 
+    move, specifically a move from a constant to a register, that move will set 
+    the status bits. A later code generator pass then removes the compare since 
+    it thinks it is dead.
+
+19.  Tool crash fixes
+
+    SDSsq37757: Abnormal termination of the optimizer.
+    SDSsq37781: INTERNAL ERROR termination of the code generator.
+    SDSsq38067: INTERNAL ERROR termination of the parser.
+    SDSsq38276: Segmentation fault of the parser.
+    SDSsq39008: Assertion failure in the code generator.
+
+
+--------------------------------------------------------------------------------
+   v2.54.04
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq39455
+
+   Description: See version 2.55.
+
+
+--------------------------------------------------------------------------------
+   v2.54.03
+--------------------------------------------------------------------------------
+
+This patch contains these 2 fixes only.  It DOES NOT contain a fix for 
+SDSsq38656.
+
+1. DDTS #: SDSsq36847
+
+   Description: See version 2.55.
+
+2. DDTS #: SDSsq38857
+
+   Description: See version 2.55.
+
+
+--------------------------------------------------------------------------------
+   v2.54.02
+--------------------------------------------------------------------------------
+
+This patch contains this fix only.
+
+1. DDTS #: SDSsq38656
+
+   Description: See version 2.55.
+
+
+--------------------------------------------------------------------------------
+   v2.54.01
+--------------------------------------------------------------------------------
+
+Not released.
+
+
+--------------------------------------------------------------------------------
+   v2.54
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq36894
+
+   Description: There was an incorrect location for a call to _unlock()
+   in the free() routine in the rts library.  This occurs in file memory.c.
+   This is the incorrect code:
+
+   /*-----------------------------------------------------------------------*/
+   /* NO COLLESCENCE POSSIBLE, JUST INSERT THIS PACKET INTO LIST            */
+   /*-----------------------------------------------------------------------*/
+   _unlock()
+   minsert(current);
+
+   Fix: The rts source code was updated.
+
+2. DDTS #: SDSsq13595
+
+   Description: The old -mw switch, to align structs to a word boundary, 
+   was missing.
+
+   Fix:  The --align_structs switch was added.  See CGTNew.txt for details.
+
+3. DDTS #: SDSsq36935 
+
+   Description: assembler crash
+
+   Fix: Updated the assembler to fix this bug.
+
+4. DDTS #: SDSsq36334
+
+   Description: Epilog inlining bug with infinite loops:
+
+   int q190(register int x)
+   {   
+       if(x)
+         for(;;);
+
+       return 0;
+   }
+
+   Fix: Update the code generator to fix this bug.
+
+5. DDTS #: SDSsq37022
+
+   Description: The optimizer was incorrectly rewritting certain unsigned
+   integer division expressions.  For example, the following expression:
+
+   ((((x-2)*10)*10u)/10)
+
+   would be rewritten to:
+
+   (((x)*10)/10u)/10 + (((-2)*10)*10u)/10
+    
+   and then to:
+
+   (((x)*10)/10u)/10 + 429496709
+
+   This is incorrect since unsigned division cannot be distributed.  In other
+   words, the optimzer was making an incorrect assumption that an unsigned
+   division call:
+
+   unsigned_division(a + b, c) is equivalent to:
+   
+   unsigned_division(a, c) + unsigned_division(b, c).
+
+   Fix: The optimizer was updated to fix this bug.
+
+6. DDTS #: SDSsq37043
+
+   Description: The optimizer would remove the first 'if' block from the 'for'
+   loop in the following test case:
+
+      extern unsigned char v, w;
+
+      void func(signed short *ptr)
+      {
+        unsigned char i;
+        unsigned char t = v;
+        signed short temp;
+
+        for (i = 0; i < 3; i += 2)
+        {
+            temp = ptr[i];
+
+	    /* This condition will get removed */
+            if (temp < t && temp > (-t))
+	         w = 1;
+
+	    if (ptr[i + 1] < 0)
+	       ptr[i + 1] *= (-1);
+        }
+      }
+
+   The problem was caused by the optimizer incorrectly handling a unary minus
+   of an unsigned variable.  
+
+   Fix: The optimizer was updated to fix this bug.
+
+7. DDTS #: SDSsq37051
+
+   Description: Linker veneer/trampoline bug.
+
+   Fix: The linker was updated to fix this bug.
+
+
+--------------------------------------------------------------------------------
+   v2.53
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq35225
+
+   Description: The compiler did not print any banner information.  A new
+   switch, --verbose has been added.  See CGTNew.txt for details.
+
+2. DDTS #: SDSsq33421
+
+   Description: In version 2.52 the linker's default allocation algorithm
+   for output sections not listed in a linker command file changed.  A new
+   switch, --default_order has been added to reproduce the behavior of the
+   2.51 and earlier linkers.  See CGTNew.txt for details.
+
+3. DDTS #: SDSsq34739, SDSsq35382
+
+   Description: There is an optimizer bug involving references to nested
+   struct fields.  In the following pseudo-code:
+
+   A.B.C = ...
+   ...
+         = A.B.C
+   ...
+   A.B.C = ...
+   ...
+         = A.B.C
+   ...
+         = A.B.C
+
+   Two optimizations may take place.  One, the address of A.B will only be
+   calculated once and accessed through a pointer: P-C.  Also, the uses of
+   A.B.C will be replaced through temporaries.  The bug is that the
+   intervening assignment to A.B.C is missed as an alias of P->C:
+
+   P     = &A.B
+   temp  = P->C = ...
+   ...
+         = temp
+   ...
+   A.B.C = ...   /* bug occurs here */
+   ...
+         = temp
+   ...
+         = temp
+
+   Fix: The optimizer was updated to fix this bug.
+
+4. DDTS #: SDSsq34237 
+
+   Description: Compiling with file names, or file name plus directory path, 
+   with a string length of greater than 256 characters can cause the optimizer, 
+   code generator, or linker to crash.
+
+   Fix: Updated the compiler to handle long file names.
+
+5. DDTS #: SDSsq34759
+
+   Description: With levels -o2 and above, the optimizer can remove assignments 
+   to local structures.  This occurs with the use of the local structure as an 
+   argument to a function call.
+
+   Sample code:
+
+   extern int ivalue(int);
+   extern int iequals(int,int,int);
+   extern summary(const char *);
+
+   typedef struct mystruct
+   {
+      int i;
+   }MYSTRUCT;
+
+   MYSTRUCT f_128Y11(MYSTRUCT c)
+   {
+      c.i *= 2;
+      return c;
+   }
+
+   int main()
+   {
+      MYSTRUCT a = { 0 };
+      MYSTRUCT b;
+
+      b.i = ivalue(2);
+      a = b; /* bug here, a.i stays 0 instead of 2 */
+      iequals(__LINE__,f_128Y11(a).i, 4);
+      summary("PTR test #SDSsq34759");
+   }
+
+   Fix: Updated the optimizer to fix this bug.
+
+6. DDTS #: SDSsq35014
+
+   Description: The optimizer can crash when processing files containing 
+   function names greater than 256 characters.  This only occurs with the 
+   optimizer interlisting switch -os.
+
+   Fix: Updated the optimizer to fix this bug.
+
+7. DDTS #: SDSsq35356
+
+   Description: There is the possibility of long compile times with extremely
+   large files when no optimization is used.  There is a due to a code 
+   generation optimization that tracks variables as they are used in registers.  
+   Fix: Updated the code generator so that this optimization will now only take 
+   place when an optimization level is set.
+
+8. DDTS #: SDSsq35568
+
+   Description: There is a code generator bug with a post-increment, or 
+   post-decreemnt, of a 64-bit structure copy.  In the following example,
+   the loop in the function will generate incorrect code if compiled with
+   optimization and in arm-mode:
+
+   typedef struct _X
+   {
+      int x;
+      int y;
+   } X;
+
+   void func(int count, X pts[])
+   {
+      X*   endP = pts + count - 1;
+      X    tmp;
+
+     // THIS LOOP WILL FAIL!
+     while (pts < endP)
+     {
+        tmp     = *pts;
+        *pts++  = *endP;
+        *endP-- = tmp;
+     }
+   }
+
+   The code generator will generate an incorrect use of the STMDA instruction.
+   The bug can also occur in the copy of an array of 64-bit elements, either
+   double floating point type of long long type.  For example:
+
+
+   double a[]={1.23,2.34,3.45,4.56,5.67,6.78};
+
+   void func()
+   {
+        double *p,*t;
+        double *b,*s;
+        int i,j;
+        int err_found = 0;
+
+        b = (double*)calloc(sizeof(a),1);
+        s = b+sizeof(a)/sizeof(double)-1;
+        t = a + sizeof(a)/sizeof(double)-1;
+        p = a;
+
+        //THIS LOOP WILL FAIL!
+        while (p <= t)
+                *s-- = *p++;
+   }
+
+   This bug only occurs in arm-mode.
+
+   Fix: The code generator was updated to fix this bug.
+
+9. DDTS #: SDSsq35735
+
+   Description: The code generator may remove C blocks that contain only
+   embedded asm statements.  Consider the following C code:
+
+   volatile int noSWI;
+
+   void main(void)
+   {
+     noSWI = 1;
+
+     if (noSWI == 0)
+     {
+       asm("  swi #0x80");
+     }
+   }
+
+   With optimization the comparison of noSWI with 0 is generated but the branch    around the asm statement is removed, resulting in the interrupt being called:
+
+   LDR       V9, [V9, #0]
+   CMP       V9, #0
+   swi #0x80
+
+   Note, this is not a safe programming practice since the asm statement has
+   no effect on the C environment.  Embedded asm statements cannot rely on
+   specific instructions being generated by the compiler.  The preferred
+   way to program this would be to add a C function call to a hand-coded
+   assembly routine.
+
+   Fix: The code generator was updated to avoid removing C blocks of only
+   embedded assembly statements.
+
+
+10. DDTS #: SDSsq35796
+
+    Description: The compiler could generate incorrect code when accessing a
+    bitfield member of a word-sized structure in a quest operation.  This
+    structure must also be a member of a word-sized union.  Consider the
+    following test case:
+
+    #include <stdio.h>
+
+    typedef struct
+    {
+        unsigned short w;
+        unsigned short x;
+    }A;
+
+    typedef union
+    {
+        A x;
+        int i;
+    }C;
+
+    main()
+    {
+        C obj;
+        int t;
+
+        obj.x.w = 1;
+
+        t = (obj.x.w == 0) ? 0 : 2;
+
+        printf("t = %d (should be 2)\n", t);
+    }
+
+    The code generated is as follows, in thumb-mode and level -o0:
+
+    $main:
+        PUSH      {LR}
+        LSL       A1, A2, #16
+        LSR       A2, A1, #16
+        MOV       A1, #1
+        LSL       A1, A1, #16
+        ORR       A2, A1
+        MOV       A1, #0
+        BQEQ      L1
+
+    which is missing a compare and the load of A1 with 0 causes the branch to
+    always be taken.  The bug is that the code generator creates the 16-bit
+    field access as first a 32-bit AND operation to mask off the lower 16-bits 
+    and then incorrectly treats that result as a 16-bit value without a right
+    shift by 16-bits.  The bug can occur in simple if-else statements since
+    the optimizer may convert those to a quest operation.  
+
+    Fix: The code generator was updated to fix this bug.
+
+
+--------------------------------------------------------------------------------
+   v2.52
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq33291
+
+   Description: There is an optimizer bug in an attempt to combine two
+   variables that increment in step in the following loop:
+
+
+   #include <stdio.h>
+
+   main()
+   {
+       int i, j, k, l, m;
+
+       i = 0;
+       j = 1;
+       k = 0;
+       l = 0;
+       m = 0;
+
+       while (l < 100)
+       {
+           k += i > 0;
+           m += j;
+
+           l++;
+           if (l % 35 == 0) { i++; j++; }
+       }
+
+       if (k != 65 || m != 195) printf("FAIL (k = %d, m = %d)\n", k, m);
+       else                     printf("PASS\n");
+
+       return 0;
+   }
+
+   The optimizer incorrectly combines i and j in the above loop.
+
+   Fix: The optimizer was updated to fix this bug.
+
+2. DDTS #: SDSsq32894
+
+   Description: The optimizer would crash when processing certain C++ enumerated
+   types within classes.  The bug was in the parser when creating these C++  
+   types.
+
+   Fix: Updated the parser to fix this bug.
+
+3. DDTS #: SDSsq32919
+
+   Description: There is bug in the code generator when processing certain 
+   64-bit operations.  The following internal error is given:
+
+   >> bn_asm.c, line 6069: INTERNAL ERROR: no match for PLUS
+
+   This may be a serious problem.  Please contact customer support with a
+   description of this problem and a sample of the source files that caused
+   this INTERNAL ERROR message to appear.
+
+   Fix: The code generator was updated to fix this bug.
+
+4. DDTS $: SDSsq33686
+
+   Description: The linker could crash while using conditional linking, -ms,
+   and using the default debug flag, -g.  The linker was not correctly
+   removing all debug information when removing an unused function.  This
+   would later cause a crash while merging the debug info.
+
+   Fix: The linker was updated to fix this bug.
+
+
+--------------------------------------------------------------------------------
+   v2.51
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq32608
+
+   Description: Linker was not defining default output section symbols for 
+   .text, .data, or .bss in cases where there was an unresolved reference
+   to one of those symbols but the section is empty or does not have
+   any constituents.  For example, if the symbol "end" was used the linker 
+   would fail to create an executable and exit with an undefined symbol error.
+
+   Fix: The linker was updated to fix this bug.
+
+2. DDTS #: SDSsq29653
+
+   Description: There was a bug in the optimizer when it attempted to group 
+   several pointers in a single pointer plus fixed offsets.  For example, code 
+   such as:
+
+   *fftrptr++ = arcr - aici; /* line 179 
+   *fftiptr++ = aicr + arci;
+
+   was compiled as:
+
+   ;** 179 -----------------------    *W$1 = arcr-aici; 
+        MOV       A2, V9 
+        SUB       A2, A2, A4            ; |179| 
+        STR       A2, [V1, #0]          ; |179| 
+   ;** 180 -----------------------    *((++W$1)+Q$2) = aicr+arci; 
+        ADD       A2, A1, A3            ; |180| 
+        ADD       V1, #4                ; |180| 
+        LDR       A1, [SP, #8] 
+        STR       A2, [A1, V1]          ; |180| 
+
+   Clearly, W$1 must be post incremented in line 180, not pre-incremented.  The 
+   optimizer was incorrectly grouping the 2 pointers together.
+
+   Fix: The optimizer was updated to fix this bug.
+
+3. DDTS #: SDSsq29299 
+
+   Description: It was possible that the code generator could fail with an 
+   "OUT OF MEMORY" error when compiling in thumb mode.  The problem could occur 
+   with very large functions.
+
+   Fix: Added limits to the code generation pass that tracks register variables 
+   in an optimization to reduce code-size.
+
+4. DDTS #: SDSsq32654
+
+   Description: When a multiple assignment of a nested structure is used, if 
+   the fields of the structure are not word aligned the assignment may be done 
+   incorrectly.  For example, in the following code:
+
+        typedef struct _exp {
+                short i;
+                short j;
+        } exp;
+ 
+        typedef struct _complex_struct {
+                int  i;         
+                char c;
+                exp  a;
+                exp  b;
+        } complex_struct;
+ 
+        complex_struct x,y;
+
+        void func1( complex_struct* pComp ) 
+        {
+           /* a is not correctly set */
+           pComp->a = pComp->b =  func1a();
+        }
+
+   the code generator mistakenly assumes a is word aligned and generates 
+   incorrect code.  
+   
+   Fix: The code generator was updated to set the correct alignment of nested 
+   structures.
+
+5. DDTS #: SDSsq32806
+
+   Description: There is bug in the code generator optimization that attempts 
+   to remove BL instructions.  This optimization will take place if there are 
+   no function calls in the function and the function only saves and restore 
+   the return register.  The bug was that the code generator was not check all 
+   register references in load/store multiple instructions.
+
+   Fix: The code generator was update to examine all register references in 
+   this optimization.
+
+6. DDTS #: SDSsq29398
+
+   Description: There is a bug in the code generator optimization that will 
+   attempt to use load multiple instructions to create the frame rather than 
+   extra add instructions.  This optimization did not work correctly with 
+   interrupt routines.
+
+   Fix: This optimization will not take place in an interrupt routine.
+
+
+--------------------------------------------------------------------------------
+   v2.50
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq32465
+
+   Description: The code generator tail merge optimization can generate an
+   incorrect branch in a switch table.
+
+   Fix: Updated the code gen to fix this bug.  Tail merging can be disabled
+   with --disable:tail_merge.
+
+2. DDTS #: SDSsq32112
+
+   Description: There were 2 memory bugs in the code generator causing the
+   executable to run out of memory.
+
+   Fix: Updated the code gen.
+
+3. DDTS #: SDSsq32344
+
+   Description: There was a bug in the code generator's switch table 
+   optimization.  This optimization only occurs with optimization and in thumb
+   mode.
+
+   Fix: Updated the code gen.
+
+4. DDTS #: SDSsq30723
+
+   Description: The optimizer was removing the "volatileness" from parameters
+   of functions defined as inlined.
+
+   Fix: Updated the optimizer.
+
+5. DDTS #: SDSsq32392
+
+   Description: The optimizer could crash with a string parameter that was
+   greater than 256 chars.
+
+   Fix: Updated the optimizer.
+
+6. DDTS #: SDSsq32454
+
+   Description: In extremely large functions, it is possible the code 
+   generators register allocation pass could run out of memory.
+
+   Fix: Updated the code gen.
+
+7. DDTS #: SDSsq28938
+
+   Description: The code generator could generate incorrect spill code for 
+   64-bit integers.
+
+   Fix: Updated the code gen.
+
+8. DDTS #: SDSsq30610
+
+   Description: There was a bug in the optimizer in the simplification of 
+   certain sum-of-product expressions.  The following code provides an
+   example:
+
+   /*
+   Assignment to size should compute '2*nr + nf'.  Code computes
+   '2*nr - nf'.
+
+   Changes that result in correct code generation:
+     - Change the unsigned literals to signed (3u ==> 3)
+     - Delete the 'if (b < nf>' */
+
+   int a, b, nf, nr;
+
+   void report2(void)
+   {
+    int  size;
+
+    size = 3 + 3u * (nf - 1) + 2u * (nr - nf);
+
+    if (b < nf)
+	a = size;
+   }
+
+
+--------------------------------------------------------------------------------
+   v2.49
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq31240
+
+   Description: The bug is with the optimizer.  It is limited in scope and may
+                occur with optimization level 2 in the following situation:
+
+                1. The use of a local variable as an array index.
+                2. The optimizer will attempt to optimize array address
+                   calculations using that local variable.  The address is
+                   calculated once and a temporary pointer is used from that
+                   point forward.
+                3. Any expression involving that index, say "I", that is not of
+                   the form I = I + K, where K is a constant, will prevent this
+                   optimization from taking place.  The bug occurs here.  An
+                   expression of the form f(&I) was not preventing the
+                   optimization as it should have.
+
+                Here is a sample test case:
+
+                static char arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+                void func()
+                {
+                   unsigned short index;
+                   index = 2;
+
+                   if (incr(&index)) return;
+
+                   array[index] += 1;
+                   index++;
+
+                   if (incr(&index)) return;
+
+                   array[index] += 3;
+                }
+
+   Fix : The optimizer was updated to fix this bug
+
+2. DDTS #: SDSsq31477
+
+   Description: There is a bug in the code-size optimization, branch-chaining
+                (see CGTNew.txt for a description).  The assembler was 
+                generating an incorrect branch target address.  The shell was
+                also ignoring the -ab switch.  The assembler and shell were
+                updated to fix this bug.  A switch, --disable_branch_chaining,
+                was also added to turn off this optimization.
+
+
+--------------------------------------------------------------------------------
+   v2.48
+--------------------------------------------------------------------------------
+
+1. SDSsq30789   Load/store peephole optimizations in the code generator did not
+                take into account that an operand could be volatile.  The code
+                generator was updated to fix this bug.
+
+2. SDSsq30792   When using -o1 as compilation option the "if/else" statement in 
+                the code below is not taken into account.
+
+                unsigned char global_variable; 
+
+                void myproc(unsigned char param)
+                {
+
+                      unsigned long mask;
+                      mask = (param << 24);
+                      if (mask & 0x080000000)
+                            global_variable = 3;
+                      else
+                            global_variable = 4;
+
+                }
+
+                The optimizer was updated to fix this bug.
+
+3. SDSsq30745   The optimizer can hang on certain files with -o3 and -mf 
+                (compile for speed).  The optimizer was updated to fix this bug.
+
+
+--------------------------------------------------------------------------------
+   v2.47
+--------------------------------------------------------------------------------
+
+SDSsq30354      There is a bug in the optimizer when passing an argument by
+		reference through a function pointer.  For example, consider 
+                the following code:
+
+                typedef void (*weird_func) (unsigned short*);  
+
+                typedef struct {
+                    weird_func func_member;
+                } my_struct;
+
+                extern my_func2(unsigned short);
+
+                void my_func(my_struct *elem)
+                {
+                    unsigned short lg =0;
+                    elem->func_member(&lg);
+                    my_func2(lg);
+                }
+
+               When the code is compiled with -mt -o1, it is transformed by the 
+               compiler to:
+ 
+               lg = 0u;
+               (*elem->func_member)(&lg);
+               my_func2(0u);
+ 
+               The parameter lg is not taken into account when calling 
+	       func_member function even though it could've been modified.
+
+	       The optimizer was updated to fix this bug.
+
+SDSSq30304     There was a bug in the thumb mode branch chaining code-size 
+	       optimization performed by the code generator.  Branch instruction
+	       were not being correctly identified in the algorithm in the
+	       presence of comments generated with interlisting.
+
+	       The code generator was updated to fix this bug.
+
+--------------------------------------------------------------------------------
+   v2.46
+--------------------------------------------------------------------------------
+
+SDSsq29165      There is a bug in the optimizer in certain loops.  For example:
+
+                unsigned char X=0;
+                unsigned char B[12];
+                unsigned char A[12];
+
+                extern func(unsigned int);
+
+                void test(void)
+                {
+                  unsigned int index;
+
+                  X = 0;
+
+                  for (index = 0; index < 12; index++)
+                  {
+                    if (A[index] != B[index])
+                      X = 1;
+                  }   
+
+                  if (X)
+                    func(1234);
+
+                  for(;;) ;
+                }
+
+                Instead of doing 
+
+	        LDRB      V9, [A1, #0]          ; |20|
+                CMP       V9, #0                ; |20|
+                BLNE      _func 
+
+                we do an unconditional branch to func :
+
+ 	        STMFD     SP!, {LR}
+                MOV       V9, #1                ; |12|
+                LDR       A1, CON1              ; |12|
+                STRB      V9, [A1, #0]          ; |12|
+                BL        _func                 ; |18|
+
+                Bug appears with level -o2 and above.
+
+SDSsq29620      Indirect branches not identified as call points as required
+                for the Static Stack Depth Analysis Tool.  The assembler was
+                updated to fix this bug.
+
+--------------------------------------------------------------------------------
+   v2.45
+--------------------------------------------------------------------------------
+
+SDSsq28879      The optimizer can increase its run time exponentially on
+                certain complicated AND expressions.  The optimizer was 
+                updated to avoid certain expression simplifications in these
+                complex expressions.
+
+SDSsq28994      There was a bug in a code generator optimization that attempts
+                to remove unnecessary shifts.
+
+SDSsq28971      An incorrect code sequence is generated in the following test
+                case:
+
+                typedef  unsigned char UBYTE;
+                typedef  long int SLONG;
+
+                volatile SLONG global_sl =-2147483648; /* minimum for SLONG 
+                (0x80000000) */
+                volatile UBYTE BranchCounter1 = 0;
+                volatile UBYTE BranchCounter2 = 0;
+
+                void FUN_SIC_WSS_calcRuck_V () 
+                {
+                  if (global_sl>1457) 
+                    BranchCounter1++; 
+
+                  if (global_sl>1456) 
+                    BranchCounter2++; 
+                }
+
+                The code fragment :
+
+                if (global_sl>1457) 
+
+                generates the following ASM code: 
+
+                LDR       V9, CON1              ; |23| 
+                LDR       A1, [V9, #0]          ; |23| 
+                SUBS      A1, A1, #178          ; |23| 
+                SUBCSS    A1, A1, #1280         ; |23| 
+
+                The SUBS and SUBCSS arm incorrect for the case where global_sl 
+                is set to -2147483648. 
+
+SDSsq27673      The RTS floating point multiplication routines would produce
+                results of Infinity or NAN instead of 0 when multipling very
+                small floats.
+
+
+--------------------------------------------------------------------------------
+   v2.44
+--------------------------------------------------------------------------------
+
+SDSsq28399      There was a bug in the code generator during the merging of 
+		branch code in switch statements.  The "tail merging"
+		optimization, merging equivalent basic blocks into a single
+		basic block was incorrectly comparing instructions.  The
+		code generator was update to fix this bug.
+
+SDSsq28606      There was a bug in the thumb mode optimization of switch
+		tables that could cause the code generator to crash.  Updated
+		the code generator to fix this bug.
+
+SDSsq28337      The optimizer was inefficiently creating stack locations
+                for a single variable used in a series of "or" and "shift"
+		operations.  For example:
+
+                unsigned long func(unsigned long x)
+                {
+                  x |= (x >> 1);
+                  x |= (x >> 2);
+                  x |= (x >> 4);
+                  x |= (x >> 8);
+                  x |= (x >> 16);
+                  return x - (x >> 1);
+                }
+
+                In this example, several temporary stack locations are 
+                created to hold x rather than registers.
+
+
+--------------------------------------------------------------------------------
+   v2.42
+--------------------------------------------------------------------------------
+
+SDSsq28019      There was a bug in a thumb-mode peephole optimization.  The
+                optimization would attempt to convert 
+     
+                ADD r1,r2,#x
+                LDR r3,[r1,#0]
+ 
+                to
+ 
+                LDR r3,[r2,#x]
+                ADD r1,r2,#x
+
+                without ensuring that r2 and r3 were not the same register.
+                The code generator was updated to fix this bug.
+
+SDSsq27408      The optimizer was creating an infinite loop in certain nested
+                do while loops.
+
+SDSsq27080      The following code generates matcher error when compiled for 
+		thumb mode.
+
+                unsigned long long mask;
+                int y;
+
+                mask = ((1ULL << y) - 1ULL);
+
+                Also arm mode generates incorrect code.
+
+SDSsq27022      Incorrect code is generated for signed long long compare 
+		operation <, <=, > and >=.  
+
+
+--------------------------------------------------------------------------------
+   v2.30
+--------------------------------------------------------------------------------
+
+SDSsq25384      DWARF debug information was reporting the wrong starting address
+                for some functions and causing breakpoints to be ignored.
+
+SDSsq22792
+SDSsq22795      These were requests to reduce the code-size gap between the TI 
+		compiler and the ADS compiler.  TI v2.30 code-size vs ADS1.2 in 
+		thumb mode on a key wireless benchmark is smaller by 0.1%.
+
+SDSsq22801      Support for ARM 64-bit integers is added with an updated 
+		'long long' data type.  The RTS library is also updated to 
+		support 'long long'.
+
+SDSsq15939      The v2.30 of the tools includes a new static stack depth 
+		analysis tool, sdp470.exe.
+
+SDSsq25325      In some cases, where a switch-case statement does not have a 
+                "break" for the "default" case, the code generated by the 
+                compiler may be incorrect.
+
+                For example:
+
+                typedef unsigned int  uint8;
+                uint8 var1 = 3;
+                uint8 var2;
+                uint8 var3;
+ 
+                void main (void )
+                {
+                   uint8 temp=0;
+                   switch (var1){
+                     {
+                       case 12:
+                       temp=16;
+                       break;
+ 
+                       default:
+                       var2=2;
+                     }
+                   } /* end switch */
+                   var3 = temp;
+                }
+
+                In this case, the code for "case 12" is executed.
+
+SDSsq27363      The optimizer would crash at level -o2.
+
+SDSsq26352      The linker was not removing all C++ temporary files when 
+                using the PC tools.
+
+
+--------------------------------------------------------------------------------
+   v2.25
+--------------------------------------------------------------------------------
+
+SDSsq29963      There is a bug in the way indirect calls are handled in Thumb
+                mode when -ml (long calls) option is turned on.
+
+                With -ml, all function calls are considered as "far" calls
+                i.e., calls to locations that cannot be reached thro PC
+                relative addressing. Hence, the address of each callee is
+                loaded from memory into registers and the call is made by
+                jumping to the contents of register through a BX instruction.
+
+                For eg., if foo() is called and "-ml" option is used (thumb
+                mode), then the sequence looks like this
+
+                LDR r1,CON1
+                BX  r1
+                ...
+                CON1: $foo+1 ; The +1 is used to ensure that control stays in
+                thumb mode as BX switches mode depending on LSB of the address
+
+                In thumb mode, indirect calls are made by loading the address
+                of the callee in r4 and calling IND$CALL. However, with -ml
+                turned on, calling IND$CALL is done as follows
+
+                LDR r1, CON2
+                BX  r2
+                CON2: IND$CALL ;
+
+                Clearly, this is wrong as IND$CALL is a thumb routine and hence
+                needs to have its LSB set as follows
+
+                CON2: IND$CALL + 1;
+
+                The code generator was updated to generate the correct address
+                for the thumb mode indirect call
+
+
+SDSsq28673      Multiplication with very small FLOAT/DOUBLE values
+                (ie. 10e-25 * 10e-35) does not work as expected. FS$MUL does
+                not seem to do a proper checking for underflow/overflow.
+                Sometimes the multiplication of very small floating point
+                numbers are not changed to zero, but to infinity or NaN. In the
+                attached test case there is no branch taken to "unfl", although
+                it should go there.
+
+                FS$MUL:
+                -------
+                $4:     SUB     e1, #0x7E       ; ADJUST THE BIAS
+                        BEQ     unfl            ; AND CHECK FOR UNDERFLOW
+
+                        CMP     e1, #0xFF       ; CHECK FOR EXPONENT OVERFLOW
+                        BCS     ovfl            ;
+
+
+               Stepping through the testcase shows that at FS$MUL, label $4 the
+               run does not branch to the underflow routine; but that's what
+               they would have expected. Instead it branches to the overflow
+               routine.
+
+               The RTS library was updated to fix this bug.
+
+
+SDSsq29398     The compiler will optimize function prologs by attempting to
+               push additional registers on the stack to save code-size.  There
+               was a bug in this optimization that occurs in interrupt routines
+               only.  In certain cases, not all SOE were being saved.  The
+               code generator was updated to fix this bug
+
+
+--------------------------------------------------------------------------------
+   v2.24
+--------------------------------------------------------------------------------
+
+SDSsq27857      Nesting a linker command file inside of another linker command
+                file may corrupt the stream of input commands from the
+                enclosing linker command file.
+
+SDSsq27501      A memory bug caused the code generator to segfault in the C2000
+                tools. This bug manifested when the code generator was run in
+                an MKS korn shell under certain environment. MKS shell did not
+                report the segfault so it appeared as the cl2000 was
+                exiting without generating the object file and with no
+                diagnostics.  It was possible this bug could appear in the
+                TMS470 tools.
+
+SDSsq24430      A C++ structure with a nested structure can be incorrectly
+                initialized.  This occurs when the nested structure is declared
+                as a static const within a function and initialized within that
+                function.  The initialization is incorrectly occurring during
+                execution of that function.  This does not occur if extra
+                braces, { }, are used with the initialization.  For example:
+
+                extern const char arr[];
+                extern void bar(char *);
+
+                class X
+                {
+                   public:
+
+                   typedef struct Y
+                   {
+                      public:
+
+                      char *p;
+                   } y;
+                };
+
+                void foo()
+                {
+                   /* incorrectly initialized */
+                   static const X::y y_arr[] = { (char *)&arr[1],
+                                                 (char *)&arr[2],
+                                                 (char *)&arr[3] };
+                   bar((char *)y_arr);
+
+                   /* correctly initialized */
+                   static const X::y z_arr[] = { { (char *)&arr[1] },
+                                                 { (char *)&arr[2] },
+                                                 { (char *)&arr[3] } };
+                   bar((char *)z_arr);
+                }
+
+SDSsq25609      A faulty peephole optimization rule that removed loads whose
+                destination is a dead register. This was causing the removal of
+                volatile loads (that weren't being used). According to C
+                standards, accesses to volatile variables cannot be optimized
+                away (removed). The peephole rule was incorrectly removing
+                loads whose destination was a dead register. Such loads should
+                be removed by live variable analysis and dead-code elimination,
+                not by target dependent phase. This problem occured only in
+                thumb mode.
+
+SDSsq25539      The instruction STMDB is not accepted by the 2.2x ARM assembler.
+                The previous versions accepted it and it is a legal instruction.
+                With v2.2x , the assembler gives warnings. Note: The same
+                warning appears for the LDMDB instruction as well.
+
+SDSsq25535      Different behavior existed when using enumerations with and
+                without the small-enum compiler option.  The problem was that
+                enums were treated as signed when not using small-num and
+                treated as unsigned when using small-enum.
+
+SDSsq24805      In the lowlev.c or rts.src file, the tabinit function that
+                implements the driver initialization is written in the
+                following manner:
+
+                _CODE_ACCESS void tabinit(void)
+                {
+                   _DEVICE **st;
+                   _DEVICE  *dt;
+
+                   static _DATA_ACCESS int init = 0;
+
+                   _lock();
+                   if (init) return;
+
+                   /*---------------------------------------------------------*/
+                   /* STEP THROUGH THE TABLES SETTING NAME AND POINTER ENTRIES*/
+                   /* TO NULL (SKIP PREDEFINED DEVICE AND STREAMS)            */
+                   /*---------------------------------------------------------*/
+                   for ( st = &_stream[3]; st != &_stream[_NSTREAM];
+                         *st++ = NULL );
+
+                   for ( dt = &_device[1]; dt != &_device[_NDEVICE];
+                         *(dt++)->name = '\0');
+
+                   init = 1;
+                   _unlock();
+                }
+
+                If tabinit has already been initialized previously, the second
+                iteration of tabinit will have init=1.  The problem is with the
+                statement if(init) return; since _lock() has been called
+                already.  If init=1, the tabinit will return without a
+                corresponding _unlock() call.  Thus deadlock will occur because
+                _lock() and _unlock() must be called as sequentially.
+
+SDSsq25323      An abnormal termination (reported for the TMS320C6x optimizer)
+                could potentially occur with the TMS470 optimizer.
+
+SDSsq24700      The request for veneer functionality to support conditional
+                linking has been added.
+
+SDSsq22793      This is a request to handle large projects.  The compiler does
+                not a limit on application size or number of files.
+
+SDSsq23657      The compiler was producing different code on the PC platform
+                versus Unix platforms.
+
+SDSsq12627      The optimizer has been updated to allow variables in disjoint
+                scopes to share the same stack space.  For example, the stack
+                space for disjoint variables within switch statements will be
+                optimized.
+
+SDSsq22805      Fixed the archiver, ar470, to avoid truncating long file names.
+                The archiver will no longer truncate names.
+
+SDSsq24502      When allocation fails, the linker will now go and find
+                information about all of the memory areas that it is trying to
+                allocate to a given output section.  The diagnostic message will
+                look like this:
+
+                >>   error: can't allocate named_sect, size 00004054
+                     (page 0) in P_MEM (avail: 00000300),
+                     MEM2 (avail: 00000bf4), D_MEM (avail: 00000500)
+
+                where "named_sect" is a given output section and P_MEM, MEM2,
+                and D_MEM are the memory areas that we could allocate named_sect
+                into (if we had the available space).
+
+SDSsq25389      The code generator reports an internal error when trying to
+                generate STABS debug information for structures and/or unions
+                whose data members have C++ only types.
+
+SDSsq25137      This was a bug in the optimizer in which a "volatile" qualifier
+                on a type-conversion operator was percolated into operations on
+                non-volatile variables after inlining.
+
+
+--------------------------------------------------------------------------------
+   v2.208e
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq30835
+
+   Description: There is an optimizer bug with bitfields and the use of that
+   structure as an array of bitfields.  It is possible that a write through 
+   the array access can overwrite an incorrect part of the bitfield.
+
+   Fix: Update the optimizer to fix this bug
+
+
+--------------------------------------------------------------------------------
+   v2.207e
+--------------------------------------------------------------------------------
+
+1. DDTS #: SDSsq28673
+
+   Description: Multiplication with very small FLOAT/DOUBLE values 
+                (ie. 10e-25 * 10e-35) does not work as expected. FS$MUL does 
+                not seem to do a proper checking for underflow/overflow. 
+                Sometimes the multiplication of very small floating point 
+                numbers are not changed to zero, but to infinity or NaN. In 
+                the floating multiplication routine (shown below) the check
+                is for equal to zero rather than less than or equal to zero.
+
+                FS$MUL:
+                -------
+                $4:     SUB     e1, #0x7E       ; ADJUST THE BIAS
+                        BEQ     unfl            ; AND CHECK FOR UNDERFLOW
+                        ~~~
+
+                        CMP     e1, #0xFF       ; CHECK FOR EXPONENT OVERFLOW
+                        BCS     ovfl            ;
+
+   Fix: The floating point multiplication routines were updated in the RTS
+        libraries.
+
+
+--------------------------------------------------------------------------------
+   v2.206e
+--------------------------------------------------------------------------------
+
+SDSsq29109      In some functions the LR register was not being saved in the
+                prolog when the LR was being used in the function.
+
+SDSsq29147      The following code will generate an CMN instruction with an 
+                incorrect BLE instruction in 32-bit mode:
+
+                void foo()
+                {
+                   if (((((variable_struct.variable_a_s16 >= 0) &&
+                       (variable_struct.variable_b_s16 >= CONTSTANT_A1)) ||
+                      ((variable_struct.variable_a_s16 < 0) &&
+                       (variable_struct.variable_b_s16 <= -CONTSTANT_A1))) ||
+                      ((variable_struct.variable_c_s16>>5) < -CONTSTANT_A2) &&
+                      (!variable_struct.variable_d_b1)))
+                   {
+                     variable_struct.variable_e_u8 = CONTSTANT_A3;
+                   }
+
+                   else
+                   {
+                     if (variable_struct.variable_e_u8 > 0)
+                     {
+                             variable_struct.variable_e_u8 -= 1;
+                     }
+                   }
+                }
+
+SDSsq28971      With the following code:
+
+                void FUN_SIC_WSS_calcRuck_V () 
+                {
+                    if (global_sl>1457) 
+                  {
+                    BranchCounter1++; 
+                  }
+                  if (global_sl>1456) 
+                  {
+                    BranchCounter2++; 
+                  }
+                }
+
+                The code fragment 
+
+                if (global_sl>1457) 
+
+                generates the following ASM code: 
+
+                     LDR       V9, CON1              ; |23| 
+                     LDR       A1, [V9, #0]          ; |23| 
+                     SUBS      A1, A1, #178          ; |23| 
+                     SUBCSS    A1, A1, #1280         ; |23| 
+
+                The SUBS and SUBCSS is incorrect for the case where global_sl 
+                is set to -2147483648. 
+
+--------------------------------------------------------------------------------
+   v2.204e
+--------------------------------------------------------------------------------
+
+SDSsq22630      The compiler generates different code with the PC tools
+                vs. the HP/Sun tools.  The code is correct in both cases
+                however.  The different code only occurs with switch
+                tables.
+
+SDSsq24483      The linker can fail with a library listed on the command
+                line and included as an input section in a linker command
+                file.  
+
+SDSsq24432      Assembler may sometimes fail to detect when a 16-BIS BL
+                instruction that refers to an externally defined symbol is 
+                out-of-range from the beginning of the section in which it 
+                occurs.  This situation will occur only if the BL instruction 
+                occurs at an address beyond 0x3ffffc relative to the beginning 
+                of the input section in which it is written. This situation 
+                will likely be flagged with a relocation overflow error by the 
+                linker. 
+
+SDSsq24768      Conditional linking, controlled with the -ms switch, was not
+                working correctly.  If dual-state mode is turned off, the -md
+                switch, no .clink directives were generated.  With dual-state
+                mode, the .clink directives were missing in the veneers.
+
+SDSsq24698      There is a limit of 200 characters on structure type names
+                in the compiler with the debug switch.  For each structure
+                type, the compiler will generate a .stag directive with
+                the type name in the assembly file.  The assembler will
+                crash if the .stag directive name is more than 200 characters.
+
+SDSsq24782      The compiler can generate different code with the HP tools
+                vs. the Sun and PC tools.  The code is correct in both
+                cases however.  The HP code is less efficient.
+
+--------------------------------------------------------------------------------
+   v2.203e
+--------------------------------------------------------------------------------
+
+ SDSsq24203     Linker does not account for PC offset in post-relocation
+                optimization of trampoline code
+
+
+--------------------------------------------------------------------------------
+   v2.202.04e
+--------------------------------------------------------------------------------
+     
+ SDSsq39455     See release 2.55.
+
+
+--------------------------------------------------------------------------------
+   v2.202.03e
+--------------------------------------------------------------------------------
+     
+ SDSsq38857     See release 2.55.
+
+
+--------------------------------------------------------------------------------
+   v2.202.02e (optimizer only)
+--------------------------------------------------------------------------------
+
+ SDSsq33291     See release 2.52.
+
+
+--------------------------------------------------------------------------------
+   v2.202.01e (optimizer only)
+--------------------------------------------------------------------------------
+
+ SDSsq30610     See release 2.50.
+
+
+--------------------------------------------------------------------------------
+   v2.202e (optimizer only)
+--------------------------------------------------------------------------------
+
+ SDSsq24184     The optimizer creates and uses a temporary variable before it 
+		is initialized.
+
+ SDSsq23453     Compiler produces a memory access violation during the
+                optimization phase
+
+--------------------------------------------------------------------------------
+   v2.201e
+--------------------------------------------------------------------------------
+
+ SDSsq23918     Linker corrupts debug information for enum type symbol in
+                partial link
+
+ SDSsq23860     Linker corrupts fill section names
+
+ SDSsq23845     Compiler produces a constant table overflow internal error
+                during code generation
+
+ SDSsq23808     Linker does not detect an illegal attempt to split a GROUP
+
+ SDSsq23800     Linker crashes while allocating far call trampolines
+
+ SDSsq23521     Linker does not encode little-endian far call trampolines
+                properly
+
+ SDSsq23453     Compiler produces a memory access violation during the
+                optimization phase
+
+ SDSsq23087     Linker executes an infinite loop while trying to split
+                an output section under certain circumstances
+
+--------------------------------------------------------------------------------
+   v2.20
+--------------------------------------------------------------------------------
+
+ SDSsq23121     Fixed an optimizer bug where an incorrect expression was
+		generated at level -o2.
+
+ SDSsq22261     Fixed a possible optimizer abnormal termination. (Reported for 
+		the TMS320C6x compiler.)
+
+ SDSsq16836     Fixed library-build utility, mk470, from printing mkp470 in
+		the banner.
+
+ SDSsq14859     The -mv shell switch was added which causes the generation of
+		full veneers of all functions and to avoid using the BX
+		instruction to return from any non-veneer function.
+
+ SDSsq14329     Improved code-size in the generation of certain LSL,LSR,STRH,
+		LDRH sequences.
+
+ SDSsq14328     Removed generation of a negatable conditional branch followed
+		immediately by an unconditional branch.
+
+ SDSsq18309     Changed the way the optimizer lists 16-BIS functions as they
+		are being processed.
+
+ SDSsq06756     Dynamic stack overflow checking is added through the new
+		-gs shell switch.
+
+ SDSsq23383     The linker was updated to handle relative path names in linker
+		command files.
+
+ SDSsq23068     Compiler generates reference to mangled C++ name for memset
+
+ SDSsq23010     Compiler generates incorrect code for "&=" statement
+
+ SDSsq22613     Compiler generates internal error for certain mod 2
+                statements
+
+ SDSsq21915     RTS floating-point subtraction yields wrong result for
+                zero inputs
+
+ SDSsq21623     Float/Double to unsigned int conversion should retain sign
+
+ SDSsq21461     Linker may overlap the allocation of sections
+
+ SDSsq21157     Problems with handling of infinity and NaNs in floating-
+                point functions in RTS
+
+ SDSsq21096     Overflow detection for floating-point addition/subtraction is
+                not correct
+
+ SDSsq20812     Assembler fails to detect certain out-of-range immediate
+                expressions
+
+ SDSsq20757     RTS function, fcvt(), has rounding error
+
+ SDSsq20710     Trampolines not generated for far calls within the same
+                section
+
+ SDSsq19688     Compiler terminates abnormally on particular conditional
+                expressions
+
+ SDSsq19590     -i compiler option behaves differently on Solaris OS and HPUX
+
+ SDSsq19550     Returning element of a union produces incorrect code when
+                compiled with optimization
+
+ SDSsq19015     Incorrect trampoline callee address displayed in trampoline
+                statistics area of the map file
+
+ SDSsq19014     Unnecessary trampolines generated
+
+ SDSsq18689     Linker generates internal error: "missing tramp callee
+                symbol"
+
+ SDSsq18556     Implementation of va_arg() macro in stdarg.h fails
+
+ SDSsq18318     Compiler may generate U_DIV for signed integer divide
+
+ SDSsq18214     Preprocessing directives cannot be used within macro
+                invocations (in a C/C++ source file)
+
+ SDSsq17506     Compiler incorrectly removes a local structure copy
+
+ SDSsq17338     Assembler marks code section with incorrect section type
+                flag
+
+ SDSsq17090     Compiler generates inefficient code for divide by power-
+                of-two (Thumb mode)
+
+ SDSsq17079     Assembler encoding for shift by zero is incorrect
+
+ SDSsq17070     Return from interrupt does not correctly restore CPSR
+                register (introduced in v2.12)
+
+ SDSsq16972     Compiler generates invalid MUL instruction
+
+ SDSsq16852     Compiler runs out of memory when compiling large files on
+                HP-UX
+
+ SDSsq16527     Example linker command files should contain .pinit output
+                section
+
+ SDSsq16477     Compiler produces "Bad kind: TYPE::type_pointed_to"
+                internal error during optimization phase
+
+ SDSsq15264     Compiler generates incorrect code for union returned
+                from a function when union is representable in a register
+
+ SDSsq14643     Compiler generates internal error during optimization
+
+ SDSsq14331     Generate smaller constant tables by using constants more
+                efficiently
+
+ SDSsq14297     Performance of RTS integer divide routine can be improved
+
+ SDSsq14007     Library function, getdevice() may try to write into
+                constant memory
+
+--------------------------------------------------------------------------------
+   v2.199e
+--------------------------------------------------------------------------------
+
+SDSsq28769
+
+   Description: The compiler may sometimes perform incorrect sign extension of
+   unicode characters.  For example, the following use of unicode characters
+   will not initialize correctly:
+
+   unsigned short text[] = L"\x1080\x1040";
+
+   Fix: Updated the parser to fix this bug.
+
+SDSsq28974
+
+   Description: The heuristics for generating switch jump tables was causing
+   a significant increase in code-size.
+
+   Fix: Updated the code generator to fix this bug.
+
+--------------------------------------------------------------------------------
+   v2.198e
+--------------------------------------------------------------------------------
+
+SDSsq28626
+
+   Description: An optimizer bug where a structure initialization is being
+   removed. In the test case below, the initialization of h: "h.t = t;", is
+   removed.
+
+   typedef struct {
+        int f[5];
+        struct {
+                char b[8];
+                char f[8];
+                char n;
+        } m;
+        char t;
+        char p[8];
+   } H;
+
+   extern char B(short c, char p);
+   extern void C(void);
+   extern void D(void);
+
+   void A(short c, char t, char p[])
+   {
+        int i;
+        char n;
+
+        h.t = t;
+        for (i = 0; i < h.m.n; i++) {
+                n = h.m.b[i];
+                h.p[n] = B(c, p[n]);
+        }
+        C();
+        D();
+    }
+
+    Fix: Updated the optimizer to fix this bug.
+
+--------------------------------------------------------------------------------
+   v2.197e
+--------------------------------------------------------------------------------
+
+SDSsq25798      In the example below the while loop counter is not read from
+                variable a. Instead V4 is loaded with an initial value #0 and
+                used as a loop counter.
+
+                while(a > 0)
+                {
+                   if(foo(arr1[a- 1], &ptr) == b)
+                   {
+                      if((ptr + c) > d)
+                      {
+                         e = b;
+                         break;
+                      }
+                    }
+
+                    a--;
+                }
+
+                This bug only occurs at optimization level -o2 or higher.  This
+                bug does not occur if the -ma switch is also used.
+
+SDSsq25743      Generated code to access a local pointer is done through an
+                unitialized stack location.  This only occurs with optimization.
+
+SDSsq25527      The optimizer is marking and removing asserts it considers
+                redundant even though they are not.
+
+--------------------------------------------------------------------------------
+   v2.196e
+--------------------------------------------------------------------------------
+
+SDSsq25005      Linker may perform an illegal optimization of a far
+                call trampoline when the generated trampoline is between
+                2048 and 4096 bytes from its target.
+
+--------------------------------------------------------------------------------
+   v2.195e
+--------------------------------------------------------------------------------
+
+SDSsq14287      A performance improvement in the 16-BIS integer divide routine
+		to call the 32-BIS integer divide routine.
+
+SDSsq22630      The compiler generates different code with the PC tools
+                vs. the HP/Sun tools.  The code is correct in both cases
+                however.  The different code only occurs with switch
+                tables.
+ 
+SDSsq24483      The linker can fail with a library listed on the command
+                line and included as an input section in a linker command
+                file.  
+
+SDSsq24698      There is a limit of 200 characters on structure type names
+                in the compiler with the debug switch.  For each structure
+                type, the compiler will generate a .stag directive with
+                the type name in the assembly file.  The assembler will
+                crash if the .stag directive name is more than 200 characters.
+
+SDSsq24782      The compiler can generate different code with the HP tools
+                vs. the Sun and PC tools.  The code is correct in both
+                cases however.  The HP code is less efficient.
+
+--------------------------------------------------------------------------------
+   v2.194e
+--------------------------------------------------------------------------------
+
+ SDSsq07162     The compiler includes platform support for HP-UX11.
+
+ SDSsq23918     Linker corrupts debug information for enum type symbol in
+                partial link (already fixed in v2.201e)
+
+ SDSsq24203     Linker does not account for PC offset in post-relocation
+                optimization of trampoline code
+
+--------------------------------------------------------------------------------
+   v2.193e
+--------------------------------------------------------------------------------
+
+ SDSsq23860     The linker corrupts fill section names.
+
+ SDSsq23845     The compiler produces a constant table overflow internal
+                error during code generation.
+
+ SDSsq23808     The linker does not detect an illegal attempt to split a
+                GROUP.
+
+ SDSsq23800     The linker crashes while allocating far call trampolines.
+
+ SDSsq23521     The linker does not encode little-endian far call trampolines
+                properly.
+
+ SDSsq23087     The linker executes an infinite loop while trying to split
+                an output section under certain circumstances.
+
+--------------------------------------------------------------------------------
+   v2.192e
+--------------------------------------------------------------------------------
+
+ SDSsq23136     The linker crashes when generating far call trampolines
+                with -r and -a enabled.
+
+ SDSsq23068     The compiler generates a reference to the mangled C++ name
+                for the memset() RTS function.
+
+ SDSsq23010     The compiler generates incorrect code for masking fields
+                of a structure that is represented in a register.
+
+--------------------------------------------------------------------------------
+   v2.191e
+--------------------------------------------------------------------------------
+
+ SDSsq19783
+ SDSsq22676     The linker does not detect an invalid allocation attempt
+                near the end of the address range.
+
+ SDSsq22613     The compiler generates an internal error during the
+                optimization phase.
+
+--------------------------------------------------------------------------------
+   v2.19
+--------------------------------------------------------------------------------
+
+ SDSsq21461     Linker may overlap the allocation of sections
+
+ SDSsq21157     Problems with handling of infinity and NaNs in floating-
+                point functions in RTS
+
+ SDSsq21096     Overflow detection for floating-point addition/subtraction is
+                not correct
+
+--------------------------------------------------------------------------------
+   v2.18
+--------------------------------------------------------------------------------
+
+ SDSsq20812     Assembler fails to detect certain out-of-range immediate
+                expressions
+
+ SDSsq20757     RTS function, fcvt(), has rounding error
+
+ SDSsq20710     Trampolines not generated for far calls within the same
+                section
+
+--------------------------------------------------------------------------------
+   v2.17
+--------------------------------------------------------------------------------
+
+ SDSsq24914     The compiler was adding constants to constant tables that
+		were never used.
+
+ SDSsq19688     Compiler terminates abnormally on particular conditional
+                expressions
+
+ SDSsq19590     -i compiler option behaves differently on Solaris OS and HPUX
+
+ SDSsq19550     Returning element of a union produces incorrect code when
+                compiled with optimization
+
+ SDSsq18214     Preprocessing directives cannot be used within macro
+                invocations (in a C/C++ source file)
+
+
+--------------------------------------------------------------------------------
+   v2.167e
+--------------------------------------------------------------------------------
+     
+ SDSsq38857     See release 2.55.
+
+
+--------------------------------------------------------------------------------
+   v2.166e
+--------------------------------------------------------------------------------
+
+SDSsq33291      See release v2.52.
+
+
+--------------------------------------------------------------------------------
+   v2.165e
+--------------------------------------------------------------------------------
+
+SDSsq30610      See release v2.50.
+
+
+--------------------------------------------------------------------------------
+   v2.164e
+--------------------------------------------------------------------------------
+
+SDSsq31240      See release v2.49 beta.
+
+--------------------------------------------------------------------------------
+   v2.163e
+--------------------------------------------------------------------------------
+
+SDSsq28626      In the following function the register V1 is used before
+                it is initialized.
+
+                void A(short c, char t, char p[])
+                {
+                        int i;
+                        char n;
+
+                        h.t = t;
+                        for (i = 0; i < h.m.n; i++) {
+                                n = h.m.b[i];
+                                h.p[n] = B(c, p[n]);
+                        }
+                        C();
+                        D();
+                }
+ 
+
+SDSsq25325      In some cases, where a switch-case statement does not have a
+                "break" for the "default" case, the code generated by the
+                compiler may be incorrect.
+
+                For example:
+
+                typedef unsigned int  uint8;
+
+                uint8 var1 = 3;
+                uint8 var2;
+                uint8 var3;
+
+                void main (void )
+                {
+                   uint8 temp=0;
+                    switch (var1){
+                      {
+                        case 12:
+                          temp=16;
+                          break;
+
+                        default:
+                          var2=2;
+                      }
+                    } /* end switch */
+                    var3 = temp;
+                }
+
+                In this case the code for case 12 is executed.
+
+--------------------------------------------------------------------------------
+   v2.162e
+--------------------------------------------------------------------------------
+
+ SDSsq18318     The compiler incorrectly generates a call to the unsigned
+                division routine in the rts library rather than to the
+                signed division routine.  This only occurs in certain
+                instances of complex source lines containing several
+                arithmetic operations and casts between signed and unsigned
+                integers.
+
+--------------------------------------------------------------------------------
+   v2.161e
+--------------------------------------------------------------------------------
+
+ SDSsq23010     The compiler generates incorrect code for masking fields
+                of a structure that is represented in a register.
+
+--------------------------------------------------------------------------------
+   v2.16
+--------------------------------------------------------------------------------
+
+ SDSsq19016     Added run-time addresses of trampoline call sites to the linker
+		map file.
+
+ SDSsq19015     Incorrect trampoline callee address displayed in trampoline
+                statistics area of the map file
+
+ SDSsq19014     Unnecessary trampolines generated
+
+ SDSsq18689     Linker generates internal error: "missing tramp callee
+                symbol"
+
+ SDSsq18556     Implementation of va_arg() macro in stdarg.h fails
+
+--------------------------------------------------------------------------------
+   v2.15
+--------------------------------------------------------------------------------
+
+ <Support for far call trampolines and automatic code overflow introduced
+  in the linker>
+
+--------------------------------------------------------------------------------
+   v2.14
+--------------------------------------------------------------------------------
+
+ SDSsq17506     Compiler incorrectly removes a local structure copy
+
+ SDSsq17338     Assembler marks code section with incorrect section type
+                flag
+
+--------------------------------------------------------------------------------
+   v2.13
+--------------------------------------------------------------------------------
+
+ SDSsq17090     Compiler generates inefficient code for divide by power-
+                of-two (Thumb mode)
+
+ SDSsq17079     Assembler encoding for shift by zero is incorrect
+
+ SDSsq17070     Return from interrupt does not correctly restore CPSR
+                register (introduced in v2.12)
+
+ SDSsq16852     Compiler runs out of memory when compiling large files on
+                HP-UX
+
+ SDSsq16477     Compiler produces "Bad kind: TYPE::type_pointed_to"
+                internal error during optimization phase
+
+--------------------------------------------------------------------------------
+   v2.121e
+--------------------------------------------------------------------------------
+
+ SDSsq23010     The compiler generates incorrect code for masking fields
+                of a structure that is represented in a register.
+
+--------------------------------------------------------------------------------
+   v2.12
+--------------------------------------------------------------------------------
+
+ SDSsq15264     Compiler generates incorrect code for union returned
+                from a function when union is representable in a register
+
+ SDSsq14007     Library function, getdevice() may try to write into
+                constant memory
+
+--------------------------------------------------------------------------------
+   v2.11
+--------------------------------------------------------------------------------
+
+ SDSsq14643     Compiler generates internal error during optimization
+
+--------------------------------------------------------------------------------
+   v2.10
+--------------------------------------------------------------------------------
+
+ SDSsq12511     Fixed an inefficient reuse of a constant offset used to 
+		establish a pointer.
+
+ SDSsq14164     Linker crashes when linking several large objects
+
+ SDSsq13859     Compiler generates LDMIA/STMIA instructions with non-aligned
+                data
+
+ SDSsq13757     .template section is included in the .out file as a data
+                section
+
+ SDSsq13754     Compiler may sometimes optimize function calls away with -o3
+
+ SDSsq13694     Compiler sometimes generates incorrect veneer function code
+
+ SDSsq13218     Compiler may propagate constant improperly with -on1 and -o3
+
+ SDSsq12958     Compiler generates internal error on type information
+
+ SDSsq12288     Compiler generates incorrect branch code when no optimization
+                is used
+
+ SDSsq12188     Compiler gives incorrect code when structure passed as
+                parameter to func
+
+ SDSsq12150     assert() macro gives error if argument is other than int
+
+ SDSsq12132     Compiler generates internal error: record_list_read
+
+ SDSsq11937     Compiler produces a stack overflow on PC when compiling
+                an extremely long function containing only asm() statements
+ SDSsq11507     Request for compiler to give warning if a const is not
+                initialized.
+
+ SDSsq11502     Printf's may incorrectly print floating point values.
+
+ SDSsq11501     Printf's may incorrectly print floating point values.
+
+ SDSsq11483     Request for tools to use 1 byte of storage space for 1 byte
+                variables.
+
+ SDSsq11460     Request for constants to only use 1 byte of ROM instead of 4
+                for chars.
+
+ SDSsq11457     Compiler will not initialize constant using pointer
+                arithmetic
+
+ SDSsq11074     Request to redefine a linker warning as error instead
+
+ SDSsq10984     Call stack & StepOut broken with Arm/Thumb program
+
+ SDSsq10778     Linker should be able to handle section names larger than 8
+                characters
+
+ SDSsq10775     Linker leaves holes in flash and RAM
+
+ SDSsq10773     const unsigned char consumes 4 bytes of ROM when only 1 byte
+                is defined
+
+ SDSsq10161     Compiler incorrectly calculates result of floating-point
+                multiplication
+
+ SDSsq09808     Compiler sometimes handles structure assignments incorrectly
+
+ SDSsq09557     Linker crashes when both -r and -s switches are specified
+
+ SDSsq09551     Linker does not link when an invalid switch is encountered
+
+ SDSsq09404     C++ virtual member functions won't link
+
+ SDSsq09349     Hex converter gives error reading COFF file - corrupted
+                section header
+
+ SDSsq09203     Compiler performs an illegal operation when compiling code
+
+ SDSsq09170     Compiler incorrectly places strings in connection with
+                function calls
+
+ SDSsq08602     Compiler does not generate asm code for certain sections of
+                C code
+
+ SDSsq08319     Compiler sometimes fails with internal error
+
+ SDSsq08137     strcmp function in runtimes does not check the zero-byte
+                condition
+
+ SDSsq07798     Compiler v2.0 generates internal error message when -o1
+                option is used.
+
+ SDSsq07533     Request to support the pragma CODE_SECTION
+
+ SDSsq06473     Request to increase the default memory length assumed by the
+                linker
+
+ SDSsq06200     Change tools environment variables to support Code Composer
+                Studio
+
+ SDSsq05131     User defined sections for CODE segments as well as for DATA
+                segment
+ SDSsq05130     16/32 bis compilation within same file
+
+ SDSsq04719     Optimizer abnormally terminates if _assert() not a literal
+                string
+
+--------------------------------------------------------------------------------
+   v2.04e
+--------------------------------------------------------------------------------
+
+ SDSsq09808     Compiler sometimes handles structure assignments incorrectly
+
+ SDSsq12958     Compiler generates internal error on type information
+
+--------------------------------------------------------------------------------
+   v2.02e, v2.03e
+--------------------------------------------------------------------------------
+
+ <not released>
+
+--------------------------------------------------------------------------------
+   v2.01
+--------------------------------------------------------------------------------
+
+  <no DDTs entry id # available>
+
+- Compilation host based double precision floating point constant
+  expression evaluation produces a different result than runtime
+  evaluation.
+
+--------------------------------------------------------------------------------
+   v2.00
+--------------------------------------------------------------------------------
+
+ SDSsq03453     Optimizer terminated abnormally
+
+ SDSsq03657     There are two different definitions of NULL in
+                   standard header files
+
+ SDSsq04015     Optimization level 3  produces incorrect code for
+                   register stores
+
+ SDSsq04025     Preprocessor does not flag incorrect macro expansion
+
+ SDSsq04035     -o3 generates incorrect asm code
+
+ SDSsq04044     Compiler gives a warning message with warning level
+                   -pw2 of statement
+
+ SDSsq04127     Incorrect code generated by compiler v1.23e.
+
+ SDSsq04364     Preprocessor terminates with an internal compiler
+                   error:packet error
+
+ SDSsq04365     Compiler generates illegal structure/union member
+                   error with -g option
+
+ SDSsq04535     v1.22e compiler terminates abnormally under Windows NT
+
+ SDSsq04562     Reference to unused section in linker command file causes
+                   linker to abnormally terminate.
+
+ SDSsq04634     Compiler incorrectly calculates string size  of typedef
+                   char arrays in structures during initialization
+
+ SDSsq04636     Ifile linker for -pm mode omitted
+
+ SDSsq04696     Optimizer terminates abnormally
+
+ SDSsq04708     Hex converter crashes
+
+ SDSsq04775     Compiler incorrectly handles code constants in connection
+                   with function calls
+
+ SDSsq04813     Archiver string table limit exceeded.
+
+ SDSsq04817     The C++ namespace was polluted.
+
+ SDSsq03756
+ SDSsq04922
+ SDSsq05129     Shell doesn't generate unique file names for temporary files.
+
+ SDSsq04923     Pragmas are separated across buffer boundaries.
+
+ SDSsq04992     Pragmas are dropped when using -ppa -ppo.
+
+ SDSsq05023     Optimizer terminates abnormally when compiled with -o3
+
+ SDSsq05139     va_start() macro could be implemented more efficiently
+
+ SDSsq05365     Global Register Feature no longer support
+
+ SDSsq05723     SPNU151 - page 2-15: The -pdf definition is incorrect.
+
+ SDSsq05740
+ SDSsq05750     returns from software interrupts do not work correctly
+
+ SDSsd05735     Code generator fails with an internal error when
+ SDSsq06282     compiled with -o2
+
+ SDSsq05822     Missing right quote of string constant
+
+ SDSsq05962     The -@ compiler option does not allow you to specify
+                multiple files
+
+ SDSsq05985     compiler produces internal error when initializing
+                structure members
+
+ SDSsq06079     Performance of the library function memset() is poor
+
+ SDSsq06216     -o3 produces bad code for a loop
+
+ SDSsq06248     Compiler generates internal error:TPRW>> internal
+                error: tp_read_mdata
+
+ SDSsq06361     linker gives DOS/4GW error or Dr Watson error with -s
+
+--------------------------------------------------------------------------------
+   v1.20 <-> v1.28e
+--------------------------------------------------------------------------------
+
+ <v1.28e>
+
+DEFECT CORRECTIONS:
+===================
+
+- The compiler may incorrectly place constants between the setup of
+  the link register and an indirect function call.  This caused the
+  called function to return to the wrong address.
+
+--------------------------------------------------------------------------------
+
+<v1.27e>
+
+DEFECT CORRECTIONS:
+===================
+
+- The strcmp runtime function does not check for end of string correctly
+  when the string is word aligned.
+
+- Highly complex and large programs may cause the assembler to
+  fail with an "Block Symbol Stack Overflow - Aborting" message when
+  the -g command line flag is supplied.
+
+- Right shifts may result in the upper bits being set to one rather
+  than zero.
+
+- Actual function parameter values of the form &"some string" cause
+  the optimizer to fail with an internal error.
+
+KNOWN DEFECTS:
+==============
+
+- Assignment of the return value of a function call of type integer to
+  a variable of type pointer to a structure receives a type mismatch
+  error when the return value is cast to the type of the variable.
+
+--------------------------------------------------------------------------------
+
+<v1.26e>
+
+DEFECT CORRECTIONS:
+===================
+
+ SDSsq05023     Optimizer fails with "Abnormal termination
+                of opt470" when code is compiled with -o3.
+
+--------------------------------------------------------------------------------
+
+<v1.25e>
+
+DEFECT CORRECTIONS:
+===================
+
+ SDSsq04775     Compiler fails in generating call with BX.
+                Error relates to handling of code constants
+                in connection with function calls, using
+                function pointers.
+
+--------------------------------------------------------------------------------
+
+<v1.24e>
+<v1.23e>
+
+DEFECT CORRECTIONS:
+===================
+
+- The compiler may produce different code when run on
+  HPUX 9.x than on HPUX 10.2x.
+
+- For loops whose loop increment is greater than 1, if the optimizer
+  attempts to convert the loop into a downcounting loop and the
+  loop counter is used after the loop exits, the loop counter may
+  contain an incorrect value.
+
+- If preprocessing tokens are used inside of a macro invocation, the
+  preprocessor may core dump after emitting the error message.
+
+- When enabling -pw2 level warnings, the compiler may incorrectly
+  report alignment violations with void pointers.
+
+- When indexing a group of global variables from a single base
+  address, the optimizer may incorrectly compute their offsets.
+
+- The code generator may core dump when performing control flow
+  optimizations on a switch statement if all cases end in a return
+  statement and the switch statement is the last statement in the
+  function.
+
+- The optimizer, at level 3 optimization, incorrectly computes
+  variable liveness for const auto variables which are given an
+  initialization value inside of a loop.
+
+- The optimizer may enter an infinite loop while performing
+  interprocedural constant progagation.
+
+--------------------------------------------------------------------------------
+
+<v1.22e>
+
+DEFECT CORRECTIONS:
+===================
+
+- Faulty logic in the cross jumping optimization may generate incorrect
+  code in rare circumstances.
+
+- Optimizer may illegally attempt to optimize loads of shorts for
+  volatile accesses.
+
+--------------------------------------------------------------------------------
+
+<v1.21>
+<v1.21b>
+
+DEFECT CORRECTIONS:
+===================
+
+- The optimizer may implement subtraction with 2's complement
+  addition (adding 251 rather than subtracting 5), but in some cases,
+  the result isn't casted back to a byte to perform the wrap around
+  effect.
+
+- With -o3 optimization, the optimizer may incorrectly drop a volatile
+  type qualifier from a structure member.
+
+- For very large object archive files, the linker may emit an error
+  stating that the archive symbol table is too large.
+
+--------------------------------------------------------------------------------
+
+<v1.201e>
+
+  SDSsq24073    (new DDTs entry was entered since original bug was
+                reported and fixed (in v1.24e) before current DDTs
+                data-base came into existence)
+
+                When indexing a group of global variables from a
+                single base address, the optimizer may incorrectly
+                compute their offsets.
+
+
+

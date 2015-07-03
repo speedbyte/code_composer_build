@@ -1,0 +1,11 @@
+#TRACE_ID '0x4700CC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"GetNewAckQueueElement Header alloc failed fct_id: 0x%2.2X" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '204 
+#TRACE_ID '0x4700DD 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"GetNewAckQueueElement: Payload alloc failed fct_id: 0x%2.2X, %d" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '221 
+#TRACE_ID '0x470174 'DEBUG_VALUE4 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"HaNewQueueElem no queue elem for 0x%02X pend %d numq %d" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '372 
+#TRACE_ID '0x470185 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"HaNewQuElem: full, drop oldest elem (%d %d)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '389 
+#TRACE_ID '0x47018C 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"HaNewQueueElem failed to remove old queue elem(%d %d)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '396 
+#TRACE_ID '0x470197 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"HaNewQueueElem failed to free old queue elem(%d %d)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '407 
+#TRACE_ID '0x4701A2 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"HaNewQueueElem failed to add new queue elem(%d %d)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '418 
+#TRACE_ID '0x4701CE 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"SendMsgWithAck: fct 0x%02X and length %d directly send" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '462 
+#TRACE_ID '0x4701D8 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_BAP_DISPATCHER '"SendMsgWithAck: fct 0x%02X length %d succ queued" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '472 
+#TRACE_ID '0x4701DD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"SendMsgWithAck: fct 0x%02X QUEUING ERROR!!!" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '477 
+#TRACE_ID '0x4701E6 'DEBUG_VALUE4 'DBG_LEV_ERR 'MOD_BAP_DISPATCHER '"SendMsgWithAck: mismatch fct=0x%02X(0x%02X) lsg=0x%02X(0x%02X)" '\MOD\MOD_BAP_Dispatcher\src 'BAP_Dispatcher_Ack.c '486 

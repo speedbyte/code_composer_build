@@ -1,0 +1,7 @@
+-z -q -a -ec_int00 -m"../05_out/ADLATUS_cc_TMS470_PARROT.map" -o"../05_out/ADLATUS_cc_TMS470_PARROT.out" -x -i"C:/ti/TMS470/cgtools_252/lib" -i"E:/Programme/CCStudio_v3.3/tms470/cgtools_271/lib"
+"r:\11_parrot\03_obj\ADLATUS_DummyMain.obj"
+"r:\11_parrot\03_obj\ADLATUS_ParrotHal.obj"
+"r:\11_parrot\03_obj\ADLATUS_SciHandler.obj"
+"r:\11_parrot\03_obj\FlashLib_TMS470_PARROT.obj"
+"R:\f35a_api\u_div32.obj"
+"R:\11_parrot\01_prj\086350_TMS470_PARROT.cmd"

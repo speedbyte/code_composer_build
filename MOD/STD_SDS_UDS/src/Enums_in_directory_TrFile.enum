@@ -1,0 +1,2 @@
+#ENUM  'tSDS_Return                                         'SDS_IO_USER_READ_SUCCESSFUL                                                              '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'tSDS_Return                                         'SDS_IO_USER_READ_FAILED                                                                  '1                            'ABCD   'ABCD.c  '123   

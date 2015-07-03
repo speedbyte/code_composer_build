@@ -1,0 +1,12 @@
+#ENUM  'EEStateType                                         'EE_STATE_IDLE                                                                            '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEStateType                                         'EE_STATE_WRITE                                                                           '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEStateType                                         'EE_STATE_READ                                                                            '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEPROM_STATUS_ENUM                                  'EE_STATUS_READY                                                                          '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEPROM_STATUS_ENUM                                  'EE_STATUS_WORKING                                                                        '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEPROM_STATUS_ENUM                                  'EE_STATUS_DONE                                                                           '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEPROM_STATUS_ENUM                                  'EE_STATUS_FAILED                                                                         '4                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEPROM_enFunctionIdType                             'EEPROM_INVALID_FCT                                                                       '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEPROM_enFunctionIdType                             'EEPROM_SERVICE_READ                                                                      '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEPROM_enFunctionIdType                             'EEPROM_SERVICE_WRITE                                                                     '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEInitMode                                          'INIT_FOR_WRITE                                                                           '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'EEInitMode                                          'INIT_FOR_READ                                                                            '1                            'ABCD   'ABCD.c  '123   

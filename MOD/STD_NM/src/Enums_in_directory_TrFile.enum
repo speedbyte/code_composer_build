@@ -1,0 +1,11 @@
+#ENUM  'NMModeName                                          'BusSleep                                                                                 '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'NMModeName                                          'Awake                                                                                    '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'NmInitType                                          'NM_DISABLE                                                                               '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'NmInitType                                          'NM_NORMAL                                                                                '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'NmInitType                                          'NM_NMPASSIVE                                                                             '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'NmInitType                                          'NM_SLEEPIND                                                                              '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'NmInitType                                          'NM_SLEEPIND_NMPASSIVE                                                                    '4                            'ABCD   'ABCD.c  '123   
+#ENUM  'NmInitType                                          'NM_SENDSLEEPACK                                                                          '5                            'ABCD   'ABCD.c  '123   
+#ENUM  'tNmCommStateType                                    'CarWupOff                                                                                '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'tNmCommStateType                                    'CarWupOn                                                                                 '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'tNmCommStateType                                    'CarWupOn1stReq                                                                           '2                            'ABCD   'ABCD.c  '123   

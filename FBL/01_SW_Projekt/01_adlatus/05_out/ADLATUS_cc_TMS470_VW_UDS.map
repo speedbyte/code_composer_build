@@ -1,0 +1,1054 @@
+******************************************************************************
+             TMS470 COFF Linker PC Version 2.71                
+******************************************************************************
+>> Linked Thu Jul 15 07:59:57 2010
+
+OUTPUT FILE NAME:   <../05_out/ADLATUS_cc_TMS470_VW_UDS.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00002fb0
+
+
+MEMORY CONFIGURATION
+
+                  name            origin    length      used    attr    fill
+         ----------------------  --------  ---------  --------  ----  --------
+         VECTORS                 00000000   00000024  00000024  R IX
+         ADLATUS                 00000030   00003fc0  00003e5a  R IX
+         PROTECTION              00003ff0   00000010  00000010  R     ffffffff
+         ADLATUS2                00004000   00001be0  00001bd8  R IX
+         ROMHAL                  00005be0   000000a0  00000054  R IX
+         ROMWDT                  00005c80   00000370  00000134  R IX
+         ADLATUS3                00006000   00001000  00000000  R IX
+         CHKS1                   00007ffc   00000004  00000004  R     12345678
+         VECTORS2                00008000   00000024  00000020  R IX
+         ASW_ENTRY               00008024   00000010  00000000  R IX
+         ASW_DATA                00008100   00000100  00000000  R IX
+         ROMCONST                00009000   00000100  00000000  R IX
+         ROMEXEC                 00009100   00000f00  00000000  R IX
+         CHKS2x                  00010000   00000004  00000004  R     cafebabe
+         CHKS2y                  00018000   00000004  00000004  R     cabebabe
+         CHKS2z                  00020000   00000004  00000004  R     cabebabe
+         CHKS2                   0007fffc   00000004  00000004  R     ffffffff
+         FLASH_REQ               00400000   00000004  00000004  RW  
+         RAMDATA1                00400004   000000a0  000000a0  RWIX
+         RAMDATA2                004000a4   00000e5c  000007fd  RWIX
+         HISDATA                 00400f10   00000040  00000000  RW  
+         HISCONST                00401000   00000100  00000000  RW  
+         HISTEXT                 00401100   00000a00  00000000  RWIX
+         RAM_RES                 00401b00   00000050  00000000  RW  
+         RAMWDT                  00401b50   00000370  00000134  RWIX
+         RAMHAL                  00402000   000000a0  00000054  RWIX
+         USTACK                  00402200   00000200  00000000  RW  
+         SYSSTA                  00402400   00000400  00000000  RW  
+         HET0PROG                00800000   00000800  00000000  RW  
+         SCC3                    fff7d000   00000200  00000000  RW  
+         CAN_MBOX3               fff7d200   00000200  00000000  RW  
+         SPI2                    fff7d400   00000100  00000000  RW  
+         SPI3                    fff7d500   00000100  00000000  RW  
+         SPI4                    fff7d600   00000100  00000000  RW  
+         SPI5                    fff7d700   00000100  00000000  RW  
+         CAN_MBOX                fff7e400   00000200  00000000  RW  
+         CAN_MBOX2               fff7e600   00000200  00000000  RW  
+         SCC                     fff7e800   00000200  00000000  RW  
+         SCC2                    fff7ea00   00000200  00000000  RW  
+         GIO0                    fff7ec00   00000100  00000000  RW  
+         ADC0                    fff7f000   00000400  00000000  RW  
+         SPI1                    fff7f800   00000100  00000000  RW  
+         HET0CTRL                fff7fc00   00000400  00000000  RW  
+         MMC                     fffffd00   00000040  00000000  RW  
+         DEC                     fffffe00   000000f0  00000000  RW  
+         CMRTI                   ffffff00   00000020  00000000  RW  
+         CIM                     ffffff20   00000014  00000000  RW  
+         SYS                     ffffffd0   00000030  00000000  RW  
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.SCC3      0    fff7d000    00000000     UNINITIALIZED
+
+.CAN_MB3   0    fff7d200    00000000     UNINITIALIZED
+
+.SPI2      0    fff7d400    00000000     UNINITIALIZED
+
+.SPI3      0    fff7d500    00000000     UNINITIALIZED
+
+.SPI4      0    fff7d600    00000000     UNINITIALIZED
+
+.SPI5      0    fff7d700    00000000     UNINITIALIZED
+
+.CAN_MB    0    fff7e400    00000000     UNINITIALIZED
+
+.CAN_MB2   0    fff7e600    00000000     UNINITIALIZED
+
+.SCC       0    fff7e800    00000000     UNINITIALIZED
+
+.SCC2      0    fff7ea00    00000000     UNINITIALIZED
+
+.GIO0      0    fff7ec00    00000000     UNINITIALIZED
+
+.ADC0      0    fff7f000    00000000     UNINITIALIZED
+
+.SPI1      0    fff7f800    00000000     UNINITIALIZED
+
+.HET0      0    fff7fc00    00000000     UNINITIALIZED
+
+.MMC       0    fffffd00    00000000     UNINITIALIZED
+
+.DEC       0    fffffe00    00000000     UNINITIALIZED
+
+.CMRTI     0    ffffff00    00000000     UNINITIALIZED
+
+.CIM       0    ffffff20    00000000     UNINITIALIZED
+
+.SYS       0    ffffffd0    00000000     UNINITIALIZED
+
+.vectors   0    00000000    00000024     
+                  00000000    00000024     ADLATUS_vectors.obj (.vectors)
+
+.data_set 
+*          0    00000030    00000000     UNINITIALIZED
+
+.const     0    00000030    00000fb2     
+                  00000030    000004da     ADLATUS_ConfigProject.obj (.const)
+                  0000050a    00000002     --HOLE-- [fill = 0]
+                  0000050c    00000400     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_Val_CRC32.obj (.const)
+                  0000090c    000002d4     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_SequenceAudi.obj (.const)
+                  00000be0    000001cd                                  : ADLATUS_KWP2000Audi.obj (.const)
+                  00000dad    00000003     --HOLE-- [fill = 0]
+                  00000db0    000000c2     ADLATUS_CusInterfaceAudi.obj (.const)
+                  00000e72    00000002     --HOLE-- [fill = 0]
+                  00000e74    0000006b     CORELIB_cc_tms470_VW_UDS.lib : ADLATUS_ConfigSystem.obj (.const)
+                  00000edf    00000001     --HOLE-- [fill = 0]
+                  00000ee0    0000005c                                  : ADLATUS_ConfigAdlatus.obj (.const)
+                  00000f3c    00000030     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_CanHandler.obj (.const)
+                  00000f6c    00000024     CORELIB_cc_tms470_VW_UDS.lib : ADLATUS_System.obj (.const)
+                  00000f90    0000001a     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_EventHandlerAudi.obj (.const)
+                  00000faa    00000002     --HOLE-- [fill = 0]
+                  00000fac    00000018                                  : ADLATUS_Tp.obj (.const)
+                  00000fc4    0000000c     lld_SPI.obj (.const)
+                  00000fd0    00000006     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_Val_RamPatternTest_UB.obj (.const)
+                  00000fd6    00000002     --HOLE-- [fill = 0]
+                  00000fd8    00000004     ADLATUS_Startup.obj (.const)
+                  00000fdc    00000002     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_Hal.obj (.const)
+                  00000fde    00000002     --HOLE-- [fill = 0]
+                  00000fe0    00000002     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_ValHandler.obj (.const)
+
+.cinit     0    00000fe4    00000078     
+                  00000fe4    0000005c     ADLATUS_ConfigProject.obj (.cinit)
+                  00001040    0000000c     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_KWP2000Audi.obj (.cinit)
+                  0000104c    00000009     ADLATUS_ExternalWatchdog.obj (.cinit)
+                  00001055    00000007     --HOLE-- [fill = 0]
+
+.text:2    0    0000105c    00002e30     
+                  0000105c    00001db0     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_KWP2000Audi.obj (.text)
+                  00002e0c    000001a0     ADLATUS_ValidationAudi.obj (.text)
+                  00002fac    00000188     ADLATUS_Startup.obj (.text)
+                  00003134    0000017c     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_Hal.obj (.text)
+                  000032b0    00000178     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_Main.obj (.text)
+                  00003428    00000178     CORELIB_cc_tms470_VW_UDS.lib : ADLATUS_System.obj (.text)
+                  000035a0    00000160     ADLATUS_Eep.obj (.text)
+                  00003700    000000c0     CORELIB_cc_tms470_VW_UDS.lib : ADLATUS_ServiceHandler.obj (.text)
+                  000037c0    000000b0                                  : ADLATUS_FUN_Global_CollectData.obj (.text)
+                  00003870    00000084     ADLATUS_CheckDependAudi.obj (.text)
+                  000038f4    00000084     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_Val_RamPatternTest_UB.obj (.text)
+                  00003978    0000007c     ADLATUS_ApplicationInterface.obj (.text)
+                  000039f4    00000078     ADLATUS_SecurityAudi.obj (.text)
+                  00003a6c    0000006c     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_Val_CRC32.obj (.text)
+                  00003ad8    00000064     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_CChal_HISCheck.obj (.text)
+                  00003b3c    0000005c     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_Val_QuickCheck_UB.obj (.text)
+                  00003b98    0000005c     ADLATUS_ExternalWatchdogFlash.obj (.text)
+                  00003bf4    00000054     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_Setup.obj (.text)
+                  00003c48    00000050     ADLATUS_SSIHandler.obj (.text)
+                  00003c98    00000050     ADLATUS_Periphery.obj (.text)
+                  00003ce8    0000004c     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_Timer.obj (.text)
+                  00003d34    0000003c     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_Val_LinAdd8Acc16Bit_UB.obj (.text)
+                  00003d70    0000003c     CORELIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_Global_Random.obj (.text)
+                  00003dac    0000002c                                  : ADLATUS_ConfigAdlatus.obj (.text)
+                  00003dd8    0000001e                                  : ADLATUS_FUN_Global_AMemCopy.obj (.text)
+                  00003df6    0000001e                                  : ADLATUS_FUN_Global_PMemCopy.obj (.text)
+                  00003e14    0000001a     ADLATUS_DataPrepareAudi.obj (.text)
+                  00003e2e    00000002     --HOLE-- [fill = 0]
+                  00003e30    00000018     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_Main.obj (.text:v$0)
+                  00003e48    00000018                                  : ADLATUS_Main.obj (.text:v$1)
+                  00003e60    00000018     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_Val_CanMsgObjectTest_UB.obj (.text)
+                  00003e78    00000014     icall16.obj (.text)
+
+$fill000   0    00003ff0    00000010     
+                  00003ff0    00000010     --HOLE-- [fill = ffffffff]
+
+.text:1    0    00004000    00001bd8     
+                  00004000    00000810     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_Tp.obj (.text)
+                  00004810    000005e0     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_CanHandler.obj (.text)
+                  00004df0    000003f0     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_ValHandler.obj (.text)
+                  000051e0    000003c0     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_SessionHandler.obj (.text)
+                  000055a0    000001e0                                  : ADLATUS_EventHandlerAudi.obj (.text)
+                  00005780    000001cc     ADLATUS_NvmHandler.obj (.text)
+                  0000594c    000001ac     lld_SPI.obj (.text)
+                  00005af8    000000e0     u_div32.obj (.text)
+
+.HALROM    0    00005be0    00000000     UNINITIALIZED
+
+.halfunctions 
+*          0    00005be0    00000054     RUN ADDR = 00402000
+                  00005be0    00000054     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_HalRAM.obj (.text)
+
+.WDTROM    0    00005c80    00000000     UNINITIALIZED
+
+.watchdog 
+*          0    00005c80    00000134     RUN ADDR = 00401b50
+                  00005c80    000000e8     ADLATUS_ExternalWatchdog.obj (.text)
+                  00005d68    0000004c     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_CanHandlerRAM.obj (.text)
+
+$fill001   0    00007ffc    00000004     
+                  00007ffc    00000004     --HOLE-- [fill = 12345678]
+
+.intvecs   0    00008000    00000020     
+                  00008000    00000020     ADLATUS_vectors2.obj (.intvecs)
+
+.fsw_entry 
+*          0    00008024    00000000     UNINITIALIZED
+
+$fill002   0    00010000    00000004     
+                  00010000    00000004     --HOLE-- [fill = cafebabe]
+
+$fill003   0    00018000    00000004     
+                  00018000    00000004     --HOLE-- [fill = cabebabe]
+
+$fill004   0    00020000    00000004     
+                  00020000    00000004     --HOLE-- [fill = cabebabe]
+
+.CHCKSUM2 
+*          0    0007fffc    00000000     UNINITIALIZED
+
+$fill005   0    0007fffc    00000004     
+                  0007fffc    00000004     --HOLE-- [fill = ffffffff]
+
+.REQUEST   0    00400000    00000004     UNINITIALIZED
+                  00400000    00000004     ADLATUS_ApplicationInterface.obj (.REQUEST)
+
+.data      0    00400004    00000000     UNINITIALIZED
+
+.RAMSTART 
+*          0    00400004    00000000     UNINITIALIZED
+
+.bss:1     0    00400004    000000a0     UNINITIALIZED
+                  00400004    00000068     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_KWP2000Audi.obj (.bss)
+                  0040006c    00000030     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_FUN_CChal_HISCheck.obj (.bss)
+                  0040009c    00000008     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_EventHandlerAudi.obj (.bss)
+
+.sysmem    0    004000a4    00000000     UNINITIALIZED
+
+.bss:2     0    004000a4    000007fd     UNINITIALIZED
+                  004000a4    00000430     CORELIB_cc_tms470_VW_UDS.lib : ADLATUS_ConfigSystem.obj (.bss)
+                  004004d4    00000206                                  : ADLATUS_FUN_Global_CollectData.obj (.bss)
+                  004006da    00000001     ADLATUS_ExternalWatchdog.obj (.bss)
+                  004006db    00000001     lld_SPI.obj (.bss)
+                  004006dc    00000055     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_CanHandler.obj (.bss)
+                  00400734    00000044     ADLATUS_ConfigProject.obj (.bss)
+                  00400778    00000040     CHKLIB_cc_tms470_VW_UDS.lib : ADLATUS_ValHandler.obj (.bss)
+                  004007b8    0000003c     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_Tp.obj (.bss)
+                  004007f4    0000002a     ADLATUS_ValidationAudi.obj (.bss)
+                  00400820    0000001c     CORELIB_cc_tms470_VW_UDS.lib : ADLATUS_System.obj (.bss)
+                  0040083c    0000001c     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_SessionHandler.obj (.bss)
+                  00400858    00000014     ADLATUS_NvmHandler.obj (.bss)
+                  0040086c    00000014     HALLIB_cc_tms470_VW_UDS.lib : ADLATUS_Hal.obj (.bss)
+                  00400880    0000000c     ADLATUS_SecurityAudi.obj (.bss)
+                  0040088c    00000008     ADLATUS_ExternalWatchdogFlash.obj (.bss)
+                  00400894    00000004     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_Timer.obj (.bss)
+                  00400898    00000004     CORELIB_cc_tms470_VW_UDS.lib : ADLATUS_ServiceHandler.obj (.bss)
+                  0040089c    00000005     AUDILIB_cc_tms470_VW_UDS.lib : ADLATUS_Main.obj (.bss)
+
+.WDTRAM    0    00401b50    00000000     UNINITIALIZED
+
+.HALRAM    0    00402000    00000000     UNINITIALIZED
+
+.ustack    0    00402200    00000000     UNINITIALIZED
+
+.stack     0    00402400    00000000     UNINITIALIZED
+
+.HET0PROG 
+*          0    00800000    00000000     UNINITIALIZED
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+000035a0   $FUN_BioEepBusy
+000035b8   $FUN_BioEepInit
+000035c8   $FUN_BioEepRead
+0000361c   $FUN_BioEepWrite
+00004066   $FUN_CCTp_Timer_V
+00005036   $FUN_CCVhnd_CalcChecksum_UB
+00005072   $FUN_CCVhnd_CalcChksumChunk_UB
+000050ac   $FUN_CCVhnd_CheckValidationMap_UB
+000051ba   $FUN_CCVhnd_GetStartupState_UW
+00004e40   $FUN_CCVhnd_InitCtrlST_UB
+000051b0   $FUN_CCVhnd_InitValidation_V
+00003994   $FUN_CCapplint_CheckFlashRequest_UB
+00003978   $FUN_CCapplint_JumpToFSW_V
+000039ba   $FUN_CCapplint_ResetFlashRequest_V
+000039ca   $FUN_CCapplint_SetDefSessionRequ_V
+000039d2   $FUN_CCapplint_SetFlashRequest_V
+000039c2   $FUN_CCapplint_SetResetRequest_V
+0000496a   $FUN_CCcan_ActivateCanMsgObj_V
+00004a08   $FUN_CCcan_CheckCanReceiver_UB
+00004830   $FUN_CCcan_CheckMsgObjBuffer_UB
+00004982   $FUN_CCcan_DeactivateCanMsgObj_V
+000048bc   $FUN_CCcan_InitCanController_V
+00004998   $FUN_CCcan_InitCanMsgObj_V
+00004888   $FUN_CCcan_InitCan_V
+00004bdc   $FUN_CCcan_RxData_UB
+00004968   $FUN_CCcan_StartCanController_V
+00004966   $FUN_CCcan_StopCanController_V
+00401c38   $FUN_CCcan_TxDataFromRam_V
+00004c64   $FUN_CCcan_TxData_UB
+00004d6e   $FUN_CCcan_TxDiagResponse_V
+00004824   $FUN_CCcan_Wait_V
+00004810   $FUN_CCcan_Waitconf_V
+0000481a   $FUN_CCcan_Waitconfx_V
+00003870   $FUN_CCcd_CheckDependAudi_UB
+00003dac   $FUN_CCconsys_InitAllSystemBuffer_V
+00003e14   $FUN_CCdp_DataPrepareAudi_UB
+000056c2   $FUN_CCeventaudi_EventHandler_B
+000055a0   $FUN_CCeventaudi_EventInit_V
+000055de   $FUN_CCeventaudi_EventProcessing_V
+00005708   $FUN_CCeventaudi_ProjectTimer_V
+000055d0   $FUN_CCeventaudi_SetProjectTimer_V
+00003dd8   $FUN_CCglo_AMemCopy_V
+000037d6   $FUN_CCglo_CollectData_UB
+000037d0   $FUN_CCglo_GetIntermediateBufferNumbers_V
+00003d70   $FUN_CCglo_GetRandomValue_UL
+000037c0   $FUN_CCglo_InitCollectData_V
+00003df6   $FUN_CCglo_PMemCopy_V
+00003162   $FUN_CChal_DisGlobalInterrupt_V
+000031dc   $FUN_CChal_DisableIntWatchdog_V
+000031de   $FUN_CChal_EnableIntWatchdog_V
+0000319c   $FUN_CChal_GetHWTimerValue_UW
+000031f4   $FUN_CChal_GetPerfCntTicks_UL
+000031ea   $FUN_CChal_GetPerformanceCounter_UL
+00003ad8   $FUN_CChal_HISDriverCheck_UB
+00402000   $FUN_CChal_HardwareTimerCheck_UW
+00003134   $FUN_CChal_InitHAL_V
+0000316c   $FUN_CChal_InitHardwareTimer_V
+000031d0   $FUN_CChal_InitIntWatchdog_V
+000031bc   $FUN_CChal_SWReset_V
+000031aa   $FUN_CChal_StoreHwTimerValue_V
+00003248   $FUN_CChal_TimeoutOccured_B
+0000323c   $FUN_CChal_TimeoutStart_V
+00402034   $FUN_CChal_TriggerIntWatchdog_V
+000031fc   $FUN_CChal_WaitTime_V
+0000280c   $FUN_CCkwpaudi_AddressToMemoryMapIndex_UB
+000026e2   $FUN_CCkwpaudi_AddressingNotAllowed_UB
+00002d24   $FUN_CCkwpaudi_CheckAddrMode_UB
+00002d62   $FUN_CCkwpaudi_ClearFlashFunctions_V
+00001210   $FUN_CCkwpaudi_CommunicationControl_UB
+000011dc   $FUN_CCkwpaudi_ControlDTCSetting_UB
+00002c94   $FUN_CCkwpaudi_CopyEntry_V
+000010c8   $FUN_CCkwpaudi_DSCDefaultSession_UB
+00001198   $FUN_CCkwpaudi_DSCExtendedSession_UB
+00001134   $FUN_CCkwpaudi_DSCProgSession_UB
+000012fe   $FUN_CCkwpaudi_ECUReset_UB
+00002d88   $FUN_CCkwpaudi_EraseEeprom_UB
+000025bc   $FUN_CCkwpaudi_GetSecurityLevel_UB
+0000105c   $FUN_CCkwpaudi_InitKwp2000_V
+00001076   $FUN_CCkwpaudi_InitKwp2000internal_V
+00002718   $FUN_CCkwpaudi_LogicalAddressCheck_UW
+00002020   $FUN_CCkwpaudi_RcCheckMemory_UB
+00001ba0   $FUN_CCkwpaudi_RcCheckProgramPreCond_UB
+000024c8   $FUN_CCkwpaudi_RcChkProgDependencies_UB
+00001be4   $FUN_CCkwpaudi_RcEraseMemory_UB
+0000254e   $FUN_CCkwpaudi_RcRoutineIdNotSupported_UB
+00002850   $FUN_CCkwpaudi_ReadDataById_UB
+00002d08   $FUN_CCkwpaudi_ReadTimelock_UB
+000014a0   $FUN_CCkwpaudi_RequestDownload_UB
+0000255c   $FUN_CCkwpaudi_RequestLengthError_UB
+00001b4e   $FUN_CCkwpaudi_RequestTransferExit_UB
+00002790   $FUN_CCkwpaudi_ResolveMemoryMapIndex_UB
+000027d2   $FUN_CCkwpaudi_ResolveValidationMapIndex_UB
+00001354   $FUN_CCkwpaudi_SaGetSeed_UB
+000013f6   $FUN_CCkwpaudi_SaSendKey_UB
+00002574   $FUN_CCkwpaudi_SecurityAccessDenied_UB
+000025d4   $FUN_CCkwpaudi_SequenceError_UB
+0000266c   $FUN_CCkwpaudi_ServiceNotAllowed_UB
+0000263e   $FUN_CCkwpaudi_ServiceNotSupported_UB
+000026e6   $FUN_CCkwpaudi_SubfunctionNotSupported_UB
+000012ec   $FUN_CCkwpaudi_TesterPresent_UB
+0000182c   $FUN_CCkwpaudi_TransferData_UB
+000023d8   $FUN_CCkwpaudi_UpdateBlockValadity_UB
+00001ec4   $FUN_CCkwpaudi_UpdateEraseBlockVal_UB
+00001234   $FUN_CCkwpaudi_WriteDataByID_UB
+00002d14   $FUN_CCkwpaudi_WriteTimelock_UB
+000032b8   $FUN_CCmain_Main_V
+0000337c   $FUN_CCmain_SysStateEvaluation_V
+00005780   $FUN_CCnvm_InitNvmHandler_V
+00005888   $FUN_CCnvm_NvmAccess_UB
+000058f4   $FUN_CCnvm_NvmDirectReadAccess_UB
+000058ce   $FUN_CCnvm_NvmDirectWriteAccess_UB
+00005856   $FUN_CCnvm_ScanNvmMemoryTable_UB
+00003cba   $FUN_CCper_InitIOForAdlatus_V
+00003c98   $FUN_CCper_InitIOStartup_V
+00003a3a   $FUN_CCsecaudi_CheckKey_UB
+000039f4   $FUN_CCsecaudi_CreateSeed_V
+000051fc   $FUN_CCses_GetActiveSession_UB
+000052c2   $FUN_CCses_InitChannel_V
+000051e0   $FUN_CCses_InitSessionLayer_V
+00005206   $FUN_CCses_LookForCmd_PST
+000052e0   $FUN_CCses_RxSession_UB
+000054a6   $FUN_CCses_TxSession_UB
+00003bf4   $FUN_CCsetup_InitAdlatus_V
+00003700   $FUN_CCsrv_InitServiceHandler_V
+00003708   $FUN_CCsrv_RxServiceHandler_UB
+00003c56   $FUN_CCssi_EepromHandler_UB
+00003c48   $FUN_CCssi_InitSSI_V
+000034f4   $FUN_CCsys_BufferRouter_V
+00003428   $FUN_CCsys_InitOperatingSystem_V
+00003444   $FUN_CCsys_OperatingSystem_V
+00003514   $FUN_CCsys_ResultEvaluation_UB
+00003ce8   $FUN_CCtim_InitSWTimerHandler_V
+00003cf0   $FUN_CCtim_SystemTimerCheck_V
+00004032   $FUN_CCtp_InitInternal_V
+00004000   $FUN_CCtp_Init_V
+000040d2   $FUN_CCtp_RxTp_UB
+000044d0   $FUN_CCtp_TxTp_UB
+00003a6c   $FUN_CCval_CRC32_UB
+00003aac   $FUN_CCval_CRC32_onFly_UB
+00003e60   $FUN_CCval_CanMsgObjectTest_UB
+00003d34   $FUN_CCval_LinAdd8Acc16Bit_UB
+00003b3c   $FUN_CCval_QuickCheck_UB
+000038f4   $FUN_CCval_RamPatternTest_UB
+00002eee   $FUN_CCvalaudi_CalcCsumEepromInternal_UB
+00002e3a   $FUN_CCvalaudi_CalcCsumFlashDownload_UB
+00002e66   $FUN_CCvalaudi_CalcCsumRamDownload_UB
+00002eb0   $FUN_CCvalaudi_InitCalcCsumEepromDownload_UB
+00002e0c   $FUN_CCvalaudi_InitCalcCsumFlashDownload_UB
+00003be4   $FUN_CCwtdog_DisableExtWatchdog_V
+00003bd4   $FUN_CCwtdog_EnableExtWatchdog_V
+00003bca   $FUN_CCwtdog_GetExtWatchdogState_UB
+00003bc2   $FUN_CCwtdog_InitExtWatchdogIntern_V
+00003b98   $FUN_CCwtdog_InitExtWatchdog_V
+00401b50   $FUN_CCwtdog_TriggerExtWatchdog_V
+00401bb4   $FUN_CCwtdog_TriggerWatchdogEraseMem_V
+00401bf4   $FUN_CCwtdog_TriggerWatchdogProgMem_V
+000055b6   $FUN__CCeventaudi_ProjectInitIntern_V
+00005996   $OCSPI_Busy
+00005988   $OCSPI_DeInitSync
+0000594c   $OCSPI_InitSync
+000059f6   $OCSPI_ReadSync
+00005a96   $OCSPI_WriteSync
+000032b0   $main
+00400004   .bss
+00400004   .data
+00004000   .text
+00003e78   IND$CALL
+00005af8   U$DIV
+00005af8   U$MOD
+00005afc   U_DIV
+00005afc   U_MOD
+00400808   _CCValAudi_Eeprom_ST
+004007f4   _CCValAudi_WorkingInfoInt_ST
+00400778   _CCVhnd_HndlCtrlInt_ST
+004007b4   _CCVhnd_StartTime_UL
+004007a0   _CCVhnd_WorkingInfoInt_ST
+00400820   _CCsys_SysCtrl_ST
+00000fac   _C_CCTP_FlowControlTGCas_UB
+00000fb4   _C_CCTP_FlowControlTG_UB
+00000fbc   _C_CCTP_TestPresentTG_UB
+00000dc8   _C_CCcusint_AlternativeAppIdent_ST
+00000e6e   _C_CCcusint_AlternativeAppProgState_UB
+00000db4   _C_CCcusint_AlternativeBootIdent_ST
+00000e6d   _C_CCcusint_AlternativeBootSWProgState_UB
+00000ddc   _C_CCcusint_AlternativeDataIdent_ST
+00000e6f   _C_CCcusint_AlternativeDataProgState_UB
+00000e04   _C_CCcusint_AlternativeECUIdent_ST
+00000df0   _C_CCcusint_AlternativeEepromIdent_ST
+00000e71   _C_CCcusint_AlternativeSysProgrammed_UB
+00000e70   _C_CCcusint_AlternativeTimelock_UB
+00000040   _C_FlashDelay_UL
+0040070c   _CanCtrl_ST
+004004cc   _CmdRuntimeInfo_AST
+00003e48   _FUN_CCmain_Main_V
+0000801c   _FiqDisp2
+0040006c   _FlashParam
+00008010   _ISR_DA
+0000800c   _ISR_Pre
+00008014   _ISR_RESEVED
+00008004   _ISR_Undef
+00008018   _IrqDisp2
+00402000   _RAMHAL
+00401b50   _RAMWDT
+00005be0   _ROMHAL
+00005c80   _ROMWDT
+00000fc4   _SPI2_st_EepromMode
+00000fca   _SPI2_st_Pins
+0040083c   _SesCtrl_ST
+004025e8   _StackABORT_
+00402510   _StackFIQ_
+004025e0   _StackIRQ_
+00402600   _StackSUPER_
+004025f0   _StackUND_
+00402500   _StackUSER_
+00008008   _SwiDisp2
+ffffffff   ___binit__
+00400004   ___bss__
+ffffffff   ___c_args__
+00000fe4   ___cinit__
+00400004   ___data__
+00400004   ___edata__
+004000a4   ___end__
+00005bd8   ___etext__
+ffffffff   ___pinit__
+00004000   ___text__
+00000fd8   _c_BBSuperStackTop_UL
+000001a0   _c_CCVhnd_Alternate2Quickcheck_FUN
+0000019c   _c_CCVhnd_AlternateQuickcheck_FUN
+00000198   _c_CCVhnd_Quickcheck_FUN
+00000edc   _c_CCVhnd_TimeSlot_1ms_UW
+00000ede   _c_CCVhnd_TimeSlot_4us_UB
+00000f40   _c_CCcan_BaudrateTable_AUL
+00000f3c   _c_CCcan_TestPattern_AUB
+00000e8c   _c_CCcon_BufferInit_ST
+00000064   _c_CCconprj_AddrModeCfg_AST
+00000500   _c_CCconprj_AsamOdxFileID_UW
+00000050   _c_CCconprj_CanChannelTable_AST
+00000034   _c_CCconprj_CanClockFrequency_UL
+0000004a   _c_CCconprj_CanController_UW
+00400734   _c_CCconprj_CanMsgObjConfig_AST
+000001a6   _c_CCconprj_ChecksumLength_UW
+00000030   _c_CCconprj_ClockFrequency_UL
+0000004c   _c_CCconprj_DefaultCanBaudrate_UW
+0000007c   _c_CCconprj_DiagResponseTG_AST
+00000507   _c_CCconprj_DisableReset_UB
+000001a8   _c_CCconprj_DownloadMap_AST
+00000076   _c_CCconprj_DscServerTiming_ST
+000004fe   _c_CCconprj_ECUProgramInfo_UW
+00000234   _c_CCconprj_EEPROM_AST
+00000046   _c_CCconprj_EraseResetTime_T16
+0000003c   _c_CCconprj_IntWdtTimeout_UW
+00000506   _c_CCconprj_LengthBootSWIdent_UB
+00000505   _c_CCconprj_LengthFingerprint_UB
+00000503   _c_CCconprj_LengthProgDate_UB
+00000504   _c_CCconprj_LengthProgState_UB
+00000502   _c_CCconprj_LengthRepairShopCode_UB
+000003e4   _c_CCconprj_LogBlockEEPROM_AUB
+000004f8   _c_CCconprj_MaxNbrRecordDataIDs_UB
+000003fc   _c_CCconprj_ReadDataByID_AST
+000004fc   _c_CCconprj_ReadFingerprint_UW
+00400774   _c_CCconprj_SessionInitTable_APST
+00400770   _c_CCconprj_SessionSelectionTable_APST
+000001a4   _c_CCconprj_SignatureLength_UW
+00000508   _c_CCconprj_StartValue_CRC16_UW
+00000044   _c_CCconprj_StopCommResetTime_T16
+00000048   _c_CCconprj_Timelock_T16
+00000038   _c_CCconprj_TimerFrequency_UL
+0000006a   _c_CCconprj_TpInterface_ST
+0000009c   _c_CCconprj_ValidationMap_AST
+000004fa   _c_CCconprj_WriteFingerprint_UW
+00000e74   _c_CCconsys_BufferConfig_AST
+00000ef0   _c_CCconsys_CanInterface_ST
+00000ec0   _c_CCconsys_ComHALFunctions_AST
+00000ea4   _c_CCconsys_ComStackFunctions_AST
+00000ec4   _c_CCconsys_EventProcessingFkt_AST
+00000f2c   _c_CCconsys_HalInterface_ST
+00000f1c   _c_CCconsys_Kwp2000Interface_ST
+00000f34   _c_CCconsys_NvmInterface_ST
+00000f38   _c_CCconsys_SWTimerHandlerInterface_ST
+00000f08   _c_CCconsys_SessionInterface_ST
+00000f18   _c_CCconsys_SrvHandlerInterface_ST
+00000ee0   _c_CCconsys_SystemInterface_ST
+00000db0   _c_CCcusint_AdlatusVersion_AUB
+00000f90   _c_CCeventaudi_EventFlags_AUB
+00000d88   _c_CCkwpaudi_RCTAddressingNotAllowed_AUB
+00000c0c   _c_CCkwpaudi_RCTCommunicationControl_AUB
+00000bfc   _c_CCkwpaudi_RCTControlDTCSetting_AUB
+00000be4   _c_CCkwpaudi_RCTDSCDefaultSession_AUB
+00000bf8   _c_CCkwpaudi_RCTDSCExtendedSession_AUB
+00000bf0   _c_CCkwpaudi_RCTDSCProgSession_AUB
+00000c38   _c_CCkwpaudi_RCTECUReset_AUB
+00000d08   _c_CCkwpaudi_RCTRcCheckMemory_AUB
+00000cbc   _c_CCkwpaudi_RCTRcCheckProgramPreCond_AUB
+00000d44   _c_CCkwpaudi_RCTRcChkProgDependencies_AUB
+00000ccc   _c_CCkwpaudi_RCTRcEraseMemory_AUB
+00000d68   _c_CCkwpaudi_RCTRcRoutineIdNotSupported_AUB
+00000d90   _c_CCkwpaudi_RCTReadDataById_AUB
+00000c6c   _c_CCkwpaudi_RCTRequestDownload_AUB
+00000d74   _c_CCkwpaudi_RCTRequestLengthError_AUB
+00000cb4   _c_CCkwpaudi_RCTRequestTransferExit_AUB
+00000d78   _c_CCkwpaudi_RCTSecurityAccessDenied_AUB
+00000c44   _c_CCkwpaudi_RCTSecurityAccessGetSeed_AUB
+00000c58   _c_CCkwpaudi_RCTSecurityAccessSendKey_AUB
+00000d7c   _c_CCkwpaudi_RCTSequenceError_AUB
+00000d84   _c_CCkwpaudi_RCTServiceNotAllowed_AUB
+00000d80   _c_CCkwpaudi_RCTServiceNotSupported_AUB
+00000d8c   _c_CCkwpaudi_RCTSubfunctionNotSupported_AUB
+00000c30   _c_CCkwpaudi_RCTTesterPresent_AUB
+00000c90   _c_CCkwpaudi_RCTTransferData_AUB
+00000c1c   _c_CCkwpaudi_RCTWriteDataByID_AUB
+0000092c   _c_CCseqaudi_InitSessionProg_AST
+0000090c   _c_CCseqaudi_PCTProgSession_AUW
+00000938   _c_CCseqaudi_SRTKwp2000ProgSession_AST
+00000f70   _c_CCsys_BufferAssignmentTable_AUB
+00000f80   _c_CCsys_ReadyFlags_AUW
+00000ec8   _c_CCtim_SWTimerFunctions_APFUN
+00000fd0   _c_CCval_RamTestPattern_AUW
+00000be0   _c_VerSMART_Audilib_V113_UW
+00000fe0   _c_VerSMART_Chcklib_V110_UW
+00000f6c   _c_VerSMART_Corelib_V110_UW
+00000fdc   _c_VerSMART_Hallib_V111_UW
+00002fb0   _c_int00
+0000050c   _crc32Tab
+fff7f000   _e_ADC0_ST
+fff7e600   _e_CAN2_MB
+fff7d200   _e_CAN3_MB
+fff7e400   _e_CAN_MB
+fff7ec00   _e_GIO_ST
+fff7fc00   _e_HET0_ST
+00800000   _e_HETPROGRAM0_UN
+ffffff20   _e_SARCIM_ST
+fffffe00   _e_SARDEC_ST
+fffffd00   _e_SARMMC_ST
+ffffff00   _e_SARRTI_ST
+ffffffd0   _e_SARSYS_ST
+fff7ea00   _e_SCC2_ST
+fff7d000   _e_SCC3_ST
+fff7e800   _e_SCC_ST
+fff7f800   _e_SPI1_ST
+fff7d400   _e_SPI2_ST
+fff7d500   _e_SPI3_ST
+fff7d600   _e_SPI4_ST
+fff7d700   _e_SPI5_ST
+00402300   _g_BBSuperStack_UL
+004003cc   _g_CCdp_WorkingBuffer_BUF
+00400066   _g_CCkwpaudi_EepromDataLeftOver_UB
+00400068   _g_CCkwpaudi_ParrotCRC32_UL
+0040022c   _g_RxBuffer00_BUF
+004003b4   _g_RxMsgObj00_BUF
+004000a4   _g_RxWorkBuffer00_BUF
+0040032c   _g_TxBuffer00_BUF
+004003c0   _g_TxMsgObj00_BUF
+004001a4   _g_TxWorkBuffer00_BUF
+004006db   _g_buf_UB
+00400000   _gt_CCapplint_FlashRequest_UL
+00003e30   _main
+0007fffc   _r_F_CHCKSUM2
+00400004   _r_F_RAMSTART
+00400000   _r_F_REQUEST
+0040005c   _sECUDataAppl_ST
+0040089c   _t_AdlatusInitState_UB
+004004d4   _t_CC_CollectBuffer_BUF
+004006dc   _t_CCcan_CanFifoBuffer_AUB
+0040009c   _t_CCeventaudi_PrjCtrl_ST
+0040086c   _t_CChal_HalCtrl_ST
+00400004   _t_CCkwpaudi_KwpCtrl_ST
+00400858   _t_CCnvm_NvmCtrl_ST
+00400860   _t_CCnvm_NvmRunTimeEntry_ST
+0040088c   _t_CCper_WatchdogCtrl_ST
+00400894   _t_CCtime_TimerCtrl_ST
+004006d8   _t_DataInBuffer_UW
+004006d4   _t_DataPointer_UW
+0040081c   _t_FlashCheckState_UB
+0040089d   _t_InitCtrl_ST
+0040081d   _t_NVMResult_UB
+004006d6   _t_PagePointer_UW
+00400898   _t_ServiceHandlerCtrl_ST
+004006da   _wdStatus
+ffffffff   binit
+00000fe4   cinit
+00400004   edata
+004000a4   end
+00005bd8   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000030   _c_CCconprj_ClockFrequency_UL
+00000034   _c_CCconprj_CanClockFrequency_UL
+00000038   _c_CCconprj_TimerFrequency_UL
+0000003c   _c_CCconprj_IntWdtTimeout_UW
+00000040   _C_FlashDelay_UL
+00000044   _c_CCconprj_StopCommResetTime_T16
+00000046   _c_CCconprj_EraseResetTime_T16
+00000048   _c_CCconprj_Timelock_T16
+0000004a   _c_CCconprj_CanController_UW
+0000004c   _c_CCconprj_DefaultCanBaudrate_UW
+00000050   _c_CCconprj_CanChannelTable_AST
+00000064   _c_CCconprj_AddrModeCfg_AST
+0000006a   _c_CCconprj_TpInterface_ST
+00000076   _c_CCconprj_DscServerTiming_ST
+0000007c   _c_CCconprj_DiagResponseTG_AST
+0000009c   _c_CCconprj_ValidationMap_AST
+00000198   _c_CCVhnd_Quickcheck_FUN
+0000019c   _c_CCVhnd_AlternateQuickcheck_FUN
+000001a0   _c_CCVhnd_Alternate2Quickcheck_FUN
+000001a4   _c_CCconprj_SignatureLength_UW
+000001a6   _c_CCconprj_ChecksumLength_UW
+000001a8   _c_CCconprj_DownloadMap_AST
+00000234   _c_CCconprj_EEPROM_AST
+000003e4   _c_CCconprj_LogBlockEEPROM_AUB
+000003fc   _c_CCconprj_ReadDataByID_AST
+000004f8   _c_CCconprj_MaxNbrRecordDataIDs_UB
+000004fa   _c_CCconprj_WriteFingerprint_UW
+000004fc   _c_CCconprj_ReadFingerprint_UW
+000004fe   _c_CCconprj_ECUProgramInfo_UW
+00000500   _c_CCconprj_AsamOdxFileID_UW
+00000502   _c_CCconprj_LengthRepairShopCode_UB
+00000503   _c_CCconprj_LengthProgDate_UB
+00000504   _c_CCconprj_LengthProgState_UB
+00000505   _c_CCconprj_LengthFingerprint_UB
+00000506   _c_CCconprj_LengthBootSWIdent_UB
+00000507   _c_CCconprj_DisableReset_UB
+00000508   _c_CCconprj_StartValue_CRC16_UW
+0000050c   _crc32Tab
+0000090c   _c_CCseqaudi_PCTProgSession_AUW
+0000092c   _c_CCseqaudi_InitSessionProg_AST
+00000938   _c_CCseqaudi_SRTKwp2000ProgSession_AST
+00000be0   _c_VerSMART_Audilib_V113_UW
+00000be4   _c_CCkwpaudi_RCTDSCDefaultSession_AUB
+00000bf0   _c_CCkwpaudi_RCTDSCProgSession_AUB
+00000bf8   _c_CCkwpaudi_RCTDSCExtendedSession_AUB
+00000bfc   _c_CCkwpaudi_RCTControlDTCSetting_AUB
+00000c0c   _c_CCkwpaudi_RCTCommunicationControl_AUB
+00000c1c   _c_CCkwpaudi_RCTWriteDataByID_AUB
+00000c30   _c_CCkwpaudi_RCTTesterPresent_AUB
+00000c38   _c_CCkwpaudi_RCTECUReset_AUB
+00000c44   _c_CCkwpaudi_RCTSecurityAccessGetSeed_AUB
+00000c58   _c_CCkwpaudi_RCTSecurityAccessSendKey_AUB
+00000c6c   _c_CCkwpaudi_RCTRequestDownload_AUB
+00000c90   _c_CCkwpaudi_RCTTransferData_AUB
+00000cb4   _c_CCkwpaudi_RCTRequestTransferExit_AUB
+00000cbc   _c_CCkwpaudi_RCTRcCheckProgramPreCond_AUB
+00000ccc   _c_CCkwpaudi_RCTRcEraseMemory_AUB
+00000d08   _c_CCkwpaudi_RCTRcCheckMemory_AUB
+00000d44   _c_CCkwpaudi_RCTRcChkProgDependencies_AUB
+00000d68   _c_CCkwpaudi_RCTRcRoutineIdNotSupported_AUB
+00000d74   _c_CCkwpaudi_RCTRequestLengthError_AUB
+00000d78   _c_CCkwpaudi_RCTSecurityAccessDenied_AUB
+00000d7c   _c_CCkwpaudi_RCTSequenceError_AUB
+00000d80   _c_CCkwpaudi_RCTServiceNotSupported_AUB
+00000d84   _c_CCkwpaudi_RCTServiceNotAllowed_AUB
+00000d88   _c_CCkwpaudi_RCTAddressingNotAllowed_AUB
+00000d8c   _c_CCkwpaudi_RCTSubfunctionNotSupported_AUB
+00000d90   _c_CCkwpaudi_RCTReadDataById_AUB
+00000db0   _c_CCcusint_AdlatusVersion_AUB
+00000db4   _C_CCcusint_AlternativeBootIdent_ST
+00000dc8   _C_CCcusint_AlternativeAppIdent_ST
+00000ddc   _C_CCcusint_AlternativeDataIdent_ST
+00000df0   _C_CCcusint_AlternativeEepromIdent_ST
+00000e04   _C_CCcusint_AlternativeECUIdent_ST
+00000e6d   _C_CCcusint_AlternativeBootSWProgState_UB
+00000e6e   _C_CCcusint_AlternativeAppProgState_UB
+00000e6f   _C_CCcusint_AlternativeDataProgState_UB
+00000e70   _C_CCcusint_AlternativeTimelock_UB
+00000e71   _C_CCcusint_AlternativeSysProgrammed_UB
+00000e74   _c_CCconsys_BufferConfig_AST
+00000e8c   _c_CCcon_BufferInit_ST
+00000ea4   _c_CCconsys_ComStackFunctions_AST
+00000ec0   _c_CCconsys_ComHALFunctions_AST
+00000ec4   _c_CCconsys_EventProcessingFkt_AST
+00000ec8   _c_CCtim_SWTimerFunctions_APFUN
+00000edc   _c_CCVhnd_TimeSlot_1ms_UW
+00000ede   _c_CCVhnd_TimeSlot_4us_UB
+00000ee0   _c_CCconsys_SystemInterface_ST
+00000ef0   _c_CCconsys_CanInterface_ST
+00000f08   _c_CCconsys_SessionInterface_ST
+00000f18   _c_CCconsys_SrvHandlerInterface_ST
+00000f1c   _c_CCconsys_Kwp2000Interface_ST
+00000f2c   _c_CCconsys_HalInterface_ST
+00000f34   _c_CCconsys_NvmInterface_ST
+00000f38   _c_CCconsys_SWTimerHandlerInterface_ST
+00000f3c   _c_CCcan_TestPattern_AUB
+00000f40   _c_CCcan_BaudrateTable_AUL
+00000f6c   _c_VerSMART_Corelib_V110_UW
+00000f70   _c_CCsys_BufferAssignmentTable_AUB
+00000f80   _c_CCsys_ReadyFlags_AUW
+00000f90   _c_CCeventaudi_EventFlags_AUB
+00000fac   _C_CCTP_FlowControlTGCas_UB
+00000fb4   _C_CCTP_FlowControlTG_UB
+00000fbc   _C_CCTP_TestPresentTG_UB
+00000fc4   _SPI2_st_EepromMode
+00000fca   _SPI2_st_Pins
+00000fd0   _c_CCval_RamTestPattern_AUW
+00000fd8   _c_BBSuperStackTop_UL
+00000fdc   _c_VerSMART_Hallib_V111_UW
+00000fe0   _c_VerSMART_Chcklib_V110_UW
+00000fe4   ___cinit__
+00000fe4   cinit
+0000105c   $FUN_CCkwpaudi_InitKwp2000_V
+00001076   $FUN_CCkwpaudi_InitKwp2000internal_V
+000010c8   $FUN_CCkwpaudi_DSCDefaultSession_UB
+00001134   $FUN_CCkwpaudi_DSCProgSession_UB
+00001198   $FUN_CCkwpaudi_DSCExtendedSession_UB
+000011dc   $FUN_CCkwpaudi_ControlDTCSetting_UB
+00001210   $FUN_CCkwpaudi_CommunicationControl_UB
+00001234   $FUN_CCkwpaudi_WriteDataByID_UB
+000012ec   $FUN_CCkwpaudi_TesterPresent_UB
+000012fe   $FUN_CCkwpaudi_ECUReset_UB
+00001354   $FUN_CCkwpaudi_SaGetSeed_UB
+000013f6   $FUN_CCkwpaudi_SaSendKey_UB
+000014a0   $FUN_CCkwpaudi_RequestDownload_UB
+0000182c   $FUN_CCkwpaudi_TransferData_UB
+00001b4e   $FUN_CCkwpaudi_RequestTransferExit_UB
+00001ba0   $FUN_CCkwpaudi_RcCheckProgramPreCond_UB
+00001be4   $FUN_CCkwpaudi_RcEraseMemory_UB
+00001ec4   $FUN_CCkwpaudi_UpdateEraseBlockVal_UB
+00002020   $FUN_CCkwpaudi_RcCheckMemory_UB
+000023d8   $FUN_CCkwpaudi_UpdateBlockValadity_UB
+000024c8   $FUN_CCkwpaudi_RcChkProgDependencies_UB
+0000254e   $FUN_CCkwpaudi_RcRoutineIdNotSupported_UB
+0000255c   $FUN_CCkwpaudi_RequestLengthError_UB
+00002574   $FUN_CCkwpaudi_SecurityAccessDenied_UB
+000025bc   $FUN_CCkwpaudi_GetSecurityLevel_UB
+000025d4   $FUN_CCkwpaudi_SequenceError_UB
+0000263e   $FUN_CCkwpaudi_ServiceNotSupported_UB
+0000266c   $FUN_CCkwpaudi_ServiceNotAllowed_UB
+000026e2   $FUN_CCkwpaudi_AddressingNotAllowed_UB
+000026e6   $FUN_CCkwpaudi_SubfunctionNotSupported_UB
+00002718   $FUN_CCkwpaudi_LogicalAddressCheck_UW
+00002790   $FUN_CCkwpaudi_ResolveMemoryMapIndex_UB
+000027d2   $FUN_CCkwpaudi_ResolveValidationMapIndex_UB
+0000280c   $FUN_CCkwpaudi_AddressToMemoryMapIndex_UB
+00002850   $FUN_CCkwpaudi_ReadDataById_UB
+00002c94   $FUN_CCkwpaudi_CopyEntry_V
+00002d08   $FUN_CCkwpaudi_ReadTimelock_UB
+00002d14   $FUN_CCkwpaudi_WriteTimelock_UB
+00002d24   $FUN_CCkwpaudi_CheckAddrMode_UB
+00002d62   $FUN_CCkwpaudi_ClearFlashFunctions_V
+00002d88   $FUN_CCkwpaudi_EraseEeprom_UB
+00002e0c   $FUN_CCvalaudi_InitCalcCsumFlashDownload_UB
+00002e3a   $FUN_CCvalaudi_CalcCsumFlashDownload_UB
+00002e66   $FUN_CCvalaudi_CalcCsumRamDownload_UB
+00002eb0   $FUN_CCvalaudi_InitCalcCsumEepromDownload_UB
+00002eee   $FUN_CCvalaudi_CalcCsumEepromInternal_UB
+00002fb0   _c_int00
+00003134   $FUN_CChal_InitHAL_V
+00003162   $FUN_CChal_DisGlobalInterrupt_V
+0000316c   $FUN_CChal_InitHardwareTimer_V
+0000319c   $FUN_CChal_GetHWTimerValue_UW
+000031aa   $FUN_CChal_StoreHwTimerValue_V
+000031bc   $FUN_CChal_SWReset_V
+000031d0   $FUN_CChal_InitIntWatchdog_V
+000031dc   $FUN_CChal_DisableIntWatchdog_V
+000031de   $FUN_CChal_EnableIntWatchdog_V
+000031ea   $FUN_CChal_GetPerformanceCounter_UL
+000031f4   $FUN_CChal_GetPerfCntTicks_UL
+000031fc   $FUN_CChal_WaitTime_V
+0000323c   $FUN_CChal_TimeoutStart_V
+00003248   $FUN_CChal_TimeoutOccured_B
+000032b0   $main
+000032b8   $FUN_CCmain_Main_V
+0000337c   $FUN_CCmain_SysStateEvaluation_V
+00003428   $FUN_CCsys_InitOperatingSystem_V
+00003444   $FUN_CCsys_OperatingSystem_V
+000034f4   $FUN_CCsys_BufferRouter_V
+00003514   $FUN_CCsys_ResultEvaluation_UB
+000035a0   $FUN_BioEepBusy
+000035b8   $FUN_BioEepInit
+000035c8   $FUN_BioEepRead
+0000361c   $FUN_BioEepWrite
+00003700   $FUN_CCsrv_InitServiceHandler_V
+00003708   $FUN_CCsrv_RxServiceHandler_UB
+000037c0   $FUN_CCglo_InitCollectData_V
+000037d0   $FUN_CCglo_GetIntermediateBufferNumbers_V
+000037d6   $FUN_CCglo_CollectData_UB
+00003870   $FUN_CCcd_CheckDependAudi_UB
+000038f4   $FUN_CCval_RamPatternTest_UB
+00003978   $FUN_CCapplint_JumpToFSW_V
+00003994   $FUN_CCapplint_CheckFlashRequest_UB
+000039ba   $FUN_CCapplint_ResetFlashRequest_V
+000039c2   $FUN_CCapplint_SetResetRequest_V
+000039ca   $FUN_CCapplint_SetDefSessionRequ_V
+000039d2   $FUN_CCapplint_SetFlashRequest_V
+000039f4   $FUN_CCsecaudi_CreateSeed_V
+00003a3a   $FUN_CCsecaudi_CheckKey_UB
+00003a6c   $FUN_CCval_CRC32_UB
+00003aac   $FUN_CCval_CRC32_onFly_UB
+00003ad8   $FUN_CChal_HISDriverCheck_UB
+00003b3c   $FUN_CCval_QuickCheck_UB
+00003b98   $FUN_CCwtdog_InitExtWatchdog_V
+00003bc2   $FUN_CCwtdog_InitExtWatchdogIntern_V
+00003bca   $FUN_CCwtdog_GetExtWatchdogState_UB
+00003bd4   $FUN_CCwtdog_EnableExtWatchdog_V
+00003be4   $FUN_CCwtdog_DisableExtWatchdog_V
+00003bf4   $FUN_CCsetup_InitAdlatus_V
+00003c48   $FUN_CCssi_InitSSI_V
+00003c56   $FUN_CCssi_EepromHandler_UB
+00003c98   $FUN_CCper_InitIOStartup_V
+00003cba   $FUN_CCper_InitIOForAdlatus_V
+00003ce8   $FUN_CCtim_InitSWTimerHandler_V
+00003cf0   $FUN_CCtim_SystemTimerCheck_V
+00003d34   $FUN_CCval_LinAdd8Acc16Bit_UB
+00003d70   $FUN_CCglo_GetRandomValue_UL
+00003dac   $FUN_CCconsys_InitAllSystemBuffer_V
+00003dd8   $FUN_CCglo_AMemCopy_V
+00003df6   $FUN_CCglo_PMemCopy_V
+00003e14   $FUN_CCdp_DataPrepareAudi_UB
+00003e30   _main
+00003e48   _FUN_CCmain_Main_V
+00003e60   $FUN_CCval_CanMsgObjectTest_UB
+00003e78   IND$CALL
+00004000   .text
+00004000   $FUN_CCtp_Init_V
+00004000   ___text__
+00004032   $FUN_CCtp_InitInternal_V
+00004066   $FUN_CCTp_Timer_V
+000040d2   $FUN_CCtp_RxTp_UB
+000044d0   $FUN_CCtp_TxTp_UB
+00004810   $FUN_CCcan_Waitconf_V
+0000481a   $FUN_CCcan_Waitconfx_V
+00004824   $FUN_CCcan_Wait_V
+00004830   $FUN_CCcan_CheckMsgObjBuffer_UB
+00004888   $FUN_CCcan_InitCan_V
+000048bc   $FUN_CCcan_InitCanController_V
+00004966   $FUN_CCcan_StopCanController_V
+00004968   $FUN_CCcan_StartCanController_V
+0000496a   $FUN_CCcan_ActivateCanMsgObj_V
+00004982   $FUN_CCcan_DeactivateCanMsgObj_V
+00004998   $FUN_CCcan_InitCanMsgObj_V
+00004a08   $FUN_CCcan_CheckCanReceiver_UB
+00004bdc   $FUN_CCcan_RxData_UB
+00004c64   $FUN_CCcan_TxData_UB
+00004d6e   $FUN_CCcan_TxDiagResponse_V
+00004e40   $FUN_CCVhnd_InitCtrlST_UB
+00005036   $FUN_CCVhnd_CalcChecksum_UB
+00005072   $FUN_CCVhnd_CalcChksumChunk_UB
+000050ac   $FUN_CCVhnd_CheckValidationMap_UB
+000051b0   $FUN_CCVhnd_InitValidation_V
+000051ba   $FUN_CCVhnd_GetStartupState_UW
+000051e0   $FUN_CCses_InitSessionLayer_V
+000051fc   $FUN_CCses_GetActiveSession_UB
+00005206   $FUN_CCses_LookForCmd_PST
+000052c2   $FUN_CCses_InitChannel_V
+000052e0   $FUN_CCses_RxSession_UB
+000054a6   $FUN_CCses_TxSession_UB
+000055a0   $FUN_CCeventaudi_EventInit_V
+000055b6   $FUN__CCeventaudi_ProjectInitIntern_V
+000055d0   $FUN_CCeventaudi_SetProjectTimer_V
+000055de   $FUN_CCeventaudi_EventProcessing_V
+000056c2   $FUN_CCeventaudi_EventHandler_B
+00005708   $FUN_CCeventaudi_ProjectTimer_V
+00005780   $FUN_CCnvm_InitNvmHandler_V
+00005856   $FUN_CCnvm_ScanNvmMemoryTable_UB
+00005888   $FUN_CCnvm_NvmAccess_UB
+000058ce   $FUN_CCnvm_NvmDirectWriteAccess_UB
+000058f4   $FUN_CCnvm_NvmDirectReadAccess_UB
+0000594c   $OCSPI_InitSync
+00005988   $OCSPI_DeInitSync
+00005996   $OCSPI_Busy
+000059f6   $OCSPI_ReadSync
+00005a96   $OCSPI_WriteSync
+00005af8   U$MOD
+00005af8   U$DIV
+00005afc   U_DIV
+00005afc   U_MOD
+00005bd8   etext
+00005bd8   ___etext__
+00005be0   _ROMHAL
+00005c80   _ROMWDT
+00008004   _ISR_Undef
+00008008   _SwiDisp2
+0000800c   _ISR_Pre
+00008010   _ISR_DA
+00008014   _ISR_RESEVED
+00008018   _IrqDisp2
+0000801c   _FiqDisp2
+0007fffc   _r_F_CHCKSUM2
+00400000   _r_F_REQUEST
+00400000   _gt_CCapplint_FlashRequest_UL
+00400004   .data
+00400004   ___bss__
+00400004   ___data__
+00400004   _t_CCkwpaudi_KwpCtrl_ST
+00400004   .bss
+00400004   ___edata__
+00400004   edata
+00400004   _r_F_RAMSTART
+0040005c   _sECUDataAppl_ST
+00400066   _g_CCkwpaudi_EepromDataLeftOver_UB
+00400068   _g_CCkwpaudi_ParrotCRC32_UL
+0040006c   _FlashParam
+0040009c   _t_CCeventaudi_PrjCtrl_ST
+004000a4   ___end__
+004000a4   _g_RxWorkBuffer00_BUF
+004000a4   end
+004001a4   _g_TxWorkBuffer00_BUF
+0040022c   _g_RxBuffer00_BUF
+0040032c   _g_TxBuffer00_BUF
+004003b4   _g_RxMsgObj00_BUF
+004003c0   _g_TxMsgObj00_BUF
+004003cc   _g_CCdp_WorkingBuffer_BUF
+004004cc   _CmdRuntimeInfo_AST
+004004d4   _t_CC_CollectBuffer_BUF
+004006d4   _t_DataPointer_UW
+004006d6   _t_PagePointer_UW
+004006d8   _t_DataInBuffer_UW
+004006da   _wdStatus
+004006db   _g_buf_UB
+004006dc   _t_CCcan_CanFifoBuffer_AUB
+0040070c   _CanCtrl_ST
+00400734   _c_CCconprj_CanMsgObjConfig_AST
+00400770   _c_CCconprj_SessionSelectionTable_APST
+00400774   _c_CCconprj_SessionInitTable_APST
+00400778   _CCVhnd_HndlCtrlInt_ST
+004007a0   _CCVhnd_WorkingInfoInt_ST
+004007b4   _CCVhnd_StartTime_UL
+004007f4   _CCValAudi_WorkingInfoInt_ST
+00400808   _CCValAudi_Eeprom_ST
+0040081c   _t_FlashCheckState_UB
+0040081d   _t_NVMResult_UB
+00400820   _CCsys_SysCtrl_ST
+0040083c   _SesCtrl_ST
+00400858   _t_CCnvm_NvmCtrl_ST
+00400860   _t_CCnvm_NvmRunTimeEntry_ST
+0040086c   _t_CChal_HalCtrl_ST
+0040088c   _t_CCper_WatchdogCtrl_ST
+00400894   _t_CCtime_TimerCtrl_ST
+00400898   _t_ServiceHandlerCtrl_ST
+0040089c   _t_AdlatusInitState_UB
+0040089d   _t_InitCtrl_ST
+00401b50   $FUN_CCwtdog_TriggerExtWatchdog_V
+00401b50   _RAMWDT
+00401bb4   $FUN_CCwtdog_TriggerWatchdogEraseMem_V
+00401bf4   $FUN_CCwtdog_TriggerWatchdogProgMem_V
+00401c38   $FUN_CCcan_TxDataFromRam_V
+00402000   _RAMHAL
+00402000   $FUN_CChal_HardwareTimerCheck_UW
+00402034   $FUN_CChal_TriggerIntWatchdog_V
+00402300   _g_BBSuperStack_UL
+00402500   _StackUSER_
+00402510   _StackFIQ_
+004025e0   _StackIRQ_
+004025e8   _StackABORT_
+004025f0   _StackUND_
+00402600   _StackSUPER_
+00800000   _e_HETPROGRAM0_UN
+fff7d000   _e_SCC3_ST
+fff7d200   _e_CAN3_MB
+fff7d400   _e_SPI2_ST
+fff7d500   _e_SPI3_ST
+fff7d600   _e_SPI4_ST
+fff7d700   _e_SPI5_ST
+fff7e400   _e_CAN_MB
+fff7e600   _e_CAN2_MB
+fff7e800   _e_SCC_ST
+fff7ea00   _e_SCC2_ST
+fff7ec00   _e_GIO_ST
+fff7f000   _e_ADC0_ST
+fff7f800   _e_SPI1_ST
+fff7fc00   _e_HET0_ST
+fffffd00   _e_SARMMC_ST
+fffffe00   _e_SARDEC_ST
+ffffff00   _e_SARRTI_ST
+ffffff20   _e_SARCIM_ST
+ffffffd0   _e_SARSYS_ST
+ffffffff   ___binit__
+ffffffff   pinit
+ffffffff   binit
+ffffffff   ___pinit__
+ffffffff   ___c_args__
+
+[384 symbols]

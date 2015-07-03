@@ -1,0 +1,12 @@
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnInfoCall                                                               '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnServiceCall                                                            '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnSosCall                                                                '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnInfoCall_Hangup                                                        '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnServiceCall_Hangup                                                     '4                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnSosCall_Hangup                                                         '5                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnHangUpCall                                                             '6                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnActiveCall                                                             '7                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerFnNoActiveCall                                                           '8                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enWaitToAvoidDoubleOkPress                                                               '9                            'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerConnectLastUsedDevice                                                    '10                           'ABCD   'ABCD.c  '123   
+#ENUM  'CONTEXT_MAN_ENUM_FN_BUTTONS                         'enContextManagerDeleteAllDevices                                                         '11                           'ABCD   'ABCD.c  '123   

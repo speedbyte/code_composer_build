@@ -1,0 +1,684 @@
+// au-misra.lnt -- Author options - MISRA 1998
+/* Modification for S1nn Coding Standards     */
+/* copy from orginal au-misra.lnt 30.10.06 HB */
+/* all changes a mark with S1nn exclude       */ 
+
+/*
+    This options file can be used to explicitly activate those
+    checks advocated by the Motor Industry Software Reliability
+    Association.
+
+    You can use this file directly when linting your programs as in:
+
+    lin  au-misra  files
+
+    Gimpel Software relies on the document, "Guidelines for the use
+    of the C language in vehicle based software", copyright 1998 by
+    MIRA Limited, as the primary guidance for this file.  Gimpel Software
+    makes no warranty as to the completeness or applicability of
+    this options file and reserves the right to amend or alter the
+    official contents of such at any time.
+
+    "MISRA" is a registered trademark of MIRA Limited, held on
+    behalf of the MISRA Consortium.
+
+ */
+
+    +e960                      /* enable special MISRA messages */
+    +e961                      /* enable special MISRA messages */
+
+/* Rule 1 (req) *************************************/
+
+    -A(C90)                     /* strict ANSI */
+	+e950						/* flag non-ANSI word or construct */
+    -append(950,[MISRA Rule 1])
+
+/* Rule 2 (adv) *************************************/
+
+/* Rule 3 (adv) *****************************************/
+/* S1nn exclude start */ 
+//	-rw( asm, _asm, __asm )		/* remove asm built-in's */
+//	-dasm=_ignore_init			/* define asm as a ... */
+//	+rw( _ignore_init )			/* function introduction */
+/* S1nn exclude end */ 	
+
+/* Rule 4 (adv) **********************************/
+
+/* Rule 5 (req) *********************************/
+
+	+e606				        /* non-ANSI escape sequence */
+    -append(606,[MISRA Rule 5])
+
+/* Rule 6 (req) **********************************/
+
+/* Rule 7 (req) ************************************/
+
+    -ftg                        /* inhibit use of trigraphs */
+    +e739                       /* activate trigraph in string message */
+    -append(739,[MISRA Rule 7])
+
+/* Rule 8 (req) ****************************************/
+
+    -fwc                        /* deactivate wchar_t */
+				/* no option to detect L"..." */
+
+/* Rule 9 (req) **************************************/
+
+    -fnc                        /* flag nested comments */
+    +e602                       /* comment within comment */
+    -append(602,[MISRA Rule 9])
+
+/* Rule 10 (adv) ************************************/
+
+    /* no option for this */
+
+/* Rule 11 (req) ***********************************/
+
+    -idlen(31)   /* flag names identical in the first 31 characters */
+    +e621        /* Identifier clash - length set by -idlen */
+    -append(621,[MISRA Rule 11])
+
+/* Rule 12 (adv) ****************************************/
+/* S1nn exclude start */  
+//    +e578                         /* enable reports of name hiding */
+//    +e580                         /* enable reports of name hiding */
+//    -append(578,[MISRA Rules 12, 21, and 27])
+//    -append(580,[MISRA Rule 12])
+/* S1nn exclude end */ 
+/* Rule 13 (adv) *****************************************/
+
+    +e970               /* flag modifiers used outside of typedefs */
+    -append(970,[MISRA Rule 13])
+
+/* Rule 14 (req) ******************************************/
+
+    +e971               /* flag char without signed or unsigned */
+    -append(971,[MISRA Rule 14])
+
+/* Rule 15 (adv) ******************************************/
+
+/* Rule 16 (req) *****************************************/
+
+/* Rule 17 (req) ******************************************/
+
+    +e623               /* redefining the storage class of symbol */
+    -append(623,[MISRA Rule 17])
+
+/* Rule 18  (adv) ********************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 18, Constant requires numerical suffix */
+
+/* Rule 19 (req) **************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 19, Octal constant used */
+
+/* Rule 20 (req) **************************************/
+
+    +e40                         /* undeclared identifier */
+    -append( 40,[MISRA Rule 20])
+    +e718                        /* Symbol undeclared */
+    -append(718,[MISRA Rules 20 and 71])
+    +e746
+    -append(746,[MISRA Rules 20 and 71])
+
+/* Rule 21 (req) **************************************/
+
+    /* +e578 Declaration of Symbol hides Symbol */
+
+/* Rule 22 (adv) ***************************************/
+
+/* Rule 23 (adv)  **************************************/
+
+    +e765                       /* symbol could be made static */
+    -append(765,[MISRA Rule 23])
+
+/* Rule 24 (req) **************************************/
+
+    +e512                        /* symbol previously used as static */
+    -append(512,[MISRA Rule 24])
+
+/* Rule 25 (req) **************************************/
+
+    +e14                         /* symbol previously defined */
+    -append(14,[MISRA Rule 25])
+
+/* Rule 26 (req) ***************************************/
+
+    +e15                          /* symbol redeclared */
+    -append(15,[MISRA Rule 26])
+
+/* Rule 27 (adv) **************************************/
+
+    /* +e578 Declaration of Symbol hides Symbol */
+
+/* Rule 28 (adv) **************************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 28, 'register' class discouraged */
+
+/* Rule 29 (req) **************************************/
+    +e64                    /* flag type mismatch */
+    -append(64,[MISRA Rule 29])
+
+/* Rule 30 (req) **************************************/
+
+    +e644                   /* Symbol may not have been initialized */
+    +e771                   /* Symbol conceivably not initialized */
+    +e530                   /* Symbol not initialized */
+    -append(644,[MISRA Rule 30])
+    -append(771,[MISRA Rule 30])
+    -append(530,[MISRA Rule 30])
+
+/* Rule 31 (req) **************************************/
+
+    +e940                   /* omitted braces within an initializer */
+    -append(940,[MISRA Rule 31])
+
+/* Rule 32 (req) *****************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 32, */
+    /* should initialize either all enum members or only the first */
+
+/* Rule 33 (req) *****************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 33,  */
+    /* side effects on right hand side of logical operator */
+
+/* Rule 34 (req) **************************************/
+
+/* Rule 35 (req) **************************************/
+
+    +e720                         /* Boolean test of assignment */
+    -append(720,[MISRA Rules 35 and 49])
+    +e820
+    -append(820,[MISRA Rule 35])
+
+/* Rule 36 (adv) ******************************************/
+
+/* Rule 37 (req) ****************************************/
+
+    +e701                        /* shift left of signed quantity */
+    +e702                        /* shift right of signed quantity */
+    -append(701,[MISRA Rule 37])
+    -append(702,[MISRA Rule 37])
+
+/* Rule 38 (req) ******************************************/
+
+    +e572                        /* excessive shift value */
+    -append(572,[MISRA Rule 38])
+
+/* Rule 39 (req) *****************************************/
+
+    +e501                        /* expected signed type */
+    -append(501,[MISRA Rule 39])
+
+/* Rule 40 (adv) ****************************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 40, */
+    /* 'sizeof' used on expressions with side effect */
+
+/* Rule 41 (adv) ********************************************/
+
+/* Rule 42 (req) ********************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 42, */
+    /* comma operator used outside of 'for' expression */
+
+/* Rule 43 (req) ********************************************/
+
+    +e524                                                   /* loss of precision */
+    -append(524,[MISRA Rule 43])
+    +e653                                                   /* possible loss of fraction */
+    -append(653,[MISRA Rules 43 and 48])
+
+/* Rule 44 (adv) *******************************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 44, */
+    /* redundant explicit casting */
+
+/* Rule 45 (req) *****************************************/
+
+    +e923                        /* cast pointer/non-pointer */
+    -append(923,[MISRA Rule 45])
+
+/* Rule 46 (req) ****************************************/
+
+    +e564                       /* order of evaluation */
+    -append(564,[MISRA Rule 46])
+
+/* Rule 47 (adv) ****************************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 47, */
+    /* dependence placed on C's operator precedence */
+    +e834  /* confusing operator sequence (same precedence) */
+    -append(834,[MISRA Rule 47])
+
+/* Rule 48 (adv) *****************************************/
+
+    +e912 /* implicit binary conversion */
+    /* +e653 implicit possible loss of fraction */
+
+
+/* Rule 49 (adv) ******************************************/
+
+    /* +e720 */
+
+/* Rule 50 (req) *****************************************/
+
+    +e777                        /* testing floats for equality */
+    -append(777,[MISRA Rule 50])
+
+/* Rule 51 (adv) ****************************************/
+
+    +e648                        /* overflow in computing constant */
+    -append(648,[MISRA Rule 51])
+
+/* Rule 52 (req) *******************************************/
+
+    +e527                       /* unreachable */
+    -append(527,[MISRA Rule 52])
+    +e506
+    -append(506,[MISRA Rule 52])
+    +e681
+    -append(681,[MISRA Rule 52])
+    +e827
+    -append(827,[MISRA Rule 52])
+
+/* Rule 53 (req) *****************************************/
+
+    +e505
+    +e522
+    -append(505,[MISRA Rule 53])
+    -append(522,[MISRA Rule 53])
+
+/* Rule 54 (req) ****************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 54, */
+    /* null statement not in line by itself */
+
+/* Rule 55 (adv) ****************************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 55, */
+    /* non-case label */
+
+/* Rule 56 (req) ***************************************/
+
+    +e801
+    -append(801,[MISRA Rule 56])
+
+/* Rule 57 (req) ***************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 57, */
+    /* continue statement detected */
+
+/* Rule 58 (req) ***************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 58, */
+    /* non-switch break used */
+
+/* Rule 59 (req) ****************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 59, */
+    /* left brace expected for if, else, for, do and while */
+
+/* Rule 60 (adv) ***************************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 60, */
+    /* no 'else' at end of 'if ... else if' chain */
+
+/* Rule 61 (req) **************************************/
+
+    +e616
+    -append(616,[MISRA Rule 61])
+    +e825
+    -append(825,[MISRA Rule 61])
+
+/* Rule 62 (req) *************************************/
+
+    +e744                         /* switch statement has no default */
+    -append(744,[MISRA Rule 62])
+
+/* Rule 63 (adv) **************************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 63, */
+    /* boolean value in switch statement */
+
+/* Rule 64 (req) *************************************/
+
+    +e764                         /* switch does not have a case */
+    -append(764,[MISRA Rule 64])
+
+/* Rule 65 (req) ************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 65, */
+    /* floating point variable used as loop counter */
+
+/* Rule 66 (adv) *************************************/
+
+/* Rule 67 (adv) **************************************/
+
+/* Rule 68 (req) *************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 68, */
+    /* function not declared at file scope */
+
+/* Rule 69 (req) ************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 69, */
+    /* function has variable number of arguments */
+
+/* Rule 70 (req) ***************************************/
+
+/* Rule 71 (req) ***************************************/
+
+    /* +e718 symbol undeclared */
+    /* +e746 call not made in the presence of a prototype */
+    +e937                     /* old-style function declaration */
+    -append(937,[MISRA Rules 71 and 76])
+    +e957
+    -append(957,[MISRA Rule 71])
+
+/* Rule 72 (req) ***************************************/
+
+    +e18                          /* symbol redeclared */
+    -fvr                          /* varying return mode not allowed */
+    +e516                         /* argument type conflict */
+    +e532                         /* return mode of symbol inconsistent */
+    -append(18,[MISRA Rule 72])
+    -append(516,[MISRA Rule 72])
+    -append(532,[MISRA Rule 72])
+
+/* Rule 73 (req) **************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 73, */
+    /* either all parameters or no parameters should have identifiers */
+
+/* Rule 74 (req) ***************************************/
+
+/* Rule 75 (req) ***************************************/
+
+    +e745                           /* function has no explicit type */
+    +e939                           /* return type defaults to int */
+    -append(745,[MISRA Rule 75])
+    -append(939,[MISRA Rule 75])
+
+/* Rule 76 (req) **************************************/
+
+    /* +e937 old-style function declaration */
+
+/* Rule 77 (req) **************************************/
+
+    +e747                       /* significant prototype coercion */
+    +e917                       /* prototype coercion */
+    +e918                       /* prototype coercion of pointers */
+    -append(747,[MISRA Rule 77])
+    -append(917,[MISRA Rule 77])
+    -append(918,[MISRA Rule 77])
+
+/* Rule 78 (req) ***************************************/
+
+    +e118               /* too few arguments for prototype */
+    +e119               /* too many arguments for prototype */
+    -append(118,[MISRA Rule 78])
+    -append(119,[MISRA Rule 78])
+
+/* Rule 79 (req) ****************************************/
+
+    +e82
+    -append(82,[MISRA Rules 79 and 84])
+
+/* Rule 80 (req) ***************************************/
+
+    +e144                       /* non-existent return value */
+    -append(144,[MISRA Rule 80])
+
+/* Rule 81 (adv) *****************************************/
+
+    +e818                       /* use const on paramaters where appropriate */
+    -append(818,[MISRA Rule 81])
+
+
+/* Rule 82 (adv) *****************************************/
+
+/* Rule 83 (req) *****************************************/
+
+    +e533                        /* function should return a value */
+    -append(533,[MISRA Rules 83 and 84])
+
+/* Rule 84 (req) ******************************************/
+
+    /* +e533 function should not return a value */
+    /* +e82 return <exp>; illegal with void function */
+
+/* Rule 85 (adv) ****************************************/
+
+/* Rule 86 (adv) ******************************************/
+
+/* Rule 87 (req) ****************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 87, */
+    /* only preprocessor statements and comments before '#include' */
+
+/* Rule 88 (req) ****************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 88, */
+    /* header file name with non-standard character */
+
+/* Rule 89 (req) ***************************************/
+
+    +e12                        /* Need < or \ " after #include */
+    -append(12,[MISRA Rule 89])
+
+/* Rule 90 (req) ***************************************/
+
+/* Rule 91 (req) ****************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 91, */
+    /* '#define/#undef' used within a block */
+
+/* Rule 92 (adv) *****************************************/
+
+    /* we generate note 961 as below */
+    /* Note 961: Violates MISRA Advisory Rule 92, */
+    /* use of '#undef' is discouraged */
+
+/* Rule 93 (adv) ******************************************/
+
+/* Rule 94 (req) **************************************/
+
+    +e131                         /* syntax error in call of macro */
+    -append(131,[MISRA Rule 94])
+
+/* Rule 95 (req) ****************************************/
+    +e436
+    -append(436,[MISRA Rule 95])
+
+/* Rule 96 (req) ***************************************/
+
+    +e773                      /* expression-like macro not parenthesized */
+    -append(773,[MISRA Rule 96])
+
+/* Rule 97 (adv) ******************************************/
+
+    +e553                        /* undefined preprocessor variable */
+    -append(553,[MISRA Rule 97])
+
+/* Rule 98 (req) ********************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 98, */
+    /* multiple use of '#/##' operators in macro definition */
+
+/* Rule 99 (req) ******************************************/
+
+/* Rule 100 (req) ***************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 100, */
+    /* non-standard use of 'defined' preprocessor statement */
+
+/* Rule 101 (adv) *******************************************/
+
+/* Rule 102 (adv) ****************************************/
+
+/* Rule 103 (req) **************************************/
+
+    +e946          /* relational or subtract operator applied to pointers */
+    -append(946,[MISRA Rule 103])
+
+/* Rule 104 (req) *************************************/
+
+/* Rule 105 (req) *************************************/
+
+/* Rule 106 (req) *****************************************/
+
+    +e733               /* assigning address of auto to outer scope symbol */
+    +e789               /* assigning address of auto to static */
+    -append(733,[MISRA Rule 106])
+    -append(789,[MISRA Rule 106])
+
+/* Rule 107 (req) ****************************************/
+    +e413
+    +e613
+    +e794
+    -append(413,[MISRA Rule 107])
+    -append(613,[MISRA Rule 107])
+    -append(794,[MISRA Rule 107])
+
+/* Rule 108 (req) *******************************************/
+
+    +e43                         /* vacuous type for variable */
+    -append(43,[MISRA Rule 108])
+
+/* Rule 109 (req) ******************************************/
+
+/* Rule 110 (req) **************************************/
+
+    /* we generate note 960 as below */
+    /* Note 960: Violates MISRA Required Rule 110, */
+    /* bitfields inside union */
+
+/* Rule 111 (req) ****************************************/
+/* S1nn exclude start */  
+//    +e46                        /* field type should be int */
+//    -append(46,[MISRA Rule 111])
+/* S1nn exclude end */ 
+/* Rule 112 (req) *****************************************/
+
+    +e806               /* small bit field is signed rather than unsigned */
+    -append(806,[MISRA Rule 112])
+
+/* Rule 113 (req) *****************************************/
+
+/* Rule 114 (req) ******************************************/
+
+    +e683             /* complain about #define standard functions */	          
+    -append(683,[MISRA Rule 114])
+
+/* Rule 115 (req) ******************************************/
+
+/* Rule 116 (req) *****************************************/
+
+/* Rule 117 (req) ********************************************/
+
+    /* 100 calls to standard library functions are monitored */
+    /* users can specify additional constraints for other functions */
+
+/* Rule 118 (req) *****************************************/
+
+    -function(gets(0),calloc(0),malloc(0),realloc(0),free(0))
+	-append(421(calloc), [MISRA Rule 118])
+    -append(421(malloc), [MISRA Rule 118])
+	-append(421(realloc), [MISRA Rule 118])
+	-append(421(free), [MISRA Rule 118])
+	/* enable message 421 for these functions */
+
+/* Rule 119 (req) ****************************************/
+
+    +derrno=errno_violates_MISRA_Rule_119
+
+
+/* Rule 120 (req) ******************************************/
+
+    +doffsetof=offsetof_violates_MISRA_Rule_120
+
+
+/* Rule 121 (req) *******************************************/
+
+    -headerwarn(locale.h)
+	/* enable message 829 for locale.h */
+	-append(829(locale.h), [MISRA Rule 121])
+    -function(gets(0),setlocale(0),localeconv(0))
+	-append(421(setlocale), [MISRA Rule 121])
+	-append(421(localeconv), [MISRA Rule 121])
+	/* enable message 421 for these functions */
+
+/* Rule 122 (req) *********************************************/
+
+    -function(gets(0),longjmp(0),setjmp(0))
+	-append(421(longjmp), [MISRA Rule 122])
+	-append(421(setjmp), [MISRA Rule 122])
+	/* enable message 421 for these functions */
+
+/* Rule 123 (req) *******************************************/
+
+    -function(gets(0), signal(0), raise(0))
+	-append(421(signal), [MISRA Rule 123])
+	-append(421(raise), [MISRA Rule 123])
+	/* enable message 421 for these functions */
+
+/* Rule 124 (req) ******************************************/
+
+    -headerwarn(stdio.h)
+	/* enable message 829 for stdio.h */
+	-append(829(stdio.h), [MISRA Rule 124])
+
+/* Rule 125 (req) ******************************************/
+
+    -function(gets(0),atof(0),atoi(0),atol(0))
+	-append(421(atof), [MISRA Rule 125])       
+	-append(421(atoi), [MISRA Rule 125])
+	-append(421(atol), [MISRA Rule 125])
+	/* enable message 421 for these functions */
+
+/* Rule 126 (req) ******************************************/
+
+    -function(gets(0),abort(0),exit(0),getenv(0),system(0))
+	-append(421(abort), [MISRA Rule 126])
+	-append(421(exit), [MISRA Rule 126])
+	-append(421(getenv), [MISRA Rule 126])
+	-append(421(system), [MISRA Rule 126])
+	/* enable message 421 for these functions */
+
+/* Rule 127 (req) *******************************************/
+
+    -function(gets(0),time(0),strftime(0),clock(0),difftime(0),mktime(0))
+	-append(421(time), [MISRA Rule 127])
+	-append(421(strftime), [MISRA Rule 127])
+	-append(421(clock), [MISRA Rule 127])
+	-append(421(difftime), [MISRA Rule 127])
+	-append(421(mktime), [MISRA Rule 127])
+	/* enable message 421 for these functions */
+

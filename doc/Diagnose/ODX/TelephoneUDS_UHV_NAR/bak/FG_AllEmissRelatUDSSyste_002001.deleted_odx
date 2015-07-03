@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <DIAG-LAYER-CONTAINER ID="DLC_FG_AllEmissRelatUDSSyste">
+  <SHORT-NAME>DLC_FG_AllEmissRelatUDSSyste</SHORT-NAME>
+  <LONG-NAME>All emissions-related UDS systems</LONG-NAME>
+  <FUNCTIONAL-GROUPS>
+   <FUNCTIONAL-GROUP ID="FG_AllEmissRelatUDSSyste">
+    <SHORT-NAME>FG_AllEmissRelatUDSSyste</SHORT-NAME>
+    <LONG-NAME>All emissions-related UDS systems</LONG-NAME>
+    <DESC>
+     <p>Funktionale Gruppe für alle abgasrelevanten UDS-Systeme</p>
+    </DESC>
+    <ADMIN-DATA>
+     <LANGUAGE>deu</LANGUAGE>
+     <DOC-REVISIONS>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>001001</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2009-10-22T01:00:00+02:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>erstellt aus FG_AllOBDSyste_001003 - übernommene Elemente:
+- DOP_TEXTTABLEIUMPRRecor
+- STRUC_DataRecorIUMPRAdditInfor
+- STRUC_DataRecorIUMPRRecorNumbe
+- STRUC_DataRecorVWTesteCodinInfor
+- STRUC_DataRecorMeasuValueOBDAgingCount
+- TAB_RecorDataIdentIUMPRRecor
+- DiagnServi_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu
+- DiagnServi_ReadDataByIdentIUMPRRecor
+- Req_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu
+- Req_ReadDataByIdentIUMPRRecor
+- Resp_ReadDataByIdentIUMPRRecor</CHANGE>
+         <REASON>Trennung UDS-Bedatung von OBD</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>UPPER-LIMIT an allen COMPU-SCALEs mit UPPER-LIMIT=LOWER-LIMIT entfernt</CHANGE>
+         <REASON>redundant</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>PARENT-REF auf PR_OBDOnCAN entfernt</CHANGE>
+         <REASON>Bugfix</REASON>
+        </MODIFICATION>
+        <MODIFICATION>
+         <CHANGE>ADDRESSING der folgenden DIAG-SERVICEs von &quot;PHYSICAL&quot; auf &quot;FUNCTIONAL-OR-PHYSICAL&quot; erweitert:
+- DiagnServi_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu
+- DiagnServi_ReadDataByIdentIUMPRRecor</CHANGE>
+         <REASON>Anpassung an VW80124</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+      <DOC-REVISION>
+       <TEAM-MEMBER-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="Compy_ElektAutomGmbH.TM_WolfgRethe"/>
+       <REVISION-LABEL>002001</REVISION-LABEL>
+       <STATE>RELEASE</STATE>
+       <DATE>2009-10-23T01:00:00+02:00</DATE>
+       <TOOL>XMLSPY</TOOL>
+       <MODIFICATIONS>
+        <MODIFICATION>
+         <CHANGE>Version ohne Änderung erhöht</CHANGE>
+         <REASON>Verlinkung in version42</REASON>
+        </MODIFICATION>
+       </MODIFICATIONS>
+      </DOC-REVISION>
+     </DOC-REVISIONS>
+    </ADMIN-DATA>
+    <DIAG-DATA-DICTIONARY-SPEC>
+     <DATA-OBJECT-PROPS>
+      <DATA-OBJECT-PROP ID="DOP_TEXTTABLEIUMPRRecor">
+       <SHORT-NAME>DOP_TEXTTABLEIUMPRRecor</SHORT-NAME>
+       <LONG-NAME>TEXT TABLE IUMPR Records</LONG-NAME>
+       <DESC>
+        <p>Liste der Record Data Identifier für die IUMPR Datenausgabe</p>
+       </DESC>
+       <COMPU-METHOD>
+        <CATEGORY>TEXTTABLE</CATEGORY>
+        <COMPU-INTERNAL-TO-PHYS>
+         <COMPU-SCALES>
+          <COMPU-SCALE>
+           <SHORT-LABEL>$00FD</SHORT-LABEL>
+           <LOWER-LIMIT>253</LOWER-LIMIT>
+           <COMPU-CONST>
+            <VT>IUMPR-ID3</VT>
+           </COMPU-CONST>
+          </COMPU-SCALE>
+          <COMPU-SCALE>
+           <SHORT-LABEL>$00FE</SHORT-LABEL>
+           <LOWER-LIMIT>254</LOWER-LIMIT>
+           <COMPU-CONST>
+            <VT>IUMPR-ID2</VT>
+           </COMPU-CONST>
+          </COMPU-SCALE>
+          <COMPU-SCALE>
+           <SHORT-LABEL>$00FF</SHORT-LABEL>
+           <LOWER-LIMIT>255</LOWER-LIMIT>
+           <COMPU-CONST>
+            <VT>IUMPR-ID1</VT>
+           </COMPU-CONST>
+          </COMPU-SCALE>
+         </COMPU-SCALES>
+        </COMPU-INTERNAL-TO-PHYS>
+       </COMPU-METHOD>
+       <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+        <BIT-LENGTH>16</BIT-LENGTH>
+       </DIAG-CODED-TYPE>
+       <PHYSICAL-TYPE BASE-DATA-TYPE="A_UNICODE2STRING"/>
+       <INTERNAL-CONSTR>
+        <SCALE-CONSTRS>
+         <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+          <LOWER-LIMIT>0</LOWER-LIMIT>
+          <UPPER-LIMIT>252</UPPER-LIMIT>
+         </SCALE-CONSTR>
+         <SCALE-CONSTR VALIDITY="NOT-DEFINED">
+          <LOWER-LIMIT>256</LOWER-LIMIT>
+          <UPPER-LIMIT>65535</UPPER-LIMIT>
+         </SCALE-CONSTR>
+        </SCALE-CONSTRS>
+       </INTERNAL-CONSTR>
+      </DATA-OBJECT-PROP>
+     </DATA-OBJECT-PROPS>
+     <STRUCTURES>
+      <STRUCTURE ID="STRUC_DataRecorIUMPRAdditInfor">
+       <SHORT-NAME>STRUC_DataRecorIUMPRAdditInfor</SHORT-NAME>
+       <LONG-NAME>Data Record: IUMPR Additional Information</LONG-NAME>
+       <BYTE-SIZE>8</BYTE-SIZE>
+       <PARAMS>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_NumbeOfIUMPRRecor</SHORT-NAME>
+         <LONG-NAME>Number of IUMPR Records</LONG-NAME>
+         <BYTE-POSITION>0</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC2Bytes"/>
+        </PARAM>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_Milag</SHORT-NAME>
+         <LONG-NAME>Milage</LONG-NAME>
+         <BYTE-POSITION>2</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC2Bytes10xKiloMeter"/>
+        </PARAM>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_IgnitCycleCount</SHORT-NAME>
+         <LONG-NAME>Ignition Cycle Counter</LONG-NAME>
+         <BYTE-POSITION>4</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC2Bytes"/>
+        </PARAM>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_GenerDenom</SHORT-NAME>
+         <LONG-NAME>General Denominator</LONG-NAME>
+         <BYTE-POSITION>6</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC2Bytes"/>
+        </PARAM>
+       </PARAMS>
+      </STRUCTURE>
+      <STRUCTURE ID="STRUC_DataRecorIUMPRRecorNumbe">
+       <SHORT-NAME>STRUC_DataRecorIUMPRRecorNumbe</SHORT-NAME>
+       <LONG-NAME>Data Record: IUMPR Record Numbers</LONG-NAME>
+       <BYTE-SIZE>8</BYTE-SIZE>
+       <PARAMS>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_RecorNumbe</SHORT-NAME>
+         <LONG-NAME>Record Number</LONG-NAME>
+         <BYTE-POSITION>0</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC2Bytes"/>
+        </PARAM>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_DFCCValue</SHORT-NAME>
+         <LONG-NAME>DFCC Value</LONG-NAME>
+         <BYTE-POSITION>2</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC2Bytes"/>
+        </PARAM>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_Numer</SHORT-NAME>
+         <LONG-NAME>Numerator</LONG-NAME>
+         <BYTE-POSITION>4</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC2Bytes"/>
+        </PARAM>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_Denom</SHORT-NAME>
+         <LONG-NAME>Denominator</LONG-NAME>
+         <BYTE-POSITION>6</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC2Bytes"/>
+        </PARAM>
+       </PARAMS>
+      </STRUCTURE>
+      <STRUCTURE ID="STRUC_DataRecorMeasuValueOBDAgingCount">
+       <SHORT-NAME>STRUC_DataRecorMeasuValueOBDAgingCount</SHORT-NAME>
+       <LONG-NAME>Data Record: Measurement Value: OBD aging counter</LONG-NAME>
+       <BYTE-SIZE>1</BYTE-SIZE>
+       <PARAMS>
+        <PARAM xsi:type="VALUE">
+         <SHORT-NAME>Param_OBDAgingCount</SHORT-NAME>
+         <LONG-NAME TI="MAS00194">OBD Aging Counter</LONG-NAME>
+         <BYTE-POSITION>0</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC1Byte"/>
+        </PARAM>
+       </PARAMS>
+      </STRUCTURE>
+      <STRUCTURE ID="STRUC_DataRecorVWTesteCodinInfor">
+       <SHORT-NAME>STRUC_DataRecorVWTesteCodinInfor</SHORT-NAME>
+       <LONG-NAME>Data Record VW Tester Coding Information</LONG-NAME>
+       <BYTE-SIZE>1</BYTE-SIZE>
+       <PARAMS>
+        <PARAM xsi:type="VALUE" SEMANTIC="DATA">
+         <SHORT-NAME>Param_LengtOfCodinValue</SHORT-NAME>
+         <LONG-NAME TI="MAS00194">Length Of Coding Value</LONG-NAME>
+         <BYTE-POSITION>0</BYTE-POSITION>
+         <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_UINTDEC1Byte"/>
+        </PARAM>
+       </PARAMS>
+      </STRUCTURE>
+     </STRUCTURES>
+     <TABLES>
+      <TABLE ID="TAB_RecorDataIdentIUMPRRecor">
+       <SHORT-NAME>TAB_RecorDataIdentIUMPRRecor</SHORT-NAME>
+       <LONG-NAME>Record Data Identifier IUMPR Records</LONG-NAME>
+       <KEY-DOP-REF ID-REF="DOP_TEXTTABLEIUMPRRecor"/>
+       <TABLE-ROW ID="TAB_RecorDataIdentIUMPRRecor.TABROW_IUMPRID1">
+        <SHORT-NAME>TABROW_IUMPRID1</SHORT-NAME>
+        <LONG-NAME>IUMPR-ID1</LONG-NAME>
+        <KEY>IUMPR-ID1</KEY>
+        <STRUCTURE-REF ID-REF="STRUC_DataRecorIUMPRAdditInfor"/>
+       </TABLE-ROW>
+       <TABLE-ROW ID="TAB_RecorDataIdentIUMPRRecor.TABROW_IUMPRID2">
+        <SHORT-NAME>TABROW_IUMPRID2</SHORT-NAME>
+        <LONG-NAME>IUMPR-ID2</LONG-NAME>
+        <KEY>IUMPR-ID2</KEY>
+        <STRUCTURE-REF ID-REF="STRUC_DataRecorIUMPRRecorNumbe"/>
+       </TABLE-ROW>
+       <TABLE-ROW ID="TAB_RecorDataIdentIUMPRRecor.TABROW_IUMPRID3">
+        <SHORT-NAME>TABROW_IUMPRID3</SHORT-NAME>
+        <LONG-NAME>IUMPR-ID3</LONG-NAME>
+        <KEY>IUMPR-ID3</KEY>
+        <STRUCTURE-REF ID-REF="STRUC_DataRecorIUMPRRecorNumbe"/>
+       </TABLE-ROW>
+      </TABLE>
+     </TABLES>
+    </DIAG-DATA-DICTIONARY-SPEC>
+    <DIAG-COMMS>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="DiagnServi_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu" SEMANTIC="FAULTREAD">
+      <SHORT-NAME>DiagnServi_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu</SHORT-NAME>
+      <LONG-NAME>Read DTC Information / Report DTC By Test Failed Since Last Clear Status</LONG-NAME>
+      <DESC>
+       <p>Dienst zum Lesen von aufgetretenen Fehlern seit dem letzten Löschen des Fehlerspeichers</p>
+      </DESC>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_StoreDataTrans"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <RELATED-DIAG-COMM-REFS>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrDevelSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrExtenSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrOBDIIAndVWDefauSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrVWEndOfLineSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+      </RELATED-DIAG-COMM-REFS>
+      <REQUEST-REF ID-REF="Req_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="Resp_ReadDTCInforReporDTCByStatuMask"/>
+      </POS-RESPONSE-REFS>
+      <NEG-RESPONSE-REFS>
+       <NEG-RESPONSE-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="NegatResp_ReadDTCInforNegatRespo"/>
+      </NEG-RESPONSE-REFS>
+     </DIAG-SERVICE>
+     <DIAG-SERVICE ADDRESSING="FUNCTIONAL-OR-PHYSICAL" ID="DiagnServi_ReadDataByIdentIUMPRRecor" SEMANTIC="STOREDDATAREAD">
+      <SHORT-NAME>DiagnServi_ReadDataByIdentIUMPRRecor</SHORT-NAME>
+      <LONG-NAME>Read Data By Identifier / IUMPR Records</LONG-NAME>
+      <DESC>
+       <p>Dienst zum Lesen von IUMPR-Daten</p>
+      </DESC>
+      <FUNCT-CLASS-REFS>
+       <FUNCT-CLASS-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="FunctClass_StoreDataTrans"/>
+      </FUNCT-CLASS-REFS>
+      <AUDIENCE/>
+      <RELATED-DIAG-COMM-REFS>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrDevelSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrExtenSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrOBDIIAndVWDefauSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+       <RELATED-DIAG-COMM-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DiagnServi_DiagnSessiContrVWEndOfLineSessi">
+        <RELATION-TYPE>SESSION</RELATION-TYPE>
+       </RELATED-DIAG-COMM-REF>
+      </RELATED-DIAG-COMM-REFS>
+      <REQUEST-REF ID-REF="Req_ReadDataByIdentIUMPRRecor"/>
+      <POS-RESPONSE-REFS>
+       <POS-RESPONSE-REF ID-REF="Resp_ReadDataByIdentIUMPRRecor"/>
+      </POS-RESPONSE-REFS>
+      <NEG-RESPONSE-REFS>
+       <NEG-RESPONSE-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="NegatResp_ReadDataByIdentNegatRespo"/>
+      </NEG-RESPONSE-REFS>
+     </DIAG-SERVICE>
+    </DIAG-COMMS>
+    <REQUESTS>
+     <REQUEST ID="Req_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu">
+      <SHORT-NAME>Req_ReadDTCInforReporDTCByTestFaileSinceLastClearStatu</SHORT-NAME>
+      <LONG-NAME>Read DTC Information / Report DTC By Test Failed Since Last Clear Status</LONG-NAME>
+      <PARAMS>
+       <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+        <SHORT-NAME>Param_RequeServiId</SHORT-NAME>
+        <LONG-NAME>Request Service Id</LONG-NAME>
+        <BYTE-POSITION>0</BYTE-POSITION>
+        <CODED-VALUE>25</CODED-VALUE>
+        <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+         <BIT-LENGTH>8</BIT-LENGTH>
+        </DIAG-CODED-TYPE>
+       </PARAM>
+       <PARAM xsi:type="PHYS-CONST" SEMANTIC="SUPPRESS-POS-RESPONSE">
+        <SHORT-NAME>Param_SupprPositRespoMessaIndicBit</SHORT-NAME>
+        <LONG-NAME>Suppress Positive Response Message Indication Bit</LONG-NAME>
+        <BYTE-POSITION>1</BYTE-POSITION>
+        <BIT-POSITION>7</BIT-POSITION>
+        <PHYS-CONSTANT-VALUE>FALSE</PHYS-CONSTANT-VALUE>
+        <DOP-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLETrueFalse"/>
+       </PARAM>
+       <PARAM xsi:type="PHYS-CONST" SEMANTIC="SUBFUNCTION">
+        <SHORT-NAME>Param_DTCInforType</SHORT-NAME>
+        <LONG-NAME>DTC Information Type</LONG-NAME>
+        <BYTE-POSITION>1</BYTE-POSITION>
+        <PHYS-CONSTANT-VALUE>Report DTC By Status Mask</PHYS-CONSTANT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCInforTypes"/>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="CONTROLPARAMETER-ID">
+        <SHORT-NAME>Param_DTCStatuMaskStatuOfDTCBit7</SHORT-NAME>
+        <LONG-NAME>DTC Status Mask/Status Of DTC Bit 7</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <BIT-POSITION>7</BIT-POSITION>
+        <PHYSICAL-DEFAULT-VALUE>Warning Indicator Off</PHYSICAL-DEFAULT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCStatu7WarniIndicReque"/>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="CONTROLPARAMETER-ID">
+        <SHORT-NAME>Param_DTCStatuMaskStatuOfDTCBit6</SHORT-NAME>
+        <LONG-NAME>DTC Status Mask/Status Of DTC Bit 6</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <BIT-POSITION>6</BIT-POSITION>
+        <PHYSICAL-DEFAULT-VALUE>Test Completed This Monitoring Cycle</PHYSICAL-DEFAULT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCStatu6TestNotComplThisOperaCycle"/>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="CONTROLPARAMETER-ID">
+        <SHORT-NAME>Param_DTCStatuMaskStatuOfDTCBit5</SHORT-NAME>
+        <LONG-NAME>DTC Status Mask/Status Of DTC Bit 5</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <BIT-POSITION>5</BIT-POSITION>
+        <PHYSICAL-DEFAULT-VALUE>Test Failed Since Last Clear</PHYSICAL-DEFAULT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCStatu5TestFaileSinceLastClear"/>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="CONTROLPARAMETER-ID">
+        <SHORT-NAME>Param_DTCStatuMaskStatuOfDTCBit4</SHORT-NAME>
+        <LONG-NAME>DTC Status Mask/Status Of DTC Bit 4</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <BIT-POSITION>4</BIT-POSITION>
+        <PHYSICAL-DEFAULT-VALUE>Test Completed Since Last Clear</PHYSICAL-DEFAULT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCStatu4TestNotComplSinceLastClear"/>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="CONTROLPARAMETER-ID">
+        <SHORT-NAME>Param_DTCStatuMaskStatuOfDTCBit3</SHORT-NAME>
+        <LONG-NAME>DTC Status Mask/Status Of DTC Bit 3</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <BIT-POSITION>3</BIT-POSITION>
+        <PHYSICAL-DEFAULT-VALUE>Not Confirmed DTC</PHYSICAL-DEFAULT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCStatu3ConfiDTC"/>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="CONTROLPARAMETER-ID">
+        <SHORT-NAME>Param_DTCStatuMaskStatuOfDTCBit2</SHORT-NAME>
+        <LONG-NAME>DTC Status Mask/Status Of DTC Bit 2</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <BIT-POSITION>2</BIT-POSITION>
+        <PHYSICAL-DEFAULT-VALUE>Not Pending DTC</PHYSICAL-DEFAULT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCStatu2PendiDTC"/>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="CONTROLPARAMETER-ID">
+        <SHORT-NAME>Param_DTCStatuMaskStatuOfDTCBit1</SHORT-NAME>
+        <LONG-NAME>DTC Status Mask/Status Of DTC Bit 1</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <BIT-POSITION>1</BIT-POSITION>
+        <PHYSICAL-DEFAULT-VALUE>Test Not Failed This Operation Cycle</PHYSICAL-DEFAULT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCStatu1TestFaileThisOperaCycle"/>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="CONTROLPARAMETER-ID">
+        <SHORT-NAME>Param_DTCStatuMaskStatuOfDTCBit0</SHORT-NAME>
+        <LONG-NAME>DTC Status Mask/Status Of DTC Bit 0</LONG-NAME>
+        <BYTE-POSITION>2</BYTE-POSITION>
+        <PHYSICAL-DEFAULT-VALUE>passive</PHYSICAL-DEFAULT-VALUE>
+        <DOP-REF DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="DOP_TEXTTABLEDTCStatu0TestFaile"/>
+       </PARAM>
+      </PARAMS>
+     </REQUEST>
+     <REQUEST ID="Req_ReadDataByIdentIUMPRRecor">
+      <SHORT-NAME>Req_ReadDataByIdentIUMPRRecor</SHORT-NAME>
+      <LONG-NAME>Read Data By Identifier / IUMPR Records</LONG-NAME>
+      <PARAMS>
+       <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+        <SHORT-NAME>Param_RequeServiId</SHORT-NAME>
+        <LONG-NAME>Request Service Id</LONG-NAME>
+        <BYTE-POSITION>0</BYTE-POSITION>
+        <CODED-VALUE>34</CODED-VALUE>
+        <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+         <BIT-LENGTH>8</BIT-LENGTH>
+        </DIAG-CODED-TYPE>
+       </PARAM>
+       <PARAM xsi:type="VALUE" SEMANTIC="DATA-ID">
+        <SHORT-NAME>Param_RecorDataIdent</SHORT-NAME>
+        <LONG-NAME>Record Data Identifier</LONG-NAME>
+        <BYTE-POSITION>1</BYTE-POSITION>
+        <DOP-REF ID-REF="DOP_TEXTTABLEIUMPRRecor"/>
+       </PARAM>
+      </PARAMS>
+     </REQUEST>
+    </REQUESTS>
+    <POS-RESPONSES>
+     <POS-RESPONSE ID="Resp_ReadDataByIdentIUMPRRecor">
+      <SHORT-NAME>Resp_ReadDataByIdentIUMPRRecor</SHORT-NAME>
+      <LONG-NAME>Read Data By Identifier / IUMPR Records</LONG-NAME>
+      <PARAMS>
+       <PARAM xsi:type="CODED-CONST" SEMANTIC="SERVICE-ID">
+        <SHORT-NAME>Param_RespoServiId</SHORT-NAME>
+        <LONG-NAME>Response Service Id</LONG-NAME>
+        <BYTE-POSITION>0</BYTE-POSITION>
+        <CODED-VALUE>98</CODED-VALUE>
+        <DIAG-CODED-TYPE xsi:type="STANDARD-LENGTH-TYPE" BASE-DATA-TYPE="A_UINT32">
+         <BIT-LENGTH>8</BIT-LENGTH>
+        </DIAG-CODED-TYPE>
+       </PARAM>
+       <PARAM xsi:type="TABLE-KEY" SEMANTIC="DATA-ID" ID="Resp_ReadDataByIdentIUMPRRecor.Param_RecorDataIdent">
+        <SHORT-NAME>Param_RecorDataIdent</SHORT-NAME>
+        <LONG-NAME>Record Data Identifier</LONG-NAME>
+        <BYTE-POSITION>1</BYTE-POSITION>
+        <TABLE-REF ID-REF="TAB_RecorDataIdentIUMPRRecor"/>
+       </PARAM>
+       <PARAM xsi:type="TABLE-STRUCT" SEMANTIC="DATA">
+        <SHORT-NAME>Param_DataRecor</SHORT-NAME>
+        <LONG-NAME>Data Record</LONG-NAME>
+        <BYTE-POSITION>3</BYTE-POSITION>
+        <TABLE-KEY-REF ID-REF="Resp_ReadDataByIdentIUMPRRecor.Param_RecorDataIdent"/>
+       </PARAM>
+      </PARAMS>
+     </POS-RESPONSE>
+    </POS-RESPONSES>
+    <IMPORT-REFS>
+     <IMPORT-REF DOCREF="ES_DataLibra" DOCTYPE="LAYER" ID-REF="ES_DataLibra"/>
+    </IMPORT-REFS>
+    <PARENT-REFS>
+     <PARENT-REF xsi:type="PROTOCOL-REF" DOCREF="PR_UDSOnCAN" DOCTYPE="LAYER" ID-REF="PR_UDSOnCAN">
+      <NOT-INHERITED-DIAG-COMMS>
+       <NOT-INHERITED-DIAG-COMM>
+        <DIAG-COMM-SNREF SHORT-NAME="DiagnServi_ClearDiagnInfor"/>
+       </NOT-INHERITED-DIAG-COMM>
+      </NOT-INHERITED-DIAG-COMMS>
+     </PARENT-REF>
+    </PARENT-REFS>
+   </FUNCTIONAL-GROUP>
+  </FUNCTIONAL-GROUPS>
+ </DIAG-LAYER-CONTAINER>
+</ODX>

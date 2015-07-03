@@ -1,0 +1,77 @@
+/*****************************************************************************/
+/* exception  v4.1.4                                                         */
+/* Copyright (c) 1996-2006 Texas Instruments Incorporated                    */
+/*****************************************************************************/
+#if __EXCEPTIONS
+#define THROW(throw_spec) throw(throw_spec)
+#define THROW_NOTHING() throw()
+#else /* !__EXCEPTIONS */
+#define THROW(throw_spec) /* Nothing. */
+#define THROW_NOTHING() /* Nothing. */
+#endif /* __EXCEPTIONS */
+
+
+#ifdef __EXCEPTIONS
+#ifndef _EXCEPTION_STDH
+#define _EXCEPTION_STDH
+
+/* This lets users disable the EDG supplied exception classes. */
+#ifndef __NO_EDG_EXCEPTION_CLASSES
+
+#include <stdexcept.h>
+
+#ifdef __EDG_RUNTIME_USES_NAMESPACES
+namespace std {
+#endif /* ifdef __EDG_RUNTIME_USES_NAMESPACES */
+
+  /*
+  If bool is not supported, use a typedef for bool.
+  */
+  #ifdef _BOOL
+  typedef bool __bool;
+  #else /* ifndef _BOOL */
+  typedef int __bool;
+  #endif /* ifdef _BOOL */
+
+  class bad_exception : public exception {
+  public:
+    bad_exception() throw() {};
+    bad_exception(const bad_exception&) throw() {};
+    bad_exception& operator=(const bad_exception& rhs) throw() { exception::operator=(rhs); return *this; } ;
+    virtual ~bad_exception() throw() {};
+    virtual const char* what() const throw() { return ""; };
+  };
+
+  typedef void (*terminate_handler)();
+  extern terminate_handler set_terminate(terminate_handler) THROW_NOTHING();
+
+  typedef void (*unexpected_handler)();
+  extern unexpected_handler set_unexpected(unexpected_handler) THROW_NOTHING();
+
+  /* unexpected and terminate are in the WP definition of exception.h.
+     It is not clear why. */
+  void terminate();
+  void unexpected();
+
+  extern __bool uncaught_exception();
+
+#ifdef __EDG_RUNTIME_USES_NAMESPACES
+}  /* namespace */
+
+#ifdef __EDG_IMPLICIT_USING_STD
+/* Implicitly include a using directive for the STD namespace when this
+   preprocessing flag is TRUE. */
+using namespace std;
+#endif /* ifdef __EDG_IMPLICIT_USING_STD */
+
+#endif /* ifdef __EDG_RUNTIME_USES_NAMESPACES */
+
+#endif /* ifndef __NO_EDG_EXCEPTION_CLASSES */
+
+#endif /* _EXCEPTION_STDH */
+#else  /* __EXCEPTIONS */
+#ifndef _EXCEPTION
+#define _EXCEPTION
+#endif
+#endif /* __EXCEPTIONS */
+

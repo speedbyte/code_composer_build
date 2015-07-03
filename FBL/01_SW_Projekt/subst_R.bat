@@ -1,0 +1,2 @@
+subst r: .
+pause

@@ -1,0 +1,43 @@
+#TRACE_ID '0x58008E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM inval audio init from SD %d >= %d set to 0" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '142 
+#TRACE_ID '0x5800A1 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"ERM audio init done" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '161 
+#TRACE_ID '0x5800B8 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ReInit AudioParameterSet from %d -> %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '184 
+#TRACE_ID '0x5800E6 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM new audio alcVolume %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '230 
+#TRACE_ID '0x5800E7 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio alcTarget %d -> %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '231 
+#TRACE_ID '0x5800E9 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio alcTarget %d -> %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '233 
+#TRACE_ID '0x5800F1 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"ERM audio alc oor %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '241 
+#TRACE_ID '0x5800F2 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM audio alc oor .... (%d..%d)" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '242 
+#TRACE_ID '0x5800FD 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio comm %d ->%d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '253 
+#TRACE_ID '0x580103 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"ERM audio comm oor %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '259 
+#TRACE_ID '0x580104 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM audio comm oor .... (%d..%d)" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '260 
+#TRACE_ID '0x58010F 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio prompt %d ->%d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '271 
+#TRACE_ID '0x580115 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"ERM audio prompt oor %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '277 
+#TRACE_ID '0x580116 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM audio prompt oor .... (%d..%d)" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '278 
+#TRACE_ID '0x580121 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio stream %d ->%d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '289 
+#TRACE_ID '0x580127 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"ERM audio stream oor %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '295 
+#TRACE_ID '0x580128 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM audio stream oor .... (%d..%d)" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '296 
+#TRACE_ID '0x580134 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"ERM audio inco type %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '308 
+#TRACE_ID '0x580153 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio micsens %d ->%d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '339 
+#TRACE_ID '0x580159 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_ERM '"ERM audio micsens oor %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '345 
+#TRACE_ID '0x58015A 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_ERM '"ERM audio micsens oor .... (%d..%d)" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '346 
+#TRACE_ID '0x580176 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio aecdelay %d ->%d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '374 
+#TRACE_ID '0x58017B 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_ERM '"ERM audio aecdelay oor %d range (%d..%d) %c" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '379 
+#TRACE_ID '0x580200 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Sending of AudioParamters finished - call external callback" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '512 
+#TRACE_ID '0x580205 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_ERM '"Sending of AudioParamters finished" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '517 
+#TRACE_ID '0x58021F 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio callback rsp=%d %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '543 
+#TRACE_ID '0x58023C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM audio error %d send next" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '572 
+#TRACE_ID '0x580241 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ERM audio send next %d = %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '577 
+#TRACE_ID '0x58024D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM audio finish %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '589 
+#TRACE_ID '0x580255 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM audio finish %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '597 
+#TRACE_ID '0x58025F 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM audio finish %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '607 
+#TRACE_ID '0x580269 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM audio ext cb %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '617 
+#TRACE_ID '0x58026E 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_ERM '"ERM audio no ext cb %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '622 
+#TRACE_ID '0x58028A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"AudioParameterSet %d->%d CK5050 inactiv" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '650 
+#TRACE_ID '0x580292 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_ERM '"Sending of AudioParamters is busy - Please retry" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '658 
+#TRACE_ID '0x580298 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"AudioParameterSet %d->%d - Start Sending of AudioParamters" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '664 
+#TRACE_ID '0x5802A7 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_ERM '"AudioParameterSet: %d - not accepted max = %d !!!" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '679 
+#TRACE_ID '0x5803EC 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"EEPROM Error prompt volume= %d, taken from audio parameter set" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '1004 
+#TRACE_ID '0x5803F6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"Range error prompt volume= %d, taken from audio parameter set" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '1014 
+#TRACE_ID '0x5803FA 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_ERM '"ERM prompt volume= %d, taken from from EEPROM" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '1018 
+#TRACE_ID '0x5804EF 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ODX value = %d, take value = %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '1263 
+#TRACE_ID '0x580551 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"ODX value = %d, take value = %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '1361 
+#TRACE_ID '0x5805B0 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_ERM '"No volume value found for alcTarget= %d, slLevel= %d" '\MOD\MOD_ERM\src 'ERM_AudioSets.c '1456 

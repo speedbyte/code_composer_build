@@ -1,0 +1,6 @@
+#ENUM  'APP_PHONE_BAP_enFunctionIdType                      'PHONE_BAP_INVALID_FCT_ID                                                                 '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'BAP_enResultProcessing                              'CK5050_RESULT_RECEIVED                                                                   '0                            'ABCD   'ABCD.c  '123   
+#ENUM  'BAP_enResultProcessing                              'BAP_LINESTATE_SENT                                                                       '1                            'ABCD   'ABCD.c  '123   
+#ENUM  'BAP_enResultProcessing                              'BAP_CALLSTATE_SENT                                                                       '2                            'ABCD   'ABCD.c  '123   
+#ENUM  'BAP_enResultProcessing                              'BAP_CALLINFO_SENT                                                                        '3                            'ABCD   'ABCD.c  '123   
+#ENUM  'BAP_enResultProcessing                              'BAP_RESULT_ERROR                                                                         '4                            'ABCD   'ABCD.c  '123   

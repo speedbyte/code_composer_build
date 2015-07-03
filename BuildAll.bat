@@ -1,0 +1,1 @@
+call BUILD\BuildAll.bat

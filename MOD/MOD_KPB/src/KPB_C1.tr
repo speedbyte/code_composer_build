@@ -1,0 +1,127 @@
+#TRACE_ID '0x6100E0 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"EEProm(LAST_MODE): failed" '\MOD\MOD_KPB\src 'KPB_C1.c '224 
+#TRACE_ID '0x6100E4 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"EEProm(LAST_MODE): %d,%d" '\MOD\MOD_KPB\src 'KPB_C1.c '228 
+#TRACE_ID '0x6100F8 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"_KPB_vSetNextJob: overwriting sendFd job!!" '\MOD\MOD_KPB\src 'KPB_C1.c '248 
+#TRACE_ID '0x6100FF 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"_KPB_vSetNextJob: overwriting shutdown job!!" '\MOD\MOD_KPB\src 'KPB_C1.c '255 
+#TRACE_ID '0x610104 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"_KPB_vSetNextJob: unknown job %d!!" '\MOD\MOD_KPB\src 'KPB_C1.c '260 
+#TRACE_ID '0x61012D 'DEBUG_TEXT   'DBG_LEV_DBG 'MOD_KPB '"_KPB_vProcessWaiting: no waiting process avail" '\MOD\MOD_KPB\src 'KPB_C1.c '301 
+#TRACE_ID '0x610136 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_KPB '"_KPB_vProcessWaiting: unable to process next, current id (%d)" '\MOD\MOD_KPB\src 'KPB_C1.c '310 
+#TRACE_ID '0x61014A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vRelPendCon: release %d, bSucc= %d" '\MOD\MOD_KPB\src 'KPB_C1.c '330 
+#TRACE_ID '0x61014B 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"in line %d" '\MOD\MOD_KPB\src 'KPB_C1.c '331 
+#TRACE_ID '0x610151 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"vRelPendCon: sendFd release frameData" '\MOD\MOD_KPB\src 'KPB_C1.c '337 
+#TRACE_ID '0x61015A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"vRelPendCon: shutDown KL15_ON" '\MOD\MOD_KPB\src 'KPB_C1.c '346 
+#TRACE_ID '0x6101B8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"KPB_vHandleEvents: inval. pend. id %d" '\MOD\MOD_KPB\src 'KPB_C1.c '440 
+#TRACE_ID '0x6101F4 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"cbAsgSupervision: BAP_Error after BAP_Shut down called, retry after 100 ms" '\MOD\MOD_KPB\src 'KPB_C1.c '500 
+#TRACE_ID '0x610202 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"cbAsgSupervision: shut down KPB first after ASG failure" '\MOD\MOD_KPB\src 'KPB_C1.c '514 
+#TRACE_ID '0x61020F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"cbAsgSupervision: stop trying to shut down KPB(3 retries proceeded)" '\MOD\MOD_KPB\src 'KPB_C1.c '527 
+#TRACE_ID '0x61021D 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"cbAsgSupervision: BAP_Error after BAP_Start called, retry after 100 ms" '\MOD\MOD_KPB\src 'KPB_C1.c '541 
+#TRACE_ID '0x61022A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"cbAsgSupervision: restart KPB after 100 ms" '\MOD\MOD_KPB\src 'KPB_C1.c '554 
+#TRACE_ID '0x610235 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"cbAsgSupervision: stop trying to start KPB(3 retries proceeded)" '\MOD\MOD_KPB\src 'KPB_C1.c '565 
+#TRACE_ID '0x61024D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vHPSFData: state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '589 
+#TRACE_ID '0x61025B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData:no emptyFrameId %d" '\MOD\MOD_KPB\src 'KPB_C1.c '603 
+#TRACE_ID '0x610263 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: Send failed in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '611 
+#TRACE_ID '0x610274 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: no FrameDataAck after %d retries" '\MOD\MOD_KPB\src 'KPB_C1.c '628 
+#TRACE_ID '0x610286 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData:no emptyFrameId in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '646 
+#TRACE_ID '0x61028E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: _KPB_vBapSendFrameData failed in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '654 
+#TRACE_ID '0x610295 'DEBUG_VALUE2 'DBG_LEV_WNG 'MOD_KPB '"vHPSFData: retry %d state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '661 
+#TRACE_ID '0x6102A3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData:no emptyFrameId in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '675 
+#TRACE_ID '0x6102B7 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: Send failed in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '695 
+#TRACE_ID '0x6102D1 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: Send failed in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '721 
+#TRACE_ID '0x6102E2 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vHPSFData: frameId %d, skip sending empty frameData " '\MOD\MOD_KPB\src 'KPB_C1.c '738 
+#TRACE_ID '0x610309 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: no FrameDataAck after %d retries" '\MOD\MOD_KPB\src 'KPB_C1.c '777 
+#TRACE_ID '0x610316 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: _KPB_vBapSendFrameData failed in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '790 
+#TRACE_ID '0x61031D 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_KPB '"vHPSFData: retry %d" '\MOD\MOD_KPB\src 'KPB_C1.c '797 
+#TRACE_ID '0x61032F 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: no pData in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '815 
+#TRACE_ID '0x61033E 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: Send failed in state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '830 
+#TRACE_ID '0x610378 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_KPB '"vHPSFData: act skipped %d %d %d" '\MOD\MOD_KPB\src 'KPB_C1.c '888 
+#TRACE_ID '0x61039E 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"Try to set the visibility again when refused " '\MOD\MOD_KPB\src 'KPB_C1.c '926 
+#TRACE_ID '0x6103A9 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"Visibility not set, release the context " '\MOD\MOD_KPB\src 'KPB_C1.c '937 
+#TRACE_ID '0x6103BE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"Try to set the visibility again when refused " '\MOD\MOD_KPB\src 'KPB_C1.c '958 
+#TRACE_ID '0x6103C8 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"Visibility not set, release the context " '\MOD\MOD_KPB\src 'KPB_C1.c '968 
+#TRACE_ID '0x6103D1 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"KL15 OFF while frame activating, release the context " '\MOD\MOD_KPB\src 'KPB_C1.c '977 
+#TRACE_ID '0x6103E3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: unexpected state, wait for the ASG FrameStatus now %d" '\MOD\MOD_KPB\src 'KPB_C1.c '995 
+#TRACE_ID '0x6103E8 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHPSFData: invalid state %d, send error to application" '\MOD\MOD_KPB\src 'KPB_C1.c '1000 
+#TRACE_ID '0x610402 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"HandlePendingShutdown: EEprom write LastMode %d,%d" '\MOD\MOD_KPB\src 'KPB_C1.c '1026 
+#TRACE_ID '0x61042A 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"sfHandlePendingShutdown: invalid state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1066 
+#TRACE_ID '0x610484 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHandleKpbIndication failed for: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1156 
+#TRACE_ID '0x6104A5 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHandleOperationState failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1189 
+#TRACE_ID '0x6104DB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHandleAsgCapabilities failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1243 
+#TRACE_ID '0x610508 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHandleAsgConfig failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1288 
+#TRACE_ID '0x610529 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHandleLsgStatus failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1321 
+#TRACE_ID '0x610553 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHandleMflBlockDefinition failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1363 
+#TRACE_ID '0x610580 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHaFrData: Get(1) %d %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1408 
+#TRACE_ID '0x610595 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHaFrData: Get(2) %d %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1429 
+#TRACE_ID '0x6105AA 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_KPB '"vHaFrData: overload, waitForProc blocking (%d %d)" '\MOD\MOD_KPB\src 'KPB_C1.c '1450 
+#TRACE_ID '0x6105BB 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHaFrData: Get(3) %d %d ignored" '\MOD\MOD_KPB\src 'KPB_C1.c '1467 
+#TRACE_ID '0x6105C4 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vHaFrData: Get(4) %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1476 
+#TRACE_ID '0x6105D9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vHaFrData: Get(5) %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1497 
+#TRACE_ID '0x6105EB 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"_KPB_vHandleFrameData: unsup opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1515 
+#TRACE_ID '0x61063B 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHFS_Def: opType %d, asgRsp %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1595 
+#TRACE_ID '0x61064A 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_KPB '"vHFS_Def: No frame being shown to set VisOff, assign only MFL blocks, " '\MOD\MOD_KPB\src 'KPB_C1.c '1610 
+#TRACE_ID '0x61065D 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_KPB '"vHFS_Def: SET_V_IS_ON rcvd frameId %d != %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1629 
+#TRACE_ID '0x610679 'DEBUG_VALUE4 'DBG_LEV_WNG 'MOD_KPB '"vHFS_Default: REFUSE (%d,%d,%d)" '\MOD\MOD_KPB\src 'KPB_C1.c '1657 
+#TRACE_ID '0x610686 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"ASG_REQ_V_IS_ON activateFrame.id == KPB_FRAME_ID  VALID" '\MOD\MOD_KPB\src 'KPB_C1.c '1670 
+#TRACE_ID '0x61068A 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"ASG_REQ_V_IS_ON activateFrame.id == KPB_FRAME_ID  INVALID" '\MOD\MOD_KPB\src 'KPB_C1.c '1674 
+#TRACE_ID '0x61069B 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHFS_Default: asgResponse %d not handled" '\MOD\MOD_KPB\src 'KPB_C1.c '1691 
+#TRACE_ID '0x6106B0 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHFS_Default: failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1712 
+#TRACE_ID '0x6106D4 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHFS_SendFd: opType %d, asgRsp %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1748 
+#TRACE_ID '0x6106E2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHFS_SendFd: RecvFrameID %d, isQueuedUp %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1762 
+#TRACE_ID '0x6106E3 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vHFS_SendFd: CurrFrameID %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1763 
+#TRACE_ID '0x6106F2 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHFS_SendFd: Unexpected state, SentFrID %d, RecvdFrID %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1778 
+#TRACE_ID '0x6106F8 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHFS_SendFd: RecvFrameID %d, isQueuedUp %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1784 
+#TRACE_ID '0x6106F9 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vHFS_SendFd: CurrFrameID %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1785 
+#TRACE_ID '0x6106FE 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_KPB '"vHFS_SendFd: KPB_FRAME_REQ_V_IS_ON_SENT (refused)" '\MOD\MOD_KPB\src 'KPB_C1.c '1790 
+#TRACE_ID '0x61070A 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vHFS_SendFd: Unexpected state, SentFrID %d, RecvdFrID %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1802 
+#TRACE_ID '0x610710 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_KPB '"vHFS_SendFd: KPB_ASG_SET_V_IS_OFF, state %d not changed" '\MOD\MOD_KPB\src 'KPB_C1.c '1808 
+#TRACE_ID '0x610723 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_KPB '"vHFS_SendFd: KPB_FRAME_REQ_V_IS_OFF_SENT (refused)" '\MOD\MOD_KPB\src 'KPB_C1.c '1827 
+#TRACE_ID '0x61072F 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_KPB '"vHFS_SendFd: KPB_ASG_SET_V_IS_ON, state %d not changed" '\MOD\MOD_KPB\src 'KPB_C1.c '1839 
+#TRACE_ID '0x610738 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_KPB '"vHFS_SendFd: KPB_FRAME_REQ_V_IS_ON_SENT (FSG is queued up)" '\MOD\MOD_KPB\src 'KPB_C1.c '1848 
+#TRACE_ID '0x610741 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_KPB '"vHFS_SendFd: KPB_FRAME_REQ_V_IS_OFF_SENT (FSG is queued up)" '\MOD\MOD_KPB\src 'KPB_C1.c '1857 
+#TRACE_ID '0x61074C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vHFS_SendFd: asgResp %d (default handl)" '\MOD\MOD_KPB\src 'KPB_C1.c '1868 
+#TRACE_ID '0x610756 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHFS_SendFd: failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1878 
+#TRACE_ID '0x610777 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHFS_Shutdown: invalid state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1911 
+#TRACE_ID '0x61079A 'DEBUG_VALUE1 'DBG_LEV_DBG 'MOD_KPB '"vHFS_Shutdown: asgResp %d (default handl)" '\MOD\MOD_KPB\src 'KPB_C1.c '1946 
+#TRACE_ID '0x6107A3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHFS_Shutdown: failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '1955 
+#TRACE_ID '0x6107C6 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"_KPB_vHandleFrameDataAck: no handling avail. (%d)" '\MOD\MOD_KPB\src 'KPB_C1.c '1990 
+#TRACE_ID '0x6107E3 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHandleFrameDataAck failed, invalid opType: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2019 
+#TRACE_ID '0x6107EF 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"vHandleFrameDataAck missing FrameData" '\MOD\MOD_KPB\src 'KPB_C1.c '2031 
+#TRACE_ID '0x6107F8 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_KPB '"vHandleFrameDataAck expected FrameId: %d received: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2040 
+#TRACE_ID '0x610803 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"vHandleFrameDataAck: missing emptyFrameId" '\MOD\MOD_KPB\src 'KPB_C1.c '2051 
+#TRACE_ID '0x61080C 'DEBUG_VALUE2 'DBG_LEV_ERR 'MOD_KPB '"vHandleFrameDataAck: exp emptyFrameId: %d rcvd: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2060 
+#TRACE_ID '0x610815 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vHandleFrameDataAck: invalid sendFd.state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2069 
+#TRACE_ID '0x610831 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"_KPB_vChangeAsgState: asgState.state = %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2097 
+#TRACE_ID '0x6108AA 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vSetAsgAvailable: ASG is %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2218 
+#TRACE_ID '0x6108CC 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"Send ReqVisOff for FrID: %d, in line : %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2252 
+#TRACE_ID '0x6108E9 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"Send ReqVisOn for FrID: %d, in line : %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2281 
+#TRACE_ID '0x610906 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"sfShutdown: invalid state KPB_OP_STATE_OFF!" '\MOD\MOD_KPB\src 'KPB_C1.c '2310 
+#TRACE_ID '0x61090C 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"sfShutdown: cur state %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2316 
+#TRACE_ID '0x61092D 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"_KPB_vRemoveRedundantCell: frameId %d not supported" '\MOD\MOD_KPB\src 'KPB_C1.c '2349 
+#TRACE_ID '0x61093E 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"_KPB_vRemoveRedundantCell: frameId %d, cell %d deactivated" '\MOD\MOD_KPB\src 'KPB_C1.c '2366 
+#TRACE_ID '0x610945 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"_KPB_vRemoveRedundantCell: frameId %d, cell %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2373 
+#TRACE_ID '0x610948 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"_KPB_vRemoveRedundantCell: hash %d saved" '\MOD\MOD_KPB\src 'KPB_C1.c '2376 
+#TRACE_ID '0x610955 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"Send blank cell information for frameId %d, cell %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2389 
+#TRACE_ID '0x61098F 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_KPB '"vLimitCellSize: shortend cell %d from %d to %d (number)" '\MOD\MOD_KPB\src 'KPB_C1.c '2447 
+#TRACE_ID '0x6109A3 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_KPB '"vLimitCellSize: shortend cell %d from %d to %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2467 
+#TRACE_ID '0x6109B4 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vLimitCellSize: invalid utf8 char: 0x%02x" '\MOD\MOD_KPB\src 'KPB_C1.c '2484 
+#TRACE_ID '0x6109E8 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"SendFrData: pending frameData blocks!" '\MOD\MOD_KPB\src 'KPB_C1.c '2536 
+#TRACE_ID '0x6109F0 'DEBUG_TEXT   'DBG_LEV_ERR 'MOD_KPB '"SendFrData: ignored in opState OFF!" '\MOD\MOD_KPB\src 'KPB_C1.c '2544 
+#TRACE_ID '0x610A18 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"SendFrData: activate %d (queued)" '\MOD\MOD_KPB\src 'KPB_C1.c '2584 
+#TRACE_ID '0x610A1D 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"SendFrData: activate %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2589 
+#TRACE_ID '0x610A25 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"SendFrData: update %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2597 
+#TRACE_ID '0x610A33 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"SendFrData: no activate %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2611 
+#TRACE_ID '0x610A50 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"Release all phone frames, leave the context" '\MOD\MOD_KPB\src 'KPB_C1.c '2640 
+#TRACE_ID '0x610B67 'DEBUG_VALUE4 'DBG_LEV_TRC 'MOD_KPB '"vOnAppCshdlNot: notId %d, KPB opState %d, LM %d,%d" '\MOD\MOD_KPB\src 'KPB_C1.c '2919 
+#TRACE_ID '0x610B8A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vOnAppCshdlNot: KPB_OP_STATE_OFF, KPB init not done, notId: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2954 
+#TRACE_ID '0x610BAD 'DEBUG_VALUE1 'DBG_LEV_ERR 'MOD_KPB '"vOnAppCshdlNotific: KL15On in NORMAL_OP, but frameId %d" '\MOD\MOD_KPB\src 'KPB_C1.c '2989 
+#TRACE_ID '0x610BB9 'DEBUG_TEXT   'DBG_LEV_WNG 'MOD_KPB '"vOnAppCshdlNotific: ignored KL15On (shutdown)" '\MOD\MOD_KPB\src 'KPB_C1.c '3001 
+#TRACE_ID '0x610BD8 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"vOnAppCshdlNot: KPB init not yet done, notId: %d" '\MOD\MOD_KPB\src 'KPB_C1.c '3032 
+#TRACE_ID '0x610BEE 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"No KPB shutdown in KL15 off following and KL15 on again!" '\MOD\MOD_KPB\src 'KPB_C1.c '3054 
+#TRACE_ID '0x610BF4 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vOnAppCshdl: CR LM -> %d, %d" '\MOD\MOD_KPB\src 'KPB_C1.c '3060 
+#TRACE_ID '0x610BF9 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"vOnAppCshdl: CR LM -> %d, %d" '\MOD\MOD_KPB\src 'KPB_C1.c '3065 
+#TRACE_ID '0x610BFD 'DEBUG_VALUE1 'DBG_LEV_WNG 'MOD_KPB '"vOnAppCshdlNotific: ignoring notId %d" '\MOD\MOD_KPB\src 'KPB_C1.c '3069 
+#TRACE_ID '0x610C56 'DEBUG_VALUE2 'DBG_LEV_TRC 'MOD_KPB '"SetAsgVis: %d -> %d" '\MOD\MOD_KPB\src 'KPB_C1.c '3158 
+#TRACE_ID '0x610C57 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"called from line %d" '\MOD\MOD_KPB\src 'KPB_C1.c '3159 
+#TRACE_ID '0x610C6C 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"SetLastModeVis: lastMode TRUE" '\MOD\MOD_KPB\src 'KPB_C1.c '3180 
+#TRACE_ID '0x610C79 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"SetLastModeVis: start lastMode FALSE timer" '\MOD\MOD_KPB\src 'KPB_C1.c '3193 
+#TRACE_ID '0x610C7F 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"Notify Apps immediately with Vis OFF after ASG request" '\MOD\MOD_KPB\src 'KPB_C1.c '3199 
+#TRACE_ID '0x610C83 'DEBUG_TEXT   'DBG_LEV_TRC 'MOD_KPB '"Notify Apps with Vis OFF after lastMode timer expired" '\MOD\MOD_KPB\src 'KPB_C1.c '3203 
+#TRACE_ID '0x610C8A 'DEBUG_VALUE1 'DBG_LEV_TRC 'MOD_KPB '"SetLastModeVis: ign %d" '\MOD\MOD_KPB\src 'KPB_C1.c '3210 
